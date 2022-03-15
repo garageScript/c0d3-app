@@ -1,17 +1,12 @@
-import {
-  login,
-  logout,
-  signup,
-  isTokenValid
-} from '../helpers/controllers/authController'
+import { login, logout, signup, isTokenValid } from './resolvers/authController'
 import {
   createChallenge,
   updateChallenge
-} from '../helpers/controllers/challengesController'
+} from './resolvers/challengesController'
 import { userInfo } from '../helpers/controllers/userInfoController'
-import { addAlert, removeAlert } from '../helpers/controllers/alertController'
+import { addAlert, removeAlert } from './resolvers/alertController'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
-import { addComment } from './queryResolvers/addComment'
+import { addComment } from './resolvers/addComment'
 import {
   createSubmission,
   acceptSubmission,
@@ -19,25 +14,22 @@ import {
   submissions
 } from '../helpers/controllers/submissionController'
 import { setStar } from '../helpers/controllers/starsController'
-import { alerts } from './queryResolvers/alerts'
-import { lessons } from './queryResolvers/lessons'
-import { session } from './queryResolvers/session'
-import { allUsers } from './queryResolvers/allUsers'
-import { getLessonMentors } from './queryResolvers/getLessonMentors'
-import { changeAdminRights } from '../helpers/controllers/adminController'
-import {
-  createLesson,
-  updateLesson
-} from '../helpers/controllers/lessonsController'
-import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
-import { deleteComment } from './queryResolvers/deleteComment'
-import { addModule, modules, deleteModule } from './queryResolvers/moduleCrud'
+import { alerts } from './resolvers/alerts'
+import { lessons } from './resolvers/lessons'
+import { session } from './resolvers/session'
+import { allUsers } from './resolvers/allUsers'
+import { getLessonMentors } from './resolvers/getLessonMentors'
+import { changeAdminRights } from './resolvers/adminController'
+import { createLesson, updateLesson } from './resolvers/lessonsController'
+import { getPreviousSubmissions } from './resolvers/getPreviousSubmissions'
+import { deleteComment } from './resolvers/deleteComment'
+import { addModule, modules, deleteModule } from './resolvers/moduleCrud'
 import {
   exercises,
   addExercise,
   updateExercise,
   deleteExercise
-} from './queryResolvers/exerciseCrud'
+} from './resolvers/exerciseCrud'
 export default {
   Query: {
     submissions,

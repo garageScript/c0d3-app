@@ -7,9 +7,9 @@ import type {
   SignupMutationVariables
 } from '../../graphql'
 import prisma from '../../prisma'
-import { decode, encode } from '../encoding'
-import { signupValidation } from '../formValidation'
-import { sendSignupEmail } from '../mail'
+import { decode, encode } from '../../helpers/encoding'
+import { signupValidation } from '../../helpers/formValidation'
+import { sendSignupEmail } from '../../helpers/mail'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
@@ -55,7 +55,8 @@ export const login = async (
   return {
     success: true,
     username: user.username,
-    cliToken: encode(cliToken)
+    cliToken: encode(cliToken),
+    id: user.id
   }
 }
 
@@ -170,7 +171,8 @@ export const signup = async (
   return {
     success: true,
     username: newUser.username,
-    cliToken: forgotToken
+    cliToken: forgotToken,
+    id: newUser.id
   }
 }
 

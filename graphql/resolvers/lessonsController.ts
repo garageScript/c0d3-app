@@ -5,10 +5,10 @@ import type {
   UpdateLessonMutation,
   UpdateLessonMutationVariables
 } from '../../graphql'
-import { lessons } from '../../graphql/queryResolvers/lessons'
+import { lessons } from './lessons'
 import prisma from '../../prisma'
-import { isAdminOrThrow } from '../isAdmin'
-import { validateLessonId } from '../validation/validateLessonId'
+import { isAdminOrThrow } from '../../helpers/isAdmin'
+import { validateLessonId } from '../../helpers/validation/validateLessonId'
 
 export const createLesson = async (
   _parent: void,

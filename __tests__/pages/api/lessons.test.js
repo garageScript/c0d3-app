@@ -1,5 +1,5 @@
 import lessonsAPI from '../../../pages/api/lessons'
-import * as getLessons from '../../../graphql/queryResolvers/lessons'
+import * as getLessons from '../../../graphql/resolvers/lessons'
 
 describe('lessonsAPI', () => {
   const res = {

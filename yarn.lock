@@ -1733,22 +1733,6 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/visitor-plugin-common@2.7.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.7.1.tgz#bdcded24d1d6f329d32b90704397d6001374b893"
-  integrity sha512-Ew/+0GwGwL3ZSXS0cYz6lVvE7S5SkbTr7caRpLa4FpAdLGNskCgdA1n6W5tX5c7qsaYstqlxp30hJTfgTsYS6A==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-tools/optimize" "^1.0.1"
-    "@graphql-tools/relay-operation-optimizer" "^6.3.7"
-    "@graphql-tools/utils" "^8.3.0"
-    auto-bind "~4.0.0"
-    change-case-all "1.0.14"
-    dependency-graph "^0.11.0"
-    graphql-tag "^2.11.0"
-    parse-filepath "^1.0.2"
-    tslib "~2.3.0"
-
 "@graphql-codegen/visitor-plugin-common@2.7.3":
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.7.3.tgz#f374e8974ae4ab7b1059a7f8748db6393f20c138"
@@ -3635,10 +3619,10 @@
     "@types/react-test-renderer" ">=16.9.0"
     react-error-boundary "^3.1.0"
 
-"@testing-library/react@^12.1.3":
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-12.1.3.tgz#ef26c5f122661ea9b6f672b23dc6b328cadbbf26"
-  integrity sha512-oCULRXWRrBtC9m6G/WohPo1GLcLesH7T4fuKzRAKn1CWVu9BzXtqLXDDTA6KhFNNtRwLtfSMr20HFl+Qrdrvmg==
+"@testing-library/react@^12.1.4":
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-12.1.4.tgz#09674b117e550af713db3f4ec4c0942aa8bbf2c0"
+  integrity sha512-jiPKOm7vyUw311Hn/HlNQ9P8/lHNtArAx0PisXyFixDDvfl8DbD6EUdbshK5eqauvBSvzZd19itqQ9j3nferJA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^8.0.0"
@@ -3964,10 +3948,10 @@
     "@types/koa-compose" "*"
     "@types/node" "*"
 
-"@types/lodash@^4.14.175", "@types/lodash@^4.14.179":
-  version "4.14.179"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.179.tgz#490ec3288088c91295780237d2497a3aa9dfb5c5"
-  integrity sha512-uwc1x90yCKqGcIOAT6DwOSuxnrAbpkdPsUOZtwrXb4D/6wZs+6qG7QnIawDuZWg0sWpxl+ltIKCaLoMlna678w==
+"@types/lodash@^4.14.175", "@types/lodash@^4.14.180":
+  version "4.14.180"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.180.tgz#4ab7c9ddfc92ec4a887886483bc14c79fb380670"
+  integrity sha512-XOKXa1KIxtNXgASAnwj7cnttJxS4fksBRywK/9LzRV5YxrF80BXZIGeQSuoESQ/VkUj30Ae0+YcuHc15wJCB2g==
 
 "@types/long@^4.0.0":
   version "4.0.1"
@@ -4118,10 +4102,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.14.8", "@types/react@>=16.9.0", "@types/react@>=16.9.11", "@types/react@^17.0.39":
-  version "17.0.39"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.39.tgz#d0f4cde092502a6db00a1cded6e6bf2abb7633ce"
-  integrity sha512-UVavlfAxDd/AgAacMa60Azl7ygyQNRwC/DsHZmKgNvPmRR5p70AJ5Q9EAmL2NWOJmeV+vVUI4IAP7GZrN8h8Ug==
+"@types/react@*", "@types/react@>=16.14.8", "@types/react@>=16.9.0", "@types/react@>=16.9.11", "@types/react@^17.0.40":
+  version "17.0.40"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.40.tgz#dc010cee6254d5239a138083f3799a16638e6bad"
+  integrity sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -6911,10 +6895,10 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-dayjs@^1.10.8:
-  version "1.10.8"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.8.tgz#267df4bc6276fcb33c04a6735287e3f429abec41"
-  integrity sha512-wbNwDfBHHur9UOzNUjeKUOJ0fCb0a52Wx0xInmQ7Y8FstyajiV1NmK1e00cxsr9YrE9r7yAChE0VvpuY5Rnlow==
+dayjs@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.0.tgz#009bf7ef2e2ea2d5db2e6583d2d39a4b5061e805"
+  integrity sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug==
 
 debounce@^1.2.0:
   version "1.2.1"
@@ -7750,10 +7734,10 @@ eslint-plugin-react-hooks@^4.3.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz#318dbf312e06fab1c835a4abef00121751ac1172"
   integrity sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA==
 
-eslint-plugin-react@^7.27.0, eslint-plugin-react@^7.29.3:
-  version "7.29.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.3.tgz#f4eab757f2756d25d6d4c2a58a9e20b004791f05"
-  integrity sha512-MzW6TuCnDOcta67CkpDyRfRsEVx9FNMDV8wZsDqe1luHPdGTrQIUaUXD27Ja3gHsdOIs/cXzNchWGlqm+qRVRg==
+eslint-plugin-react@^7.27.0, eslint-plugin-react@^7.29.4:
+  version "7.29.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.4.tgz#4717de5227f55f3801a5fd51a16a4fa22b5914d2"
+  integrity sha512-CVCXajliVh509PcZYRFyu/BoUEz452+jtQJq2b3Bae4v3xBUWPLCmtmBM+ZinG4MzwmxJgJ2M5rMqhqLVn7MtQ==
   dependencies:
     array-includes "^3.1.4"
     array.prototype.flatmap "^1.2.5"
@@ -8876,10 +8860,10 @@ graphql-request@^3.3.0:
     extract-files "^9.0.0"
     form-data "^3.0.0"
 
-graphql-request@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-4.0.0.tgz#5e4361d33df1a95ccd7ad23a8ebb6bbca9d5622f"
-  integrity sha512-cdqQLCXlBGkaLdkLYRl4LtkwaZU6TfpE7/tnUQFl3wXfUPWN74Ov+Q61VuIh+AltS789YfGB6whghmCmeXLvTw==
+graphql-request@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-4.1.0.tgz#98d0d8d4458fd81674d8566d0b5781bd2823c26e"
+  integrity sha512-CBFcO6LP7cg+aBMc+x9C1dZEQsKTBZKR2J+HzuB0cR/6aaU4K4/tRXTQu8CDMp5195ZU+DTNKZZOSK1WRbTeAg==
   dependencies:
     cross-fetch "^3.0.6"
     extract-files "^9.0.0"
@@ -13615,10 +13599,10 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bootstrap@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-2.2.0.tgz#cb8557f19cd20b1b19b2c5e7d350b99104f91385"
-  integrity sha512-5d3hziBjNOAKWpss2B8C2qtSXp/Z3PiyuRdFJelvJeTsGn8vbFYOoYjmf+0Agq+jh46TG+mtBvrCoa4nBk0bkg==
+react-bootstrap@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-2.2.1.tgz#2a6ad0931e9367882ec3fc88a70ed0b8ace90b26"
+  integrity sha512-x8lpVQflsbevphuWbTnTNCatcbKyPJNrP2WyQ1MJYmFEcVjbTbai1yZhdlXr0QUxLQLxA8g5hQWb5TwJtaZoCA==
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@restart/hooks" "^0.4.5"

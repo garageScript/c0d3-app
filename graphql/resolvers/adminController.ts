@@ -1,7 +1,7 @@
 import { Context } from '../../@types/helpers'
 import { ChangeAdminRightsMutationVariables } from '../../graphql'
 import prisma from '../../prisma'
-import { isAdminOrThrow } from '../isAdmin'
+import { isAdminOrThrow } from '../../helpers/isAdmin'
 
 export const changeAdminRights = async (
   _parent: void,

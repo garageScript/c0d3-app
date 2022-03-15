@@ -972,12 +972,12 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               className="diffView"
             >
               <table
-                className="css-b02w0u-diff-container"
+                className="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      className="css-1rwygp7-title-block"
+                      className="css-1gyvngn-title-block"
                       colSpan={4}
                     >
                       <pre
@@ -995,7 +995,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1003,7 +1003,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -1039,7 +1039,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1047,7 +1047,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -1083,7 +1083,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1091,7 +1091,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -1127,7 +1127,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1135,7 +1135,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -1171,7 +1171,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1179,7 +1179,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -1215,7 +1215,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1223,7 +1223,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -1259,7 +1259,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1267,7 +1267,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -1838,12 +1838,12 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               className="diffView"
             >
               <table
-                className="css-b02w0u-diff-container"
+                className="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      className="css-1rwygp7-title-block"
+                      className="css-1gyvngn-title-block"
                       colSpan={4}
                     >
                       <pre
@@ -1861,7 +1861,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1869,7 +1869,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -1905,7 +1905,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1913,7 +1913,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -1949,7 +1949,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -1957,7 +1957,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -1993,7 +1993,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -2001,7 +2001,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -2037,7 +2037,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -2045,7 +2045,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -2081,7 +2081,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -2089,7 +2089,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -2125,7 +2125,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={null}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       />
                     </td>
                     <td
@@ -2133,7 +2133,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                       onClick={[Function]}
                     >
                       <pre
-                        className="css-14p8zw1-line-number"
+                        className="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -3189,12 +3189,12 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
     className="diffView"
   >
     <table
-      className="css-b02w0u-diff-container"
+      className="css-1p5fn6o-diff-container"
     >
       <tbody>
         <tr>
           <td
-            className="css-1rwygp7-title-block"
+            className="css-1gyvngn-title-block"
             colSpan={4}
           >
             <pre
@@ -3212,7 +3212,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3220,7 +3220,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               1
             </pre>
@@ -3256,7 +3256,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3264,7 +3264,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               2
             </pre>
@@ -3300,7 +3300,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3308,7 +3308,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               3
             </pre>
@@ -3344,7 +3344,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3352,7 +3352,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               4
             </pre>
@@ -3388,7 +3388,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3396,7 +3396,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               5
             </pre>
@@ -3432,7 +3432,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3440,7 +3440,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               6
             </pre>
@@ -3476,7 +3476,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3484,7 +3484,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               7
             </pre>
@@ -3580,12 +3580,12 @@ exports[`Storyshots Components/DiffView Default 1`] = `
     className="diffView"
   >
     <table
-      className="css-b02w0u-diff-container"
+      className="css-1p5fn6o-diff-container"
     >
       <tbody>
         <tr>
           <td
-            className="css-1rwygp7-title-block"
+            className="css-1gyvngn-title-block"
             colSpan={4}
           >
             <pre
@@ -3603,7 +3603,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3611,7 +3611,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               1
             </pre>
@@ -3647,7 +3647,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3655,7 +3655,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               2
             </pre>
@@ -3691,7 +3691,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3699,7 +3699,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               3
             </pre>
@@ -3735,7 +3735,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3743,7 +3743,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               4
             </pre>
@@ -3779,7 +3779,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3787,7 +3787,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               5
             </pre>
@@ -3823,7 +3823,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3831,7 +3831,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               6
             </pre>
@@ -3867,7 +3867,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={null}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             />
           </td>
           <td
@@ -3875,7 +3875,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
             onClick={[Function]}
           >
             <pre
-              className="css-14p8zw1-line-number"
+              className="css-iepx6s-line-number"
             >
               7
             </pre>
@@ -11582,13 +11582,13 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -11680,12 +11680,12 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="diffView"
           >
             <table
-              className="css-b02w0u-diff-container"
+              className="css-1p5fn6o-diff-container"
             >
               <tbody>
                 <tr>
                   <td
-                    className="css-1rwygp7-title-block"
+                    className="css-1gyvngn-title-block"
                     colSpan={4}
                   >
                     <pre
@@ -11703,7 +11703,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -11711,7 +11711,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       1
                     </pre>
@@ -11747,7 +11747,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -11755,7 +11755,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       2
                     </pre>
@@ -11791,7 +11791,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -11799,7 +11799,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       3
                     </pre>
@@ -11835,7 +11835,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -11843,7 +11843,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       4
                     </pre>
@@ -11879,7 +11879,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -11887,7 +11887,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       5
                     </pre>
@@ -11923,7 +11923,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -11931,7 +11931,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       6
                     </pre>
@@ -11967,7 +11967,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -11975,7 +11975,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       7
                     </pre>
@@ -12011,7 +12011,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12019,7 +12019,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       8
                     </pre>
@@ -12055,7 +12055,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12063,7 +12063,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       9
                     </pre>
@@ -12099,7 +12099,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12107,7 +12107,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       10
                     </pre>
@@ -12143,7 +12143,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12151,7 +12151,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       11
                     </pre>
@@ -12187,7 +12187,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12195,7 +12195,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       12
                     </pre>
@@ -12231,7 +12231,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12239,7 +12239,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       13
                     </pre>
@@ -12275,7 +12275,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12283,7 +12283,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       14
                     </pre>
@@ -12319,7 +12319,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12327,7 +12327,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       15
                     </pre>
@@ -12363,7 +12363,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12371,7 +12371,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       16
                     </pre>
@@ -12407,7 +12407,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12415,7 +12415,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       17
                     </pre>
@@ -12451,7 +12451,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12459,7 +12459,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       18
                     </pre>
@@ -12495,7 +12495,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -12503,7 +12503,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       19
                     </pre>
@@ -13002,13 +13002,13 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -13100,12 +13100,12 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="diffView"
           >
             <table
-              className="css-b02w0u-diff-container"
+              className="css-1p5fn6o-diff-container"
             >
               <tbody>
                 <tr>
                   <td
-                    className="css-1rwygp7-title-block"
+                    className="css-1gyvngn-title-block"
                     colSpan={4}
                   >
                     <pre
@@ -13123,7 +13123,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13131,7 +13131,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       1
                     </pre>
@@ -13167,7 +13167,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13175,7 +13175,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       2
                     </pre>
@@ -13211,7 +13211,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13219,7 +13219,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       3
                     </pre>
@@ -13255,7 +13255,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13263,7 +13263,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       4
                     </pre>
@@ -13299,7 +13299,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13307,7 +13307,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       5
                     </pre>
@@ -13343,7 +13343,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13351,7 +13351,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       6
                     </pre>
@@ -13387,7 +13387,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13395,7 +13395,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       7
                     </pre>
@@ -13431,7 +13431,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13439,7 +13439,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       8
                     </pre>
@@ -13475,7 +13475,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13483,7 +13483,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       9
                     </pre>
@@ -13519,7 +13519,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13527,7 +13527,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       10
                     </pre>
@@ -13563,7 +13563,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13571,7 +13571,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       11
                     </pre>
@@ -13607,7 +13607,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13615,7 +13615,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       12
                     </pre>
@@ -13651,7 +13651,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13659,7 +13659,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       13
                     </pre>
@@ -13695,7 +13695,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13703,7 +13703,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       14
                     </pre>
@@ -13739,7 +13739,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13747,7 +13747,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       15
                     </pre>
@@ -13783,7 +13783,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13791,7 +13791,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       16
                     </pre>
@@ -13827,7 +13827,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13835,7 +13835,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       17
                     </pre>
@@ -13871,7 +13871,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13879,7 +13879,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       18
                     </pre>
@@ -13915,7 +13915,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -13923,7 +13923,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       19
                     </pre>
@@ -14420,13 +14420,13 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -14518,12 +14518,12 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="diffView"
           >
             <table
-              className="css-b02w0u-diff-container"
+              className="css-1p5fn6o-diff-container"
             >
               <tbody>
                 <tr>
                   <td
-                    className="css-1rwygp7-title-block"
+                    className="css-1gyvngn-title-block"
                     colSpan={4}
                   >
                     <pre
@@ -14541,7 +14541,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14549,7 +14549,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       1
                     </pre>
@@ -14585,7 +14585,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14593,7 +14593,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       2
                     </pre>
@@ -14629,7 +14629,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14637,7 +14637,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       3
                     </pre>
@@ -14673,7 +14673,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14681,7 +14681,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       4
                     </pre>
@@ -14717,7 +14717,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14725,7 +14725,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       5
                     </pre>
@@ -14761,7 +14761,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14769,7 +14769,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       6
                     </pre>
@@ -14805,7 +14805,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14813,7 +14813,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       7
                     </pre>
@@ -14849,7 +14849,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14857,7 +14857,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       8
                     </pre>
@@ -14893,7 +14893,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14901,7 +14901,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       9
                     </pre>
@@ -14937,7 +14937,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14945,7 +14945,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       10
                     </pre>
@@ -14981,7 +14981,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -14989,7 +14989,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       11
                     </pre>
@@ -15025,7 +15025,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15033,7 +15033,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       12
                     </pre>
@@ -15069,7 +15069,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15077,7 +15077,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       13
                     </pre>
@@ -15113,7 +15113,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15121,7 +15121,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       14
                     </pre>
@@ -15157,7 +15157,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15165,7 +15165,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       15
                     </pre>
@@ -15201,7 +15201,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15209,7 +15209,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       16
                     </pre>
@@ -15245,7 +15245,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15253,7 +15253,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       17
                     </pre>
@@ -15289,7 +15289,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15297,7 +15297,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       18
                     </pre>
@@ -15333,7 +15333,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15341,7 +15341,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       19
                     </pre>
@@ -15838,13 +15838,13 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -15936,12 +15936,12 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="diffView"
           >
             <table
-              className="css-b02w0u-diff-container"
+              className="css-1p5fn6o-diff-container"
             >
               <tbody>
                 <tr>
                   <td
-                    className="css-1rwygp7-title-block"
+                    className="css-1gyvngn-title-block"
                     colSpan={4}
                   >
                     <pre
@@ -15959,7 +15959,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -15967,7 +15967,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       1
                     </pre>
@@ -16003,7 +16003,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16011,7 +16011,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       2
                     </pre>
@@ -16047,7 +16047,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16055,7 +16055,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       3
                     </pre>
@@ -16091,7 +16091,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16099,7 +16099,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       4
                     </pre>
@@ -16135,7 +16135,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16143,7 +16143,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       5
                     </pre>
@@ -16179,7 +16179,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16187,7 +16187,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       6
                     </pre>
@@ -16223,7 +16223,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16231,7 +16231,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       7
                     </pre>
@@ -16267,7 +16267,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16275,7 +16275,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       8
                     </pre>
@@ -16311,7 +16311,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16319,7 +16319,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       9
                     </pre>
@@ -16355,7 +16355,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16363,7 +16363,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       10
                     </pre>
@@ -16399,7 +16399,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16407,7 +16407,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       11
                     </pre>
@@ -16443,7 +16443,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16451,7 +16451,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       12
                     </pre>
@@ -16487,7 +16487,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16495,7 +16495,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       13
                     </pre>
@@ -16531,7 +16531,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16539,7 +16539,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       14
                     </pre>
@@ -16575,7 +16575,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16583,7 +16583,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       15
                     </pre>
@@ -16619,7 +16619,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16627,7 +16627,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       16
                     </pre>
@@ -16663,7 +16663,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16671,7 +16671,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       17
                     </pre>
@@ -16707,7 +16707,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16715,7 +16715,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       18
                     </pre>
@@ -16751,7 +16751,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -16759,7 +16759,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       19
                     </pre>
@@ -17256,13 +17256,13 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -17354,12 +17354,12 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="diffView"
           >
             <table
-              className="css-b02w0u-diff-container"
+              className="css-1p5fn6o-diff-container"
             >
               <tbody>
                 <tr>
                   <td
-                    className="css-1rwygp7-title-block"
+                    className="css-1gyvngn-title-block"
                     colSpan={4}
                   >
                     <pre
@@ -17377,7 +17377,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17385,7 +17385,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       1
                     </pre>
@@ -17421,7 +17421,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17429,7 +17429,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       2
                     </pre>
@@ -17465,7 +17465,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17473,7 +17473,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       3
                     </pre>
@@ -17509,7 +17509,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17517,7 +17517,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       4
                     </pre>
@@ -17553,7 +17553,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17561,7 +17561,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       5
                     </pre>
@@ -17597,7 +17597,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17605,7 +17605,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       6
                     </pre>
@@ -17641,7 +17641,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17649,7 +17649,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       7
                     </pre>
@@ -17685,7 +17685,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17693,7 +17693,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       8
                     </pre>
@@ -17729,7 +17729,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17737,7 +17737,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       9
                     </pre>
@@ -17773,7 +17773,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17781,7 +17781,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       10
                     </pre>
@@ -17817,7 +17817,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17825,7 +17825,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       11
                     </pre>
@@ -17861,7 +17861,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17869,7 +17869,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       12
                     </pre>
@@ -17905,7 +17905,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17913,7 +17913,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       13
                     </pre>
@@ -17949,7 +17949,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -17957,7 +17957,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       14
                     </pre>
@@ -17993,7 +17993,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -18001,7 +18001,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       15
                     </pre>
@@ -18037,7 +18037,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -18045,7 +18045,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       16
                     </pre>
@@ -18081,7 +18081,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -18089,7 +18089,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       17
                     </pre>
@@ -18125,7 +18125,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -18133,7 +18133,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       18
                     </pre>
@@ -18169,7 +18169,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={null}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     />
                   </td>
                   <td
@@ -18177,7 +18177,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                     onClick={[Function]}
                   >
                     <pre
-                      className="css-14p8zw1-line-number"
+                      className="css-iepx6s-line-number"
                     >
                       19
                     </pre>

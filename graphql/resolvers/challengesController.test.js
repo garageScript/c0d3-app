@@ -2,12 +2,12 @@
  * @jest-environment node
  */
 
-jest.mock('../validation/validateLessonId')
-jest.mock('../../graphql/queryResolvers/lessons')
-import { lessons } from '../../graphql/queryResolvers/lessons'
+jest.mock('../../helpers/validation/validateLessonId')
+jest.mock('./lessons')
+import { lessons } from './lessons'
 import lessonData from '../../__dummy__/lessonData'
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { validateLessonId } from '../validation/validateLessonId'
+import { validateLessonId } from '../../helpers/validation/validateLessonId'
 import { createChallenge, updateChallenge } from './challengesController'
 
 lessons.mockReturnValue(lessonData)

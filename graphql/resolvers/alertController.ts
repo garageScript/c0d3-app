@@ -4,9 +4,9 @@ import {
   AddAlertMutationVariables,
   RemoveAlertMutationVariables
 } from '../../graphql'
-import { alerts } from '../../graphql/queryResolvers/alerts'
+import { alerts } from './alerts'
 import prisma from '../../prisma'
-import { isAdminOrThrow } from '../isAdmin'
+import { isAdminOrThrow } from '../../helpers/isAdmin'
 
 export const addAlert = async (
   _parent: void,
