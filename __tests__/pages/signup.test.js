@@ -12,18 +12,22 @@ describe('Signup Page', () => {
   const fakeUsername = 'fakeusername'
   const fakeFirstName = 'fakefirstname'
   const fakeLastName = 'fakelastname'
+  const fakePassword = 'fakepassword'
+  const fakeUserId = 1
 
   const fillOutSignupForm = async getByTestId => {
     const emailField = getByTestId('email')
     const usernameField = getByTestId('username')
     const firstNameField = getByTestId('firstName')
     const lastNameField = getByTestId('lastName')
+    const passwordField = getByTestId('password')
 
     // the type event needs to be delayed so the Formik validations finish
     await userEvent.type(emailField, fakeEmail, { delay: 1 })
     await userEvent.type(usernameField, fakeUsername, { delay: 1 })
     await userEvent.type(firstNameField, fakeFirstName, { delay: 1 })
     await userEvent.type(lastNameField, fakeLastName, { delay: 1 })
+    await userEvent.type(passwordField, fakePassword, { delay: 1 })
   }
 
   test('Should use Layout component getLayout ', async () => {
@@ -48,7 +52,8 @@ describe('Signup Page', () => {
             firstName: fakeFirstName,
             lastName: fakeLastName,
             email: fakeEmail,
-            username: fakeUsername
+            username: fakeUsername,
+            password: fakePassword
           }
         },
         result: {
@@ -56,7 +61,8 @@ describe('Signup Page', () => {
             signup: {
               success: true,
               username: fakeUsername,
-              error: null
+              error: null,
+              id: fakeUserId
             }
           }
         }
@@ -99,7 +105,8 @@ describe('Signup Page', () => {
             firstName: fakeFirstName,
             lastName: fakeLastName,
             email: fakeEmail,
-            username: fakeUsername
+            username: fakeUsername,
+            password: fakePassword
           }
         },
         result: {
@@ -107,7 +114,8 @@ describe('Signup Page', () => {
             signup: {
               success: false,
               username: null,
-              error: null
+              error: null,
+              id: fakeUserId
             }
           }
         }

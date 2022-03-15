@@ -13,18 +13,8 @@ import { sendSignupEmail } from '../../helpers/mail'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
-export const login = async (
-  _parent: void,
-  arg: LoginMutationVariables,
-  ctx: Context
-) => {
-  const { req } = ctx
-  const { session } = req
+export const login = async (_parent: void, arg: LoginMutationVariables) => {
   const { username, password } = arg
-
-  if (!session) {
-    throw new Error('Session Error')
-  }
 
   let user = await prisma.user.findFirst({ where: { username } })
   // TODO change username column to be unique
@@ -51,7 +41,6 @@ export const login = async (
 
   const cliToken = { id: user.id, cliToken: user.cliToken }
 
-  session.userId = user.id
   return {
     success: true,
     username: user.username,
@@ -60,6 +49,7 @@ export const login = async (
   }
 }
 
+// Should be removed but kept in case it's necessary for other things
 export const logout = async (_parent: void, _: void, ctx: Context) => {
   const { req } = ctx
   const { session } = req
@@ -93,18 +83,14 @@ export const signup = async (
 ) => {
   const { req } = ctx
 
-  const { session } = req
-  const { firstName, lastName, username, email } = arg
-
-  if (!session) {
-    throw new Error('Session Error')
-  }
+  const { firstName, lastName, username, email, password } = arg
 
   const validEntry = await signupValidation.isValid({
     firstName,
     lastName,
     username,
-    email
+    email,
+    password
   })
 
   if (!validEntry) {
@@ -133,12 +119,14 @@ export const signup = async (
   }
 
   const name = `${firstName} ${lastName}`
+  const hash = await bcrypt.hash(password, 10)
 
   let newUser = await prisma.user.create({
     data: {
       name,
       username,
-      email
+      email,
+      password: hash
     }
   })
 

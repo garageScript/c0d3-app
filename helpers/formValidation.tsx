@@ -60,6 +60,10 @@ const signupValidation = Yup.object({
     .min(TEXT_MIN, `Must be at least ${TEXT_MIN} characters`)
     .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
     .trim('Leading and trailing value must be alphanumeric character')
+    .required('Required'),
+  password: Yup.string()
+    .min(PASSWORD_MIN, `Must be at least ${PASSWORD_MIN} characters`)
+    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
     .required('Required')
 })
 

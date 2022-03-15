@@ -115,6 +115,13 @@ const SignupForm: React.FC<SignupFormProps> = ({
               as={Input}
             />
 
+            <Field
+              name="password"
+              placeholder="Password"
+              data-testid="password"
+              as={Input}
+            />
+
             <button
               className={`btn ${
                 isLoading ? 'btn-dark' : 'btn-primary'

@@ -6,12 +6,14 @@ const SIGNUP_USER = gql`
     $lastName: String!
     $email: String!
     $username: String!
+    $password: String!
   ) {
     signup(
       firstName: $firstName
       lastName: $lastName
       email: $email
       username: $username
+      password: $password
     ) {
       success
       username

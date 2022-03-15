@@ -70,6 +70,13 @@ exports[`Signup Page Should render errors on fail 1`] = `
               placeholder="Last name"
               value="fakelastname"
             />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="password"
+              name="password"
+              placeholder="Password"
+              value="fakepassword"
+            />
             <button
               class="btn btn-primary btn-lg btn mb-3"
               data-testid="submit"
