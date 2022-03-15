@@ -95,7 +95,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                   class="d-lg-none"
                 >
                   <div
-                    class="text-center px-4"
+                    class="text-center py-2 px-4"
                   >
                     <button
                       class="dropdown-item"
@@ -105,7 +105,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                     </button>
                   </div>
                   <div
-                    class="text-center px-4"
+                    class="text-center py-2 px-4"
                   >
                     <button
                       class="dropdown-item"
@@ -274,7 +274,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                   class="d-lg-none"
                 >
                   <div
-                    class="text-center px-4"
+                    class="text-center py-2 px-4"
                   >
                     <button
                       class="dropdown-item"
@@ -284,7 +284,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                     </button>
                   </div>
                   <div
-                    class="text-center px-4"
+                    class="text-center py-2 px-4"
                   >
                     <button
                       class="dropdown-item"

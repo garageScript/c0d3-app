@@ -82,7 +82,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -93,7 +93,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
               </a>
             </div>
             <div
-              class="text-center px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -104,7 +104,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
               </a>
             </div>
             <div
-              class="text-center px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -284,7 +284,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               class="d-lg-none"
             >
               <div
-                class="text-center px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -295,7 +295,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 </a>
               </div>
               <div
-                class="text-center px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -306,7 +306,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 </a>
               </div>
               <div
-                class="text-center px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -504,7 +504,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               class="d-lg-none"
             >
               <div
-                class="text-center px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -515,7 +515,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 </a>
               </div>
               <div
-                class="text-center px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -526,7 +526,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 </a>
               </div>
               <div
-                class="text-center px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
