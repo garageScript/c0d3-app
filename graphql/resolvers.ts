@@ -1,15 +1,10 @@
-import {
-  login,
-  logout,
-  signup,
-  isTokenValid
-} from '../helpers/controllers/authController'
+import { login, logout, signup, isTokenValid } from './resolvers/authController'
 import {
   createChallenge,
   updateChallenge
-} from '../helpers/controllers/challengesController'
+} from './resolvers/challengesController'
 import { userInfo } from '../helpers/controllers/userInfoController'
-import { addAlert, removeAlert } from '../helpers/controllers/alertController'
+import { addAlert, removeAlert } from './resolvers/alertController'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
 import { addComment } from './resolvers/addComment'
 import {
@@ -24,11 +19,8 @@ import { lessons } from './resolvers/lessons'
 import { session } from './resolvers/session'
 import { allUsers } from './resolvers/allUsers'
 import { getLessonMentors } from './resolvers/getLessonMentors'
-import { changeAdminRights } from '../helpers/controllers/adminController'
-import {
-  createLesson,
-  updateLesson
-} from '../helpers/controllers/lessonsController'
+import { changeAdminRights } from './resolvers/adminController'
+import { createLesson, updateLesson } from './resolvers/lessonsController'
 import { getPreviousSubmissions } from './resolvers/getPreviousSubmissions'
 import { deleteComment } from './resolvers/deleteComment'
 import { addModule, modules, deleteModule } from './resolvers/moduleCrud'
