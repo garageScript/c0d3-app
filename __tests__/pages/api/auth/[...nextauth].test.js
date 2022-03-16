@@ -9,7 +9,7 @@ import nextAuthMiddleware from '../../../../pages/api/auth/[...nextauth]'
 import NextAuth from 'next-auth'
 
 describe('next-auth middleware', () => {
-  test('Should we initialized with the correct options', async () => {
+  test('Should be initialized with the correct options', async () => {
     const res = {
       setHeader: jest.fn(),
       json: jest.fn(),
