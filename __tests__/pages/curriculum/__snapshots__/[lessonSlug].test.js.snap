@@ -83,7 +83,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               class="d-lg-none"
             >
               <div
-                class="text-center text-xl-start py-2 px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -94,7 +94,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                 </a>
               </div>
               <div
-                class="text-center text-xl-start py-2 px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -105,7 +105,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                 </a>
               </div>
               <div
-                class="text-center text-xl-start py-2 px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -543,7 +543,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -554,7 +554,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -565,7 +565,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -745,7 +745,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               class="d-lg-none"
             >
               <div
-                class="text-center text-xl-start py-2 px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -756,7 +756,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 </a>
               </div>
               <div
-                class="text-center text-xl-start py-2 px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -767,7 +767,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 </a>
               </div>
               <div
-                class="text-center text-xl-start py-2 px-4"
+                class="text-center py-2 px-4"
               >
                 <a
                   class="dropdown-item"
@@ -1232,7 +1232,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1243,7 +1243,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1254,7 +1254,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
