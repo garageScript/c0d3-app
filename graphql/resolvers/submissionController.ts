@@ -9,10 +9,10 @@ import {
   SubmissionStatus
 } from '../../graphql'
 import prisma from '../../prisma'
-import { hasPassedLesson } from '../hasPassedLesson'
-import { updateSubmission } from '../updateSubmission'
-import { sendSubmissionNotification, IdType } from '../discordBot'
-import { decode } from '../encoding'
+import { hasPassedLesson } from '../../helpers/hasPassedLesson'
+import { updateSubmission } from '../../helpers/updateSubmission'
+import { sendSubmissionNotification, IdType } from '../../helpers/discordBot'
+import { decode } from '../../helpers/encoding'
 import * as Sentry from '@sentry/node'
 import { CliToken } from '../../@types/user'
 

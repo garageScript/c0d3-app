@@ -1,8 +1,8 @@
-jest.mock('../discordAuth')
+jest.mock('../../helpers/discordAuth')
 import { SubmissionStatus } from '../../graphql'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { userInfo } from './userInfoController'
-import { getDiscordUserInfo } from '../discordAuth'
+import { getDiscordUserInfo } from '../../helpers/discordAuth'
 
 const user = {
   id: '10',

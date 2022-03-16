@@ -4,10 +4,10 @@ import { nanoid } from 'nanoid'
 import { Context } from '../../@types/helpers'
 import { ReqPwResetMutation, ReqPwResetMutationVariables } from '../../graphql'
 import prisma from '../../prisma'
-import { decode, encode } from '../encoding'
-import findUser from '../findUser'
-import { passwordValidation } from '../formValidation'
-import { sendResetEmail } from '../mail'
+import { decode, encode } from '../../helpers/encoding'
+import findUser from '../../helpers/findUser'
+import { passwordValidation } from '../../helpers/formValidation'
+import { sendResetEmail } from '../../helpers/mail'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 

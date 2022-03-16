@@ -3,17 +3,17 @@ import {
   createChallenge,
   updateChallenge
 } from './resolvers/challengesController'
-import { userInfo } from '../helpers/controllers/userInfoController'
+import { userInfo } from './resolvers/userInfoController'
 import { addAlert, removeAlert } from './resolvers/alertController'
-import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
+import { reqPwReset, changePw } from './resolvers/passwordController'
 import { addComment } from './resolvers/addComment'
 import {
   createSubmission,
   acceptSubmission,
   rejectSubmission,
   submissions
-} from '../helpers/controllers/submissionController'
-import { setStar } from '../helpers/controllers/starsController'
+} from './resolvers/submissionController'
+import { setStar } from './resolvers/starsController'
 import { alerts } from './resolvers/alerts'
 import { lessons } from './resolvers/lessons'
 import { session } from './resolvers/session'
