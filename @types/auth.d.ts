@@ -1,7 +1,6 @@
 import { Submission } from '@prisma/client'
 import { DefaultSession } from 'next-auth'
 import { SessionContextValue } from 'next-auth/react'
-import { Session as SessionOri } from 'next-auth/core'
 
 type SignInReturn = {
   error: string
