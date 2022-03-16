@@ -1,14 +1,16 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import NextAuth from 'next-auth'
-// import DiscordProvider from 'next-auth/providers/discord'
+import { NextApiResponse } from 'next'
+import { LoggedRequest } from '../../../@types/helpers'
+import { Request, Response } from 'express'
+import { signIn, providers } from '../../../helpers/nextAuth'
 
-export default (req: NextApiRequest, res: NextApiResponse) =>
+export default (
+  req: LoggedRequest & Request,
+  res: NextApiResponse & Response
+) =>
   NextAuth(req, res, {
-    providers: [
-      // Commented to describe what provider it'll have.
-      // DiscordProvider({
-      //   clientId: process.env.DISCORD_CLIENT_ID,
-      //   clientSecret: process.env.DISCORD_CLIENT_SECRET
-      // })
-    ]
+    providers,
+    callbacks: {
+      signIn: signIn(req, res)
+    }
   })
