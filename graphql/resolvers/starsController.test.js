@@ -3,9 +3,9 @@
  */
 
 jest.mock('../../helpers/validation/validateLessonId')
-jest.mock('../discordBot')
+jest.mock('../../helpers/discordBot')
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { validateLessonId } from '../validation/validateLessonId'
+import { validateLessonId } from '../../helpers/validation/validateLessonId'
 import { setStar } from './starsController'
 
 describe('setStar resolver', () => {
