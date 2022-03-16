@@ -82,7 +82,7 @@ exports[`Alerts page Should remove alert 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -93,7 +93,7 @@ exports[`Alerts page Should remove alert 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -104,7 +104,7 @@ exports[`Alerts page Should remove alert 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -278,7 +278,7 @@ exports[`Alerts page Should remove alert 1`] = `
                           class="d-lg-none"
                         >
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -288,7 +288,7 @@ exports[`Alerts page Should remove alert 1`] = `
                             </button>
                           </div>
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -556,7 +556,7 @@ exports[`Alerts page Should remove alert 2`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -567,7 +567,7 @@ exports[`Alerts page Should remove alert 2`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -578,7 +578,7 @@ exports[`Alerts page Should remove alert 2`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -752,7 +752,7 @@ exports[`Alerts page Should remove alert 2`] = `
                           class="d-lg-none"
                         >
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -762,7 +762,7 @@ exports[`Alerts page Should remove alert 2`] = `
                             </button>
                           </div>
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
