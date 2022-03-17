@@ -5,11 +5,11 @@
 jest.mock('bcrypt')
 jest.mock('nanoid')
 jest.mock('nodemailer')
-jest.mock('../mail')
+jest.mock('../../helpers/mail')
 import { nanoid } from 'nanoid'
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { encode } from '../encoding'
-import { sendResetEmail } from '../mail'
+import { encode } from '../../helpers/encoding'
+import { sendResetEmail } from '../../helpers/mail'
 import { changePw, reqPwReset } from './passwordController'
 
 const user = {
