@@ -2,8 +2,8 @@
  * @jest-environment node
  */
 
-jest.mock('../../helpers/controllers/userInfoController')
-import { userInfo } from '../../helpers/controllers/userInfoController'
+jest.mock('./userInfoController')
+import { userInfo } from './userInfoController'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { session } from './session'
 
