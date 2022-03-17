@@ -1,5 +1,4 @@
 jest.mock('./discordAuth.ts')
-// jest.mock('./runMiddlewares')
 jest.mock('./middleware/user')
 jest.mock('./middleware/session')
 jest.mock('./middleware/logger')
