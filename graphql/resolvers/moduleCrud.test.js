@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { modules, addModule, deleteModule } from './moduleCrud'
+import { modules, addModule, updateModule, deleteModule } from './moduleCrud'
 
 const mockModules = [
   {
@@ -83,6 +83,53 @@ describe('It should add modules', () => {
   })
 })
 
+describe('It should update a module', () => {
+  test('should update a module ', async () => {
+    const module = {
+      lessonId: 1,
+      name: 'Math',
+      content: 'Teaches Math'
+    }
+
+    prismaMock.module.update.mockResolvedValue(module)
+
+    await expect(updateModule({}, module, ctx)).resolves.toEqual({
+      lessonId: 1,
+      name: 'Math',
+      content: 'Teaches Math'
+    })
+  })
+  test('It should check if user is signed in', () => {
+    expect(
+      updateModule(
+        {},
+        {
+          name: 'testing',
+          content: 'Using food',
+          lessonId: 1
+        },
+        {
+          req: {}
+        }
+      )
+    ).rejects.toThrowError()
+  })
+  test('it should check user id when adding', async () => {
+    await expect(
+      updateModule(
+        {},
+        {
+          content: 'testing',
+          name: 'Using functions to make pie',
+          lessonId: 1
+        },
+        {
+          req: { user: { isAdmin: true } }
+        }
+      )
+    ).rejects.toThrow(new Error('No User'))
+  })
+})
 describe('It should test delete', () => {
   test('it should delete module', () => {
     prismaMock.module.delete.mockResolvedValue({ success: true })
