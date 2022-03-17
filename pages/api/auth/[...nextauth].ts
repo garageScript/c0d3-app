@@ -12,5 +12,6 @@ export default (
     providers,
     callbacks: {
       signIn: signIn(req, res)
-    }
+    },
+    secret: process.env.SESSION_SECRET
   })
