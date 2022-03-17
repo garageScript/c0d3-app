@@ -2,14 +2,14 @@
  * @jest-environment node
  */
 
-jest.mock('../discordBot.ts')
-jest.mock('../hasPassedLesson')
-jest.mock('../updateSubmission')
+jest.mock('../../helpers/discordBot.ts')
+jest.mock('../../helpers/hasPassedLesson')
+jest.mock('../../helpers/updateSubmission')
 jest.mock('@sentry/node')
 import { SubmissionStatus } from '../../graphql'
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { hasPassedLesson } from '../hasPassedLesson'
-import { updateSubmission } from '../updateSubmission'
+import { hasPassedLesson } from '../../helpers/hasPassedLesson'
+import { updateSubmission } from '../../helpers/updateSubmission'
 import {
   acceptSubmission,
   createSubmission,

@@ -10974,10 +10974,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^12.3.5:
-  version "12.3.5"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-12.3.5.tgz#8048ce048c3cac12f57200a06344a54dc91c8fa9"
-  integrity sha512-oOH36RUs1It7b9U/C7Nl/a0sLfoIBcMB8ramiB3nuJ6brBqzsWiUAFSR5DQ3yyP/OR7XKMpijtgKl2DV1lQ3lA==
+lint-staged@^12.3.6:
+  version "12.3.6"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-12.3.6.tgz#7b999ebe041c07f241537a17c49969027b4d26f0"
+  integrity sha512-tVNyl/HsAnplKh4oaoRNzyZLm0PE/6VaBUXvd/gA9zhYCC/+ivZwiwpoT6jOxcLzuIOjP19wW+mfOi7/Bw4c1A==
   dependencies:
     cli-truncate "^3.1.0"
     colorette "^2.0.16"
@@ -10989,6 +10989,7 @@ lint-staged@^12.3.5:
     micromatch "^4.0.4"
     normalize-path "^3.0.0"
     object-inspect "^1.12.0"
+    pidtree "^0.5.0"
     string-argv "^0.3.1"
     supports-color "^9.2.1"
     yaml "^1.10.2"
@@ -12205,10 +12206,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-next-auth@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-4.2.1.tgz#042e4858d9f67b4f702d3a55bae0d2f04db3cac3"
-  integrity sha512-XDtt7nqevkNf4EJ2zKAKkI+MFsURf11kx11vPwxrBYA1MHeqWwaWbGOUOI2ekNTvfAg4nTEJJUH3LV2cLrH3Tg==
+next-auth@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-4.3.0.tgz#93274254f9e6263c3c3edf7169a92fb13a700619"
+  integrity sha512-QcXY0EkIoCHDJ/G5n5H1wG7c/E5WlnyTsA+N4un9ys+RF26Vv/kzIuzjSrVQ/no0PkIwQti6E+ZjpqXJCBykTA==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@panva/hkdf" "^1.0.1"
@@ -13069,6 +13070,11 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3, picomatch@^2.3.0:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
   integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
 
+pidtree@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/pidtree/-/pidtree-0.5.0.tgz#ad5fbc1de78b8a5f99d6fbdd4f6e4eee21d1aca1"
+  integrity sha512-9nxspIM7OpZuhBxPg73Zvyq7j1QMPMPsGKTqRc2XOaFQauDvoNz9fM1Wdkjmeo7l9GXOZiRs97sPkuayl39wjA==
+
 pify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
@@ -13268,10 +13274,10 @@ prettier-linter-helpers@^1.0.0:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
   integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
 
-prettier@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
-  integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
+prettier@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.0.tgz#12f8f504c4d8ddb76475f441337542fa799207d4"
+  integrity sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==
 
 pretty-error@^2.1.1:
   version "2.1.2"
