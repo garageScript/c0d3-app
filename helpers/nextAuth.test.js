@@ -2,10 +2,8 @@ jest.mock('./discordAuth.ts')
 jest.mock('./middleware/user')
 jest.mock('./middleware/session')
 jest.mock('./middleware/logger')
-import { waitFor } from '@testing-library/react'
 import { updateRefreshandAccessTokens } from './discordAuth'
 import { signIn, getUserSession } from './nextAuth'
-import * as NextAuthHelper from './nextAuth'
 import loggingMiddleware from './middleware/logger'
 import sessionMiddleware from './middleware/session'
 import userMiddleware from './middleware/user'
