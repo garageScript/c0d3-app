@@ -3,10 +3,11 @@ jest.mock('./middleware/user')
 jest.mock('./middleware/session')
 jest.mock('./middleware/logger')
 import { updateRefreshandAccessTokens } from './discordAuth'
-import { signIn, getUserSession } from './nextAuth'
+import { signIn } from './nextAuth'
 import loggingMiddleware from './middleware/logger'
 import sessionMiddleware from './middleware/session'
 import userMiddleware from './middleware/user'
+import { getUserSession } from './getUserSession'
 
 const res = {
   setHeader: jest.fn(),
@@ -94,20 +95,23 @@ describe('Signin callback', () => {
         next()
       })
 
-      const userId = await getUserSession(req, res)
+      const c0d3User = await getUserSession(req, res)
 
-      expect(userId).toBe(123)
+      expect(c0d3User).toStrictEqual({
+        id: 123,
+        username: 'fakeUser'
+      })
     })
 
     test('Should return null in getUserSession if user not found', async () => {
       userMiddleware.mockImplementation((req, _res, next) => {
-        req.user = {}
+        req.user = null
         next()
       })
 
-      const userId = await getUserSession(req, res)
+      const c0d3User = await getUserSession(req, res)
 
-      expect(userId).toBe(null)
+      expect(c0d3User).toBe(null)
     })
   })
 })
