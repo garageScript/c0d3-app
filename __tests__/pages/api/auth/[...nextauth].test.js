@@ -23,7 +23,8 @@ describe('next-auth middleware', () => {
       providers,
       callbacks: {
         signIn: signIn(req, res)
-      }
+      },
+      secret: process.env.SESSION_SECRET
     }
 
     res.status.mockReturnValue(res)
