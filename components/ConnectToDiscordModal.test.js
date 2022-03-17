@@ -7,6 +7,8 @@ import { signIn } from 'next-auth/react'
 
 describe('ConnectToDiscordModal component', () => {
   it('should call close modal function if user opts out of connecting to Discord', async () => {
+    expect.assertions(1)
+
     let res = ''
     const expectedResult = 'potatus maximus'
     render(
@@ -16,6 +18,8 @@ describe('ConnectToDiscordModal component', () => {
     expect(res).toEqual(expectedResult)
   })
   it('should not show modal if user opts out of connecting to Discord', async () => {
+    expect.assertions(1)
+
     const mockProps = {
       show: true,
       close: jest.fn()
@@ -26,6 +30,8 @@ describe('ConnectToDiscordModal component', () => {
   })
 
   it('should call signIn function if user opts in of connecting to Discord', async () => {
+    expect.assertions(1)
+
     const mockProps = {
       show: true,
       close: jest.fn()

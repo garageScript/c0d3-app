@@ -10,6 +10,8 @@ import NextAuth from 'next-auth'
 
 describe('next-auth middleware', () => {
   test('Should be initialized with the correct options', async () => {
+    expect.assertions(1)
+
     const res = {
       setHeader: jest.fn(),
       json: jest.fn(),
