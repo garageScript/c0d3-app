@@ -23,7 +23,12 @@ import { changeAdminRights } from './resolvers/adminController'
 import { createLesson, updateLesson } from './resolvers/lessonsController'
 import { getPreviousSubmissions } from './resolvers/getPreviousSubmissions'
 import { deleteComment } from './resolvers/deleteComment'
-import { addModule, modules, deleteModule } from './resolvers/moduleCrud'
+import {
+  addModule,
+  modules,
+  updateModule,
+  deleteModule
+} from './resolvers/moduleCrud'
 import {
   exercises,
   addExercise,
@@ -66,6 +71,7 @@ export default {
     createChallenge,
     updateChallenge,
     addModule,
+    updateModule,
     deleteModule,
     addComment,
     deleteComment
