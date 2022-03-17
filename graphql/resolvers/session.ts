@@ -1,6 +1,6 @@
 import type { UserLesson } from '.prisma/client'
 import { Context } from '../../@types/helpers'
-import { userInfo } from '../../helpers/controllers/userInfoController'
+import { userInfo } from './userInfoController'
 import prisma from '../../prisma'
 
 interface lessonMentorMapType {
