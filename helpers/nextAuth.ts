@@ -8,8 +8,8 @@ import { getUserSession } from './getUserSession'
 
 export const providers = [
   DiscordProvider({
-    clientId: process.env.DISCORD_CLIENT_ID,
-    clientSecret: process.env.DISCORD_CLIENT_SECRET
+    clientId: process.env.DISCORD_KEY,
+    clientSecret: process.env.DISCORD_SECRET
   })
 ]
 
