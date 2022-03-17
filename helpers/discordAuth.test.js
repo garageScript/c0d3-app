@@ -2,16 +2,8 @@ jest.mock('node-fetch')
 jest.mock('prisma')
 import fetch from 'node-fetch'
 import prisma from '../prisma'
-import { URLSearchParams } from 'url'
 
-import {
-  client_id,
-  client_secret,
-  redirect_uri,
-  setTokenFromAuthCode,
-  getDiscordUserInfo
-} from './discordAuth'
-import { executionAsyncId } from 'async_hooks'
+import { getDiscordUserInfo } from './discordAuth'
 
 const emptyUserInfoResult = {
   userId: '',
@@ -19,54 +11,6 @@ const emptyUserInfoResult = {
   avatarUrl: '',
   refreshToken: ''
 }
-
-describe('setTokenFromAuthCode function', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-    prisma.user.update = jest.fn()
-  })
-
-  global.Date.now = jest.fn(() => 200)
-
-  it('should call fetch once and update user in database', async () => {
-    fetch.mockResolvedValue({
-      json: () => ({
-        access_token: '',
-        refresh_token: '',
-        expires_in: 0
-      })
-    })
-    await setTokenFromAuthCode(123, 'fakeAuthCode')
-
-    expect(fetch.mock.calls[0][0]).toBe(
-      'https://discordapp.com/api/oauth2/token'
-    )
-    expect(fetch.mock.calls[0][1]).toEqual({
-      method: 'POST',
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-      },
-      body: new URLSearchParams({
-        grant_type: 'authorization_code',
-        client_id,
-        client_secret,
-        code: 'fakeAuthCode',
-        redirect_uri,
-        scope: 'email guilds.join gdm.join identify'
-      })
-    })
-    expect(prisma.user.update.mock.calls[0][0]).toEqual({
-      where: {
-        id: 123
-      },
-      data: {
-        discordRefreshToken: '',
-        discordAccessToken: '',
-        discordAccessTokenExpires: new Date(200)
-      }
-    })
-  })
-})
 
 describe('getDiscordUserInfo function', () => {
   beforeEach(() => {

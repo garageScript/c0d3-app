@@ -9,10 +9,7 @@ import loggingMiddleware from '../../../helpers/middleware/logger'
 import sessionMiddleware from '../../../helpers/middleware/session'
 import userMiddleware from '../../../helpers/middleware/user'
 
-import {
-  getDiscordUserInfo,
-  setTokenFromAuthCode
-} from '../../../helpers/discordAuth'
+import { getDiscordUserInfo } from '../../../helpers/discordAuth'
 
 import {
   ErrorCode,
@@ -41,9 +38,7 @@ const userNotLoggedInErrorProps = {
 
 const discordErrorProps = {
   props: {
-    error: '',
-    errorCode: ErrorCode.DISCORD_ERROR,
-    username: 'fakeUser'
+    errorCode: ErrorCode.DISCORD_ERROR
   }
 }
 
@@ -58,8 +53,7 @@ describe('getServerSideProps function', () => {
   it('should return error if user not logged in', async () => {
     userMiddleware.mockImplementation(defaultMiddleware)
     const response = await getServerSideProps({
-      req: {},
-      query: { code: 'fakeAuthCode' }
+      req: {}
     })
     expect(response).toEqual(userNotLoggedInErrorProps)
   })
@@ -71,9 +65,6 @@ describe('getServerSideProps function', () => {
         username: 'fakeUser'
       }
       next()
-    })
-    setTokenFromAuthCode.mockResolvedValue({
-      id: 123
     })
     getDiscordUserInfo.mockResolvedValue({})
     const response = await getServerSideProps({
@@ -97,29 +88,6 @@ describe('getServerSideProps function', () => {
     expect(response).toEqual(discordErrorProps)
   })
 
-  it('should return error if setTokenFromAuthCode function throws error', async () => {
-    userMiddleware.mockImplementation((req, _res, next) => {
-      req.user = {
-        id: 123,
-        username: 'fakeUser'
-      }
-      next()
-    })
-    setTokenFromAuthCode.mockRejectedValue(
-      new Error('failed to get user from auth code')
-    )
-    const response = await getServerSideProps({
-      req: {},
-      query: { code: 'badAuthCode' }
-    })
-    expect(response).toEqual({
-      props: {
-        ...discordErrorProps.props,
-        error: 'failed to get user from auth code'
-      }
-    })
-  })
-
   it('should return username and userInfo if auth code is valid and userInfo is successfully retrieved', async () => {
     userMiddleware.mockImplementation((req, _res, next) => {
       req.user = {
@@ -128,15 +96,10 @@ describe('getServerSideProps function', () => {
       }
       next()
     })
-    setTokenFromAuthCode.mockResolvedValue({
-      id: 123
-    })
     getDiscordUserInfo.mockResolvedValue(mockDiscordUserInfo)
     const response = await getServerSideProps({
-      req: {},
-      query: { code: 'fakeAuthCode' }
+      req: {}
     })
-    expect(setTokenFromAuthCode).toBeCalledWith(123, 'fakeAuthCode')
     expect(response).toEqual(successfulAuthFlowProps)
   })
 })

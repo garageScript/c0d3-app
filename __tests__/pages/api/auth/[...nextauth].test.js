@@ -3,10 +3,15 @@
  */
 
 jest.mock('next-auth')
-import nextAuthAPI from '../../../../pages/api/auth/[...nextauth]'
+jest.mock('../../../../helpers/nextAuth.ts')
+import { providers, signIn } from '../../../../helpers/nextAuth'
+import nextAuthMiddleware from '../../../../pages/api/auth/[...nextauth]'
+import NextAuth from 'next-auth'
 
-describe('next-auth API', () => {
-  test('should be a dummy test', async () => {
+describe('next-auth middleware', () => {
+  test('Should be initialized with the correct options', async () => {
+    expect.assertions(1)
+
     const res = {
       setHeader: jest.fn(),
       json: jest.fn(),
@@ -14,10 +19,17 @@ describe('next-auth API', () => {
     }
     const req = {}
 
+    const options = {
+      providers,
+      callbacks: {
+        signIn: signIn(req, res)
+      },
+      secret: process.env.SESSION_SECRET
+    }
+
     res.status.mockReturnValue(res)
+    nextAuthMiddleware(req, res)
 
-    await nextAuthAPI(req, res)
-
-    expect('dummy').toEqual('dummy')
+    expect(NextAuth).toBeCalledWith(req, res, options)
   })
 })

@@ -35,8 +35,9 @@ export type DiscordUserInfo = {
   refreshToken: string
 }
 
-const updateRefreshandAccessTokens = (
+export const updateRefreshandAccessTokens = (
   userId: number,
+  discordId: string,
   refreshToken: string,
   accessToken: string,
   accessTokenExpiresAt: Date
@@ -48,41 +49,10 @@ const updateRefreshandAccessTokens = (
     data: {
       discordRefreshToken: refreshToken,
       discordAccessToken: accessToken,
-      discordAccessTokenExpires: accessTokenExpiresAt
+      discordAccessTokenExpires: accessTokenExpiresAt,
+      discordId
     }
   })
-}
-
-export const setTokenFromAuthCode = (
-  userId: number,
-  code: string
-): Promise<User> => {
-  return fetch(`${discordAPI}/oauth2/token`, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-    },
-    body: new URLSearchParams({
-      grant_type: 'authorization_code',
-      client_id,
-      client_secret,
-      code,
-      redirect_uri,
-      scope: 'email guilds.join gdm.join identify'
-    })
-  })
-    .then(r => r.json())
-    .then(({ refresh_token, access_token, expires_in }) => {
-      const accessTokenExpiresAt = new Date(
-        Date.now() + (expires_in * 1000 || 0)
-      )
-      return updateRefreshandAccessTokens(
-        userId,
-        refresh_token,
-        access_token,
-        accessTokenExpiresAt
-      )
-    })
 }
 
 const getTokenFromRefreshToken = (
@@ -149,6 +119,7 @@ export const getDiscordUserInfo = async (
       // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid tokens
       await updateRefreshandAccessTokens(
         user.id,
+        user.discordId!,
         refreshToken,
         accessToken,
         accessTokenExpiresAt
