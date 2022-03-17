@@ -6,18 +6,15 @@ import Card from '../../components/Card'
 import NavLink from '../../components/NavLink'
 import { NextApiResponse } from 'next'
 import { Request, Response } from 'express'
+import { LoggedRequest } from '../../@types/helpers'
+import Link from 'next/link'
+import Image from 'next/image'
+import { DiscordUserInfo, getDiscordUserInfo } from '../../helpers/discordAuth'
+import { User } from '@prisma/client'
 import loggingMiddleware from '../../helpers/middleware/logger'
 import sessionMiddleware from '../../helpers/middleware/session'
 import userMiddleware from '../../helpers/middleware/user'
-import { LoggedRequest } from '../../@types/helpers'
 import runMiddlewares from '../../helpers/runMiddlewares'
-import Link from 'next/link'
-import Image from 'next/image'
-import {
-  DiscordUserInfo,
-  setTokenFromAuthCode,
-  getDiscordUserInfo
-} from '../../helpers/discordAuth'
 
 type ConnectToDiscordSuccessProps = {
   errorCode: number
@@ -35,10 +32,6 @@ type DiscordErrorPageProps = {
 
 type Error = {
   message: string
-}
-
-type Query = {
-  code: string
 }
 
 export enum ErrorCode {
@@ -169,58 +162,32 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   )
 }
 
-// getServerSideProps to get query param (authCode) using /success route as callback
-// instead of a middleware-modified query resolver at /api/auth/discord/callback
-// because NextJS throws an error when trying to res.redirect from that path
-
 export const getServerSideProps = async ({
   req,
-  res,
-  query
+  res
 }: {
   // NextJS request and response types are extended with Express request and response types
   // request type is initially NextApiRequest until it goes through all the middlewares
   req: LoggedRequest & Request
   res: NextApiResponse & Response
-  query?: Query
 }) => {
-  return new Promise(resolve => {
-    const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
-
+  const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
+  const session = await new Promise<User | null>(resolve => {
     runMiddlewares(middlewares, req, res, async () => {
-      if (!req.user?.id) {
-        return resolve({
-          props: {
-            errorCode: ErrorCode.USER_NOT_LOGGED_IN
-          }
-        })
+      if (req.user) {
+        return resolve(req.user)
       }
-      try {
-        const { code } = query || {}
-        const user = await setTokenFromAuthCode(req.user.id, code as string)
-        const userInfo = await getDiscordUserInfo(user)
-        if (!userInfo.username) {
-          return resolve({
-            props: {
-              error: '',
-              errorCode: ErrorCode.DISCORD_ERROR,
-              username: req.user.username
-            }
-          })
-        }
-        resolve({ props: { userInfo, username: req.user.username } })
-      } catch (error) {
-        const errorMessage = (error as Error).message
-        resolve({
-          props: {
-            error: errorMessage,
-            errorCode: ErrorCode.DISCORD_ERROR, // auth code expired
-            username: req.user.username
-          }
-        })
-      }
+      return resolve(null)
     })
   })
+
+  if (!session) return { props: { errorCode: ErrorCode.USER_NOT_LOGGED_IN } }
+
+  const userInfo = await getDiscordUserInfo(session)
+
+  if (!userInfo.userId) return { props: { errorCode: ErrorCode.DISCORD_ERROR } }
+
+  return { props: { userInfo, username: session.username } }
 }
 
 ConnectToDiscordSuccess.getLayout = getLayout
