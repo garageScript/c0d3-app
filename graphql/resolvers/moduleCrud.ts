@@ -1,4 +1,8 @@
-import type { MutationDeleteModuleArgs, MutationAddModuleArgs } from '..'
+import type {
+  MutationDeleteModuleArgs,
+  MutationAddModuleArgs,
+  MutationUpdateModuleArgs
+} from '..'
 import prisma from '../../prisma'
 import { Context } from '../../@types/helpers'
 import { isAdminOrThrow } from '../../helpers/isAdmin'
@@ -25,6 +29,25 @@ export const addModule = async (
   if (!authorId) throw new Error('No User')
   return prisma.module.create({
     data: { authorId, content, lessonId, name },
+    include: {
+      author: true,
+      lesson: true
+    }
+  })
+}
+
+export const updateModule = async (
+  _parent: void,
+  args: MutationUpdateModuleArgs,
+  { req }: Context
+): Promise<Module> => {
+  isAdminOrThrow(req)
+  const authorId = req.user?.id
+  if (!authorId) throw new Error('No User')
+  const { id, lessonId, name, content } = args
+  return prisma.module.update({
+    where: { id },
+    data: { lessonId, name, content },
     include: {
       author: true,
       lesson: true
