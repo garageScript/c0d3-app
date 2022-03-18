@@ -26,7 +26,11 @@ export const addExercise = async (
   if (!authorId) throw new Error('No user')
   const { testStr, description, answer, moduleId, explanation } = args
   return prisma.exercise.create({
-    data: { authorId, testStr, description, answer, moduleId, explanation }
+    data: { authorId, testStr, description, answer, moduleId, explanation },
+    include: {
+      author: true,
+      module: true
+    }
   })
 }
 
@@ -41,6 +45,10 @@ export const updateExercise = async (
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
+    },
+    include: {
+      author: true,
+      module: true
     }
   })
   if (!isAdmin(req) && exercise?.authorId !== authorId) {
@@ -50,7 +58,11 @@ export const updateExercise = async (
     where: {
       id
     },
-    data: { explanation, testStr, description, answer, moduleId }
+    data: { explanation, testStr, description, answer, moduleId },
+    include: {
+      author: true,
+      module: true
+    }
   })
 }
 
@@ -70,5 +82,11 @@ export const deleteExercise = async (
   if (!isAdmin(req) && exercise?.authorId !== authorId) {
     throw new Error('Not authorized to delete')
   }
-  return prisma.exercise.delete({ where: { id } })
+  return prisma.exercise.delete({
+    where: { id },
+    include: {
+      author: true,
+      module: true
+    }
+  })
 }
