@@ -133,6 +133,7 @@ export type Mutation = {
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateExercise: Exercise
   updateLesson: Array<Lesson>
+  updateModule: Module
 }
 
 export type MutationAcceptSubmissionArgs = {
@@ -276,6 +277,13 @@ export type MutationUpdateLessonArgs = {
   slug: Scalars['String']
   title: Scalars['String']
   videoUrl?: InputMaybe<Scalars['String']>
+}
+
+export type MutationUpdateModuleArgs = {
+  content: Scalars['String']
+  id: Scalars['Int']
+  lessonId: Scalars['Int']
+  name: Scalars['String']
 }
 
 export type Query = {
@@ -1471,6 +1479,15 @@ export type MutationResolvers<
     RequireFields<
       MutationUpdateLessonArgs,
       'description' | 'id' | 'order' | 'slug' | 'title'
+    >
+  >
+  updateModule?: Resolver<
+    ResolversTypes['Module'],
+    ParentType,
+    ContextType,
+    RequireFields<
+      MutationUpdateModuleArgs,
+      'content' | 'id' | 'lessonId' | 'name'
     >
   >
 }>
@@ -4479,6 +4496,7 @@ export type MutationKeySpecifier = (
   | 'updateChallenge'
   | 'updateExercise'
   | 'updateLesson'
+  | 'updateModule'
   | MutationKeySpecifier
 )[]
 export type MutationFieldPolicy = {
@@ -4505,6 +4523,7 @@ export type MutationFieldPolicy = {
   updateChallenge?: FieldPolicy<any> | FieldReadFunction<any>
   updateExercise?: FieldPolicy<any> | FieldReadFunction<any>
   updateLesson?: FieldPolicy<any> | FieldReadFunction<any>
+  updateModule?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type QueryKeySpecifier = (
   | 'alerts'
