@@ -57,6 +57,12 @@ export default gql`
     ): Comment
     deleteComment(id: Int!): Comment
     addModule(lessonId: Int!, name: String!, content: String!): Module!
+    updateModule(
+      id: Int!
+      lessonId: Int!
+      name: String!
+      content: String!
+    ): Module!
     deleteModule(id: Int!): Module!
     addExercise(
       moduleId: Int!
