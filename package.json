@@ -73,9 +73,9 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
     "@graphql-codegen/typescript": "^2.4.5",
-    "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.14",
-    "@graphql-codegen/typescript-operations": "^2.3.4",
-    "@graphql-codegen/typescript-react-apollo": "^3.2.10",
+    "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.15",
+    "@graphql-codegen/typescript-operations": "^2.3.5",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.11",
     "@graphql-codegen/typescript-resolvers": "^2.6.1",
     "@jest/types": "^27.5.0",
     "@next/eslint-plugin-next": "^12.1.0",
