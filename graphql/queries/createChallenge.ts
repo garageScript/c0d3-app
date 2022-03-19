@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+import LESSON_AND_CHALLENGE_INFO from './fragments/lessonAndChallengeFragment'
 
 const CREATE_CHALLENGE = gql`
   mutation createChallenge(
@@ -13,23 +14,10 @@ const CREATE_CHALLENGE = gql`
       description: $description
       title: $title
     ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
-      }
+      ...lessonAndChallengeInfo
     }
   }
+  ${LESSON_AND_CHALLENGE_INFO}
 `
 
 export default CREATE_CHALLENGE

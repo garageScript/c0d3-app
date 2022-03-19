@@ -1,25 +1,14 @@
 import { gql } from '@apollo/client'
+import LESSON_AND_CHALLENGE_INFO from './fragments/lessonAndChallengeFragment'
 
 const GET_LESSONS = gql`
   query getLessons {
     lessons {
-      id
-      title
+      ...lessonAndChallengeInfo
       slug
-      description
-      docUrl
-      githubUrl
-      videoUrl
-      order
-      challenges {
-        id
-        description
-        title
-        order
-      }
-      chatUrl
     }
   }
+  ${LESSON_AND_CHALLENGE_INFO}
 `
 
 export default GET_LESSONS
