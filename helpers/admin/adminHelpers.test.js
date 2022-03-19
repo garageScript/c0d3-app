@@ -66,20 +66,22 @@ describe('adminHelper function', () => {
           type: 'DROP_DOWN',
           value: [{ title: 'dragon' }]
         },
-        { title: 'order', value: '5' }
+        { title: 'order', value: '5' },
+        { title: 'lessonId', value: '1' }
       ],
       { pop: 'open' }
     )
     expect(res).toEqual({
-      variables: { deem: 'dragon', id: 4, order: 5, pop: 'open' }
+      variables: { deem: 'dragon', id: 4, order: 5, pop: 'open', lessonId: 1 }
     })
 
     const res2 = adminHelpers.makeGraphqlVariable([
       { title: 'order', value: '' },
-      { title: 'id', value: '' }
+      { title: 'id', value: '' },
+      { title: 'lessonId', value: '' }
     ])
     expect(res2).toEqual({
-      variables: { order: undefined, id: NaN }
+      variables: { order: undefined, id: NaN, lessonId: NaN }
     })
   })
 
