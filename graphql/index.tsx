@@ -457,7 +457,13 @@ export type AddModuleMutationVariables = Exact<{
 
 export type AddModuleMutation = {
   __typename?: 'Mutation'
-  addModule: { __typename?: 'Module'; id: number }
+  addModule: {
+    __typename?: 'Module'
+    id: number
+    name: string
+    content: string
+    lesson: { __typename?: 'Lesson'; title: string }
+  }
 }
 
 export type UsersQueryVariables = Exact<{ [key: string]: never }>
@@ -576,6 +582,21 @@ export type DeleteCommentMutationVariables = Exact<{
 export type DeleteCommentMutation = {
   __typename?: 'Mutation'
   deleteComment?: { __typename?: 'Comment'; id: number } | null
+}
+
+export type DeleteModuleMutationVariables = Exact<{
+  id: Scalars['Int']
+}>
+
+export type DeleteModuleMutation = {
+  __typename?: 'Mutation'
+  deleteModule: {
+    __typename?: 'Module'
+    id: number
+    name: string
+    content: string
+    lesson: { __typename?: 'Lesson'; title: string }
+  }
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
@@ -968,6 +989,24 @@ export type UpdateLessonMutation = {
       order: number
     }>
   }>
+}
+
+export type UpdateModuleMutationVariables = Exact<{
+  id: Scalars['Int']
+  lessonId: Scalars['Int']
+  name: Scalars['String']
+  content: Scalars['String']
+}>
+
+export type UpdateModuleMutation = {
+  __typename?: 'Mutation'
+  updateModule: {
+    __typename?: 'Module'
+    id: number
+    name: string
+    content: string
+    lesson: { __typename?: 'Lesson'; title: string }
+  }
 }
 
 export type ChangePwMutationVariables = Exact<{
@@ -1967,6 +2006,11 @@ export const AddModuleDocument = gql`
   mutation addModule($content: String!, $lessonId: Int!, $name: String!) {
     addModule(content: $content, lessonId: $lessonId, name: $name) {
       id
+      name
+      content
+      lesson {
+        title
+      }
     }
   }
 `
@@ -2608,6 +2652,92 @@ export type DeleteCommentMutationResult =
 export type DeleteCommentMutationOptions = Apollo.BaseMutationOptions<
   DeleteCommentMutation,
   DeleteCommentMutationVariables
+>
+export const DeleteModuleDocument = gql`
+  mutation deleteModule($id: Int!) {
+    deleteModule(id: $id) {
+      id
+      lesson {
+        title
+      }
+      name
+      content
+    }
+  }
+`
+export type DeleteModuleMutationFn = Apollo.MutationFunction<
+  DeleteModuleMutation,
+  DeleteModuleMutationVariables
+>
+export type DeleteModuleProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    DeleteModuleMutation,
+    DeleteModuleMutationVariables
+  >
+} & TChildProps
+export function withDeleteModule<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    DeleteModuleMutation,
+    DeleteModuleMutationVariables,
+    DeleteModuleProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    DeleteModuleMutation,
+    DeleteModuleMutationVariables,
+    DeleteModuleProps<TChildProps, TDataName>
+  >(DeleteModuleDocument, {
+    alias: 'deleteModule',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useDeleteModuleMutation__
+ *
+ * To run a mutation, you first call `useDeleteModuleMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteModuleMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteModuleMutation, { data, loading, error }] = useDeleteModuleMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteModuleMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteModuleMutation,
+    DeleteModuleMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    DeleteModuleMutation,
+    DeleteModuleMutationVariables
+  >(DeleteModuleDocument, options)
+}
+export type DeleteModuleMutationHookResult = ReturnType<
+  typeof useDeleteModuleMutation
+>
+export type DeleteModuleMutationResult =
+  Apollo.MutationResult<DeleteModuleMutation>
+export type DeleteModuleMutationOptions = Apollo.BaseMutationOptions<
+  DeleteModuleMutation,
+  DeleteModuleMutationVariables
 >
 export const GetAppDocument = gql`
   query getApp {
@@ -4123,6 +4253,100 @@ export type UpdateLessonMutationResult =
 export type UpdateLessonMutationOptions = Apollo.BaseMutationOptions<
   UpdateLessonMutation,
   UpdateLessonMutationVariables
+>
+export const UpdateModuleDocument = gql`
+  mutation updateModule(
+    $id: Int!
+    $lessonId: Int!
+    $name: String!
+    $content: String!
+  ) {
+    updateModule(id: $id, lessonId: $lessonId, name: $name, content: $content) {
+      id
+      name
+      content
+      lesson {
+        title
+      }
+    }
+  }
+`
+export type UpdateModuleMutationFn = Apollo.MutationFunction<
+  UpdateModuleMutation,
+  UpdateModuleMutationVariables
+>
+export type UpdateModuleProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    UpdateModuleMutation,
+    UpdateModuleMutationVariables
+  >
+} & TChildProps
+export function withUpdateModule<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UpdateModuleMutation,
+    UpdateModuleMutationVariables,
+    UpdateModuleProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UpdateModuleMutation,
+    UpdateModuleMutationVariables,
+    UpdateModuleProps<TChildProps, TDataName>
+  >(UpdateModuleDocument, {
+    alias: 'updateModule',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUpdateModuleMutation__
+ *
+ * To run a mutation, you first call `useUpdateModuleMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateModuleMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateModuleMutation, { data, loading, error }] = useUpdateModuleMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      lessonId: // value for 'lessonId'
+ *      name: // value for 'name'
+ *      content: // value for 'content'
+ *   },
+ * });
+ */
+export function useUpdateModuleMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UpdateModuleMutation,
+    UpdateModuleMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    UpdateModuleMutation,
+    UpdateModuleMutationVariables
+  >(UpdateModuleDocument, options)
+}
+export type UpdateModuleMutationHookResult = ReturnType<
+  typeof useUpdateModuleMutation
+>
+export type UpdateModuleMutationResult =
+  Apollo.MutationResult<UpdateModuleMutation>
+export type UpdateModuleMutationOptions = Apollo.BaseMutationOptions<
+  UpdateModuleMutation,
+  UpdateModuleMutationVariables
 >
 export const ChangePwDocument = gql`
   mutation changePw($token: String!, $password: String!) {
