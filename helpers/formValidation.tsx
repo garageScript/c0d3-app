@@ -37,6 +37,15 @@ const lessonSchema = Yup.object({
   chatUrl: Yup.string()
 })
 
+const moduleSchema = Yup.object({
+  lessonId: Yup.number()
+    .required('Required')
+    .typeError('Numbers only')
+    .min(0, 'Positive numbers only'),
+  name: Yup.string(),
+  content: Yup.string()
+})
+
 const signupValidation = Yup.object({
   email: Yup.string().email('Invalid email address').required('Required'),
   username: Yup.string()
@@ -109,5 +118,6 @@ export {
   loginValidation,
   passwordValidation,
   confirmPasswordValidation,
-  resetPasswordValidation
+  resetPasswordValidation,
+  moduleSchema
 }

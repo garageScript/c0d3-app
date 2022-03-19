@@ -58,6 +58,10 @@ export const makeGraphqlVariable = (options: any, addProp?: any) => {
     res.id = parseInt(res.id ? res.id + '' : '')
   }
 
+  if (res.hasOwnProperty('lessonId')) {
+    res.lessonId = parseInt(res.lessonId ? res.lessonId + '' : '')
+  }
+
   if (addProp) {
     const keys = Object.keys(addProp)
     keys.forEach((propertyName: string) => {
