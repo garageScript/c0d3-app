@@ -37,7 +37,9 @@ export const createSubmission = async (
     id = user!?.id
 
     Sentry.captureException({
-      message: `${user?.id}/${user?.username} is using the wrong CLI version. Must be 2.2.5`
+      message: `${user?.id}/${user?.username} is using CLI version ${
+        user?.cliVersion || 'that is lower than 2.2.5'
+      } - Must be 2.2.5^`
     })
   }
 
