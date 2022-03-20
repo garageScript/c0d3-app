@@ -24978,7 +24978,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
               className="img-fluid"
               height={24}
               src="/assets/discordClydeLogoSmallWhite.svg"
-              width={24}
+              width={32}
             />
           </div>
           <span>
@@ -25086,7 +25086,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
               className="img-fluid"
               height={24}
               src="/assets/discordClydeLogoSmallWhite.svg"
-              width={24}
+              width={32}
             />
           </div>
           <span>
@@ -25210,7 +25210,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
               className="img-fluid"
               height={24}
               src="/assets/discordClydeLogoSmallWhite.svg"
-              width={24}
+              width={32}
             />
           </div>
           <span>

@@ -147,7 +147,7 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
                 <img
                   height="24"
                   src="/assets/discordClydeLogoSmallWhite.svg"
-                  width="24"
+                  width="32"
                 />
               </div>
               <span>
