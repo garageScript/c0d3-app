@@ -14,6 +14,9 @@ import GET_APP from '../graphql/queries/getApp'
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
 import { Spinner } from 'react-bootstrap'
+import styles from '../scss/login.module.scss'
+import { signIn } from 'next-auth/react'
+import Image from 'next/image'
 
 type Values = {
   username: string
@@ -78,7 +81,7 @@ export const Login: React.FC<LoginFormProps> = ({
             <button
               className={`btn ${
                 isLoading ? 'btn-dark' : 'btn-primary'
-              } btn-lg btn mb-3`}
+              } btn-lg btn`}
               type="submit"
               data-testid="submit"
             >
@@ -97,6 +100,26 @@ export const Login: React.FC<LoginFormProps> = ({
         </div>
       </Form>
     </Formik>
+    <div className={`d-grid mb-3`}>
+      <div className={styles.orContainer}>
+        <hr className={styles.lineLeft} />
+        <span>OR</span>
+        <hr className={styles.lineRight} />
+      </div>
+      <button
+        onClick={() => signIn('discord', { callbackUrl: '/curriculum' })}
+        className={`btn text-white btn-lg btn ${styles.discord__button}`}
+      >
+        <div className={styles.discord__button__image__wrapper}>
+          <Image
+            src="/assets/discordClydeLogoSmallWhite.svg"
+            height={24}
+            width={24}
+          />
+        </div>
+        <span>Login with Discord</span>
+      </button>
+    </div>
     <NavLink path="/forgotpassword" hoverUnderline>
       Forgot your password?
     </NavLink>
