@@ -114,7 +114,7 @@ export const Login: React.FC<LoginFormProps> = ({
           <Image
             src="/assets/discordClydeLogoSmallWhite.svg"
             height={24}
-            width={24}
+            width={32}
           />
         </div>
         <span>Login with Discord</span>
