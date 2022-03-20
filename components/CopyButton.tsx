@@ -13,7 +13,8 @@ enum State {
 enum ColorType {
   Primary = 'primary',
   Info = 'info',
-  Success = 'success'
+  Success = 'success',
+  Mute = 'mute'
 }
 
 const CopyButton: React.FC<{ value: string }> = ({
@@ -22,12 +23,12 @@ const CopyButton: React.FC<{ value: string }> = ({
   value: string
 }) => {
   const [copyState, setCopyState] = useState<State>(State.NotCopied)
-  const [type, setType] = useState(ColorType.Primary)
+  const [type, setType] = useState(ColorType.Mute)
 
   const showSuccess = () => {
     setTimeout(() => {
       setCopyState(State.NotCopied)
-      setType(ColorType.Primary)
+      setType(ColorType.Mute)
     }, 2000)
 
     return <CheckIcon />
@@ -35,7 +36,7 @@ const CopyButton: React.FC<{ value: string }> = ({
 
   const handleOnClick = async () => {
     try {
-      setType(ColorType.Primary)
+      setType(ColorType.Mute)
       await navigator.clipboard.writeText(value)
       setCopyState(State.Copied)
       setType(ColorType.Success)
