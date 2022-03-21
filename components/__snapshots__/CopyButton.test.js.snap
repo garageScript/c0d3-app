@@ -3,7 +3,7 @@
 exports[`Copy Button component Should render correctly 1`] = `
 <div>
   <button
-    class="btn borderless btn-outline-primary btn-outline-bg-primary"
+    class="btn borderless btn-outline-mute btn-outline-bg-mute"
   >
     <svg
       aria-hidden="true"

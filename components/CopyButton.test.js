@@ -22,7 +22,7 @@ describe('Copy Button component', () => {
     const { container } = render(<CopyButton value={testText} />)
 
     const button = container.querySelector('.btn')
-    expect(button.classList.contains('btn-outline-bg-primary')).toBeTruthy()
+    expect(button.classList.contains('btn-outline-bg-mute')).toBeTruthy()
   })
 
   test('Button type should be set to success on copy', async () => {
@@ -74,7 +74,7 @@ describe('Copy Button component', () => {
     act(() => jest.advanceTimersByTime(2000))
 
     await waitFor(() => {
-      expect(button.classList.contains('btn-outline-bg-primary')).toBeTruthy()
+      expect(button.classList.contains('btn-outline-bg-mute')).toBeTruthy()
       expect(setTimeout).toHaveBeenCalled()
     })
   })

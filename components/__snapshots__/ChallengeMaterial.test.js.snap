@@ -179,7 +179,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
               >
                 <div
-                  class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+                  class="checkBoxBorder form-check pe-2 me-2 border rounded"
                 >
                   <input
                     class="form-check-input"
@@ -195,7 +195,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   </label>
                 </div>
                 <button
-                  class="btn borderless btn-outline-primary btn-outline-bg-primary"
+                  class="btn borderless btn-outline-mute btn-outline-bg-mute"
                 >
                   <svg
                     aria-hidden="true"

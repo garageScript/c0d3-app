@@ -110,7 +110,7 @@ const DiffView: React.FC<{
       <div className="position-relative" key={fileIdx}>
         <div className="position-absolute w-100 d-flex flex-row justify-content-end p-1">
           <div
-            className={`${scssStyles.checkBoxBorder} form-check pe-2 mt-2 me-2 border rounded`}
+            className={`${scssStyles.checkBoxBorder} form-check pe-2 me-2 border rounded`}
           >
             <input
               className="form-check-input"
@@ -123,7 +123,7 @@ const DiffView: React.FC<{
                 newViewableStates[fileIdx] = !newViewableStates[fileIdx]
                 setViewableStates(newViewableStates)
               }}
-            ></input>
+            />
             <label
               className="form-check-label text-muted"
               htmlFor={`checkBox-${id}-${fileIdx}`}
