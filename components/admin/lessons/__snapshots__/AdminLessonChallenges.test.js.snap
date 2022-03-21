@@ -37,7 +37,7 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
             <input
               class="form-control"
               data-testid="input0"
-              placeholder=""
+              placeholder="New challenge"
               type="text"
               value="New challenge"
             />
@@ -271,7 +271,7 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
             <input
               class="form-control"
               data-testid="input2"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />
@@ -330,7 +330,7 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
             <input
               class="form-control"
               data-testid="input0"
-              placeholder=""
+              placeholder="New challenge"
               type="text"
               value="New challenge"
             />
@@ -625,7 +625,7 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
             <input
               class="form-control"
               data-testid="input1"
-              placeholder=""
+              placeholder="New title"
               type="text"
               value="New title"
             />
@@ -915,7 +915,7 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
             <input
               class="form-control"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 3 Numbers"
               type="text"
               value="Sum of 3 Numbers"
             />
@@ -1156,7 +1156,7 @@ solution(4,1,9) // Should return 14
             <input
               class="form-control"
               data-testid="input3"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />
@@ -1431,7 +1431,7 @@ solution(4,1) // Should return 5
             <input
               class="form-control"
               data-testid="input2"
-              placeholder=""
+              placeholder="1"
               type="text"
               value="1"
             />
@@ -1491,7 +1491,7 @@ exports[`AdminLessonChallenges component Should update challenge 1`] = `
             <input
               class="form-control"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 2 Numbers"
               type="text"
               value="Sum of 2 Numbers"
             />
@@ -1732,7 +1732,7 @@ solution(4,1) // Should return 5
             <input
               class="form-control"
               data-testid="input3"
-              placeholder=""
+              placeholder="1"
               type="text"
               value="1"
             />
@@ -1783,7 +1783,7 @@ solution(4,1) // Should return 5
             <input
               class="form-control"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 3 Numbers"
               type="text"
               value="Sum of 3 Numbers"
             />
@@ -2024,7 +2024,7 @@ solution(4,1,9) // Should return 14
             <input
               class="form-control"
               data-testid="input3"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />
@@ -2080,7 +2080,7 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
             <input
               class="form-control"
               data-testid="input1"
-              placeholder=""
+              placeholder="New title"
               type="text"
               value="New title"
             />
@@ -2314,7 +2314,7 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
             <input
               class="form-control"
               data-testid="input3"
-              placeholder=""
+              placeholder="15"
               type="text"
               value="15"
             />
@@ -2365,7 +2365,7 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
             <input
               class="form-control"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 3 Numbers"
               type="text"
               value="Sum of 3 Numbers"
             />
@@ -2606,7 +2606,7 @@ solution(4,1,9) // Should return 14
             <input
               class="form-control"
               data-testid="input3"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />

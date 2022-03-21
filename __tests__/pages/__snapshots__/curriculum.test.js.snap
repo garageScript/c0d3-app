@@ -105,7 +105,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="d-xl-none"
         >
           <div
-            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <h4
               class="progress-card__title mt-4 text-center "
@@ -113,7 +113,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               Join C0D3 now and start your software engineering journey!
             </h4>
             <div
-              class="mt-3"
+              class="mt-3 text-center"
             >
               Join us on
               <a
@@ -1284,7 +1284,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="d-none d-xl-block"
         >
           <div
-            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <h4
               class="progress-card__title mt-4 text-center "
@@ -1292,7 +1292,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               Join C0D3 now and start your software engineering journey!
             </h4>
             <div
-              class="mt-3"
+              class="mt-3 text-center"
             >
               Join us on
               <a
@@ -1626,10 +1626,10 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="d-xl-none"
         >
           <div
-            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <h4
-              class="progress-card__title mt-3 text-center"
+              class="progress-card__title text-center"
             >
               You're off to a great start!
             </h4>
@@ -1701,7 +1701,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               </div>
             </div>
             <div
-              class="mt-3"
+              class="mt-3 text-center"
             >
               Join us on
               <a
@@ -2890,10 +2890,10 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="d-none d-xl-block"
         >
           <div
-            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <h4
-              class="progress-card__title mt-3 text-center"
+              class="progress-card__title text-center"
             >
               You're off to a great start!
             </h4>
@@ -2965,7 +2965,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               </div>
             </div>
             <div
-              class="mt-3"
+              class="mt-3 text-center"
             >
               Join us on
               <a
@@ -3299,10 +3299,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="d-xl-none"
         >
           <div
-            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <h4
-              class="progress-card__title mt-3 text-center"
+              class="progress-card__title text-center"
             >
               Keep up the great work!
             </h4>
@@ -3375,7 +3375,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
             </div>
             <div
-              class="mt-3"
+              class="mt-3 text-center"
             >
               Join us on
               <a
@@ -4786,10 +4786,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="d-none d-xl-block"
         >
           <div
-            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <h4
-              class="progress-card__title mt-3 text-center"
+              class="progress-card__title text-center"
             >
               Keep up the great work!
             </h4>
@@ -4862,7 +4862,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
             </div>
             <div
-              class="mt-3"
+              class="mt-3 text-center"
             >
               Join us on
               <a
