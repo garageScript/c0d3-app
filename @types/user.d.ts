@@ -10,4 +10,5 @@ export type UserInfo = {
 export type CliToken = {
   id: number
   cliToken: string
+  cliVersion: string
 }

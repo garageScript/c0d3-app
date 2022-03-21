@@ -14,11 +14,22 @@ const userMiddleware = async (
   const auth = req.headers.authorization
   const cliToken = auth && auth.split(' ')[1]
   if (cliToken) {
-    const decodedCliToken: CliToken = decode(cliToken)
+    const decodedCliData: CliToken = decode(cliToken)
 
     const user = await prisma.user.findFirst({
-      where: { cliToken: decodedCliToken.cliToken }
+      where: { cliToken: decodedCliData.cliToken }
     })
+
+    if (user && decodedCliData?.cliVersion) {
+      await prisma.user.update({
+        where: {
+          id: user.id
+        },
+        data: {
+          cliVersion: decodedCliData.cliVersion
+        }
+      })
+    }
 
     req.user = user
     return next()

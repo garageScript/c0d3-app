@@ -13,6 +13,7 @@ import { markdown, TextAreaState } from '../helpers/textStylers'
 
 type MdInputProps = {
   onChange?: Function
+  onFocus?: Function
   placeHolder?: string
   value?: string
   bgColor?: 'white' | 'none'
@@ -28,6 +29,7 @@ const autoSize = (el: HTMLTextAreaElement) => {
 export const MdInput: React.FC<MdInputProps> = ({
   bgColor = 'none',
   onChange = noop,
+  onFocus = noop,
   placeHolder = 'Type something...',
   value = ''
 }) => {
@@ -75,7 +77,7 @@ export const MdInput: React.FC<MdInputProps> = ({
     selectionEnd
   }: TextAreaState) => {
     setInternalState({ value, selectionStart, selectionEnd })
-    onChange(value)
+    onChange(value, selectionStart)
     textareaRef.current?.focus()
   }
 
@@ -230,6 +232,7 @@ export const MdInput: React.FC<MdInputProps> = ({
         placeholder={placeHolder}
         style={height ? { height: height + 'px' } : undefined}
         data-testid="textbox"
+        onFocus={e => onFocus(e)}
       />
     </div>
   )

@@ -96,7 +96,7 @@ const WelcomeMessage: React.FC<{
 
   return (
     <>
-      <h4 className={`${styles['progress-card__title']} mt-3 text-center`}>
+      <h4 className={`${styles['progress-card__title']} text-center`}>
         {title}
       </h4>
       {loggedIn && (
@@ -120,14 +120,14 @@ const ProgressCard: React.FC<{
 }> = ({ progressCount, loggedIn, loading }) => {
   return (
     <div
-      className={`${styles['progress-card__container']} card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0`}
+      className={`${styles['progress-card__container']} card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0`}
     >
       <WelcomeMessage
         progressCount={progressCount}
         loading={loading}
         loggedIn={loggedIn}
       />
-      <div className="mt-3">
+      <div className="mt-3 text-center">
         Join us on
         <NavLink
           className={`${styles['progress-newuser__chatlink']} text-white`}
