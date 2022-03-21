@@ -918,7 +918,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+                className="checkBoxBorder form-check pe-2 me-2 border rounded"
               >
                 <input
                   checked={false}
@@ -936,11 +936,11 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 </label>
               </div>
               <button
-                className="btn borderless btn-outline-primary btn-outline-bg-primary"
+                className="btn borderless btn-outline-mute btn-outline-bg-mute"
                 onClick={[Function]}
                 style={
                   Object {
-                    "color": "primary",
+                    "color": "mute",
                   }
                 }
               >
@@ -1785,7 +1785,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+                className="checkBoxBorder form-check pe-2 me-2 border rounded"
               >
                 <input
                   checked={false}
@@ -1803,11 +1803,11 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 </label>
               </div>
               <button
-                className="btn borderless btn-outline-primary btn-outline-bg-primary"
+                className="btn borderless btn-outline-mute btn-outline-bg-mute"
                 onClick={[Function]}
                 style={
                   Object {
-                    "color": "primary",
+                    "color": "mute",
                   }
                 }
               >
@@ -3096,11 +3096,11 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 
 exports[`Storyshots Components/CopyButton Basic 1`] = `
 <button
-  className="btn borderless btn-outline-primary btn-outline-bg-primary"
+  className="btn borderless btn-outline-mute btn-outline-bg-mute"
   onClick={[Function]}
   style={
     Object {
-      "color": "primary",
+      "color": "mute",
     }
   }
 >
@@ -3137,7 +3137,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
     className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
   >
     <div
-      className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+      className="checkBoxBorder form-check pe-2 me-2 border rounded"
     >
       <input
         checked={false}
@@ -3155,11 +3155,11 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
       </label>
     </div>
     <button
-      className="btn borderless btn-outline-primary btn-outline-bg-primary"
+      className="btn borderless btn-outline-mute btn-outline-bg-mute"
       onClick={[Function]}
       style={
         Object {
-          "color": "primary",
+          "color": "mute",
         }
       }
     >
@@ -3528,7 +3528,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
     className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
   >
     <div
-      className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+      className="checkBoxBorder form-check pe-2 me-2 border rounded"
     >
       <input
         checked={false}
@@ -3546,11 +3546,11 @@ exports[`Storyshots Components/DiffView Default 1`] = `
       </label>
     </div>
     <button
-      className="btn borderless btn-outline-primary btn-outline-bg-primary"
+      className="btn borderless btn-outline-mute btn-outline-bg-mute"
       onClick={[Function]}
       style={
         Object {
-          "color": "primary",
+          "color": "mute",
         }
       }
     >
@@ -11649,7 +11649,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+              className="checkBoxBorder form-check pe-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -11667,11 +11667,11 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-primary btn-outline-bg-primary"
+              className="btn borderless btn-outline-mute btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
-                  "color": "primary",
+                  "color": "mute",
                 }
               }
             >
@@ -13070,7 +13070,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+              className="checkBoxBorder form-check pe-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -13088,11 +13088,11 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-primary btn-outline-bg-primary"
+              className="btn borderless btn-outline-mute btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
-                  "color": "primary",
+                  "color": "mute",
                 }
               }
             >
@@ -14489,7 +14489,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+              className="checkBoxBorder form-check pe-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -14507,11 +14507,11 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-primary btn-outline-bg-primary"
+              className="btn borderless btn-outline-mute btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
-                  "color": "primary",
+                  "color": "mute",
                 }
               }
             >
@@ -15908,7 +15908,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+              className="checkBoxBorder form-check pe-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -15926,11 +15926,11 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-primary btn-outline-bg-primary"
+              className="btn borderless btn-outline-mute btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
-                  "color": "primary",
+                  "color": "mute",
                 }
               }
             >
@@ -17327,7 +17327,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+              className="checkBoxBorder form-check pe-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -17345,11 +17345,11 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-primary btn-outline-bg-primary"
+              className="btn borderless btn-outline-mute btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
-                  "color": "primary",
+                  "color": "mute",
                 }
               }
             >
