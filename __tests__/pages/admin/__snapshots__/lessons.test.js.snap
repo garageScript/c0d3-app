@@ -296,7 +296,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Foundations of JavaScript"
                     type="text"
                     value="Foundations of JavaScript"
                   />
@@ -530,7 +530,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
                     type="text"
                     value="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
                   />
@@ -562,7 +562,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   <input
                     class="form-control"
                     data-testid="input5"
-                    placeholder=""
+                    placeholder="https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1"
                     type="text"
                     value="https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1"
                   />
@@ -578,7 +578,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   <input
                     class="form-control"
                     data-testid="input6"
-                    placeholder=""
+                    placeholder="0"
                     type="text"
                     value="0"
                   />
@@ -594,7 +594,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   <input
                     class="form-control"
                     data-testid="input7"
-                    placeholder=""
+                    placeholder="js0"
                     type="text"
                     value="js0"
                   />
@@ -610,7 +610,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   <input
                     class="form-control"
                     data-testid="input8"
-                    placeholder=""
+                    placeholder="https://chat.c0d3.com/c0d3/channels/js1-variablesfunction"
                     type="text"
                     value="https://chat.c0d3.com/c0d3/channels/js1-variablesfunction"
                   />
@@ -954,7 +954,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Sum of 2 Numbers"
                     type="text"
                     value="Sum of 2 Numbers"
                   />
@@ -1195,7 +1195,7 @@ solution(4,1) // Should return 5
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="1"
                     type="text"
                     value="1"
                   />
@@ -1246,7 +1246,7 @@ solution(4,1) // Should return 5
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Sum of 3 Numbers"
                     type="text"
                     value="Sum of 3 Numbers"
                   />
@@ -1487,7 +1487,7 @@ solution(4,1,9) // Should return 14
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="2"
                     type="text"
                     value="2"
                   />
@@ -1538,7 +1538,7 @@ solution(4,1,9) // Should return 14
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Greater than 5"
                     type="text"
                     value="Greater than 5"
                   />
@@ -1779,7 +1779,7 @@ solution(4) // Should return false
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="3"
                     type="text"
                     value="3"
                   />
@@ -1830,7 +1830,7 @@ solution(4) // Should return false
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Biggest Num out of 2"
                     type="text"
                     value="Biggest Num out of 2"
                   />
@@ -2071,7 +2071,7 @@ solution(4,1) // Should return 4
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="4"
                     type="text"
                     value="4"
                   />
@@ -2122,7 +2122,7 @@ solution(4,1) // Should return 4
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Biggest Num Out of 3"
                     type="text"
                     value="Biggest Num Out of 3"
                   />
@@ -2364,7 +2364,7 @@ solution(4,5,1) // Should return 5
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="5"
                     type="text"
                     value="5"
                   />
@@ -2415,7 +2415,7 @@ solution(4,5,1) // Should return 5
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Is First Num Bigger"
                     type="text"
                     value="Is First Num Bigger"
                   />
@@ -2656,7 +2656,7 @@ solution(4,1) // Should return true
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="6"
                     type="text"
                     value="6"
                   />
@@ -2707,7 +2707,7 @@ solution(4,1) // Should return true
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Is Sum > 10"
                     type="text"
                     value="Is Sum > 10"
                   />
@@ -2948,7 +2948,7 @@ solution(4,1) // Should return false
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="7"
                     type="text"
                     value="7"
                   />
@@ -2999,7 +2999,7 @@ solution(4,1) // Should return false
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Functional Sum"
                     type="text"
                     value="Functional Sum"
                   />
@@ -3239,7 +3239,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="8"
                     type="text"
                     value="8"
                   />
@@ -3290,7 +3290,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Functional 3 Sum"
                     type="text"
                     value="Functional 3 Sum"
                   />
@@ -3532,7 +3532,7 @@ const a = solution(1,2); // a is a function
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="9"
                     type="text"
                     value="9"
                   />
@@ -3583,7 +3583,7 @@ const a = solution(1,2); // a is a function
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Functional Sums"
                     type="text"
                     value="Functional Sums"
                   />
@@ -3824,7 +3824,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="10"
                     type="text"
                     value="10"
                   />
@@ -4150,7 +4150,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Objects"
                     type="text"
                     value="Objects"
                   />
@@ -4384,7 +4384,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="https://www.notion.so/garagescript/JS-3-Objects-3df846eaf0404fe6b012208773063a04"
                     type="text"
                     value="https://www.notion.so/garagescript/JS-3-Objects-3df846eaf0404fe6b012208773063a04"
                   />
@@ -4400,7 +4400,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input4"
-                    placeholder=""
+                    placeholder="https://github.com/garageScript/curriculum/tree/master/curriculum/js3"
                     type="text"
                     value="https://github.com/garageScript/curriculum/tree/master/curriculum/js3"
                   />
@@ -4416,7 +4416,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input5"
-                    placeholder=""
+                    placeholder="https://www.youtube.com/watch?v=Npn275pNXYw&index=4&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7"
                     type="text"
                     value="https://www.youtube.com/watch?v=Npn275pNXYw&index=4&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7"
                   />
@@ -4432,7 +4432,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input6"
-                    placeholder=""
+                    placeholder="3"
                     type="text"
                     value="3"
                   />
@@ -4448,7 +4448,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input7"
-                    placeholder=""
+                    placeholder="js3"
                     type="text"
                     value="js3"
                   />
@@ -4464,7 +4464,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input8"
-                    placeholder=""
+                    placeholder="https://chat.c0d3.com/c0d3/channels/js5-htmlcssjs"
                     type="text"
                     value="https://chat.c0d3.com/c0d3/channels/js5-htmlcssjs"
                   />
@@ -4808,7 +4808,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Return array of values"
                     type="text"
                     value="Return array of values"
                   />
@@ -5047,7 +5047,7 @@ solution(['123', 'abc'], {123: 'hi', 345: 'world', abc: 'world'});
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="1"
                     type="text"
                     value="1"
                   />
@@ -5098,7 +5098,7 @@ solution(['123', 'abc'], {123: 'hi', 345: 'world', abc: 'world'});
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Create 2d Array of Objects"
                     type="text"
                     value="Create 2d Array of Objects"
                   />
@@ -5352,7 +5352,7 @@ solution(99,2)
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="2"
                     type="text"
                     value="2"
                   />
@@ -5403,7 +5403,7 @@ solution(99,2)
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Return function from array of strings"
                     type="text"
                     value="Return function from array of strings"
                   />
@@ -5651,7 +5651,7 @@ console.log(resp({iron: 'man', billy: 'joel'}))
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="3"
                     type="text"
                     value="3"
                   />
@@ -5702,7 +5702,7 @@ console.log(resp({iron: 'man', billy: 'joel'}))
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="2 sum"
                     type="text"
                     value="2 sum"
                   />
@@ -5941,7 +5941,7 @@ solution([1,2,22,333,23], 24)   // returns true
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="4"
                     type="text"
                     value="4"
                   />
@@ -5992,7 +5992,7 @@ solution([1,2,22,333,23], 24)   // returns true
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Function call between Objects"
                     type="text"
                     value="Function call between Objects"
                   />
@@ -6246,7 +6246,7 @@ solution ({
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="5"
                     type="text"
                     value="5"
                   />
@@ -6297,7 +6297,7 @@ solution ({
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Duplicate Numbers"
                     type="text"
                     value="Duplicate Numbers"
                   />
@@ -6537,7 +6537,7 @@ solution([1, 1, 1, 1, 2, 3, 3])  // should return [1, 3]
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="6"
                     type="text"
                     value="6"
                   />
@@ -6588,7 +6588,7 @@ solution([1, 1, 1, 1, 2, 3, 3])  // should return [1, 3]
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Map Objects"
                     type="text"
                     value="Map Objects"
                   />
@@ -6836,7 +6836,7 @@ console.log(result)
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="7"
                     type="text"
                     value="7"
                   />
@@ -6887,7 +6887,7 @@ console.log(result)
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Call function values of an Object"
                     type="text"
                     value="Call function values of an Object"
                   />
@@ -7144,7 +7144,7 @@ levellevellevel
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="8"
                     type="text"
                     value="8"
                   />
@@ -7195,7 +7195,7 @@ levellevellevel
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Send a request"
                     type="text"
                     value="Send a request"
                   />
@@ -7441,7 +7441,7 @@ Example: Put this tag into an html file to display a picture of the cat.
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="9"
                     type="text"
                     value="9"
                   />
@@ -7492,7 +7492,7 @@ Example: Put this tag into an html file to display a picture of the cat.
                   <input
                     class="form-control"
                     data-testid="input1"
-                    placeholder=""
+                    placeholder="Build this Pokemon Viewer"
                     type="text"
                     value="Build this Pokemon Viewer"
                   />
@@ -7726,7 +7726,7 @@ Example: Put this tag into an html file to display a picture of the cat.
                   <input
                     class="form-control"
                     data-testid="input3"
-                    placeholder=""
+                    placeholder="10"
                     type="text"
                     value="10"
                   />
