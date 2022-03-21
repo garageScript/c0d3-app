@@ -5,6 +5,7 @@ import { Request, Response } from 'express'
 import { NextApiResponse } from 'next'
 import DiscordProvider from 'next-auth/providers/discord'
 import { getUserSession } from './getUserSession'
+import prisma from '../prisma'
 
 export const providers = [
   DiscordProvider({
@@ -35,6 +36,22 @@ export const signIn =
         // Cancel auth flow. Session won't be created
         return '/discord/success'
       }
+
+      // Login with Discord
+      const userInfo = await prisma.user.findFirst({
+        where: {
+          discordId: user.id
+        }
+      })
+
+      if (userInfo) {
+        req.session.userId = userInfo.id
+
+        // Cancel auth flow. Session won't be created
+        return '/curriculum'
+      }
+
+      return '/discord/404user'
     }
 
     return true
