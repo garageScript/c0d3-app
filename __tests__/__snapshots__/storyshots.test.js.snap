@@ -11151,10 +11151,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
 
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
-  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
 >
   <h4
-    className="progress-card__title mt-3 text-center"
+    className="progress-card__title text-center"
   >
     You're off to a great start!
   </h4>
@@ -11235,7 +11235,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
     </div>
   </div>
   <div
-    className="mt-3"
+    className="mt-3 text-center"
   >
     Join us on
     <a
@@ -11269,10 +11269,10 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
 
 exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
 <div
-  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
 >
   <h4
-    className="progress-card__title mt-3 text-center"
+    className="progress-card__title text-center"
   >
     Congratulations! You've finished the course!
   </h4>
@@ -11353,7 +11353,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
     </div>
   </div>
   <div
-    className="mt-3"
+    className="mt-3 text-center"
   >
     Join us on
     <a
@@ -11387,7 +11387,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
 
 exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
 <div
-  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
 >
   <h4
     className="progress-card__title mt-4 text-center "
@@ -11395,7 +11395,7 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
     Join C0D3 now and start your software engineering journey!
   </h4>
   <div
-    className="mt-3"
+    className="mt-3 text-center"
   >
     Join us on
     <a
@@ -11429,10 +11429,10 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
 
 exports[`Storyshots Components/ProgressCard Progress 1`] = `
 <div
-  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
 >
   <h4
-    className="progress-card__title mt-3 text-center"
+    className="progress-card__title text-center"
   >
     Keep up the great work!
   </h4>
@@ -11513,7 +11513,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
     </div>
   </div>
   <div
-    className="mt-3"
+    className="mt-3 text-center"
   >
     Join us on
     <a
@@ -19875,10 +19875,10 @@ Array [
           className="d-xl-none"
         >
           <div
-            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <div
-              className="mt-3"
+              className="mt-3 text-center"
             >
               Join us on
               <a
@@ -21111,10 +21111,10 @@ Array [
           className="d-none d-xl-block"
         >
           <div
-            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <div
-              className="mt-3"
+              className="mt-3 text-center"
             >
               Join us on
               <a
@@ -21375,10 +21375,10 @@ Array [
           className="d-xl-none"
         >
           <div
-            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <div
-              className="mt-3"
+              className="mt-3 text-center"
             >
               Join us on
               <a
@@ -22611,10 +22611,10 @@ Array [
           className="d-none d-xl-block"
         >
           <div
-            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <div
-              className="mt-3"
+              className="mt-3 text-center"
             >
               Join us on
               <a
@@ -22875,10 +22875,10 @@ Array [
           className="d-xl-none"
         >
           <div
-            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <div
-              className="mt-3"
+              className="mt-3 text-center"
             >
               Join us on
               <a
@@ -24111,10 +24111,10 @@ Array [
           className="d-none d-xl-block"
         >
           <div
-            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
             <div
-              className="mt-3"
+              className="mt-3 text-center"
             >
               Join us on
               <a
