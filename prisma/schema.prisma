@@ -140,6 +140,7 @@ model User {
   isAdmin                   Boolean      @default(false)
   forgotToken               String?      @db.VarChar(255)
   cliToken                  String?      @db.VarChar(255)
+  cliVersion                String?      @db.VarChar(255)
   emailVerificationToken    String?      @db.VarChar(255)
   tokenExpiration           DateTime?    @db.Timestamptz(6)
   discordId                 String?      @db.VarChar(255)
