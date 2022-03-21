@@ -306,7 +306,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                 <input
                   class="form-control"
                   data-testid="input2"
-                  placeholder=""
+                  placeholder="url"
                   type="text"
                   value="url"
                 />
@@ -322,7 +322,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                 <input
                   class="form-control"
                   data-testid="input3"
-                  placeholder=""
+                  placeholder="caption"
                   type="text"
                   value="caption"
                 />

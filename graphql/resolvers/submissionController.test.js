@@ -56,6 +56,8 @@ describe('Submissions Mutations', () => {
     })
 
     test('should save and return submission', async () => {
+      expect.assertions(1)
+
       await expect(createSubmission(null, args, ctx)).resolves.toEqual({
         id: 1,
         diff: 'fakeDiff',
@@ -70,36 +72,60 @@ describe('Submissions Mutations', () => {
     })
 
     test('should overwrite previous submission status if it exists', async () => {
+      expect.assertions(1)
+
       prismaMock.submission.findFirst.mockResolvedValue({ id: 1 })
       await createSubmission(null, args, ctx)
       expect(prismaMock.submission.update).toBeCalled()
     })
 
     test('should throw error Invalid args', () => {
+      expect.assertions(1)
+
       return expect(createSubmission(null, null, ctx)).rejects.toThrow(
         'Invalid args'
       )
     })
 
     test('should set id to the decoded clientToken id when req.user is undefined', async () => {
+      expect.assertions(1)
+
       await createSubmission(null, args, { ...ctx, req: { user: null } })
       expect(prismaMock.user.findFirst).toBeCalled()
     })
 
     test('should send message to Sentry if req.user does not exist and cliToken does', async () => {
+      expect.assertions(1)
+
       prismaMock.user.findFirst.mockResolvedValue({
         id: 1210,
         username: 'noob'
       })
       await createSubmission(null, args, { ...ctx, req: { user: null } })
       expect(Sentry.captureException).toHaveBeenCalledWith({
-        message: `${1210}/${'noob'} is using the wrong CLI version. Must be 2.2.5`
+        message: `${1210}/${'noob'} is using CLI version that is lower than 2.2.5 - Must be 2.2.5^`
+      })
+    })
+
+    test('should send message to Sentry with user cliVersion if req.user does not exist and cliToken does', async () => {
+      expect.assertions(1)
+
+      prismaMock.user.findFirst.mockResolvedValue({
+        id: 1210,
+        username: 'noob',
+        cliVersion: '2.2.6'
+      })
+      await createSubmission(null, args, { ...ctx, req: { user: null } })
+      expect(Sentry.captureException).toHaveBeenCalledWith({
+        message: `${1210}/${'noob'} is using CLI version 2.2.6 - Must be 2.2.5^`
       })
     })
   })
 
   describe('acceptSubmission', () => {
     it('should call updateSubmission', async () => {
+      expect.assertions(1)
+
       const submission = { id: 1, comment: 'fake comment', reviewer: 2 }
       const ctx = { req: { user: { id: 2 } } }
       await acceptSubmission(null, submission, ctx)
@@ -111,12 +137,16 @@ describe('Submissions Mutations', () => {
     })
 
     it('should throw error with no args', () => {
+      expect.assertions(1)
+
       return expect(acceptSubmission(null, null, { req: {} })).rejects.toThrow(
         'Invalid args'
       )
     })
 
     it('should throw error with no user', () => {
+      expect.assertions(1)
+
       const submission = { id: 1, comment: 'fake comment' }
       return expect(
         acceptSubmission(null, submission, { req: {} })
@@ -126,6 +156,8 @@ describe('Submissions Mutations', () => {
 
   describe('rejectSubmission', () => {
     it('should call updateSubmission', async () => {
+      expect.assertions(1)
+
       const submission = { id: 1, comment: 'fake comment' }
       const ctx = { req: { user: { id: 2 } } }
       await rejectSubmission(null, submission, ctx)
@@ -137,12 +169,16 @@ describe('Submissions Mutations', () => {
     })
 
     it('should throw error with no args', () => {
+      expect.assertions(1)
+
       return expect(rejectSubmission(null, null, { req: {} })).rejects.toThrow(
         'Invalid args'
       )
     })
 
     it('should throw error with no user', () => {
+      expect.assertions(1)
+
       const submission = { id: 1, comment: 'fake comment' }
       return expect(
         rejectSubmission(null, submission, { req: {} })
@@ -155,6 +191,8 @@ describe('Submissions Queries', () => {
   hasPassedLesson.mockResolvedValue(true)
 
   it('should return no submissions if there are none open', async () => {
+    expect.assertions(1)
+
     prismaMock.submission.findMany.mockReturnValue([])
     const result = await submissions(
       null,
@@ -165,6 +203,8 @@ describe('Submissions Queries', () => {
   })
 
   it('should return submissions with a given lessonId', async () => {
+    expect.assertions(1)
+
     const user = { id: 1, username: 'Michael' }
     const submissionResults = {
       id: 5,
@@ -184,6 +224,8 @@ describe('Submissions Queries', () => {
   })
 
   it('should throw error if no user is authenticated', () => {
+    expect.assertions(1)
+
     return expect(
       submissions(null, { lessonId: '2' }, { req: {} })
     ).rejects.toThrow('Invalid user')
@@ -192,15 +234,21 @@ describe('Submissions Queries', () => {
 
 describe('getReviewer', () => {
   it('should throw error if reviewerId is falsy', () => {
+    expect.assertions(1)
+
     return expect(getReviewer()).rejects.toThrow('Invalid user')
   })
 
   it('should return user id if user has completed the lesson', () => {
+    expect.assertions(1)
+
     hasPassedLesson.mockResolvedValueOnce(true)
     return expect(getReviewer({ id: 1 }, 1)).resolves.toBe(1)
   })
 
   it('should throw error if user has not completed the lesson', () => {
+    expect.assertions(1)
+
     hasPassedLesson.mockResolvedValueOnce(false)
     return expect(getReviewer({ id: 1 }, 1)).rejects.toThrow(
       'User has not passed this lesson and cannot review.'

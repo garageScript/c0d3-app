@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from './theme/Button'
 import { MdInput } from './MdInput'
 import { DropdownMenu, Item } from './DropdownMenu'
@@ -45,6 +45,9 @@ const displayInputType = (
   onChange: Function,
   option: Option
 ) => {
+  const [cursorInput, setCursorInput] = useState<number | null>(0)
+  const [cursorMdInput, setCursorMdInput] = useState<number | null>(0)
+
   const { placeHolder, type } = option
   const value: any = option.value
   switch (type) {
@@ -53,8 +56,12 @@ const displayInputType = (
         <MdInput
           bgColor="white"
           value={`${value || ''}`}
-          onChange={(value: string) => {
+          onChange={(value: string, selectionStart: number) => {
             onChange(value, index)
+            setCursorMdInput(selectionStart)
+          }}
+          onFocus={(e: React.FocusEvent<HTMLInputElement, Element>) => {
+            e.target.selectionStart = cursorMdInput
           }}
         />
       )
@@ -67,8 +74,14 @@ const displayInputType = (
           className="form-control"
           data-testid={`input${index}`}
           value={`${value || ''}`}
-          onChange={e => onChange(e.target.value, index)}
-          placeholder={placeHolder || ''}
+          onChange={e => {
+            onChange(e.target.value, index)
+            setCursorInput(e.target.selectionStart)
+          }}
+          onFocus={e => {
+            e.target.selectionStart = cursorInput
+          }}
+          placeholder={placeHolder || value || ''}
         />
       )
   }
