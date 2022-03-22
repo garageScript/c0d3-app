@@ -24970,7 +24970,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
               value=""
             />
             <button
-              className="btn btn-primary btn-lg btn mb-3"
+              className="btn btn-primary btn-lg btn"
               data-testid="submit"
               type="submit"
             >
@@ -24979,6 +24979,41 @@ exports[`Storyshots Pages/Login Login 1`] = `
           </div>
         </div>
       </form>
+      <div
+        className="d-grid mb-3"
+      >
+        <div
+          className="orContainer"
+        >
+          <hr
+            className="lineLeft"
+          />
+          <span>
+            OR
+          </span>
+          <hr
+            className="lineRight"
+          />
+        </div>
+        <button
+          className="btn text-white btn-lg btn discord__button"
+          onClick={[Function]}
+        >
+          <div
+            className="discord__button__image__wrapper"
+          >
+            <img
+              className="img-fluid"
+              height={24}
+              src="/assets/discordClydeLogoSmallWhite.svg"
+              width={32}
+            />
+          </div>
+          <span>
+            Login with Discord
+          </span>
+        </button>
+      </div>
       <a
         className=" link"
         href="/forgotpassword"
@@ -25043,7 +25078,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
               value=""
             />
             <button
-              className="btn btn-primary btn-lg btn mb-3"
+              className="btn btn-primary btn-lg btn"
               data-testid="submit"
               type="submit"
             >
@@ -25052,6 +25087,41 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
           </div>
         </div>
       </form>
+      <div
+        className="d-grid mb-3"
+      >
+        <div
+          className="orContainer"
+        >
+          <hr
+            className="lineLeft"
+          />
+          <span>
+            OR
+          </span>
+          <hr
+            className="lineRight"
+          />
+        </div>
+        <button
+          className="btn text-white btn-lg btn discord__button"
+          onClick={[Function]}
+        >
+          <div
+            className="discord__button__image__wrapper"
+          >
+            <img
+              className="img-fluid"
+              height={24}
+              src="/assets/discordClydeLogoSmallWhite.svg"
+              width={32}
+            />
+          </div>
+          <span>
+            Login with Discord
+          </span>
+        </button>
+      </div>
       <a
         className=" link"
         href="/forgotpassword"
@@ -25132,7 +25202,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
               value=""
             />
             <button
-              className="btn btn-primary btn-lg btn mb-3"
+              className="btn btn-primary btn-lg btn"
               data-testid="submit"
               type="submit"
             >
@@ -25141,6 +25211,41 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
           </div>
         </div>
       </form>
+      <div
+        className="d-grid mb-3"
+      >
+        <div
+          className="orContainer"
+        >
+          <hr
+            className="lineLeft"
+          />
+          <span>
+            OR
+          </span>
+          <hr
+            className="lineRight"
+          />
+        </div>
+        <button
+          className="btn text-white btn-lg btn discord__button"
+          onClick={[Function]}
+        >
+          <div
+            className="discord__button__image__wrapper"
+          >
+            <img
+              className="img-fluid"
+              height={24}
+              src="/assets/discordClydeLogoSmallWhite.svg"
+              width={32}
+            />
+          </div>
+          <span>
+            Login with Discord
+          </span>
+        </button>
+      </div>
       <a
         className=" link"
         href="/forgotpassword"

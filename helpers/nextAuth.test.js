@@ -3,6 +3,7 @@ jest.mock('./middleware/user')
 jest.mock('./middleware/session')
 jest.mock('./middleware/logger')
 import { updateRefreshandAccessTokens } from './discordAuth'
+import prismaMock from '../__tests__/utils/prismaMock'
 import { signIn } from './nextAuth'
 import loggingMiddleware from './middleware/logger'
 import sessionMiddleware from './middleware/session'
@@ -40,8 +41,9 @@ describe('Signin callback', () => {
 
     expect(value).toBe(true)
   })
+
   describe('Connect to discord', () => {
-    it('Should connect-to-discord with the provider is discord and no previous session', async () => {
+    it('Should connect-to-discord when the provider is discord and there is previous session', async () => {
       expect.assertions(2)
       userMiddleware.mockImplementation((req, _res, next) => {
         req.user = {
@@ -65,27 +67,64 @@ describe('Signin callback', () => {
       expect(updateRefreshandAccessTokens).toBeCalled()
       expect(value).toBe('/discord/success')
     })
+  })
 
-    it('Should return true if there is no previous session', async () => {
-      expect.assertions(2)
+  describe('Login with discord', () => {
+    it('Should redirect to /curriculum when user is found', async () => {
+      expect.assertions(1)
+
+      prismaMock.user.findFirst.mockResolvedValue({ id: 123 })
+
       userMiddleware.mockImplementation((req, _res, next) => {
-        req.user = {}
+        req.user = null
         next()
       })
 
-      const signInCallback = signIn(req, res)
+      const reqCopy = { ...req, session: { userId: null } }
+
+      const signInCallback = signIn(reqCopy, res)
 
       const value = await signInCallback({
         account: {
           provider: 'discord'
+        },
+        user: {
+          id: '123'
         }
       })
 
-      expect(updateRefreshandAccessTokens).toBeCalledTimes(0)
-      expect(value).toBe(true)
+      expect(value).toBe('/curriculum')
     })
 
-    test('Should return the user in getUserSession if found', async () => {
+    it('Should redirect to /discord/404user when user is not found', async () => {
+      expect.assertions(1)
+
+      prismaMock.user.findFirst.mockResolvedValue(null)
+
+      userMiddleware.mockImplementation((req, _res, next) => {
+        req.user = null
+        next()
+      })
+
+      const reqCopy = { ...req, session: { userId: null } }
+
+      const signInCallback = signIn(reqCopy, res)
+
+      const value = await signInCallback({
+        account: {
+          provider: 'discord'
+        },
+        user: {
+          id: '123'
+        }
+      })
+
+      expect(value).toBe('/discord/404user')
+    })
+  })
+
+  describe('getUserSession', () => {
+    it('Should return the user in getUserSession if user is found', async () => {
       expect.assertions(1)
       userMiddleware.mockImplementation((req, _res, next) => {
         req.user = {
@@ -103,7 +142,7 @@ describe('Signin callback', () => {
       })
     })
 
-    test('Should return null in getUserSession if user not found', async () => {
+    it('Should return null in getUserSession if user not found', async () => {
       userMiddleware.mockImplementation((req, _res, next) => {
         req.user = null
         next()
