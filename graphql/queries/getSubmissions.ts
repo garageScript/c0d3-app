@@ -1,42 +1,11 @@
 import { gql } from '@apollo/client'
+import SUBMISSIONS_INFO from './fragments/submissionsFragment'
 
 const GET_SUBMISSIONS = gql`
+  ${SUBMISSIONS_INFO}
   query submissions($lessonId: Int!) {
     submissions(lessonId: $lessonId) {
-      id
-      status
-      diff
-      comment
-      challenge {
-        title
-        description
-      }
-      challengeId
-      lessonId
-      user {
-        id
-        username
-      }
-      reviewer {
-        id
-        username
-        name
-      }
-      comments {
-        id
-        content
-        submissionId
-        createdAt
-        authorId
-        line
-        fileName
-        author {
-          username
-          name
-        }
-      }
-      createdAt
-      updatedAt
+      ...submissionsInfo
     }
   }
 `

@@ -597,7 +597,8 @@ export type DeleteModuleMutation = {
     content: string
     lesson: { __typename?: 'Lesson'; title: string }
   }
-  
+}
+
 export type LessonAndChallengeInfoFragment = {
   __typename?: 'Lesson'
   id: number
@@ -3146,42 +3147,10 @@ export type GetLessonsQueryResult = Apollo.QueryResult<
 export const GetPreviousSubmissionsDocument = gql`
   query getPreviousSubmissions($challengeId: Int!, $userId: Int!) {
     getPreviousSubmissions(challengeId: $challengeId, userId: $userId) {
-      id
-      status
-      diff
-      comment
-      challenge {
-        title
-        description
-      }
-      challengeId
-      lessonId
-      user {
-        id
-        username
-      }
-      reviewer {
-        id
-        username
-        name
-      }
-      comments {
-        id
-        content
-        submissionId
-        createdAt
-        authorId
-        line
-        fileName
-        author {
-          username
-          name
-        }
-      }
-      createdAt
-      updatedAt
+      ...submissionsInfo
     }
   }
+  ${SubmissionsInfoFragmentDoc}
 `
 export type GetPreviousSubmissionsProps<
   TChildProps = {},
@@ -3383,42 +3352,10 @@ export type GetSessionQueryResult = Apollo.QueryResult<
 export const SubmissionsDocument = gql`
   query submissions($lessonId: Int!) {
     submissions(lessonId: $lessonId) {
-      id
-      status
-      diff
-      comment
-      challenge {
-        title
-        description
-      }
-      challengeId
-      lessonId
-      user {
-        id
-        username
-      }
-      reviewer {
-        id
-        username
-        name
-      }
-      comments {
-        id
-        content
-        submissionId
-        createdAt
-        authorId
-        line
-        fileName
-        author {
-          username
-          name
-        }
-      }
-      createdAt
-      updatedAt
+      ...submissionsInfo
     }
   }
+  ${SubmissionsInfoFragmentDoc}
 `
 export type SubmissionsProps<
   TChildProps = {},
