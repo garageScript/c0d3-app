@@ -1,14 +1,18 @@
 @use './_variables.module';
 @use 'sass:color';
 
+$dark: hsl(0, 0%, 33.7%);
+$light: hsl(0, 0%, 98.4%);
+$light_secondary: hsl(0, 0%, 92.9%); // Border
+
 .lessons_tabsNav {
   font-family: 'PT Mono';
   width: 100%;
   padding: 18px 23px;
 
   background: white;
-  border: 1px solid #ededed;
-  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.07);
+  border: 1px solid $light_secondary;
+  box-shadow: 0px 4px 25px hsla(0, 0%, 0%, 0.1);
   border-radius: 10px;
   align-items: center;
   display: flex;
@@ -32,8 +36,8 @@
 .lessons_tabsNav__nav__item--inactive {
   padding: 7px 16px 7px 16px;
   border-radius: 4px !important;
-  background-color: #fbfbfb !important;
-  color: #565656;
+  background-color: hsl(0, 0%, 98.4%) !important;
+  color: $dark;
   cursor: pointer;
   font-weight: bold;
   border: none;
@@ -44,7 +48,7 @@
     variables.$primary,
     $lightness: 95%
   ) !important;
-  color: #565656;
+  color: $dark;
 }
 
 .lessons__tabsNav__dropdown {
@@ -61,7 +65,7 @@
   background-color: transparent !important;
   padding: 0;
   margin: 0;
-  color: #565656;
+  color: $dark;
   font-weight: bold;
 }
 
@@ -79,7 +83,7 @@
 }
 
 .lessons__tabsNav__dropdown--inactive:hover {
-  color: #565656;
+  color: $dark;
 }
 
 .lessons__tabsNav__dropdown__title {
