@@ -1733,22 +1733,6 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/visitor-plugin-common@2.7.3":
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.7.3.tgz#f374e8974ae4ab7b1059a7f8748db6393f20c138"
-  integrity sha512-rODPGkrHEf9aHD8SgVWS0xie8VmJoYXLWgQR8PFKrwCUFjf7nvDuATAL2lTFiHATlVBWg1meXVPdUlkKeJj/0Q==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-tools/optimize" "^1.0.1"
-    "@graphql-tools/relay-operation-optimizer" "^6.3.7"
-    "@graphql-tools/utils" "^8.3.0"
-    auto-bind "~4.0.0"
-    change-case-all "1.0.14"
-    dependency-graph "^0.11.0"
-    graphql-tag "^2.11.0"
-    parse-filepath "^1.0.2"
-    tslib "~2.3.0"
-
 "@graphql-codegen/visitor-plugin-common@2.7.4":
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.7.4.tgz#fbc8aec9df0035b8f29fa64a6356cbb02062da5d"
@@ -4085,10 +4069,10 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
 
-"@types/react-dom@*", "@types/react-dom@>=16.9.0", "@types/react-dom@^17.0.13":
-  version "17.0.13"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.13.tgz#a3323b974ee4280070982b3112351bb1952a7809"
-  integrity sha512-wEP+B8hzvy6ORDv1QBhcQia4j6ea4SFIBttHYpXKPFZRviBvknq0FRh3VrIxeXUmsPkwuXVZrVGG7KUVONmXCQ==
+"@types/react-dom@*", "@types/react-dom@>=16.9.0", "@types/react-dom@^17.0.14":
+  version "17.0.14"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.14.tgz#c8f917156b652ddf807711f5becbd2ab018dea9f"
+  integrity sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==
   dependencies:
     "@types/react" "*"
 
@@ -4113,10 +4097,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.14.8", "@types/react@>=16.9.0", "@types/react@>=16.9.11", "@types/react@^17.0.40":
-  version "17.0.40"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.40.tgz#dc010cee6254d5239a138083f3799a16638e6bad"
-  integrity sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==
+"@types/react@*", "@types/react@>=16.14.8", "@types/react@>=16.9.0", "@types/react@>=16.9.11", "@types/react@^17.0.41":
+  version "17.0.41"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.41.tgz#6e179590d276394de1e357b3f89d05d7d3da8b85"
+  integrity sha512-chYZ9ogWUodyC7VUTRBfblysKLjnohhFY9bGLwvnUFFy48+vB9DikmB3lW0qTFmBcKSzmdglcvkHK71IioOlDA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7657,10 +7641,10 @@ eslint-import-resolver-typescript@^2.4.0:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
-eslint-mdx@^1.16.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-1.16.0.tgz#e95b8e9bde391d3ad8ec327fdce062e96be166f4"
-  integrity sha512-x+E50XrnGJefbzj7cpKPjXKL06KWSlzCrD5/02ZMmi+IMgwoR9Z8V44S/ff78Kg75WVnXgo0oJMcpNP85xxY+Q==
+eslint-mdx@^1.17.0:
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-1.17.0.tgz#f5396fa8256386363ee18cdc9ae73a7e6a93acfa"
+  integrity sha512-O8+JRfwCzpoR2P6zUI1GDAAM/bsuzcoBS1ArvpQrgQO/E2Km0vBmM15ukiJxZ+YUh5d+qDlrqha0fZB50MojJQ==
   dependencies:
     cosmiconfig "^7.0.1"
     remark-mdx "^1.6.22"
@@ -7722,12 +7706,12 @@ eslint-plugin-markdown@^2.2.1:
   dependencies:
     mdast-util-from-markdown "^0.8.5"
 
-eslint-plugin-mdx@^1.16.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-1.16.0.tgz#16471df68e5ac4095e47eb1a3cd9444676e00ecf"
-  integrity sha512-p5S6+UZMt+9Xa4fJNaBcldO3gHkDwoPMFM6417PfggPlbai8mWbrSEehZU6o3vZ2Lg/WQfVXYic35VYycYqJDA==
+eslint-plugin-mdx@^1.17.0:
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-1.17.0.tgz#be00f9193e92d595b8869a7e1bf3716edf1dbe9e"
+  integrity sha512-Kicizy+fbfsB2UxTDXP92qTtFqITApu4v4DRQUfXMoPwBHeQRvZnaEtXu2S9aia51GYRYsMSqUvoPPih/5oB+g==
   dependencies:
-    eslint-mdx "^1.16.0"
+    eslint-mdx "^1.17.0"
     eslint-plugin-markdown "^2.2.1"
     synckit "^0.4.1"
     tslib "^2.3.1"
@@ -12386,10 +12370,10 @@ node-releases@^2.0.1:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.1.tgz#3d1d395f204f1f2f29a54358b9fb678765ad2fc5"
   integrity sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==
 
-nodemailer@^6.7.2:
-  version "6.7.2"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.2.tgz#44b2ad5f7ed71b7067f7a21c4fedabaec62b85e0"
-  integrity sha512-Dz7zVwlef4k5R71fdmxwR8Q39fiboGbu3xgswkzGwczUfjp873rVxt1O46+Fh0j1ORnAC6L9+heI8uUpO6DT7Q==
+nodemailer@^6.7.3:
+  version "6.7.3"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.3.tgz#b73f9a81b9c8fa8acb4ea14b608f5e725ea8e018"
+  integrity sha512-KUdDsspqx89sD4UUyUKzdlUOper3hRkDVkrKh/89G+d9WKsU5ox51NWS4tB1XR5dPUdR4SP0E3molyEfOvSa3g==
 
 nopt@^4.0.1:
   version "4.0.3"
@@ -13237,10 +13221,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.18.0.tgz#91b063faf8c412472915773b5ab46dae225982ef"
-  integrity sha512-yMJKHfzF8U4dssaqf/ghNS0/Kjgni9P7Xu1b3gN4bXKw2D4drhDq7fUxSunU3kV65o/jH3UCohqS24Ad2rll0A==
+posthog-js@^1.19.2:
+  version "1.19.2"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.19.2.tgz#419082f50a4290b737c1d605ac8e1e9545cc641d"
+  integrity sha512-A+uQcqRq3v2WLz92AUxubQ1eEEP3PJF8wWMAJm4CfTapmG1VknsZJ7Y7XBs20MzHE+AkYjok2+EgV/CESoo2fQ==
   dependencies:
     "@sentry/types" "^6.11.0"
     fflate "^0.4.1"
