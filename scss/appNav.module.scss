@@ -1,11 +1,27 @@
+.navbar {
+  font-family: PT Mono;
+}
 .navbar-brand {
-  font-family: 'PT Mono', sans-serif;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .nav-item {
   margin-left: 2em;
   margin-right: 2em;
+  font-size: 14px;
+  font-weight: 700;
+  color: #565656;
+  text-transform: uppercase;
+  background-color: #fbfbfb;
+  border-radius: 4px;
+}
+
+.nav-link {
+  color: #565656;
+  &:hover {
+    color: #4c4c4c;
+    text-decoration: none;
+  }
 }
 
 .nav-buttons {
@@ -16,9 +32,25 @@
   }
 }
 
+.isAdminBadge {
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  background: #c2ccff;
+  border: 2px solid #5440d8;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  position: relative;
+  bottom: 3px;
+  color: #5440d8;
+}
+
 .dropdown-item {
-  color: #838383;
+  color: #565656;
   text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
   &:hover {
     color: #4c4c4c;
     text-decoration: none;

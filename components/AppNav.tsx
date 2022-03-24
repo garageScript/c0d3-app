@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import NavLink, { NavLinkProps } from './NavLink'
 import { useRouter } from 'next/router'
-import { DropdownMenu } from './DropdownMenu'
 import { useGetAppQuery, GetAppQuery } from '../graphql'
 import Navbar from 'react-bootstrap/Navbar'
-import { Container, Nav } from 'react-bootstrap'
+import { Container, Nav, Dropdown } from 'react-bootstrap'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
-import { Button } from './theme/Button'
 import LogoutContainer from './LogoutContainer'
 
 type AuthLinkProps = {
@@ -16,11 +14,12 @@ type AuthLinkProps = {
 
 type NavItem = NavLinkProps & { name: string }
 
-const dropdownMenuItems = [
+const dropdownAdminMenuItems = [
   { title: 'Lessons', path: '/admin/lessons' },
   { title: 'Users', path: '/admin/users' },
   { title: 'Alerts', path: '/admin/alerts' }
 ]
+
 const navItems: NavItem[] = [
   { path: '/curriculum', name: 'Curriculum' },
   {
@@ -39,53 +38,89 @@ const navItems: NavItem[] = [
   }
 ]
 
-const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
+const NavBar: React.FC<AuthLinkProps> = ({}) => {
   const router = useRouter()
-  const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
   const location = router.asPath
+
   return (
     <>
       {navItems.map(button => (
         <NavLink
           {...button}
-          className={`${styles['nav-item']} nav-link`}
+          className={`${styles['nav-item']} ${styles['nav-link']} button.path nav-link`}
           key={button.name}
           activePath={location === button.path}
         >
           {button.name}
         </NavLink>
       ))}
-      {isAdmin && (
-        <DropdownMenu
-          title="Admin"
-          items={dropdownMenuItems}
-          bsPrefix={styles['dropdown-item']}
-        />
-      )}
     </>
   )
 }
 
-const LoggedInAuthNav: React.FC<{ username: string }> = ({ username }) => {
+const LoggedInAuthNav: React.FC<{ username: string; session: any }> = ({
+  session,
+  username
+}) => {
   const capitalized = username.charAt(0).toUpperCase() + username.slice(1)
+  const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
 
   return (
     <div className={`${styles['nav-buttons']}`}>
-      <NavLink
-        path="/profile/[username]"
-        as={`/profile/${username}`}
-        className="btn btn-light border overflow-hidden text-truncate"
-      >
-        {capitalized}
-      </NavLink>
-
-      <LogoutContainer>
-        <div className={`${styles['light-button']} d-inline`}>
-          <Button border ml="2" type="light">
-            Logout
-          </Button>
+      <Dropdown>
+        <div className="d-none d-lg-block">
+          <Dropdown.Toggle id="user_nav_toggle" className={`nav-item`}>
+            {capitalized}
+          </Dropdown.Toggle>
+          <Dropdown.Menu align="end">
+            {isAdmin && (
+              <>
+                <Dropdown.Header>ADMIN</Dropdown.Header>
+                {dropdownAdminMenuItems.map(({ title, path }) => (
+                  <Dropdown.Item
+                    className={`nav-link ${styles['dropdown-item']}`}
+                    href={path}
+                    key={title}
+                  >
+                    {title}
+                  </Dropdown.Item>
+                ))}
+                <Dropdown.Divider />
+              </>
+            )}
+            <Dropdown.Item
+              className={`nav-link ${styles['dropdown-item']}`}
+              href={`/profile/${username}`}
+            >
+              Profile
+            </Dropdown.Item>
+            <Dropdown.Item className={`nav-link ${styles['dropdown-item']}`}>
+              <LogoutContainer>Logout</LogoutContainer>
+            </Dropdown.Item>
+          </Dropdown.Menu>
         </div>
-      </LogoutContainer>
+        <div className="d-lg-none">
+          {dropdownAdminMenuItems.map(({ title, path }) => (
+            <Dropdown.Item
+              className={`nav-link ${styles['dropdown-item']} `}
+              href={path}
+              key={title}
+            >
+              {title}
+            </Dropdown.Item>
+          ))}
+          <Dropdown.Item
+            className={`nav-link ${styles['dropdown-item']} `}
+            href={`/profile/${username}`}
+          >
+            Profile
+          </Dropdown.Item>
+          <Dropdown.Item className={`nav-link ${styles['dropdown-item']} `}>
+            <LogoutContainer>Logout</LogoutContainer>
+            <LogoutContainer>Logout</LogoutContainer>
+          </Dropdown.Item>
+        </div>
+      </Dropdown>
     </div>
   )
 }
@@ -105,6 +140,7 @@ const AppNav: React.FC<{}> = () => {
   const [session, setSession] = useState<GetAppQuery['session']>({
     lessonStatus: []
   })
+  const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
 
   const { data, loading } = useGetAppQuery()
 
@@ -124,15 +160,20 @@ const AppNav: React.FC<{}> = () => {
     // TODO: replace with typing
     const username = _.get(session, 'user.username', '')
 
-    return <LoggedInAuthNav username={username} />
+    return <LoggedInAuthNav username={username} session={session} />
   }
 
   return (
-    <Navbar expand="lg" bg="white">
+    <Navbar className={`${styles['navbar']}`} expand="lg" bg="white">
       <Container>
         <Navbar.Brand href="/">
           <div className={`${styles['navbar-brand']} text-primary fw-bold`}>
             C0D3
+            {isAdmin ? (
+              <span className={`${styles['isAdminBadge']} badge`}> ADMIN </span>
+            ) : (
+              ''
+            )}
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
