@@ -22,6 +22,8 @@ $light_secondary: hsl(0, 0%, 92.9%); // Border
 .lessons__tabsNav__nav {
   display: flex;
   column-gap: 20px;
+  justify-content: center;
+  row-gap: 20px;
 }
 
 .lessons_tabsNav__nav__item {
