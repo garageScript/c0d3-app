@@ -13,8 +13,7 @@ export const Basic: React.FC = () => {
     <AdminLessonNav
       navItems={[
         {
-          value: 'introduction',
-          children: ['First', 'Second', 'Third', 'divider', 'fourth']
+          value: 'introduction'
         },
         {
           value: 'modules'
