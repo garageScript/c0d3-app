@@ -27,6 +27,8 @@ const navItems = [
 ]
 
 describe('AdminLessonNav component', () => {
+  afterAll(() => jest.clearAllMocks())
+
   it('Should switch tabs on navItem click', async () => {
     expect.assertions(1)
 
@@ -41,5 +43,45 @@ describe('AdminLessonNav component', () => {
     const modulesNavItemUpdated = getByText(toUpper('modules'))
 
     expect(modulesNavItemUpdated).toHaveClass('active')
+  })
+
+  it('Should throw error when navItems count is not equal to tabs count', async () => {
+    expect.assertions(1)
+
+    // You used to prevent the error from appearing in the console when running tests
+    jest.spyOn(console, 'error')
+    console.error.mockImplementation(() => {})
+
+    expect(() =>
+      render(<AdminLessonNav navItems={navItems} tabs={tabs.slice(0, 1)} />)
+    ).toThrowError(
+      `navItems and tabs should have the same count. navItems: ${
+        navItems.length
+      } -- tabs: ${tabs.slice(0, 1).length}`
+    )
+  })
+
+  it('Should throw error when navItems has duplicate items', async () => {
+    expect.assertions(1)
+
+    // You used to prevent the error from appearing in the console when running tests
+    jest.spyOn(console, 'error')
+    console.error.mockImplementation(() => {})
+
+    expect(() =>
+      render(
+        <AdminLessonNav
+          navItems={[
+            {
+              value: 'modules'
+            },
+            {
+              value: 'modules'
+            }
+          ]}
+          tabs={tabs}
+        />
+      )
+    ).toThrowError('navItems should have unique items value. No duplicates')
   })
 })
