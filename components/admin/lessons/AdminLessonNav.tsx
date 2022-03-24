@@ -7,10 +7,10 @@ const AdminLessonNav = ({
   navItems,
   tabs
 }: {
-  navItems: { value: string; children?: string[] }[]
+  navItems: { value: string }[]
   tabs: (() => JSX.Element)[]
 }) => {
-  const [key, setKey] = useState<string>('introduction')
+  const [key, setKey] = useState<string | null>(navItems[0].value)
 
   const isActive = (k: string, data?: { active: string; inactive: string }) => {
     const isActiveBool = k === key
@@ -19,50 +19,40 @@ const AdminLessonNav = ({
     return isActiveBool ? data.active : data.inactive
   }
 
-  const renderItems = (items: { value: string; children?: string[] }[]) =>
-    items.map((item, index) => (
-      <Nav.Item key={index}>
-        <Nav.Link
-          active={isActive(item.value) as boolean}
-          className={
-            isActive(item.value, {
-              active: styles.lessons_tabsNav__nav__item,
-              inactive: styles['lessons_tabsNav__nav__item--inactive']
-            }) as string
-          }
-          eventKey={item.value}
-        >
-          {toUpper(item.value)}
-        </Nav.Link>
-      </Nav.Item>
-    ))
+  const tabNavItems = navItems.map((item, index) => (
+    <Nav.Item key={index}>
+      <Nav.Link
+        active={isActive(item.value) as boolean}
+        className={
+          isActive(item.value, {
+            active: styles.lessons_tabsNav__nav__item,
+            inactive: styles['lessons_tabsNav__nav__item--inactive']
+          }) as string
+        }
+        eventKey={item.value}
+      >
+        {toUpper(item.value)}
+      </Nav.Link>
+    </Nav.Item>
+  ))
 
-  const renderTabPanes = (
-    items: { value: string; children?: string[] }[],
-    tabs: (() => JSX.Element)[]
-  ) => {
-    return items.reduce((acc, item, index) => {
-      acc.push(
-        <Tab.Pane key={index} eventKey={item.value}>
-          {tabs[index]()}
-        </Tab.Pane>
-      )
+  const tabPanes = navItems.map((item, index) => (
+    <Tab.Pane key={index} eventKey={item.value}>
+      {tabs[index]()}
+    </Tab.Pane>
+  ))
 
-      return acc
-    }, [] as JSX.Element[])
-  }
-
-  const setActiveKey = (k: any) => setKey(k)
+  const setActiveKey = (k: string | null) => setKey(k)
 
   return (
-    <Tab.Container activeKey={key} onSelect={k => setActiveKey(k)}>
+    <Tab.Container activeKey={key!} onSelect={setActiveKey}>
       <Col className={styles.lessons_tabsNav}>
         <Nav variant="pills" className={styles.lessons__tabsNav__nav}>
-          {renderItems(navItems)}
+          {tabNavItems}
         </Nav>
       </Col>
       <Col className={styles.lessons_tabs}>
-        <Tab.Content>{renderTabPanes(navItems, tabs)}</Tab.Content>
+        <Tab.Content>{tabPanes}</Tab.Content>
       </Col>
     </Tab.Container>
   )
