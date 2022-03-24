@@ -3,13 +3,26 @@ import React, { useState } from 'react'
 import { Tab, Col, Nav } from 'react-bootstrap'
 import styles from '../../../scss/adminLessonNav.module.scss'
 
-const AdminLessonNav = ({
-  navItems,
-  tabs
-}: {
+type AdminLessonNavProps = {
   navItems: { value: string }[]
   tabs: (() => JSX.Element)[]
-}) => {
+}
+
+const validateProps = ({ navItems, tabs }: AdminLessonNavProps) => {
+  if (navItems.length !== tabs.length)
+    throw new Error(
+      `navItems and tabs should have the same count. navItems: ${navItems.length} -- tabs: ${tabs.length}`
+    )
+
+  const mapObjArrayToValues = navItems.map(item => item.value)
+
+  if (new Set(mapObjArrayToValues).size !== mapObjArrayToValues.length)
+    throw new Error(`navItems should have unique items value. No duplicates`)
+}
+
+const AdminLessonNav = ({ navItems, tabs }: AdminLessonNavProps) => {
+  validateProps({ navItems, tabs })
+
   const [key, setKey] = useState<string | null>(navItems[0].value)
 
   const isActive = (k: string, data?: { active: string; inactive: string }) => {
