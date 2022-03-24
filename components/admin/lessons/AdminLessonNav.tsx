@@ -17,7 +17,7 @@ const validateProps = ({ navItems, tabs }: AdminLessonNavProps) => {
   const mapObjArrayToValues = navItems.map(item => item.value)
 
   if (new Set(mapObjArrayToValues).size !== mapObjArrayToValues.length)
-    throw new Error(`navItems should have unique items value. No duplicates`)
+    throw new Error('navItems should have unique items value. No duplicates')
 }
 
 const AdminLessonNav = ({ navItems, tabs }: AdminLessonNavProps) => {
