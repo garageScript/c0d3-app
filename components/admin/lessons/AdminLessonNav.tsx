@@ -36,7 +36,7 @@ const AdminLessonNav = ({ navItems, tabs }: AdminLessonNavProps) => {
     <Nav.Item key={index}>
       <Nav.Link
         active={isActive(item.value) as boolean}
-        className={
+        bsPrefix={
           isActive(item.value, {
             active: styles.lessons_tabsNav__nav__item,
             inactive: styles['lessons_tabsNav__nav__item--inactive']

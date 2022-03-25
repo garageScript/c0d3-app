@@ -28,75 +28,32 @@ $light_secondary: hsl(0, 0%, 92.9%); // Border
 
 .lessons_tabsNav__nav__item {
   padding: 7px 16px 7px 16px;
-  border-radius: 4px !important;
-  background-color: variables.$primary !important;
+  border-radius: 4px;
+  background-color: variables.$primary;
   color: white;
   cursor: pointer;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.lessons_tabsNav__nav__item:hover {
+  color: white;
 }
 
 .lessons_tabsNav__nav__item--inactive {
   padding: 7px 16px 7px 16px;
-  border-radius: 4px !important;
-  background-color: hsl(0, 0%, 98.4%) !important;
+  border-radius: 4px;
+  background-color: hsl(0, 0%, 98.4%);
   color: $dark;
   cursor: pointer;
   font-weight: bold;
   border: none;
+  text-decoration: none;
 }
 
 .lessons_tabsNav__nav__item--inactive:hover {
-  background-color: color.change(
-    variables.$primary,
-    $lightness: 95%
-  ) !important;
+  background-color: color.change(variables.$primary, $lightness: 95%);
   color: $dark;
-}
-
-.lessons__tabsNav__dropdown {
-  border: none;
-  background-color: transparent !important;
-  padding: 0;
-  margin: 0;
-  color: white;
-  font-weight: bold;
-}
-
-.lessons__tabsNav__dropdown--inactive {
-  border: none;
-  background-color: transparent !important;
-  padding: 0;
-  margin: 0;
-  color: $dark;
-  font-weight: bold;
-}
-
-.lessons__tabsNav__dropdown:hover {
-  border: none;
-  background-color: none !important;
-}
-
-.lessons__tabsNav__dropdown:focus {
-  box-shadow: none !important;
-}
-
-.lessons__tabsNav__dropdown--inactive:focus {
-  box-shadow: none !important;
-}
-
-.lessons__tabsNav__dropdown--inactive:hover {
-  color: $dark;
-}
-
-.lessons__tabsNav__dropdown__title {
-  margin-right: 14px;
-}
-
-.lessons__tabsNav__dropdown__item:active {
-  background-color: color.change(
-    variables.$primary,
-    $lightness: 70%
-  ) !important;
 }
 
 .lessons_tabs {
