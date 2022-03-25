@@ -55,10 +55,8 @@ const AdminLessonNav = ({ navItems, tabs }: AdminLessonNavProps) => {
     </Tab.Pane>
   ))
 
-  const setActiveKey = (k: string | null) => setKey(k)
-
   return (
-    <Tab.Container activeKey={key!} onSelect={setActiveKey}>
+    <Tab.Container activeKey={key!} onSelect={setKey}>
       <Col className={styles.lessons_tabsNav}>
         <Nav variant="pills" className={styles.lessons__tabsNav__nav}>
           {tabNavItems}
