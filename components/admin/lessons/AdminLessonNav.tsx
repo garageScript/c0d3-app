@@ -1,6 +1,6 @@
 import { toUpper } from 'lodash'
 import { uniq } from 'lodash/fp'
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Tab, Col, Nav } from 'react-bootstrap'
 import styles from '../../../scss/adminLessonNav.module.scss'
 
@@ -29,7 +29,7 @@ const validateProps = ({ navItems, tabs }: Props) => {
 }
 
 const AdminLessonNav: React.FC<Props> = ({ navItems, tabs }: Props) => {
-  validateProps({ navItems, tabs })
+  useMemo(() => validateProps({ navItems, tabs }), [])
 
   const [key, setKey] = useState<string | null>(navItems[0].value)
 
