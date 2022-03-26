@@ -1,4 +1,5 @@
 import { toUpper } from 'lodash'
+import { uniq } from 'lodash/fp'
 import React, { useState } from 'react'
 import { Tab, Col, Nav } from 'react-bootstrap'
 import styles from '../../../scss/adminLessonNav.module.scss'
@@ -9,12 +10,12 @@ type Tab = () => JSX.Element
 type NavItems = [NavItem, ...NavItem[]]
 type TabsType = [Tab, ...Tab[]]
 
-type AdminLessonNavProps = {
+type Props = {
   navItems: NavItems
   tabs: TabsType
 }
 
-const validateProps = ({ navItems, tabs }: AdminLessonNavProps) => {
+const validateProps = ({ navItems, tabs }: Props) => {
   if (navItems.length !== tabs.length)
     throw new Error(
       `navItems and tabs should have the same count. navItems: ${navItems.length} -- tabs: ${tabs.length}`
@@ -22,11 +23,12 @@ const validateProps = ({ navItems, tabs }: AdminLessonNavProps) => {
 
   const mapObjArrayToValues = navItems.map(item => item.value)
 
-  if (new Set(mapObjArrayToValues).size !== mapObjArrayToValues.length)
+  if (uniq(mapObjArrayToValues).length !== navItems.length) {
     throw new Error('navItems should have unique items value. No duplicates')
+  }
 }
 
-const AdminLessonNav = ({ navItems, tabs }: AdminLessonNavProps) => {
+const AdminLessonNav: React.FC<Props> = ({ navItems, tabs }: Props) => {
   validateProps({ navItems, tabs })
 
   const [key, setKey] = useState<string | null>(navItems[0].value)
