@@ -3,9 +3,15 @@ import React, { useState } from 'react'
 import { Tab, Col, Nav } from 'react-bootstrap'
 import styles from '../../../scss/adminLessonNav.module.scss'
 
+type NavItem = { value: string }
+type Tab = () => JSX.Element
+
+type NavItems = [NavItem, ...NavItem[]]
+type TabsType = [Tab, ...Tab[]]
+
 type AdminLessonNavProps = {
-  navItems: { value: string }[]
-  tabs: (() => JSX.Element)[]
+  navItems: NavItems
+  tabs: TabsType
 }
 
 const validateProps = ({ navItems, tabs }: AdminLessonNavProps) => {
