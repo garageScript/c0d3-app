@@ -1,3 +1,11 @@
+@use 'sass:color';
+@use '_variables.module.scss';
+
+@media (min-width: 992px) {
+  .navbar {
+    height: 65px;
+  }
+}
 .navbar {
   font-family: PT Mono;
 }
@@ -14,14 +22,33 @@
   text-transform: uppercase;
   background-color: #fbfbfb;
   border-radius: 4px;
+  height: 30px;
+  padding: 5px;
 }
 
 .nav-link {
   color: #565656;
   &:hover {
-    color: #4c4c4c;
+    background-color: color.change(variables.$primary, $lightness: 90%);
     text-decoration: none;
   }
+}
+
+.nav-user-toggle {
+  height: 38px;
+  width: 38px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  &::after {
+    display: none;
+  }
+}
+
+.down-icon {
+  position: relative;
+  bottom: 30px;
+  left: 42px;
 }
 
 .nav-buttons {
@@ -52,9 +79,19 @@
   text-transform: uppercase;
   font-size: 14px;
   &:hover {
+    background-color: color.change(variables.$primary, $lightness: 90%);
     color: #4c4c4c;
     text-decoration: none;
   }
+}
+
+.active {
+  background: #5440d8 !important;
+  color: #ffffff !important;
+}
+
+.dropdown-menu {
+  box-shadow: 0px 4px 25px 0px hsla(0, 0%, 0%, 0.07);
 }
 
 .light-button > * {

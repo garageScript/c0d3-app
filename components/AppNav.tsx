@@ -7,9 +7,20 @@ import { Container, Nav, Dropdown } from 'react-bootstrap'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
 import LogoutContainer from './LogoutContainer'
+import { Button } from './theme/Button'
+import { UserInfo } from '../@types/user'
+import { useUserInfoQuery } from '../graphql/index'
+import UserInfoImage from './UserInfoImage'
+import { ChevronDownIcon } from '@primer/octicons-react'
 
 type AuthLinkProps = {
   session: any
+}
+
+type CustomToggleProps = {
+  children?: React.ReactNode
+  className?: String | undefined
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {}
 }
 
 type NavItem = NavLinkProps & { name: string }
@@ -47,7 +58,7 @@ const NavBar: React.FC<AuthLinkProps> = ({}) => {
       {navItems.map(button => (
         <NavLink
           {...button}
-          className={`${styles['nav-item']} ${styles['nav-link']} button.path nav-link`}
+          className={`nav-link ${styles['nav-item']} ${styles['nav-link']} button.path`}
           key={button.name}
           activePath={location === button.path}
         >
@@ -59,26 +70,67 @@ const NavBar: React.FC<AuthLinkProps> = ({}) => {
 }
 
 const LoggedInAuthNav: React.FC<{ username: string; session: any }> = ({
-  session,
-  username
+  username,
+  session
 }) => {
-  const capitalized = username.charAt(0).toUpperCase() + username.slice(1)
   const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
+  const { data } = useUserInfoQuery({
+    variables: { username },
+    skip: !username
+  })
+  const router = useRouter()
+  const location = router.asPath
+
+  const fullname = _.get(data, 'userInfo.user.name', '')
+
+  const userInfo: UserInfo = {
+    // 'A' stands for Anonymous, in case user did not put in full name
+    username,
+    firstName: fullname.split(' ')[0] || 'A',
+    lastName: fullname.split(' ')[1] || ' ',
+    discordUserId: data?.userInfo?.user?.discordUserId ?? '',
+    discordUsername: data?.userInfo?.user?.discordUsername ?? '',
+    discordAvatarUrl: data?.userInfo?.user?.discordAvatarUrl ?? ''
+  }
+
+  const buttonMenuToggle = React.forwardRef(
+    (props: CustomToggleProps, ref: React.Ref<HTMLAnchorElement>) => (
+      <a
+        ref={ref}
+        className={props.className}
+        onClick={e => {
+          e.preventDefault()
+          if (props.onClick) props.onClick(e)
+        }}
+      >
+        {props.children}
+      </a>
+    )
+  )
 
   return (
     <div className={`${styles['nav-buttons']}`}>
       <Dropdown>
         <div className="d-none d-lg-block">
-          <Dropdown.Toggle id="user_nav_toggle" className={`nav-item`}>
-            {capitalized}
+          <Dropdown.Toggle
+            as={buttonMenuToggle}
+            className={`${styles['nav-user-toggle']} `}
+            id="user_nav_toggle"
+          >
+            <UserInfoImage user={userInfo} />
+            <ChevronDownIcon className={`${styles['down-icon']} `} size={16} />
           </Dropdown.Toggle>
-          <Dropdown.Menu align="end">
+          <Dropdown.Menu className={`${styles['dropdown-menu']}`} align="end">
             {isAdmin && (
               <>
                 <Dropdown.Header>ADMIN</Dropdown.Header>
                 {dropdownAdminMenuItems.map(({ title, path }) => (
                   <Dropdown.Item
-                    className={`nav-link ${styles['dropdown-item']}`}
+                    className={
+                      location === path
+                        ? `${styles['dropdown-item']} nav-link ${styles['active']} `
+                        : `${styles['dropdown-item']} nav-link `
+                    }
                     href={path}
                     key={title}
                   >
@@ -89,7 +141,11 @@ const LoggedInAuthNav: React.FC<{ username: string; session: any }> = ({
               </>
             )}
             <Dropdown.Item
-              className={`nav-link ${styles['dropdown-item']}`}
+              className={
+                location === `/profile/${username}`
+                  ? `${styles['dropdown-item']} nav-link ${styles['active']} `
+                  : `${styles['dropdown-item']} nav-link `
+              }
               href={`/profile/${username}`}
             >
               Profile
@@ -102,7 +158,11 @@ const LoggedInAuthNav: React.FC<{ username: string; session: any }> = ({
         <div className="d-lg-none">
           {dropdownAdminMenuItems.map(({ title, path }) => (
             <Dropdown.Item
-              className={`nav-link ${styles['dropdown-item']} `}
+              className={
+                location === path
+                  ? `${styles['dropdown-item']} nav-link ${styles['active']} `
+                  : `${styles['dropdown-item']} nav-link `
+              }
               href={path}
               key={title}
             >
@@ -110,14 +170,23 @@ const LoggedInAuthNav: React.FC<{ username: string; session: any }> = ({
             </Dropdown.Item>
           ))}
           <Dropdown.Item
-            className={`nav-link ${styles['dropdown-item']} `}
+            className={
+              location === `/profile/${username}`
+                ? `${styles['dropdown-item']} nav-link ${styles['active']} `
+                : `${styles['dropdown-item']} nav-link `
+            }
             href={`/profile/${username}`}
           >
             Profile
           </Dropdown.Item>
           <Dropdown.Item className={`nav-link ${styles['dropdown-item']} `}>
-            <LogoutContainer>Logout</LogoutContainer>
-            <LogoutContainer>Logout</LogoutContainer>
+            <LogoutContainer>
+              <div className={`${styles['light-button']} d-inline`}>
+                <Button border ml="2" type="light">
+                  Logout
+                </Button>
+              </div>
+            </LogoutContainer>
           </Dropdown.Item>
         </div>
       </Dropdown>

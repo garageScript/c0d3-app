@@ -21,7 +21,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   hoverUnderline = false
 }) => {
   if (!path) return null
-  if (activePath) className += ' active'
+  if (activePath) className += ` ${styles['active']}`
   if (external || path[0] !== '/') {
     return (
       <a

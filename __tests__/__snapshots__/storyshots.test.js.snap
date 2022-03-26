@@ -251,7 +251,7 @@ exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 
 exports[`Storyshots Components/AppNav Logged In 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light bg-white"
+  className="navbar navbar navbar-expand-lg navbar-light bg-white"
 >
   <div
     className="container"
@@ -264,6 +264,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
         className="navbar-brand text-primary fw-bold"
       >
         C0D3
+        
       </div>
     </a>
     <button
@@ -287,7 +288,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
         onKeyDown={[Function]}
       >
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -295,7 +296,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Curriculum
         </a>
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="https://github.com/garageScript/c0d3-app"
           rel="noopener noreferrer"
           target="_blank"
@@ -303,7 +304,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Repo
         </a>
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -311,7 +312,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Learn
         </a>
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
@@ -326,7 +327,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
 
 exports[`Storyshots Components/AppNav Logged Out 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light bg-white"
+  className="navbar navbar navbar-expand-lg navbar-light bg-white"
 >
   <div
     className="container"
@@ -339,6 +340,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
         className="navbar-brand text-primary fw-bold"
       >
         C0D3
+        
       </div>
     </a>
     <button
@@ -362,7 +364,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
         onKeyDown={[Function]}
       >
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -370,7 +372,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Curriculum
         </a>
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="https://github.com/garageScript/c0d3-app"
           rel="noopener noreferrer"
           target="_blank"
@@ -378,7 +380,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Repo
         </a>
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -386,7 +388,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Learn
         </a>
         <a
-          className="nav-item nav-link noUnderline"
+          className="nav-item nav-link button.path nav-link noUnderline"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
@@ -4753,7 +4755,7 @@ Array [
 exports[`Storyshots Components/Error Internal 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -4766,6 +4768,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -4789,7 +4792,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4797,7 +4800,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -4805,7 +4808,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4813,7 +4816,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -4901,7 +4904,7 @@ Array [
 exports[`Storyshots Components/Error Not Found 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -4914,6 +4917,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -4937,7 +4941,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4945,7 +4949,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -4953,7 +4957,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4961,7 +4965,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -7447,7 +7451,7 @@ exports[`Storyshots Components/InputGroup Size Small 1`] = `
 exports[`Storyshots Components/Layout Logged In 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -7460,6 +7464,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -7483,7 +7488,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7491,7 +7496,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -7499,7 +7504,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7507,7 +7512,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -7566,7 +7571,7 @@ Array [
 exports[`Storyshots Components/Layout Logged Out 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -7579,6 +7584,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -7602,7 +7608,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7610,7 +7616,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -7618,7 +7624,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7626,7 +7632,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -8175,7 +8181,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 exports[`Storyshots Components/LessonLayout Get Layout 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -8188,6 +8194,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -8211,7 +8218,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8219,7 +8226,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -8227,7 +8234,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8235,7 +8242,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -19560,7 +19567,7 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
 exports[`Storyshots Pages/Contributors Contributors 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -19573,6 +19580,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -19596,7 +19604,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19604,7 +19612,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -19612,7 +19620,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19620,7 +19628,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -19790,7 +19798,7 @@ Array [
 exports[`Storyshots Pages/Curriculum Basic 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -19803,6 +19811,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -19826,7 +19835,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19834,7 +19843,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -19842,7 +19851,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19850,7 +19859,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -21290,7 +21299,7 @@ Array [
 exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -21303,6 +21312,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -21326,7 +21336,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -21334,7 +21344,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -21342,7 +21352,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -21350,7 +21360,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -22790,7 +22800,7 @@ Array [
 exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -22803,6 +22813,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -22826,7 +22837,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22834,7 +22845,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -22842,7 +22853,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22850,7 +22861,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -24290,7 +24301,7 @@ Array [
 exports[`Storyshots Pages/ForgotPassword Forgot Password 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -24303,6 +24314,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -24326,7 +24338,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24334,7 +24346,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -24342,7 +24354,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24350,7 +24362,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -25262,7 +25274,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
 exports[`Storyshots Pages/ResetPassword Reset Password 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
+    className="navbar navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
@@ -25275,6 +25287,7 @@ Array [
           className="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -25298,7 +25311,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -25306,7 +25319,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -25314,7 +25327,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -25322,7 +25335,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link noUnderline"
+            className="nav-item nav-link button.path nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"

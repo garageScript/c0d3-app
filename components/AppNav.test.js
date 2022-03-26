@@ -42,6 +42,8 @@ describe('AppNav Component', () => {
     )
 
     await act(async () => {
+      await waitFor(() => getByText('FU'))
+      fireEvent.click(getByText('FU'))
       await waitFor(() => getByText('Logout'))
       fireEvent.click(getByText('Logout'))
     })
