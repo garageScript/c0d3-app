@@ -35,17 +35,17 @@ describe('AppNav Component', () => {
       }
     ]
 
-    const { getByText } = render(
+    const { getByText, getAllByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <AppNav />
       </MockedProvider>
     )
 
     await act(async () => {
-      await waitFor(() => getByText('FU'))
-      fireEvent.click(getByText('FU'))
-      await waitFor(() => getByText('Logout'))
-      fireEvent.click(getByText('Logout'))
+      await waitFor(() => getByText('A'))
+      fireEvent.click(getByText('A'))
+      await waitFor(() => getAllByText('Logout'))
+      fireEvent.click(getAllByText('Logout')[0])
     })
 
     await waitFor(() => expect(global.window.location.pathname).toEqual('/'))
