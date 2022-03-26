@@ -43,7 +43,6 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     variables: { lessonId: currentLesson?.id },
     skip: !currentLesson
   })
-  console.log('SUBMISSSSSSSSIONS', data)
   if (loading) {
     return <LoadingSpinner />
   }
@@ -74,7 +73,6 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
           submission.status !== SubmissionStatus.NeedMoreWork
       )
     : []
-  console.log('lessonSubmissions', lessonSubmissions)
   return (
     <div>
       <Layout title={`Review - ${currentLesson.title}`}>
