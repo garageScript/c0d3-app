@@ -3,6 +3,8 @@ import { NextApiResponse } from 'next'
 import prisma from '../../prisma'
 import { decode } from '../encoding'
 import { CliToken } from '../../@types/user'
+import { getSession } from 'next-auth/react'
+import { User } from '@prisma/client'
 
 const userMiddleware = async (
   req: LoggedRequest,
@@ -11,8 +13,16 @@ const userMiddleware = async (
 ) => {
   req.user = null
 
+  const nextAuthSession = await getSession({ req })
+
+  if (nextAuthSession?.user) {
+    req.user = nextAuthSession.user as User
+    return next()
+  }
+
   const auth = req.headers.authorization
   const cliToken = auth && auth.split(' ')[1]
+
   if (cliToken) {
     const decodedCliData: CliToken = decode(cliToken)
 
