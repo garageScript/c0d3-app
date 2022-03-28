@@ -12565,6 +12565,9 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
     className="card-footer bg-white"
   >
     <div
+      className="mt-1"
+    />
+    <div
       style={
         Object {
           "backgroundColor": "white",
@@ -13986,6 +13989,9 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
     className="card-footer bg-white"
   >
     <div
+      className="mt-1"
+    />
+    <div
       style={
         Object {
           "backgroundColor": "white",
@@ -15404,6 +15410,9 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
   <div
     className="card-footer bg-white"
   >
+    <div
+      className="mt-1"
+    />
     <div
       style={
         Object {
@@ -16824,6 +16833,9 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
     className="card-footer bg-white"
   >
     <div
+      className="mt-1"
+    />
+    <div
       style={
         Object {
           "backgroundColor": "white",
@@ -18242,6 +18254,9 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
   <div
     className="card-footer bg-white"
   >
+    <div
+      className="mt-1"
+    />
     <div
       style={
         Object {

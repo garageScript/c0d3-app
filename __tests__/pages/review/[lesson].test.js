@@ -18,6 +18,7 @@ import { useRouter } from 'next/router'
 import expectLoading from '../../utils/expectLoading'
 import getPreviousSubmissions from '../../../__dummy__/getPreviousSubmissionsData'
 import GET_PREVIOUS_SUBMISSIONS from '../../../graphql/queries/getPreviousSubmissions'
+import { SubmissionStatus } from '../../../graphql'
 
 const getAppMock = {
   request: { query: GET_APP },
@@ -51,7 +52,8 @@ const getSubmissionsMock = {
           challenge: {
             title: 'Sum of 2 Numbers',
             description:
-              "Write a function that takes in 2 numbers and returns their sum. Here's how another developer might use your function: solution(5,9) // Should return 14 solution(4,1) // Should return 5"
+              "Write a function that takes in 2 numbers and returns their sum. Here's how another developer might use your function: solution(5,9) // Should return 14 solution(4,1) // Should return 5",
+            __typename: 'Challenge'
           },
           challengeId: 107,
           lessonId: 5,
@@ -62,11 +64,29 @@ const getSubmissionsMock = {
           reviewer: {
             id: '0',
             username: 'admin',
-            name: 'Admin Admin'
+            name: 'Admin Admin',
+            __typename: 'Reviewer'
           },
-          createdAt: '',
-          updatedAt: '',
-          comments: null
+          comments: [
+            {
+              id: 1,
+              content: 'Some comment',
+              submissionId: 1,
+              createdAt: '1524401718267',
+              authorId: 1,
+              line: 24,
+              fileName: 'Some line',
+              author: {
+                username: 'fake author',
+                name: 'fake name',
+                __typename: 'Author'
+              },
+              __typename: 'Comment'
+            }
+          ],
+          createdAt: '1524401718267',
+          updatedAt: '1524401718267',
+          __typename: 'Submission'
         }
       ]
     }
