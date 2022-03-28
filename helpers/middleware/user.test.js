@@ -3,10 +3,12 @@
  */
 
 jest.mock('../encoding.ts')
+jest.mock('next-auth/react')
 
 import prismaMock from '../../__tests__/utils/prismaMock'
 import userMiddleware from './user'
 import { decode } from '../encoding'
+import { getSession } from 'next-auth/react'
 
 const mockUserInfo = {
   id: 408,
@@ -144,5 +146,24 @@ describe('User Middleware', () => {
 
     await userMiddleware(req, res, next)
     expect(prismaMock.user.update).toBeCalledTimes(0)
+  })
+
+  test('Should set req.user to getSession if there is a session', async () => {
+    expect.assertions(1)
+
+    getSession.mockReturnValue({
+      user: {
+        userId: 'noob'
+      }
+    })
+
+    const req = {
+      user: null
+    }
+
+    await userMiddleware(req, res, next)
+    expect(req.user).toStrictEqual({
+      userId: 'noob'
+    })
   })
 })
