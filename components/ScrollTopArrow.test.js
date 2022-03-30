@@ -35,7 +35,9 @@ describe('ScrollTopArrow component', () => {
       target: { scrollY: 401 }
     })
 
-    userEvent.click(screen.queryByRole('button', { name: 'Scroll to top' }))
+    await userEvent.click(
+      screen.queryByRole('button', { name: 'Scroll to top' })
+    )
 
     expect(window.scrollTo).toBeCalledWith(0, 0)
   })
