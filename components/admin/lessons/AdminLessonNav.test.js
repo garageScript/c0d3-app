@@ -6,23 +6,20 @@ import '@testing-library/jest-dom'
 
 const fn = text => () => <p>{text}</p>
 
-const tabs = [
-  () => (
-    <>
-      <h1>Some text</h1>
-      <p>Some paragraph that makes sense</p>
-      <small>Small text for the vibes</small>
-    </>
-  ),
-  fn('Modules with delete and add')
-]
-
-const navItems = [
+const panels = [
   {
-    value: 'introduction'
+    tabName: 'introduction',
+    tabComponent: () => (
+      <>
+        <h1>Some text</h1>
+        <p>Some paragraph that makes sense</p>
+        <small>Small text for the vibes</small>
+      </>
+    )
   },
   {
-    value: 'modules'
+    tabName: 'modules',
+    tabComponent: fn('Modules with delete and add')
   }
 ]
 
@@ -32,9 +29,7 @@ describe('AdminLessonNav component', () => {
   it('Should switch tabs on navItem click', async () => {
     expect.assertions(1)
 
-    const { getByText } = render(
-      <AdminLessonNav navItems={navItems} tabs={tabs} />
-    )
+    const { getByText } = render(<AdminLessonNav panels={panels} />)
 
     const modulesNavItem = getByText(toUpper('modules'))
 
@@ -43,45 +38,5 @@ describe('AdminLessonNav component', () => {
     const modulesNavItemUpdated = getByText(toUpper('modules'))
 
     expect(modulesNavItemUpdated).toHaveClass('active')
-  })
-
-  it('Should throw error when navItems count is not equal to tabs count', async () => {
-    expect.assertions(1)
-
-    // You used to prevent the error from appearing in the console when running tests
-    jest.spyOn(console, 'error')
-    console.error.mockImplementation(() => {})
-
-    expect(() =>
-      render(<AdminLessonNav navItems={navItems} tabs={tabs.slice(0, 1)} />)
-    ).toThrowError(
-      `navItems and tabs should have the same count. navItems: ${
-        navItems.length
-      } -- tabs: ${tabs.slice(0, 1).length}`
-    )
-  })
-
-  it('Should throw error when navItems has duplicate items', async () => {
-    expect.assertions(1)
-
-    // You used to prevent the error from appearing in the console when running tests
-    jest.spyOn(console, 'error')
-    console.error.mockImplementation(() => {})
-
-    expect(() =>
-      render(
-        <AdminLessonNav
-          navItems={[
-            {
-              value: 'modules'
-            },
-            {
-              value: 'modules'
-            }
-          ]}
-          tabs={tabs}
-        />
-      )
-    ).toThrowError('navItems should have unique items value. No duplicates')
   })
 })
