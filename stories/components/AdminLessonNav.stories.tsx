@@ -11,23 +11,21 @@ const fn = (text: string) => () => <p>{text}</p>
 export const Basic: React.FC = () => {
   return (
     <AdminLessonNav
-      navItems={[
+      panels={[
         {
-          value: 'introduction'
+          tabName: 'introduction',
+          tabComponent: () => (
+            <>
+              <h1>Some text</h1>
+              <p>Some paragraph that makes sense</p>
+              <small>Small text for the vibes</small>
+            </>
+          )
         },
         {
-          value: 'modules'
+          tabName: 'modules',
+          tabComponent: fn('Modules with delete and add')
         }
-      ]}
-      tabs={[
-        () => (
-          <>
-            <h1>Some text</h1>
-            <p>Some paragraph that makes sense</p>
-            <small>Small text for the vibes</small>
-          </>
-        ),
-        fn('Modules with delete and add')
       ]}
     />
   )
@@ -36,71 +34,39 @@ export const Basic: React.FC = () => {
 export const WithManyItems: React.FC = () => {
   return (
     <AdminLessonNav
-      navItems={[
+      panels={[
         {
-          value: 'Betrouka'
+          tabName: 'introduction',
+          tabComponent: fn('Modules with delete and add')
         },
         {
-          value: 'Agwamvi'
+          tabName: 'Zaziuz',
+          tabComponent: fn('Modules with delete and add')
         },
         {
-          value: 'Tekrupbez'
+          tabName: 'Vanvied',
+          tabComponent: fn('Modules with delete and add')
         },
         {
-          value: 'Hopebam'
+          tabName: 'Bovsoaca',
+          tabComponent: fn('Modules with delete and add')
         },
         {
-          value: 'Wezwowpoj'
+          tabName: 'Evesific',
+          tabComponent: fn('Modules with delete and add')
         },
         {
-          value: 'Zokdiwju'
+          tabName: 'Tehocon',
+          tabComponent: fn('Modules with delete and add')
         },
         {
-          value: 'Hesculnu'
+          tabName: 'Malujo',
+          tabComponent: fn('Modules with delete and add')
         },
         {
-          value: 'Odvipjih'
-        },
-        {
-          value: 'Hebrakbi'
-        },
-        {
-          value: 'Utfaana'
-        },
-        {
-          value: 'Ihieconus'
-        },
-        {
-          value: 'Paheze'
-        },
-        {
-          value: 'Upanwe'
-        },
-        {
-          value: 'Dewtaiha'
+          tabName: 'Vicolki',
+          tabComponent: fn('Modules with delete and add')
         }
-      ]}
-      tabs={[
-        () => (
-          <>
-            <h1>Some text</h1>
-            <p>Some paragraph that makes sense</p>
-            <small>Small text for the vibes</small>
-          </>
-        ),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add'),
-        fn('Modules with delete and add')
       ]}
     />
   )
