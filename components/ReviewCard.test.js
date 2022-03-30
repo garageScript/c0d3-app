@@ -161,8 +161,13 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     expect(await screen.findByTestId('iteration 1')).toBeVisible()
-    userEvent.click(screen.getByTestId('iteration 0'))
-    userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
+    await waitFor(() => {
+      userEvent.click(screen.getByTestId('iteration 0'))
+      userEvent.type(
+        screen.getByTestId('textbox'),
+        'A very unique test comment!'
+      )
+    })
     fireEvent.click(screen.getByText('Submit'))
     expect(container).toMatchSnapshot()
   })
@@ -267,19 +272,21 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(screen.getByRole('textbox', { name: '' }), 'Good job!')
+
     expect(await screen.findByTestId('iteration 2')).toBeVisible()
-    userEvent.click(
-      screen.getByRole('radio', {
-        name: 'Accept Submit feedback and approve submission'
-      })
-    )
-    userEvent.click(
-      screen.getByRole('button', {
-        name: 'Submit'
-      })
-    )
-    await waitFor(() => expect(screen.firstChild).toBeNull)
+    await waitFor(() => {
+      userEvent.click(
+        screen.getByRole('radio', {
+          name: 'Accept Submit feedback and approve submission'
+        })
+      )
+      userEvent.click(
+        screen.getByRole('button', {
+          name: 'Submit'
+        })
+      )
+    })
+    expect(screen.firstChild).toBe(undefined)
   })
   test('Should be able to reject submission', async () => {
     const { getByRole } = render(
@@ -290,18 +297,21 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(getByRole('textbox', { name: '' }), `This won't work`)
     expect(await screen.findByTestId('iteration 2')).toBeVisible()
-    userEvent.click(
-      getByRole('radio', {
-        name: 'Reject Request changes and reject submission'
-      })
-    )
-    userEvent.click(
-      getByRole('button', {
-        name: 'Submit'
-      })
-    )
+    await waitFor(() => {
+      userEvent.click(
+        getByRole('radio', {
+          name: 'Reject Request changes and reject submission'
+        })
+      )
+      userEvent.click(
+        getByRole('button', {
+          name: 'Submit'
+        })
+      )
+    })
+
+    expect(screen.firstChild).toBe(undefined)
   })
   test('Should be able to add comment', async () => {
     const updateCacheMock = jest.fn()
@@ -315,17 +325,21 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
-    userEvent.click(
-      getByRole('radio', {
-        name: 'Comment Submit general feedback without explicit approval'
-      })
-    )
-    userEvent.click(
-      getByRole('button', {
-        name: 'Submit'
-      })
-    )
+
+    await waitFor(() => {
+      userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
+      userEvent.click(
+        getByRole('radio', {
+          name: 'Comment Submit general feedback without explicit approval'
+        })
+      )
+      userEvent.click(
+        getByRole('button', {
+          name: 'Submit'
+        })
+      )
+    })
+
     expect(container).toMatchSnapshot()
   })
   test('Should not be able to add comment when comment value is empty', async () => {
@@ -337,16 +351,19 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.click(
-      getByRole('radio', {
-        name: 'Comment Submit general feedback without explicit approval'
-      })
-    )
-    userEvent.click(
-      getByRole('button', {
-        name: 'Submit'
-      })
-    )
+
+    await waitFor(() => {
+      userEvent.click(
+        getByRole('radio', {
+          name: 'Comment Submit general feedback without explicit approval'
+        })
+      )
+      userEvent.click(
+        getByRole('button', {
+          name: 'Submit'
+        })
+      )
+    })
 
     const addDeleteMutation = mocks[2].newData
 
