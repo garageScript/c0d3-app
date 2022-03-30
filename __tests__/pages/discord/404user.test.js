@@ -19,7 +19,7 @@ describe('404User page', () => {
     jest.clearAllMocks()
   })
 
-  it('Should redirect to /login on Login button click', () => {
+  it('Should redirect to /login on Login button click', async () => {
     expect.assertions(1)
 
     const { push } = useRouter()
@@ -28,11 +28,11 @@ describe('404User page', () => {
 
     const loginButton = container.querySelectorAll('button')[0]
 
-    userEvent.click(loginButton)
+    await userEvent.click(loginButton)
     expect(push).toBeCalledWith('/login')
   })
 
-  it('Should redirect to /signup on Signup button click', () => {
+  it('Should redirect to /signup on Signup button click', async () => {
     expect.assertions(1)
 
     const { push } = useRouter()
@@ -41,7 +41,7 @@ describe('404User page', () => {
 
     const signupButton = container.querySelectorAll('button')[1]
 
-    userEvent.click(signupButton)
+    await userEvent.click(signupButton)
     expect(push).toBeCalledWith('/signup')
   })
 
