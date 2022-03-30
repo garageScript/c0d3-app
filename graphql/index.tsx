@@ -539,13 +539,13 @@ export type CreateLessonMutation = {
   __typename?: 'Mutation'
   createLesson: Array<{
     __typename?: 'Lesson'
+    slug: string
     id: number
     docUrl?: string | null
     githubUrl?: string | null
     videoUrl?: string | null
     chatUrl?: string | null
     order: number
-    slug: string
     description: string
     title: string
     challenges: Array<{
@@ -597,6 +597,57 @@ export type DeleteModuleMutation = {
     content: string
     lesson: { __typename?: 'Lesson'; title: string }
   }
+}
+
+export type LessonAndChallengeInfoFragment = {
+  __typename?: 'Lesson'
+  id: number
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
+  chatUrl?: string | null
+  order: number
+  description: string
+  title: string
+  challenges: Array<{
+    __typename?: 'Challenge'
+    id: number
+    description: string
+    lessonId: number
+    title: string
+    order: number
+  }>
+}
+
+export type SubmissionsInfoFragment = {
+  __typename?: 'Submission'
+  id: number
+  status: SubmissionStatus
+  diff?: string | null
+  comment?: string | null
+  challengeId: number
+  lessonId: number
+  createdAt?: string | null
+  updatedAt: string
+  challenge: { __typename?: 'Challenge'; title: string; description: string }
+  user: { __typename?: 'User'; id: number; username: string }
+  reviewer?: {
+    __typename?: 'User'
+    id: number
+    username: string
+    name: string
+  } | null
+  comments?: Array<{
+    __typename?: 'Comment'
+    id: number
+    content: string
+    submissionId: number
+    createdAt: string
+    authorId: number
+    line?: number | null
+    fileName?: string | null
+    author?: { __typename?: 'User'; username: string; name: string } | null
+  }> | null
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
@@ -696,19 +747,20 @@ export type GetLessonsQuery = {
   __typename?: 'Query'
   lessons: Array<{
     __typename?: 'Lesson'
-    id: number
-    title: string
     slug: string
-    description: string
+    id: number
     docUrl?: string | null
     githubUrl?: string | null
     videoUrl?: string | null
-    order: number
     chatUrl?: string | null
+    order: number
+    description: string
+    title: string
     challenges: Array<{
       __typename?: 'Challenge'
       id: number
       description: string
+      lessonId: number
       title: string
       order: number
     }>
@@ -971,13 +1023,13 @@ export type UpdateLessonMutation = {
   __typename?: 'Mutation'
   updateLesson: Array<{
     __typename?: 'Lesson'
+    slug: string
     id: number
     docUrl?: string | null
     githubUrl?: string | null
     videoUrl?: string | null
     chatUrl?: string | null
     order: number
-    slug: string
     description: string
     title: string
     challenges: Array<{
@@ -1726,6 +1778,63 @@ export type Resolvers<ContextType = Context> = ResolversObject<{
   UserLesson?: UserLessonResolvers<ContextType>
 }>
 
+export const LessonAndChallengeInfoFragmentDoc = gql`
+  fragment lessonAndChallengeInfo on Lesson {
+    id
+    docUrl
+    githubUrl
+    videoUrl
+    chatUrl
+    order
+    description
+    title
+    challenges {
+      id
+      description
+      lessonId
+      title
+      order
+    }
+  }
+`
+export const SubmissionsInfoFragmentDoc = gql`
+  fragment submissionsInfo on Submission {
+    id
+    status
+    diff
+    comment
+    challenge {
+      title
+      description
+    }
+    challengeId
+    lessonId
+    user {
+      id
+      username
+    }
+    reviewer {
+      id
+      username
+      name
+    }
+    comments {
+      id
+      content
+      submissionId
+      createdAt
+      authorId
+      line
+      fileName
+      author {
+        username
+        name
+      }
+    }
+    createdAt
+    updatedAt
+  }
+`
 export const AcceptSubmissionDocument = gql`
   mutation acceptSubmission(
     $submissionId: Int!
@@ -2261,23 +2370,10 @@ export const CreateChallengeDocument = gql`
       description: $description
       title: $title
     ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
-      }
+      ...lessonAndChallengeInfo
     }
   }
+  ${LessonAndChallengeInfoFragmentDoc}
 `
 export type CreateChallengeMutationFn = Apollo.MutationFunction<
   CreateChallengeMutation,
@@ -2377,24 +2473,11 @@ export const CreateLessonDocument = gql`
       description: $description
       title: $title
     ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
+      ...lessonAndChallengeInfo
       slug
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
-      }
     }
   }
+  ${LessonAndChallengeInfoFragmentDoc}
 `
 export type CreateLessonMutationFn = Apollo.MutationFunction<
   CreateLessonMutation,
@@ -2976,23 +3059,11 @@ export type LessonMentorsQueryResult = Apollo.QueryResult<
 export const GetLessonsDocument = gql`
   query getLessons {
     lessons {
-      id
-      title
+      ...lessonAndChallengeInfo
       slug
-      description
-      docUrl
-      githubUrl
-      videoUrl
-      order
-      challenges {
-        id
-        description
-        title
-        order
-      }
-      chatUrl
     }
   }
+  ${LessonAndChallengeInfoFragmentDoc}
 `
 export type GetLessonsProps<
   TChildProps = {},
@@ -3076,42 +3147,10 @@ export type GetLessonsQueryResult = Apollo.QueryResult<
 export const GetPreviousSubmissionsDocument = gql`
   query getPreviousSubmissions($challengeId: Int!, $userId: Int!) {
     getPreviousSubmissions(challengeId: $challengeId, userId: $userId) {
-      id
-      status
-      diff
-      comment
-      challenge {
-        title
-        description
-      }
-      challengeId
-      lessonId
-      user {
-        id
-        username
-      }
-      reviewer {
-        id
-        username
-        name
-      }
-      comments {
-        id
-        content
-        submissionId
-        createdAt
-        authorId
-        line
-        fileName
-        author {
-          username
-          name
-        }
-      }
-      createdAt
-      updatedAt
+      ...submissionsInfo
     }
   }
+  ${SubmissionsInfoFragmentDoc}
 `
 export type GetPreviousSubmissionsProps<
   TChildProps = {},
@@ -3313,42 +3352,10 @@ export type GetSessionQueryResult = Apollo.QueryResult<
 export const SubmissionsDocument = gql`
   query submissions($lessonId: Int!) {
     submissions(lessonId: $lessonId) {
-      id
-      status
-      diff
-      comment
-      challenge {
-        title
-        description
-      }
-      challengeId
-      lessonId
-      user {
-        id
-        username
-      }
-      reviewer {
-        id
-        username
-        name
-      }
-      comments {
-        id
-        content
-        submissionId
-        createdAt
-        authorId
-        line
-        fileName
-        author {
-          username
-          name
-        }
-      }
-      createdAt
-      updatedAt
+      ...submissionsInfo
     }
   }
+  ${SubmissionsInfoFragmentDoc}
 `
 export type SubmissionsProps<
   TChildProps = {},
@@ -4034,23 +4041,10 @@ export const UpdateChallengeDocument = gql`
       description: $description
       title: $title
     ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
-      }
+      ...lessonAndChallengeInfo
     }
   }
+  ${LessonAndChallengeInfoFragmentDoc}
 `
 export type UpdateChallengeMutationFn = Apollo.MutationFunction<
   UpdateChallengeMutation,
@@ -4153,24 +4147,11 @@ export const UpdateLessonDocument = gql`
       description: $description
       title: $title
     ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
+      ...lessonAndChallengeInfo
       slug
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
-      }
     }
   }
+  ${LessonAndChallengeInfoFragmentDoc}
 `
 export type UpdateLessonMutationFn = Apollo.MutationFunction<
   UpdateLessonMutation,

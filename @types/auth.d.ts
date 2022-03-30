@@ -2,13 +2,6 @@ import { Submission } from '@prisma/client'
 import { DefaultSession } from 'next-auth'
 import { SessionContextValue } from 'next-auth/react'
 
-type SignInReturn = {
-  error: string
-  ok: boolean
-  status: number
-  url: string
-}
-
 export interface Session extends DefaultSession {
   lessonStatus: {
     starGiven: string
