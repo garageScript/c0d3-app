@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  render,
-  screen,
-  waitFor,
-  waitForElementToBeRemoved
-} from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import MyApp from '../../pages/_app'
 import Login from '../../pages/login'
@@ -14,7 +9,9 @@ import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
 import posthog from 'posthog-js'
-import { getLayout } from '../../components/Layout'
+
+jest.mock('next-auth/react')
+import { SessionProvider } from 'next-auth/react'
 
 jest.mock('posthog-js')
 jest.spyOn(Sentry, 'captureException')
@@ -31,6 +28,8 @@ const mocks = [
     }
   }
 ]
+
+SessionProvider.mockImplementation(({ children }) => <>{children}</>)
 
 describe('MyApp component', () => {
   const OLD_ENV = process.env
