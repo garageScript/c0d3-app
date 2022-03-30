@@ -110,25 +110,32 @@ describe('AdminLessonsInfo component', () => {
     const newLesson = screen.getAllByTestId('input1')[1]
 
     /*
-     * Previously we were using the clear function from the userEvent library
+     * Previously we were using the clear function from the await userEvent library
      * After updating to version 13.5.0, the clear function stopped working so
-     * to work around that I used setSelectionRange and with the type userEvent,
+     * to work around that I used setSelectionRange and with the type await userEvent,
      * I was able to modify the inputs. The link to the docs is below:
      * https://testing-library.com/docs/ecosystem-user-event/#typeelement-text-options
      */
 
-    newLesson.setSelectionRange(0, 16)
     await userEvent.type(newLesson, 'New Lesson', {
-      delay: 1
+      delay: 1,
+      initialSelectionStart: 0,
+      initialSelectionEnd: 16
     })
     const description = screen.getByText(
       'A super simple introduction to help you get started!'
     )
-    description.setSelectionRange(0, 52)
-    await userEvent.type(description, 'New description', { delay: 1 })
+    await userEvent.type(description, 'New description', {
+      delay: 1,
+      initialSelectionStart: 0,
+      initialSelectionEnd: 53
+    })
     const order = screen.getByTestId('input6')
-    order.setSelectionRange(0, 1)
-    await userEvent.type(order, '10', { delay: 1 })
+    await userEvent.type(order, '10', {
+      delay: 1,
+      initialSelectionStart: 0,
+      initialSelectionEnd: 1
+    })
     await waitFor(() =>
       userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
     )
@@ -147,7 +154,7 @@ describe('AdminLessonsInfo component', () => {
       </MockedProvider>
     )
     await waitFor(() => userEvent.clear(screen.getByTestId('input6')))
-    userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
     await waitFor(() => expect(screen.getByText('Required')).toBeTruthy())
   })
 
@@ -232,16 +239,18 @@ describe('AdminLessonsInfo component', () => {
         />
       </MockedProvider>
     )
-    userEvent.clear(screen.getAllByTestId('input1')[1])
+    await userEvent.clear(screen.getAllByTestId('input1')[1])
     await userEvent.type(screen.getAllByTestId('input1')[1], 'New Lesson', {
       delay: 1
     })
     const description = screen.getByText(
       'A super simple introduction to help you get started!'
     )
-    description.setSelectionRange(0, 52)
-    userEvent.type(description, 'New description')
-    userEvent.clear(screen.getByTestId('input6'))
+    await userEvent.type(description, 'New description', {
+      initialSelectionStart: 0,
+      initialSelectionEnd: 52
+    })
+    await userEvent.clear(screen.getByTestId('input6'))
     await userEvent.type(screen.getByTestId('input6'), '10', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
