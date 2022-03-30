@@ -29,7 +29,7 @@ describe('MarkdownToolbar Component', () => {
     expect(screen.queryAllByLabelText(/ctrl/).length).toBeGreaterThan(0)
     expect(screen.queryAllByLabelText(/cmd/).length).toBe(0)
   })
-  test('does not call onChange if inputRef.current is null', () => {
+  test('does not call onChange if inputRef.current is null', async () => {
     const nullRef = { current: null }
     const mockOnChange = jest.fn()
     render(
@@ -39,72 +39,76 @@ describe('MarkdownToolbar Component', () => {
         onChange={mockOnChange}
       />
     )
-    userEvent.click(screen.getByRole('button', { name: /header/ }))
+    await userEvent.click(screen.getByRole('button', { name: /header/ }))
     expect(mockOnChange).not.toBeCalled()
   })
 
   describe('Buttons should call markdown stylers when clicked', () => {
-    test('header calls -> markdown.header', () => {
+    test('header calls -> markdown.header', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /header/ }))
+      await userEvent.click(screen.getByRole('button', { name: /header/ }))
       expect(markdown.header).toBeCalledWith(mockTextArea)
     })
 
-    test('bold calls -> markdown.bold', () => {
+    test('bold calls -> markdown.bold', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /bold/ }))
+      await userEvent.click(screen.getByRole('button', { name: /bold/ }))
       expect(markdown.bold).toBeCalledWith(mockTextArea)
     })
 
-    test('italic calls -> markdown.italic', () => {
+    test('italic calls -> markdown.italic', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /italic/ }))
+      await userEvent.click(screen.getByRole('button', { name: /italic/ }))
       expect(markdown.italic).toBeCalledWith(mockTextArea)
     })
 
-    test('quote calls -> markdown.quote', () => {
+    test('quote calls -> markdown.quote', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /quote/ }))
+      await userEvent.click(screen.getByRole('button', { name: /quote/ }))
       expect(markdown.quote).toBeCalledWith(mockTextArea)
     })
 
-    test('code calls -> markdown.code', () => {
+    test('code calls -> markdown.code', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /code/ }))
+      await userEvent.click(screen.getByRole('button', { name: /code/ }))
       expect(markdown.code).toBeCalledWith(mockTextArea)
     })
 
-    test('link calls -> markdown.link', () => {
+    test('link calls -> markdown.link', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /link/ }))
+      await userEvent.click(screen.getByRole('button', { name: /link/ }))
       expect(markdown.link).toBeCalledWith(mockTextArea)
     })
 
-    test('bulletList calls -> markdown.bulletList', () => {
+    test('bulletList calls -> markdown.bulletList', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /bulleted list/ }))
+      await userEvent.click(
+        screen.getByRole('button', { name: /bulleted list/ })
+      )
       expect(markdown.bulletList).toBeCalledWith(mockTextArea)
     })
 
-    test('orderedList calls -> markdown.orderedList', () => {
+    test('orderedList calls -> markdown.orderedList', async () => {
       render(
         <MarkdownToolbar isMac={false} inputRef={mockRef} onChange={() => {}} />
       )
-      userEvent.click(screen.getByRole('button', { name: /numbered list/ }))
+      await userEvent.click(
+        screen.getByRole('button', { name: /numbered list/ })
+      )
       expect(markdown.orderedList).toBeCalledWith(mockTextArea)
     })
   })
