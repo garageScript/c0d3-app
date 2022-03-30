@@ -74,12 +74,12 @@ describe('[docSlug]', () => {
       expect(Docs.getLayout).toBe(getLayout)
     })
 
-    test('should render functioning "Go Back" button', () => {
+    test('should render functioning "Go Back" button', async () => {
       const { back } = useRouter()
       render(<Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />)
 
       expect(back).not.toHaveBeenCalled()
-      userEvent.click(screen.getByRole('button', { name: 'Go Back' }))
+      await userEvent.click(screen.getByRole('button', { name: 'Go Back' }))
       expect(back).toHaveBeenCalled()
     })
 
@@ -114,14 +114,14 @@ describe('[docSlug]', () => {
       )
     })
 
-    test('should render functioning MDX content', () => {
+    test('should render functioning MDX content', async () => {
       render(<Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />)
 
       // Spoiler component renders into details / summary html elements
       const detailsElement = screen.getByRole('group')
 
       expect(detailsElement).not.toHaveAttribute('open')
-      userEvent.click(screen.getByText('what am i?'))
+      await userEvent.click(screen.getByText('what am i?'))
       expect(detailsElement).toHaveAttribute('open')
     })
     test('should match screenshot', () => {
