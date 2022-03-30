@@ -105,7 +105,7 @@ describe('SelectIteration component', () => {
       }
     ]
   }
-  test('Should be able to select submissions', () => {
+  test('Should be able to select submissions', async () => {
     const setIndex = jest.fn()
     const setSubmission = jest.fn()
     const { container } = render(
@@ -119,7 +119,7 @@ describe('SelectIteration component', () => {
         currentIndex={1}
       />
     )
-    userEvent.click(screen.getByTestId('iteration 1'))
+    await userEvent.click(screen.getByTestId('iteration 1'))
     expect(setIndex).toBeCalled()
     expect(setSubmission).toBeCalled()
     expect(container).toMatchSnapshot()
