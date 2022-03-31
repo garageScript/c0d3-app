@@ -136,9 +136,7 @@ describe('AdminLessonsInfo component', () => {
       initialSelectionStart: 0,
       initialSelectionEnd: 1
     })
-    await waitFor(() =>
-      userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
-    )
+    await userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
     expect(description.textContent).toEqual('New description')
     await waitFor(() => expect(container).toMatchSnapshot())
   })
@@ -252,9 +250,8 @@ describe('AdminLessonsInfo component', () => {
     })
     await userEvent.clear(screen.getByTestId('input6'))
     await userEvent.type(screen.getByTestId('input6'), '10', { delay: 1 })
-    await waitFor(() =>
-      userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
-    )
+    await userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
+
     await waitFor(() => expect(Sentry.captureException).toBeCalled())
   })
 })
