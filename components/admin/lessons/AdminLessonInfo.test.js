@@ -110,9 +110,9 @@ describe('AdminLessonsInfo component', () => {
     const newLesson = screen.getAllByTestId('input1')[1]
 
     /*
-     * Previously we were using the clear function from the await userEvent library
+     * Previously we were using the clear function from the userEvent library
      * After updating to version 13.5.0, the clear function stopped working so
-     * to work around that I used setSelectionRange and with the type await userEvent,
+     * to work around that I used setSelectionRange and with the type userEvent,
      * I was able to modify the inputs. The link to the docs is below:
      * https://testing-library.com/docs/ecosystem-user-event/#typeelement-text-options
      */
