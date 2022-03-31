@@ -4,6 +4,10 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+
+jest.mock('../helpers/useBreakpoint.tsx')
+
+import useBreakpoint from '../helpers/useBreakpoint.tsx'
 import { MdInput } from './MdInput'
 
 const TestComponent = () => {
@@ -73,8 +77,6 @@ describe('MdInput Component', () => {
     expect(textbox).toHaveValue('Hello,\nTom!')
   })
   test('Should automatically resize to fit content', () => {
-    expect.assertions(1)
-
     render(<TestComponent />)
     // autoSize function runs on first render with useEffect.
     // Only picks up '+2px' additional padding as JSDOM doesnt properly mock styles
@@ -85,17 +87,31 @@ describe('MdInput Component', () => {
     render(<TestComponent />)
     const textbox = screen.getByRole('textbox')
 
+    jest
+      .spyOn(textbox, 'clientHeight', 'get')
+      .mockImplementation(() => 200)
+      .mockImplementationOnce(() => 100)
+
     expect(textbox).not.toHaveStyle('height: 200px')
     await userEvent.click(textbox)
-    expect(textbox).toHaveStyle('height: 2px')
+    expect(textbox).toHaveStyle('height: 200px')
 
     await userEvent.click(textbox)
-    expect(textbox).toHaveStyle('height: 2px')
+    expect(textbox).toHaveStyle('height: 200px')
     await userEvent.type(
       textbox,
       'Lots{enter}{enter}{enter}{enter}o{enter}{enter}{enter}{enter}{enter}lines'
     )
-    expect(textbox).toHaveStyle('height: 2px')
+    expect(textbox).toHaveStyle('height: 200px')
+  })
+  test('Should render toolbar when on mobile', () => {
+    expect.assertions(1)
+
+    render(<TestComponent />)
+
+    useBreakpoint.mockImplementation(() => true)
+
+    expect(screen.getByRole('toolbar')).toBeInTheDocument()
   })
   test('Undo should restore previous text', async () => {
     render(<TestComponent />)
