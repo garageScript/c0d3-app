@@ -54,6 +54,21 @@ const mocks = [
   },
   {
     request: {
+      query: ACCEPT_SUBMISSION,
+      variables: { submissionId: 104, lessonId: 1, comment: '' }
+    },
+    result: {
+      data: {
+        acceptSubmission: {
+          id: 1,
+          comment: '',
+          status: SubmissionStatus.Passed
+        }
+      }
+    }
+  },
+  {
+    request: {
       query: ADD_COMMENT,
       variables: { submissionId: 104, content: 'Good job!' }
     },
@@ -142,6 +157,40 @@ const mocks = [
   },
   {
     request: {
+      query: REJECT_SUBMISSION,
+      variables: {
+        submissionId: 104,
+        comment: '',
+        lessonId: 1
+      }
+    },
+    result: {
+      data: {
+        rejectSubmission: {
+          id: 104
+        }
+      }
+    }
+  },
+  {
+    request: {
+      query: REJECT_SUBMISSION,
+      variables: {
+        submissionId: 104,
+        comment: '',
+        lessonId: 1
+      }
+    },
+    result: {
+      data: {
+        rejectSubmission: {
+          id: 104
+        }
+      }
+    }
+  },
+  {
+    request: {
       query: GET_PREVIOUS_SUBMISSIONS,
       variables: { challengeId: 9, userId: 3 }
     },
@@ -161,12 +210,11 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     expect(await screen.findByTestId('iteration 1')).toBeVisible()
-    await waitFor(() => {
-      userEvent.click(screen.getByTestId('iteration 0'))
-      userEvent.type(
-        screen.getByTestId('textbox'),
-        'A very unique test comment!'
-      )
+    await waitFor(async () => {
+      await userEvent.click(screen.getByTestId('iteration 0'))
+    })
+    fireEvent.change(screen.getByTestId('textbox'), {
+      target: { value: 'A very unique test comment!' }
     })
     fireEvent.click(screen.getByText('Submit'))
     expect(container).toMatchSnapshot()
@@ -274,18 +322,16 @@ describe('ReviewCard Component', () => {
     )
 
     expect(await screen.findByTestId('iteration 2')).toBeVisible()
-    await waitFor(() => {
-      userEvent.click(
-        screen.getByRole('radio', {
-          name: 'Accept Submit feedback and approve submission'
-        })
-      )
-      userEvent.click(
-        screen.getByRole('button', {
-          name: 'Submit'
-        })
-      )
-    })
+    fireEvent.click(
+      screen.getByRole('radio', {
+        name: 'Accept Submit feedback and approve submission'
+      })
+    )
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Submit'
+      })
+    )
     expect(screen.firstChild).toBe(undefined)
   })
   test('Should be able to reject submission', async () => {
@@ -298,18 +344,16 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     expect(await screen.findByTestId('iteration 2')).toBeVisible()
-    await waitFor(() => {
-      userEvent.click(
-        getByRole('radio', {
-          name: 'Reject Request changes and reject submission'
-        })
-      )
-      userEvent.click(
-        getByRole('button', {
-          name: 'Submit'
-        })
-      )
-    })
+    fireEvent.click(
+      getByRole('radio', {
+        name: 'Reject Request changes and reject submission'
+      })
+    )
+    fireEvent.click(
+      getByRole('button', {
+        name: 'Submit'
+      })
+    )
 
     expect(screen.firstChild).toBe(undefined)
   })
@@ -326,19 +370,19 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => {
-      userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
-      userEvent.click(
-        getByRole('radio', {
-          name: 'Comment Submit general feedback without explicit approval'
-        })
-      )
-      userEvent.click(
-        getByRole('button', {
-          name: 'Submit'
-        })
-      )
+    fireEvent.change(getByRole('textbox', { name: '' }), {
+      target: { value: 'Good job!' }
     })
+    fireEvent.click(
+      getByRole('radio', {
+        name: 'Comment Submit general feedback without explicit approval'
+      })
+    )
+    fireEvent.click(
+      getByRole('button', {
+        name: 'Submit'
+      })
+    )
 
     expect(container).toMatchSnapshot()
   })
@@ -352,20 +396,17 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => {
-      userEvent.click(
-        getByRole('radio', {
-          name: 'Comment Submit general feedback without explicit approval'
-        })
-      )
-      userEvent.click(
-        getByRole('button', {
-          name: 'Submit'
-        })
-      )
-    })
-
-    const addDeleteMutation = mocks[2].newData
+    fireEvent.click(
+      getByRole('radio', {
+        name: 'Comment Submit general feedback without explicit approval'
+      })
+    )
+    fireEvent.click(
+      getByRole('button', {
+        name: 'Submit'
+      })
+    )
+    const addDeleteMutation = mocks[3].newData
 
     await waitFor(() => expect(addDeleteMutation).toHaveBeenCalledTimes(0))
 
@@ -453,5 +494,24 @@ describe('ReviewCard Component', () => {
     const accordionItem = container.querySelector('.accordion__item')
 
     expect(accordionItem).toBeVisible()
+  })
+  test('Should change from comment to accept', async () => {
+    expect.assertions(1)
+
+    const { getByDisplayValue } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={{ ...submissionData, status: 'open' }}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+
+    const radioComment = getByDisplayValue('comment')
+    const radioAccept = getByDisplayValue('accept')
+
+    fireEvent.click(radioAccept)
+
+    expect(radioComment.checked).toBeFalsy()
   })
 })
