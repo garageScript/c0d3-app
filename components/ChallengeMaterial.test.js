@@ -450,6 +450,33 @@ describe('Curriculum challenge page', () => {
     })
   })
 
+  test('Should be able to add comments', async () => {
+    const updateCacheMock = jest.fn()
+    updateCache.mockImplementation(() => updateCacheMock())
+
+    const copyProps = getMockedProps()
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.passedAt = null
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+
+    fireEvent.change(screen.getByTestId('textbox'), {
+      target: { value: 'A very unique test comment!' }
+    })
+
+    fireEvent.click(screen.getByText('Comment'))
+
+    // TODO: add test to check that comment is rendered to screen after clicking
+    expect(screen.getByTestId('textbox').value).toBe('')
+  })
+
   test('Should return error component if there is no name in context', () => {
     const copyProps = getMockedProps()
     const Wrapper = ({ children }) => {
