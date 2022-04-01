@@ -5,6 +5,7 @@ import { Text } from './theme/Text'
 import Image from 'next/image'
 export enum StatusCode {
   NOT_FOUND = 404,
+  FORBIDDEN = 403,
   INTERNAL_SERVER_ERROR = 500
 }
 type ErrorProps = {
@@ -12,34 +13,53 @@ type ErrorProps = {
   message?: string
 }
 const errorTitle: Readonly<{ [key in StatusCode]: string }> = {
-  [StatusCode.NOT_FOUND]: 'Page not found',
-  [StatusCode.INTERNAL_SERVER_ERROR]: 'Internal server error'
+  [StatusCode.NOT_FOUND]: '404',
+  [StatusCode.INTERNAL_SERVER_ERROR]: '500',
+  [StatusCode.FORBIDDEN]: '403'
 }
 
 const Error: React.FC<ErrorProps> = ({ code, message }) => {
   return (
     <Layout title={errorTitle[code]}>
-      <div className="container">
+      <div className="container pt-5">
         <div className="row">
-          <div className="d-flex col-sm-3 align-items-center justify-content-center">
-            <div className="text-center mt-3">
-              <Text component="div" size="xl" bold={true}>
-                {errorTitle[code]}
-              </Text>
-              <Text size="md">{message}</Text>
-              <NavLink path="/" className="btn btn-primary py-3 px-5 mt-3">
-                <h3 className="fw-bold">Back</h3>
-              </NavLink>
-            </div>
-          </div>
-          <div className="mb-3 col-sm-9">
+          <div className="d-flex align-items-center justify-content-center">
             <Image
               src={`/assets/errors/${code}.svg`}
-              layout="responsive"
-              width={1200}
-              height={1200}
+              layout="fixed"
+              width={500}
+              height={200}
               objectFit="contain"
             />
+          </div>
+          <div className="d-flex align-items-center justify-content-center">
+            <div className="text-center">
+              <Text size="xl" bold={true} component="div">
+                {errorTitle[code]}
+              </Text>
+              <div className="pb-4 ">
+                <Text size="md" bold={true}>
+                  {message}
+                </Text>
+              </div>
+
+              <div className="mb-4 ">
+                <NavLink path="/curriculum" className="px-3 pt-2">
+                  Curriculum
+                </NavLink>
+                <span className="pt-2 opacity-50">|</span>
+                <NavLink
+                  path="https://github.com/garageScript/c0d3-app"
+                  className="px-3 pt-2"
+                >
+                  Repo
+                </NavLink>
+                <span className="pt-2 opacity-50">|</span>
+                <NavLink path="https://discord.gg/c0d3" className="px-3 pt-2">
+                  Community
+                </NavLink>
+              </div>
+            </div>
           </div>
         </div>
       </div>

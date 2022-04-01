@@ -4828,64 +4828,96 @@ Array [
     className="container-md"
   >
     <div
-      className="container"
+      className="container pt-5"
     >
       <div
         className="row"
       >
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center"
+        >
+          <img
+            className="img-fluid"
+            height={200}
+            layout="fixed"
+            objectFit="contain"
+            src="/assets/errors/500.svg"
+            width={500}
+          />
+        </div>
+        <div
+          className="d-flex align-items-center justify-content-center"
         >
           <div
-            className="text-center mt-3"
+            className="text-center"
           >
             <div
               style={
                 Object {
                   "color": "#292929",
-                  "fontSize": "1.5rem",
+                  "fontSize": "3rem",
                 }
               }
             >
               <strong>
-                Internal server error
+                500
               </strong>
             </div>
             <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
+              className="pb-4 "
+            >
+              <div
+                style={
+                  Object {
+                    "color": "#292929",
+                    "fontSize": "1rem",
+                  }
                 }
-              }
-            >
-              No data
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
               >
-                Back
-              </h3>
-            </a>
+                <strong>
+                  No data
+                </strong>
+              </div>
+            </div>
+            <div
+              className="mb-4 "
+            >
+              <a
+                className="px-3 pt-2 noUnderline"
+                href="/curriculum"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Curriculum
+              </a>
+              <span
+                className="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                className="px-3 pt-2 noUnderline"
+                href="https://github.com/garageScript/c0d3-app"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Repo
+              </a>
+              <span
+                className="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                className="px-3 pt-2 noUnderline"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Community
+              </a>
+            </div>
           </div>
-        </div>
-        <div
-          className="mb-3 col-sm-9"
-        >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/500.svg"
-            width={1200}
-          />
         </div>
       </div>
     </div>
@@ -4976,64 +5008,96 @@ Array [
     className="container-md"
   >
     <div
-      className="container"
+      className="container pt-5"
     >
       <div
         className="row"
       >
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center"
+        >
+          <img
+            className="img-fluid"
+            height={200}
+            layout="fixed"
+            objectFit="contain"
+            src="/assets/errors/404.svg"
+            width={500}
+          />
+        </div>
+        <div
+          className="d-flex align-items-center justify-content-center"
         >
           <div
-            className="text-center mt-3"
+            className="text-center"
           >
             <div
               style={
                 Object {
                   "color": "#292929",
-                  "fontSize": "1.5rem",
+                  "fontSize": "3rem",
                 }
               }
             >
               <strong>
-                Page not found
+                404
               </strong>
             </div>
             <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
+              className="pb-4 "
+            >
+              <div
+                style={
+                  Object {
+                    "color": "#292929",
+                    "fontSize": "1rem",
+                  }
                 }
-              }
-            >
-              404 error
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
               >
-                Back
-              </h3>
-            </a>
+                <strong>
+                  404 error
+                </strong>
+              </div>
+            </div>
+            <div
+              className="mb-4 "
+            >
+              <a
+                className="px-3 pt-2 noUnderline"
+                href="/curriculum"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Curriculum
+              </a>
+              <span
+                className="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                className="px-3 pt-2 noUnderline"
+                href="https://github.com/garageScript/c0d3-app"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Repo
+              </a>
+              <span
+                className="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                className="px-3 pt-2 noUnderline"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Community
+              </a>
+            </div>
           </div>
-        </div>
-        <div
-          className="mb-3 col-sm-9"
-        >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/404.svg"
-            width={1200}
-          />
         </div>
       </div>
     </div>
@@ -26328,7 +26392,7 @@ Array [
     style={
       Object {
         "color": "#292929",
-        "fontSize": "1.5rem",
+        "fontSize": "3rem",
       }
     }
   >

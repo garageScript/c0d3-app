@@ -5,6 +5,8 @@ import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
 import Error, { StatusCode } from '../../components/Error'
 import { useRouter } from 'next/router'
+import ErrorPage from '../../components/Error'
+
 export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   data,
   children,
@@ -27,9 +29,10 @@ export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
 
   if (!isAdmin) {
     return (
-      <Layout title={title}>
-        <h1>You must be admin to access this page</h1>
-      </Layout>
+      <ErrorPage
+        code={403}
+        message="you must have the admin role to access this page"
+      />
     )
   }
 
