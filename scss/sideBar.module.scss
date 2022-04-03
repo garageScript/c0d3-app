@@ -1,0 +1,144 @@
+$primary-color: hsl(0, 0%, 98.4%);
+
+.sidebar_title {
+  width: 327px;
+  height: 22px;
+  left: 0px;
+  top: 0px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 22px;
+}
+
+.sidebar_mainbody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 21px;
+
+  position: static;
+  width: 369.01px;
+  height: 460px;
+  left: 0px;
+  top: 0px;
+
+  background: $primary-color;
+  border-radius: 10px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 39px;
+}
+
+.sidebar_tabsNav {
+  transition: color 0.25s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.25s ease-in-out;
+  position: static;
+  width: 327.01px;
+  height: 52px;
+  background: $primary-color;
+  border-radius: 10px;
+  padding-left: 6.12%;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 4px;
+  color: #000000;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  &:hover .sidebar_arrow {
+    transform: translateX(5px);
+  }
+  &:hover {
+    color: #000000;
+    background-color: #ffffff44;
+  }
+}
+
+.sidebar_arrow {
+  margin-right: 10px;
+  text-decoration: none;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-weight: 900;
+  transition: transform 600ms;
+  margin-top: -5px;
+}
+
+.sidebar_deleteX {
+  background: none;
+  margin-right: 10px;
+  text-decoration: none;
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -5px;
+
+  &:hover {
+    filter: brightness(150%);
+  }
+}
+
+.sidebar_tabsNav__active {
+  color: black;
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+
+  &:hover .x {
+    display: block;
+  }
+  &:hover {
+    background-color: #ffffff;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+.sidebar_addButton {
+  align-items: center;
+  justify-content: center;
+  position: static;
+  background: #ffffff;
+  border: 1px solid #5440d8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 138%;
+
+  height: 49px;
+  width: 214px;
+  left: 56.505859375px;
+  top: 355px;
+  border-radius: 4px;
+  padding: 15px, 48px, 15px, 48px;
+
+  color: #5440d8;
+
+  &:hover {
+    filter: brightness(150%);
+  }
+}
