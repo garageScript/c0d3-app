@@ -9,8 +9,7 @@ import ErrorPage from '../../components/Error'
 
 export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   data,
-  children,
-  title
+  children
 }) => {
   const router = useRouter()
   const { loading, error, session } = data
