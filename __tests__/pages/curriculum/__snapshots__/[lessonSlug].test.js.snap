@@ -606,50 +606,82 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
     class="container-md"
   >
     <div
-      class="container"
+      class="container pt-5"
     >
       <div
         class="row"
       >
         <div
-          class="d-flex col-sm-3 align-items-center justify-content-center"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <img
+            height="200"
+            layout="fixed"
+            src="/assets/errors/404.svg"
+            width="500"
+          />
+        </div>
+        <div
+          class="d-flex align-items-center justify-content-center"
         >
           <div
-            class="text-center mt-3"
+            class="text-center"
           >
             <div
-              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+              style="color: rgb(41, 41, 41); font-size: 3rem;"
             >
               <strong>
-                Page not found
+                404
               </strong>
             </div>
             <div
-              style="color: rgb(41, 41, 41); font-size: 1rem;"
+              class="pb-4 "
             >
-              Lesson not found
-            </div>
-            <a
-              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-            >
-              <h3
-                class="fw-bold"
+              <div
+                style="color: rgb(41, 41, 41); font-size: 1rem;"
               >
-                Back
-              </h3>
-            </a>
+                <strong>
+                  Lesson not found
+                </strong>
+              </div>
+            </div>
+            <div
+              class="mb-4 "
+            >
+              <a
+                class="px-3 pt-2 noUnderline"
+                href="/curriculum"
+              >
+                Curriculum
+              </a>
+              <span
+                class="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                class="px-3 pt-2 noUnderline"
+                href="https://github.com/garageScript/c0d3-app"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Repo
+              </a>
+              <span
+                class="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                class="px-3 pt-2 noUnderline"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Community
+              </a>
+            </div>
           </div>
-        </div>
-        <div
-          class="mb-3 col-sm-9"
-        >
-          <img
-            height="1200"
-            layout="responsive"
-            src="/assets/errors/404.svg"
-            width="1200"
-          />
         </div>
       </div>
     </div>
@@ -1295,50 +1327,82 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
     class="container-md"
   >
     <div
-      class="container"
+      class="container pt-5"
     >
       <div
         class="row"
       >
         <div
-          class="d-flex col-sm-3 align-items-center justify-content-center"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <img
+            height="200"
+            layout="fixed"
+            src="/assets/errors/500.svg"
+            width="500"
+          />
+        </div>
+        <div
+          class="d-flex align-items-center justify-content-center"
         >
           <div
-            class="text-center mt-3"
+            class="text-center"
           >
             <div
-              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+              style="color: rgb(41, 41, 41); font-size: 3rem;"
             >
               <strong>
-                Internal server error
+                500
               </strong>
             </div>
             <div
-              style="color: rgb(41, 41, 41); font-size: 1rem;"
+              class="pb-4 "
             >
-              Bad data
-            </div>
-            <a
-              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-            >
-              <h3
-                class="fw-bold"
+              <div
+                style="color: rgb(41, 41, 41); font-size: 1rem;"
               >
-                Back
-              </h3>
-            </a>
+                <strong>
+                  Bad data
+                </strong>
+              </div>
+            </div>
+            <div
+              class="mb-4 "
+            >
+              <a
+                class="px-3 pt-2 noUnderline"
+                href="/curriculum"
+              >
+                Curriculum
+              </a>
+              <span
+                class="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                class="px-3 pt-2 noUnderline"
+                href="https://github.com/garageScript/c0d3-app"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Repo
+              </a>
+              <span
+                class="pt-2 opacity-50"
+              >
+                |
+              </span>
+              <a
+                class="px-3 pt-2 noUnderline"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Community
+              </a>
+            </div>
           </div>
-        </div>
-        <div
-          class="mb-3 col-sm-9"
-        >
-          <img
-            height="1200"
-            layout="responsive"
-            src="/assets/errors/500.svg"
-            width="1200"
-          />
         </div>
       </div>
     </div>

@@ -125,7 +125,7 @@ describe('Lesson Page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => getByText(/Page not found/i))
+    await waitFor(() => getByText(/404/i))
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
@@ -174,7 +174,7 @@ describe('Lesson Page', () => {
       </MockedProvider>
     )
 
-    const element = await findByText(/Internal server error/i)
+    const element = await findByText(/500/i)
     expect(element).toBeTruthy()
 
     await waitFor(() => expect(container).toMatchSnapshot())

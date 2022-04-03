@@ -17,7 +17,7 @@ describe('AdminLayout test', () => {
         <AdminLayout data={{ error: true }} />
       </MockedProvider>
     )
-    const element = await findByText(/Internal server error/i)
+    const element = await findByText(/500/i)
     expect(element).toBeTruthy()
   })
   test('Should redirect to login page if no session', async () => {

@@ -602,20 +602,12 @@ describe('user profile test', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should return error on error', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        error: new Error('error')
-      }
-    ]
-
-    const { findByRole } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+    const { findByText } = render(
+      <MockedProvider addTypename={false}>
+        <UserProfile data={{ error: true }} />
       </MockedProvider>
     )
-
-    const element = await findByRole('heading', { name: /Back/i })
+    const element = await findByText(/500/i)
     expect(element).toBeTruthy()
   })
 })
