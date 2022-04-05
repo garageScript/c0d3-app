@@ -21,9 +21,9 @@ describe('LessonTitleCard Component', () => {
 
   test('should call router.back() when clicking "go back"', async () => {
     const { back } = useRouter()
-    const { container } = render(<LessonTitleCard {...props} />)
+    render(<LessonTitleCard {...props} />)
     expect(back).not.toHaveBeenCalled()
-    userEvent.click(screen.getByText('Go Back'))
+    await userEvent.click(screen.getByText('Go Back'))
     expect(back).toHaveBeenCalled()
   })
   test('should not render lesson button if lessonUrl is undefined', () => {
@@ -36,13 +36,13 @@ describe('LessonTitleCard Component', () => {
     ).not.toBeInTheDocument()
   })
 
-  test('should display "show challenges" button on small screens and call "setShow" when clicked', () => {
+  test('should display "show challenges" button on small screens and call "setShow" when clicked', async () => {
     mockUseBreakpoint.mockReturnValue(true)
     const { container } = render(
       <LessonTitleCard {...props} setShow={setShow} show={false} />
     )
     expect(mockUseBreakpoint).toBeCalledWith('sm', 'down')
-    userEvent.click(screen.getByText('SHOW CHALLENGES'))
+    await userEvent.click(screen.getByText('SHOW CHALLENGES'))
     expect(setShow).toBeCalledWith(true)
     expect(container).toMatchSnapshot()
   })

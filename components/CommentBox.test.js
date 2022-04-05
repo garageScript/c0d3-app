@@ -1,7 +1,7 @@
 import '../__mocks__/useIsMac.mock'
 import '../__mocks__/useBreakpoint.mock'
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import AddComment from '../graphql/queries/addComment'
 import '@testing-library/jest-dom'
@@ -15,6 +15,8 @@ import dummyLessonData from '../__dummy__/lessonData'
 import dummyAlertData from '../__dummy__/alertData'
 import { SubmissionStatus } from '../graphql'
 import { ContextProvider } from '../helpers/globalContext'
+import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
+import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 
 describe('CommentBox component', () => {
   const comments = [
@@ -66,6 +68,87 @@ describe('CommentBox component', () => {
             id: 5
           }
         }
+      }
+    },
+    {
+      request: {
+        query: AddComment,
+        variables: {
+          line: 4,
+          fileName: 'test.js',
+          submissionId: 0,
+          content: 'A'
+        }
+      },
+      result: {
+        data: {
+          addComment: {
+            id: 5
+          }
+        }
+      }
+    },
+    {
+      request: {
+        query: AddComment,
+        variables: {
+          line: 4,
+          fileName: 'test.js',
+          submissionId: 0,
+          content: 'A'
+        }
+      },
+      result: {
+        data: {
+          addComment: {
+            id: 5
+          }
+        }
+      }
+    },
+    {
+      request: {
+        query: AddComment,
+        variables: {
+          line: 4,
+          fileName: 'test.js',
+          submissionId: 0,
+          content: 'y'
+        }
+      },
+      result: {
+        data: {
+          addComment: {
+            id: 5
+          }
+        }
+      }
+    },
+    {
+      request: {
+        query: GET_PREVIOUS_SUBMISSIONS,
+        variables: { challengeId: 0, userId: 1 }
+      },
+      result: {
+        data: getPreviousSubmissionsData
+      }
+    },
+    {
+      request: {
+        query: GET_PREVIOUS_SUBMISSIONS,
+        variables: { challengeId: 0, userId: 1 }
+      },
+      result: {
+        data: getPreviousSubmissionsData
+      }
+    },
+    {
+      request: {
+        query: GET_PREVIOUS_SUBMISSIONS,
+        variables: { challengeId: 0, userId: 1 }
+      },
+      result: {
+        data: getPreviousSubmissionsData
       }
     }
   ]
@@ -128,9 +211,11 @@ describe('CommentBox component', () => {
         </MockedProvider>
       </ContextProvider>
     )
-    userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
-    userEvent.click(screen.getByText('Add comment'))
-    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
+    fireEvent.change(screen.getByTestId('textbox'), {
+      target: { value: 'A very unique test comment!' }
+    })
+    fireEvent.click(screen.getByText('Add comment'))
+    expect(screen.getByTestId('textbox').value).toBe('')
   })
   test('Should add comment by student', async () => {
     const cache = new InMemoryCache({ addTypename: false })
@@ -157,9 +242,11 @@ describe('CommentBox component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
-    userEvent.click(screen.getByText('Add comment'))
-    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
+    fireEvent.change(screen.getByTestId('textbox'), {
+      target: { value: 'A very unique test comment!' }
+    })
+    fireEvent.click(screen.getByText('Add comment'))
+    expect(screen.getByTestId('textbox').value).toBe('')
   })
   test('Should not add comment if input is empty', async () => {
     const query = jest.fn()
@@ -191,7 +278,7 @@ describe('CommentBox component', () => {
         />
       </MockedProvider>
     )
-    userEvent.click(screen.getByText('Add comment'))
+    fireEvent.click(screen.getByText('Add comment'))
     expect(query).not.toBeCalled()
   })
   test('Should render empty commentBox', async () => {
@@ -231,7 +318,7 @@ describe('CommentBox component', () => {
       </MockedProvider>
     )
     expect(screen.queryByText('Show conversation')).toBeFalsy()
-    userEvent.click(screen.getByText('Hide conversation'))
+    fireEvent.click(screen.getByText('Hide conversation'))
     expect(await screen.findByText('Show conversation')).toBeVisible()
   })
   // test('Should not render input for submissions in progress', async () => {
