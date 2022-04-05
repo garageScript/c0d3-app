@@ -1,3 +1,4 @@
+import '../../__mocks__/next-auth/nextAuthAPI.mock'
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
