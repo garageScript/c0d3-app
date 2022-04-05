@@ -1,3 +1,5 @@
+import '../../__mocks__/next-auth/nextAuthAPI.mock'
+
 import React from 'react'
 import Curriculum, { getStaticProps } from '../../pages/curriculum'
 import { render, waitFor, screen, fireEvent } from '@testing-library/react'
