@@ -1,3 +1,4 @@
+import '../__mocks__/next-auth/nextAuthAPI.mock'
 import React from 'react'
 import { render, fireEvent, waitFor, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
@@ -5,6 +6,7 @@ import GET_APP from '../graphql/queries/getApp'
 import LOGOUT_USER from '../graphql/queries/logoutUser'
 import dummySessionData from '../__dummy__/sessionData'
 import AppNav from './AppNav'
+import { SessionProviderWrapper } from '../helpers/sessionProvider'
 
 describe('AppNav Component', () => {
   test('Should redirect to / route on logout success', async () => {
@@ -36,9 +38,11 @@ describe('AppNav Component', () => {
     ]
 
     const { getByText } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <AppNav />
-      </MockedProvider>
+      <SessionProviderWrapper>
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <AppNav />
+        </MockedProvider>
+      </SessionProviderWrapper>
     )
 
     await act(async () => {
