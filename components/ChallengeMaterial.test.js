@@ -263,7 +263,7 @@ describe('Curriculum challenge page', () => {
 
     expect(await within(el).findByRole('button')).toHaveClass('active')
 
-    userEvent.click(screen.getByTestId('iteration 1'))
+    await waitFor(() => userEvent.click(screen.getByTestId('iteration 1')))
 
     expect(await within(el).findByRole('button')).not.toHaveClass('active')
   })
@@ -284,7 +284,9 @@ describe('Curriculum challenge page', () => {
 
     await screen.findByText('Select submission')
 
-    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    await waitFor(() =>
+      userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    )
 
     await screen.findByText('Select submission')
   })
@@ -301,7 +303,9 @@ describe('Curriculum challenge page', () => {
 
     await screen.findByText('Select submission')
 
-    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    await waitFor(() =>
+      userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    )
 
     expect(
       screen.queryByText((_content, node) =>
@@ -332,7 +336,7 @@ describe('Curriculum challenge page', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('Should render clicked challenge within challenge question', () => {
+  test('Should render clicked challenge within challenge question', async () => {
     const copyProps = getMockedProps()
 
     const { getAllByTestId } = render(
@@ -342,8 +346,7 @@ describe('Curriculum challenge page', () => {
     )
 
     const challengeTitleCard = getAllByTestId('challenge-title')[1]
-    userEvent.click(challengeTitleCard)
-    // expect(container).toMatchSnapshot()
+    await waitFor(() => userEvent.click(challengeTitleCard))
     // TODO: change to a more specific test
   })
 
@@ -425,29 +428,6 @@ describe('Curriculum challenge page', () => {
     expect(copyProps.setShow).toBeCalledWith(false)
   })
 
-  test('Should be able to add comments', async () => {
-    const updateCacheMock = jest.fn()
-    updateCache.mockImplementation(() => updateCacheMock())
-
-    const copyProps = getMockedProps()
-    const { lessonStatus, userSubmissions } = copyProps
-    lessonStatus.passedAt = null
-    userSubmissions.forEach(
-      submission => (submission.status = SubmissionStatus.Open)
-    )
-
-    render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <ChallengeMaterial {...copyProps} />
-      </MockedProvider>
-    )
-
-    userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
-    fireEvent.click(screen.getByText('Comment'))
-
-    // TODO: add test to check that comment is rendered to screen after clicking
-  })
-
   test('Should not be able to add comments when comment text is empty', async () => {
     const copyProps = getMockedProps()
     const { lessonStatus, userSubmissions } = copyProps
@@ -469,6 +449,33 @@ describe('Curriculum challenge page', () => {
     await waitFor(() => {
       expect(addCommentMutation).toHaveBeenCalledTimes(0)
     })
+  })
+
+  test('Should be able to add comments', async () => {
+    const updateCacheMock = jest.fn()
+    updateCache.mockImplementation(() => updateCacheMock())
+
+    const copyProps = getMockedProps()
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.passedAt = null
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+
+    fireEvent.change(screen.getByTestId('textbox'), {
+      target: { value: 'A very unique test comment!' }
+    })
+
+    fireEvent.click(screen.getByText('Comment'))
+
+    // TODO: add test to check that comment is rendered to screen after clicking
+    expect(screen.getByTestId('textbox').value).toBe('')
   })
 
   test('Should return error component if there is no name in context', () => {

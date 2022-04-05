@@ -625,9 +625,9 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
             <input
               class="form-control"
               data-testid="input1"
-              placeholder="New title"
+              placeholder="Sum of 2 NumberNew title"
               type="text"
-              value="New title"
+              value="Sum of 2 NumberNew title"
             />
           </div>
           <div
@@ -844,7 +844,14 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
                 placeholder="Type something..."
                 style="height: 2px;"
               >
-                New description
+                Write a function that takes in 2 numbers and returns their sum.
+
+Here's how another developer might use your function:
+
+\`\`\`
+solution(5,9) // Should return 14
+solution(4,1) // Should return 5
+\`\`New description
               </textarea>
             </div>
           </div>

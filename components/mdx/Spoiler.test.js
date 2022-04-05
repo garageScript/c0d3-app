@@ -12,9 +12,9 @@ describe('Spoiler component test', () => {
       </Spoiler>
     )
     expect(container).toMatchSnapshot()
-    userEvent.click(screen.getByText('TestSpoiler'))
+    await userEvent.click(screen.getByText('TestSpoiler'))
     expect(screen.getByText('Hidden text')).toBeVisible()
-    userEvent.click(screen.getByText('TestSpoiler'))
+    await userEvent.click(screen.getByText('TestSpoiler'))
   })
   test('Should render spoiler without name', () => {
     render(

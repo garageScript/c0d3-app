@@ -53,7 +53,9 @@ describe('Alerts page', () => {
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
     expect(container).toMatchSnapshot()
     screen.getAllByRole('button', { name: 'Remove Alert' })
-    userEvent.click(screen.getAllByRole('button', { name: 'Remove Alert' })[0])
+    await userEvent.click(
+      screen.getAllByRole('button', { name: 'Remove Alert' })[0]
+    )
     await waitForElementToBeRemoved(() =>
       screen.queryByText('Set up your computer to submit challenges.')
     )
@@ -68,7 +70,9 @@ describe('Alerts page', () => {
     )
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
     screen.getAllByRole('button', { name: 'Remove Alert' })
-    userEvent.click(screen.getAllByRole('button', { name: 'Remove Alert' })[0])
+    await userEvent.click(
+      screen.getAllByRole('button', { name: 'Remove Alert' })[0]
+    )
     await waitFor(() => expect(Sentry.captureException).toBeCalled())
   })
 })
