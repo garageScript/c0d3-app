@@ -67,7 +67,7 @@
     "rehype-autolink-headings": "^6.1.0",
     "sass": "^1.49.11",
     "use-undo": "^1.0.5",
-    "winston": "^3.6.0",
+    "winston": "^3.7.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
