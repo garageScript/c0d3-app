@@ -67,7 +67,7 @@
     "rehype-autolink-headings": "^6.1.0",
     "sass": "^1.49.11",
     "use-undo": "^1.0.5",
-    "winston": "^3.6.0",
+    "winston": "^3.7.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -85,7 +85,7 @@
     "@storybook/addon-storysource": "^6.4.20",
     "@storybook/addon-viewport": "^6.4.20",
     "@storybook/react": "^6.4.20",
-    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^14.0.0",
