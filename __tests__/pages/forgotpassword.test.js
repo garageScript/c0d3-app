@@ -1,3 +1,4 @@
+import '../../__mocks__/next-auth/nextAuthAPI.mock'
 import React from 'react'
 import { GraphQLError } from 'graphql'
 import { render, fireEvent, waitFor } from '@testing-library/react'
