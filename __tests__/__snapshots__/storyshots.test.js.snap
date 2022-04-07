@@ -92,6 +92,318 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
+Array [
+  <div
+    className="lessons_tabsNav col"
+  >
+    <div
+      className="lessons__tabsNav__nav nav nav-pills"
+      onKeyDown={[Function]}
+      role="tablist"
+    >
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-1-tabpane-introduction"
+          aria-selected={true}
+          className="lessons_tabsNav__nav__item active"
+          data-rr-ui-event-key="introduction"
+          disabled={false}
+          id="react-aria6043327668-1-tab-introduction"
+          onClick={[Function]}
+          role="tab"
+        >
+          INTRODUCTION
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-1-tabpane-modules"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="modules"
+          disabled={false}
+          id="react-aria6043327668-1-tab-modules"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          MODULES
+        </a>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="lessons_tabs col"
+  >
+    <div
+      className="tab-content"
+    >
+      <div
+        aria-labelledby="react-aria6043327668-1-tab-introduction"
+        className="fade tab-pane active show"
+        id="react-aria6043327668-1-tabpane-introduction"
+        role="tabpanel"
+      >
+        <h1>
+          Some text
+        </h1>
+        <p>
+          Some paragraph that makes sense
+        </p>
+        <small>
+          Small text for the vibes
+        </small>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-1-tab-modules"
+        className="fade tab-pane"
+        id="react-aria6043327668-1-tabpane-modules"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/AdminLessonNav With Many Items 1`] = `
+Array [
+  <div
+    className="lessons_tabsNav col"
+  >
+    <div
+      className="lessons__tabsNav__nav nav nav-pills"
+      onKeyDown={[Function]}
+      role="tablist"
+    >
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-introduction"
+          aria-selected={true}
+          className="lessons_tabsNav__nav__item active"
+          data-rr-ui-event-key="introduction"
+          disabled={false}
+          id="react-aria6043327668-2-tab-introduction"
+          onClick={[Function]}
+          role="tab"
+        >
+          INTRODUCTION
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-Zaziuz"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="Zaziuz"
+          disabled={false}
+          id="react-aria6043327668-2-tab-Zaziuz"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          ZAZIUZ
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-Vanvied"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="Vanvied"
+          disabled={false}
+          id="react-aria6043327668-2-tab-Vanvied"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          VANVIED
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-Bovsoaca"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="Bovsoaca"
+          disabled={false}
+          id="react-aria6043327668-2-tab-Bovsoaca"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          BOVSOACA
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-Evesific"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="Evesific"
+          disabled={false}
+          id="react-aria6043327668-2-tab-Evesific"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          EVESIFIC
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-Tehocon"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="Tehocon"
+          disabled={false}
+          id="react-aria6043327668-2-tab-Tehocon"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          TEHOCON
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-Malujo"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="Malujo"
+          disabled={false}
+          id="react-aria6043327668-2-tab-Malujo"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          MALUJO
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          aria-controls="react-aria6043327668-2-tabpane-Vicolki"
+          className="lessons_tabsNav__nav__item--inactive"
+          data-rr-ui-event-key="Vicolki"
+          disabled={false}
+          id="react-aria6043327668-2-tab-Vicolki"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          VICOLKI
+        </a>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="lessons_tabs col"
+  >
+    <div
+      className="tab-content"
+    >
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-introduction"
+        className="fade tab-pane active show"
+        id="react-aria6043327668-2-tabpane-introduction"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-Zaziuz"
+        className="fade tab-pane"
+        id="react-aria6043327668-2-tabpane-Zaziuz"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-Vanvied"
+        className="fade tab-pane"
+        id="react-aria6043327668-2-tabpane-Vanvied"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-Bovsoaca"
+        className="fade tab-pane"
+        id="react-aria6043327668-2-tabpane-Bovsoaca"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-Evesific"
+        className="fade tab-pane"
+        id="react-aria6043327668-2-tabpane-Evesific"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-Tehocon"
+        className="fade tab-pane"
+        id="react-aria6043327668-2-tabpane-Tehocon"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-Malujo"
+        className="fade tab-pane"
+        id="react-aria6043327668-2-tabpane-Malujo"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+      <div
+        aria-labelledby="react-aria6043327668-2-tab-Vicolki"
+        className="fade tab-pane"
+        id="react-aria6043327668-2-tabpane-Vicolki"
+        role="tabpanel"
+      >
+        <p>
+          Modules with delete and add
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots Components/Alert Info 1`] = `
 <div
   className="alert d-flex justify-content-between mt-3 bg-primary text-white"
