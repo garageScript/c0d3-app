@@ -108,6 +108,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
+            <h4
+              class="progress-card__title mt-4 text-center "
+            >
+              Join C0D3 now and start your software engineering journey!
+            </h4>
             <div
               class="mt-3 text-center"
             >
@@ -1282,6 +1287,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
+            <h4
+              class="progress-card__title mt-4 text-center "
+            >
+              Join C0D3 now and start your software engineering journey!
+            </h4>
             <div
               class="mt-3 text-center"
             >
