@@ -9,6 +9,7 @@
 
 .navbar {
   font-family: PT Mono;
+  box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.08);
 }
 
 .navbar-brand {
@@ -16,8 +17,8 @@
 }
 
 .nav-item {
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
   font-size: 14px;
   font-weight: 700;
   color: #565656;
@@ -30,17 +31,42 @@
 
 .nav-link {
   color: #565656;
+  font-weight: 700;
   &:hover {
-    background-color: color.change(variables.$primary, $lightness: 90%);
+    background-color: color.change(
+      variables.$primary,
+      $lightness: 90%
+    ) !important;
+    color: variables.$primary !important;
     text-decoration: none;
   }
 }
 
 .nav-buttons {
   flex-shrink: 0;
+  text-transform: uppercase;
   & > * {
+    font-weight: 700;
+    text-decoration: none;
     min-width: 5em;
-    background-color: white;
+    color: variables.$secondary;
+  }
+}
+
+.login-btn {
+  background-color: variables.$secondary;
+  color: variables.$primary;
+  &:hover {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
+  }
+}
+
+.signup-btn {
+  background-color: variables.$primary;
+  &:hover {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
   }
 }
 
@@ -48,17 +74,17 @@
   font-size: 11px;
   letter-spacing: 0.07em;
   background: #c2ccff;
-  border: 2px solid #5440d8;
+  border: 2px solid variables.$primary;
   vertical-align: middle;
   margin: 0 0 0 10px;
   position: relative;
   bottom: 3px;
-  color: #5440d8;
+  color: variables.$primary;
 }
 
 .active {
-  background: #5440d8 !important;
-  color: #ffffff !important;
+  background: variables.$primary;
+  color: #ffffff;
 }
 
 .light-button > * {

@@ -1,41 +1,124 @@
 import React from 'react'
-import { render, fireEvent, screen, waitFor } from '@testing-library/react'
-import { DropdownMenu } from './DropdownMenu'
+import { render, fireEvent, act, waitFor } from '@testing-library/react'
+import ProfileDropdownMenu from './ProfileDropdownMenu'
+import GET_APP from '../graphql/queries/getApp'
+import LOGIN_USER from '../graphql/queries/logoutUser'
+import dummySessionData from '../__dummy__/sessionData'
+import { MockedProvider } from '@apollo/client/testing'
+import { useRouter } from 'next/router'
 
-const dropdownMenuItems = [
-  { title: 'Lessons', path: '/admin/lessons', as: 'button' },
-  null,
-  { title: 'Users', path: '/admin/users', as: 'button' },
-  { title: 'Alerts', path: '/admin/alerts', as: 'button' }
-]
+jest.mock('next/router', () => ({
+  useRouter: jest.fn()
+}))
 
-let testBtnOnClick = ''
+describe('Profile Dropdown component', () => {
+  test('Should highlight the current active page in the menu on the right path', async () => {
+    expect.assertions(1)
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: LOGIN_USER
+        },
+        result: {
+          data: {
+            login: {
+              success: true,
+              username: 'fakeusername',
+              error: null
+            }
+          }
+        }
+      }
+    ]
 
-describe('MdInput Component', () => {
-  test('Should render divider when an item is null', () => {
-    const { container, queryByRole } = render(
-      <DropdownMenu title="Admin" items={dropdownMenuItems} />
+    useRouter.mockImplementation(() => ({
+      push: jest.fn(),
+      pathname: '/profile/fakeusername',
+      route: '/profile/fakeusername',
+      asPath: '/profile/fakeusername',
+      query: ''
+    }))
+
+    const { getByText, getAllByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ProfileDropdownMenu username="fakeusername" isAdmin={true} />
+      </MockedProvider>
     )
-    const div = queryByRole('separator')
 
-    expect(div).toBeTruthy
-    expect(container).toMatchSnapshot()
+    await act(async () => {
+      await waitFor(() => getByText('Fakeusername'))
+      fireEvent.click(getByText('Fakeusername'))
+      await waitFor(() => getAllByText('Profile')[0])
+      fireEvent.click(getAllByText('Profile')[0])
+    })
+
+    await waitFor(() =>
+      expect(getAllByText('Profile')[0].classList.contains('active')).toBe(true)
+    )
   })
 
-  test('Should change value of testBtnOnClick upon click', () => {
-    dropdownMenuItems[0].onClick = val => (testBtnOnClick = val)
-
-    const { container } = render(
-      <DropdownMenu title="Admin" items={dropdownMenuItems} />
-    )
-
-    const btn = screen.queryByText('Admin')
-    fireEvent.click(btn, { button: 1 })
-
-    const lessons = screen.queryAllByText('Lessons')[0]
-    fireEvent.click(lessons, { button: 1 })
-
-    waitFor(() => expect(testBtnOnClick).toEqual('Lessons'))
-    expect(container).toMatchSnapshot()
-  })
+  // test('Should navigate to the right route when clicked', async () => {
+  //   expect.assertions(1)
+  //   const mocks = [
+  //     {
+  //       request: { query: GET_APP },
+  //       result: {
+  //         data: {
+  //           session: dummySessionData,
+  //           lessons: [],
+  //           alerts: []
+  //         }
+  //       }
+  //     },
+  //     {
+  //       request: {
+  //         query: LOGIN_USER
+  //       },
+  //       result: {
+  //         data: {
+  //           login: {
+  //             success: true,
+  //             username: 'fakeusername',
+  //             error: null
+  //           }
+  //         }
+  //       }
+  //     }
+  //   ]
+  //
+  //   useRouter.mockImplementation(() => ({
+  //     push: jest.fn(),
+  //     pathname: '/profile/fakeusername',
+  //     route: '/profile/fakeusername',
+  //     asPath: '/profile/fakeusername',
+  //     query: ''
+  //   }))
+  //
+  //   const { push } = useRouter()
+  //
+  //   const { getByText, getAllByText } = render(
+  //     <MockedProvider mocks={mocks} addTypename={false}>
+  //       <ProfileDropdownMenu username="fakeusername" isAdmin={true} />
+  //     </MockedProvider>
+  //   )
+  //
+  //   await act(async () => {
+  //     await waitFor(() => getByText('Fakeusername'))
+  //     fireEvent.click(getByText('Fakeusername'))
+  //     await waitFor(() => getAllByText('Profile')[0])
+  //     fireEvent.click(getAllByText('Profile')[0])
+  //   })
+  //
+  //   await waitFor(() => expect().toHaveBeenCalled())
+  // })
 })

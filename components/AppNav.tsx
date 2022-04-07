@@ -41,7 +41,7 @@ const NavBar: React.FC<AuthLinkProps> = ({}) => {
       {navItems.map(button => (
         <NavLink
           {...button}
-          className={`nav-link ${styles['nav-item']} ${styles['nav-link']} button.path`}
+          className={`nav-link ${styles['nav-item']} ${styles['nav-link']} px-3`}
           key={button.name}
           activePath={location === button.path}
         >
@@ -59,7 +59,7 @@ const LoggedInAuthNav: React.FC<{ username: string; session: any }> = ({
   const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
 
   return (
-    <div className={`${styles['nav-buttons']}`}>
+    <div>
       <ProfileDropdownMenu username={username} isAdmin={isAdmin} />
     </div>
   )
@@ -67,10 +67,13 @@ const LoggedInAuthNav: React.FC<{ username: string; session: any }> = ({
 
 const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
-    <NavLink path="/login" className="btn btn-light border m-2 me-lg-3">
+    <NavLink path="/login" className={`btn m-2 me-lg-3 ${styles['login-btn']}`}>
       Login
     </NavLink>
-    <NavLink path="/signup" className="btn btn-light border m-2 me-lg-3">
+    <NavLink
+      path="/signup"
+      className={`btn m-2 me-lg-3 ${styles['signup-btn']}`}
+    >
       Signup
     </NavLink>
   </div>

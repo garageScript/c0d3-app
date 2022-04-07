@@ -1,6 +1,5 @@
 import React from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
-import styles from '../scss/dropDown.module.scss'
 import UserInfoImage from './UserInfoImage'
 import { ChevronDownIcon } from '@primer/octicons-react'
 import LogoutContainer from './LogoutContainer'
@@ -9,10 +8,9 @@ import { UserInfo } from '../@types/user'
 import { useUserInfoQuery } from '../graphql/index'
 import { useRouter } from 'next/router'
 import _ from 'lodash'
+import styles from '../scss/profileDropDown.module.scss'
 
-//a null item indicates a dropdown divider
-
-type DropDownMenuProps = {
+type ProfileDropDownMenuProps = {
   username: string
   isAdmin: boolean
 }
@@ -20,10 +18,10 @@ type DropDownMenuProps = {
 type CustomToggleProps = {
   children?: React.ReactNode
   className?: string | undefined
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {}
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {}
 }
 
-const ProfileDropdownMenu: React.FC<DropDownMenuProps> = ({
+const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   username,
   isAdmin
 }) => {
@@ -31,7 +29,8 @@ const ProfileDropdownMenu: React.FC<DropDownMenuProps> = ({
     variables: { username },
     skip: !username
   })
-  const location = useRouter().asPath
+  const router = useRouter()
+  const location = router.asPath
 
   const fullname = _.get(data, 'userInfo.user.name', '')
 
@@ -51,15 +50,17 @@ const ProfileDropdownMenu: React.FC<DropDownMenuProps> = ({
     { title: 'Alerts', path: '/admin/alerts' }
   ]
 
+  const isActive = (path: string) => {
+    if (path === location) return `${styles['active']}`
+    return ''
+  }
+
   const adminDropdownMenu = dropdownAdminMenuItems.map(({ title, path }) => (
     <Dropdown.Item
-      className={
-        location === path
-          ? `${styles['dropdown-item']} ${styles['active']} nav-link `
-          : `${styles['dropdown-item']} nav-link `
-      }
+      className={`${styles['dropdown-item']} nav-link `}
       href={path}
       key={title}
+      bsPrefix={isActive(path)}
     >
       {title}
     </Dropdown.Item>
@@ -71,7 +72,7 @@ const ProfileDropdownMenu: React.FC<DropDownMenuProps> = ({
         ref={ref}
         className={props.className}
         onClick={e => {
-          props.onClick(e)
+          props.onClick && props.onClick(e)
         }}
       >
         {props.children}
@@ -88,7 +89,7 @@ const ProfileDropdownMenu: React.FC<DropDownMenuProps> = ({
           id="user_nav_toggle"
         >
           <UserInfoImage user={userInfo} className={`${styles['user-icon']}`} />
-          <span>{username}</span>
+          <span>{_.capitalize(username)}</span>
           <ChevronDownIcon size={16} />
         </Dropdown.Toggle>
         <Dropdown.Menu className={`${styles['dropdown-menu']}`} align="end">
@@ -100,11 +101,8 @@ const ProfileDropdownMenu: React.FC<DropDownMenuProps> = ({
             </>
           )}
           <Dropdown.Item
-            className={
-              location === `/profile/${username}`
-                ? `${styles['dropdown-item']} nav-link ${styles['active']} `
-                : `${styles['dropdown-item']} nav-link `
-            }
+            className={`${styles['dropdown-item']} nav-link `}
+            bsPrefix={isActive(`/profile/${username}`)}
             href={`/profile/${username}`}
           >
             Profile
@@ -117,11 +115,8 @@ const ProfileDropdownMenu: React.FC<DropDownMenuProps> = ({
       <div className="d-lg-none">
         {adminDropdownMenu}
         <Dropdown.Item
-          className={
-            location === `/profile/${username}`
-              ? `${styles['dropdown-item']} nav-link ${styles['active']} `
-              : `${styles['dropdown-item']} nav-link `
-          }
+          className={`${styles['dropdown-item']} nav-link `}
+          bsPrefix={isActive(`/profile/${username}`)}
           href={`/profile/${username}`}
         >
           Profile

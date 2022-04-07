@@ -1,0 +1,51 @@
+@use 'sass:color';
+@use '_variables.module.scss';
+@import 'colors.module.scss';
+
+.nav-user-toggle {
+  display: flex;
+  text-decoration: none;
+  color: #343a40;
+  align-items: center;
+  grid-column-gap: 8px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 700;
+  &::after {
+    display: none;
+  }
+  > span {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.dropdown-item {
+  color: #565656;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  &:hover {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
+    text-decoration: none;
+  }
+}
+
+.active {
+  background: variables.$primary;
+  color: variables.$secondary;
+}
+
+.user-icon {
+  height: 38px;
+  width: 38px;
+}
+
+.dropdown-menu {
+  box-shadow: 0px 4px 25px 0px hsla(0, 0%, 0%, 0.07);
+}

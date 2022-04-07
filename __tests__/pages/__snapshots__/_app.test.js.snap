@@ -37,13 +37,13 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -51,13 +51,13 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"

@@ -41,13 +41,13 @@ exports[`user profile test Should render anonymous users 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -55,13 +55,13 @@ exports[`user profile test Should render anonymous users 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -69,50 +69,67 @@ exports[`user profile test Should render anonymous users 1`] = `
             Community
           </a>
         </div>
-        <div
-          class="nav-buttons"
-        >
+        <div>
           <div
             class="dropdown"
           >
             <div
               class="d-none d-lg-block"
             >
-              <button
-                aria-expanded="false"
-                class="nav-item dropdown-toggle btn btn-primary"
-                id="user_nav_toggle"
-                type="button"
+              <div
+                class="nav-user-toggle  dropdown-toggle"
               >
-                Fakeusername
-              </button>
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
             <div
               class="d-lg-none"
             >
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/profile/fakeusername"
               >
@@ -126,10 +143,16 @@ exports[`user profile test Should render anonymous users 1`] = `
                 tabindex="0"
               >
                 <span>
-                  Logout
-                </span>
-                <span>
-                  Logout
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
                 </span>
               </a>
             </div>
@@ -154,7 +177,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
             >
               A 
             </div>
@@ -886,13 +909,13 @@ exports[`user profile test Should render if no stars received 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -900,13 +923,13 @@ exports[`user profile test Should render if no stars received 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -914,50 +937,67 @@ exports[`user profile test Should render if no stars received 1`] = `
             Community
           </a>
         </div>
-        <div
-          class="nav-buttons"
-        >
+        <div>
           <div
             class="dropdown"
           >
             <div
               class="d-none d-lg-block"
             >
-              <button
-                aria-expanded="false"
-                class="nav-item dropdown-toggle btn btn-primary"
-                id="user_nav_toggle"
-                type="button"
+              <div
+                class="nav-user-toggle  dropdown-toggle"
               >
-                Fakeusername
-              </button>
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
             <div
               class="d-lg-none"
             >
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/profile/fakeusername"
               >
@@ -971,10 +1011,16 @@ exports[`user profile test Should render if no stars received 1`] = `
                 tabindex="0"
               >
                 <span>
-                  Logout
-                </span>
-                <span>
-                  Logout
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
                 </span>
               </a>
             </div>
@@ -999,7 +1045,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
             >
               fu
             </div>
@@ -1736,13 +1782,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1750,13 +1796,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1764,50 +1810,67 @@ exports[`user profile test Should render nulled challenges 1`] = `
             Community
           </a>
         </div>
-        <div
-          class="nav-buttons"
-        >
+        <div>
           <div
             class="dropdown"
           >
             <div
               class="d-none d-lg-block"
             >
-              <button
-                aria-expanded="false"
-                class="nav-item dropdown-toggle btn btn-primary"
-                id="user_nav_toggle"
-                type="button"
+              <div
+                class="nav-user-toggle  dropdown-toggle"
               >
-                Fakeusername
-              </button>
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
             <div
               class="d-lg-none"
             >
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/profile/fakeusername"
               >
@@ -1821,10 +1884,16 @@ exports[`user profile test Should render nulled challenges 1`] = `
                 tabindex="0"
               >
                 <span>
-                  Logout
-                </span>
-                <span>
-                  Logout
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
                 </span>
               </a>
             </div>
@@ -1849,7 +1918,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
             >
               fu
             </div>
@@ -2622,13 +2691,13 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -2636,13 +2705,13 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -2650,50 +2719,67 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             Community
           </a>
         </div>
-        <div
-          class="nav-buttons"
-        >
+        <div>
           <div
             class="dropdown"
           >
             <div
               class="d-none d-lg-block"
             >
-              <button
-                aria-expanded="false"
-                class="nav-item dropdown-toggle btn btn-primary"
-                id="user_nav_toggle"
-                type="button"
+              <div
+                class="nav-user-toggle  dropdown-toggle"
               >
-                Fakeusername
-              </button>
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
             <div
               class="d-lg-none"
             >
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/profile/fakeusername"
               >
@@ -2707,10 +2793,16 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 tabindex="0"
               >
                 <span>
-                  Logout
-                </span>
-                <span>
-                  Logout
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
                 </span>
               </a>
             </div>
@@ -2735,7 +2827,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
             >
               fu
             </div>
@@ -3467,13 +3559,13 @@ exports[`user profile test Should render profile 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -3481,13 +3573,13 @@ exports[`user profile test Should render profile 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -3495,50 +3587,67 @@ exports[`user profile test Should render profile 1`] = `
             Community
           </a>
         </div>
-        <div
-          class="nav-buttons"
-        >
+        <div>
           <div
             class="dropdown"
           >
             <div
               class="d-none d-lg-block"
             >
-              <button
-                aria-expanded="false"
-                class="nav-item dropdown-toggle btn btn-primary"
-                id="user_nav_toggle"
-                type="button"
+              <div
+                class="nav-user-toggle  dropdown-toggle"
               >
-                Fakeusername
-              </button>
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
             <div
               class="d-lg-none"
             >
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts
               </a>
               <a
-                class="nav-link dropdown-item  dropdown-item"
+                class="dropdown-item nav-link  dropdown-item"
                 data-rr-ui-dropdown-item=""
                 href="/profile/fakeusername"
               >
@@ -3552,10 +3661,16 @@ exports[`user profile test Should render profile 1`] = `
                 tabindex="0"
               >
                 <span>
-                  Logout
-                </span>
-                <span>
-                  Logout
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
                 </span>
               </a>
             </div>
@@ -3580,7 +3695,7 @@ exports[`user profile test Should render profile 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
             >
               fu
             </div>
@@ -4561,13 +4676,13 @@ exports[`user profile test should render discord avatar and username if user con
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -4575,13 +4690,13 @@ exports[`user profile test should render discord avatar and username if user con
             Repo
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link button.path nav-link noUnderline"
+            class="nav-link nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -4593,13 +4708,13 @@ exports[`user profile test should render discord avatar and username if user con
           class="nav-buttons"
         >
           <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
+            class="btn m-2 me-lg-3 login-btn noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
+            class="btn m-2 me-lg-3 signup-btn noUnderline"
             href="/signup"
           >
             Signup
@@ -4627,7 +4742,7 @@ exports[`user profile test should render discord avatar and username if user con
               class="jsx-3123111835 ms-auto me-auto mt-4"
             >
               <img
-                class="avatar"
+                class="avatar undefined"
                 height="60"
                 src="https://placeimg.com/640/480/any"
                 width="60"
