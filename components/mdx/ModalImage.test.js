@@ -16,12 +16,12 @@ describe('Image component test', () => {
       />
     )
     // clicking on image, should open modal
-    userEvent.click(getByTestId('modal-image'))
+    await userEvent.click(getByTestId('modal-image'))
     const hidden = baseElement.querySelector('.modal-body > img')
     await waitFor(() => expect(hidden).toBeVisible())
 
     // clicking modal should close it
-    userEvent.click(hidden)
+    await userEvent.click(hidden)
     await waitFor(() => expect(hidden).not.toBeInTheDocument())
   })
 
@@ -34,12 +34,12 @@ describe('Image component test', () => {
         data-testid="modal-image"
       />
     )
-    userEvent.click(getByTestId('modal-image'))
+    await userEvent.click(getByTestId('modal-image'))
     const hidden = baseElement.querySelector('.modal-body > img')
     await waitFor(() => expect(hidden).toBeVisible())
 
     // pressing esc should close it
-    userEvent.type(hidden, 'esc')
+    await userEvent.type(hidden, 'esc')
     await waitFor(() => expect(hidden).not.toBeInTheDocument())
   })
   test('Should add classname according to props', async () => {
@@ -52,7 +52,7 @@ describe('Image component test', () => {
         proportions="tall"
       />
     )
-    userEvent.click(getByTestId('modal-image'))
+    await userEvent.click(getByTestId('modal-image'))
     const hidden = baseElement.querySelector('.modal-body > img')
     expect(hidden.className).toEqual('tall')
   })
@@ -66,7 +66,7 @@ describe('Image component test', () => {
         proportions="long"
       />
     )
-    userEvent.click(getByTestId('modal-image'))
+    await userEvent.click(getByTestId('modal-image'))
     const hidden = baseElement.querySelector('.modal-body > img')
     expect(hidden.className).toEqual('long')
   })

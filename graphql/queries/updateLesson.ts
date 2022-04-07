@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+import LESSON_AND_CHALLENGE_INFO from './fragments/lessonAndChallengeFragment'
 
 const UPDATE_LESSON = gql`
   mutation updateLesson(
@@ -23,24 +24,11 @@ const UPDATE_LESSON = gql`
       description: $description
       title: $title
     ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
+      ...lessonAndChallengeInfo
       slug
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
-      }
     }
   }
+  ${LESSON_AND_CHALLENGE_INFO}
 `
 
 export default UPDATE_LESSON

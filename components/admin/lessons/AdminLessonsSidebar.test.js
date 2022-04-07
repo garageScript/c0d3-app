@@ -15,7 +15,7 @@ describe('AdminLessonSideBar component', () => {
     )
     expect(container).toMatchSnapshot()
     const lesson = screen.getByRole('tab', { name: 'Arrays' })
-    userEvent.click(lesson)
+    await userEvent.click(lesson)
     expect(container).toMatchSnapshot()
   })
   test('Should render empty lessons', async () => {

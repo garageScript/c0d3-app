@@ -148,7 +148,7 @@ describe('Login Page', () => {
     const submitButton = await findByTestId('submit')
 
     await fillOutLoginForm(getByTestId)
-    userEvent.click(submitButton)
+    await userEvent.click(submitButton)
 
     await findByText(mocks[1].result.errors[0].message)
     expect(container).toMatchSnapshot()
@@ -169,7 +169,7 @@ describe('Login Page', () => {
 
     const discordButton = container.querySelector('.discord__button')
 
-    userEvent.click(discordButton)
+    await userEvent.click(discordButton)
 
     await waitFor(() => expect(signIn).toBeCalled())
   })
