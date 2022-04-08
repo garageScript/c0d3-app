@@ -106,12 +106,12 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-1-tabpane-introduction"
+          aria-controls="react-aria6466772534-1-tabpane-introduction"
           aria-selected={true}
           className="lessons_tabsNav__nav__item active"
           data-rr-ui-event-key="introduction"
           disabled={false}
-          id="react-aria4705904159-1-tab-introduction"
+          id="react-aria6466772534-1-tab-introduction"
           onClick={[Function]}
           role="tab"
         >
@@ -122,11 +122,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-1-tabpane-modules"
+          aria-controls="react-aria6466772534-1-tabpane-modules"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="modules"
           disabled={false}
-          id="react-aria4705904159-1-tab-modules"
+          id="react-aria6466772534-1-tab-modules"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -143,9 +143,9 @@ Array [
       className="tab-content"
     >
       <div
-        aria-labelledby="react-aria4705904159-1-tab-introduction"
+        aria-labelledby="react-aria6466772534-1-tab-introduction"
         className="fade tab-pane active show"
-        id="react-aria4705904159-1-tabpane-introduction"
+        id="react-aria6466772534-1-tabpane-introduction"
         role="tabpanel"
       >
         <h1>
@@ -159,9 +159,9 @@ Array [
         </small>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-1-tab-modules"
+        aria-labelledby="react-aria6466772534-1-tab-modules"
         className="fade tab-pane"
-        id="react-aria4705904159-1-tabpane-modules"
+        id="react-aria6466772534-1-tabpane-modules"
         role="tabpanel"
       >
         <p>
@@ -187,12 +187,12 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-introduction"
+          aria-controls="react-aria6466772534-2-tabpane-introduction"
           aria-selected={true}
           className="lessons_tabsNav__nav__item active"
           data-rr-ui-event-key="introduction"
           disabled={false}
-          id="react-aria4705904159-2-tab-introduction"
+          id="react-aria6466772534-2-tab-introduction"
           onClick={[Function]}
           role="tab"
         >
@@ -203,11 +203,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-Zaziuz"
+          aria-controls="react-aria6466772534-2-tabpane-Zaziuz"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Zaziuz"
           disabled={false}
-          id="react-aria4705904159-2-tab-Zaziuz"
+          id="react-aria6466772534-2-tab-Zaziuz"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -219,11 +219,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-Vanvied"
+          aria-controls="react-aria6466772534-2-tabpane-Vanvied"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Vanvied"
           disabled={false}
-          id="react-aria4705904159-2-tab-Vanvied"
+          id="react-aria6466772534-2-tab-Vanvied"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -235,11 +235,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-Bovsoaca"
+          aria-controls="react-aria6466772534-2-tabpane-Bovsoaca"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Bovsoaca"
           disabled={false}
-          id="react-aria4705904159-2-tab-Bovsoaca"
+          id="react-aria6466772534-2-tab-Bovsoaca"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -251,11 +251,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-Evesific"
+          aria-controls="react-aria6466772534-2-tabpane-Evesific"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Evesific"
           disabled={false}
-          id="react-aria4705904159-2-tab-Evesific"
+          id="react-aria6466772534-2-tab-Evesific"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -267,11 +267,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-Tehocon"
+          aria-controls="react-aria6466772534-2-tabpane-Tehocon"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Tehocon"
           disabled={false}
-          id="react-aria4705904159-2-tab-Tehocon"
+          id="react-aria6466772534-2-tab-Tehocon"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -283,11 +283,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-Malujo"
+          aria-controls="react-aria6466772534-2-tabpane-Malujo"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Malujo"
           disabled={false}
-          id="react-aria4705904159-2-tab-Malujo"
+          id="react-aria6466772534-2-tab-Malujo"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -299,11 +299,11 @@ Array [
         className="nav-item"
       >
         <a
-          aria-controls="react-aria4705904159-2-tabpane-Vicolki"
+          aria-controls="react-aria6466772534-2-tabpane-Vicolki"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Vicolki"
           disabled={false}
-          id="react-aria4705904159-2-tab-Vicolki"
+          id="react-aria6466772534-2-tab-Vicolki"
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -320,9 +320,9 @@ Array [
       className="tab-content"
     >
       <div
-        aria-labelledby="react-aria4705904159-2-tab-introduction"
+        aria-labelledby="react-aria6466772534-2-tab-introduction"
         className="fade tab-pane active show"
-        id="react-aria4705904159-2-tabpane-introduction"
+        id="react-aria6466772534-2-tabpane-introduction"
         role="tabpanel"
       >
         <p>
@@ -330,9 +330,9 @@ Array [
         </p>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-2-tab-Zaziuz"
+        aria-labelledby="react-aria6466772534-2-tab-Zaziuz"
         className="fade tab-pane"
-        id="react-aria4705904159-2-tabpane-Zaziuz"
+        id="react-aria6466772534-2-tabpane-Zaziuz"
         role="tabpanel"
       >
         <p>
@@ -340,9 +340,9 @@ Array [
         </p>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-2-tab-Vanvied"
+        aria-labelledby="react-aria6466772534-2-tab-Vanvied"
         className="fade tab-pane"
-        id="react-aria4705904159-2-tabpane-Vanvied"
+        id="react-aria6466772534-2-tabpane-Vanvied"
         role="tabpanel"
       >
         <p>
@@ -350,9 +350,9 @@ Array [
         </p>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-2-tab-Bovsoaca"
+        aria-labelledby="react-aria6466772534-2-tab-Bovsoaca"
         className="fade tab-pane"
-        id="react-aria4705904159-2-tabpane-Bovsoaca"
+        id="react-aria6466772534-2-tabpane-Bovsoaca"
         role="tabpanel"
       >
         <p>
@@ -360,9 +360,9 @@ Array [
         </p>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-2-tab-Evesific"
+        aria-labelledby="react-aria6466772534-2-tab-Evesific"
         className="fade tab-pane"
-        id="react-aria4705904159-2-tabpane-Evesific"
+        id="react-aria6466772534-2-tabpane-Evesific"
         role="tabpanel"
       >
         <p>
@@ -370,9 +370,9 @@ Array [
         </p>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-2-tab-Tehocon"
+        aria-labelledby="react-aria6466772534-2-tab-Tehocon"
         className="fade tab-pane"
-        id="react-aria4705904159-2-tabpane-Tehocon"
+        id="react-aria6466772534-2-tabpane-Tehocon"
         role="tabpanel"
       >
         <p>
@@ -380,9 +380,9 @@ Array [
         </p>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-2-tab-Malujo"
+        aria-labelledby="react-aria6466772534-2-tab-Malujo"
         className="fade tab-pane"
-        id="react-aria4705904159-2-tabpane-Malujo"
+        id="react-aria6466772534-2-tabpane-Malujo"
         role="tabpanel"
       >
         <p>
@@ -390,9 +390,9 @@ Array [
         </p>
       </div>
       <div
-        aria-labelledby="react-aria4705904159-2-tab-Vicolki"
+        aria-labelledby="react-aria6466772534-2-tab-Vicolki"
         className="fade tab-pane"
-        id="react-aria4705904159-2-tabpane-Vicolki"
+        id="react-aria6466772534-2-tabpane-Vicolki"
         role="tabpanel"
       >
         <p>
