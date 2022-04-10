@@ -106,28 +106,12 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-1-tabpane-introduction"
-=======
           aria-controls="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
-=======
-          aria-controls="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
           aria-selected={true}
           className="lessons_tabsNav__nav__item active"
           data-rr-ui-event-key="introduction"
           disabled={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="react-aria6466772534-1-tab-introduction"
-=======
           id="admin-nav-tabs-tab-introduction"
->>>>>>> master
-=======
-          id="admin-nav-tabs-tab-introduction"
->>>>>>> master
           onClick={[Function]}
           role="tab"
         >
@@ -138,25 +122,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-1-tabpane-modules"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="modules"
-          disabled={false}
-          id="react-aria6466772534-1-tab-modules"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-modules"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="modules"
           disabled={false}
           id="admin-nav-tabs-tab-modules"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -173,21 +143,9 @@ Array [
       className="tab-content"
     >
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-1-tab-introduction"
-        className="fade tab-pane active show"
-        id="react-aria6466772534-1-tabpane-introduction"
-=======
         aria-labelledby="admin-nav-tabs-tab-introduction"
         className="fade tab-pane active show"
         id="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-introduction"
-        className="fade tab-pane active show"
-        id="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
         role="tabpanel"
       >
         <h1>
@@ -201,21 +159,9 @@ Array [
         </small>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-1-tab-modules"
-        className="fade tab-pane"
-        id="react-aria6466772534-1-tabpane-modules"
-=======
         aria-labelledby="admin-nav-tabs-tab-modules"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-modules"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-modules"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-modules"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -241,28 +187,12 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-introduction"
-=======
           aria-controls="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
-=======
-          aria-controls="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
           aria-selected={true}
           className="lessons_tabsNav__nav__item active"
           data-rr-ui-event-key="introduction"
           disabled={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="react-aria6466772534-2-tab-introduction"
-=======
           id="admin-nav-tabs-tab-introduction"
->>>>>>> master
-=======
-          id="admin-nav-tabs-tab-introduction"
->>>>>>> master
           onClick={[Function]}
           role="tab"
         >
@@ -273,25 +203,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-Zaziuz"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Zaziuz"
-          disabled={false}
-          id="react-aria6466772534-2-tab-Zaziuz"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-Zaziuz"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Zaziuz"
           disabled={false}
           id="admin-nav-tabs-tab-Zaziuz"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -303,25 +219,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-Vanvied"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Vanvied"
-          disabled={false}
-          id="react-aria6466772534-2-tab-Vanvied"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-Vanvied"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Vanvied"
           disabled={false}
           id="admin-nav-tabs-tab-Vanvied"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -333,25 +235,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-Bovsoaca"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Bovsoaca"
-          disabled={false}
-          id="react-aria6466772534-2-tab-Bovsoaca"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-Bovsoaca"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Bovsoaca"
           disabled={false}
           id="admin-nav-tabs-tab-Bovsoaca"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -363,25 +251,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-Evesific"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Evesific"
-          disabled={false}
-          id="react-aria6466772534-2-tab-Evesific"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-Evesific"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Evesific"
           disabled={false}
           id="admin-nav-tabs-tab-Evesific"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -393,25 +267,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-Tehocon"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Tehocon"
-          disabled={false}
-          id="react-aria6466772534-2-tab-Tehocon"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-Tehocon"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Tehocon"
           disabled={false}
           id="admin-nav-tabs-tab-Tehocon"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -423,25 +283,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-Malujo"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Malujo"
-          disabled={false}
-          id="react-aria6466772534-2-tab-Malujo"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-Malujo"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Malujo"
           disabled={false}
           id="admin-nav-tabs-tab-Malujo"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -453,25 +299,11 @@ Array [
         className="nav-item"
       >
         <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-          aria-controls="react-aria6466772534-2-tabpane-Vicolki"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Vicolki"
-          disabled={false}
-          id="react-aria6466772534-2-tab-Vicolki"
-=======
-=======
->>>>>>> master
           aria-controls="admin-nav-tabs-tabpane-Vicolki"
           className="lessons_tabsNav__nav__item--inactive"
           data-rr-ui-event-key="Vicolki"
           disabled={false}
           id="admin-nav-tabs-tab-Vicolki"
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
           onClick={[Function]}
           role="tab"
           tabIndex={-1}
@@ -488,21 +320,9 @@ Array [
       className="tab-content"
     >
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-introduction"
-        className="fade tab-pane active show"
-        id="react-aria6466772534-2-tabpane-introduction"
-=======
         aria-labelledby="admin-nav-tabs-tab-introduction"
         className="fade tab-pane active show"
         id="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-introduction"
-        className="fade tab-pane active show"
-        id="admin-nav-tabs-tabpane-introduction"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -510,21 +330,9 @@ Array [
         </p>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-Zaziuz"
-        className="fade tab-pane"
-        id="react-aria6466772534-2-tabpane-Zaziuz"
-=======
         aria-labelledby="admin-nav-tabs-tab-Zaziuz"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-Zaziuz"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-Zaziuz"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Zaziuz"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -532,21 +340,9 @@ Array [
         </p>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-Vanvied"
-        className="fade tab-pane"
-        id="react-aria6466772534-2-tabpane-Vanvied"
-=======
         aria-labelledby="admin-nav-tabs-tab-Vanvied"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-Vanvied"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-Vanvied"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Vanvied"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -554,21 +350,9 @@ Array [
         </p>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-Bovsoaca"
-        className="fade tab-pane"
-        id="react-aria6466772534-2-tabpane-Bovsoaca"
-=======
         aria-labelledby="admin-nav-tabs-tab-Bovsoaca"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-Bovsoaca"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-Bovsoaca"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Bovsoaca"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -576,21 +360,9 @@ Array [
         </p>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-Evesific"
-        className="fade tab-pane"
-        id="react-aria6466772534-2-tabpane-Evesific"
-=======
         aria-labelledby="admin-nav-tabs-tab-Evesific"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-Evesific"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-Evesific"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Evesific"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -598,21 +370,9 @@ Array [
         </p>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-Tehocon"
-        className="fade tab-pane"
-        id="react-aria6466772534-2-tabpane-Tehocon"
-=======
         aria-labelledby="admin-nav-tabs-tab-Tehocon"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-Tehocon"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-Tehocon"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Tehocon"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -620,21 +380,9 @@ Array [
         </p>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-Malujo"
-        className="fade tab-pane"
-        id="react-aria6466772534-2-tabpane-Malujo"
-=======
         aria-labelledby="admin-nav-tabs-tab-Malujo"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-Malujo"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-Malujo"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Malujo"
->>>>>>> master
         role="tabpanel"
       >
         <p>
@@ -642,21 +390,9 @@ Array [
         </p>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-        aria-labelledby="react-aria6466772534-2-tab-Vicolki"
-        className="fade tab-pane"
-        id="react-aria6466772534-2-tabpane-Vicolki"
-=======
         aria-labelledby="admin-nav-tabs-tab-Vicolki"
         className="fade tab-pane"
         id="admin-nav-tabs-tabpane-Vicolki"
->>>>>>> master
-=======
-        aria-labelledby="admin-nav-tabs-tab-Vicolki"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Vicolki"
->>>>>>> master
         role="tabpanel"
       >
         <p>
