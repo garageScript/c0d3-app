@@ -55,7 +55,7 @@ const AdminLessonNav: React.FC<Props> = ({ panels }: Props) => {
   )
 
   return (
-    <Tab.Container activeKey={key!} onSelect={setKey}>
+    <Tab.Container id="admin-nav-tabs" activeKey={key!} onSelect={setKey}>
       <Col className={styles.lessons_tabsNav}>
         <Nav variant="pills" className={styles.lessons__tabsNav__nav}>
           {tabPanels.tabNavItems}
