@@ -1,107 +1,121 @@
 import * as Yup from 'yup'
 
-const TEXT_MIN = 2
-const TEXT_MAX = 64
-const PASSWORD_MIN = 6
+enum Constants {
+  Required = 'Required',
+  TextMin = 2,
+  TextMax = 64,
+  PasswordMin = 6,
+  LeadingTrailing = 'Leading and trailing value must be alphanumeric character',
+  NumbersOnly = 'Numbers only',
+  PositiveNumbers = 'Positive numbers only',
+  AlphaNumChars = 'Must be alphanumerics characters',
+  MustBeLowercase = 'Must be a lowercase string'
+}
+
 const REGEX_ALPHANUMERICS_AND_SPACE = /^[a-zA-Z0-9_\s]*$/
+const MustAtLeastTextMinChars = `Must be at least ${Constants.TextMin} characters`
+const MustAtLeastTextMaxChars = `Must be ${Constants.TextMax} characters or less`
+const MustAtLeastPassChars = `Must be at least ${Constants.PasswordMin} characters`
 
 const alertValidation = Yup.object({
-  text: Yup.string().required('Required').strict(true),
-  type: Yup.string().required('Required').strict(true),
+  text: Yup.string().required(Constants.Required).strict(true),
+  type: Yup.string().required(Constants.Required).strict(true),
   url: Yup.string(),
   urlCaption: Yup.string()
 })
 
 const challengeSchema = Yup.object({
-  title: Yup.string().required('Required').strict(true),
-  description: Yup.string().required('Required').strict(true),
+  title: Yup.string().required(Constants.Required).strict(true),
+  description: Yup.string().required(Constants.Required).strict(true),
   order: Yup.number()
-    .required('Required')
-    .typeError('Numbers only')
-    .min(0, 'Positive numbers only')
+    .required(Constants.Required)
+    .typeError(Constants.NumbersOnly)
+    .min(0, Constants.PositiveNumbers)
     .strict(true)
 })
 
 const lessonSchema = Yup.object({
-  title: Yup.string().required('Required').strict(true),
-  description: Yup.string().required('Required').strict(true),
+  title: Yup.string().required(Constants.Required).strict(true),
+  description: Yup.string().required(Constants.Required).strict(true),
   docUrl: Yup.string(),
   githubUrl: Yup.string(),
   videoUrl: Yup.string(),
   order: Yup.number()
-    .required('Required')
-    .typeError('Numbers only')
-    .min(0, 'Positive numbers only')
+    .required(Constants.Required)
+    .typeError(Constants.NumbersOnly)
+    .min(0, Constants.PositiveNumbers)
     .strict(true),
-  slug: Yup.string().required('Required').strict(true),
+  slug: Yup.string().required(Constants.Required).strict(true),
   chatUrl: Yup.string()
 })
 
 const signupValidation = Yup.object({
-  email: Yup.string().email('Invalid email address').required('Required'),
+  email: Yup.string()
+    .email('Invalid email address')
+    .required(Constants.Required),
   username: Yup.string()
     .strict(true)
-    .lowercase('Must be a lowercase string')
-    .matches(REGEX_ALPHANUMERICS_AND_SPACE, 'Must be alphanumerics characters')
-    .min(TEXT_MIN, `Must be at least ${TEXT_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
-    .trim('Leading and trailing value must be alphanumeric character')
-    .required('Required'),
+    .lowercase(Constants.MustBeLowercase)
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, Constants.AlphaNumChars)
+    .min(Constants.TextMin, MustAtLeastTextMinChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
+    .trim(Constants.LeadingTrailing)
+    .required(Constants.Required),
   firstName: Yup.string()
     .strict(true)
-    .matches(REGEX_ALPHANUMERICS_AND_SPACE, 'Must be alphanumerics characters')
-    .min(TEXT_MIN, `Must be at least ${TEXT_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
-    .trim('Leading and trailing value must be alphanumeric character')
-    .required('Required'),
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, Constants.AlphaNumChars)
+    .min(Constants.TextMin, MustAtLeastTextMinChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
+    .trim(Constants.LeadingTrailing)
+    .required(Constants.Required),
   lastName: Yup.string()
     .strict(true)
-    .matches(REGEX_ALPHANUMERICS_AND_SPACE, 'Must be alphanumerics characters')
-    .min(TEXT_MIN, `Must be at least ${TEXT_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
-    .trim('Leading and trailing value must be alphanumeric character')
-    .required('Required'),
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, Constants.AlphaNumChars)
+    .min(Constants.TextMin, MustAtLeastTextMinChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
+    .trim(Constants.LeadingTrailing)
+    .required(Constants.Required),
   password: Yup.string()
-    .min(PASSWORD_MIN, `Must be at least ${PASSWORD_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
+    .min(Constants.PasswordMin, MustAtLeastPassChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
 })
 
 const loginValidation = Yup.object({
   username: Yup.string()
     .strict(true)
-    .lowercase('Must be a lowercase string')
-    .matches(REGEX_ALPHANUMERICS_AND_SPACE, 'Must be alphanumerics characters')
-    .min(TEXT_MIN, `Must be at least ${TEXT_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
-    .trim('Leading and trailing value must be alphanumeric character')
-    .required('Required'),
+    .lowercase(Constants.MustBeLowercase)
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, Constants.AlphaNumChars)
+    .min(Constants.TextMin, MustAtLeastTextMinChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
+    .trim(Constants.LeadingTrailing)
+    .required(Constants.Required),
   password: Yup.string()
-    .min(PASSWORD_MIN, `Must be at least ${PASSWORD_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
-    .required('Required')
+    .min(Constants.PasswordMin, MustAtLeastPassChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
+    .required(Constants.Required)
 })
 
 const passwordValidation = Yup.object({
   password: Yup.string()
-    .min(PASSWORD_MIN, `Must be at least ${PASSWORD_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
-    .required('Required')
+    .min(Constants.PasswordMin, MustAtLeastPassChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
+    .required(Constants.Required)
 })
 
 const confirmPasswordValidation = Yup.object({
   password: Yup.string()
-    .min(PASSWORD_MIN, `Must be at least ${PASSWORD_MIN} characters`)
-    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
-    .required('Required'),
+    .min(Constants.PasswordMin, MustAtLeastPassChars)
+    .max(Constants.TextMax, MustAtLeastTextMaxChars)
+    .required(Constants.Required),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password'), undefined], 'Password must match')
-    .required('Required')
+    .required(Constants.Required)
 })
 
 const resetPasswordValidation = Yup.object({
   userOrEmail: Yup.string()
-    .min(TEXT_MIN, `Must be at least ${TEXT_MIN} characters`)
-    .required('Required')
+    .min(Constants.TextMin, MustAtLeastTextMinChars)
+    .required(Constants.Required)
 })
 
 export {
