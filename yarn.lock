@@ -2897,18 +2897,18 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-storysource@^6.4.20":
-  version "6.4.20"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.20.tgz#d0dfd7899ad1979faa1398f4ba0c9c0cbddffca8"
-  integrity sha512-l/PzzElIYbUreqMZjZG9SMMoinkmJCIygPKjXpt6v0moci01tbur484gkDBgD4E8ZhQPrLs0o/P3bNhjNsItQw==
+"@storybook/addon-storysource@^6.4.21":
+  version "6.4.21"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.21.tgz#d1acf3a332eb845dcd2c2ce95ee4585413ba874a"
+  integrity sha512-CFfpq7PfoRCbrTVhmWZLPtubTmGNDPJLavmNuiAs0unwVV+nLQwV0md+4jf4LxIMw5NNqK8weAYbNAAwyiQSmQ==
   dependencies:
-    "@storybook/addons" "6.4.20"
-    "@storybook/api" "6.4.20"
-    "@storybook/client-logger" "6.4.20"
-    "@storybook/components" "6.4.20"
-    "@storybook/router" "6.4.20"
-    "@storybook/source-loader" "6.4.20"
-    "@storybook/theming" "6.4.20"
+    "@storybook/addons" "6.4.21"
+    "@storybook/api" "6.4.21"
+    "@storybook/client-logger" "6.4.21"
+    "@storybook/components" "6.4.21"
+    "@storybook/router" "6.4.21"
+    "@storybook/source-loader" "6.4.21"
+    "@storybook/theming" "6.4.21"
     core-js "^3.8.2"
     estraverse "^5.2.0"
     loader-utils "^2.0.0"
