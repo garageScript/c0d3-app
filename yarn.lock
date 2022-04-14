@@ -16861,10 +16861,10 @@ use-latest@^1.0.0:
   dependencies:
     use-isomorphic-layout-effect "^1.0.0"
 
-use-undo@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/use-undo/-/use-undo-1.0.5.tgz#4f193d74164a4fe5fcd61f7278aa02fa1dbd7d8e"
-  integrity sha512-rLlwvcrioEqZ0t/M4hpgCsrCMgCpbodUXMRskK98g3ftdGFi7wr9DzxPY93vKHK17mMgxBY2ar7bgZ5cNFSiNQ==
+use-undo@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/use-undo/-/use-undo-1.1.0.tgz#141038a8f8e55b76b174926c7b25a3e59d6d23ee"
+  integrity sha512-z1a6nt9fYky+lwA786L5KxoOfvj02U71937EZeEH7IJKU3M2tZlDS3jvHcQc9DFarwrz1Cl8bqPAcPfnWicnNw==
 
 use@^3.1.0:
   version "3.1.1"
