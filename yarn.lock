@@ -3958,22 +3958,6 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.4.20":
-  version "6.4.20"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.20.tgz#bb8742ca7b23d4e239be487b2b8843083a24db99"
-  integrity sha512-mBnfZrwCBxMFdAI5NSs+oxQKLIv4IOM2U3V5n/4NjPvVDmfPt5ozQ/v/1yyVFsuneAXw6xfpS24cI4M9GenUgQ==
-  dependencies:
-    "@storybook/addons" "6.4.20"
-    "@storybook/client-logger" "6.4.20"
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
-    core-js "^3.8.2"
-    estraverse "^5.2.0"
-    global "^4.4.0"
-    loader-utils "^2.0.0"
-    lodash "^4.17.21"
-    prettier ">=2.2.1 <=2.3.0"
-    regenerator-runtime "^0.13.7"
-
 "@storybook/source-loader@6.4.21":
   version "6.4.21"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.21.tgz#6145c3dcede3bfbd1159755c6aad8722cadd0b5f"
@@ -16877,10 +16861,10 @@ use-latest@^1.0.0:
   dependencies:
     use-isomorphic-layout-effect "^1.0.0"
 
-use-undo@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/use-undo/-/use-undo-1.0.5.tgz#4f193d74164a4fe5fcd61f7278aa02fa1dbd7d8e"
-  integrity sha512-rLlwvcrioEqZ0t/M4hpgCsrCMgCpbodUXMRskK98g3ftdGFi7wr9DzxPY93vKHK17mMgxBY2ar7bgZ5cNFSiNQ==
+use-undo@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/use-undo/-/use-undo-1.1.0.tgz#141038a8f8e55b76b174926c7b25a3e59d6d23ee"
+  integrity sha512-z1a6nt9fYky+lwA786L5KxoOfvj02U71937EZeEH7IJKU3M2tZlDS3jvHcQc9DFarwrz1Cl8bqPAcPfnWicnNw==
 
 use@^3.1.0:
   version "3.1.1"
