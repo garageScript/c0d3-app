@@ -1227,76 +1227,78 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             className="position-relative"
           >
             <div
-              className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                className="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  checked={false}
-                  className="form-check-input"
-                  id="checkBox-1-0"
-                  onChange={[Function]}
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  className="form-check-label text-muted"
-                  htmlFor="checkBox-1-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                className="btn borderless btn-outline-mute btn-outline-bg-mute"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "color": "mute",
-                  }
-                }
-              >
-                <svg
-                  aria-hidden="true"
-                  className="octicon octicon-copy"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-                    }
-                  }
-                  fill="currentColor"
-                  height={16}
-                  role="img"
-                  style={
-                    Object {
-                      "display": "inline-block",
-                      "overflow": "visible",
-                      "userSelect": "none",
-                      "verticalAlign": "text-bottom",
-                    }
-                  }
-                  viewBox="0 0 16 16"
-                  width={16}
-                />
-              </button>
-            </div>
-            <div
               className="diffView"
             >
               <table
                 className="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    className="css-1tkyu0d-title-block"
+                  >
                     <td
-                      className="css-1gyvngn-title-block"
+                      className="css-1kdwiw5-right-title-box"
                       colSpan={4}
                     >
-                      <pre
-                        className="css-pa3tg-content-text"
+                      <span
+                        className="css-disz75-right-title"
                       >
                         curriculum/js0/2.js
-                      </pre>
+                      </span>
+                    </td>
+                    <td
+                      className="css-1a9owij-toolbar"
+                    >
+                      <div
+                        className="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          checked={false}
+                          className="form-check-input"
+                          id="checkBox-1-0"
+                          onChange={[Function]}
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          className="form-check-label text-muted"
+                          htmlFor="checkBox-1-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "color": "mute",
+                          }
+                        }
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="octicon octicon-copy"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                            }
+                          }
+                          fill="currentColor"
+                          height={16}
+                          role="img"
+                          style={
+                            Object {
+                              "display": "inline-block",
+                              "overflow": "visible",
+                              "userSelect": "none",
+                              "verticalAlign": "text-bottom",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                        />
+                      </button>
                     </td>
                   </tr>
                   <tr
@@ -2094,76 +2096,78 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             className="position-relative"
           >
             <div
-              className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                className="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  checked={false}
-                  className="form-check-input"
-                  id="checkBox-1-0"
-                  onChange={[Function]}
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  className="form-check-label text-muted"
-                  htmlFor="checkBox-1-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                className="btn borderless btn-outline-mute btn-outline-bg-mute"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "color": "mute",
-                  }
-                }
-              >
-                <svg
-                  aria-hidden="true"
-                  className="octicon octicon-copy"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-                    }
-                  }
-                  fill="currentColor"
-                  height={16}
-                  role="img"
-                  style={
-                    Object {
-                      "display": "inline-block",
-                      "overflow": "visible",
-                      "userSelect": "none",
-                      "verticalAlign": "text-bottom",
-                    }
-                  }
-                  viewBox="0 0 16 16"
-                  width={16}
-                />
-              </button>
-            </div>
-            <div
               className="diffView"
             >
               <table
                 className="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    className="css-1tkyu0d-title-block"
+                  >
                     <td
-                      className="css-1gyvngn-title-block"
+                      className="css-1kdwiw5-right-title-box"
                       colSpan={4}
                     >
-                      <pre
-                        className="css-pa3tg-content-text"
+                      <span
+                        className="css-disz75-right-title"
                       >
                         curriculum/js0/2.js
-                      </pre>
+                      </span>
+                    </td>
+                    <td
+                      className="css-1a9owij-toolbar"
+                    >
+                      <div
+                        className="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          checked={false}
+                          className="form-check-input"
+                          id="checkBox-1-0"
+                          onChange={[Function]}
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          className="form-check-label text-muted"
+                          htmlFor="checkBox-1-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "color": "mute",
+                          }
+                        }
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="octicon octicon-copy"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                            }
+                          }
+                          fill="currentColor"
+                          height={16}
+                          role="img"
+                          style={
+                            Object {
+                              "display": "inline-block",
+                              "overflow": "visible",
+                              "userSelect": "none",
+                              "verticalAlign": "text-bottom",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                        />
+                      </button>
                     </td>
                   </tr>
                   <tr
@@ -3446,76 +3450,78 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
   className="position-relative"
 >
   <div
-    className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-  >
-    <div
-      className="checkBoxBorder form-check pe-2 me-2 border rounded"
-    >
-      <input
-        checked={false}
-        className="form-check-input"
-        id="checkBox-1-0"
-        onChange={[Function]}
-        type="checkbox"
-        value=""
-      />
-      <label
-        className="form-check-label text-muted"
-        htmlFor="checkBox-1-0"
-      >
-        Viewed
-      </label>
-    </div>
-    <button
-      className="btn borderless btn-outline-mute btn-outline-bg-mute"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "mute",
-        }
-      }
-    >
-      <svg
-        aria-hidden="true"
-        className="octicon octicon-copy"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-          }
-        }
-        fill="currentColor"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "display": "inline-block",
-            "overflow": "visible",
-            "userSelect": "none",
-            "verticalAlign": "text-bottom",
-          }
-        }
-        viewBox="0 0 16 16"
-        width={16}
-      />
-    </button>
-  </div>
-  <div
     className="diffView"
   >
     <table
       className="css-1p5fn6o-diff-container"
     >
       <tbody>
-        <tr>
+        <tr
+          className="css-1tkyu0d-title-block"
+        >
           <td
-            className="css-1gyvngn-title-block"
+            className="css-1kdwiw5-right-title-box"
             colSpan={4}
           >
-            <pre
-              className="css-pa3tg-content-text"
+            <span
+              className="css-disz75-right-title"
             >
               curriculum/js0/2.js
-            </pre>
+            </span>
+          </td>
+          <td
+            className="css-1a9owij-toolbar"
+          >
+            <div
+              className="checkBoxBorder form-check pe-2 me-2 border rounded"
+            >
+              <input
+                checked={false}
+                className="form-check-input"
+                id="checkBox-1-0"
+                onChange={[Function]}
+                type="checkbox"
+                value=""
+              />
+              <label
+                className="form-check-label text-muted"
+                htmlFor="checkBox-1-0"
+              >
+                Viewed
+              </label>
+            </div>
+            <button
+              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "mute",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="octicon octicon-copy"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                  }
+                }
+                fill="currentColor"
+                height={16}
+                role="img"
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "overflow": "visible",
+                    "userSelect": "none",
+                    "verticalAlign": "text-bottom",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+              />
+            </button>
           </td>
         </tr>
         <tr
@@ -3837,76 +3843,78 @@ exports[`Storyshots Components/DiffView Default 1`] = `
   className="position-relative"
 >
   <div
-    className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-  >
-    <div
-      className="checkBoxBorder form-check pe-2 me-2 border rounded"
-    >
-      <input
-        checked={false}
-        className="form-check-input"
-        id="checkBox-1-0"
-        onChange={[Function]}
-        type="checkbox"
-        value=""
-      />
-      <label
-        className="form-check-label text-muted"
-        htmlFor="checkBox-1-0"
-      >
-        Viewed
-      </label>
-    </div>
-    <button
-      className="btn borderless btn-outline-mute btn-outline-bg-mute"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "mute",
-        }
-      }
-    >
-      <svg
-        aria-hidden="true"
-        className="octicon octicon-copy"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-          }
-        }
-        fill="currentColor"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "display": "inline-block",
-            "overflow": "visible",
-            "userSelect": "none",
-            "verticalAlign": "text-bottom",
-          }
-        }
-        viewBox="0 0 16 16"
-        width={16}
-      />
-    </button>
-  </div>
-  <div
     className="diffView"
   >
     <table
       className="css-1p5fn6o-diff-container"
     >
       <tbody>
-        <tr>
+        <tr
+          className="css-1tkyu0d-title-block"
+        >
           <td
-            className="css-1gyvngn-title-block"
+            className="css-1kdwiw5-right-title-box"
             colSpan={4}
           >
-            <pre
-              className="css-pa3tg-content-text"
+            <span
+              className="css-disz75-right-title"
             >
               curriculum/js0/2.js
-            </pre>
+            </span>
+          </td>
+          <td
+            className="css-1a9owij-toolbar"
+          >
+            <div
+              className="checkBoxBorder form-check pe-2 me-2 border rounded"
+            >
+              <input
+                checked={false}
+                className="form-check-input"
+                id="checkBox-1-0"
+                onChange={[Function]}
+                type="checkbox"
+                value=""
+              />
+              <label
+                className="form-check-label text-muted"
+                htmlFor="checkBox-1-0"
+              >
+                Viewed
+              </label>
+            </div>
+            <button
+              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "mute",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="octicon octicon-copy"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                  }
+                }
+                fill="currentColor"
+                height={16}
+                role="img"
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "overflow": "visible",
+                    "userSelect": "none",
+                    "verticalAlign": "text-bottom",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+              />
+            </button>
           </td>
         </tr>
         <tr
@@ -11958,76 +11966,78 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-          >
-            <div
-              className="checkBoxBorder form-check pe-2 me-2 border rounded"
-            >
-              <input
-                checked={false}
-                className="form-check-input"
-                id="checkBox-1-0"
-                onChange={[Function]}
-                type="checkbox"
-                value=""
-              />
-              <label
-                className="form-check-label text-muted"
-                htmlFor="checkBox-1-0"
-              >
-                Viewed
-              </label>
-            </div>
-            <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "mute",
-                }
-              }
-            >
-              <svg
-                aria-hidden="true"
-                className="octicon octicon-copy"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-                  }
-                }
-                fill="currentColor"
-                height={16}
-                role="img"
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "overflow": "visible",
-                    "userSelect": "none",
-                    "verticalAlign": "text-bottom",
-                  }
-                }
-                viewBox="0 0 16 16"
-                width={16}
-              />
-            </button>
-          </div>
-          <div
             className="diffView"
           >
             <table
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
+                  </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  >
+                    <div
+                      className="checkBoxBorder form-check pe-2 me-2 border rounded"
+                    >
+                      <input
+                        checked={false}
+                        className="form-check-input"
+                        id="checkBox-1-0"
+                        onChange={[Function]}
+                        type="checkbox"
+                        value=""
+                      />
+                      <label
+                        className="form-check-label text-muted"
+                        htmlFor="checkBox-1-0"
+                      >
+                        Viewed
+                      </label>
+                    </div>
+                    <button
+                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "color": "mute",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="octicon octicon-copy"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                          }
+                        }
+                        fill="currentColor"
+                        height={16}
+                        role="img"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "overflow": "visible",
+                            "userSelect": "none",
+                            "verticalAlign": "text-bottom",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                      />
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -13382,76 +13392,78 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-          >
-            <div
-              className="checkBoxBorder form-check pe-2 me-2 border rounded"
-            >
-              <input
-                checked={false}
-                className="form-check-input"
-                id="checkBox-1-0"
-                onChange={[Function]}
-                type="checkbox"
-                value=""
-              />
-              <label
-                className="form-check-label text-muted"
-                htmlFor="checkBox-1-0"
-              >
-                Viewed
-              </label>
-            </div>
-            <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "mute",
-                }
-              }
-            >
-              <svg
-                aria-hidden="true"
-                className="octicon octicon-copy"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-                  }
-                }
-                fill="currentColor"
-                height={16}
-                role="img"
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "overflow": "visible",
-                    "userSelect": "none",
-                    "verticalAlign": "text-bottom",
-                  }
-                }
-                viewBox="0 0 16 16"
-                width={16}
-              />
-            </button>
-          </div>
-          <div
             className="diffView"
           >
             <table
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
+                  </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  >
+                    <div
+                      className="checkBoxBorder form-check pe-2 me-2 border rounded"
+                    >
+                      <input
+                        checked={false}
+                        className="form-check-input"
+                        id="checkBox-1-0"
+                        onChange={[Function]}
+                        type="checkbox"
+                        value=""
+                      />
+                      <label
+                        className="form-check-label text-muted"
+                        htmlFor="checkBox-1-0"
+                      >
+                        Viewed
+                      </label>
+                    </div>
+                    <button
+                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "color": "mute",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="octicon octicon-copy"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                          }
+                        }
+                        fill="currentColor"
+                        height={16}
+                        role="img"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "overflow": "visible",
+                            "userSelect": "none",
+                            "verticalAlign": "text-bottom",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                      />
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -14804,76 +14816,78 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-          >
-            <div
-              className="checkBoxBorder form-check pe-2 me-2 border rounded"
-            >
-              <input
-                checked={false}
-                className="form-check-input"
-                id="checkBox-1-0"
-                onChange={[Function]}
-                type="checkbox"
-                value=""
-              />
-              <label
-                className="form-check-label text-muted"
-                htmlFor="checkBox-1-0"
-              >
-                Viewed
-              </label>
-            </div>
-            <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "mute",
-                }
-              }
-            >
-              <svg
-                aria-hidden="true"
-                className="octicon octicon-copy"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-                  }
-                }
-                fill="currentColor"
-                height={16}
-                role="img"
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "overflow": "visible",
-                    "userSelect": "none",
-                    "verticalAlign": "text-bottom",
-                  }
-                }
-                viewBox="0 0 16 16"
-                width={16}
-              />
-            </button>
-          </div>
-          <div
             className="diffView"
           >
             <table
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
+                  </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  >
+                    <div
+                      className="checkBoxBorder form-check pe-2 me-2 border rounded"
+                    >
+                      <input
+                        checked={false}
+                        className="form-check-input"
+                        id="checkBox-1-0"
+                        onChange={[Function]}
+                        type="checkbox"
+                        value=""
+                      />
+                      <label
+                        className="form-check-label text-muted"
+                        htmlFor="checkBox-1-0"
+                      >
+                        Viewed
+                      </label>
+                    </div>
+                    <button
+                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "color": "mute",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="octicon octicon-copy"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                          }
+                        }
+                        fill="currentColor"
+                        height={16}
+                        role="img"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "overflow": "visible",
+                            "userSelect": "none",
+                            "verticalAlign": "text-bottom",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                      />
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -16226,76 +16240,78 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-          >
-            <div
-              className="checkBoxBorder form-check pe-2 me-2 border rounded"
-            >
-              <input
-                checked={false}
-                className="form-check-input"
-                id="checkBox-1-0"
-                onChange={[Function]}
-                type="checkbox"
-                value=""
-              />
-              <label
-                className="form-check-label text-muted"
-                htmlFor="checkBox-1-0"
-              >
-                Viewed
-              </label>
-            </div>
-            <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "mute",
-                }
-              }
-            >
-              <svg
-                aria-hidden="true"
-                className="octicon octicon-copy"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-                  }
-                }
-                fill="currentColor"
-                height={16}
-                role="img"
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "overflow": "visible",
-                    "userSelect": "none",
-                    "verticalAlign": "text-bottom",
-                  }
-                }
-                viewBox="0 0 16 16"
-                width={16}
-              />
-            </button>
-          </div>
-          <div
             className="diffView"
           >
             <table
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
+                  </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  >
+                    <div
+                      className="checkBoxBorder form-check pe-2 me-2 border rounded"
+                    >
+                      <input
+                        checked={false}
+                        className="form-check-input"
+                        id="checkBox-1-0"
+                        onChange={[Function]}
+                        type="checkbox"
+                        value=""
+                      />
+                      <label
+                        className="form-check-label text-muted"
+                        htmlFor="checkBox-1-0"
+                      >
+                        Viewed
+                      </label>
+                    </div>
+                    <button
+                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "color": "mute",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="octicon octicon-copy"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                          }
+                        }
+                        fill="currentColor"
+                        height={16}
+                        role="img"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "overflow": "visible",
+                            "userSelect": "none",
+                            "verticalAlign": "text-bottom",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                      />
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -17648,76 +17664,78 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-          >
-            <div
-              className="checkBoxBorder form-check pe-2 me-2 border rounded"
-            >
-              <input
-                checked={false}
-                className="form-check-input"
-                id="checkBox-1-0"
-                onChange={[Function]}
-                type="checkbox"
-                value=""
-              />
-              <label
-                className="form-check-label text-muted"
-                htmlFor="checkBox-1-0"
-              >
-                Viewed
-              </label>
-            </div>
-            <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "mute",
-                }
-              }
-            >
-              <svg
-                aria-hidden="true"
-                className="octicon octicon-copy"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
-                  }
-                }
-                fill="currentColor"
-                height={16}
-                role="img"
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "overflow": "visible",
-                    "userSelect": "none",
-                    "verticalAlign": "text-bottom",
-                  }
-                }
-                viewBox="0 0 16 16"
-                width={16}
-              />
-            </button>
-          </div>
-          <div
             className="diffView"
           >
             <table
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
+                  </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  >
+                    <div
+                      className="checkBoxBorder form-check pe-2 me-2 border rounded"
+                    >
+                      <input
+                        checked={false}
+                        className="form-check-input"
+                        id="checkBox-1-0"
+                        onChange={[Function]}
+                        type="checkbox"
+                        value=""
+                      />
+                      <label
+                        className="form-check-label text-muted"
+                        htmlFor="checkBox-1-0"
+                      >
+                        Viewed
+                      </label>
+                    </div>
+                    <button
+                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "color": "mute",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="octicon octicon-copy"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z\\"></path><path fill-rule=\\"evenodd\\" d=\\"M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z\\"></path>",
+                          }
+                        }
+                        fill="currentColor"
+                        height={16}
+                        role="img"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "overflow": "visible",
+                            "userSelect": "none",
+                            "verticalAlign": "text-bottom",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                      />
+                    </button>
                   </td>
                 </tr>
                 <tr
