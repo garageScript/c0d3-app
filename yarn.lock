@@ -2663,11 +2663,30 @@
     "@sentry/utils" "6.19.6"
     tslib "^1.9.3"
 
+<<<<<<< Updated upstream
 "@sentry/types@6.19.6", "@sentry/types@^6.11.0":
+=======
+<<<<<<< HEAD
+"@sentry/types@6.19.6":
+=======
+"@sentry/types@6.19.6", "@sentry/types@^6.11.0":
+>>>>>>> master
+>>>>>>> Stashed changes
   version "6.19.6"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.19.6.tgz#70513f9dca05d23d7ab9c2a6cb08d4db6763ca67"
   integrity sha512-QH34LMJidEUPZK78l+Frt3AaVFJhEmIi05Zf8WHd9/iTt+OqvCHBgq49DDr1FWFqyYWm/QgW/3bIoikFpfsXyQ==
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+"@sentry/types@^6.11.0":
+  version "6.19.3"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.19.3.tgz#94b19da68d4d23561efb1014f72968bcea85cd0c"
+  integrity sha512-jHhqxp8MIWSfOc3krorirTGKTEaSFO6XrAvi+2AZhr6gvOChwOgzgrN2ZqesJcZmgCsqWV21u3usSwYeRrjOJA==
+
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
 "@sentry/utils@6.19.6":
   version "6.19.6"
   resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.19.6.tgz#2ddc9ef036c3847084c43d0e5a55e4646bdf9021"
@@ -4171,10 +4190,23 @@
     "@testing-library/dom" "^8.0.0"
     "@types/react-dom" "*"
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+"@testing-library/user-event@^14.0.4":
+  version "14.0.4"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.0.4.tgz#5b430a9c27f25078bff4471661b755115d0db9d4"
+  integrity sha512-VBZe5lcUsmrQyOwIFvqOxLBoaTw1/Qy4Ek+VgmFYs719bs2SxUp42vbsb7ATlQDkHdj4OIQlucfpwxe5WoG1jA==
+=======
+>>>>>>> Stashed changes
 "@testing-library/user-event@^14.1.0":
   version "14.1.0"
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.1.0.tgz#db479c06271b72a4d41cf595ec2ad7ff078c1d72"
   integrity sha512-+CGfMXlVM+OwREHDEsfTGsXIMI+rjr3a7YBUSutq7soELht+8kQrM5k46xa/WLfHdtX/wqsDIleL6bi4i+xz0w==
+<<<<<<< Updated upstream
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
 
 "@tootallnate/once@1":
   version "1.1.2"
