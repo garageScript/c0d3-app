@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use '_variables.module.scss';
+@import 'colors.module.scss';
 
 @media (min-width: 992px) {
   .navbar {
@@ -27,17 +28,12 @@
   border-radius: 4px;
   height: 30px;
   padding: 5px;
-}
-
-.nav-link {
-  color: #565656;
-  font-weight: 700;
-  &:hover {
-    background-color: color.change(
-      variables.$primary,
-      $lightness: 90%
-    ) !important;
-    color: variables.$primary !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  &:hover,
+  &:focus {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
     text-decoration: none;
   }
 }
@@ -53,10 +49,22 @@
   }
 }
 
+.nav-link {
+  color: #565656;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
+    text-decoration: none;
+  }
+}
+
 .login-btn {
   background-color: variables.$secondary;
   color: variables.$primary;
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: color.change(variables.$primary, $lightness: 90%);
     color: variables.$primary;
   }
@@ -64,7 +72,8 @@
 
 .signup-btn {
   background-color: variables.$primary;
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: color.change(variables.$primary, $lightness: 90%);
     color: variables.$primary;
   }
@@ -83,8 +92,8 @@
 }
 
 .active {
+  color: variables.$secondary;
   background: variables.$primary;
-  color: #ffffff;
 }
 
 .light-button > * {

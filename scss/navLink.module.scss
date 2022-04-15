@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use '_variables.module.scss';
+
 .link {
   text-decoration: none;
 }
@@ -11,7 +14,6 @@
 }
 
 .active {
-  background: #5440d8 !important;
-  border-radius: 4px;
-  color: #ffffff !important;
+  color: variables.$secondary;
+  background: variables.$primary;
 }

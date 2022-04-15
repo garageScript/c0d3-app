@@ -23,7 +23,8 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: 14px;
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: color.change(variables.$primary, $lightness: 90%);
     color: #4c4c4c;
     text-decoration: none;
@@ -31,8 +32,8 @@
 }
 
 .active {
-  background: #5440d8 !important;
-  color: #ffffff !important;
+  color: variables.$secondary;
+  background: variables.$primary;
 }
 
 .user-icon {

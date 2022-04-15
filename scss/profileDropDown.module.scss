@@ -27,9 +27,14 @@
   text-decoration: none;
   font-style: normal;
   font-weight: 700;
+  display: block;
+  padding: 0.5rem 1rem;
   text-transform: uppercase;
   font-size: 14px;
-  &:hover {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  &:hover,
+  &:focus {
     background-color: color.change(variables.$primary, $lightness: 90%);
     color: variables.$primary;
     text-decoration: none;

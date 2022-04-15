@@ -17,8 +17,8 @@ type ProfileDropDownMenuProps = {
 
 type CustomToggleProps = {
   children?: React.ReactNode
-  className?: string | undefined
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {}
+  className?: string
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
 const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
@@ -31,17 +31,18 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   })
   const router = useRouter()
   const location = router.asPath
+  const PROFILE_PATH = '/profile/' + username
 
-  const fullname = _.get(data, 'userInfo.user.name', '')
+  const fullname = data?.userInfo?.user?.name || ''
 
   const userInfo: UserInfo = {
     // 'A' stands for Anonymous, in case user did not put in full name
     username,
     firstName: fullname.split(' ')[0] || 'A',
     lastName: fullname.split(' ')[1] || ' ',
-    discordUserId: data?.userInfo?.user?.discordUserId ?? '',
-    discordUsername: data?.userInfo?.user?.discordUsername ?? '',
-    discordAvatarUrl: data?.userInfo?.user?.discordAvatarUrl ?? ''
+    discordUserId: data?.userInfo?.user?.discordUserId || '',
+    discordUsername: data?.userInfo?.user?.discordUsername || '',
+    discordAvatarUrl: data?.userInfo?.user?.discordAvatarUrl || ''
   }
 
   const dropdownAdminMenuItems = [
@@ -57,7 +58,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
 
   const adminDropdownMenu = dropdownAdminMenuItems.map(({ title, path }) => (
     <Dropdown.Item
-      className={`${styles['dropdown-item']} nav-link `}
+      className={`${styles['dropdown-item']}`}
       href={path}
       key={title}
       bsPrefix={isActive(path)}
@@ -68,13 +69,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
 
   const buttonMenuToggle = React.forwardRef(
     (props: CustomToggleProps, ref: React.Ref<HTMLDivElement>) => (
-      <div
-        ref={ref}
-        className={props.className}
-        onClick={e => {
-          props.onClick && props.onClick(e)
-        }}
-      >
+      <div ref={ref} {...props}>
         {props.children}
       </div>
     )
@@ -101,13 +96,13 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
             </>
           )}
           <Dropdown.Item
-            className={`${styles['dropdown-item']} nav-link `}
-            bsPrefix={isActive(`/profile/${username}`)}
-            href={`/profile/${username}`}
+            className={`${styles['dropdown-item']} `}
+            bsPrefix={isActive(PROFILE_PATH)}
+            href={PROFILE_PATH}
           >
             Profile
           </Dropdown.Item>
-          <Dropdown.Item className={`nav-link ${styles['dropdown-item']}`}>
+          <Dropdown.Item className={`${styles['dropdown-item']}`}>
             <LogoutContainer>Logout</LogoutContainer>
           </Dropdown.Item>
         </Dropdown.Menu>
@@ -115,13 +110,13 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
       <div className="d-lg-none">
         {adminDropdownMenu}
         <Dropdown.Item
-          className={`${styles['dropdown-item']} nav-link `}
-          bsPrefix={isActive(`/profile/${username}`)}
-          href={`/profile/${username}`}
+          className={`${styles['dropdown-item']}`}
+          bsPrefix={isActive(PROFILE_PATH)}
+          href={PROFILE_PATH}
         >
           Profile
         </Dropdown.Item>
-        <Dropdown.Item className={`nav-link ${styles['dropdown-item']} `}>
+        <Dropdown.Item className={`${styles['dropdown-item']} `}>
           <LogoutContainer>
             <div className={`${styles['light-button']} d-inline`}>
               <Button border ml="2" type="light">
