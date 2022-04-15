@@ -56,7 +56,7 @@ const LoggedInAuthNav: React.FC<{ username: string; session: Session }> = ({
   username,
   session
 }) => {
-  const isAdmin = session?.user?.isAdmin || false
+  const isAdmin = session?.user?.isAdmin
 
   return <ProfileDropdownMenu username={username} isAdmin={isAdmin} />
 }
@@ -79,7 +79,7 @@ const AppNav: React.FC<{}> = () => {
   const [session, setSession] = useState<GetAppQuery['session']>({
     lessonStatus: []
   })
-  const isAdmin = session?.user?.isAdmin || false
+  const isAdmin = session?.user?.isAdmin
 
   const { data, loading } = useGetAppQuery()
 

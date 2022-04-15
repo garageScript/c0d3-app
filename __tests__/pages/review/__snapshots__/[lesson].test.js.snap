@@ -4,6 +4,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
 <div>
   <nav
     class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
   >
     <div
       class="container"
@@ -41,13 +42,13 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-link nav-item nav-link px-3 noUnderline"
+            class=" nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-link nav-item nav-link px-3 noUnderline"
+            class=" nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -55,13 +56,13 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             Repo
           </a>
           <a
-            class="nav-link nav-item nav-link px-3 noUnderline"
+            class=" nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-link nav-item nav-link px-3 noUnderline"
+            class=" nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -69,93 +70,93 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             Community
           </a>
         </div>
-        <div>
+        <div
+          class="dropdown"
+        >
           <div
-            class="dropdown"
+            class="d-none d-lg-block"
           >
             <div
-              class="d-none d-lg-block"
+              aria-expanded="false"
+              class="nav-user-toggle  dropdown-toggle"
+              id="user_nav_toggle"
             >
               <div
-                class="nav-user-toggle  dropdown-toggle"
+                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                <div
-                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
-                >
-                  A 
-                </div>
-                <span>
-                  Fakeusername
-                </span>
-                <svg
-                  aria-hidden="true"
-                  class="octicon octicon-chevron-down"
-                  fill="currentColor"
-                  height="16"
-                  role="img"
-                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <path
-                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
+                A 
               </div>
+              <span>
+                Fakeusername
+              </span>
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-chevron-down"
+                fill="currentColor"
+                height="16"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
-            <div
-              class="d-lg-none"
+          </div>
+          <div
+            class="d-lg-none"
+          >
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/lessons"
             >
-              <a
-                class="dropdown-item nav-link  dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/lessons"
-              >
-                Lessons
-              </a>
-              <a
-                class="dropdown-item nav-link  dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/users"
-              >
-                Users
-              </a>
-              <a
-                class="dropdown-item nav-link  dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/alerts"
-              >
-                Alerts
-              </a>
-              <a
-                class="dropdown-item nav-link  dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/profile/fakeusername"
-              >
-                Profile
-              </a>
-              <a
-                class="nav-link dropdown-item  dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="#"
-                role="button"
-                tabindex="0"
-              >
-                <span>
-                  <div
-                    class="light-button d-inline"
+              Lessons
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/users"
+            >
+              Users
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/alerts"
+            >
+              Alerts
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/profile/fakeusername"
+            >
+              Profile
+            </a>
+            <a
+              class="dropdown-item  dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                <div
+                  class="light-button d-inline"
+                >
+                  <button
+                    class="btn border btn-light ms-2"
+                    style="color: rgb(41, 41, 41);"
                   >
-                    <button
-                      class="btn border btn-light ms-2"
-                      style="color: rgb(41, 41, 41);"
-                    >
-                      Logout
-                    </button>
-                  </div>
-                </span>
-              </a>
-            </div>
+                    Logout
+                  </button>
+                </div>
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -226,6 +227,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
   <div>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
       <div
         class="container"
@@ -263,13 +265,13 @@ exports[`Lesson Page Should render empty submissions 1`] = `
             class="m-auto navbar-nav"
           >
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -277,13 +279,13 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               Repo
             </a>
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
@@ -291,93 +293,93 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               Community
             </a>
           </div>
-          <div>
+          <div
+            class="dropdown"
+          >
             <div
-              class="dropdown"
+              class="d-none d-lg-block"
             >
               <div
-                class="d-none d-lg-block"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
                 <div
-                  class="nav-user-toggle  dropdown-toggle"
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
                 >
-                  <div
-                    class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
-                  >
-                    A 
-                  </div>
-                  <span>
-                    Fakeusername
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="octicon octicon-chevron-down"
-                    fill="currentColor"
-                    height="16"
-                    role="img"
-                    style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                    viewBox="0 0 16 16"
-                    width="16"
-                  >
-                    <path
-                      d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                  A 
                 </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
-              <div
-                class="d-lg-none"
+            </div>
+            <div
+              class="d-lg-none"
+            >
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/profile/fakeusername"
-                >
-                  Profile
-                </a>
-                <a
-                  class="nav-link dropdown-item  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="#"
-                  role="button"
-                  tabindex="0"
-                >
-                  <span>
-                    <div
-                      class="light-button d-inline"
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
+              >
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
+              >
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
                     >
-                      <button
-                        class="btn border btn-light ms-2"
-                        style="color: rgb(41, 41, 41);"
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  </span>
-                </a>
-              </div>
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -466,6 +468,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
   <div>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
       <div
         class="container"
@@ -503,13 +506,13 @@ exports[`Lesson Page Should render new submissions 1`] = `
             class="m-auto navbar-nav"
           >
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -517,13 +520,13 @@ exports[`Lesson Page Should render new submissions 1`] = `
               Repo
             </a>
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class="nav-link nav-item nav-link px-3 noUnderline"
+              class=" nav-item nav-link px-3 noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
@@ -531,93 +534,93 @@ exports[`Lesson Page Should render new submissions 1`] = `
               Community
             </a>
           </div>
-          <div>
+          <div
+            class="dropdown"
+          >
             <div
-              class="dropdown"
+              class="d-none d-lg-block"
             >
               <div
-                class="d-none d-lg-block"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
                 <div
-                  class="nav-user-toggle  dropdown-toggle"
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
                 >
-                  <div
-                    class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
-                  >
-                    A 
-                  </div>
-                  <span>
-                    Fakeusername
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="octicon octicon-chevron-down"
-                    fill="currentColor"
-                    height="16"
-                    role="img"
-                    style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                    viewBox="0 0 16 16"
-                    width="16"
-                  >
-                    <path
-                      d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                  A 
                 </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
-              <div
-                class="d-lg-none"
+            </div>
+            <div
+              class="d-lg-none"
+            >
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-                <a
-                  class="dropdown-item nav-link  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/profile/fakeusername"
-                >
-                  Profile
-                </a>
-                <a
-                  class="nav-link dropdown-item  dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="#"
-                  role="button"
-                  tabindex="0"
-                >
-                  <span>
-                    <div
-                      class="light-button d-inline"
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
+              >
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
+              >
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
                     >
-                      <button
-                        class="btn border btn-light ms-2"
-                        style="color: rgb(41, 41, 41);"
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  </span>
-                </a>
-              </div>
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
           </div>
         </div>
