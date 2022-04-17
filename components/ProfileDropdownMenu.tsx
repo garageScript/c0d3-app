@@ -15,12 +15,6 @@ type ProfileDropDownMenuProps = {
   isAdmin: boolean
 }
 
-type CustomToggleProps = {
-  children?: React.ReactNode
-  className?: string
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
-}
-
 const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   username,
   isAdmin
@@ -68,7 +62,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   ))
 
   const buttonMenuToggle = React.forwardRef(
-    (props: CustomToggleProps, ref: React.Ref<HTMLDivElement>) => (
+    (props, ref: React.Ref<HTMLDivElement>) => (
       <div ref={ref} {...props}>
         {props.children}
       </div>
