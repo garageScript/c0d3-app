@@ -42,13 +42,13 @@ exports[`user profile test Should render anonymous users 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -56,13 +56,13 @@ exports[`user profile test Should render anonymous users 1`] = `
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -911,13 +911,13 @@ exports[`user profile test Should render if no stars received 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -925,13 +925,13 @@ exports[`user profile test Should render if no stars received 1`] = `
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1785,13 +1785,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1799,13 +1799,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -2695,13 +2695,13 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -2709,13 +2709,13 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -3564,13 +3564,13 @@ exports[`user profile test Should render profile 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -3578,13 +3578,13 @@ exports[`user profile test Should render profile 1`] = `
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -4682,13 +4682,13 @@ exports[`user profile test should render discord avatar and username if user con
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -4696,13 +4696,13 @@ exports[`user profile test should render discord avatar and username if user con
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"

@@ -33,16 +33,16 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   const location = router.asPath
   const PROFILE_PATH = '/profile/' + username
 
-  const fullname = data?.userInfo?.user?.name || ''
+  const fullname = _.get(data, 'userInfo.user.name', '')
 
   const userInfo: UserInfo = {
     // 'A' stands for Anonymous, in case user did not put in full name
     username,
     firstName: fullname.split(' ')[0] || 'A',
     lastName: fullname.split(' ')[1] || ' ',
-    discordUserId: data?.userInfo?.user?.discordUserId || '',
-    discordUsername: data?.userInfo?.user?.discordUsername || '',
-    discordAvatarUrl: data?.userInfo?.user?.discordAvatarUrl || ''
+    discordUserId: _.get(data, 'userInfo.user.discordUserId', ''),
+    discordUsername: _.get(data, 'userInfo.user.discordUsername', ''),
+    discordAvatarUrl: _.get(data, 'userInfo.user.discordAvatarUrl', '')
   }
 
   const dropdownAdminMenuItems = [

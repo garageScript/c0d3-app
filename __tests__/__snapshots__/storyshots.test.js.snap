@@ -601,7 +601,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
         onKeyDown={[Function]}
       >
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -609,7 +609,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Curriculum
         </a>
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="https://github.com/garageScript/c0d3-app"
           rel="noopener noreferrer"
           target="_blank"
@@ -617,7 +617,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Repo
         </a>
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -625,7 +625,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Learn
         </a>
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
@@ -678,7 +678,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
         onKeyDown={[Function]}
       >
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -686,7 +686,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Curriculum
         </a>
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="https://github.com/garageScript/c0d3-app"
           rel="noopener noreferrer"
           target="_blank"
@@ -694,7 +694,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Repo
         </a>
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -702,7 +702,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Learn
         </a>
         <a
-          className=" nav-item nav-link px-3 noUnderline"
+          className="nav-item nav-link px-3 noUnderline"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
@@ -5107,7 +5107,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -5115,7 +5115,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -5123,7 +5123,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -5131,7 +5131,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -5257,7 +5257,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -5265,7 +5265,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -5273,7 +5273,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -5281,7 +5281,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -7805,7 +7805,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7813,7 +7813,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -7821,7 +7821,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7829,7 +7829,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -7926,7 +7926,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7934,7 +7934,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -7942,7 +7942,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7950,7 +7950,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -8537,7 +8537,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8545,7 +8545,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -8553,7 +8553,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8561,7 +8561,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -19939,7 +19939,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19947,7 +19947,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -19955,7 +19955,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19963,7 +19963,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -20171,7 +20171,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20179,7 +20179,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -20187,7 +20187,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20195,7 +20195,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -21673,7 +21673,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -21681,7 +21681,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -21689,7 +21689,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -21697,7 +21697,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -23175,7 +23175,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23183,7 +23183,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -23191,7 +23191,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23199,7 +23199,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -24677,7 +24677,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24685,7 +24685,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -24693,7 +24693,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24701,7 +24701,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -25651,7 +25651,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -25659,7 +25659,7 @@ Array [
             Curriculum
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -25667,7 +25667,7 @@ Array [
             Repo
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -25675,7 +25675,7 @@ Array [
             Learn
           </a>
           <a
-            className=" nav-item nav-link px-3 noUnderline"
+            className="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"

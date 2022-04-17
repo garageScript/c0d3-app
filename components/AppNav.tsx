@@ -5,8 +5,8 @@ import { useGetAppQuery, GetAppQuery } from '../graphql'
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav } from 'react-bootstrap'
 import ProfileDropdownMenu from './ProfileDropdownMenu'
-import { Session } from '../@types/auth'
 import styles from '../scss/appNav.module.scss'
+import _ from 'lodash'
 
 type AuthLinkProps = {
   session: any
@@ -41,7 +41,7 @@ const NavBar: React.FC<AuthLinkProps> = ({}) => {
       {navItems.map(button => (
         <NavLink
           {...button}
-          className={` ${styles['nav-item']} ${styles['nav-link']} px-3`}
+          className={`${styles['nav-item']} ${styles['nav-link']} px-3`}
           key={button.name}
           activePath={location.includes(button.path)}
         >
@@ -52,11 +52,11 @@ const NavBar: React.FC<AuthLinkProps> = ({}) => {
   )
 }
 
-const LoggedInAuthNav: React.FC<{ username: string; session: Session }> = ({
-  username,
-  session
-}) => {
-  const isAdmin = session?.user?.isAdmin
+const LoggedInAuthNav: React.FC<{
+  username: string
+  session: GetAppQuery['session']
+}> = ({ username, session }) => {
+  const isAdmin = _.get(session, 'user.isAdmin', false)
 
   return <ProfileDropdownMenu username={username} isAdmin={isAdmin} />
 }
@@ -76,10 +76,8 @@ const NotLoggedInAuthNav = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
-  const [session, setSession] = useState<GetAppQuery['session']>({
-    lessonStatus: []
-  })
-  const isAdmin = session?.user?.isAdmin
+  const [session, setSession] = useState<GetAppQuery['session']>()
+  const isAdmin = _.get(session, 'user.isAdmin', false)
 
   const { data, loading } = useGetAppQuery()
 
@@ -92,12 +90,12 @@ const AppNav: React.FC<{}> = () => {
   const renderButtons = () => {
     if (loading) return <></>
 
-    // TODO: replace with typing
-    const username = session?.user?.username || ''
-
-    if (!session || (username || null) === null) {
+    if (!session || _.get(session, 'user.username', null) === null) {
       return <NotLoggedInAuthNav />
     }
+
+    // TODO: replace with typing
+    const username = _.get(session, 'user.username', '')
 
     return <LoggedInAuthNav username={username} session={session} />
   }

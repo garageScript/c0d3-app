@@ -43,13 +43,13 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="m-auto navbar-nav"
           >
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -57,13 +57,13 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               Repo
             </a>
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
@@ -524,13 +524,13 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -538,13 +538,13 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -747,13 +747,13 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="m-auto navbar-nav"
           >
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -761,13 +761,13 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               Repo
             </a>
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class=" nav-item nav-link px-3 noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
@@ -1255,13 +1255,13 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           class="m-auto navbar-nav"
         >
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1269,13 +1269,13 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             Repo
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class=" nav-item nav-link px-3 noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
