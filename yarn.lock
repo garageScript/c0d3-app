@@ -2663,15 +2663,10 @@
     "@sentry/utils" "6.19.6"
     tslib "^1.9.3"
 
-"@sentry/types@6.19.6":
+"@sentry/types@6.19.6", "@sentry/types@^6.11.0":
   version "6.19.6"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.19.6.tgz#70513f9dca05d23d7ab9c2a6cb08d4db6763ca67"
   integrity sha512-QH34LMJidEUPZK78l+Frt3AaVFJhEmIi05Zf8WHd9/iTt+OqvCHBgq49DDr1FWFqyYWm/QgW/3bIoikFpfsXyQ==
-
-"@sentry/types@^6.11.0":
-  version "6.19.3"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.19.3.tgz#94b19da68d4d23561efb1014f72968bcea85cd0c"
-  integrity sha512-jHhqxp8MIWSfOc3krorirTGKTEaSFO6XrAvi+2AZhr6gvOChwOgzgrN2ZqesJcZmgCsqWV21u3usSwYeRrjOJA==
 
 "@sentry/utils@6.19.6":
   version "6.19.6"
@@ -2870,18 +2865,18 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-storyshots@^6.4.20":
-  version "6.4.20"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-6.4.20.tgz#a8f14d31bf80a0dc5215b19e00462821bbe25c88"
-  integrity sha512-s2clmUTUXAHLGKAKEq+PqqbUu76uAx9VqDF+C3MW58JbdPEmFfkndyz+FLfu6GI2Be5Spkud/aSAyu/oNacmFw==
+"@storybook/addon-storyshots@^6.4.21":
+  version "6.4.21"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-6.4.21.tgz#395996a3fa7f2bd427527eae6404f50cf29e7cd9"
+  integrity sha512-2BXrMyS7DvDIv4ZhTMqaU2qCLl7MkYiQWvD5iKfwazkn0IAQGnn1nd8dT2Dhp88aVAqdE5AdLZllVGsCUMWUZw==
   dependencies:
     "@jest/transform" "^26.6.2"
-    "@storybook/addons" "6.4.20"
+    "@storybook/addons" "6.4.21"
     "@storybook/babel-plugin-require-context-hook" "1.0.1"
-    "@storybook/client-api" "6.4.20"
-    "@storybook/core" "6.4.20"
-    "@storybook/core-client" "6.4.20"
-    "@storybook/core-common" "6.4.20"
+    "@storybook/client-api" "6.4.21"
+    "@storybook/core" "6.4.21"
+    "@storybook/core-client" "6.4.21"
+    "@storybook/core-common" "6.4.21"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
     "@types/glob" "^7.1.3"
     "@types/jest" "^26.0.16"
@@ -3958,22 +3953,6 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.4.20":
-  version "6.4.20"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.20.tgz#bb8742ca7b23d4e239be487b2b8843083a24db99"
-  integrity sha512-mBnfZrwCBxMFdAI5NSs+oxQKLIv4IOM2U3V5n/4NjPvVDmfPt5ozQ/v/1yyVFsuneAXw6xfpS24cI4M9GenUgQ==
-  dependencies:
-    "@storybook/addons" "6.4.20"
-    "@storybook/client-logger" "6.4.20"
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
-    core-js "^3.8.2"
-    estraverse "^5.2.0"
-    global "^4.4.0"
-    loader-utils "^2.0.0"
-    lodash "^4.17.21"
-    prettier ">=2.2.1 <=2.3.0"
-    regenerator-runtime "^0.13.7"
-
 "@storybook/source-loader@6.4.21":
   version "6.4.21"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.21.tgz#6145c3dcede3bfbd1159755c6aad8722cadd0b5f"
@@ -4192,10 +4171,10 @@
     "@testing-library/dom" "^8.0.0"
     "@types/react-dom" "*"
 
-"@testing-library/user-event@^14.0.4":
-  version "14.0.4"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.0.4.tgz#5b430a9c27f25078bff4471661b755115d0db9d4"
-  integrity sha512-VBZe5lcUsmrQyOwIFvqOxLBoaTw1/Qy4Ek+VgmFYs719bs2SxUp42vbsb7ATlQDkHdj4OIQlucfpwxe5WoG1jA==
+"@testing-library/user-event@^14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.1.0.tgz#db479c06271b72a4d41cf595ec2ad7ff078c1d72"
+  integrity sha512-+CGfMXlVM+OwREHDEsfTGsXIMI+rjr3a7YBUSutq7soELht+8kQrM5k46xa/WLfHdtX/wqsDIleL6bi4i+xz0w==
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -13815,10 +13794,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.20.2:
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.20.2.tgz#f9debdc955ffe8e03e1004ded20df731affc3832"
-  integrity sha512-0HxG2aVObhGz6I98+N/tTZ0Azkus6vYPDS+TiDFO1UWx88QVzflcTAhybsBdhG0xfmghuC6jvFui73hjdimZeg==
+posthog-js@^1.20.3:
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.20.3.tgz#6cde9147e059cc67c507bae720126e61b79b460b"
+  integrity sha512-rs37dETVCNFLCVM+g4gGnEZldPI9wM0q3EDtL4xR4zZj591ZK4R9G3OGt5j1MDXMhawVWQa5EEwfoKwpbBim/w==
   dependencies:
     "@sentry/types" "^6.11.0"
     fflate "^0.4.1"
@@ -16877,10 +16856,10 @@ use-latest@^1.0.0:
   dependencies:
     use-isomorphic-layout-effect "^1.0.0"
 
-use-undo@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/use-undo/-/use-undo-1.0.5.tgz#4f193d74164a4fe5fcd61f7278aa02fa1dbd7d8e"
-  integrity sha512-rLlwvcrioEqZ0t/M4hpgCsrCMgCpbodUXMRskK98g3ftdGFi7wr9DzxPY93vKHK17mMgxBY2ar7bgZ5cNFSiNQ==
+use-undo@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/use-undo/-/use-undo-1.1.0.tgz#141038a8f8e55b76b174926c7b25a3e59d6d23ee"
+  integrity sha512-z1a6nt9fYky+lwA786L5KxoOfvj02U71937EZeEH7IJKU3M2tZlDS3jvHcQc9DFarwrz1Cl8bqPAcPfnWicnNw==
 
 use@^3.1.0:
   version "3.1.1"
