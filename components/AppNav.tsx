@@ -52,15 +52,6 @@ const NavBar: React.FC<AuthLinkProps> = ({}) => {
   )
 }
 
-const LoggedInAuthNav: React.FC<{
-  username: string
-  session: GetAppQuery['session']
-}> = ({ username, session }) => {
-  const isAdmin = _.get(session, 'user.isAdmin', false)
-
-  return <ProfileDropdownMenu username={username} isAdmin={isAdmin} />
-}
-
 const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
     <NavLink path="/login" className={`btn m-2 me-lg-3 ${styles['login-btn']}`}>
@@ -97,7 +88,7 @@ const AppNav: React.FC<{}> = () => {
     // TODO: replace with typing
     const username = _.get(session, 'user.username', '')
 
-    return <LoggedInAuthNav username={username} session={session} />
+    return <ProfileDropdownMenu username={username} isAdmin={isAdmin} />
   }
 
   return (
