@@ -10,10 +10,10 @@
 }
 
 .noUnderline {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .active {
-  color: variables.$secondary !important;
-  background: variables.$primary !important;
+  color: variables.$secondary;
+  background: variables.$primary;
 }
