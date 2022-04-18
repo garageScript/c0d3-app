@@ -1300,9 +1300,6 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                         />
                       </button>
                     </td>
-                    <td
-                      className="css-1a9owij-toolbar"
-                    />
                   </tr>
                   <tr
                     className="css-1n7ec1i-line"
@@ -2172,9 +2169,6 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                         />
                       </button>
                     </td>
-                    <td
-                      className="css-1a9owij-toolbar"
-                    />
                   </tr>
                   <tr
                     className="css-1n7ec1i-line"
@@ -3529,9 +3523,6 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
               />
             </button>
           </td>
-          <td
-            className="css-1a9owij-toolbar"
-          />
         </tr>
         <tr
           className="css-1n7ec1i-line"
@@ -3925,9 +3916,6 @@ exports[`Storyshots Components/DiffView Default 1`] = `
               />
             </button>
           </td>
-          <td
-            className="css-1a9owij-toolbar"
-          />
         </tr>
         <tr
           className="css-1n7ec1i-line"
@@ -12051,9 +12039,6 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                       />
                     </button>
                   </td>
-                  <td
-                    className="css-1a9owij-toolbar"
-                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -13480,9 +13465,6 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                       />
                     </button>
                   </td>
-                  <td
-                    className="css-1a9owij-toolbar"
-                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -14907,9 +14889,6 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                       />
                     </button>
                   </td>
-                  <td
-                    className="css-1a9owij-toolbar"
-                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -16334,9 +16313,6 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                       />
                     </button>
                   </td>
-                  <td
-                    className="css-1a9owij-toolbar"
-                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -17761,9 +17737,6 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                       />
                     </button>
                   </td>
-                  <td
-                    className="css-1a9owij-toolbar"
-                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
