@@ -4,19 +4,21 @@
 $dark: hsl(0, 0%, 33.7%);
 $light: hsl(0, 0%, 98.4%);
 $light_secondary: hsl(0, 0%, 92.9%); // Border
+$dark_primary: color.adjust(variables.$primary, $lightness: -20%);
+$light_primary: color.adjust(variables.$primary, $lightness: 28%);
 
 .lessons_tabsNav {
   font-family: 'PT Mono';
-  width: 100%;
-  padding: 18px 23px;
-
+  max-width: fit-content;
+  padding: 10px 7px;
   background: white;
-  border: 1px solid $light_secondary;
-  box-shadow: 0px 4px 25px hsla(0, 0%, 0%, 0.1);
-  border-radius: 10px;
+  box-shadow: 0px 4px 25px hsla(0deg, 0%, 0%, 0.1);
+  border-radius: 4px;
   align-items: center;
   display: flex;
   column-gap: 20px;
+  overflow-x: auto;
+  border: 1px solid $light_primary;
 }
 
 .lessons__tabsNav__nav {
@@ -24,10 +26,11 @@ $light_secondary: hsl(0, 0%, 92.9%); // Border
   column-gap: 20px;
   justify-content: center;
   row-gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .lessons_tabsNav__nav__item {
-  padding: 7px 16px 7px 16px;
+  padding: 7px 16px;
   border-radius: 4px;
   background-color: variables.$primary;
   color: white;
@@ -44,16 +47,18 @@ $light_secondary: hsl(0, 0%, 92.9%); // Border
   padding: 7px 16px 7px 16px;
   border-radius: 4px;
   background-color: hsl(0, 0%, 98.4%);
-  color: $dark;
+  color: $dark_primary;
   cursor: pointer;
   font-weight: bold;
   border: none;
   text-decoration: none;
+  transition: background-color 0.1s ease-in;
 }
 
 .lessons_tabsNav__nav__item--inactive:hover {
   background-color: color.change(variables.$primary, $lightness: 95%);
-  color: $dark;
+  color: $dark_primary;
+  transition: background-color 0.3s ease-out;
 }
 
 .lessons_tabs {

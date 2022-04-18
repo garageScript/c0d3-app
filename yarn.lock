@@ -2814,8 +2814,7 @@
     remark-slug "^6.0.0"
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
-
-"@storybook/addon-essentials@^6.4.21":
+  "@storybook/addon-essentials@^6.4.22":
   version "6.4.22"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-6.4.22.tgz#6981c89e8b315cda7ce93b9bf74e98ca80aec00a"
   integrity sha512-GTv291fqvWq2wzm7MruBvCGuWaCUiuf7Ca3kzbQ/WqWtve7Y/1PDsqRNQLGZrQxkXU0clXCqY1XtkTrtA3WGFQ==
@@ -4718,8 +4717,7 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
     react-error-boundary "^3.1.0"
-
-"@testing-library/react@^12.1.4":
+"@testing-library/react@^12.1.5":
   version "12.1.5"
   resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-12.1.5.tgz#bb248f72f02a5ac9d949dea07279095fa577963b"
   integrity sha512-OfTXCJUFgjd/digLUuPxa0+/3ZxsQmE7ub9kcbW/wi96Bh3o/p5vrETcBGfP17NWPGqeYYl5LTRpwyGoMC4ysg==
@@ -6904,10 +6902,10 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-c0d3-diff@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/c0d3-diff/-/c0d3-diff-0.0.1.tgz#a751146a636a18c73ae16fbfe4d7e60296c20fc3"
-  integrity sha512-aWeGYVXVgHd3xfWlX2LjGFbA8C+vXWSjBf0tWdTE01EYnwe9CyNNw8qdO5kd56poAxdWYxLgANC14Omh3GJgWA==
+c0d3-diff@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/c0d3-diff/-/c0d3-diff-0.0.7.tgz#b4e4e4008f3b4699b5136bdb2ea74f7709272690"
+  integrity sha512-7afXSlzK4CvUz/cPanfGOwbljuO0oid5sUL5zQl02P2tvu+NM1uukctDeLyxGSSXD2NN9kCfFNz/CSLl5cbvGA==
   dependencies:
     classnames "^2.2.6"
     create-emotion "^10.0.14"
@@ -12114,8 +12112,8 @@ lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-
-lint-staged@^12.3.7:
+  
+lint-staged@^12.3.8:
   version "12.3.8"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-12.3.8.tgz#ee3fe2e16c9d76f99d8348072900b017d6d76901"
   integrity sha512-0+UpNaqIwKRSGAFOCcpuYNIv/j5QGVC+xUVvmSdxHO+IfIGoHbFLo3XcPmV/LLnsVj5EAncNHVtlITSoY5qWGQ==
@@ -13347,7 +13345,7 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-next-auth@^4.3.1:
+next-auth@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-4.3.2.tgz#eb4976511fb19766d0397bd4de45eee87c5c1998"
   integrity sha512-yj9HN9p81Fg3dkrq4Y0FxjfgupiABac7o+ve47j5GPLjo1qE2FFX1pr7g7mwQ1HDUCoGhLmgBpFBR8+pdWgFfQ==
