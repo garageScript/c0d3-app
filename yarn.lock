@@ -2892,18 +2892,18 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-storysource@^6.4.21":
-  version "6.4.21"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.21.tgz#d1acf3a332eb845dcd2c2ce95ee4585413ba874a"
-  integrity sha512-CFfpq7PfoRCbrTVhmWZLPtubTmGNDPJLavmNuiAs0unwVV+nLQwV0md+4jf4LxIMw5NNqK8weAYbNAAwyiQSmQ==
+"@storybook/addon-storysource@^6.4.22":
+  version "6.4.22"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.22.tgz#c2fc80e90476495ecacf74986e3cf81f25379f53"
+  integrity sha512-BFZ+/+CytET1CQzRe5qbg6Ca7pUKHa7C+pMQkq8M+tFG1f0Ov2Np5OvqXmZQcJeOpK1HDF0EaJv2ESg0CH8ytw==
   dependencies:
-    "@storybook/addons" "6.4.21"
-    "@storybook/api" "6.4.21"
-    "@storybook/client-logger" "6.4.21"
-    "@storybook/components" "6.4.21"
-    "@storybook/router" "6.4.21"
-    "@storybook/source-loader" "6.4.21"
-    "@storybook/theming" "6.4.21"
+    "@storybook/addons" "6.4.22"
+    "@storybook/api" "6.4.22"
+    "@storybook/client-logger" "6.4.22"
+    "@storybook/components" "6.4.22"
+    "@storybook/router" "6.4.22"
+    "@storybook/source-loader" "6.4.22"
+    "@storybook/theming" "6.4.22"
     core-js "^3.8.2"
     estraverse "^5.2.0"
     loader-utils "^2.0.0"
@@ -4424,22 +4424,6 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.4.21":
-  version "6.4.21"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.21.tgz#6145c3dcede3bfbd1159755c6aad8722cadd0b5f"
-  integrity sha512-rRu3uWla1c73F5FKl7mdkIKcj+Of4jzIT7aHycS0j6rYKwbGpsptLgxbpMUaEdNHjSDyAzSM6Mj5XcnE5rC8nQ==
-  dependencies:
-    "@storybook/addons" "6.4.21"
-    "@storybook/client-logger" "6.4.21"
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
-    core-js "^3.8.2"
-    estraverse "^5.2.0"
-    global "^4.4.0"
-    loader-utils "^2.0.0"
-    lodash "^4.17.21"
-    prettier ">=2.2.1 <=2.3.0"
-    regenerator-runtime "^0.13.7"
-
 "@storybook/source-loader@6.4.22":
   version "6.4.22"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.22.tgz#c931b81cf1bd63f79b51bfa9311de7f5a04a7b77"
@@ -5172,7 +5156,14 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
 
-"@types/react-dom@*", "@types/react-dom@^18.0.1":
+"@types/react-dom@<18.0.0":
+  version "17.0.15"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.15.tgz#f2c8efde11521a4b7991e076cb9c70ba3bb0d156"
+  integrity sha512-Tr9VU9DvNoHDWlmecmcsE5ZZiUkYx+nKBzum4Oxe1K0yJVyBlfbq7H3eXjxXqJczBKqPGq3EgfTru4MgKb9+Yw==
+  dependencies:
+    "@types/react" "^17"
+
+"@types/react-dom@^18.0.1":
   version "18.0.1"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.1.tgz#cb3cc10ea91141b12c71001fede1017acfbce4db"
   integrity sha512-jCwTXvHtRLiyVvKm9aEdHXs8rflVOGd5Sl913JZrPshfXjn8NYsTNZOz70bCsA31IR0TOqwi3ad+X4tSCBoMTw==
