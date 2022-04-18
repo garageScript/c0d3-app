@@ -1287,17 +1287,22 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    className="css-1tkyu0d-title-block"
+                  >
                     <td
-                      className="css-1gyvngn-title-block"
+                      className="css-1kdwiw5-right-title-box"
                       colSpan={4}
                     >
-                      <pre
-                        className="css-pa3tg-content-text"
+                      <span
+                        className="css-disz75-right-title"
                       >
                         curriculum/js0/2.js
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      className="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     className="css-1n7ec1i-line"
@@ -2154,17 +2159,22 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    className="css-1tkyu0d-title-block"
+                  >
                     <td
-                      className="css-1gyvngn-title-block"
+                      className="css-1kdwiw5-right-title-box"
                       colSpan={4}
                     >
-                      <pre
-                        className="css-pa3tg-content-text"
+                      <span
+                        className="css-disz75-right-title"
                       >
                         curriculum/js0/2.js
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      className="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     className="css-1n7ec1i-line"
@@ -3506,17 +3516,22 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
       className="css-1p5fn6o-diff-container"
     >
       <tbody>
-        <tr>
+        <tr
+          className="css-1tkyu0d-title-block"
+        >
           <td
-            className="css-1gyvngn-title-block"
+            className="css-1kdwiw5-right-title-box"
             colSpan={4}
           >
-            <pre
-              className="css-pa3tg-content-text"
+            <span
+              className="css-disz75-right-title"
             >
               curriculum/js0/2.js
-            </pre>
+            </span>
           </td>
+          <td
+            className="css-1a9owij-toolbar"
+          />
         </tr>
         <tr
           className="css-1n7ec1i-line"
@@ -3897,17 +3912,22 @@ exports[`Storyshots Components/DiffView Default 1`] = `
       className="css-1p5fn6o-diff-container"
     >
       <tbody>
-        <tr>
+        <tr
+          className="css-1tkyu0d-title-block"
+        >
           <td
-            className="css-1gyvngn-title-block"
+            className="css-1kdwiw5-right-title-box"
             colSpan={4}
           >
-            <pre
-              className="css-pa3tg-content-text"
+            <span
+              className="css-disz75-right-title"
             >
               curriculum/js0/2.js
-            </pre>
+            </span>
           </td>
+          <td
+            className="css-1a9owij-toolbar"
+          />
         </tr>
         <tr
           className="css-1n7ec1i-line"
@@ -12082,17 +12102,22 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
                   </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -13506,17 +13531,22 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
                   </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -14928,17 +14958,22 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
                   </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -16350,17 +16385,22 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
                   </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
@@ -17772,17 +17812,22 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
               className="css-1p5fn6o-diff-container"
             >
               <tbody>
-                <tr>
+                <tr
+                  className="css-1tkyu0d-title-block"
+                >
                   <td
-                    className="css-1gyvngn-title-block"
+                    className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
-                    <pre
-                      className="css-pa3tg-content-text"
+                    <span
+                      className="css-disz75-right-title"
                     >
                       js7/1.js
-                    </pre>
+                    </span>
                   </td>
+                  <td
+                    className="css-1a9owij-toolbar"
+                  />
                 </tr>
                 <tr
                   className="css-1n7ec1i-line"
