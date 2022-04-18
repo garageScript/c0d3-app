@@ -238,6 +238,9 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                           </svg>
                         </button>
                       </td>
+                      <td
+                        class="css-1a9owij-toolbar"
+                      />
                     </tr>
                     <tr
                       class="css-1n7ec1i-line"

@@ -156,6 +156,9 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                         </svg>
                       </button>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -1011,6 +1014,9 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                         </svg>
                       </button>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -1815,6 +1821,9 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                         </svg>
                       </button>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -2619,6 +2628,9 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                         </svg>
                       </button>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -4224,6 +4236,9 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                         </svg>
                       </button>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -6204,6 +6219,9 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                         </svg>
                       </button>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
