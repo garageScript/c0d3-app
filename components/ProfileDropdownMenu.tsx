@@ -16,6 +16,10 @@ type ProfileDropDownMenuProps = {
   isAdmin: boolean
 }
 
+type customToggleProps = {
+  children?: React.ReactNode
+}
+
 const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   username,
   isAdmin
@@ -62,9 +66,10 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
     </Dropdown.Item>
   ))
 
-  const buttonMenuToggle = React.forwardRef<HTMLDivElement>((props, ref) => (
-    <div ref={ref} {...props}></div>
-  ))
+  const buttonMenuToggle = React.forwardRef<
+    HTMLDivElement,
+    React.PropsWithChildren<customToggleProps>
+  >((props, ref) => <div ref={ref} {...props}></div>)
 
   return (
     <Dropdown>
