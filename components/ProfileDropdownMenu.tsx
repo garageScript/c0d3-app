@@ -61,13 +61,11 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
     </Dropdown.Item>
   ))
 
-  const buttonMenuToggle = React.forwardRef(
-    (props, ref: React.Ref<HTMLDivElement>) => (
-      <div ref={ref} {...props}>
-        {props.children}
-      </div>
-    )
-  )
+  const buttonMenuToggle = React.forwardRef<HTMLDivElement>((props, ref) => (
+    <div ref={ref} {...props}>
+      {props.children}
+    </div>
+  ))
 
   return (
     <Dropdown>
