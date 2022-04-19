@@ -9,6 +9,7 @@ import { useUserInfoQuery } from '../graphql/index'
 import { useRouter } from 'next/router'
 import _ from 'lodash'
 import styles from '../scss/profileDropDown.module.scss'
+import { ADMIN_PATH, PROFILE_PATH } from '../constants'
 
 type ProfileDropDownMenuProps = {
   username: string
@@ -25,7 +26,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   })
   const router = useRouter()
   const location = router.asPath
-  const PROFILE_PATH = '/profile/' + username
+  const userProfilePath = PROFILE_PATH + username
 
   const fullname = _.get(data, 'userInfo.user.name', '')
 
@@ -40,9 +41,9 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   }
 
   const dropdownAdminMenuItems = [
-    { title: 'Lessons', path: '/admin/lessons' },
-    { title: 'Users', path: '/admin/users' },
-    { title: 'Alerts', path: '/admin/alerts' }
+    { title: 'Lessons', path: ADMIN_PATH + 'lessons' },
+    { title: 'Users', path: ADMIN_PATH + 'users' },
+    { title: 'Alerts', path: ADMIN_PATH + 'alerts' }
   ]
 
   const isActive = (path: string) => {
@@ -89,8 +90,8 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
           )}
           <Dropdown.Item
             className={`${styles['dropdown-item']} `}
-            bsPrefix={isActive(PROFILE_PATH)}
-            href={PROFILE_PATH}
+            bsPrefix={isActive(userProfilePath)}
+            href={userProfilePath}
           >
             Profile
           </Dropdown.Item>
@@ -103,8 +104,8 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
         {adminDropdownMenu}
         <Dropdown.Item
           className={`${styles['dropdown-item']}`}
-          bsPrefix={isActive(PROFILE_PATH)}
-          href={PROFILE_PATH}
+          bsPrefix={isActive(userProfilePath)}
+          href={userProfilePath}
         >
           Profile
         </Dropdown.Item>

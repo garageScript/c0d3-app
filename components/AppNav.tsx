@@ -6,6 +6,14 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav } from 'react-bootstrap'
 import ProfileDropdownMenu from './ProfileDropdownMenu'
 import styles from '../scss/appNav.module.scss'
+import {
+  REPO_PATH,
+  DOCS_PATH,
+  CURRICULUM_PATH,
+  DISCORD_PATH,
+  LOGIN_PATH,
+  SIGNUP_PATH
+} from '../constants'
 import _ from 'lodash'
 
 type AuthLinkProps = {
@@ -15,18 +23,18 @@ type AuthLinkProps = {
 type NavItem = NavLinkProps & { name: string }
 
 const navItems: NavItem[] = [
-  { path: '/curriculum', name: 'Curriculum' },
+  { path: CURRICULUM_PATH, name: 'Curriculum' },
   {
-    path: 'https://github.com/garageScript/c0d3-app',
+    path: REPO_PATH,
     name: 'Repo',
     external: true
   },
   {
-    path: '/docs/learn',
+    path: DOCS_PATH + 'learn',
     name: 'Learn'
   },
   {
-    path: 'https://discord.gg/c0d3',
+    path: DISCORD_PATH,
     name: 'Community',
     external: true
   }
@@ -54,11 +62,14 @@ const NavBar: React.FC<AuthLinkProps> = ({}) => {
 
 const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
-    <NavLink path="/login" className={`btn m-2 me-lg-3 ${styles['login-btn']}`}>
+    <NavLink
+      path={LOGIN_PATH}
+      className={`btn m-2 me-lg-3 ${styles['login-btn']}`}
+    >
       Login
     </NavLink>
     <NavLink
-      path="/signup"
+      path={SIGNUP_PATH}
       className={`btn m-2 me-lg-3 ${styles['signup-btn']}`}
     >
       Signup
