@@ -26,7 +26,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   })
   const router = useRouter()
   const location = router.asPath
-  const userProfilePath = PROFILE_PATH + username
+  const userProfilePath = PROFILE_PATH + '/' + username
 
   const fullname = _.get(data, 'userInfo.user.name', '')
 
@@ -41,9 +41,9 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   }
 
   const dropdownAdminMenuItems = [
-    { title: 'Lessons', path: ADMIN_PATH + 'lessons' },
-    { title: 'Users', path: ADMIN_PATH + 'users' },
-    { title: 'Alerts', path: ADMIN_PATH + 'alerts' }
+    { title: 'Lessons', path: ADMIN_PATH + '/lessons' },
+    { title: 'Users', path: ADMIN_PATH + '/users' },
+    { title: 'Alerts', path: ADMIN_PATH + '/alerts' }
   ]
 
   const isActive = (path: string) => {

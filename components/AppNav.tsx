@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
     external: true
   },
   {
-    path: DOCS_PATH + 'learn',
+    path: DOCS_PATH + '/learn',
     name: 'Learn'
   },
   {
