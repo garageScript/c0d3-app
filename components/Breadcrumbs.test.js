@@ -1,7 +1,10 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Breadcrumbs from './Breadcrumbs.tsx'
+
+// Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
+
 import userEvent from '@testing-library/user-event'
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
