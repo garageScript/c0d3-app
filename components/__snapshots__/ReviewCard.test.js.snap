@@ -143,17 +143,22 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                 class="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    class="css-1tkyu0d-title-block"
+                  >
                     <td
-                      class="css-1gyvngn-title-block"
+                      class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
-                      <pre
-                        class="css-pa3tg-content-text"
+                      <span
+                        class="css-disz75-right-title"
                       >
                         js0/1.js
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -996,17 +1001,22 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 class="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    class="css-1tkyu0d-title-block"
+                  >
                     <td
-                      class="css-1gyvngn-title-block"
+                      class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
-                      <pre
-                        class="css-pa3tg-content-text"
+                      <span
+                        class="css-disz75-right-title"
                       >
                         js0/1.js
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -1798,17 +1808,22 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                 class="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    class="css-1tkyu0d-title-block"
+                  >
                     <td
-                      class="css-1gyvngn-title-block"
+                      class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
-                      <pre
-                        class="css-pa3tg-content-text"
+                      <span
+                        class="css-disz75-right-title"
                       >
                         js0/1.js
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -2600,17 +2615,22 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    class="css-1tkyu0d-title-block"
+                  >
                     <td
-                      class="css-1gyvngn-title-block"
+                      class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
-                      <pre
-                        class="css-pa3tg-content-text"
+                      <span
+                        class="css-disz75-right-title"
                       >
                         .
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -4203,17 +4223,22 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    class="css-1tkyu0d-title-block"
+                  >
                     <td
-                      class="css-1gyvngn-title-block"
+                      class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
-                      <pre
-                        class="css-pa3tg-content-text"
+                      <span
+                        class="css-disz75-right-title"
                       >
                         js7/1
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -6181,17 +6206,22 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-1p5fn6o-diff-container"
               >
                 <tbody>
-                  <tr>
+                  <tr
+                    class="css-1tkyu0d-title-block"
+                  >
                     <td
-                      class="css-1gyvngn-title-block"
+                      class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
-                      <pre
-                        class="css-pa3tg-content-text"
+                      <span
+                        class="css-disz75-right-title"
                       >
                         js7/1.c
-                      </pre>
+                      </span>
                     </td>
+                    <td
+                      class="css-1a9owij-toolbar"
+                    />
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
