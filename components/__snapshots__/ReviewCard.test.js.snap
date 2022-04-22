@@ -94,49 +94,6 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                class="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  class="form-check-input"
-                  id="checkBox-104-0"
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  class="form-check-label text-muted"
-                  for="checkBox-104-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                class="btn borderless btn-outline-mute btn-outline-bg-mute"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="octicon octicon-copy"
-                  fill="currentColor"
-                  height="16"
-                  role="img"
-                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <path
-                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-                    fill-rule="evenodd"
-                  />
-                  <path
-                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
               class="diffView"
             >
               <table
@@ -158,7 +115,47 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                     </td>
                     <td
                       class="css-1a9owij-toolbar"
-                    />
+                    >
+                      <div
+                        class="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="checkBox-104-0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="checkBox-104-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="octicon octicon-copy"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                            fill-rule="evenodd"
+                          />
+                          <path
+                            d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -952,49 +949,6 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                class="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  class="form-check-input"
-                  id="checkBox-104-0"
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  class="form-check-label text-muted"
-                  for="checkBox-104-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                class="btn borderless btn-outline-mute btn-outline-bg-mute"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="octicon octicon-copy"
-                  fill="currentColor"
-                  height="16"
-                  role="img"
-                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <path
-                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-                    fill-rule="evenodd"
-                  />
-                  <path
-                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
               class="diffView"
             >
               <table
@@ -1016,7 +970,47 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                     </td>
                     <td
                       class="css-1a9owij-toolbar"
-                    />
+                    >
+                      <div
+                        class="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="checkBox-104-0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="checkBox-104-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="octicon octicon-copy"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                            fill-rule="evenodd"
+                          />
+                          <path
+                            d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -1759,49 +1753,6 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                class="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  class="form-check-input"
-                  id="checkBox-104-0"
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  class="form-check-label text-muted"
-                  for="checkBox-104-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                class="btn borderless btn-outline-mute btn-outline-bg-mute"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="octicon octicon-copy"
-                  fill="currentColor"
-                  height="16"
-                  role="img"
-                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <path
-                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-                    fill-rule="evenodd"
-                  />
-                  <path
-                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
               class="diffView"
             >
               <table
@@ -1823,7 +1774,47 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                     </td>
                     <td
                       class="css-1a9owij-toolbar"
-                    />
+                    >
+                      <div
+                        class="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="checkBox-104-0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="checkBox-104-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="octicon octicon-copy"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                            fill-rule="evenodd"
+                          />
+                          <path
+                            d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -2566,49 +2557,6 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                class="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  class="form-check-input"
-                  id="checkBox-104-0"
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  class="form-check-label text-muted"
-                  for="checkBox-104-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                class="btn borderless btn-outline-mute btn-outline-bg-mute"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="octicon octicon-copy"
-                  fill="currentColor"
-                  height="16"
-                  role="img"
-                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <path
-                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-                    fill-rule="evenodd"
-                  />
-                  <path
-                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
               class="diffView"
             >
               <table
@@ -2630,7 +2578,47 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                     </td>
                     <td
                       class="css-1a9owij-toolbar"
-                    />
+                    >
+                      <div
+                        class="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="checkBox-104-0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="checkBox-104-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="octicon octicon-copy"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                            fill-rule="evenodd"
+                          />
+                          <path
+                            d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -4174,49 +4162,6 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                class="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  class="form-check-input"
-                  id="checkBox-104-0"
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  class="form-check-label text-muted"
-                  for="checkBox-104-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                class="btn borderless btn-outline-mute btn-outline-bg-mute"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="octicon octicon-copy"
-                  fill="currentColor"
-                  height="16"
-                  role="img"
-                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <path
-                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-                    fill-rule="evenodd"
-                  />
-                  <path
-                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
               class="diffView"
             >
               <table
@@ -4238,7 +4183,47 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                     </td>
                     <td
                       class="css-1a9owij-toolbar"
-                    />
+                    >
+                      <div
+                        class="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="checkBox-104-0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="checkBox-104-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="octicon octicon-copy"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                            fill-rule="evenodd"
+                          />
+                          <path
+                            d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
@@ -6157,49 +6142,6 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
-            >
-              <div
-                class="checkBoxBorder form-check pe-2 me-2 border rounded"
-              >
-                <input
-                  class="form-check-input"
-                  id="checkBox-104-0"
-                  type="checkbox"
-                  value=""
-                />
-                <label
-                  class="form-check-label text-muted"
-                  for="checkBox-104-0"
-                >
-                  Viewed
-                </label>
-              </div>
-              <button
-                class="btn borderless btn-outline-mute btn-outline-bg-mute"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="octicon octicon-copy"
-                  fill="currentColor"
-                  height="16"
-                  role="img"
-                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                >
-                  <path
-                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-                    fill-rule="evenodd"
-                  />
-                  <path
-                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
               class="diffView"
             >
               <table
@@ -6221,7 +6163,47 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                     </td>
                     <td
                       class="css-1a9owij-toolbar"
-                    />
+                    >
+                      <div
+                        class="checkBoxBorder form-check pe-2 me-2 border rounded"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="checkBox-104-0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="checkBox-104-0"
+                        >
+                          Viewed
+                        </label>
+                      </div>
+                      <button
+                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="octicon octicon-copy"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                            fill-rule="evenodd"
+                          />
+                          <path
+                            d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
                   </tr>
                   <tr
                     class="css-1n7ec1i-line"
