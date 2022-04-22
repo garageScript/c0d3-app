@@ -1,0 +1,59 @@
+$light-gray: hsl(0, 0%, 85%);
+$mint-green: hsl(170, 66%, 38%);
+$mint-green-dark: adjust-color(
+  $color: $mint-green,
+  $blackness: 10%
+);
+
+.optionInfo__span {
+  margin-bottom: 14px;
+}
+
+.optionInfo__input {
+  padding: 12.5px;
+  background-color: white;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+}
+
+.optionInfo__error {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+  margin-left: 5px;
+}
+
+.formCard__submitButton {
+  font-family: 'PT MONO';
+  padding: 15px 48px;
+  background-color: $mint-green;
+  border-radius: 4px;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba($mint-green, 0.5);
+    background-color: $mint-green-dark;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    outline: 3px solid $mint-green-dark;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .formCard__submitButton {
+    font-size: 10px;
+    padding: 8px 24px;
+  }
+}
