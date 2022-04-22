@@ -1288,7 +1288,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               >
                 <tbody>
                   <tr
-                    className="css-1tkyu0d-title-block"
+                    className="css-xeopsk-title-block"
                   >
                     <td
                       className="css-1kdwiw5-right-title-box"
@@ -2160,7 +2160,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               >
                 <tbody>
                   <tr
-                    className="css-1tkyu0d-title-block"
+                    className="css-xeopsk-title-block"
                   >
                     <td
                       className="css-1kdwiw5-right-title-box"
@@ -3517,7 +3517,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
     >
       <tbody>
         <tr
-          className="css-1tkyu0d-title-block"
+          className="css-xeopsk-title-block"
         >
           <td
             className="css-1kdwiw5-right-title-box"
@@ -3913,7 +3913,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
     >
       <tbody>
         <tr
-          className="css-1tkyu0d-title-block"
+          className="css-xeopsk-title-block"
         >
           <td
             className="css-1kdwiw5-right-title-box"
@@ -12039,7 +12039,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-1tkyu0d-title-block"
+                  className="css-xeopsk-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
@@ -13468,7 +13468,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-1tkyu0d-title-block"
+                  className="css-xeopsk-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
@@ -14895,7 +14895,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-1tkyu0d-title-block"
+                  className="css-xeopsk-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
@@ -16322,7 +16322,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-1tkyu0d-title-block"
+                  className="css-xeopsk-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
@@ -17749,7 +17749,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-1tkyu0d-title-block"
+                  className="css-xeopsk-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"

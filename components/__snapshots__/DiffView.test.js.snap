@@ -56,7 +56,7 @@ exports[`DiffView component Should add comment box 1`] = `
       >
         <tbody>
           <tr
-            class="css-1tkyu0d-title-block"
+            class="css-xeopsk-title-block"
           >
             <td
               class="css-1kdwiw5-right-title-box"
@@ -714,7 +714,7 @@ exports[`DiffView component Should render collapsed diff 1`] = `
       >
         <tbody>
           <tr
-            class="css-ytglls-title-block"
+            class="css-rg37jm-title-block"
           >
             <td
               class="css-1kdwiw5-right-title-box"
@@ -793,7 +793,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
       >
         <tbody>
           <tr
-            class="css-1tkyu0d-title-block"
+            class="css-xeopsk-title-block"
           >
             <td
               class="css-1kdwiw5-right-title-box"
@@ -2988,7 +2988,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
       >
         <tbody>
           <tr
-            class="css-1tkyu0d-title-block"
+            class="css-xeopsk-title-block"
           >
             <td
               class="css-1kdwiw5-right-title-box"

@@ -144,7 +144,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
               >
                 <tbody>
                   <tr
-                    class="css-1tkyu0d-title-block"
+                    class="css-xeopsk-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
@@ -1002,7 +1002,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
               >
                 <tbody>
                   <tr
-                    class="css-1tkyu0d-title-block"
+                    class="css-xeopsk-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
@@ -1809,7 +1809,7 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
               >
                 <tbody>
                   <tr
-                    class="css-1tkyu0d-title-block"
+                    class="css-xeopsk-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
@@ -2616,7 +2616,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
               >
                 <tbody>
                   <tr
-                    class="css-1tkyu0d-title-block"
+                    class="css-xeopsk-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
@@ -4224,7 +4224,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
               >
                 <tbody>
                   <tr
-                    class="css-1tkyu0d-title-block"
+                    class="css-xeopsk-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
@@ -6207,7 +6207,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
               >
                 <tbody>
                   <tr
-                    class="css-1tkyu0d-title-block"
+                    class="css-xeopsk-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
