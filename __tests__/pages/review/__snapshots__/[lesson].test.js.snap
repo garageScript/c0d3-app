@@ -780,7 +780,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       >
                         <tbody>
                           <tr
-                            class="css-1yz7771-title-block"
+                            class="css-bta2w1-title-block"
                           >
                             <td
                               class="css-1kdwiw5-right-title-box"
@@ -2972,7 +2972,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       >
                         <tbody>
                           <tr
-                            class="css-1yz7771-title-block"
+                            class="css-bta2w1-title-block"
                           >
                             <td
                               class="css-1kdwiw5-right-title-box"
