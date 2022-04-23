@@ -39,13 +39,7 @@ const Breadcrumbs = ({
   lessons
 }: Props) => {
   const router = useRouter()
-  const [breadcrumbs, setBreadcrumbs] = useState<
-    | {
-        title: string
-        href: string
-      }[]
-    | null
-  >(null)
+  const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumb[] | null>(null)
 
   useEffect(() => {
     const [_, ...urlPath] = router.asPath.split('/')
