@@ -183,20 +183,20 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 >
                   <tbody>
                     <tr
-                      class="css-xeopsk-title-block"
+                      class="css-bta2w1-title-block"
                     >
                       <td
                         class="css-1kdwiw5-right-title-box"
                         colspan="4"
                       >
                         <span
-                          class="css-disz75-right-title"
+                          class="css-7051u0-right-title"
                         >
                           curriculum/js0/2.js
                         </span>
                       </td>
                       <td
-                        class="css-1a9owij-toolbar"
+                        class="css-1fmwvez-toolbar"
                       >
                         <div
                           class="checkBoxBorder form-check pe-2 me-2 border rounded"

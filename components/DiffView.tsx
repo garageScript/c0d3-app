@@ -34,7 +34,18 @@ const styles: ReactDiffViewerStylesOverride = {
   titleBlock: {
     borderTopLeftRadius: '8px',
     borderTopRightRadius: '8px',
-    border: '1px solid #eee'
+    border: '1px solid #eee',
+    gridAutoFlow: 'column',
+    columnGap: '10px'
+  },
+  toolbar: {
+    display: 'flex'
+  },
+  rightTitle: {
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    display: 'block'
   }
 }
 
