@@ -5795,10 +5795,10 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-c0d3-diff@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/c0d3-diff/-/c0d3-diff-0.0.7.tgz#b4e4e4008f3b4699b5136bdb2ea74f7709272690"
-  integrity sha512-7afXSlzK4CvUz/cPanfGOwbljuO0oid5sUL5zQl02P2tvu+NM1uukctDeLyxGSSXD2NN9kCfFNz/CSLl5cbvGA==
+c0d3-diff@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/c0d3-diff/-/c0d3-diff-0.0.9.tgz#5d3631f29a307d78a01af525c589d571972d0aca"
+  integrity sha512-pYHVTJZyvRBBQzFjq1X8AaFEaCeQ34Rqh48XIyO+EguYbaKN37jqqcJEUXnVCzty0kEVouiJSg6R27ZUR+VlWg==
   dependencies:
     classnames "^2.2.6"
     create-emotion "^10.0.14"
