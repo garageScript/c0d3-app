@@ -1238,20 +1238,20 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               >
                 <tbody>
                   <tr
-                    className="css-xeopsk-title-block"
+                    className="css-bta2w1-title-block"
                   >
                     <td
                       className="css-1kdwiw5-right-title-box"
                       colSpan={4}
                     >
                       <span
-                        className="css-disz75-right-title"
+                        className="css-7051u0-right-title"
                       >
                         curriculum/js0/2.js
                       </span>
                     </td>
                     <td
-                      className="css-1a9owij-toolbar"
+                      className="css-1fmwvez-toolbar"
                     >
                       <div
                         className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -2107,20 +2107,20 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               >
                 <tbody>
                   <tr
-                    className="css-xeopsk-title-block"
+                    className="css-bta2w1-title-block"
                   >
                     <td
                       className="css-1kdwiw5-right-title-box"
                       colSpan={4}
                     >
                       <span
-                        className="css-disz75-right-title"
+                        className="css-7051u0-right-title"
                       >
                         curriculum/js0/2.js
                       </span>
                     </td>
                     <td
-                      className="css-1a9owij-toolbar"
+                      className="css-1fmwvez-toolbar"
                     >
                       <div
                         className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -3461,20 +3461,20 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
     >
       <tbody>
         <tr
-          className="css-xeopsk-title-block"
+          className="css-bta2w1-title-block"
         >
           <td
             className="css-1kdwiw5-right-title-box"
             colSpan={4}
           >
             <span
-              className="css-disz75-right-title"
+              className="css-7051u0-right-title"
             >
               curriculum/js0/2.js
             </span>
           </td>
           <td
-            className="css-1a9owij-toolbar"
+            className="css-1fmwvez-toolbar"
           >
             <div
               className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -3854,20 +3854,20 @@ exports[`Storyshots Components/DiffView Default 1`] = `
     >
       <tbody>
         <tr
-          className="css-xeopsk-title-block"
+          className="css-bta2w1-title-block"
         >
           <td
             className="css-1kdwiw5-right-title-box"
             colSpan={4}
           >
             <span
-              className="css-disz75-right-title"
+              className="css-7051u0-right-title"
             >
               curriculum/js0/2.js
             </span>
           </td>
           <td
-            className="css-1a9owij-toolbar"
+            className="css-1fmwvez-toolbar"
           >
             <div
               className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -13916,20 +13916,20 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-xeopsk-title-block"
+                  className="css-bta2w1-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
                     <span
-                      className="css-disz75-right-title"
+                      className="css-7051u0-right-title"
                     >
                       js7/1.js
                     </span>
                   </td>
                   <td
-                    className="css-1a9owij-toolbar"
+                    className="css-1fmwvez-toolbar"
                   >
                     <div
                       className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -15342,20 +15342,20 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-xeopsk-title-block"
+                  className="css-bta2w1-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
                     <span
-                      className="css-disz75-right-title"
+                      className="css-7051u0-right-title"
                     >
                       js7/1.js
                     </span>
                   </td>
                   <td
-                    className="css-1a9owij-toolbar"
+                    className="css-1fmwvez-toolbar"
                   >
                     <div
                       className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -16766,20 +16766,20 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-xeopsk-title-block"
+                  className="css-bta2w1-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
                     <span
-                      className="css-disz75-right-title"
+                      className="css-7051u0-right-title"
                     >
                       js7/1.js
                     </span>
                   </td>
                   <td
-                    className="css-1a9owij-toolbar"
+                    className="css-1fmwvez-toolbar"
                   >
                     <div
                       className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -18190,20 +18190,20 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-xeopsk-title-block"
+                  className="css-bta2w1-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
                     <span
-                      className="css-disz75-right-title"
+                      className="css-7051u0-right-title"
                     >
                       js7/1.js
                     </span>
                   </td>
                   <td
-                    className="css-1a9owij-toolbar"
+                    className="css-1fmwvez-toolbar"
                   >
                     <div
                       className="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -19614,20 +19614,20 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             >
               <tbody>
                 <tr
-                  className="css-xeopsk-title-block"
+                  className="css-bta2w1-title-block"
                 >
                   <td
                     className="css-1kdwiw5-right-title-box"
                     colSpan={4}
                   >
                     <span
-                      className="css-disz75-right-title"
+                      className="css-7051u0-right-title"
                     >
                       js7/1.js
                     </span>
                   </td>
                   <td
-                    className="css-1a9owij-toolbar"
+                    className="css-1fmwvez-toolbar"
                   >
                     <div
                       className="checkBoxBorder form-check pe-2 me-2 border rounded"
