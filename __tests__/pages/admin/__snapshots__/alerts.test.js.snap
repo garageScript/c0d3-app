@@ -227,24 +227,25 @@ exports[`Alerts page Should remove alert 1`] = `
                   class="row"
                 >
                   <div
-                    class="card shadow-sm col-12"
+                    class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
                   >
                     <div
-                      class="card-body text-center"
+                      class="p-0 card-body text-center align-self-start"
                     />
                     <div
                       class="text-start"
                     >
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5text0"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantext0"
                         >
                           Text
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input0"
                           placeholder=""
                           type="text"
@@ -252,13 +253,14 @@ exports[`Alerts page Should remove alert 1`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5type1"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantype1"
                         >
                           Type
-                        </h5>
+                        </span>
                         <div
                           class="d-none d-lg-block"
                         >
@@ -300,15 +302,16 @@ exports[`Alerts page Should remove alert 1`] = `
                         </div>
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5url2"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurl2"
                         >
                           Url
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input2"
                           placeholder=""
                           type="text"
@@ -316,15 +319,16 @@ exports[`Alerts page Should remove alert 1`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5urlCaption3"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurlCaption3"
                         >
                           Urlcaption
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input3"
                           placeholder=""
                           type="text"
@@ -333,7 +337,7 @@ exports[`Alerts page Should remove alert 1`] = `
                       </div>
                     </div>
                     <div
-                      class="text-center mb-4"
+                      class="text-center align-self-start"
                     >
                       <button
                         class="btn borderless btn-primary"
@@ -701,24 +705,25 @@ exports[`Alerts page Should remove alert 2`] = `
                   class="row"
                 >
                   <div
-                    class="card shadow-sm col-12"
+                    class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
                   >
                     <div
-                      class="card-body text-center"
+                      class="p-0 card-body text-center align-self-start"
                     />
                     <div
                       class="text-start"
                     >
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5text0"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantext0"
                         >
                           Text
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input0"
                           placeholder=""
                           type="text"
@@ -726,13 +731,14 @@ exports[`Alerts page Should remove alert 2`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5type1"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantype1"
                         >
                           Type
-                        </h5>
+                        </span>
                         <div
                           class="d-none d-lg-block"
                         >
@@ -774,15 +780,16 @@ exports[`Alerts page Should remove alert 2`] = `
                         </div>
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5url2"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurl2"
                         >
                           Url
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input2"
                           placeholder=""
                           type="text"
@@ -790,15 +797,16 @@ exports[`Alerts page Should remove alert 2`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5urlCaption3"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurlCaption3"
                         >
                           Urlcaption
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input3"
                           placeholder=""
                           type="text"
@@ -807,7 +815,7 @@ exports[`Alerts page Should remove alert 2`] = `
                       </div>
                     </div>
                     <div
-                      class="text-center mb-4"
+                      class="text-center align-self-start"
                     >
                       <button
                         class="btn borderless btn-primary"
