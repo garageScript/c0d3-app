@@ -85,7 +85,7 @@ describe('FormCard Component', () => {
     const { container, getByTestId } = render(
       <FormCard onChange={() => {}} values={mockValues} onSubmit={mockBtn} />
     )
-    const input = getByTestId('h50')
+    const input = getByTestId('span0')
     expect(input.value).toBeFalsy
     expect(container).toMatchSnapshot()
   })

@@ -5654,7 +5654,7 @@ exports[`Storyshots Components/Footer Footer With Class 1`] = `
 </footer>
 `;
 
-exports[`Storyshots Components/FormCard Basic 1`] = `
+exports[`Storyshots Components/FormCard Aligned Center 1`] = `
 <div
   className="col-5 m-auto"
 >
@@ -5662,24 +5662,31 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
     className="row"
   >
     <div
-      className="card shadow-sm col-12"
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        className="card-body text-center"
-      />
+        className="p-0 card-body text-center align-self-center"
+      >
+        <h3
+          className="card-title fw-bold mb-4"
+        >
+          clownfish
+        </h3>
+      </div>
       <div
         className="text-start"
       >
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5nickname0"
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
           >
             Nickname
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input0"
             onChange={[Function]}
             onFocus={[Function]}
@@ -5688,21 +5695,44 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             value="ChickenFarmer00"
           />
           <h6
-            className="text-danger mb-0"
+            className="text-danger mt-2 mb-0 optionInfo__error"
           >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
             Required
           </h6>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5description1"
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
           >
             Description
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input1"
             onChange={[Function]}
             onFocus={[Function]}
@@ -5712,13 +5742,14 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5title2"
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
           >
             Title
-          </h5>
+          </span>
           <div
             style={
               Object {
@@ -6045,15 +6076,932 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5level3"
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
           >
             Level
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
+            data-testid="input3"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="noob"
+            type="text"
+            value="noob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center align-self-center"
+      >
+        <button
+          className="btn borderless btn-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Create New Challenge
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/FormCard Aligned Right 1`] = `
+<div
+  className="col-5 m-auto"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
+    >
+      <div
+        className="p-0 card-body text-center align-self-end"
+      >
+        <h3
+          className="card-title fw-bold mb-4"
+        >
+          clownfish
+        </h3>
+      </div>
+      <div
+        className="text-start"
+      >
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
+          >
+            Nickname
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input0"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="ChickenFarmer00"
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mt-2 mb-0 optionInfo__error"
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
+          >
+            Description
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input1"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Amazing farm of chicken"
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
+          >
+            Title
+          </span>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
+            >
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rr-ui-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rr-ui-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Preview
+                </a>
+              </div>
+              <div
+                className="ms-auto btn-toolbar"
+                role="toolbar"
+              >
+                <button
+                  aria-label="Add header text"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-heading"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M3.75 2a.75.75 0 01.75.75V7h7V2.75a.75.75 0 011.5 0v10.5a.75.75 0 01-1.5 0V8.5h-7v4.75a.75.75 0 01-1.5 0V2.75A.75.75 0 013.75 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add bold text <ctrl+b>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-bold"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4 2a1 1 0 00-1 1v10a1 1 0 001 1h5.5a3.5 3.5 0 001.852-6.47A3.5 3.5 0 008.5 2H4zm4.5 5a1.5 1.5 0 100-3H5v3h3.5zM5 9v3h4.5a1.5 1.5 0 000-3H5z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add italic text <ctrl+i>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-italic"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6 2.75A.75.75 0 016.75 2h6.5a.75.75 0 010 1.5h-2.505l-3.858 9H9.25a.75.75 0 010 1.5h-6.5a.75.75 0 010-1.5h2.505l3.858-9H6.75A.75.75 0 016 2.75z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert a quote <ctrl+shift+.>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-quote"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M1.75 2.5a.75.75 0 000 1.5h10.5a.75.75 0 000-1.5H1.75zm4 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM2.5 7.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert code <ctrl+e>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-code"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a link <ctrl+k>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-link"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a bulleted list <ctrl+shift+8>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-unordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a numbered list <ctrl+shift+7>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-ordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2.003 2.5a.5.5 0 00-.723-.447l-1.003.5a.5.5 0 00.446.895l.28-.14V6H.5a.5.5 0 000 1h2.006a.5.5 0 100-1h-.503V2.5zM5 3.25a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 3.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 8.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5a.75.75 0 01-.75-.75zM.924 10.32l.003-.004a.851.851 0 01.144-.153A.66.66 0 011.5 10c.195 0 .306.068.374.146a.57.57 0 01.128.376c0 .453-.269.682-.8 1.078l-.035.025C.692 11.98 0 12.495 0 13.5a.5.5 0 00.5.5h2.003a.5.5 0 000-1H1.146c.132-.197.351-.372.654-.597l.047-.035c.47-.35 1.156-.858 1.156-1.845 0-.365-.118-.744-.377-1.038-.268-.303-.658-.484-1.126-.484-.48 0-.84.202-1.068.392a1.858 1.858 0 00-.348.384l-.007.011-.002.004-.001.002-.001.001a.5.5 0 00.851.525zM.5 10.055l-.427-.26.427.26z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+              </div>
+            </div>
+            <textarea
+              className="textarea"
+              data-testid="textbox"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              placeholder="Type something..."
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
+          >
+            Level
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input3"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="noob"
+            type="text"
+            value="noob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center align-self-end"
+      >
+        <button
+          className="btn borderless btn-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Create New Challenge
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/FormCard Basic 1`] = `
+<div
+  className="col-5 m-auto"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
+    >
+      <div
+        className="p-0 card-body text-center align-self-start"
+      />
+      <div
+        className="text-start"
+      >
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
+          >
+            Nickname
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input0"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="ChickenFarmer00"
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mt-2 mb-0 optionInfo__error"
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
+          >
+            Description
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input1"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Amazing farm of chicken"
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
+          >
+            Title
+          </span>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
+            >
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rr-ui-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rr-ui-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Preview
+                </a>
+              </div>
+              <div
+                className="ms-auto btn-toolbar"
+                role="toolbar"
+              >
+                <button
+                  aria-label="Add header text"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-heading"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M3.75 2a.75.75 0 01.75.75V7h7V2.75a.75.75 0 011.5 0v10.5a.75.75 0 01-1.5 0V8.5h-7v4.75a.75.75 0 01-1.5 0V2.75A.75.75 0 013.75 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add bold text <ctrl+b>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-bold"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4 2a1 1 0 00-1 1v10a1 1 0 001 1h5.5a3.5 3.5 0 001.852-6.47A3.5 3.5 0 008.5 2H4zm4.5 5a1.5 1.5 0 100-3H5v3h3.5zM5 9v3h4.5a1.5 1.5 0 000-3H5z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add italic text <ctrl+i>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-italic"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6 2.75A.75.75 0 016.75 2h6.5a.75.75 0 010 1.5h-2.505l-3.858 9H9.25a.75.75 0 010 1.5h-6.5a.75.75 0 010-1.5h2.505l3.858-9H6.75A.75.75 0 016 2.75z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert a quote <ctrl+shift+.>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-quote"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M1.75 2.5a.75.75 0 000 1.5h10.5a.75.75 0 000-1.5H1.75zm4 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM2.5 7.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert code <ctrl+e>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-code"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a link <ctrl+k>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-link"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a bulleted list <ctrl+shift+8>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-unordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a numbered list <ctrl+shift+7>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-ordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2.003 2.5a.5.5 0 00-.723-.447l-1.003.5a.5.5 0 00.446.895l.28-.14V6H.5a.5.5 0 000 1h2.006a.5.5 0 100-1h-.503V2.5zM5 3.25a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 3.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 8.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5a.75.75 0 01-.75-.75zM.924 10.32l.003-.004a.851.851 0 01.144-.153A.66.66 0 011.5 10c.195 0 .306.068.374.146a.57.57 0 01.128.376c0 .453-.269.682-.8 1.078l-.035.025C.692 11.98 0 12.495 0 13.5a.5.5 0 00.5.5h2.003a.5.5 0 000-1H1.146c.132-.197.351-.372.654-.597l.047-.035c.47-.35 1.156-.858 1.156-1.845 0-.365-.118-.744-.377-1.038-.268-.303-.658-.484-1.126-.484-.48 0-.84.202-1.068.392a1.858 1.858 0 00-.348.384l-.007.011-.002.004-.001.002-.001.001a.5.5 0 00.851.525zM.5 10.055l-.427-.26.427.26z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+              </div>
+            </div>
+            <textarea
+              className="textarea"
+              data-testid="textbox"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              placeholder="Type something..."
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
+          >
+            Level
+          </span>
+          <input
+            className="form-control optionInfo__input"
             data-testid="input3"
             onChange={[Function]}
             onFocus={[Function]}
@@ -6063,13 +7011,14 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5Swiggity Swag4"
+          <span
+            className="optionInfo__span"
+            data-testid="spanSwiggity Swag4"
           >
             Swiggity swag
-          </h5>
+          </span>
           <div
             className="d-none d-lg-block"
           >
@@ -6115,15 +7064,16 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5suupa5"
+          <span
+            className="optionInfo__span"
+            data-testid="spansuupa5"
           >
             Suupa
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input5"
             onChange={[Function]}
             onFocus={[Function]}
@@ -6134,7 +7084,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
         </div>
       </div>
       <div
-        className="text-center mb-4"
+        className="text-center align-self-start"
       >
         <button
           className="btn borderless btn-primary"
@@ -6161,30 +7111,31 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
     className="row border"
   >
     <div
-      className="card shadow-sm col-12"
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        className="card-body text-center"
+        className="p-0 card-body text-center align-self-start"
       >
-        <h2
-          className="card-title fw-bold mb-3"
+        <h3
+          className="card-title fw-bold mb-4"
         >
           clownfish
-        </h2>
+        </h3>
       </div>
       <div
         className="text-start"
       >
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5nickname0"
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
           >
             Nickname
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input0"
             onChange={[Function]}
             onFocus={[Function]}
@@ -6193,21 +7144,44 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
             value="ChickenFarmer00"
           />
           <h6
-            className="text-danger mb-0"
+            className="text-danger mt-2 mb-0 optionInfo__error"
           >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
             Required
           </h6>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5description1"
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
           >
             Description
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input1"
             onChange={[Function]}
             onFocus={[Function]}
@@ -6217,13 +7191,14 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5title2"
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
           >
             Title
-          </h5>
+          </span>
           <div
             style={
               Object {
@@ -6550,15 +7525,16 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5level3"
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
           >
             Level
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input3"
             onChange={[Function]}
             onFocus={[Function]}
@@ -6569,7 +7545,918 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
         </div>
       </div>
       <div
-        className="text-center mb-4"
+        className="text-center align-self-start"
+      >
+        <button
+          className="btn borderless btn-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Create New Challenge
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/FormCard With New Button 1`] = `
+<div
+  className="col-5 m-auto"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
+    >
+      <div
+        className="p-0 card-body text-center align-self-start"
+      />
+      <div
+        className="text-start"
+      >
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
+          >
+            Nickname
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input0"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="ChickenFarmer00"
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mt-2 mb-0 optionInfo__error"
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
+          >
+            Description
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input1"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Amazing farm of chicken"
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
+          >
+            Title
+          </span>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
+            >
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rr-ui-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rr-ui-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Preview
+                </a>
+              </div>
+              <div
+                className="ms-auto btn-toolbar"
+                role="toolbar"
+              >
+                <button
+                  aria-label="Add header text"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-heading"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M3.75 2a.75.75 0 01.75.75V7h7V2.75a.75.75 0 011.5 0v10.5a.75.75 0 01-1.5 0V8.5h-7v4.75a.75.75 0 01-1.5 0V2.75A.75.75 0 013.75 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add bold text <ctrl+b>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-bold"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4 2a1 1 0 00-1 1v10a1 1 0 001 1h5.5a3.5 3.5 0 001.852-6.47A3.5 3.5 0 008.5 2H4zm4.5 5a1.5 1.5 0 100-3H5v3h3.5zM5 9v3h4.5a1.5 1.5 0 000-3H5z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add italic text <ctrl+i>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-italic"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6 2.75A.75.75 0 016.75 2h6.5a.75.75 0 010 1.5h-2.505l-3.858 9H9.25a.75.75 0 010 1.5h-6.5a.75.75 0 010-1.5h2.505l3.858-9H6.75A.75.75 0 016 2.75z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert a quote <ctrl+shift+.>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-quote"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M1.75 2.5a.75.75 0 000 1.5h10.5a.75.75 0 000-1.5H1.75zm4 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM2.5 7.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert code <ctrl+e>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-code"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a link <ctrl+k>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-link"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a bulleted list <ctrl+shift+8>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-unordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a numbered list <ctrl+shift+7>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-ordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2.003 2.5a.5.5 0 00-.723-.447l-1.003.5a.5.5 0 00.446.895l.28-.14V6H.5a.5.5 0 000 1h2.006a.5.5 0 100-1h-.503V2.5zM5 3.25a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 3.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 8.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5a.75.75 0 01-.75-.75zM.924 10.32l.003-.004a.851.851 0 01.144-.153A.66.66 0 011.5 10c.195 0 .306.068.374.146a.57.57 0 01.128.376c0 .453-.269.682-.8 1.078l-.035.025C.692 11.98 0 12.495 0 13.5a.5.5 0 00.5.5h2.003a.5.5 0 000-1H1.146c.132-.197.351-.372.654-.597l.047-.035c.47-.35 1.156-.858 1.156-1.845 0-.365-.118-.744-.377-1.038-.268-.303-.658-.484-1.126-.484-.48 0-.84.202-1.068.392a1.858 1.858 0 00-.348.384l-.007.011-.002.004-.001.002-.001.001a.5.5 0 00.851.525zM.5 10.055l-.427-.26.427.26z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+              </div>
+            </div>
+            <textarea
+              className="textarea"
+              data-testid="textbox"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              placeholder="Type something..."
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
+          >
+            Level
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input3"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="noob"
+            type="text"
+            value="noob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center align-self-start"
+      >
+        <button
+          className="formCard--submitButton"
+          onClick={[Function]}
+        >
+          Create New Challenge
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/FormCard With No Background 1`] = `
+<div
+  className="col-5 m-auto"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="bg-transparent shadow-none border-0 py-0 px-3 card shadow-sm col-12 align-items-stretch"
+    >
+      <div
+        className="p-0 card-body text-center align-self-start"
+      >
+        <h3
+          className="card-title fw-bold mb-4"
+        >
+          clownfish
+        </h3>
+      </div>
+      <div
+        className="text-start"
+      >
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
+          >
+            Nickname
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input0"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="ChickenFarmer00"
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mt-2 mb-0 optionInfo__error"
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
+          >
+            Description
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input1"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Amazing farm of chicken"
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
+          >
+            Title
+          </span>
+          <div
+            style={
+              Object {
+                "backgroundColor": "none",
+              }
+            }
+          >
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
+            >
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rr-ui-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rr-ui-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  Preview
+                </a>
+              </div>
+              <div
+                className="ms-auto btn-toolbar"
+                role="toolbar"
+              >
+                <button
+                  aria-label="Add header text"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-heading"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M3.75 2a.75.75 0 01.75.75V7h7V2.75a.75.75 0 011.5 0v10.5a.75.75 0 01-1.5 0V8.5h-7v4.75a.75.75 0 01-1.5 0V2.75A.75.75 0 013.75 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add bold text <ctrl+b>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-bold"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4 2a1 1 0 00-1 1v10a1 1 0 001 1h5.5a3.5 3.5 0 001.852-6.47A3.5 3.5 0 008.5 2H4zm4.5 5a1.5 1.5 0 100-3H5v3h3.5zM5 9v3h4.5a1.5 1.5 0 000-3H5z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add italic text <ctrl+i>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-italic"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6 2.75A.75.75 0 016.75 2h6.5a.75.75 0 010 1.5h-2.505l-3.858 9H9.25a.75.75 0 010 1.5h-6.5a.75.75 0 010-1.5h2.505l3.858-9H6.75A.75.75 0 016 2.75z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert a quote <ctrl+shift+.>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-quote"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M1.75 2.5a.75.75 0 000 1.5h10.5a.75.75 0 000-1.5H1.75zm4 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM2.5 7.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Insert code <ctrl+e>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-code"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a link <ctrl+k>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-link"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a bulleted list <ctrl+shift+8>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-unordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+                <button
+                  aria-label="Add a numbered list <ctrl+shift+7>"
+                  className="btn"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="octicon octicon-list-ordered"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2.003 2.5a.5.5 0 00-.723-.447l-1.003.5a.5.5 0 00.446.895l.28-.14V6H.5a.5.5 0 000 1h2.006a.5.5 0 100-1h-.503V2.5zM5 3.25a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 3.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 015 8.25zm0 5a.75.75 0 01.75-.75h8.5a.75.75 0 010 1.5h-8.5a.75.75 0 01-.75-.75zM.924 10.32l.003-.004a.851.851 0 01.144-.153A.66.66 0 011.5 10c.195 0 .306.068.374.146a.57.57 0 01.128.376c0 .453-.269.682-.8 1.078l-.035.025C.692 11.98 0 12.495 0 13.5a.5.5 0 00.5.5h2.003a.5.5 0 000-1H1.146c.132-.197.351-.372.654-.597l.047-.035c.47-.35 1.156-.858 1.156-1.845 0-.365-.118-.744-.377-1.038-.268-.303-.658-.484-1.126-.484-.48 0-.84.202-1.068.392a1.858 1.858 0 00-.348.384l-.007.011-.002.004-.001.002-.001.001a.5.5 0 00.851.525zM.5 10.055l-.427-.26.427.26z\\"></path>",
+                      }
+                    }
+                    fill="currentColor"
+                    height={16}
+                    role="img"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "overflow": "visible",
+                        "userSelect": "none",
+                        "verticalAlign": "text-bottom",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                  />
+                </button>
+              </div>
+            </div>
+            <textarea
+              className="textarea"
+              data-testid="textbox"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              placeholder="Type something..."
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
+          >
+            Level
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input3"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="noob"
+            type="text"
+            value="noob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center align-self-start"
       >
         <button
           className="btn borderless btn-primary"
@@ -6596,30 +8483,31 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
     className="row"
   >
     <div
-      className="card shadow-sm col-12"
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        className="card-body text-center"
+        className="p-0 card-body text-center align-self-start"
       >
-        <h2
-          className="card-title fw-bold mb-3"
+        <h3
+          className="card-title fw-bold mb-4"
         >
           clownfish
-        </h2>
+        </h3>
       </div>
       <div
         className="text-start"
       >
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5nickname0"
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
           >
             Nickname
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input0"
             onChange={[Function]}
             onFocus={[Function]}
@@ -6628,21 +8516,44 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
             value="ChickenFarmer00"
           />
           <h6
-            className="text-danger mb-0"
+            className="text-danger mt-2 mb-0 optionInfo__error"
           >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
             Required
           </h6>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5description1"
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
           >
             Description
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input1"
             onChange={[Function]}
             onFocus={[Function]}
@@ -6652,13 +8563,14 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5title2"
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
           >
             Title
-          </h5>
+          </span>
           <div
             style={
               Object {
@@ -6985,15 +8897,16 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5level3"
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
           >
             Level
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input3"
             onChange={[Function]}
             onFocus={[Function]}
@@ -7004,7 +8917,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
         </div>
       </div>
       <div
-        className="text-center mb-4"
+        className="text-center align-self-start"
       >
         <button
           className="btn borderless btn-primary"
@@ -7031,30 +8944,31 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
     className="row"
   >
     <div
-      className="card shadow-sm col-12"
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        className="card-body text-center"
+        className="p-0 card-body text-center align-self-start"
       >
-        <h2
-          className="card-title fw-bold mb-3"
+        <h3
+          className="card-title fw-bold mb-4"
         >
           clownfish
-        </h2>
+        </h3>
       </div>
       <div
         className="text-start"
       >
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5nickname0"
+          <span
+            className="optionInfo__span"
+            data-testid="spannickname0"
           >
             Nickname
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input0"
             onChange={[Function]}
             onFocus={[Function]}
@@ -7063,21 +8977,44 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
             value="ChickenFarmer00"
           />
           <h6
-            className="text-danger mb-0"
+            className="text-danger mt-2 mb-0 optionInfo__error"
           >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-alert-fill"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+                }
+              }
+              fill="currentColor"
+              height={14}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 12 12"
+              width={14}
+            />
             Required
           </h6>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5description1"
+          <span
+            className="optionInfo__span"
+            data-testid="spandescription1"
           >
             Description
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input1"
             onChange={[Function]}
             onFocus={[Function]}
@@ -7087,13 +9024,14 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5title2"
+          <span
+            className="optionInfo__span"
+            data-testid="spantitle2"
           >
             Title
-          </h5>
+          </span>
           <div
             style={
               Object {
@@ -7420,15 +9358,16 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ms-3 me-3 mb-4"
+          className="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5level3"
+          <span
+            className="optionInfo__span"
+            data-testid="spanlevel3"
           >
             Level
-          </h5>
+          </span>
           <input
-            className="form-control"
+            className="form-control optionInfo__input"
             data-testid="input3"
             onChange={[Function]}
             onFocus={[Function]}
@@ -7439,7 +9378,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
         </div>
       </div>
       <div
-        className="text-center mb-4"
+        className="text-center align-self-start"
       >
         <button
           className="btn borderless btn-primary"

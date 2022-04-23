@@ -44,24 +44,25 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
           class="row"
         >
           <div
-            class="card shadow-sm col-12"
+            class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
           >
             <div
-              class="card-body text-center"
+              class="p-0 card-body text-center align-self-start"
             />
             <div
               class="text-start"
             >
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5text0"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spantext0"
                 >
                   Text
-                </h5>
+                </span>
                 <input
-                  class="form-control"
+                  class="form-control optionInfo__input"
                   data-testid="input0"
                   placeholder=""
                   type="text"
@@ -69,13 +70,14 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                 />
               </div>
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5type1"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spantype1"
                 >
                   Type
-                </h5>
+                </span>
                 <div
                   class="d-none d-lg-block"
                 >
@@ -117,15 +119,16 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                 </div>
               </div>
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5url2"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spanurl2"
                 >
                   Url
-                </h5>
+                </span>
                 <input
-                  class="form-control"
+                  class="form-control optionInfo__input"
                   data-testid="input2"
                   placeholder=""
                   type="text"
@@ -133,15 +136,16 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                 />
               </div>
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5urlCaption3"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spanurlCaption3"
                 >
                   Urlcaption
-                </h5>
+                </span>
                 <input
-                  class="form-control"
+                  class="form-control optionInfo__input"
                   data-testid="input3"
                   placeholder=""
                   type="text"
@@ -150,7 +154,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
               </div>
             </div>
             <div
-              class="text-center mb-4"
+              class="text-center align-self-start"
             >
               <button
                 class="btn borderless btn-primary"
@@ -218,43 +222,60 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
           class="row"
         >
           <div
-            class="card shadow-sm col-12"
+            class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
           >
             <div
-              class="card-body text-center"
+              class="p-0 card-body text-center align-self-start"
             />
             <div
               class="text-start"
             >
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5text0"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spantext0"
                 >
                   Text
-                </h5>
+                </span>
                 <input
-                  class="form-control"
+                  class="form-control optionInfo__input"
                   data-testid="input0"
                   placeholder=""
                   type="text"
                   value=""
                 />
                 <h6
-                  class="text-danger mb-0"
+                  class="text-danger mt-2 mb-0 optionInfo__error"
                 >
+                  <svg
+                    aria-hidden="true"
+                    class="octicon octicon-alert-fill"
+                    fill="currentColor"
+                    height="14"
+                    role="img"
+                    style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                    viewBox="0 0 12 12"
+                    width="14"
+                  >
+                    <path
+                      d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
                   Required
                 </h6>
               </div>
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5type1"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spantype1"
                 >
                   Type
-                </h5>
+                </span>
                 <div
                   class="d-none d-lg-block"
                 >
@@ -296,15 +317,16 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                 </div>
               </div>
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5url2"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spanurl2"
                 >
                   Url
-                </h5>
+                </span>
                 <input
-                  class="form-control"
+                  class="form-control optionInfo__input"
                   data-testid="input2"
                   placeholder="url"
                   type="text"
@@ -312,15 +334,16 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                 />
               </div>
               <div
-                class="d-flex flex-column ms-3 me-3 mb-4"
+                class="d-flex flex-column mb-4"
               >
-                <h5
-                  data-testid="h5urlCaption3"
+                <span
+                  class="optionInfo__span"
+                  data-testid="spanurlCaption3"
                 >
                   Urlcaption
-                </h5>
+                </span>
                 <input
-                  class="form-control"
+                  class="form-control optionInfo__input"
                   data-testid="input3"
                   placeholder="caption"
                   type="text"
@@ -329,7 +352,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
               </div>
             </div>
             <div
-              class="text-center mb-4"
+              class="text-center align-self-start"
             >
               <button
                 class="btn borderless btn-primary"
