@@ -20,7 +20,7 @@ $light-gray: hsl(0, 0%, 85%);
   margin-left: 5px;
 }
 
-.formCard__submitButton {
+.formCard--submitButton {
   font-family: 'PT MONO';
   padding: 15px 48px;
   background-color: variables.$mint-green;
@@ -48,7 +48,7 @@ $light-gray: hsl(0, 0%, 85%);
 }
 
 @media screen and (max-width: 400px) {
-  .formCard__submitButton {
+  .formCard--submitButton {
     font-size: 10px;
     padding: 8px 24px;
   }

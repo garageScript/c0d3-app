@@ -169,7 +169,7 @@ export const FormCard: React.FC<FormCardProps> = ({
           {newBtn ? (
             <button
               onClick={btnOnClick}
-              className={styles.formCard__submitButton}
+              className={styles['formCard--submitButton']}
             >
               {onSubmit.title}
             </button>
