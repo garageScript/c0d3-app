@@ -3,6 +3,8 @@ import { Button } from './theme/Button'
 import { MdInput } from './MdInput'
 import { DropdownMenu, Item } from './DropdownMenu'
 import _ from 'lodash'
+import styles from '../scss/formCard.module.scss'
+import { AlertFillIcon } from '@primer/octicons-react'
 
 export const DROP_DOWN = 'DROP_DOWN'
 
@@ -31,6 +33,9 @@ type FormCardProps = {
   onChange: Function
   title?: string
   border?: boolean
+  noBg?: boolean
+  align?: 'center' | 'left' | 'right'
+  newBtn?: boolean
 }
 
 type OptionInfoProps = {
@@ -38,12 +43,14 @@ type OptionInfoProps = {
   capitalizeTitle?: boolean
   onChange: Function
   index: number
+  mdInputBg?: 'white' | 'none'
 }
 
 const displayInputType = (
   index: number,
   onChange: Function,
-  option: Option
+  option: Option,
+  mdInputBg?: 'white' | 'none'
 ) => {
   const [cursorInput, setCursorInput] = useState<number | null>(0)
   const [cursorMdInput, setCursorMdInput] = useState<number | null>(0)
@@ -54,7 +61,7 @@ const displayInputType = (
     case MD_INPUT:
       return (
         <MdInput
-          bgColor="white"
+          bgColor={mdInputBg}
           value={`${value || ''}`}
           onChange={(value: string, selectionStart: number) => {
             onChange(value, index)
@@ -71,7 +78,7 @@ const displayInputType = (
       return (
         <input
           type="text"
-          className="form-control"
+          className={`form-control ${styles.optionInfo__input}`}
           data-testid={`input${index}`}
           value={`${value || ''}`}
           onChange={e => {
@@ -87,21 +94,32 @@ const displayInputType = (
   }
 }
 
+const ErrorMessage = ({ error }: { error: string }) => (
+  <h6 className={`text-danger mt-2 mb-0 ${styles.optionInfo__error}`}>
+    <AlertFillIcon size={14} />
+    {error}
+  </h6>
+)
+
 const OptionInfo: React.FC<OptionInfoProps> = ({
   option,
   capitalizeTitle,
   onChange,
-  index
+  index,
+  mdInputBg
 }) => {
   const { title, error } = option
   if (title === 'id') return <></>
   return (
-    <div className="d-flex flex-column ms-3 me-3 mb-4">
-      <h5 data-testid={`h5${title}${index}`}>
+    <div className="d-flex flex-column mb-4">
+      <span
+        data-testid={`span${title}${index}`}
+        className={styles.optionInfo__span}
+      >
         {`${(capitalizeTitle && _.capitalize(title)) || title}`}
-      </h5>
-      {displayInputType(index, onChange, option)}
-      {error && <h6 className="text-danger mb-0">{error}</h6>}
+      </span>
+      {displayInputType(index, onChange, option, mdInputBg)}
+      {error && <ErrorMessage error={error} />}
     </div>
   )
 }
@@ -113,12 +131,16 @@ export const FormCard: React.FC<FormCardProps> = ({
   capitalizeTitle = true,
   title,
   onChange,
-  border
+  border,
+  noBg,
+  newBtn,
+  align
 }) => {
   const btnOnClick = () => onSubmit.onClick(values)
 
   const optionsList = values.map((option: Option, index: number) => (
     <OptionInfo
+      mdInputBg={noBg ? 'none' : 'white'}
       onChange={onChange}
       capitalizeTitle={capitalizeTitle}
       option={option}
@@ -127,18 +149,35 @@ export const FormCard: React.FC<FormCardProps> = ({
     />
   ))
 
+  const textAlignment =
+    align === 'center' ? 'center' : align === 'right' ? 'end' : 'start'
+  const noBgStyles = noBg ? 'bg-transparent shadow-none border-0 py-0' : 'py-4'
+
   return (
     <div className={`row${border ? ' border' : ''}`}>
-      <div className={`card shadow-sm col-12`}>
-        <div className="card-body text-center">
-          {title && <h2 className="card-title fw-bold mb-3">{title}</h2>}
+      <div
+        className={`${noBgStyles} px-3 card shadow-sm col-12 align-items-stretch`}
+      >
+        <div
+          className={`p-0 card-body text-center align-self-${textAlignment}`}
+        >
+          {title && <h3 className={`card-title fw-bold mb-4`}>{title}</h3>}
         </div>
         <div className="text-start">{optionsList}</div>
-        {submitError && <h6 className="text-danger">{submitError}</h6>}
-        <div className="text-center mb-4">
-          <Button onClick={btnOnClick} type="primary" color="white">
-            {onSubmit.title}
-          </Button>
+        {submitError && <ErrorMessage error={submitError} />}
+        <div className={`text-center align-self-${textAlignment}`}>
+          {newBtn ? (
+            <button
+              onClick={btnOnClick}
+              className={styles['formCard--submitButton']}
+            >
+              {onSubmit.title}
+            </button>
+          ) : (
+            <Button onClick={btnOnClick} type="primary" color="white">
+              {onSubmit.title}
+            </Button>
+          )}
         </div>
       </div>
     </div>
