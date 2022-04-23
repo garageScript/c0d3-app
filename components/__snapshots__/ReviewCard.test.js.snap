@@ -101,20 +101,20 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
               >
                 <tbody>
                   <tr
-                    class="css-xeopsk-title-block"
+                    class="css-1yz7771-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
                       <span
-                        class="css-disz75-right-title"
+                        class="css-7051u0-right-title"
                       >
                         js0/1.js
                       </span>
                     </td>
                     <td
-                      class="css-1a9owij-toolbar"
+                      class="css-1fmwvez-toolbar"
                     >
                       <div
                         class="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -956,20 +956,20 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
               >
                 <tbody>
                   <tr
-                    class="css-xeopsk-title-block"
+                    class="css-1yz7771-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
                       <span
-                        class="css-disz75-right-title"
+                        class="css-7051u0-right-title"
                       >
                         js0/1.js
                       </span>
                     </td>
                     <td
-                      class="css-1a9owij-toolbar"
+                      class="css-1fmwvez-toolbar"
                     >
                       <div
                         class="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -1760,20 +1760,20 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
               >
                 <tbody>
                   <tr
-                    class="css-xeopsk-title-block"
+                    class="css-1yz7771-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
                       <span
-                        class="css-disz75-right-title"
+                        class="css-7051u0-right-title"
                       >
                         js0/1.js
                       </span>
                     </td>
                     <td
-                      class="css-1a9owij-toolbar"
+                      class="css-1fmwvez-toolbar"
                     >
                       <div
                         class="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -2564,20 +2564,20 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
               >
                 <tbody>
                   <tr
-                    class="css-xeopsk-title-block"
+                    class="css-1yz7771-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
                       <span
-                        class="css-disz75-right-title"
+                        class="css-7051u0-right-title"
                       >
                         .
                       </span>
                     </td>
                     <td
-                      class="css-1a9owij-toolbar"
+                      class="css-1fmwvez-toolbar"
                     >
                       <div
                         class="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -4169,20 +4169,20 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
               >
                 <tbody>
                   <tr
-                    class="css-xeopsk-title-block"
+                    class="css-1yz7771-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
                       <span
-                        class="css-disz75-right-title"
+                        class="css-7051u0-right-title"
                       >
                         js7/1
                       </span>
                     </td>
                     <td
-                      class="css-1a9owij-toolbar"
+                      class="css-1fmwvez-toolbar"
                     >
                       <div
                         class="checkBoxBorder form-check pe-2 me-2 border rounded"
@@ -6149,20 +6149,20 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
               >
                 <tbody>
                   <tr
-                    class="css-xeopsk-title-block"
+                    class="css-1yz7771-title-block"
                   >
                     <td
                       class="css-1kdwiw5-right-title-box"
                       colspan="4"
                     >
                       <span
-                        class="css-disz75-right-title"
+                        class="css-7051u0-right-title"
                       >
                         js7/1.c
                       </span>
                     </td>
                     <td
-                      class="css-1a9owij-toolbar"
+                      class="css-1fmwvez-toolbar"
                     >
                       <div
                         class="checkBoxBorder form-check pe-2 me-2 border rounded"
