@@ -34,7 +34,18 @@ const styles: ReactDiffViewerStylesOverride = {
   titleBlock: {
     borderTopLeftRadius: '8px',
     borderTopRightRadius: '8px',
-    border: '1px solid #eee'
+    border: '1px solid #eee',
+    gridAutoFlow: 'column',
+    columnGap: '10px'
+  },
+  toolbar: {
+    display: 'flex'
+  },
+  rightTitle: {
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    display: 'block'
   }
 }
 
@@ -104,37 +115,39 @@ const DiffView: React.FC<{
       )
     }
 
+    const toolbar = () => (
+      <>
+        <div
+          className={`${scssStyles.checkBoxBorder} form-check pe-2 me-2 border rounded`}
+        >
+          <input
+            className="form-check-input"
+            type="checkbox"
+            value=""
+            id={`checkBox-${id}-${fileIdx}`}
+            checked={viewableStates[fileIdx]}
+            onChange={() => {
+              const newViewableStates = [...viewableStates]
+              newViewableStates[fileIdx] = !newViewableStates[fileIdx]
+              setViewableStates(newViewableStates)
+            }}
+          />
+          <label
+            className="form-check-label text-muted"
+            htmlFor={`checkBox-${id}-${fileIdx}`}
+          >
+            Viewed
+          </label>
+        </div>
+        <CopyButton value={newValue.join('\n')} />
+      </>
+    )
+
     return (
       <div className="position-relative" key={fileIdx}>
         <div className={scssStyles.diffView}>
           <ReactDiffViewer
-            toolbar={() => (
-              <>
-                <div
-                  className={`${scssStyles.checkBoxBorder} form-check pe-2 me-2 border rounded`}
-                >
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id={`checkBox-${id}-${fileIdx}`}
-                    checked={viewableStates[fileIdx]}
-                    onChange={() => {
-                      const newViewableStates = [...viewableStates]
-                      newViewableStates[fileIdx] = !newViewableStates[fileIdx]
-                      setViewableStates(newViewableStates)
-                    }}
-                  />
-                  <label
-                    className="form-check-label text-muted"
-                    htmlFor={`checkBox-${id}-${fileIdx}`}
-                  >
-                    Viewed
-                  </label>
-                </div>
-                <CopyButton value={newValue.join('\n')} />
-              </>
-            )}
+            toolbar={toolbar}
             key={_.uniqueId()}
             newValue={!viewableStates[fileIdx] ? newValue.join('\n') : ''}
             renderContent={syntaxHighlight}
