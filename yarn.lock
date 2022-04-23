@@ -5795,10 +5795,10 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-c0d3-diff@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/c0d3-diff/-/c0d3-diff-0.0.7.tgz#b4e4e4008f3b4699b5136bdb2ea74f7709272690"
-  integrity sha512-7afXSlzK4CvUz/cPanfGOwbljuO0oid5sUL5zQl02P2tvu+NM1uukctDeLyxGSSXD2NN9kCfFNz/CSLl5cbvGA==
+c0d3-diff@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/c0d3-diff/-/c0d3-diff-0.0.9.tgz#5d3631f29a307d78a01af525c589d571972d0aca"
+  integrity sha512-pYHVTJZyvRBBQzFjq1X8AaFEaCeQ34Rqh48XIyO+EguYbaKN37jqqcJEUXnVCzty0kEVouiJSg6R27ZUR+VlWg==
   dependencies:
     classnames "^2.2.6"
     create-emotion "^10.0.14"
@@ -15025,6 +15025,13 @@ store2@^2.12.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.12.0.tgz#e1f1b7e1a59b6083b2596a8d067f6ee88fd4d3cf"
   integrity sha512-7t+/wpKLanLzSnQPX8WAcuLCCeuSHoWdQuh9SB3xD0kNOM38DNf+0Oa+wmvxmYueRzkmh6IcdKFtvTa+ecgPDw==
+
+storybook-addon-next-router@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/storybook-addon-next-router/-/storybook-addon-next-router-3.1.1.tgz#46623ca36b450745c3517f5cdc4bf30fa4a4a930"
+  integrity sha512-Z14dED37vNXkN7+VY80HhF9itGReWoBAlKREHEk2By/dW7zSSqcSyXYV4bDMXIMAFYHMaA1svcBC1idVG8FhAw==
+  dependencies:
+    tslib "^2.3.0"
 
 stream-browserify@^2.0.1:
   version "2.0.2"
