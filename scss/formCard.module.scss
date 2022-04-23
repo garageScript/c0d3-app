@@ -1,9 +1,5 @@
+@use '_variables.module';
 $light-gray: hsl(0, 0%, 85%);
-$mint-green: hsl(170, 66%, 38%);
-$mint-green-dark: adjust-color(
-  $color: $mint-green,
-  $blackness: 10%
-);
 
 .optionInfo__span {
   margin-bottom: 14px;
@@ -27,7 +23,7 @@ $mint-green-dark: adjust-color(
 .formCard__submitButton {
   font-family: 'PT MONO';
   padding: 15px 48px;
-  background-color: $mint-green;
+  background-color: variables.$mint-green;
   border-radius: 4px;
   border: 0;
   color: white;
@@ -38,8 +34,8 @@ $mint-green-dark: adjust-color(
   font-size: 14px;
 
   &:hover {
-    box-shadow: 0 4px 15px rgba($mint-green, 0.5);
-    background-color: $mint-green-dark;
+    box-shadow: 0 4px 15px rgba(variables.$mint-green, 0.5);
+    background-color: variables.$mint-green-dark;
   }
 
   &:active {
@@ -47,7 +43,7 @@ $mint-green-dark: adjust-color(
   }
 
   &:focus {
-    outline: 3px solid $mint-green-dark;
+    outline: 3px solid variables.$mint-green-dark;
   }
 }
 
