@@ -8003,7 +8003,7 @@ exports[`Storyshots Components/FormCard With New Button 1`] = `
         className="text-center align-self-start"
       >
         <button
-          className="formCard__submitButton"
+          className="formCard--submitButton"
           onClick={[Function]}
         >
           Create New Challenge
