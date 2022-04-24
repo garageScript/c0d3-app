@@ -3283,7 +3283,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
     className="ms-auto me-auto mt-4 contributorCard__avatarContainer"
   >
     <div
-      className="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+      className="text-uppercase bg-primary rounded-circle text-light user_info_image "
     >
       AO
     </div>
@@ -21307,7 +21307,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
             className="submissioncard_user_info_image_container"
           >
             <div
-              className="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image "
             >
               RK
             </div>
@@ -21374,7 +21374,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
             className="submissioncard_user_info_image_container"
           >
             <div
-              className="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image "
             >
               RK
             </div>
@@ -21441,7 +21441,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
             className="submissioncard_user_info_image_container"
           >
             <div
-              className="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image "
             >
               RK
             </div>
@@ -21512,7 +21512,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
           className="submissioncard_user_info_image_container"
         >
           <div
-            className="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+            className="text-uppercase bg-primary rounded-circle text-light user_info_image "
           >
             RK
           </div>
@@ -21843,7 +21843,7 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
   }
 >
   <div
-    className="jsx-3123111835 ms-auto me-auto undefined"
+    className="jsx-3123111835 ms-auto me-auto "
   >
     <img
       className="img-fluid"
@@ -21947,7 +21947,7 @@ Array [
             className="ms-auto me-auto mt-4 contributorCard__avatarContainer"
           >
             <div
-              className="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image "
             >
               AO
             </div>
