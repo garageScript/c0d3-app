@@ -10,7 +10,7 @@ type UserProps = {
 export const DiscordAvatar: React.FC<UserProps> = ({ user, className }) => {
   return (
     <>
-      <div className={`ms-auto me-auto ${className}`}>
+      <div className={`ms-auto me-auto ${className ? className : ''}`}>
         <Image
           className={`avatar`}
           src={user.discordAvatarUrl}
@@ -36,7 +36,9 @@ const UserInfoImage: React.FC<UserProps> = ({ user, className }) => {
         <DiscordAvatar user={user} className={className} />
       ) : (
         <div
-          className={`text-uppercase bg-primary rounded-circle text-light ${styles['user_info_image']} ${className}`}
+          className={`text-uppercase bg-primary rounded-circle text-light ${
+            styles['user_info_image']
+          } ${className ? className : ''}`}
         >
           {user.firstName[0] + user.lastName[0]}
         </div>
