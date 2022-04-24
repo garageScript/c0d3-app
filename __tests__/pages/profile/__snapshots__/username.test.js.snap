@@ -184,7 +184,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             </div>
           </div>
           <h2
-            class="text-center mt-4"
+            class="text-center mt-2"
           >
             A  
           </h2>
@@ -1053,7 +1053,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             </div>
           </div>
           <h2
-            class="text-center mt-4"
+            class="text-center mt-2"
           >
             fake user
           </h2>
@@ -1927,7 +1927,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             </div>
           </div>
           <h2
-            class="text-center mt-4"
+            class="text-center mt-2"
           >
             fake user
           </h2>
@@ -2837,7 +2837,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             </div>
           </div>
           <h2
-            class="text-center mt-4"
+            class="text-center mt-2"
           >
             fake user
           </h2>
@@ -3706,7 +3706,7 @@ exports[`user profile test Should render profile 1`] = `
             </div>
           </div>
           <h2
-            class="text-center mt-4"
+            class="text-center mt-2"
           >
             fake user
           </h2>
@@ -4745,10 +4745,10 @@ exports[`user profile test should render discord avatar and username if user con
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="jsx-3123111835 ms-auto me-auto mt-4"
+              class="jsx-3123111835 ms-auto me-auto undefined"
             >
               <img
-                class="avatar undefined"
+                class="avatar"
                 height="60"
                 src="https://placeimg.com/640/480/any"
                 width="60"
@@ -4756,7 +4756,7 @@ exports[`user profile test should render discord avatar and username if user con
             </div>
           </div>
           <h2
-            class="text-center mt-4"
+            class="text-center mt-2"
           >
             fake user
           </h2>
