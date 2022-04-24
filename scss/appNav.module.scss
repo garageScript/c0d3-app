@@ -1,28 +1,99 @@
+@use 'sass:color';
+@use '_variables.module.scss';
+@import 'colors.module.scss';
+
+@media (min-width: 992px) {
+  .navbar {
+    height: 65px;
+  }
+}
+
+.navbar {
+  font-family: PT Mono;
+  box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.08);
+}
+
 .navbar-brand {
-  font-family: 'PT Mono', sans-serif;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .nav-item {
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: 14px;
+  font-weight: 700;
+  color: #565656;
+  text-transform: uppercase;
+  background-color: #fbfbfb;
+  border-radius: 4px;
+  height: 30px;
+  padding: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  &:hover,
+  &:focus {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
+    text-decoration: none;
+  }
 }
 
 .nav-buttons {
   flex-shrink: 0;
+  text-transform: uppercase;
   & > * {
+    font-weight: 700;
+    text-decoration: none;
     min-width: 5em;
-    background-color: white;
+    color: variables.$secondary;
   }
 }
 
-.dropdown-item {
-  color: #838383;
-  text-decoration: none;
-  &:hover {
-    color: #4c4c4c;
+.nav-link {
+  color: #565656;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
     text-decoration: none;
   }
+}
+
+.login-btn {
+  background-color: variables.$secondary;
+  color: variables.$primary;
+  &:hover,
+  &:focus {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
+  }
+}
+
+.signup-btn {
+  background-color: variables.$primary;
+  &:hover,
+  &:focus {
+    background-color: color.change(variables.$primary, $lightness: 90%);
+    color: variables.$primary;
+  }
+}
+
+.isAdminBadge {
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  background: #c2ccff;
+  border: 2px solid variables.$primary;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  position: relative;
+  bottom: 3px;
+  color: variables.$primary;
+}
+
+.active {
+  color: variables.$secondary;
+  background: variables.$primary;
 }
 
 .light-button > * {

@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import NavLink, { NavLinkProps } from './NavLink'
 import { useRouter } from 'next/router'
-import { DropdownMenu } from './DropdownMenu'
 import { useGetAppQuery, GetAppQuery } from '../graphql'
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav } from 'react-bootstrap'
-import _ from 'lodash'
+import ProfileDropdownMenu from './ProfileDropdownMenu'
 import styles from '../scss/appNav.module.scss'
-import { Button } from './theme/Button'
-import LogoutContainer from './LogoutContainer'
+import {
+  REPO_PATH,
+  DOCS_PATH,
+  CURRICULUM_PATH,
+  DISCORD_PATH,
+  LOGIN_PATH,
+  SIGNUP_PATH
+} from '../constants'
+import _ from 'lodash'
 
 type AuthLinkProps = {
   session: any
@@ -16,95 +22,64 @@ type AuthLinkProps = {
 
 type NavItem = NavLinkProps & { name: string }
 
-const dropdownMenuItems = [
-  { title: 'Lessons', path: '/admin/lessons' },
-  { title: 'Users', path: '/admin/users' },
-  { title: 'Alerts', path: '/admin/alerts' }
-]
 const navItems: NavItem[] = [
-  { path: '/curriculum', name: 'Curriculum' },
+  { path: CURRICULUM_PATH, name: 'Curriculum' },
   {
-    path: 'https://github.com/garageScript/c0d3-app',
+    path: REPO_PATH,
     name: 'Repo',
     external: true
   },
   {
-    path: '/docs/learn',
+    path: DOCS_PATH + '/learn',
     name: 'Learn'
   },
   {
-    path: 'https://discord.gg/c0d3',
+    path: DISCORD_PATH,
     name: 'Community',
     external: true
   }
 ]
 
-const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
+const NavBar: React.FC<AuthLinkProps> = ({}) => {
   const router = useRouter()
-  const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
   const location = router.asPath
+
   return (
     <>
       {navItems.map(button => (
         <NavLink
           {...button}
-          className={`${styles['nav-item']} nav-link`}
+          className={`${styles['nav-item']} ${styles['nav-link']} px-3`}
           key={button.name}
-          activePath={location === button.path}
+          activePath={location.includes(button.path)}
         >
           {button.name}
         </NavLink>
       ))}
-      {isAdmin && (
-        <DropdownMenu
-          title="Admin"
-          items={dropdownMenuItems}
-          bsPrefix={styles['dropdown-item']}
-        />
-      )}
     </>
-  )
-}
-
-const LoggedInAuthNav: React.FC<{ username: string }> = ({ username }) => {
-  const capitalized = username.charAt(0).toUpperCase() + username.slice(1)
-
-  return (
-    <div className={`${styles['nav-buttons']}`}>
-      <NavLink
-        path="/profile/[username]"
-        as={`/profile/${username}`}
-        className="btn btn-light border overflow-hidden text-truncate"
-      >
-        {capitalized}
-      </NavLink>
-
-      <LogoutContainer>
-        <div className={`${styles['light-button']} d-inline`}>
-          <Button border ml="2" type="light">
-            Logout
-          </Button>
-        </div>
-      </LogoutContainer>
-    </div>
   )
 }
 
 const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
-    <NavLink path="/login" className="btn btn-light border m-2 me-lg-3">
+    <NavLink
+      path={LOGIN_PATH}
+      className={`btn m-2 me-lg-3 ${styles['login-btn']}`}
+    >
       Login
     </NavLink>
-    <NavLink path="/signup" className="btn btn-light border m-2 me-lg-3">
+    <NavLink
+      path={SIGNUP_PATH}
+      className={`btn m-2 me-lg-3 ${styles['signup-btn']}`}
+    >
       Signup
     </NavLink>
   </div>
 )
 
 const AppNav: React.FC<{}> = () => {
-  const [session, setSession] = useState<GetAppQuery['session']>({
-    lessonStatus: []
-  })
+  const [session, setSession] = useState<GetAppQuery['session']>()
+  const isAdmin = _.get(session, 'user.isAdmin', false)
 
   const { data, loading } = useGetAppQuery()
 
@@ -124,15 +99,25 @@ const AppNav: React.FC<{}> = () => {
     // TODO: replace with typing
     const username = _.get(session, 'user.username', '')
 
-    return <LoggedInAuthNav username={username} />
+    return <ProfileDropdownMenu username={username} isAdmin={isAdmin} />
   }
 
   return (
-    <Navbar expand="lg" bg="white">
+    <Navbar
+      id="appNav"
+      className={`${styles['navbar']}`}
+      expand="lg"
+      bg="white"
+    >
       <Container>
         <Navbar.Brand href="/">
           <div className={`${styles['navbar-brand']} text-primary fw-bold`}>
             C0D3
+            {isAdmin ? (
+              <span className={`${styles['isAdminBadge']} badge`}> ADMIN </span>
+            ) : (
+              ''
+            )}
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
