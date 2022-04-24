@@ -178,13 +178,13 @@ exports[`user profile test Should render anonymous users 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               A 
             </div>
           </div>
           <h2
-            class="text-center mt-2"
+            class="text-center mt-4"
           >
             A  
           </h2>
@@ -1047,13 +1047,13 @@ exports[`user profile test Should render if no stars received 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
           </div>
           <h2
-            class="text-center mt-2"
+            class="text-center mt-4"
           >
             fake user
           </h2>
@@ -1921,13 +1921,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
           </div>
           <h2
-            class="text-center mt-2"
+            class="text-center mt-4"
           >
             fake user
           </h2>
@@ -2831,13 +2831,13 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
           </div>
           <h2
-            class="text-center mt-2"
+            class="text-center mt-4"
           >
             fake user
           </h2>
@@ -3700,13 +3700,13 @@ exports[`user profile test Should render profile 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
           </div>
           <h2
-            class="text-center mt-2"
+            class="text-center mt-4"
           >
             fake user
           </h2>
@@ -4745,7 +4745,7 @@ exports[`user profile test should render discord avatar and username if user con
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="jsx-3123111835 ms-auto me-auto undefined"
+              class="jsx-3123111835 ms-auto me-auto mt-4"
             >
               <img
                 class="avatar"
@@ -4756,7 +4756,7 @@ exports[`user profile test should render discord avatar and username if user con
             </div>
           </div>
           <h2
-            class="text-center mt-2"
+            class="text-center mt-4"
           >
             fake user
           </h2>

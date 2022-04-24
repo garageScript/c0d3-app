@@ -12330,7 +12330,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
     className="ms-auto me-auto mt-4 profile_image_container"
   >
     <div
-      className="jsx-3123111835 ms-auto me-auto undefined"
+      className="jsx-3123111835 ms-auto me-auto mt-4"
     >
       <img
         className="img-fluid"
@@ -12341,7 +12341,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
     </div>
   </div>
   <h2
-    className="text-center mt-2"
+    className="text-center mt-4"
   >
     Rahul Kalra
   </h2>
