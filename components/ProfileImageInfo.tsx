@@ -16,7 +16,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
       >
         <UserInfoImage user={user} />
       </div>
-      <h2 className="text-center mt-4">
+      <h2 className="text-center mt-2">
         {`${user.firstName} ${user.lastName}`}
       </h2>
       <div className="d-flex justify-content-center">
