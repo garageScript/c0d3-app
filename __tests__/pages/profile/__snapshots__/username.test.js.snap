@@ -178,7 +178,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               A 
             </div>
@@ -1047,7 +1047,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
@@ -1921,7 +1921,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
@@ -2831,7 +2831,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
@@ -3700,7 +3700,7 @@ exports[`user profile test Should render profile 1`] = `
             class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="text-uppercase bg-primary rounded-circle text-light user_info_image undefined"
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
             >
               fu
             </div>
@@ -4748,7 +4748,7 @@ exports[`user profile test should render discord avatar and username if user con
               class="jsx-3123111835 ms-auto me-auto mt-4"
             >
               <img
-                class="avatar undefined"
+                class="avatar"
                 height="60"
                 src="https://placeimg.com/640/480/any"
                 width="60"

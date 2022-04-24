@@ -14,7 +14,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
       <div
         className={`ms-auto me-auto mt-4 ${styles['profile_image_container']}`}
       >
-        <UserInfoImage user={user} />
+        <UserInfoImage user={user} className="mt-4" />
       </div>
       <h2 className="text-center mt-4">
         {`${user.firstName} ${user.lastName}`}
