@@ -94,9 +94,11 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
           >
             Profile
           </Dropdown.Item>
-          <Dropdown.Item className={`${styles['dropdown-item']}`}>
-            <LogoutContainer>Logout</LogoutContainer>
-          </Dropdown.Item>
+          <LogoutContainer>
+            <Dropdown.Item className={`${styles['dropdown-item']}`}>
+              Logout
+            </Dropdown.Item>
+          </LogoutContainer>
         </Dropdown.Menu>
       </div>
       <div className="d-lg-none">
