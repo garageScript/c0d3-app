@@ -4,24 +4,10 @@ import userEvent from '@testing-library/user-event'
 import AdminLessonInputs from './AdminLessonInputs'
 import { MockedProvider } from '@apollo/client/testing'
 import { AddModuleDocument } from '../../../graphql'
+import '../../../__mocks__/matchMedia.mock'
 
 // Imported to be able to use .toBeInTheDocument()
 import '@testing-library/jest-dom'
-
-// Define matchMedia as it's undefined. Should be moved to __mocks__
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation(query => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(), // Deprecated
-    removeListener: jest.fn(), // Deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn()
-  }))
-})
 
 const lesson = { title: 'Foundations of JavaScript', id: 1 }
 const modules = [
