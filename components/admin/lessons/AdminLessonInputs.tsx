@@ -73,7 +73,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
       return (
         <div className={styles.error}>
           <AlertFillIcon />
-          <span>Failed to add the module: {error?.message || errorMsg}</span>
+          <span>Failed to add the module: {errorMsg}</span>
         </div>
       )
     }
