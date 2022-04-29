@@ -5,7 +5,7 @@ import { FormCard, MD_INPUT, Option } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from '../../../scss/adminLessonInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
-import { GraphQLError } from 'graphql-request/dist/types'
+import { ApolloError } from 'apollo-server-micro'
 
 type Props = {
   lesson: { title: string; id: number }
@@ -55,7 +55,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
       setErrorMsg('')
       await addModuleMutation()
     } catch (err) {
-      setErrorMsg((err as GraphQLError).message)
+      setErrorMsg((err as ApolloError).message)
     }
   }
 
