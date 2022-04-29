@@ -57,7 +57,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
     }
   }
 
-  const Message = () => {
+  const QueryStateMessage = () => {
     if (loading) {
       return (
         <div className={styles.loading}>
@@ -93,7 +93,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
 
   return (
     <div className={styles.container}>
-      <Message />
+      <QueryStateMessage />
       <FormCard
         title={lesson.title}
         values={values}
