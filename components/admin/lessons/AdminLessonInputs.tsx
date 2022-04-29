@@ -15,7 +15,9 @@ enum Error {
   InvalidData = 'missing module name or description'
 }
 
-const values: Option[] = [
+type FormOptions = (Option & { value?: string })[]
+
+const values: FormOptions = [
   {
     title: 'Module Name'
   },
@@ -31,9 +33,9 @@ const AdminLessonInputs = ({ lesson }: Props) => {
 
   const [addModuleMutation, { data, error, loading }] = useAddModuleMutation({
     variables: {
-      content: (content.value as string) || '',
+      content: content.value || '',
       lessonId: lesson.id,
-      name: (name.value as string) || ''
+      name: name.value || ''
     }
   })
 
