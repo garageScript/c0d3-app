@@ -8,8 +8,8 @@ export default {
 }
 
 const lessons = [
-  { title: 'Foundations of JavaScript' },
-  { title: 'Variables' }
+  { title: 'Foundations of JavaScript', id: 1 },
+  { title: 'Variables', id: 2 }
 ] as GetAppQuery['lessons']
 
 const parameters = {
@@ -19,13 +19,16 @@ const parameters = {
 }
 
 export const Basic = () => {
-  const [lessonTitle, setLessonTitle] = useState(lessons[0].title)
+  const [lesson, setLesson] = useState({
+    title: lessons[0].title,
+    id: lessons[0].id
+  })
 
   return (
     <Breadcrumbs
       omitHomeRoute={false}
-      lessonTitle={lessonTitle}
-      setLessonTitle={setLessonTitle}
+      lesson={lesson}
+      setLesson={setLesson}
       lessons={lessons}
       homeTitle="Home"
     />
@@ -35,13 +38,16 @@ export const Basic = () => {
 Basic.story = { parameters }
 
 export const WithOmitHomeRoute = () => {
-  const [lessonTitle, setLessonTitle] = useState(lessons[0].title)
+  const [lesson, setLesson] = useState({
+    title: lessons[0].title,
+    id: lessons[0].id
+  })
 
   return (
     <Breadcrumbs
       omitHomeRoute={true}
-      lessonTitle={lessonTitle}
-      setLessonTitle={setLessonTitle}
+      lesson={lesson}
+      setLesson={setLesson}
       lessons={lessons}
       homeTitle="Home"
     />
