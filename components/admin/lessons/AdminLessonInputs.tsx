@@ -12,7 +12,7 @@ type Props = {
 }
 
 enum Error {
-  INVALID_DATA = 'missing module name or description'
+  InvalidData = 'missing module name or description'
 }
 
 const values: Option[] = [
@@ -47,7 +47,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
     try {
       // Empty strings aren't handled in the resolver
       if (!content.value || !name.value) {
-        return setErrorMsg(Error.INVALID_DATA)
+        return setErrorMsg(Error.InvalidData)
       }
 
       setErrorMsg('')
