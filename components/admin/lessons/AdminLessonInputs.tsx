@@ -43,7 +43,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
     await formChange(value, propertyIndex, formOptions, setFormOptions)
   }
 
-  const OnSubmit = async () => {
+  const onSubmit = async () => {
     try {
       // Empty strings aren't handled in the resolver
       if (!content.value || !name.value) {
@@ -99,7 +99,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
         values={values}
         onSubmit={{
           title: 'ADD MODULE',
-          onClick: OnSubmit
+          onClick: onSubmit
         }}
         onChange={handleChange}
         newBtn
