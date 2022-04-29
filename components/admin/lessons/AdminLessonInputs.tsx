@@ -69,7 +69,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
       )
     }
 
-    if (errorMsg || error) {
+    if (errorMsg) {
       return (
         <div className={styles.error}>
           <AlertFillIcon />
