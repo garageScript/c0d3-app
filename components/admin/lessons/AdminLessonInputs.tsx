@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useAddModuleMutation } from '../../../graphql'
 import { formChange } from '../../../helpers/formChange'
-import { FormCard, Option } from '../../FormCard'
+import { FormCard, MD_INPUT, Option } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from '../../../scss/adminLessonInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
@@ -21,7 +21,7 @@ const values: Option[] = [
   },
   {
     title: 'Description',
-    type: 'MD_INPUT'
+    type: MD_INPUT
   }
 ]
 
