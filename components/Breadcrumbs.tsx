@@ -7,11 +7,13 @@ import { GetAppQuery } from '../graphql'
 import { ChevronRightIcon } from '@primer/octicons-react'
 import { lowerCase } from 'lodash'
 
+type Lesson = { title: string; id: number }
+
 type Props = {
   omitHomeRoute?: boolean
   homeTitle?: string
-  lessonTitle: string
-  setLessonTitle: Dispatch<SetStateAction<string>>
+  lesson: Lesson
+  setLesson: Dispatch<SetStateAction<Lesson>>
   lessons: GetAppQuery['lessons'] | undefined
 }
 
@@ -34,8 +36,8 @@ const convertBreadcrumb = (breadcrumb: string) => {
 const Breadcrumbs = ({
   omitHomeRoute = false,
   homeTitle = 'Home',
-  lessonTitle,
-  setLessonTitle,
+  lesson,
+  setLesson,
   lessons
 }: Props) => {
   const router = useRouter()
@@ -80,7 +82,7 @@ const Breadcrumbs = ({
     <li className={styles.breadcrumb}>
       <Dropdown>
         <Dropdown.Toggle bsPrefix={styles.dropdown} id="dropdown-lesson">
-          {lessonTitle || 'None'}
+          {lesson.title || 'None'}
           <ChevronRight />
         </Dropdown.Toggle>
 
@@ -88,7 +90,7 @@ const Breadcrumbs = ({
           {lessons?.map((lesson, index) => (
             <Dropdown.Item
               key={`${lesson}-${index}`}
-              onClick={() => setLessonTitle(lesson.title)}
+              onClick={() => setLesson({ title: lesson.title, id: lesson.id })}
             >
               {lesson.title}
             </Dropdown.Item>
