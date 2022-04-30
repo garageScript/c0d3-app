@@ -82,7 +82,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lesson={lesson} />
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -108,7 +108,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lesson={lesson} />
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -128,7 +128,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={errorMocks}>
-        <AdminLessonInputs lesson={lesson} />
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -152,7 +152,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={loadingMocks}>
-        <AdminLessonInputs lesson={lesson} />
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -167,5 +167,27 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     expect(container.querySelector('.spinner-grow')).toBeInTheDocument()
+  })
+
+  it('Should "Untitled" if no title is provided', async () => {
+    expect.assertions(1)
+
+    const { getByText, getByTestId } = render(
+      <MockedProvider mocks={loadingMocks}>
+        <AdminLessonInputs lessonId={lesson.id} title={''} />
+      </MockedProvider>
+    )
+
+    await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+      delay: 1
+    })
+
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    expect(getByText('Untitled')).toBeInTheDocument()
   })
 })
