@@ -65,7 +65,6 @@
     "react-feather": "^2.0.9",
     "rehype-autolink-headings": "^6.1.0",
     "sass": "^1.49.8",
-    "storybook-addon-mock": "^2.3.2",
     "use-undo": "^1.0.5",
     "winston": "^3.6.0",
     "yup": "^0.32.11"

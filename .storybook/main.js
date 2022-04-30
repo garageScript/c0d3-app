@@ -4,7 +4,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
-    '@storybook/addon-storysource',
-    '@storybook/addon-mock'
+    '@storybook/addon-storysource'
   ]
 }
