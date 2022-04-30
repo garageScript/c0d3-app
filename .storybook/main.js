@@ -5,6 +5,6 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
     '@storybook/addon-storysource',
-    "storybook-addon-next-router",
+    '@storybook/addon-mock'
   ]
 }
