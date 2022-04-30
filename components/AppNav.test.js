@@ -47,7 +47,7 @@ describe('AppNav Component', () => {
       await waitFor(() => getByText('A'))
       fireEvent.click(getByText('A'))
       await waitFor(() => getAllByText('Logout'))
-      fireEvent.click(getAllByText('Logout')[0])
+      fireEvent.click(getAllByText('Logout')[0].closest('span'))
     })
 
     await waitFor(() => expect(global.window.location.pathname).toEqual('/'))
