@@ -8,7 +8,8 @@ import { Spinner } from 'react-bootstrap'
 import { ApolloError } from 'apollo-server-micro'
 
 type Props = {
-  lesson: { title: string; id: number }
+  title?: string
+  lessonId: number
 }
 
 enum Error {
@@ -27,14 +28,14 @@ const values: FormOptions = [
   }
 ]
 
-const AdminLessonInputs = ({ lesson }: Props) => {
+const AdminLessonInputs = ({ title, lessonId }: Props) => {
   const [formOptions, setFormOptions] = useState(values)
   const [name, content] = formOptions
 
   const [addModuleMutation, { data, error, loading }] = useAddModuleMutation({
     variables: {
       content: content.value || '',
-      lessonId: lesson.id,
+      lessonId,
       name: name.value || ''
     }
   })
@@ -97,7 +98,7 @@ const AdminLessonInputs = ({ lesson }: Props) => {
     <div className={styles.container}>
       <QueryStateMessage />
       <FormCard
-        title={lesson.title}
+        title={title || 'Untitled'}
         values={values}
         onSubmit={{
           title: 'ADD MODULE',
