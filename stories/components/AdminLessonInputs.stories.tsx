@@ -52,7 +52,7 @@ export const Basic = () => (
         }
       ]}
     >
-      <AdminLessonInputs lesson={lesson} />
+      <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
     </MockedProvider>
   </>
 )
