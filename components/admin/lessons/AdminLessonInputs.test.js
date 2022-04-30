@@ -169,7 +169,7 @@ describe('AdminLessonInputs component', () => {
     expect(container.querySelector('.spinner-grow')).toBeInTheDocument()
   })
 
-  it('Should "Untitled" if no title is provided', async () => {
+  it('Should display "Untitled" if no title is provided', async () => {
     expect.assertions(1)
 
     const { getByText, getByTestId } = render(
