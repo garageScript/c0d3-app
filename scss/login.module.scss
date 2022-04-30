@@ -1,0 +1,58 @@
+@use './_variables.module';
+@use 'sass:color';
+
+@mixin thirdPartyAuthBtn($bg) {
+  background-color: $bg;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.75px;
+
+  & svg {
+    position: absolute;
+  }
+
+  & span {
+    flex: 1;
+  }
+}
+
+.discord__button {
+  @include thirdPartyAuthBtn(#5865f2);
+}
+
+.discord__button:hover {
+  background-color: color.change(#5865f2, $lightness: 60%);
+}
+
+.discord__button__image__wrapper {
+  display: flex;
+}
+
+.orContainer {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 36px;
+  column-gap: 10px;
+
+  & span {
+    color: color.change(variables.$dark, $lightness: 60%);
+  }
+}
+
+.lineLeft {
+  width: 100%;
+  max-width: 246px;
+  height: 0px;
+  margin: 0 auto 0 0;
+  border: 1px solid variables.$dark;
+}
+
+.lineRight {
+  width: 100%;
+  max-width: 246px;
+  height: 0px;
+  margin: 0 0 0 auto;
+  border: 1px solid variables.$dark;
+}

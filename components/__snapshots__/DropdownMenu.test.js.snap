@@ -21,7 +21,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
         x-placement="bottom-start"
       >
         <div
-          class="text-center text-xl-start py-2 px-4"
+          class="text-center py-2 px-4"
         >
           <button
             class="dropdown-item"
@@ -36,7 +36,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
           role="separator"
         />
         <div
-          class="text-center text-xl-start py-2 px-4"
+          class="text-center py-2 px-4"
         >
           <button
             class="dropdown-item"
@@ -47,7 +47,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
           </button>
         </div>
         <div
-          class="text-center text-xl-start py-2 px-4"
+          class="text-center py-2 px-4"
         >
           <button
             class="dropdown-item"
@@ -64,7 +64,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
     class="d-lg-none"
   >
     <div
-      class="text-center text-xl-start py-2 px-4"
+      class="text-center py-2 px-4"
     >
       <button
         class="dropdown-item"
@@ -79,7 +79,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
       role="separator"
     />
     <div
-      class="text-center text-xl-start py-2 px-4"
+      class="text-center py-2 px-4"
     >
       <button
         class="dropdown-item"
@@ -90,7 +90,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
       </button>
     </div>
     <div
-      class="text-center text-xl-start py-2 px-4"
+      class="text-center py-2 px-4"
     >
       <button
         class="dropdown-item"
@@ -125,7 +125,7 @@ exports[`MdInput Component Should render divider when an item is null 1`] = `
     class="d-lg-none"
   >
     <div
-      class="text-center text-xl-start py-2 px-4"
+      class="text-center py-2 px-4"
     >
       <button
         class="dropdown-item"
@@ -140,7 +140,7 @@ exports[`MdInput Component Should render divider when an item is null 1`] = `
       role="separator"
     />
     <div
-      class="text-center text-xl-start py-2 px-4"
+      class="text-center py-2 px-4"
     >
       <button
         class="dropdown-item"
@@ -151,7 +151,7 @@ exports[`MdInput Component Should render divider when an item is null 1`] = `
       </button>
     </div>
     <div
-      class="text-center text-xl-start py-2 px-4"
+      class="text-center py-2 px-4"
     >
       <button
         class="dropdown-item"

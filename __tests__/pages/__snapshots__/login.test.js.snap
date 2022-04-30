@@ -60,7 +60,7 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
                 value="fake password"
               />
               <button
-                class="btn btn-primary btn-lg btn mb-3"
+                class="btn btn-primary btn-lg btn"
                 data-testid="submit"
                 type="submit"
               >
@@ -69,6 +69,39 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
             </div>
           </div>
         </form>
+        <div
+          class="d-grid mb-3"
+        >
+          <div
+            class="orContainer"
+          >
+            <hr
+              class="lineLeft"
+            />
+            <span>
+              OR
+            </span>
+            <hr
+              class="lineRight"
+            />
+          </div>
+          <button
+            class="btn text-white btn-lg btn discord__button"
+          >
+            <div
+              class="discord__button__image__wrapper"
+            >
+              <img
+                height="24"
+                src="/assets/discordClydeLogoSmallWhite.svg"
+                width="32"
+              />
+            </div>
+            <span>
+              Login with Discord
+            </span>
+          </button>
+        </div>
         <a
           class=" link"
           href="/forgotpassword"

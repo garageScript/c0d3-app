@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ModalCard, ModalSize } from './ModalCard'
-import NavLink from './NavLink'
 import styles from '../scss/connectToDiscordModal.module.scss'
+import { signIn } from 'next-auth/react'
 type ConnectToDiscordModalProps = {
   show: boolean
   close: () => void
@@ -71,14 +71,17 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
             alternative.
           </p>
         </div>
-        <NavLink path={discordConnectPage} className="d-grid">
+        <div className="d-grid">
           <button
             type="button"
             className="btn btn-primary btn-lg btn-block mb-3"
+            onClick={() =>
+              signIn('discord', { callbackUrl: '/discord/success' })
+            }
           >
             Connect Now
           </button>
-        </NavLink>
+        </div>
         <div
           className="text-center"
           onClick={() => {

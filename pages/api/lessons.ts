@@ -1,5 +1,5 @@
 import { withSentry } from '@sentry/nextjs'
-import { lessons } from '../../graphql/queryResolvers/lessons'
+import { lessons } from '../../graphql/resolvers/lessons'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 const handler = async (_: NextApiRequest, res: NextApiResponse) => {

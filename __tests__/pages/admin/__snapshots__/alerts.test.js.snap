@@ -3,7 +3,8 @@
 exports[`Alerts page Should remove alert 1`] = `
 <div>
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-white"
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
   >
     <div
       class="container"
@@ -16,6 +17,11 @@ exports[`Alerts page Should remove alert 1`] = `
           class="navbar-brand text-primary fw-bold"
         >
           C0D3
+          <span
+            class="isAdminBadge badge"
+          >
+             ADMIN 
+          </span>
         </div>
       </a>
       <button
@@ -36,13 +42,13 @@ exports[`Alerts page Should remove alert 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,93 +56,108 @@ exports[`Alerts page Should remove alert 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
           >
             Community
           </a>
+        </div>
+        <div
+          class="dropdown"
+        >
           <div
             class="d-none d-lg-block"
           >
             <div
-              class="dropdown"
+              aria-expanded="false"
+              class="nav-user-toggle  dropdown-toggle"
+              id="user_nav_toggle"
             >
-              <button
-                aria-expanded="false"
-                class="dropdown-toggle title title-none"
-                type="button"
+              <div
+                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                Admin
-              </button>
+                A 
+              </div>
+              <span>
+                Fakeusername
+              </span>
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-chevron-down"
+                fill="currentColor"
+                height="16"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
             class="d-lg-none"
           >
-            <div
-              class="text-center text-xl-start py-2 px-4"
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/lessons"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/lessons"
-              >
-                Lessons
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Lessons
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/users"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/users"
-              >
-                Users
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Users
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/alerts"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/alerts"
-              >
-                Alerts
-              </a>
-            </div>
+              Alerts
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/profile/fakeusername"
+            >
+              Profile
+            </a>
+            <a
+              class="dropdown-item  dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                <div
+                  class="light-button d-inline"
+                >
+                  <button
+                    class="btn border btn-light ms-2"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </span>
+            </a>
           </div>
-        </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-light border overflow-hidden text-truncate noUnderline"
-            href="/profile/fakeusername"
-          >
-            Fakeusername
-          </a>
-          <span>
-            <div
-              class="light-button d-inline"
-            >
-              <button
-                class="btn border btn-light ms-2"
-                style="color: rgb(41, 41, 41);"
-              >
-                Logout
-              </button>
-            </div>
-          </span>
         </div>
       </div>
     </div>
@@ -227,24 +248,25 @@ exports[`Alerts page Should remove alert 1`] = `
                   class="row"
                 >
                   <div
-                    class="card shadow-sm col-12"
+                    class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
                   >
                     <div
-                      class="card-body text-center"
+                      class="p-0 card-body text-center align-self-start"
                     />
                     <div
                       class="text-start"
                     >
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5text0"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantext0"
                         >
                           Text
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input0"
                           placeholder=""
                           type="text"
@@ -252,13 +274,14 @@ exports[`Alerts page Should remove alert 1`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5type1"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantype1"
                         >
                           Type
-                        </h5>
+                        </span>
                         <div
                           class="d-none d-lg-block"
                         >
@@ -278,7 +301,7 @@ exports[`Alerts page Should remove alert 1`] = `
                           class="d-lg-none"
                         >
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -288,7 +311,7 @@ exports[`Alerts page Should remove alert 1`] = `
                             </button>
                           </div>
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -300,15 +323,16 @@ exports[`Alerts page Should remove alert 1`] = `
                         </div>
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5url2"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurl2"
                         >
                           Url
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input2"
                           placeholder=""
                           type="text"
@@ -316,15 +340,16 @@ exports[`Alerts page Should remove alert 1`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5urlCaption3"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurlCaption3"
                         >
                           Urlcaption
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input3"
                           placeholder=""
                           type="text"
@@ -333,7 +358,7 @@ exports[`Alerts page Should remove alert 1`] = `
                       </div>
                     </div>
                     <div
-                      class="text-center mb-4"
+                      class="text-center align-self-start"
                     >
                       <button
                         class="btn borderless btn-primary"
@@ -469,7 +494,7 @@ exports[`Alerts page Should remove alert 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2021 GarageScript
+    © Copyright 2022 GarageScript
   </footer>
 </div>
 `;
@@ -477,7 +502,8 @@ exports[`Alerts page Should remove alert 1`] = `
 exports[`Alerts page Should remove alert 2`] = `
 <div>
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-white"
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
   >
     <div
       class="container"
@@ -490,6 +516,11 @@ exports[`Alerts page Should remove alert 2`] = `
           class="navbar-brand text-primary fw-bold"
         >
           C0D3
+          <span
+            class="isAdminBadge badge"
+          >
+             ADMIN 
+          </span>
         </div>
       </a>
       <button
@@ -510,13 +541,13 @@ exports[`Alerts page Should remove alert 2`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -524,93 +555,108 @@ exports[`Alerts page Should remove alert 2`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
           >
             Community
           </a>
+        </div>
+        <div
+          class="dropdown"
+        >
           <div
             class="d-none d-lg-block"
           >
             <div
-              class="dropdown"
+              aria-expanded="false"
+              class="nav-user-toggle  dropdown-toggle"
+              id="user_nav_toggle"
             >
-              <button
-                aria-expanded="false"
-                class="dropdown-toggle title title-none"
-                type="button"
+              <div
+                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                Admin
-              </button>
+                A 
+              </div>
+              <span>
+                Fakeusername
+              </span>
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-chevron-down"
+                fill="currentColor"
+                height="16"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
             class="d-lg-none"
           >
-            <div
-              class="text-center text-xl-start py-2 px-4"
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/lessons"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/lessons"
-              >
-                Lessons
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Lessons
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/users"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/users"
-              >
-                Users
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Users
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/alerts"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/alerts"
-              >
-                Alerts
-              </a>
-            </div>
+              Alerts
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/profile/fakeusername"
+            >
+              Profile
+            </a>
+            <a
+              class="dropdown-item  dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                <div
+                  class="light-button d-inline"
+                >
+                  <button
+                    class="btn border btn-light ms-2"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </span>
+            </a>
           </div>
-        </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-light border overflow-hidden text-truncate noUnderline"
-            href="/profile/fakeusername"
-          >
-            Fakeusername
-          </a>
-          <span>
-            <div
-              class="light-button d-inline"
-            >
-              <button
-                class="btn border btn-light ms-2"
-                style="color: rgb(41, 41, 41);"
-              >
-                Logout
-              </button>
-            </div>
-          </span>
         </div>
       </div>
     </div>
@@ -701,24 +747,25 @@ exports[`Alerts page Should remove alert 2`] = `
                   class="row"
                 >
                   <div
-                    class="card shadow-sm col-12"
+                    class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
                   >
                     <div
-                      class="card-body text-center"
+                      class="p-0 card-body text-center align-self-start"
                     />
                     <div
                       class="text-start"
                     >
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5text0"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantext0"
                         >
                           Text
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input0"
                           placeholder=""
                           type="text"
@@ -726,13 +773,14 @@ exports[`Alerts page Should remove alert 2`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5type1"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spantype1"
                         >
                           Type
-                        </h5>
+                        </span>
                         <div
                           class="d-none d-lg-block"
                         >
@@ -752,7 +800,7 @@ exports[`Alerts page Should remove alert 2`] = `
                           class="d-lg-none"
                         >
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -762,7 +810,7 @@ exports[`Alerts page Should remove alert 2`] = `
                             </button>
                           </div>
                           <div
-                            class="text-center text-xl-start py-2 px-4"
+                            class="text-center py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -774,15 +822,16 @@ exports[`Alerts page Should remove alert 2`] = `
                         </div>
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5url2"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurl2"
                         >
                           Url
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input2"
                           placeholder=""
                           type="text"
@@ -790,15 +839,16 @@ exports[`Alerts page Should remove alert 2`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ms-3 me-3 mb-4"
+                        class="d-flex flex-column mb-4"
                       >
-                        <h5
-                          data-testid="h5urlCaption3"
+                        <span
+                          class="optionInfo__span"
+                          data-testid="spanurlCaption3"
                         >
                           Urlcaption
-                        </h5>
+                        </span>
                         <input
-                          class="form-control"
+                          class="form-control optionInfo__input"
                           data-testid="input3"
                           placeholder=""
                           type="text"
@@ -807,7 +857,7 @@ exports[`Alerts page Should remove alert 2`] = `
                       </div>
                     </div>
                     <div
-                      class="text-center mb-4"
+                      class="text-center align-self-start"
                     >
                       <button
                         class="btn borderless btn-primary"
@@ -893,7 +943,7 @@ exports[`Alerts page Should remove alert 2`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2021 GarageScript
+    © Copyright 2022 GarageScript
   </footer>
 </div>
 `;

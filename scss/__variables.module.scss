@@ -8,11 +8,18 @@ $danger: hsl(354.3, 70.5%, 53.5%);
 $success: hsl(162.3, 100%, 40.6%);
 $info: hsl(188.2, 77.8%, 40.6%);
 $dark: hsl(210, 10.3%, 22.7%);
+$mute: hsl(208.2, 7.3%, 45.7%);
+$mint-green: hsl(170, 66%, 38%);
+$mint-green-dark: adjust-color(
+  $color: $mint-green,
+  $blackness: 10%
+);
 
 // Used in @each to emit styles or evaluate code for each element of a list
 $colors: 'body-bg' $body-bg, 'primary' $primary, 'secondary' $secondary,
   'warning' $warning, 'gray' $gray, 'light' $light, 'danger' $danger,
-  'success' $success, 'info' $info, 'dark' $dark;
+  'success' $success, 'info' $info, 'dark' $dark, 'mute' $mute,
+  'mint-green' $mint-green, 'mint-green-dark' $mint-green-dark;
 
 // Allow importing colors in JS/TS
 :export {
@@ -26,4 +33,7 @@ $colors: 'body-bg' $body-bg, 'primary' $primary, 'secondary' $secondary,
   success: $success;
   info: $info;
   dark: $dark;
+  mute: $mute;
+  mint-green: $mint-green;
+  mint-green-dark: $mint-green-dark;
 }

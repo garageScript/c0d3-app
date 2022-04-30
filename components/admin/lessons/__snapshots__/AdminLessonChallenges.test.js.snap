@@ -18,38 +18,40 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         />
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title0"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle0"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input0"
-              placeholder=""
+              placeholder="New challenge"
               type="text"
               value="New challenge"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description1"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription1"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -261,24 +263,25 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order2"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder2"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input2"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -311,38 +314,40 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         />
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title0"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle0"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input0"
-              placeholder=""
+              placeholder="New challenge"
               type="text"
               value="New challenge"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description1"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription1"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -554,29 +559,45 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order2"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder2"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input2"
               placeholder=""
               type="text"
               value=""
             />
             <h6
-              class="text-danger mb-0"
+              class="text-danger mt-2 mb-0 optionInfo__error"
             >
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-alert-fill"
+                fill="currentColor"
+                height="14"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 12 12"
+                width="14"
+              >
+                <path
+                  d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z"
+                  fill-rule="evenodd"
+                />
+              </svg>
               Required
             </h6>
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -600,44 +621,46 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         >
-          <h2
-            class="card-title fw-bold mb-3"
+          <h3
+            class="card-title fw-bold mb-4"
           >
             Sum of 2 Numbers
-          </h2>
+          </h3>
         </div>
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title1"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle1"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input1"
-              placeholder=""
+              placeholder="New title"
               type="text"
               value="New title"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription2"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -849,29 +872,45 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order3"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder3"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
               placeholder=""
               type="text"
               value=""
             />
             <h6
-              class="text-danger mb-0"
+              class="text-danger mt-2 mb-0 optionInfo__error"
             >
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-alert-fill"
+                fill="currentColor"
+                height="14"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 12 12"
+                width="14"
+              >
+                <path
+                  d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z"
+                  fill-rule="evenodd"
+                />
+              </svg>
               Required
             </h6>
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -890,44 +929,46 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         >
-          <h2
-            class="card-title fw-bold mb-3"
+          <h3
+            class="card-title fw-bold mb-4"
           >
             Sum of 3 Numbers
-          </h2>
+          </h3>
         </div>
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title1"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle1"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 3 Numbers"
               type="text"
               value="Sum of 3 Numbers"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription2"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -1146,24 +1187,25 @@ solution(4,1,9) // Should return 14
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order3"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder3"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -1187,22 +1229,23 @@ exports[`AdminLessonChallenges component Should render a challenge without title
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         />
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description1"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription1"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -1421,24 +1464,25 @@ solution(4,1) // Should return 5
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order2"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder2"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input2"
-              placeholder=""
+              placeholder="1"
               type="text"
               value="1"
             />
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -1466,44 +1510,46 @@ exports[`AdminLessonChallenges component Should update challenge 1`] = `
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         >
-          <h2
-            class="card-title fw-bold mb-3"
+          <h3
+            class="card-title fw-bold mb-4"
           >
             Sum of 2 Numbers
-          </h2>
+          </h3>
         </div>
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title1"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle1"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 2 Numbers"
               type="text"
               value="Sum of 2 Numbers"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription2"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -1722,24 +1768,25 @@ solution(4,1) // Should return 5
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order3"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder3"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
-              placeholder=""
+              placeholder="1"
               type="text"
               value="1"
             />
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -1758,44 +1805,46 @@ solution(4,1) // Should return 5
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         >
-          <h2
-            class="card-title fw-bold mb-3"
+          <h3
+            class="card-title fw-bold mb-4"
           >
             Sum of 3 Numbers
-          </h2>
+          </h3>
         </div>
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title1"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle1"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 3 Numbers"
               type="text"
               value="Sum of 3 Numbers"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription2"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -2014,24 +2063,25 @@ solution(4,1,9) // Should return 14
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order3"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder3"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -2055,44 +2105,46 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         >
-          <h2
-            class="card-title fw-bold mb-3"
+          <h3
+            class="card-title fw-bold mb-4"
           >
             Sum of 2 Numbers
-          </h2>
+          </h3>
         </div>
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title1"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle1"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input1"
-              placeholder=""
+              placeholder="New title"
               type="text"
               value="New title"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription2"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -2304,24 +2356,25 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order3"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder3"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
-              placeholder=""
+              placeholder="15"
               type="text"
               value="15"
             />
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -2340,44 +2393,46 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         >
-          <h2
-            class="card-title fw-bold mb-3"
+          <h3
+            class="card-title fw-bold mb-4"
           >
             Sum of 3 Numbers
-          </h2>
+          </h3>
         </div>
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title1"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle1"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input1"
-              placeholder=""
+              placeholder="Sum of 3 Numbers"
               type="text"
               value="Sum of 3 Numbers"
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription2"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -2596,24 +2651,25 @@ solution(4,1,9) // Should return 14
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order3"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder3"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
-              placeholder=""
+              placeholder="2"
               type="text"
               value="2"
             />
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"

@@ -1,0 +1,67 @@
+@use './_variables.module';
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.breadcrumbs {
+  @include flexRow;
+  column-gap: 24px;
+  list-style: none;
+  align-items: center;
+  padding:0;
+  & a {
+    color: black;
+    text-decoration: none;
+  }
+
+  & .breadcrumb {
+    @include flexRow;
+    column-gap: 10px;
+  }
+}
+
+.dropdown {
+  display: flex;
+  column-gap: 13px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid hsl(220, 13%, 91%);
+  box-shadow: 0px 1px 2px hsla(215, 28%, 17%, 0.08);
+  border-radius: 4px;
+  align-items: center;
+  color: variables.$dark;
+
+  &:hover {
+    background-color: white;
+    border: 1px solid hsl(216, 4%, 75%);
+    color: variables.$dark;
+  }
+
+  &:active,
+  &:focus,
+  &:focus:active {
+    background-color: hsla(0, 0%, 95%, 0.695);
+    box-shadow: none;
+    border: 1px solid hsl(216, 4%, 65%);
+    color: variables.$dark;
+  }
+
+  & .dropdown__menu {
+    width: 100%;
+  }
+
+  & svg {
+    transform: rotate(90deg);
+    transition: transform 0.15s ease-in;
+  }
+
+  // Means the dropdown is opened
+  &[aria-expanded='true'] {
+    & svg {
+      transform: rotate(-90deg);
+      transition: transform 0.2s ease-out;
+    }
+  }
+}

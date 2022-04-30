@@ -3,7 +3,8 @@
 exports[`Index Page Should render index page 1`] = `
 <div>
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-white"
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
   >
     <div
       class="container"
@@ -16,6 +17,7 @@ exports[`Index Page Should render index page 1`] = `
           class="navbar-brand text-primary fw-bold"
         >
           C0D3
+          
         </div>
       </a>
       <button
@@ -36,13 +38,13 @@ exports[`Index Page Should render index page 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,34 +52,18 @@ exports[`Index Page Should render index page 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
           >
             Community
-          </a>
-        </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-          >
-            Login
-          </a>
-          <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-          >
-            Signup
           </a>
         </div>
       </div>
@@ -412,7 +398,7 @@ exports[`Index Page Should render index page 1`] = `
   <footer
     class="fw-light text-center py-5 bg-white text-muted"
   >
-    © Copyright 2021 GarageScript
+    © Copyright 2022 GarageScript
   </footer>
 </div>
 `;

@@ -1,0 +1,10 @@
+.diffView tbody,
+.diffView tr:first-child {
+  display: grid;
+}
+
+.checkBoxBorder {
+  padding-left: 2em;
+  max-height: 25px;
+  margin-top: 6px;
+}

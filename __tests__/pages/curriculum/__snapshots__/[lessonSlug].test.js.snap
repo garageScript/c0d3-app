@@ -4,7 +4,8 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
 <div>
   <div>
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-white"
+      class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
       <div
         class="container"
@@ -17,6 +18,11 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="navbar-brand text-primary fw-bold"
           >
             C0D3
+            <span
+              class="isAdminBadge badge"
+            >
+               ADMIN 
+            </span>
           </div>
         </a>
         <button
@@ -37,13 +43,13 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="m-auto navbar-nav"
           >
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -51,93 +57,108 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               Repo
             </a>
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
               Community
             </a>
+          </div>
+          <div
+            class="dropdown"
+          >
             <div
               class="d-none d-lg-block"
             >
               <div
-                class="dropdown"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
-                <button
-                  aria-expanded="false"
-                  class="dropdown-toggle title title-none"
-                  type="button"
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
                 >
-                  Admin
-                </button>
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
             </div>
             <div
               class="d-lg-none"
             >
-              <div
-                class="text-center text-xl-start py-2 px-4"
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <a
-                  class="dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-start py-2 px-4"
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
               >
-                <a
-                  class="dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-start py-2 px-4"
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
               >
-                <a
-                  class="dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
-          </div>
-          <div
-            class="nav-buttons"
-          >
-            <a
-              class="btn btn-light border overflow-hidden text-truncate noUnderline"
-              href="/profile/fakeusername"
-            >
-              Fakeusername
-            </a>
-            <span>
-              <div
-                class="light-button d-inline"
-              >
-                <button
-                  class="btn border btn-light ms-2"
-                  style="color: rgb(41, 41, 41);"
-                >
-                  Logout
-                </button>
-              </div>
-            </span>
           </div>
         </div>
       </div>
@@ -455,7 +476,7 @@ solution(a); // should return 50
     <footer
       class="mt-5 fw-light text-center pb-5 text-muted"
     >
-      © Copyright 2021 GarageScript
+      © Copyright 2022 GarageScript
     </footer>
   </div>
 </div>
@@ -464,7 +485,8 @@ solution(a); // should return 50
 exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
 <div>
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-white"
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
   >
     <div
       class="container"
@@ -477,6 +499,11 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           class="navbar-brand text-primary fw-bold"
         >
           C0D3
+          <span
+            class="isAdminBadge badge"
+          >
+             ADMIN 
+          </span>
         </div>
       </a>
       <button
@@ -497,13 +524,13 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -511,93 +538,108 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
           >
             Community
           </a>
+        </div>
+        <div
+          class="dropdown"
+        >
           <div
             class="d-none d-lg-block"
           >
             <div
-              class="dropdown"
+              aria-expanded="false"
+              class="nav-user-toggle  dropdown-toggle"
+              id="user_nav_toggle"
             >
-              <button
-                aria-expanded="false"
-                class="dropdown-toggle title title-none"
-                type="button"
+              <div
+                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                Admin
-              </button>
+                A 
+              </div>
+              <span>
+                Fakeusername
+              </span>
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-chevron-down"
+                fill="currentColor"
+                height="16"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
             class="d-lg-none"
           >
-            <div
-              class="text-center text-xl-start py-2 px-4"
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/lessons"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/lessons"
-              >
-                Lessons
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Lessons
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/users"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/users"
-              >
-                Users
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Users
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/alerts"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/alerts"
-              >
-                Alerts
-              </a>
-            </div>
+              Alerts
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/profile/fakeusername"
+            >
+              Profile
+            </a>
+            <a
+              class="dropdown-item  dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                <div
+                  class="light-button d-inline"
+                >
+                  <button
+                    class="btn border btn-light ms-2"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </span>
+            </a>
           </div>
-        </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-light border overflow-hidden text-truncate noUnderline"
-            href="/profile/fakeusername"
-          >
-            Fakeusername
-          </a>
-          <span>
-            <div
-              class="light-button d-inline"
-            >
-              <button
-                class="btn border btn-light ms-2"
-                style="color: rgb(41, 41, 41);"
-              >
-                Logout
-              </button>
-            </div>
-          </span>
         </div>
       </div>
     </div>
@@ -657,7 +699,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2021 GarageScript
+    © Copyright 2022 GarageScript
   </footer>
 </div>
 `;
@@ -666,7 +708,8 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
 <div>
   <div>
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-white"
+      class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
       <div
         class="container"
@@ -679,6 +722,11 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="navbar-brand text-primary fw-bold"
           >
             C0D3
+            <span
+              class="isAdminBadge badge"
+            >
+               ADMIN 
+            </span>
           </div>
         </a>
         <button
@@ -699,13 +747,13 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="m-auto navbar-nav"
           >
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -713,93 +761,108 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               Repo
             </a>
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class="nav-item nav-link noUnderline"
+              class="nav-item nav-link px-3 noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
               Community
             </a>
+          </div>
+          <div
+            class="dropdown"
+          >
             <div
               class="d-none d-lg-block"
             >
               <div
-                class="dropdown"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
-                <button
-                  aria-expanded="false"
-                  class="dropdown-toggle title title-none"
-                  type="button"
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
                 >
-                  Admin
-                </button>
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
             </div>
             <div
               class="d-lg-none"
             >
-              <div
-                class="text-center text-xl-start py-2 px-4"
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <a
-                  class="dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-start py-2 px-4"
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
               >
-                <a
-                  class="dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-start py-2 px-4"
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
               >
-                <a
-                  class="dropdown-item"
-                  data-rr-ui-dropdown-item=""
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
-          </div>
-          <div
-            class="nav-buttons"
-          >
-            <a
-              class="btn btn-light border overflow-hidden text-truncate noUnderline"
-              href="/profile/fakeusername"
-            >
-              Fakeusername
-            </a>
-            <span>
-              <div
-                class="light-button d-inline"
-              >
-                <button
-                  class="btn border btn-light ms-2"
-                  style="color: rgb(41, 41, 41);"
-                >
-                  Logout
-                </button>
-              </div>
-            </span>
           </div>
         </div>
       </div>
@@ -1144,7 +1207,7 @@ result = solution(0, "hello") // ""
     <footer
       class="mt-5 fw-light text-center pb-5 text-muted"
     >
-      © Copyright 2021 GarageScript
+      © Copyright 2022 GarageScript
     </footer>
   </div>
 </div>
@@ -1153,7 +1216,8 @@ result = solution(0, "hello") // ""
 exports[`Lesson Page Should return Internal server Error if alerts or lessons are missing 1`] = `
 <div>
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-white"
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
   >
     <div
       class="container"
@@ -1166,6 +1230,11 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           class="navbar-brand text-primary fw-bold"
         >
           C0D3
+          <span
+            class="isAdminBadge badge"
+          >
+             ADMIN 
+          </span>
         </div>
       </a>
       <button
@@ -1186,13 +1255,13 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1200,93 +1269,108 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             Repo
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link noUnderline"
+            class="nav-item nav-link px-3 noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
           >
             Community
           </a>
+        </div>
+        <div
+          class="dropdown"
+        >
           <div
             class="d-none d-lg-block"
           >
             <div
-              class="dropdown"
+              aria-expanded="false"
+              class="nav-user-toggle  dropdown-toggle"
+              id="user_nav_toggle"
             >
-              <button
-                aria-expanded="false"
-                class="dropdown-toggle title title-none"
-                type="button"
+              <div
+                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                Admin
-              </button>
+                A 
+              </div>
+              <span>
+                Fakeusername
+              </span>
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-chevron-down"
+                fill="currentColor"
+                height="16"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div
             class="d-lg-none"
           >
-            <div
-              class="text-center text-xl-start py-2 px-4"
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/lessons"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/lessons"
-              >
-                Lessons
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Lessons
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/users"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/users"
-              >
-                Users
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
+              Users
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/alerts"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/alerts"
-              >
-                Alerts
-              </a>
-            </div>
+              Alerts
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/profile/fakeusername"
+            >
+              Profile
+            </a>
+            <a
+              class="dropdown-item  dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                <div
+                  class="light-button d-inline"
+                >
+                  <button
+                    class="btn border btn-light ms-2"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </span>
+            </a>
           </div>
-        </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-light border overflow-hidden text-truncate noUnderline"
-            href="/profile/fakeusername"
-          >
-            Fakeusername
-          </a>
-          <span>
-            <div
-              class="light-button d-inline"
-            >
-              <button
-                class="btn border btn-light ms-2"
-                style="color: rgb(41, 41, 41);"
-              >
-                Logout
-              </button>
-            </div>
-          </span>
         </div>
       </div>
     </div>
@@ -1346,7 +1430,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2021 GarageScript
+    © Copyright 2022 GarageScript
   </footer>
 </div>
 `;

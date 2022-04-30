@@ -9,6 +9,7 @@ export type ColorTypes =
   | 'primary'
   | 'info'
   | 'success'
+  | 'mute'
 
 export const colors = {
   white: '#fff',
@@ -18,5 +19,6 @@ export const colors = {
   danger: styles.danger,
   primary: styles.primary,
   info: styles.info,
-  success: styles.success
+  success: styles.success,
+  mute: styles.mute
 }

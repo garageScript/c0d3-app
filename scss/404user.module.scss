@@ -1,0 +1,14 @@
+.card__buttons {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.card__par {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}

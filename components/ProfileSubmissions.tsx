@@ -61,7 +61,7 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
     if (lesson.starsReceived && lesson.starsReceived.length) {
       starBadge = (
         <p
-          className={`${styles['lesson_image_star_badge']} badge badge-pill badge-primary`}
+          className={`${styles['lesson_image_star_badge']} badge badge-pill bg-primary`}
         >
           {lesson.starsReceived && lesson.starsReceived.length}
           <span className="ms-1">

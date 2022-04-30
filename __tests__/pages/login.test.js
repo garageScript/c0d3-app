@@ -1,3 +1,5 @@
+jest.mock('next-auth/react')
+
 import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -9,6 +11,7 @@ import LoginPage from '../../pages/login'
 import { useRouter } from 'next/router'
 import { getLayout } from '../../components/Layout'
 import { cloneDeep } from 'lodash'
+import { signIn } from 'next-auth/react'
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -145,10 +148,29 @@ describe('Login Page', () => {
     const submitButton = await findByTestId('submit')
 
     await fillOutLoginForm(getByTestId)
-    userEvent.click(submitButton)
+    await userEvent.click(submitButton)
 
     await findByText(mocks[1].result.errors[0].message)
     expect(container).toMatchSnapshot()
     expect(push).not.toBeCalled()
+  })
+
+  test('Should call signIn function when Discord is clicked', async () => {
+    expect.assertions(1)
+
+    const { container } = render(
+      <MockedProvider
+        mocks={cloneDeep(successfulLoginMocks)}
+        addTypename={false}
+      >
+        <LoginPage />
+      </MockedProvider>
+    )
+
+    const discordButton = container.querySelector('.discord__button')
+
+    await userEvent.click(discordButton)
+
+    await waitFor(() => expect(signIn).toBeCalled())
   })
 })

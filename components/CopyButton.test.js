@@ -1,5 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
+import { act } from 'react-dom/test-utils'
 import CopyButton from './CopyButton'
 
 Object.defineProperty(navigator, 'clipboard', {
@@ -21,7 +22,7 @@ describe('Copy Button component', () => {
     const { container } = render(<CopyButton value={testText} />)
 
     const button = container.querySelector('.btn')
-    expect(button.classList.contains('btn-outline-bg-primary')).toBeTruthy()
+    expect(button.classList.contains('btn-outline-bg-mute')).toBeTruthy()
   })
 
   test('Button type should be set to success on copy', async () => {
@@ -70,10 +71,10 @@ describe('Copy Button component', () => {
       expect(button.classList.contains('btn-outline-bg-success')).toBeTruthy()
     )
 
-    jest.advanceTimersByTime(2000)
+    act(() => jest.advanceTimersByTime(2000))
 
     await waitFor(() => {
-      expect(button.classList.contains('btn-outline-bg-primary')).toBeTruthy()
+      expect(button.classList.contains('btn-outline-bg-mute')).toBeTruthy()
       expect(setTimeout).toHaveBeenCalled()
     })
   })

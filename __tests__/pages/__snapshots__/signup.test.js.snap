@@ -71,7 +71,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
               value="fakelastname"
             />
             <button
-              class="btn btn-primary btn-lg btn-block mb-3"
+              class="btn btn-primary btn-lg btn mb-3"
               data-testid="submit"
               type="submit"
             >

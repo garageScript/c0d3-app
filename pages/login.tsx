@@ -13,6 +13,10 @@ import { useRouter } from 'next/router'
 import GET_APP from '../graphql/queries/getApp'
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
+import { Spinner } from 'react-bootstrap'
+import styles from '../scss/login.module.scss'
+import { signIn } from 'next-auth/react'
+import Image from 'next/image'
 
 type Values = {
   username: string
@@ -22,6 +26,7 @@ type Values = {
 type LoginFormProps = {
   handleSubmit: (values: Values) => void
   loginErrors?: string[]
+  isLoading?: boolean
 }
 
 type ErrorDisplayProps = {
@@ -43,60 +48,90 @@ const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
 
 export const Login: React.FC<LoginFormProps> = ({
   handleSubmit,
-  loginErrors
-}) => {
-  return (
-    <Card title="Login">
-      <Formik
-        validateOnBlur
-        initialValues={initialValues}
-        validationSchema={loginValidation}
-        onSubmit={handleSubmit}
-      >
-        <Form data-testid="form">
-          <div className="form-group">
-            <ErrorMessages loginErrors={loginErrors} />
-            <div className="mt-3 d-grid">
-              <Field
-                name="username"
-                placeholder="Username"
-                data-testid="username"
-                as={Input}
-                autoFocus
-              />
+  loginErrors,
+  isLoading
+}) => (
+  <Card title="Login">
+    <Formik
+      validateOnBlur
+      initialValues={initialValues}
+      validationSchema={loginValidation}
+      onSubmit={handleSubmit}
+    >
+      <Form data-testid="form">
+        <div className="form-group">
+          <ErrorMessages loginErrors={loginErrors} />
+          <div className="mt-3 d-grid">
+            <Field
+              name="username"
+              placeholder="Username"
+              data-testid="username"
+              as={Input}
+              autoFocus
+            />
 
-              <Field
-                name="password"
-                placeholder="Password"
-                data-testid="password"
-                type="password"
-                as={Input}
-              />
+            <Field
+              name="password"
+              placeholder="Password"
+              data-testid="password"
+              type="password"
+              as={Input}
+            />
 
-              <button
-                className="btn btn-primary btn-lg btn mb-3"
-                type="submit"
-                data-testid="submit"
-              >
-                Login to Your Account
-              </button>
-            </div>
+            <button
+              className={`btn ${
+                isLoading ? 'btn-dark' : 'btn-primary'
+              } btn-lg btn`}
+              type="submit"
+              data-testid="submit"
+            >
+              {isLoading ? (
+                <Spinner
+                  as="span"
+                  animation="border"
+                  role="status"
+                  aria-hidden="true"
+                />
+              ) : (
+                'Login to Your Account'
+              )}
+            </button>
           </div>
-        </Form>
-      </Formik>
-      <NavLink path="/forgotpassword" hoverUnderline>
-        Forgot your password?
-      </NavLink>
-    </Card>
-  )
-}
+        </div>
+      </Form>
+    </Formik>
+    <div className={`d-grid mb-3`}>
+      <div className={styles.orContainer}>
+        <hr className={styles.lineLeft} />
+        <span>OR</span>
+        <hr className={styles.lineRight} />
+      </div>
+      <button
+        onClick={() => signIn('discord', { callbackUrl: '/curriculum' })}
+        className={`btn text-white btn-lg btn ${styles.discord__button}`}
+      >
+        <div className={styles.discord__button__image__wrapper}>
+          <Image
+            src="/assets/discordClydeLogoSmallWhite.svg"
+            height={24}
+            width={32}
+          />
+        </div>
+        <span>Login with Discord</span>
+      </button>
+    </div>
+    <NavLink path="/forgotpassword" hoverUnderline>
+      Forgot your password?
+    </NavLink>
+  </Card>
+)
 
 const LoginPage: React.FC & WithLayout = () => {
   const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
-  const [loginUser, { data, error }] = useMutation(LOGIN_USER, {
+  const [loginUser, { data, error, loading }] = useMutation(LOGIN_USER, {
     refetchQueries: [{ query: GET_APP }],
-    //prevents additonal render with unauthorized state on redirect
+    //prevents additional render with unauthorized state on redirect
     awaitRefetchQueries: true
   })
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
@@ -126,7 +161,11 @@ const LoginPage: React.FC & WithLayout = () => {
   return (
     <>
       <Title title="Login" />
-      <Login handleSubmit={handleSubmit} loginErrors={loginErrors} />
+      <Login
+        handleSubmit={handleSubmit}
+        loginErrors={loginErrors}
+        isLoading={loading}
+      />
     </>
   )
 }

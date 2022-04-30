@@ -54,6 +54,21 @@ const mocks = [
   },
   {
     request: {
+      query: ACCEPT_SUBMISSION,
+      variables: { submissionId: 104, lessonId: 1, comment: '' }
+    },
+    result: {
+      data: {
+        acceptSubmission: {
+          id: 1,
+          comment: '',
+          status: SubmissionStatus.Passed
+        }
+      }
+    }
+  },
+  {
+    request: {
       query: ADD_COMMENT,
       variables: { submissionId: 104, content: 'Good job!' }
     },
@@ -142,6 +157,40 @@ const mocks = [
   },
   {
     request: {
+      query: REJECT_SUBMISSION,
+      variables: {
+        submissionId: 104,
+        comment: '',
+        lessonId: 1
+      }
+    },
+    result: {
+      data: {
+        rejectSubmission: {
+          id: 104
+        }
+      }
+    }
+  },
+  {
+    request: {
+      query: REJECT_SUBMISSION,
+      variables: {
+        submissionId: 104,
+        comment: '',
+        lessonId: 1
+      }
+    },
+    result: {
+      data: {
+        rejectSubmission: {
+          id: 104
+        }
+      }
+    }
+  },
+  {
+    request: {
       query: GET_PREVIOUS_SUBMISSIONS,
       variables: { challengeId: 9, userId: 3 }
     },
@@ -161,8 +210,12 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     expect(await screen.findByTestId('iteration 1')).toBeVisible()
-    userEvent.click(screen.getByTestId('iteration 0'))
-    userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
+    await waitFor(async () => {
+      await userEvent.click(screen.getByTestId('iteration 0'))
+    })
+    fireEvent.change(screen.getByTestId('textbox'), {
+      target: { value: 'A very unique test comment!' }
+    })
     fireEvent.click(screen.getByText('Submit'))
     expect(container).toMatchSnapshot()
   })
@@ -267,19 +320,19 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(screen.getByRole('textbox', { name: '' }), 'Good job!')
+
     expect(await screen.findByTestId('iteration 2')).toBeVisible()
-    userEvent.click(
+    fireEvent.click(
       screen.getByRole('radio', {
         name: 'Accept Submit feedback and approve submission'
       })
     )
-    userEvent.click(
+    fireEvent.click(
       screen.getByRole('button', {
         name: 'Submit'
       })
     )
-    await waitFor(() => expect(screen.firstChild).toBeNull)
+    expect(screen.firstChild).toBe(undefined)
   })
   test('Should be able to reject submission', async () => {
     const { getByRole } = render(
@@ -290,18 +343,19 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(getByRole('textbox', { name: '' }), `This won't work`)
     expect(await screen.findByTestId('iteration 2')).toBeVisible()
-    userEvent.click(
+    fireEvent.click(
       getByRole('radio', {
         name: 'Reject Request changes and reject submission'
       })
     )
-    userEvent.click(
+    fireEvent.click(
       getByRole('button', {
         name: 'Submit'
       })
     )
+
+    expect(screen.firstChild).toBe(undefined)
   })
   test('Should be able to add comment', async () => {
     const updateCacheMock = jest.fn()
@@ -315,17 +369,21 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
-    userEvent.click(
+
+    fireEvent.change(getByRole('textbox', { name: '' }), {
+      target: { value: 'Good job!' }
+    })
+    fireEvent.click(
       getByRole('radio', {
         name: 'Comment Submit general feedback without explicit approval'
       })
     )
-    userEvent.click(
+    fireEvent.click(
       getByRole('button', {
         name: 'Submit'
       })
     )
+
     expect(container).toMatchSnapshot()
   })
   test('Should not be able to add comment when comment value is empty', async () => {
@@ -337,19 +395,18 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(getByRole('textbox', { name: '' }), '')
-    userEvent.click(
+
+    fireEvent.click(
       getByRole('radio', {
         name: 'Comment Submit general feedback without explicit approval'
       })
     )
-    userEvent.click(
+    fireEvent.click(
       getByRole('button', {
         name: 'Submit'
       })
     )
-
-    const addDeleteMutation = mocks[2].newData
+    const addDeleteMutation = mocks[3].newData
 
     await waitFor(() => expect(addDeleteMutation).toHaveBeenCalledTimes(0))
 
@@ -434,8 +491,27 @@ describe('ReviewCard Component', () => {
     const accordionHeader = getByText('Challenge Description')
     fireEvent.click(accordionHeader)
 
-    const accordionItem = container.querySelector('.accordionItem')
+    const accordionItem = container.querySelector('.accordion__item')
 
     expect(accordionItem).toBeVisible()
+  })
+  test('Should change from comment to accept', async () => {
+    expect.assertions(1)
+
+    const { getByDisplayValue } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={{ ...submissionData, status: 'open' }}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+
+    const radioComment = getByDisplayValue('comment')
+    const radioAccept = getByDisplayValue('accept')
+
+    fireEvent.click(radioAccept)
+
+    expect(radioComment.checked).toBeFalsy()
   })
 })

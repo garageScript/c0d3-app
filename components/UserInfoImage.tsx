@@ -4,14 +4,15 @@ import Image from 'next/image'
 import styles from '../scss/userInfoImage.module.scss'
 type UserProps = {
   user: UserInfo
+  className?: string
 }
 
-export const DiscordAvatar: React.FC<UserProps> = ({ user }) => {
+export const DiscordAvatar: React.FC<UserProps> = ({ user, className }) => {
   return (
     <>
-      <div className="ms-auto me-auto mt-4">
+      <div className={`ms-auto me-auto ${className ? className : ''}`}>
         <Image
-          className="avatar"
+          className={`avatar`}
           src={user.discordAvatarUrl}
           width={60}
           height={60}
@@ -28,14 +29,16 @@ export const DiscordAvatar: React.FC<UserProps> = ({ user }) => {
   )
 }
 
-const UserInfoImage: React.FC<UserProps> = ({ user }) => {
+const UserInfoImage: React.FC<UserProps> = ({ user, className }) => {
   return (
     <>
       {user.discordUserId ? (
-        <DiscordAvatar user={user} />
+        <DiscordAvatar user={user} className={className} />
       ) : (
         <div
-          className={`text-uppercase bg-primary rounded-circle text-light ${styles['user_info_image']}`}
+          className={`text-uppercase bg-primary rounded-circle text-light ${
+            styles['user_info_image']
+          } ${className ? className : ''}`}
         >
           {user.firstName[0] + user.lastName[0]}
         </div>

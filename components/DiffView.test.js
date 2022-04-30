@@ -1,7 +1,7 @@
 import '../__mocks__/useIsMac.mock'
 import '../__mocks__/useBreakpoint.mock'
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import DiffView from './DiffView'
@@ -23,15 +23,7 @@ describe('DiffView component', () => {
     expect(container).toMatchSnapshot()
     expect(await screen.findByText('second line comment')).toBeVisible()
   })
-  test('Should render diff with no comments', () => {
-    render(
-      <MockedProvider mocks={[]} addTypename={false}>
-        <DiffView submission={dummySumissions[0]} />
-      </MockedProvider>
-    )
-    expect(screen.queryByText('Add comment')).toBeNull()
-  })
-  test('Should add comment box', () => {
+  test('Should render collapsed diff', async () => {
     const { container } = render(
       <MockedProvider mocks={[]} addTypename={false}>
         <DiffView
@@ -40,7 +32,28 @@ describe('DiffView component', () => {
         />
       </MockedProvider>
     )
-    userEvent.click(screen.getByText('4'))
+    await waitFor(() => userEvent.click(screen.getByText('Viewed')))
+    expect(container).toMatchSnapshot()
+    expect(screen.queryByText('4')).toBeNull()
+  })
+  test('Should render diff with no comments', () => {
+    render(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <DiffView submission={dummySumissions[0]} />
+      </MockedProvider>
+    )
+    expect(screen.queryByText('Add comment')).toBeNull()
+  })
+  test('Should add comment box', async () => {
+    const { container } = render(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <DiffView
+          submission={dummySumissions[0]}
+          generalStatus={SubmissionStatus.Open}
+        />
+      </MockedProvider>
+    )
+    await waitFor(() => userEvent.click(screen.getByText('4')))
     expect(container).toMatchSnapshot()
     expect(screen.getByText('Add comment')).toBeVisible()
   })
@@ -54,12 +67,12 @@ describe('DiffView component', () => {
       </MockedProvider>
     )
     //select fourth line of second file
-    userEvent.click(screen.getAllByText('4')[1])
+    await waitFor(() => userEvent.click(screen.getAllByText('4')[1]))
     expect((await screen.findAllByText('Add comment')).length).toBe(3)
-    userEvent.click(screen.getAllByText('4')[1])
+    await waitFor(() => userEvent.click(screen.getAllByText('4')[1]))
     expect((await screen.findAllByText('Add comment')).length).toBe(2)
   })
-  test('Should not add comment is generalStatus is not open', () => {
+  test('Should not add comment is generalStatus is not open', async () => {
     render(
       <MockedProvider mocks={[]} addTypename={false}>
         <DiffView
@@ -68,7 +81,7 @@ describe('DiffView component', () => {
         />
       </MockedProvider>
     )
-    userEvent.click(screen.getByText('4'))
+    await waitFor(() => userEvent.click(screen.getByText('4')))
     expect(screen.queryByText('Add comment')).toBeNull()
   })
 
