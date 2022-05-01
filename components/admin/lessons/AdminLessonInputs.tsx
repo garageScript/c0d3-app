@@ -33,6 +33,7 @@ const values: [TextField, TextField] = [
 ]
 
 const AdminLessonInputs = ({ title, lessonId, onAddModule }: Props) => {
+  const [formOptions, setFormOptions] = useState<any>(values)
   const [name, content] = formOptions
 
   const [addModuleMutation, { data, error, loading }] = useAddModuleMutation({
