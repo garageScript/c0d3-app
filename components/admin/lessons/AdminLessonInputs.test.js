@@ -73,7 +73,7 @@ const loadingMock = {
 }
 
 const mocks = [basicMock]
-const errorMocks = [errorMock]
+const errorMocks = [errorMock, { ...errorMock }]
 const loadingMocks = [loadingMock]
 
 describe('AdminLessonInputs component', () => {
@@ -173,7 +173,7 @@ describe('AdminLessonInputs component', () => {
     expect.assertions(1)
 
     const { getByText, getByTestId } = render(
-      <MockedProvider mocks={loadingMocks}>
+      <MockedProvider mocks={mocks}>
         <AdminLessonInputs lessonId={lesson.id} title={''} />
       </MockedProvider>
     )
@@ -189,5 +189,102 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     expect(getByText('Untitled')).toBeInTheDocument()
+  })
+
+  it('Should call onAddModule when a module is added', async () => {
+    expect.hasAssertions()
+
+    const onAddModule = jest.fn()
+
+    const { getByText, getByTestId } = render(
+      <MockedProvider mocks={mocks}>
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          onAddModule={onAddModule}
+        />
+      </MockedProvider>
+    )
+
+    await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+      delay: 1
+    })
+
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    await waitFor(() =>
+      expect(onAddModule).toBeCalledWith(basicMock.result.data.addModule, null)
+    )
+  })
+
+  it('Should call onAddModule when a module is added with null', async () => {
+    expect.hasAssertions()
+
+    const onAddModule = jest.fn()
+
+    const { getByText, getByTestId } = render(
+      <MockedProvider
+        mocks={[
+          {
+            ...basicMock,
+            result: {
+              ...basicMock.result,
+              data: null
+            }
+          }
+        ]}
+      >
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          onAddModule={onAddModule}
+        />
+      </MockedProvider>
+    )
+
+    await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+      delay: 1
+    })
+
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    await waitFor(() => expect(onAddModule).toBeCalledWith(null, null))
+  })
+
+  it('Should call onAddModule when there is error', async () => {
+    expect.hasAssertions()
+
+    const onAddModule = jest.fn()
+
+    const { getByText, getByTestId } = render(
+      <MockedProvider mocks={errorMocks}>
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          onAddModule={onAddModule}
+        />
+      </MockedProvider>
+    )
+
+    await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+      delay: 1
+    })
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    await waitFor(() =>
+      expect(onAddModule).toBeCalledWith(null, { ...modules[0] })
+    )
   })
 })
