@@ -2332,10 +2332,10 @@
     source-map "^0.6.1"
     write-file-atomic "^3.0.0"
 
-"@jest/transform@^28.0.2":
-  version "28.0.2"
-  resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-28.0.2.tgz#2b33d93fdf5827309cbd332bf968fa0dd049e7b2"
-  integrity sha512-PgvB/DEwVY+vJAGTRSFhdmorytx54aXKK1+VQIxVtdFVAe0mJ2fUIRWQuGimveEJWT4ELJImZAIYOgs8z2L0eg==
+"@jest/transform@^28.0.3":
+  version "28.0.3"
+  resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-28.0.3.tgz#591fb5ebc1d84db5c5f21e1225c7406c35f5eb1e"
+  integrity sha512-+Y0ikI7SwoW/YbK8t9oKwC70h4X2Gd0OVuz5tctRvSV/EDQU00AAkoqevXgPSSFimUmp/sp7Yl8s/1bExDqOIg==
   dependencies:
     "@babel/core" "^7.11.6"
     "@jest/types" "^28.0.2"
@@ -4271,10 +4271,10 @@
   dependencies:
     "@types/react" "^17"
 
-"@types/react-dom@^18.0.1":
-  version "18.0.1"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.1.tgz#cb3cc10ea91141b12c71001fede1017acfbce4db"
-  integrity sha512-jCwTXvHtRLiyVvKm9aEdHXs8rflVOGd5Sl913JZrPshfXjn8NYsTNZOz70bCsA31IR0TOqwi3ad+X4tSCBoMTw==
+"@types/react-dom@^18.0.3":
+  version "18.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.3.tgz#a022ea08c75a476fe5e96b675c3e673363853831"
+  integrity sha512-1RRW9kst+67gveJRYPxGmVy8eVJ05O43hg77G2j5m76/RFJtMbcfAs2viQ2UNsvvDg8F7OfQZx8qQcl6ymygaQ==
   dependencies:
     "@types/react" "*"
 
@@ -4292,16 +4292,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.9.11", "@types/react@^17.0.43":
-  version "17.0.43"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.43.tgz#4adc142887dd4a2601ce730bc56c3436fdb07a55"
-  integrity sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^17":
+"@types/react@*", "@types/react@>=16.9.11", "@types/react@^17", "@types/react@^17.0.43":
   version "17.0.44"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.44.tgz#c3714bd34dd551ab20b8015d9d0dbec812a51ec7"
   integrity sha512-Ye0nlw09GeMp2Suh8qoOv0odfgCoowfM/9MG6WeRD60Gq9wS90bdkdRtYbRkNhXOpG4H+YXGvj4wOWhAC0LJ1g==
@@ -5455,12 +5446,12 @@ babel-jest@^27.5.1:
     graceful-fs "^4.2.9"
     slash "^3.0.0"
 
-babel-jest@^28.0.2:
-  version "28.0.2"
-  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-28.0.2.tgz#72c050b4fbd108e561f9d9c7bad4893b20399b12"
-  integrity sha512-OlbfoOpHmU3jzAWoiT98bBuAhjrSZMxSVk5ALkCL/8ocb8dyx8F4H9NlBjH2xd08MI5306Yxa0+y87cjY55Eqw==
+babel-jest@^28.0.3:
+  version "28.0.3"
+  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-28.0.3.tgz#843dc170da5b9671d4054ada9fdcd28f85f92a6e"
+  integrity sha512-S0ADyYdcrt5fp9YldRYWCUHdk1BKt9AkvBkLWBoNAEV9NoWZPIj5+MYhPcGgTS65mfv3a+Ymf2UqgWoAVd41cA==
   dependencies:
-    "@jest/transform" "^28.0.2"
+    "@jest/transform" "^28.0.3"
     "@types/babel__core" "^7.1.14"
     babel-plugin-istanbul "^6.1.1"
     babel-preset-jest "^28.0.2"
@@ -12696,10 +12687,10 @@ node-releases@^2.0.1:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.1.tgz#3d1d395f204f1f2f29a54358b9fb678765ad2fc5"
   integrity sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==
 
-nodemailer@^6.7.3:
-  version "6.7.3"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.3.tgz#b73f9a81b9c8fa8acb4ea14b608f5e725ea8e018"
-  integrity sha512-KUdDsspqx89sD4UUyUKzdlUOper3hRkDVkrKh/89G+d9WKsU5ox51NWS4tB1XR5dPUdR4SP0E3molyEfOvSa3g==
+nodemailer@^6.7.4:
+  version "6.7.4"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.4.tgz#28771bda3dda8f2dad1912aca0f8727ce7f09d89"
+  integrity sha512-TBSS3qS8WG45ycUwEvEA/3UM1o3sLz9jUl4TPUKPz4ImWWM6UgRCb5pLO+HOouDKEj57yNLOrzQlO8+9IjWZoA==
 
 nopt@^4.0.1:
   version "4.0.3"
