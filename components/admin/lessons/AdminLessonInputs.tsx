@@ -99,7 +99,7 @@ const AdminLessonInputs = ({ title, lessonId, onAddModule }: Props) => {
         <div className={styles.success}>
           <CheckCircleIcon />
           <span>
-            Added the module <strong>{data.addModule.name}</strong>
+            Added the module <strong>{data.addModule.name}</strong>{' '}
             successfully!
           </span>
         </div>
