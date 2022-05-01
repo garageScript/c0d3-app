@@ -38,9 +38,9 @@ const AdminLessonInputs = ({ title, lessonId, onAddModule }: Props) => {
 
   const [addModuleMutation, { data, error, loading }] = useAddModuleMutation({
     variables: {
-      content: content.value || '',
+      content: content.value,
       lessonId,
-      name: name.value || ''
+      name: name.value
     }
   })
 
