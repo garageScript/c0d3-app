@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useAddModuleMutation } from '../../../graphql'
+import { AddModuleMutation, useAddModuleMutation } from '../../../graphql'
 import { formChange } from '../../../helpers/formChange'
 import { FormCard, MD_INPUT, Option } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
@@ -10,6 +10,10 @@ import { ApolloError } from 'apollo-server-micro'
 type Props = {
   title?: string
   lessonId: number
+  onAddModule?: (
+    m: AddModuleMutation['addModule'] | null,
+    e: { name: string; content: string } | null
+  ) => void
 }
 
 enum Error {
@@ -54,8 +58,19 @@ const AdminLessonInputs = ({ title, lessonId }: Props) => {
       }
 
       setErrorMsg('')
-      await addModuleMutation()
+      const newModule = await addModuleMutation()
+
+      if (onAddModule) {
+        onAddModule(newModule.data?.addModule || null, null)
+      }
     } catch (err) {
+      if (onAddModule) {
+        onAddModule(null, {
+          content: content.value,
+          name: name.value
+        })
+      }
+
       setErrorMsg((err as ApolloError).message)
     }
   }
