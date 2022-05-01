@@ -113,7 +113,7 @@ const AdminLessonInputs = ({ title, lessonId, onAddModule }: Props) => {
     <div className={styles.container}>
       <QueryStateMessage />
       <FormCard
-        title={title || 'Untitled'}
+        title={name.value || title || 'Untitled'}
         values={values}
         onSubmit={{
           title: 'ADD MODULE',

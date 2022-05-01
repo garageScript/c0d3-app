@@ -178,12 +178,7 @@ describe('AdminLessonInputs component', () => {
       </MockedProvider>
     )
 
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
+    await userEvent.clear(getByTestId('input0'))
 
     const submit = getByText('ADD MODULE')
     await userEvent.click(submit)
