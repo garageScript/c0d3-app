@@ -1,3 +1,4 @@
+// Used for Buttons text and h3 header
 @font-face {
   font-family: 'PT MONO';
   src: url('/fonts/PTMono-Regular.ttf');
@@ -7,4 +8,9 @@
 @font-face {
   font-family: 'Rubik';
   src: url('/fonts/Rubik-Light.woff2') format('woff2');
+  
+// Used for Paragraphs
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
 }
