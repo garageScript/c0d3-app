@@ -8,14 +8,20 @@ import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
-const lessons = [{ title: 'Foundations of JavaScript' }, { title: 'Variables' }]
+const lessons = [
+  { title: 'Foundations of JavaScript', id: 1 },
+  { title: 'Variables', id: 2 }
+]
 
 describe('BreadCrumbs component', () => {
   it('Should render dropdown', () => {
     expect.assertions(1)
 
     const setState = jest.fn()
-    const title = lessons[0].title
+    const lesson = {
+      title: lessons[0].title,
+      id: lessons[0].id
+    }
 
     useRouter.mockImplementation(() => ({
       asPath: 'c0d3.com/admin/lessons'
@@ -24,32 +30,31 @@ describe('BreadCrumbs component', () => {
     const { queryByText } = render(
       <Breadcrumbs
         omitHomeRoute={false}
-        lessonTitle={title}
-        setLessonTitle={setState}
+        lesson={lesson}
+        setLesson={setState}
         lessons={lessons}
         homeTitle="Home"
       />
     )
 
-    expect(queryByText(title)).toBeInTheDocument()
+    expect(queryByText(lesson.title)).toBeInTheDocument()
   })
 
   it('Should render default values', () => {
     expect.assertions(1)
 
     const setState = jest.fn()
-    const title = lessons[0].title
+    const lesson = {
+      title: lessons[0].title,
+      id: lessons[0].id
+    }
 
     useRouter.mockImplementation(() => ({
       asPath: 'c0d3.com/admin/lessons'
     }))
 
     const { queryByText } = render(
-      <Breadcrumbs
-        lessonTitle={title}
-        setLessonTitle={setState}
-        lessons={lessons}
-      />
+      <Breadcrumbs lesson={lesson} setLesson={setState} lessons={lessons} />
     )
 
     expect(queryByText('Home')).toBeInTheDocument()
@@ -66,8 +71,8 @@ describe('BreadCrumbs component', () => {
 
     const { queryByText } = render(
       <Breadcrumbs
-        lessonTitle={''}
-        setLessonTitle={setState}
+        lesson={{ title: '', id: -1 }}
+        setLesson={setState}
         lessons={lessons}
       />
     )
@@ -79,7 +84,10 @@ describe('BreadCrumbs component', () => {
     expect.assertions(1)
 
     const setState = jest.fn()
-    const title = lessons[0].title
+    const lesson = {
+      title: lessons[0].title,
+      id: lessons[0].id
+    }
 
     useRouter.mockImplementation(() => ({
       asPath: 'c0d3.com/admin/lessons'
@@ -88,14 +96,14 @@ describe('BreadCrumbs component', () => {
     const { queryByText } = render(
       <Breadcrumbs
         omitHomeRoute={false}
-        lessonTitle={title}
-        setLessonTitle={setState}
+        lesson={lesson}
+        setLesson={setState}
         lessons={lessons}
         homeTitle="Home"
       />
     )
 
-    const dropDown = queryByText(title)
+    const dropDown = queryByText(lesson.title)
 
     await userEvent.click(dropDown)
 
@@ -103,6 +111,6 @@ describe('BreadCrumbs component', () => {
 
     await userEvent.click(dropDownItem)
 
-    expect(setState).toBeCalledWith(lessons[1].title)
+    expect(setState).toBeCalledWith(lessons[1])
   })
 })
