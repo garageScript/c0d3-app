@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AddModuleMutation, useAddModuleMutation } from '../../../graphql'
 import { formChange } from '../../../helpers/formChange'
-import { FormCard, MD_INPUT, Option } from '../../FormCard'
+import { FormCard, MD_INPUT, TextField } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from '../../../scss/adminLessonInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
@@ -20,15 +20,15 @@ enum Error {
   InvalidData = 'missing module name or description'
 }
 
-type FormOptions = (Option & { value?: string })[]
-
-const values: FormOptions = [
+const values: [TextField, TextField] = [
   {
-    title: 'Module Name'
+    title: 'Module Name',
+    value: ''
   },
   {
     title: 'Description',
-    type: MD_INPUT
+    type: MD_INPUT,
+    value: ''
   }
 ]
 
