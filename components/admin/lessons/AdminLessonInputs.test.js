@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import AdminLessonInputs from './AdminLessonInputs'
+import AdminModuleInputs from './AdminModuleInputs'
 import { MockedProvider } from '@apollo/client/testing'
 import { AddModuleDocument } from '../../../graphql'
 import '../../../__mocks__/matchMedia.mock'
@@ -76,13 +76,13 @@ const mocks = [basicMock]
 const errorMocks = [errorMock, { ...errorMock }]
 const loadingMocks = [loadingMock]
 
-describe('AdminLessonInputs component', () => {
+describe('AdminModuleInputs component', () => {
   it('Should add module', async () => {
     expect.assertions(1)
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -108,7 +108,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -128,7 +128,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={errorMocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -152,7 +152,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={loadingMocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -174,7 +174,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={''} />
+        <AdminModuleInputs lessonId={lesson.id} title={''} />
       </MockedProvider>
     )
 
@@ -193,7 +193,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs
+        <AdminModuleInputs
           lessonId={lesson.id}
           title={lesson.title}
           onAddModule={onAddModule}
@@ -233,7 +233,7 @@ describe('AdminLessonInputs component', () => {
           }
         ]}
       >
-        <AdminLessonInputs
+        <AdminModuleInputs
           lessonId={lesson.id}
           title={lesson.title}
           onAddModule={onAddModule}
@@ -261,7 +261,7 @@ describe('AdminLessonInputs component', () => {
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={errorMocks}>
-        <AdminLessonInputs
+        <AdminModuleInputs
           lessonId={lesson.id}
           title={lesson.title}
           onAddModule={onAddModule}

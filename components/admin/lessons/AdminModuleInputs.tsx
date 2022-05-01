@@ -3,7 +3,7 @@ import { AddModuleMutation, useAddModuleMutation } from '../../../graphql'
 import { formChange } from '../../../helpers/formChange'
 import { FormCard, MD_INPUT, TextField } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
-import styles from '../../../scss/adminLessonInputs.module.scss'
+import styles from '../../../scss/AdminModuleInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
 import { ApolloError } from 'apollo-server-micro'
 
@@ -32,7 +32,7 @@ const values: [TextField, TextField] = [
   }
 ]
 
-const AdminLessonInputs = ({ title, lessonId, onAddModule }: Props) => {
+const AdminModuleInputs = ({ title, lessonId, onAddModule }: Props) => {
   const [formOptions, setFormOptions] = useState<any>(values)
   const [name, content] = formOptions
 
@@ -127,4 +127,4 @@ const AdminLessonInputs = ({ title, lessonId, onAddModule }: Props) => {
   )
 }
 
-export default AdminLessonInputs
+export default AdminModuleInputs

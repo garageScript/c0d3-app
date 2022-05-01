@@ -1,12 +1,12 @@
 import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
-import AdminLessonInputs from '../../components/admin/lessons/AdminLessonInputs'
+import AdminModuleInputs from '../../components/admin/lessons/AdminModuleInputs'
 import { AddModuleDocument } from '../../graphql'
 import '../../__mocks__/matchMedia.mock'
 
 export default {
-  component: AdminLessonInputs,
-  title: 'Components/AdminLessonInputs'
+  component: AdminModuleInputs,
+  title: 'Components/AdminModuleInputs'
 }
 
 const lesson = { title: 'Foundations of JavaScript', id: 1 }
@@ -52,7 +52,7 @@ export const Basic = () => (
         }
       ]}
     >
-      <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+      <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
     </MockedProvider>
   </>
 )
