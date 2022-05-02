@@ -1,3 +1,4 @@
+import { RefetchQueriesFunction } from '@apollo/client'
 import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
 import AdminModuleInputs from '../../components/admin/lessons/AdminModuleInputs'
@@ -52,7 +53,11 @@ export const Basic = () => (
         }
       ]}
     >
-      <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
+      <AdminModuleInputs
+        lessonId={lesson.id}
+        title={lesson.title}
+        refetch={(() => {}) as RefetchQueriesFunction}
+      />
     </MockedProvider>
   </>
 )
