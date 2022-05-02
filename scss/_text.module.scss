@@ -26,13 +26,17 @@ p {
   line-height: 160%;
 }
 
-code {
+code,
+kbd,
+pre,
+samp {
   font-family: 'Fira Code';
   font-weight: 400;
   font-size: 14px;
   line-height: 160%;
 }
 
+button,
 .btn {
   font-family: 'PT Mono';
   font-weight: 700;
