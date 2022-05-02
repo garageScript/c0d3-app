@@ -1,48 +1,84 @@
-import React, { useState } from 'react'
-import { AddModuleMutation, useAddModuleMutation } from '../../../graphql'
+import React, { useEffect, useState } from 'react'
+import {
+  AddModuleMutation,
+  UpdateModuleMutation,
+  useAddModuleMutation,
+  useUpdateModuleMutation
+} from '../../../graphql'
 import { formChange } from '../../../helpers/formChange'
 import { FormCard, MD_INPUT, TextField } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from '../../../scss/AdminModuleInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
-import { ApolloError } from 'apollo-server-micro'
+import { get } from 'lodash'
+import { RefetchQueriesFunction, ApolloError } from '@apollo/client'
+
+type Module = { id: number; name: string; content: string }
 
 type Props = {
-  title?: string
   lessonId: number
+  refetch: RefetchQueriesFunction
+  title?: string
   onAddModule?: (
-    m: AddModuleMutation['addModule'] | null,
+    m:
+      | (AddModuleMutation['addModule'] & { lesson: { id: number } })
+      | (UpdateModuleMutation['updateModule'] & { lesson: { id: number } })
+      | null,
     e: { name: string; content: string } | null
   ) => void
+  module?: Module | undefined
 }
 
 enum Error {
   InvalidData = 'missing module name or description'
 }
 
-const values: [TextField, TextField] = [
+const initValues = (
+  nameValue?: string,
+  descValue?: string
+): [TextField, TextField] => [
   {
     title: 'Module Name',
-    value: ''
+    value: nameValue || ''
   },
   {
     title: 'Description',
     type: MD_INPUT,
-    value: ''
+    value: descValue || ''
   }
 ]
 
-const AdminModuleInputs = ({ title, lessonId, onAddModule }: Props) => {
-  const [formOptions, setFormOptions] = useState<any>(values)
+const AdminModuleInputs = ({
+  title,
+  lessonId,
+  onAddModule,
+  module,
+  refetch
+}: Props) => {
+  const [formOptions, setFormOptions] = useState<any>(initValues())
   const [name, content] = formOptions
 
-  const [addModuleMutation, { data, error, loading }] = useAddModuleMutation({
-    variables: {
-      content: content.value,
-      lessonId,
-      name: name.value
-    }
-  })
+  useEffect(
+    () => setFormOptions(initValues(module?.name, module?.content)),
+    [module]
+  )
+
+  const [moduleMutation, { data, error, loading }] = module
+    ? useUpdateModuleMutation({
+        variables: {
+          id: module.id,
+          content: content.value,
+          lessonId,
+          name: name.value
+        }
+      })
+    : useAddModuleMutation({
+        variables: {
+          content: content.value,
+          lessonId,
+          name: name.value
+        }
+      })
 
   const [errorMsg, setErrorMsg] = useState(error?.message || '')
 
@@ -58,10 +94,25 @@ const AdminModuleInputs = ({ title, lessonId, onAddModule }: Props) => {
       }
 
       setErrorMsg('')
-      const newModule = await addModuleMutation()
+      const newModule = await moduleMutation()
+      refetch()
 
       if (onAddModule) {
-        onAddModule(newModule.data?.addModule || null, null)
+        const updateModuleData = get(newModule, 'data.updateModule')
+        const addModuleData = get(newModule, 'data.addModule')
+
+        onAddModule(
+          (updateModuleData && {
+            ...updateModuleData,
+            lesson: { id: lessonId }
+          }) ||
+            (addModuleData && {
+              ...addModuleData,
+              lesson: { id: lessonId }
+            }) ||
+            null,
+          null
+        )
       }
     } catch (err) {
       if (onAddModule) {
@@ -95,11 +146,15 @@ const AdminModuleInputs = ({ title, lessonId, onAddModule }: Props) => {
     }
 
     if (data) {
+      const updateModule = get(data, 'updateModule')
+      const addModule = get(data, 'addModule')
+
       return (
         <div className={styles.success}>
           <CheckCircleIcon />
           <span>
-            Added the module <strong>{data.addModule.name}</strong>{' '}
+            {updateModule ? 'Updated' : 'Added'} the module{' '}
+            <strong>{addModule?.name || updateModule?.name || ''}</strong>{' '}
             successfully!
           </span>
         </div>
@@ -114,9 +169,9 @@ const AdminModuleInputs = ({ title, lessonId, onAddModule }: Props) => {
       <QueryStateMessage />
       <FormCard
         title={name.value || title || 'Untitled'}
-        values={values}
+        values={formOptions}
         onSubmit={{
-          title: 'ADD MODULE',
+          title: module ? 'SAVE CHANGES' : 'ADD MODULE',
           onClick: onSubmit
         }}
         onChange={handleChange}
