@@ -404,6 +404,197 @@ Array [
 ]
 `;
 
+exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
+<div
+  className="container"
+>
+  <span
+    className="container__heading"
+  >
+    Existing 
+    modules
+  </span>
+  <ol
+    className="container__modulesList"
+  >
+    <li
+      className="container__modulesList__module--active"
+      onClick={[Function]}
+    >
+      <span>
+        First module
+      </span>
+    </li>
+    <li
+      className="container__modulesList__module"
+      onClick={[Function]}
+    >
+      <span>
+        Second module
+      </span>
+      <svg
+        aria-hidden="true"
+        className="octicon octicon-chevron-right"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+          }
+        }
+        fill="currentColor"
+        height={16}
+        role="img"
+        style={
+          Object {
+            "display": "inline-block",
+            "overflow": "visible",
+            "userSelect": "none",
+            "verticalAlign": "text-bottom",
+          }
+        }
+        viewBox="0 0 16 16"
+        width={16}
+      />
+    </li>
+    <li
+      className="container__modulesList__module"
+      onClick={[Function]}
+    >
+      <span>
+        Third module
+      </span>
+      <svg
+        aria-hidden="true"
+        className="octicon octicon-chevron-right"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+          }
+        }
+        fill="currentColor"
+        height={16}
+        role="img"
+        style={
+          Object {
+            "display": "inline-block",
+            "overflow": "visible",
+            "userSelect": "none",
+            "verticalAlign": "text-bottom",
+          }
+        }
+        viewBox="0 0 16 16"
+        width={16}
+      />
+    </li>
+    <li
+      className="container__modulesList__module"
+      onClick={[Function]}
+    >
+      <span>
+        Fourth module
+      </span>
+      <svg
+        aria-hidden="true"
+        className="octicon octicon-chevron-right"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+          }
+        }
+        fill="currentColor"
+        height={16}
+        role="img"
+        style={
+          Object {
+            "display": "inline-block",
+            "overflow": "visible",
+            "userSelect": "none",
+            "verticalAlign": "text-bottom",
+          }
+        }
+        viewBox="0 0 16 16"
+        width={16}
+      />
+    </li>
+  </ol>
+  <button
+    className="container--button"
+    onClick={[Function]}
+  >
+    ADD NEW MODULE
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/AdminLessonSideNav Error 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container__error"
+  >
+    <svg
+      aria-hidden="true"
+      className="octicon octicon-alert-fill"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+        }
+      }
+      fill="currentColor"
+      height={16}
+      role="img"
+      style={
+        Object {
+          "display": "inline-block",
+          "overflow": "visible",
+          "userSelect": "none",
+          "verticalAlign": "text-bottom",
+        }
+      }
+      viewBox="0 0 12 12"
+      width={16}
+    />
+    <span
+      className="container__heading"
+    >
+      Failed to get the modules
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/AdminLessonSideNav Loading 1`] = `
+<div
+  className="container"
+>
+  <span
+    className="container__heading"
+  >
+    Existing 
+    modules
+  </span>
+  <ol
+    className="container__modulesList container__modulesList--loading"
+  >
+    <div
+      className="spinner-border"
+      role="status"
+    >
+      <span
+        className="visually-hidden"
+      >
+        Loading...
+      </span>
+    </div>
+  </ol>
+  <button
+    className="container--button"
+  >
+    ADD NEW MODULE
+  </button>
+</div>
+`;
+
 exports[`Storyshots Components/Alert Info 1`] = `
 <div
   className="alert d-flex justify-content-between mt-3 bg-primary text-white"
