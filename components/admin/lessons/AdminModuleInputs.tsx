@@ -21,7 +21,7 @@ type Module = { id: number; name: string; content: string }
 
 type Props = {
   lessonId: number
-  refetch: (variables?: Partial<OperationVariables> | undefined) => Promise<
+  refetch: (variables?: Partial<OperationVariables>) => Promise<
     ApolloQueryResult<{
       modules: Module[]
     }>
