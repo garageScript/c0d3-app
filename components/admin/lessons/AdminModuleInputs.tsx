@@ -67,7 +67,8 @@ const AdminModuleInputs = ({
   const [name, content] = formOptions
 
   useEffect(
-    () => setFormOptions(initValues(module?.name, module?.content)),
+    () =>
+      setFormOptions(initValues(get(module, 'name'), get(module, 'content'))),
     [module]
   )
 
@@ -83,7 +84,7 @@ const AdminModuleInputs = ({
       })
     : useAddModuleMutation({ variables: mutationVariables })
 
-  const [errorMsg, setErrorMsg] = useState(error?.message || '')
+  const [errorMsg, setErrorMsg] = useState(get(error, 'message', ''))
 
   const handleChange = async (value: string, propertyIndex: number) => {
     await formChange(value, propertyIndex, formOptions, setFormOptions)
@@ -157,7 +158,9 @@ const AdminModuleInputs = ({
           <CheckCircleIcon />
           <span>
             {updateModule ? 'Updated' : 'Added'} the module{' '}
-            <strong>{addModule?.name || updateModule?.name || ''}</strong>{' '}
+            <strong>
+              {get(addModule, 'name') || get(updateModule, 'name') || ''}
+            </strong>{' '}
             successfully!
           </span>
         </div>
