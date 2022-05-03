@@ -1,8 +1,4 @@
-import {
-  ApolloQueryResult,
-  OperationVariables,
-  RefetchQueriesFunction
-} from '@apollo/client'
+import { ApolloQueryResult, OperationVariables } from '@apollo/client'
 import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
 import AdminModuleInputs from '../../components/admin/lessons/AdminModuleInputs'
