@@ -22,11 +22,6 @@ import {
 } from './submissionController'
 import * as Sentry from '@sentry/node'
 
-// jest.mock('../getDiscordMessageUserIdString.ts', () => ({
-//   getDiscordUserId: async ({ id, discordRefreshToken }) =>
-//     discordRefreshToken === 'refreshToken' ? '123' : null
-// }))
-
 describe('Submissions Mutations', () => {
   hasPassedLesson.mockResolvedValue(true)
 
