@@ -55,28 +55,19 @@ const mockAddCommentArgs = {
 const mockCtx = { req: { user: { id: 1 } } }
 describe('Add comment resolver', () => {
   test('should invoke prismaMock create', () => {
-    prismaMock.comment.create.mockResolvedValue({
-      authorId: 1,
-      content: 'testing',
-      createdAt: '2021-05-11T18:04:47.698Z',
-      fileName: 'testFile.js',
-      id: 2,
-      line: 1,
-      submissionId: 1
-    })
-    expect(addComment({}, mockAddCommentArgs, mockCtx)).resolves.toEqual({
-      authorId: 1,
-      content: 'testing',
-      createdAt: '2021-05-11T18:04:47.698Z',
-      fileName: 'testFile.js',
-      id: 2,
-      line: 1,
-      submissionId: 1
-    })
+    const mockCommentCreate = {
+      author: authorMock,
+      submission: submissionMock,
+      ...mockAddCommentArgs
+    }
+    prismaMock.comment.create.mockResolvedValue(mockCommentCreate)
+    expect(addComment({}, mockAddCommentArgs, mockCtx)).resolves.toEqual(
+      mockCommentCreate
+    )
   })
   test('should throw error if no user.id in context', () => {
     expect(addComment({}, mockAddCommentArgs, { req: {} })).rejects.toEqual(
-      'No authorId field'
+      new Error('No authorId field')
     )
   })
 })
