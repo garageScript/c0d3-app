@@ -26,7 +26,7 @@ type Props = {
       | null,
     e: { name: string; content: string } | null
   ) => void
-  module?: Module | undefined
+  module?: Module
 }
 
 enum Error {
