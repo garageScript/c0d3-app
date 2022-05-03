@@ -11,13 +11,21 @@ import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from '../../../scss/adminModuleInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
 import { get } from 'lodash'
-import { RefetchQueriesFunction, ApolloError } from '@apollo/client'
+import {
+  ApolloError,
+  OperationVariables,
+  ApolloQueryResult
+} from '@apollo/client'
 
 type Module = { id: number; name: string; content: string }
 
 type Props = {
   lessonId: number
-  refetch: RefetchQueriesFunction
+  refetch: (variables?: Partial<OperationVariables> | undefined) => Promise<
+    ApolloQueryResult<{
+      modules: Module[]
+    }>
+  >
   title?: string
   onAddModule?: (
     m:
