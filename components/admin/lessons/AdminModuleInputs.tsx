@@ -63,22 +63,17 @@ const AdminModuleInputs = ({
     [module]
   )
 
+  const mutationVariables = {
+    content: content.value,
+    lessonId,
+    name: name.value
+  }
+
   const [moduleMutation, { data, error, loading }] = module
     ? useUpdateModuleMutation({
-        variables: {
-          id: module.id,
-          content: content.value,
-          lessonId,
-          name: name.value
-        }
+        variables: { ...mutationVariables, id: module.id }
       })
-    : useAddModuleMutation({
-        variables: {
-          content: content.value,
-          lessonId,
-          name: name.value
-        }
-      })
+    : useAddModuleMutation({ variables: mutationVariables })
 
   const [errorMsg, setErrorMsg] = useState(error?.message || '')
 
