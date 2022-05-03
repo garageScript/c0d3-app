@@ -3,16 +3,23 @@
  */
 
 jest.mock('./discordBot')
+
+import {
+  C0D3_ICON_URL,
+  CURRICULUM_URL,
+  getLessonCoverPNG,
+  PROFILE_URL
+} from '../constants'
 import { SubmissionStatus } from '../graphql'
 import prismaMock from '../__tests__/utils/prismaMock'
-import { sendLessonChannelMessage } from './discordBot'
+import { sendDirectMessage, sendLessonChannelMessage } from './discordBot'
 import { updateSubmission } from './updateSubmission'
 
 const lessonMock = {
   id: 1,
   order: 1,
   title: 'Fake Lesson Title',
-  chatUrl: 'https://fake.com/js0-fake'
+  slug: 'js1'
 }
 
 const userMock = {
@@ -29,17 +36,53 @@ const submission = {
   lessonId: 1
 }
 
+const reviewerMock = {
+  name: 'Leet Coder',
+  email: 'fake@email.com',
+  username: 'leetcoder'
+}
+
 const submissionMock = {
   ...submission,
   challenge: {
     id: 1,
     title: 'Fake challenge'
   },
-  reviewer: {
-    email: 'fake@email.com',
-    username: 'leetcoder'
-  }
+  reviewer: reviewerMock,
+  user: userMock,
+  lesson: lessonMock
 }
+
+const getNotificationEmbedMock = (
+  submission,
+  reviewerString,
+  comment = null
+) => ({
+  color: '#5440d8',
+  title: 'Submission Reviewed',
+  url: `${CURRICULUM_URL}/js1`,
+  thumbnail: {
+    url: getLessonCoverPNG(1)
+  },
+  author: {
+    name: 'Leet Coder',
+    url: `${PROFILE_URL}/leetcoder`,
+    icon_url: C0D3_ICON_URL
+  },
+  description: `${reviewerString} reviewed your submission to the challenge **Fake challenge**, they _**${
+    submission.status === SubmissionStatus.Passed
+      ? 'accepted it!'
+      : 'requested some changes.'
+  }**_`,
+  ...(comment && {
+    fields: [
+      {
+        name: 'They left the following comment',
+        value: comment
+      }
+    ]
+  })
+})
 
 describe('updateSubmission', () => {
   beforeEach(() => {
@@ -47,8 +90,6 @@ describe('updateSubmission', () => {
     prismaMock.submission.update.mockImplementation(args =>
       Promise.resolve({
         ...submissionMock,
-        lesson: lessonMock,
-        user: userMock,
         ...args.data
       })
     )
@@ -63,7 +104,7 @@ describe('updateSubmission', () => {
     await expect(updateSubmission(submission)).resolves.toEqual(submissionMock)
   })
 
-  it('should update user lesson if student has completed it and notify on discord', async () => {
+  it('should update user lesson if student has completed it', async () => {
     prismaMock.userLesson.upsert.mockResolvedValue({
       passedAt: null
     })
@@ -78,31 +119,179 @@ describe('updateSubmission', () => {
     )
 
     expect(sendLessonChannelMessage).toHaveBeenCalledTimes(2)
-    expect(sendLessonChannelMessage).toHaveBeenCalledWith(
+    expect(sendLessonChannelMessage).toHaveBeenNthCalledWith(
+      1,
       submissionMock.lessonId,
-      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_** ! **fakeusername** is now a guardian angel for the students in this channel.'
+      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_** ! They are now a guardian angel for the students in this channel.'
     )
-    expect(sendLessonChannelMessage).toHaveBeenCalledWith(
+    expect(sendLessonChannelMessage).toHaveBeenNthCalledWith(
+      2,
       nextLesson.id,
       'We have a new student joining us! **fakeusername** just completed **_Fake Lesson Title_** !'
     )
   })
 
-  it('should not notify next lesson if does not exist', async () => {
-    prismaMock.userLesson.upsert.mockResolvedValue({
-      passedAt: null
+  describe('should send required messages to discord', () => {
+    it("should notify the lesson's channel of new submission", async () => {
+      prismaMock.userLesson.upsert.mockResolvedValue({
+        passedAt: null
+      })
+
+      await updateSubmission(submission)
+
+      expect(sendLessonChannelMessage).toHaveBeenCalledWith(
+        submissionMock.lessonId,
+        'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_** ! They are now a guardian angel for the students in this channel.'
+      )
     })
 
-    // mock next lesson
-    prismaMock.lesson.findFirst.mockResolvedValue(null)
+    it("should notify the next lesson's channel too channel if it exists", async () => {
+      prismaMock.userLesson.upsert.mockResolvedValue({
+        passedAt: null
+      })
 
-    await updateSubmission(submission)
+      // mock next lesson
+      const nextLesson = { order: 2, id: 2 }
+      prismaMock.lesson.findFirst.mockResolvedValue(nextLesson)
 
-    expect(sendLessonChannelMessage).toHaveBeenCalledTimes(1)
-    expect(sendLessonChannelMessage).toHaveBeenCalledWith(
-      submissionMock.lessonId,
-      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_** ! **fakeusername** is now a guardian angel for the students in this channel.'
-    )
+      await updateSubmission(submission)
+
+      expect(sendLessonChannelMessage).toHaveBeenCalledTimes(2)
+      expect(sendLessonChannelMessage.mock.calls[1]).toEqual([
+        nextLesson.id,
+        'We have a new student joining us! **fakeusername** just completed **_Fake Lesson Title_** !'
+      ])
+    })
+
+    describe('if user has their discord account connected', () => {
+      it("should notify the lesson's channel of new submission", async () => {
+        prismaMock.submission.update.mockImplementation(args =>
+          Promise.resolve({
+            ...submissionMock,
+            user: { ...userMock, discordId: 'fakeId' },
+            ...args.data
+          })
+        )
+
+        prismaMock.userLesson.upsert.mockResolvedValue({
+          passedAt: null
+        })
+
+        await updateSubmission(submission)
+
+        expect(sendLessonChannelMessage).toHaveBeenCalledWith(
+          submissionMock.lessonId,
+          'Congratulations to <@fakeId> for passing and completing **_Fake Lesson Title_** ! They are now a guardian angel for the students in this channel.'
+        )
+      })
+
+      it('should message user their submission status if accepted', async () => {
+        prismaMock.submission.update.mockImplementation(args =>
+          Promise.resolve({
+            ...submissionMock,
+            user: { ...userMock, discordId: 'fakeId' },
+            ...args.data
+          })
+        )
+
+        await updateSubmission(submission)
+
+        expect(sendDirectMessage).toHaveBeenCalledWith(
+          'fakeId',
+          '',
+          getNotificationEmbedMock(submission, '**leetcoder**', 'fake comment')
+        )
+      })
+
+      it('should message user their submission status if rejected', async () => {
+        prismaMock.submission.update.mockImplementation(args =>
+          Promise.resolve({
+            ...submissionMock,
+            status: SubmissionStatus.NeedMoreWork,
+            user: { ...userMock, discordId: 'fakeId' },
+            ...args.data
+          })
+        )
+
+        await updateSubmission({
+          ...submission,
+          status: SubmissionStatus.NeedMoreWork
+        })
+
+        expect(sendDirectMessage).toHaveBeenCalledWith(
+          'fakeId',
+          '',
+          getNotificationEmbedMock(
+            { ...submission, status: SubmissionStatus.NeedMoreWork },
+            '**leetcoder**',
+            'fake comment'
+          )
+        )
+      })
+
+      it('should not include a comment field in the message to user if there is no comment', async () => {
+        prismaMock.submission.update.mockImplementation(args =>
+          Promise.resolve({
+            ...submissionMock,
+            comment: null,
+            user: { ...userMock, discordId: 'fakeId' },
+            ...args.data
+          })
+        )
+
+        await updateSubmission({ ...submission, comment: null })
+
+        expect(sendDirectMessage).toHaveBeenCalledWith(
+          'fakeId',
+          '',
+          getNotificationEmbedMock(
+            { ...submission, comment: null },
+            '**leetcoder**'
+          )
+        )
+      })
+
+      it("should mention the reviewer's discord id if their discord is connected", async () => {
+        prismaMock.submission.update.mockImplementation(args =>
+          Promise.resolve({
+            ...submissionMock,
+            user: { ...userMock, discordId: 'fakeId' },
+            reviewer: { ...reviewerMock, discordId: 'fakeReviewerId' },
+            ...args.data
+          })
+        )
+
+        await updateSubmission(submission)
+
+        expect(sendDirectMessage).toHaveBeenCalledWith(
+          'fakeId',
+          '',
+          getNotificationEmbedMock(
+            submission,
+            '<@fakeReviewerId>',
+            'fake comment'
+          )
+        )
+      })
+
+      it("should mention the reviewer's c0d3 username if their discord is not connected", async () => {
+        prismaMock.submission.update.mockImplementation(args =>
+          Promise.resolve({
+            ...submissionMock,
+            user: { ...userMock, discordId: 'fakeId' },
+            ...args.data
+          })
+        )
+
+        await updateSubmission(submission)
+
+        expect(sendDirectMessage).toHaveBeenCalledWith(
+          'fakeId',
+          '',
+          getNotificationEmbedMock(submission, '**leetcoder**', 'fake comment')
+        )
+      })
+    })
   })
 
   it('should throw error Invalid args', async () => {
