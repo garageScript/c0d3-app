@@ -1,8 +1,12 @@
-import { RefetchQueriesFunction } from '@apollo/client'
+import {
+  ApolloQueryResult,
+  OperationVariables,
+  RefetchQueriesFunction
+} from '@apollo/client'
 import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
 import AdminModuleInputs from '../../components/admin/lessons/AdminModuleInputs'
-import { AddModuleDocument } from '../../graphql'
+import { AddModuleDocument, Module } from '../../graphql'
 import '../../__mocks__/matchMedia.mock'
 
 export default {
@@ -56,7 +60,15 @@ export const Basic = () => (
       <AdminModuleInputs
         lessonId={lesson.id}
         title={lesson.title}
-        refetch={(() => {}) as RefetchQueriesFunction}
+        refetch={
+          (() => {}) as (
+            variables?: Partial<OperationVariables> | undefined
+          ) => Promise<
+            ApolloQueryResult<{
+              modules: Module[]
+            }>
+          >
+        }
       />
     </MockedProvider>
   </>
