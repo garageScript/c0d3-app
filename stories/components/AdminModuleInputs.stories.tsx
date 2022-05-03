@@ -57,9 +57,7 @@ export const Basic = () => (
         lessonId={lesson.id}
         title={lesson.title}
         refetch={
-          (() => {}) as (
-            variables?: Partial<OperationVariables> | undefined
-          ) => Promise<
+          (() => {}) as (variables?: Partial<OperationVariables>) => Promise<
             ApolloQueryResult<{
               modules: Module[]
             }>
