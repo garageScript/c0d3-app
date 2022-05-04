@@ -1,5 +1,4 @@
 import React from 'react'
-import jest from 'jest-mock'
 import DiscordBar from '../../components/DiscordBar'
 import fetchMock from 'fetch-mock'
 
