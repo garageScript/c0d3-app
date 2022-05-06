@@ -1,0 +1,41 @@
+@use '_variables.module';
+
+@mixin message($bg, $color) {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  background: #ffbbc1;
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: 8px;
+  background-color: rgba($color: $bg, $alpha: 0.2);
+
+  @if $color {
+    color: $color;
+  } @else {
+    color: $bg;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.success {
+  // Local variable
+  $color: adjust-color(
+    $color: variables.$success,
+    $blackness: 15%
+  );
+  @include message(variables.$success, $color);
+}
+
+.error {
+  @include message(variables.$danger, variables.$danger);
+}
+
+.loading {
+  @include message(variables.$mute, variables.$mute);
+}
