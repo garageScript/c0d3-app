@@ -1,7 +1,12 @@
 // Used for Buttons text and h3 header
 @font-face {
-  font-family: 'PT MONO';
+  font-family: 'PT Mono';
   src: url('/fonts/PTMono-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'PT Mono';
+  font-weight: bold;
+  src: url('/fonts/PTMono-bold.woff') format('woff');
 }
 
 // Used for code
