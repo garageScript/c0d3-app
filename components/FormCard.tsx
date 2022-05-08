@@ -12,6 +12,8 @@ export const TEXT_AREA = 'TEXT_AREA'
 
 export const MD_INPUT = 'MD_INPUT'
 
+export type TextField = Omit<Option, 'value'> & { value: string }
+
 export type Option = {
   title: string
   type?: string
