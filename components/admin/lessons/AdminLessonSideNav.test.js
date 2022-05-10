@@ -119,7 +119,7 @@ describe('AdminLessonSideNav component', () => {
         lessonId={1}
         items={items}
         active={active}
-        setActive={setActive}
+        onClick={item => setActive(item.id)}
       />
     )
 
