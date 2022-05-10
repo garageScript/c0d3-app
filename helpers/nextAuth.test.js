@@ -2,13 +2,14 @@ jest.mock('./discordAuth.ts')
 jest.mock('./middleware/user')
 jest.mock('./middleware/session')
 jest.mock('./middleware/logger')
+
 import { updateRefreshandAccessTokens } from './discordAuth'
 import prismaMock from '../__tests__/utils/prismaMock'
-import { signIn } from './nextAuth'
 import loggingMiddleware from './middleware/logger'
 import sessionMiddleware from './middleware/session'
 import userMiddleware from './middleware/user'
 import { getUserSession } from './getUserSession'
+import DiscordProvider from 'next-auth/providers/discord'
 
 const res = {
   setHeader: jest.fn(),
@@ -22,12 +23,35 @@ const defaultMiddleware = (_req, _res, next) => next()
 loggingMiddleware.mockImplementation(defaultMiddleware)
 sessionMiddleware.mockReturnValue(defaultMiddleware)
 
+describe('Providers', () => {
+  expect.assertions(2)
+
+  it('Should call DiscordProvider with empty clientId and clientSecret', () => {
+    const clientId = process.env.DISCORD_KEY
+    const clientSecret = process.env.DISCORD_SECRET
+
+    // Used delete because (= undefined) set its value to "undefined"
+    delete process.env.DISCORD_KEY
+    delete process.env.DISCORD_SECRET
+
+    const { providers } = require('./nextAuth')
+
+    expect(providers[0].options.clientId).toBe('')
+    expect(providers[0].options.clientSecret).toBe('')
+
+    process.env.DISCORD_KEY = clientId
+    process.env.DISCORD_SECRET = clientSecret
+  })
+})
+
 describe('Signin callback', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
   it('Should return true when provider is not discord', async () => {
     expect.assertions(1)
+
+    const { signIn } = require('./nextAuth')
     const signInCallback = signIn(req, res)
 
     const value = await signInCallback({
@@ -53,6 +77,7 @@ describe('Signin callback', () => {
         next()
       })
 
+      const { signIn } = require('./nextAuth')
       const signInCallback = signIn(req, res)
 
       const value = await signInCallback({
@@ -82,6 +107,7 @@ describe('Signin callback', () => {
 
       const reqCopy = { ...req, session: { userId: null } }
 
+      const { signIn } = require('./nextAuth')
       const signInCallback = signIn(reqCopy, res)
 
       const value = await signInCallback({
@@ -108,6 +134,7 @@ describe('Signin callback', () => {
 
       const reqCopy = { ...req, session: { userId: null } }
 
+      const { signIn } = require('./nextAuth')
       const signInCallback = signIn(reqCopy, res)
 
       const value = await signInCallback({
