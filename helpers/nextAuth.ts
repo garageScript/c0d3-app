@@ -9,8 +9,8 @@ import prisma from '../prisma'
 
 export const providers = [
   DiscordProvider({
-    clientId: process.env.DISCORD_KEY,
-    clientSecret: process.env.DISCORD_SECRET
+    clientId: process.env.DISCORD_KEY || '',
+    clientSecret: process.env.DISCORD_SECRET || ''
   })
 ]
 
