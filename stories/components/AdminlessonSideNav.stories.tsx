@@ -37,6 +37,7 @@ const items = [
 
 export const Basic = () => {
   const [active, setActive] = useState(0)
+  const onClick = (item: { id: number }) => setActive(item.id)
 
   return (
     <AdminLessonSideNav
@@ -45,27 +46,39 @@ export const Basic = () => {
       lessonId={1}
       onAddItem={() => {}}
       active={active}
-      setActive={setActive}
+      onClick={onClick}
     />
   )
 }
 
-export const Loading = () => (
-  <AdminLessonSideNav
-    items={undefined}
-    title={'modules'}
-    lessonId={1}
-    onAddItem={() => {}}
-    loading={true}
-  />
-)
+export const Loading = () => {
+  const [_, setActive] = useState(0)
+  const onClick = (item: { id: number }) => setActive(item.id)
 
-export const Error = () => (
-  <AdminLessonSideNav
-    items={undefined}
-    title={'modules'}
-    lessonId={1}
-    onAddItem={() => {}}
-    error={{} as ApolloError}
-  />
-)
+  return (
+    <AdminLessonSideNav
+      items={undefined}
+      title={'modules'}
+      lessonId={1}
+      onAddItem={() => {}}
+      loading={true}
+      onClick={onClick}
+    />
+  )
+}
+
+export const Error = () => {
+  const [_, setActive] = useState(0)
+  const onClick = (item: { id: number }) => setActive(item.id)
+
+  return (
+    <AdminLessonSideNav
+      items={undefined}
+      title={'modules'}
+      lessonId={1}
+      onAddItem={() => {}}
+      error={{} as ApolloError}
+      onClick={onClick}
+    />
+  )
+}
