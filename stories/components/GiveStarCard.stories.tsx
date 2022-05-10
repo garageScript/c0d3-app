@@ -20,7 +20,7 @@ const mocks = Array(30).fill({
   }
 })
 mocks.push({
-  request: { query: GET_LESSON_MENTORS, variables: { lessonId: '4' } },
+  request: { query: GET_LESSON_MENTORS, variables: { lessonId: 4 } },
   result: {
     data: { getLessonMentors: lessonMentorsData }
   }
