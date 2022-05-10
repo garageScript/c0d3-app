@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ApolloError } from '@apollo/client'
 import { AlertFillIcon, ChevronRightIcon } from '@primer/octicons-react'
 import { isNumber } from 'lodash'
@@ -22,8 +22,8 @@ type Props = {
   onAddItem: (m: Item | undefined) => void
   loading?: boolean
   error?: ApolloError
-  setActive?: React.Dispatch<React.SetStateAction<number>>
   active?: number
+  onClick: (item: Item) => void
 }
 
 const AdminLessonSideNav = ({
@@ -31,13 +31,11 @@ const AdminLessonSideNav = ({
   onAddItem,
   loading,
   error,
-  setActive,
   active,
   title,
-  lessonId
+  lessonId,
+  onClick
 }: Props) => {
-  const setAsActive = (id: number) => setActive && setActive(id)
-
   const itemsList =
     items &&
     items.reduce((acc: JSX.Element[], item) => {
@@ -52,11 +50,7 @@ const AdminLessonSideNav = ({
         const withChevron = !isActive && <ChevronRightIcon size={16} />
 
         acc.push(
-          <li
-            className={className}
-            key={item.id}
-            onClick={() => setAsActive(item.id)}
-          >
+          <li className={className} key={item.id} onClick={() => onClick(item)}>
             <span>{item.name}</span>
             {withChevron}
           </li>
@@ -65,8 +59,6 @@ const AdminLessonSideNav = ({
 
       return acc
     }, [])
-
-  useEffect(() => setActive && setActive(-1), [lessonId])
 
   const renderItems = () => {
     if (error) {
