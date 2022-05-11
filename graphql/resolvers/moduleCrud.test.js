@@ -85,15 +85,15 @@ describe('It should add modules', () => {
 
 describe('It should update a module', () => {
   test('should update a module ', async () => {
-    const module = {
+    const moduleObj = {
       lessonId: 1,
       name: 'Math',
       content: 'Teaches Math'
     }
 
-    prismaMock.module.update.mockResolvedValue(module)
+    prismaMock.module.update.mockResolvedValue(moduleObj)
 
-    await expect(updateModule({}, module, ctx)).resolves.toEqual({
+    await expect(updateModule({}, moduleObj, ctx)).resolves.toEqual({
       lessonId: 1,
       name: 'Math',
       content: 'Teaches Math'
