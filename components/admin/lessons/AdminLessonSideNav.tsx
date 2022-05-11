@@ -1,8 +1,6 @@
 import React from 'react'
-import { ApolloError } from '@apollo/client'
 import { AlertFillIcon, ChevronRightIcon } from '@primer/octicons-react'
 import { isNumber } from 'lodash'
-import { Spinner } from 'react-bootstrap'
 import { get } from 'lodash'
 import styles from '../../../scss/adminLessonSideNav.module.scss'
 
@@ -16,114 +14,65 @@ type Item = {
 type Items = Item[]
 
 type Props = {
-  items: Items | undefined
+  items: Items
   title: string
-  lessonId: number
-  onAddItem: (m: Item | undefined) => void
-  loading?: boolean
-  error?: ApolloError
-  active?: number
-  onClick: (item: Item) => void
+  onAddItem: (m?: Item) => void
+  selectedId?: number
+  onSelect: (item: Item) => void
 }
 
 const AdminLessonSideNav = ({
   items,
   onAddItem,
-  loading,
-  error,
-  active,
+  selectedId,
   title,
-  lessonId,
-  onClick
+  onSelect
 }: Props) => {
-  const itemsList =
-    items &&
-    items.reduce((acc: JSX.Element[], item) => {
-      if (item.lesson.id === lessonId) {
-        const isActive = active === item.id
-        const className =
-          styles[
-            isActive
-              ? 'container__modulesList__module--active'
-              : 'container__modulesList__module'
-          ]
-        const withChevron = !isActive && <ChevronRightIcon size={16} />
-
-        acc.push(
-          <li className={className} key={item.id} onClick={() => onClick(item)}>
-            <span>{item.name}</span>
-            {withChevron}
-          </li>
-        )
-      }
-
-      return acc
-    }, [])
-
-  const renderItems = () => {
-    if (error) {
-      return (
-        <div className={styles.container__error}>
-          <AlertFillIcon />
-          <span className={styles.container__heading}>
-            Failed to get the modules
-          </span>
-        </div>
-      )
-    }
-
-    if (loading || lessonId < 0) {
-      return (
-        <>
-          <span className={styles.container__heading}>Existing {title}</span>
-          <ol
-            className={`${styles.container__modulesList} ${styles['container__modulesList--loading']}`}
-          >
-            <Spinner animation={'border'} role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          </ol>
-          <button className={styles['container--button']}>
-            ADD NEW MODULE
-          </button>
-        </>
-      )
-    }
-
-    const onClick = () => isNumber(active) && onAddItem(get(items, active))
-
-    if (get(itemsList, 'length')) {
-      return (
-        <>
-          <span className={styles.container__heading}>Existing {title}</span>
-          <ol className={styles.container__modulesList}>{itemsList}</ol>
-          <button onClick={onClick} className={styles['container--button']}>
-            ADD NEW MODULE
-          </button>
-        </>
-      )
-    }
+  const itemsList = items.map(item => {
+    const isActive = selectedId === item.id
+    const className =
+      styles[
+        isActive
+          ? 'container__modulesList__module--active'
+          : 'container__modulesList__module'
+      ]
+    const withChevron = !isActive && <ChevronRightIcon size={16} />
 
     return (
-      <>
-        <span className={styles.container__heading}>Existing {title}</span>
-        <ol className={styles.container__modulesList}>
+      <li className={className} key={item.id} onClick={() => onSelect(item)}>
+        <span>{item.name}</span>
+        {withChevron}
+      </li>
+    )
+  })
+
+  // Used isNumber to treat zeros as truthy values
+  const onAddNewModuleClick = () =>
+    isNumber(selectedId) && onAddItem(get(items, selectedId))
+
+  return (
+    <div className={styles.container}>
+      <span className={styles.container__heading}>Existing {title}</span>
+      <ol className={styles.container__modulesList}>
+        {itemsList.length ? (
+          itemsList
+        ) : (
           <div className={styles.container__error}>
             <AlertFillIcon />
             <span className={styles.container__heading}>
               No modules in this lesson
             </span>
           </div>
-        </ol>
-
-        <button onClick={onClick} className={styles['container--button']}>
-          ADD NEW MODULE
-        </button>
-      </>
-    )
-  }
-
-  return <div className={styles.container}>{renderItems()}</div>
+        )}
+      </ol>
+      <button
+        onClick={onAddNewModuleClick}
+        className={styles['container--button']}
+      >
+        ADD NEW MODULE
+      </button>
+    </div>
+  )
 }
 
 export default AdminLessonSideNav
