@@ -8,6 +8,7 @@ import {
   C0D3_ICON_URL,
   CURRICULUM_URL,
   getLessonCoverPNG,
+  PRIMARY_COLOR_HEX,
   PROFILE_URL
 } from '../constants'
 import { SubmissionStatus } from '../graphql'
@@ -58,7 +59,7 @@ const getNotificationEmbedMock = (
   reviewerString,
   comment = null
 ) => ({
-  color: '#5440d8',
+  color: PRIMARY_COLOR_HEX,
   title: 'Submission Reviewed',
   url: `${CURRICULUM_URL}/js1`,
   thumbnail: {

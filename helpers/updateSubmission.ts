@@ -12,6 +12,7 @@ import {
   C0D3_ICON_URL,
   CURRICULUM_URL,
   getLessonCoverPNG,
+  PRIMARY_COLOR_HEX,
   PROFILE_URL
 } from '../constants'
 
@@ -120,7 +121,7 @@ export const updateSubmission = async (
   if (user.discordId && reviewer) {
     const reviewerString = getDiscordMessageUserIdString(reviewer)
     const reviewNotificationEmbed: MessageEmbedOptions = {
-      color: '#5440d8',
+      color: PRIMARY_COLOR_HEX,
       title: 'Submission Reviewed',
       url: `${CURRICULUM_URL}/${lesson.slug}`,
       thumbnail: {

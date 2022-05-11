@@ -12,6 +12,7 @@ import {
   C0D3_ICON_URL,
   CURRICULUM_URL,
   getLessonCoverPNG,
+  PRIMARY_COLOR_HEX,
   PROFILE_URL
 } from '../../constants'
 import { getDiscordMessageUserIdString } from '../../helpers/getDiscordMessageUserIdString'
@@ -97,7 +98,7 @@ describe('Should send required discord notifications', () => {
     })
     await addComment({}, mockAddCommentArgs, mockCtx)
     const mockEmbed = {
-      color: '#5440d8',
+      color: PRIMARY_COLOR_HEX,
       title: 'New comment on submission',
       url: `${CURRICULUM_URL}/${submissionMock.lesson.slug}`,
       thumbnail: {
@@ -145,7 +146,7 @@ describe('Should send required discord notifications', () => {
       mockCtx
     )
     const mockEmbed = {
-      color: '#5440d8',
+      color: PRIMARY_COLOR_HEX,
       title: 'New comment on submission',
       url: `${CURRICULUM_URL}/${submissionMock.lesson.slug}`,
       thumbnail: {
