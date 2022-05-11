@@ -31,6 +31,8 @@ const items = [
   }
 ]
 
+const filteredItems = items.filter(item => item.lesson.id === 1)
+
 describe('AdminLessonSideNav component', () => {
   it('Should display the items', () => {
     expect.assertions(1)
@@ -44,65 +46,16 @@ describe('AdminLessonSideNav component', () => {
     expect.assertions(1)
 
     render(
-      <AdminLessonSideNav
-        title="modules"
-        lessonId={1}
-        items={items}
-        active={0}
-      />
+      <AdminLessonSideNav title="modules" items={filteredItems} active={0} />
     )
 
     expect(screen.getByText('First module')).toBeInTheDocument()
   })
 
-  it('Should display error', () => {
-    expect.assertions(1)
-
-    render(
-      <AdminLessonSideNav
-        title="modules"
-        lessonId={1}
-        items={items}
-        error={{}}
-      />
-    )
-
-    expect(screen.getByText('Failed to get the modules')).toBeInTheDocument()
-  })
-
-  it('Should display loading if loading prop is true', () => {
-    expect.assertions(1)
-
-    render(
-      <AdminLessonSideNav
-        title="modules"
-        lessonId={1}
-        items={items}
-        loading={true}
-      />
-    )
-
-    expect(screen.getByRole('status')).toBeInTheDocument()
-  })
-
-  it('Should display loading if lessonId is less than 0', () => {
-    expect.assertions(1)
-
-    render(<AdminLessonSideNav title="modules" lessonId={-1} items={items} />)
-
-    expect(screen.getByRole('status')).toBeInTheDocument()
-  })
-
   it('Should display a message if there is no modules', () => {
     expect.assertions(1)
 
-    render(
-      <AdminLessonSideNav
-        title="modules"
-        lessonId={1}
-        items={items.map(item => ({ ...item, lesson: { id: 0 } }))}
-      />
-    )
+    render(<AdminLessonSideNav title="modules" items={[]} />)
 
     expect(screen.getByText('No modules in this lesson')).toBeInTheDocument()
   })
@@ -116,10 +69,9 @@ describe('AdminLessonSideNav component', () => {
     render(
       <AdminLessonSideNav
         title="modules"
-        lessonId={1}
-        items={items}
-        active={active}
-        onClick={item => setActive(item.id)}
+        items={filteredItems}
+        selectedId={active}
+        onSelect={item => setActive(item.id)}
       />
     )
 
@@ -136,10 +88,9 @@ describe('AdminLessonSideNav component', () => {
     render(
       <AdminLessonSideNav
         title="modules"
-        lessonId={1}
-        items={items}
+        items={filteredItems}
         onAddItem={onAddItem}
-        active={0}
+        selectedId={0}
       />
     )
 
