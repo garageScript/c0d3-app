@@ -1,4 +1,3 @@
-import { ApolloError } from '@apollo/client'
 import { useState } from '@storybook/addons'
 import React from 'react'
 import AdminLessonSideNav from '../../components/admin/lessons/AdminLessonSideNav'
@@ -36,49 +35,16 @@ const items = [
 ]
 
 export const Basic = () => {
-  const [active, setActive] = useState(0)
-  const onClick = (item: { id: number }) => setActive(item.id)
+  const [selectedId, setSelectedId] = useState(0)
+  const onSelect = (item: { id: number }) => setSelectedId(item.id)
 
   return (
     <AdminLessonSideNav
       items={items}
       title={'modules'}
-      lessonId={1}
       onAddItem={() => {}}
-      active={active}
-      onClick={onClick}
-    />
-  )
-}
-
-export const Loading = () => {
-  const [_, setActive] = useState(0)
-  const onClick = (item: { id: number }) => setActive(item.id)
-
-  return (
-    <AdminLessonSideNav
-      items={undefined}
-      title={'modules'}
-      lessonId={1}
-      onAddItem={() => {}}
-      loading={true}
-      onClick={onClick}
-    />
-  )
-}
-
-export const Error = () => {
-  const [_, setActive] = useState(0)
-  const onClick = (item: { id: number }) => setActive(item.id)
-
-  return (
-    <AdminLessonSideNav
-      items={undefined}
-      title={'modules'}
-      lessonId={1}
-      onAddItem={() => {}}
-      error={{} as ApolloError}
-      onClick={onClick}
+      selectedId={selectedId}
+      onSelect={onSelect}
     />
   )
 }
