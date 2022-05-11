@@ -17,19 +17,19 @@ type Props = {
   items: Items
   title: string
   onAddItem: (m?: Item) => void
-  selectedId?: number
+  selectedIndex?: number
   onSelect: (item: Item) => void
 }
 
 const AdminLessonSideNav = ({
   items,
   onAddItem,
-  selectedId,
+  selectedIndex,
   title,
   onSelect
 }: Props) => {
   const itemsList = items.map(item => {
-    const isActive = selectedId === item.id
+    const isActive = selectedIndex === item.id
     const className =
       styles[
         isActive
@@ -48,7 +48,7 @@ const AdminLessonSideNav = ({
 
   // Used isNumber to treat zeros as truthy values
   const onAddNewModuleClick = () =>
-    isNumber(selectedId) && onAddItem(get(items, selectedId))
+    isNumber(selectedIndex) && onAddItem(get(items, selectedIndex))
 
   return (
     <div className={styles.container}>

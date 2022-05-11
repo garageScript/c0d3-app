@@ -37,7 +37,7 @@ describe('AdminLessonSideNav component', () => {
   it('Should display the items', () => {
     expect.assertions(1)
 
-    render(<AdminLessonSideNav title="modules" lessonId={1} items={items} />)
+    render(<AdminLessonSideNav title="modules" items={items} />)
 
     expect(screen.getByText('First module')).toBeInTheDocument()
   })
@@ -46,7 +46,11 @@ describe('AdminLessonSideNav component', () => {
     expect.assertions(1)
 
     render(
-      <AdminLessonSideNav title="modules" items={filteredItems} active={0} />
+      <AdminLessonSideNav
+        title="modules"
+        items={filteredItems}
+        selectedIndex={0}
+      />
     )
 
     expect(screen.getByText('First module')).toBeInTheDocument()
@@ -70,7 +74,7 @@ describe('AdminLessonSideNav component', () => {
       <AdminLessonSideNav
         title="modules"
         items={filteredItems}
-        selectedId={active}
+        selectedIndex={active}
         onSelect={item => setActive(item.id)}
       />
     )
@@ -90,7 +94,7 @@ describe('AdminLessonSideNav component', () => {
         title="modules"
         items={filteredItems}
         onAddItem={onAddItem}
-        selectedId={0}
+        selectedIndex={0}
       />
     )
 

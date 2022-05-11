@@ -35,15 +35,15 @@ const items = [
 ]
 
 export const Basic = () => {
-  const [selectedId, setSelectedId] = useState(0)
-  const onSelect = (item: { id: number }) => setSelectedId(item.id)
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const onSelect = (item: { id: number }) => setSelectedIndex(item.id)
 
   return (
     <AdminLessonSideNav
       items={items}
       title={'modules'}
       onAddItem={() => {}}
-      selectedId={selectedId}
+      selectedIndex={selectedIndex}
       onSelect={onSelect}
     />
   )
