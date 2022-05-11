@@ -10,6 +10,9 @@ export const DISCORD_PATH = 'https://discord.gg/c0d3'
 export const LOGIN_PATH = '/login'
 export const SIGNUP_PATH = '/signup'
 
+// Color
+export const PRIMARY_COLOR_HEX = '#5440d8'
+
 // URL Constants
 export const DEPLOYMENT_URL = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`

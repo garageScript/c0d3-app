@@ -8,6 +8,7 @@ import {
   C0D3_ICON_URL,
   CURRICULUM_URL,
   getLessonCoverPNG,
+  PRIMARY_COLOR_HEX,
   PROFILE_URL
 } from '../../constants'
 
@@ -57,7 +58,7 @@ export const addComment = async (
 
   if (author.id !== submission.user.id && submission.user.discordId) {
     const notificationEmbed: MessageEmbedOptions = {
-      color: '#5440d8',
+      color: PRIMARY_COLOR_HEX,
       title: 'New comment on submission',
       url: `${CURRICULUM_URL}/${submission.lesson.slug}`,
       thumbnail: {
