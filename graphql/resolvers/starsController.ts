@@ -5,6 +5,8 @@ import { sendLessonChannelMessage } from '../../helpers/discordBot'
 import { validateLessonId } from '../../helpers/validation/validateLessonId'
 import { validateStudentId } from '../../helpers/validation/validateStudentId'
 
+import { getDiscordMessageUserIdString } from '../../helpers/getDiscordMessageUserIdString'
+
 export const setStar = async (
   _parent: void,
   arg: SetStarMutationVariables,
@@ -33,17 +35,16 @@ export const setStar = async (
       select: {
         mentor: {
           select: {
-            username: true
+            username: true,
+            discordId: true
           }
         }
       }
     })
 
-    // TODO: Add support for discord ids when oauth implementation is complete
-
     await sendLessonChannelMessage(
       lessonId,
-      `**${mentor.username}** received a star!`
+      `${getDiscordMessageUserIdString(mentor)} received a star!`
     )
 
     return { success: true }
