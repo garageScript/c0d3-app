@@ -44,21 +44,27 @@ const removeAlertMock = {
 window.confirm = jest.fn(() => true)
 describe('Alerts page', () => {
   test('Should remove alert', async () => {
-    const { container } = render(
+    render(
       <MockedProvider addTypename={false} mocks={[getAppMock, removeAlertMock]}>
         <Alerts />
       </MockedProvider>
     )
+
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
-    expect(container).toMatchSnapshot()
+
+    expect(
+      screen.queryByText('Set up your computer to submit challenges.')
+    ).toBeTruthy()
+
     screen.getAllByRole('button', { name: 'Remove Alert' })
+
     await userEvent.click(
       screen.getAllByRole('button', { name: 'Remove Alert' })[0]
     )
-    await waitForElementToBeRemoved(() =>
+
+    expect(
       screen.queryByText('Set up your computer to submit challenges.')
-    )
-    expect(container).toMatchSnapshot()
+    ).toBeFalsy()
   })
   test('Should capture error', async () => {
     const errorMock = { ...removeAlertMock, error: new Error('fail') }

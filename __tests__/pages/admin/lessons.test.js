@@ -10,12 +10,23 @@ import {
   render,
   waitForElementToBeRemoved,
   fireEvent,
-  waitFor
+  waitFor,
+  act
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../graphql/queries/getApp'
 
 const mocks = [
+  {
+    request: { query: GET_APP },
+    result: {
+      data: {
+        session: dummySessionData,
+        lessons: dummyLessonData,
+        alerts: dummyAlertData
+      }
+    }
+  },
   {
     request: { query: GET_APP },
     result: {
@@ -36,6 +47,10 @@ describe('Users test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
+
+    // Used to wait for the query response to arrive
+    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
+
     await waitFor(() => expect(container).toMatchSnapshot())
     const searchByName = getByText('Objects')
     fireEvent.click(searchByName)
