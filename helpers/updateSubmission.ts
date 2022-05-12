@@ -5,7 +5,16 @@ import {
   SubmissionStatus
 } from '../graphql'
 import prisma from '../prisma'
-import { sendLessonChannelMessage } from './discordBot'
+import { sendDirectMessage, sendLessonChannelMessage } from './discordBot'
+import { getDiscordMessageUserIdString } from './getDiscordMessageUserIdString'
+import { MessageEmbedOptions } from 'discord.js'
+import {
+  C0D3_ICON_URL,
+  CURRICULUM_URL,
+  getLessonCoverPNG,
+  PRIMARY_COLOR_HEX,
+  PROFILE_URL
+} from '../constants'
 
 type ArgsUpdateSubmission = (
   | MutationAcceptSubmissionArgs
@@ -20,7 +29,7 @@ export const updateSubmission = async (
 ): Promise<Submission> => {
   if (!args) throw new Error('Invalid args')
   const { id, comment, status, reviewerId, lessonId } = args
-  const { user, lesson, ...submission } = await prisma.submission.update({
+  const submission = await prisma.submission.update({
     where: { id },
     data: {
       reviewerId,
@@ -34,6 +43,8 @@ export const updateSubmission = async (
       lesson: true
     }
   })
+
+  const { user, lesson, reviewer, challenge } = submission
 
   const [lessonChallengeCount, passedLessonSubmissions, userLesson] =
     await prisma.$transaction([
@@ -60,56 +71,90 @@ export const updateSubmission = async (
       })
     ])
 
-  // user is resubmitting to a lesson that he has already passed
-  // or user has not passed all challenges in lesson
-  // immediately return and do not proceed
-  if (
-    userLesson.passedAt ||
-    lessonChallengeCount !== passedLessonSubmissions.length
-  ) {
-    return submission
-  }
-
-  // TODO: Add support for discord ids when oauth implementation is complete
-
-  // Get next lesson
-  const nextLesson = await prisma.lesson.findFirst({
-    where: { order: lesson.order + 1 }
-  })
-
   const discordPromises = []
-  // Message in lesson channel on discord
-  discordPromises.push(
-    sendLessonChannelMessage(
-      lesson.id,
-      `Congratulations to **${user.username}** for passing and completing **_${lesson.title}_** ! **${user.username}** is now a guardian angel for the students in this channel.`
-    )
-  )
 
-  // Message in lesson channel on discord if next lesson exists
-  if (nextLesson?.id != null) {
+  // User hadn't already passed the lesson earlier,
+  // and they have passed all the challenges in the lesson.
+  if (
+    userLesson.passedAt === null &&
+    lessonChallengeCount === passedLessonSubmissions.length
+  ) {
+    // Get next lesson
+    const nextLessonPromise = prisma.lesson.findFirst({
+      where: { order: lesson.order + 1 }
+    })
+    const userString = getDiscordMessageUserIdString(user)
+
+    // Message to lesson channel on discord
     discordPromises.push(
-      await sendLessonChannelMessage(
-        nextLesson.id,
-        `We have a new student joining us! **${user.username}** just completed **_${lesson.title}_** !`
+      sendLessonChannelMessage(
+        lesson.id,
+        `Congratulations to ${userString} for passing and completing **_${lesson.title}_** ! They are now a guardian angel for the students in this channel.`
       )
     )
+
+    const nextLesson = await nextLessonPromise
+    // Message in lesson channel on discord if next lesson exists
+    if (nextLesson?.id != null) {
+      discordPromises.push(
+        sendLessonChannelMessage(
+          nextLesson.id,
+          `We have a new student joining us! ${userString} just completed **_${lesson.title}_** !`
+        )
+      )
+    }
+
+    // update and save user lesson data
+    await prisma.userLesson.update({
+      where: {
+        lessonId_userId: {
+          lessonId,
+          userId: user.id
+        }
+      },
+      data: {
+        passedAt: new Date()
+      }
+    })
   }
 
-  await Promise.all(discordPromises)
-
-  // update and save user lesson data
-  await prisma.userLesson.update({
-    where: {
-      lessonId_userId: {
-        lessonId,
-        userId: user.id
-      }
-    },
-    data: {
-      passedAt: new Date()
+  if (user.discordId && reviewer) {
+    const reviewerString = getDiscordMessageUserIdString(reviewer)
+    const reviewNotificationEmbed: MessageEmbedOptions = {
+      color: PRIMARY_COLOR_HEX,
+      title: 'Submission Reviewed',
+      url: `${CURRICULUM_URL}/${lesson.slug}`,
+      thumbnail: {
+        url: getLessonCoverPNG(lesson.order)
+      },
+      author: {
+        name: reviewer!.name,
+        url: `${PROFILE_URL}/${reviewer!.username}`,
+        icon_url: C0D3_ICON_URL
+      },
+      description: `${reviewerString} reviewed your submission to the challenge **${
+        challenge.title
+      }**, they _**${
+        submission.status === SubmissionStatus.Passed
+          ? 'accepted it!'
+          : 'requested some changes.'
+      }**_`
     }
-  })
 
+    if (submission.comment) {
+      reviewNotificationEmbed.fields = [
+        {
+          name: 'They left the following comment',
+          value: comment
+        }
+      ]
+    }
+
+    discordPromises.push(
+      sendDirectMessage(user.discordId, '', reviewNotificationEmbed)
+    )
+  }
+
+  await Promise.allSettled(discordPromises)
   return submission
 }
