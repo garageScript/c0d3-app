@@ -107,3 +107,26 @@ export const LoggedOut: React.FC = () => {
 export const NoLayout: React.FC = () => {
   return <FakeChild />
 }
+
+export const withWhiteBg: React.FC = () => {
+  const mocks = [
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          lessons: [],
+          session: null,
+          alerts: []
+        }
+      }
+    }
+  ]
+
+  return (
+    <MockedProvider mocks={mocks} addTypename={false}>
+      <Layout bg="white">
+        <FakeChild />
+      </Layout>
+    </MockedProvider>
+  )
+}
