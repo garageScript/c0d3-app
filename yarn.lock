@@ -1797,16 +1797,16 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-apollo-client-helpers@^2.1.15":
-  version "2.1.15"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-apollo-client-helpers/-/typescript-apollo-client-helpers-2.1.15.tgz#8b1de768bd6c39c3a757f5d5b99b38016e1297af"
-  integrity sha512-XXv54LXJX1Nf51BgGS8kZ2kDeWuqdmPnXHRxOFD51vRy2brpOFML/lzSt4sW1Fwv7EBvcRI02be0sPN9ObwLgg==
+"@graphql-codegen/typescript-apollo-client-helpers@^2.1.18":
+  version "2.1.18"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-apollo-client-helpers/-/typescript-apollo-client-helpers-2.1.18.tgz#c0a38f44f10c61ceae8a63c36096b21c6ce96bc6"
+  integrity sha512-DH5hocfJFZ7UXRsozDPpzvQdi4dRJS6rzNbggRMaWXS60iR/dAdLbhtfONZOzTeCcIF+o/j1WrExEcxlV260wg==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-codegen/visitor-plugin-common" "2.7.4"
+    "@graphql-codegen/visitor-plugin-common" "2.8.0"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
-    tslib "~2.3.0"
+    tslib "~2.4.0"
 
 "@graphql-codegen/typescript-operations@^2.3.5":
   version "2.3.5"
