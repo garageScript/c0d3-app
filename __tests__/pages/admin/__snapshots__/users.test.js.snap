@@ -2,1498 +2,1514 @@
 
 exports[`Users test Should be able to switch search options 1`] = `
 <div>
-  <nav
-    class="navbar navbar navbar-expand-lg navbar-light bg-white"
-    id="appNav"
+  <main
+    class="light-gray"
   >
-    <div
-      class="container"
+    <nav
+      class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
-      <a
-        class="navbar-brand"
-        href="/"
-      >
-        <div
-          class="navbar-brand text-primary fw-bold"
-        >
-          C0D3
-          <span
-            class="isAdminBadge badge"
-          >
-             ADMIN 
-          </span>
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        class="navbar-toggler collapsed"
-        type="button"
-      >
-        <span
-          class="navbar-toggler-icon"
-        />
-      </button>
       <div
-        class="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
+        class="container"
       >
-        <div
-          class="m-auto navbar-nav"
-        >
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/curriculum"
-          >
-            Curriculum
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/docs/learn"
-          >
-            Learn
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          class="dropdown"
+        <a
+          class="navbar-brand"
+          href="/"
         >
           <div
-            class="d-none d-lg-block"
+            class="navbar-brand text-primary fw-bold"
+          >
+            C0D3
+            <span
+              class="isAdminBadge badge"
+            >
+               ADMIN 
+            </span>
+          </div>
+        </a>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="text-center navbar-collapse collapse"
+          id="basic-navbar-nav"
+        >
+          <div
+            class="m-auto navbar-nav"
+          >
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/docs/learn"
+            >
+              Learn
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://discord.gg/c0d3"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </div>
+          <div
+            class="dropdown"
           >
             <div
-              aria-expanded="false"
-              class="nav-user-toggle  dropdown-toggle"
-              id="user_nav_toggle"
+              class="d-none d-lg-block"
             >
               <div
-                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
-                A 
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
-              <span>
-                Fakeusername
-              </span>
-              <svg
-                aria-hidden="true"
-                class="octicon octicon-chevron-down"
-                fill="currentColor"
-                height="16"
-                role="img"
-                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                viewBox="0 0 16 16"
-                width="16"
+            </div>
+            <div
+              class="d-lg-none"
+            >
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <path
-                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                  fill-rule="evenodd"
-                />
-              </svg>
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
+              >
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
+              >
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
           </div>
-          <div
-            class="d-lg-none"
-          >
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/lessons"
-            >
-              Lessons
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/users"
-            >
-              Users
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/alerts"
-            >
-              Alerts
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/profile/fakeusername"
-            >
-              Profile
-            </a>
-            <a
-              class="dropdown-item  dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              role="button"
-              tabindex="0"
-            >
-              <span>
-                <div
-                  class="light-button d-inline"
-                >
-                  <button
-                    class="btn border btn-light ms-2"
-                    style="color: rgb(41, 41, 41);"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </span>
-            </a>
-          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <div
-    class="container-md"
-  >
+    </nav>
     <div
-      class="d-flex flex-column col-12"
+      class="container-md container"
     >
-      <h1
-        class="text-primary text-center fw-bold display-1"
-      >
-        Users
-      </h1>
       <div
-        class="mb-2"
+        class="d-flex flex-column col-12"
       >
-        <div
-          class="d-flex flex-row"
+        <h1
+          class="text-primary text-center fw-bold display-1"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            <label
-              for="search"
-            >
-              Search By:
-            </label>
-          </h4>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              ID
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Username
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Name
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Email
-            </button>
-          </div>
-        </div>
-      </div>
-      <input
-        class="form-control"
-        id="search"
-        type="text"
-      />
-      <div
-        class="mt-2 mb-2"
-      >
+          Users
+        </h1>
         <div
-          class="d-flex flex-row"
+          class="mb-2"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            Filter By:
-          </h4>
           <div
-            style="margin-top: -1.57px;"
+            class="d-flex flex-row"
           >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
+            <h4
+              class="text-primary fw-bold me-1"
             >
-              Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Non-Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              None
-            </button>
-          </div>
-        </div>
-      </div>
-      <table
-        class="table table-striped"
-      >
-        <thead>
-          <tr
-            class="text-center"
-          >
-            <th>
-              ID
-            </th>
-            <th>
-              Username
-            </th>
-            <th>
-              Name
-            </th>
-            <th>
-              Email
-            </th>
-            <th>
-              Admin
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              5
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
+              <label
+                for="search"
+              >
+                Search By:
+              </label>
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
             >
               <button
-                class="btn borderless btn-danger"
-                style="color: rgb(41, 41, 41);"
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
               >
-                Remove
+                ID
               </button>
-            </td>
-          </tr>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              2
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
+            </div>
+            <div
+              style="margin-top: -1.57px;"
             >
               <button
-                class="btn borderless btn-success"
-                style="color: rgb(41, 41, 41);"
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
               >
-                Add
+                Username
               </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Name
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Email
+              </button>
+            </div>
+          </div>
+        </div>
+        <input
+          class="form-control"
+          id="search"
+          type="text"
+        />
+        <div
+          class="mt-2 mb-2"
+        >
+          <div
+            class="d-flex flex-row"
+          >
+            <h4
+              class="text-primary fw-bold me-1"
+            >
+              Filter By:
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Non-Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
+              >
+                None
+              </button>
+            </div>
+          </div>
+        </div>
+        <table
+          class="table table-striped"
+        >
+          <thead>
+            <tr
+              class="text-center"
+            >
+              <th>
+                ID
+              </th>
+              <th>
+                Username
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Admin
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="text-center"
+            >
+              <td
+                class="align-middle"
+              >
+                5
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                some@mail.com
+              </td>
+              <td
+                class="align-middle"
+              >
+                <button
+                  class="btn borderless btn-danger"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="text-center"
+            >
+              <td
+                class="align-middle"
+              >
+                2
+              </td>
+              <td
+                class="align-middle"
+              >
+                newbie
+              </td>
+              <td
+                class="align-middle"
+              >
+                newbie newbie
+              </td>
+              <td
+                class="align-middle"
+              >
+                some@mail.com
+              </td>
+              <td
+                class="align-middle"
+              >
+                <button
+                  class="btn borderless btn-success"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Add
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <footer
-    class="mt-5 fw-light text-center pb-5 text-muted"
-  >
-    © Copyright 2022 GarageScript
-  </footer>
+    <footer
+      class="mt-5 fw-light text-center pb-5 text-muted"
+    >
+      © Copyright 2022 GarageScript
+    </footer>
+  </main>
 </div>
 `;
 
 exports[`Users test Should be able to switch search options 2`] = `
 <div>
-  <nav
-    class="navbar navbar navbar-expand-lg navbar-light bg-white"
-    id="appNav"
+  <main
+    class="light-gray"
   >
-    <div
-      class="container"
+    <nav
+      class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
-      <a
-        class="navbar-brand"
-        href="/"
-      >
-        <div
-          class="navbar-brand text-primary fw-bold"
-        >
-          C0D3
-          <span
-            class="isAdminBadge badge"
-          >
-             ADMIN 
-          </span>
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        class="navbar-toggler collapsed"
-        type="button"
-      >
-        <span
-          class="navbar-toggler-icon"
-        />
-      </button>
       <div
-        class="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
+        class="container"
       >
-        <div
-          class="m-auto navbar-nav"
-        >
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/curriculum"
-          >
-            Curriculum
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/docs/learn"
-          >
-            Learn
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          class="dropdown"
+        <a
+          class="navbar-brand"
+          href="/"
         >
           <div
-            class="d-none d-lg-block"
+            class="navbar-brand text-primary fw-bold"
+          >
+            C0D3
+            <span
+              class="isAdminBadge badge"
+            >
+               ADMIN 
+            </span>
+          </div>
+        </a>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="text-center navbar-collapse collapse"
+          id="basic-navbar-nav"
+        >
+          <div
+            class="m-auto navbar-nav"
+          >
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/docs/learn"
+            >
+              Learn
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://discord.gg/c0d3"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </div>
+          <div
+            class="dropdown"
           >
             <div
-              aria-expanded="false"
-              class="nav-user-toggle  dropdown-toggle"
-              id="user_nav_toggle"
+              class="d-none d-lg-block"
             >
               <div
-                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
-                A 
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
-              <span>
-                Fakeusername
-              </span>
-              <svg
-                aria-hidden="true"
-                class="octicon octicon-chevron-down"
-                fill="currentColor"
-                height="16"
-                role="img"
-                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                viewBox="0 0 16 16"
-                width="16"
+            </div>
+            <div
+              class="d-lg-none"
+            >
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <path
-                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                  fill-rule="evenodd"
-                />
-              </svg>
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
+              >
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
+              >
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
           </div>
-          <div
-            class="d-lg-none"
-          >
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/lessons"
-            >
-              Lessons
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/users"
-            >
-              Users
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/alerts"
-            >
-              Alerts
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/profile/fakeusername"
-            >
-              Profile
-            </a>
-            <a
-              class="dropdown-item  dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              role="button"
-              tabindex="0"
-            >
-              <span>
-                <div
-                  class="light-button d-inline"
-                >
-                  <button
-                    class="btn border btn-light ms-2"
-                    style="color: rgb(41, 41, 41);"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </span>
-            </a>
-          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <div
-    class="container-md"
-  >
+    </nav>
     <div
-      class="d-flex flex-column col-12"
+      class="container-md container"
     >
-      <h1
-        class="text-primary text-center fw-bold display-1"
-      >
-        Users
-      </h1>
       <div
-        class="mb-2"
+        class="d-flex flex-column col-12"
       >
-        <div
-          class="d-flex flex-row"
+        <h1
+          class="text-primary text-center fw-bold display-1"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            <label
-              for="search"
-            >
-              Search By:
-            </label>
-          </h4>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              ID
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Username
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Name
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Email
-            </button>
-          </div>
-        </div>
-      </div>
-      <input
-        class="form-control"
-        id="search"
-        type="text"
-      />
-      <div
-        class="mt-2 mb-2"
-      >
+          Users
+        </h1>
         <div
-          class="d-flex flex-row"
+          class="mb-2"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            Filter By:
-          </h4>
           <div
-            style="margin-top: -1.57px;"
+            class="d-flex flex-row"
           >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
+            <h4
+              class="text-primary fw-bold me-1"
             >
-              Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Non-Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              None
-            </button>
-          </div>
-        </div>
-      </div>
-      <table
-        class="table table-striped"
-      >
-        <thead>
-          <tr
-            class="text-center"
-          >
-            <th>
-              ID
-            </th>
-            <th>
-              Username
-            </th>
-            <th>
-              Name
-            </th>
-            <th>
-              Email
-            </th>
-            <th>
-              Admin
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              5
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
+              <label
+                for="search"
+              >
+                Search By:
+              </label>
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
             >
               <button
-                class="btn borderless btn-danger"
-                style="color: rgb(41, 41, 41);"
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
               >
-                Remove
+                ID
               </button>
-            </td>
-          </tr>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              2
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
+            </div>
+            <div
+              style="margin-top: -1.57px;"
             >
               <button
-                class="btn borderless btn-success"
-                style="color: rgb(41, 41, 41);"
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
               >
-                Add
+                Username
               </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Name
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Email
+              </button>
+            </div>
+          </div>
+        </div>
+        <input
+          class="form-control"
+          id="search"
+          type="text"
+        />
+        <div
+          class="mt-2 mb-2"
+        >
+          <div
+            class="d-flex flex-row"
+          >
+            <h4
+              class="text-primary fw-bold me-1"
+            >
+              Filter By:
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Non-Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
+              >
+                None
+              </button>
+            </div>
+          </div>
+        </div>
+        <table
+          class="table table-striped"
+        >
+          <thead>
+            <tr
+              class="text-center"
+            >
+              <th>
+                ID
+              </th>
+              <th>
+                Username
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Admin
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="text-center"
+            >
+              <td
+                class="align-middle"
+              >
+                5
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                some@mail.com
+              </td>
+              <td
+                class="align-middle"
+              >
+                <button
+                  class="btn borderless btn-danger"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="text-center"
+            >
+              <td
+                class="align-middle"
+              >
+                2
+              </td>
+              <td
+                class="align-middle"
+              >
+                newbie
+              </td>
+              <td
+                class="align-middle"
+              >
+                newbie newbie
+              </td>
+              <td
+                class="align-middle"
+              >
+                some@mail.com
+              </td>
+              <td
+                class="align-middle"
+              >
+                <button
+                  class="btn borderless btn-success"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Add
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <footer
-    class="mt-5 fw-light text-center pb-5 text-muted"
-  >
-    © Copyright 2022 GarageScript
-  </footer>
+    <footer
+      class="mt-5 fw-light text-center pb-5 text-muted"
+    >
+      © Copyright 2022 GarageScript
+    </footer>
+  </main>
 </div>
 `;
 
 exports[`Users test Should be able to switch search options 3`] = `
 <div>
-  <nav
-    class="navbar navbar navbar-expand-lg navbar-light bg-white"
-    id="appNav"
+  <main
+    class="light-gray"
   >
-    <div
-      class="container"
+    <nav
+      class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
-      <a
-        class="navbar-brand"
-        href="/"
-      >
-        <div
-          class="navbar-brand text-primary fw-bold"
-        >
-          C0D3
-          <span
-            class="isAdminBadge badge"
-          >
-             ADMIN 
-          </span>
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        class="navbar-toggler collapsed"
-        type="button"
-      >
-        <span
-          class="navbar-toggler-icon"
-        />
-      </button>
       <div
-        class="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
+        class="container"
       >
-        <div
-          class="m-auto navbar-nav"
-        >
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/curriculum"
-          >
-            Curriculum
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/docs/learn"
-          >
-            Learn
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          class="dropdown"
+        <a
+          class="navbar-brand"
+          href="/"
         >
           <div
-            class="d-none d-lg-block"
+            class="navbar-brand text-primary fw-bold"
+          >
+            C0D3
+            <span
+              class="isAdminBadge badge"
+            >
+               ADMIN 
+            </span>
+          </div>
+        </a>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="text-center navbar-collapse collapse"
+          id="basic-navbar-nav"
+        >
+          <div
+            class="m-auto navbar-nav"
+          >
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/docs/learn"
+            >
+              Learn
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://discord.gg/c0d3"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </div>
+          <div
+            class="dropdown"
           >
             <div
-              aria-expanded="false"
-              class="nav-user-toggle  dropdown-toggle"
-              id="user_nav_toggle"
+              class="d-none d-lg-block"
             >
               <div
-                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
-                A 
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
-              <span>
-                Fakeusername
-              </span>
-              <svg
-                aria-hidden="true"
-                class="octicon octicon-chevron-down"
-                fill="currentColor"
-                height="16"
-                role="img"
-                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                viewBox="0 0 16 16"
-                width="16"
+            </div>
+            <div
+              class="d-lg-none"
+            >
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <path
-                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                  fill-rule="evenodd"
-                />
-              </svg>
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
+              >
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
+              >
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
           </div>
-          <div
-            class="d-lg-none"
-          >
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/lessons"
-            >
-              Lessons
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/users"
-            >
-              Users
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/alerts"
-            >
-              Alerts
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/profile/fakeusername"
-            >
-              Profile
-            </a>
-            <a
-              class="dropdown-item  dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              role="button"
-              tabindex="0"
-            >
-              <span>
-                <div
-                  class="light-button d-inline"
-                >
-                  <button
-                    class="btn border btn-light ms-2"
-                    style="color: rgb(41, 41, 41);"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </span>
-            </a>
-          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <div
-    class="container-md"
-  >
+    </nav>
     <div
-      class="d-flex flex-column col-12"
+      class="container-md container"
     >
-      <h1
-        class="text-primary text-center fw-bold display-1"
-      >
-        Users
-      </h1>
       <div
-        class="mb-2"
+        class="d-flex flex-column col-12"
       >
-        <div
-          class="d-flex flex-row"
+        <h1
+          class="text-primary text-center fw-bold display-1"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            <label
-              for="search"
-            >
-              Search By:
-            </label>
-          </h4>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              ID
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Username
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Name
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Email
-            </button>
-          </div>
-        </div>
-      </div>
-      <input
-        class="form-control"
-        id="search"
-        type="text"
-      />
-      <div
-        class="mt-2 mb-2"
-      >
+          Users
+        </h1>
         <div
-          class="d-flex flex-row"
+          class="mb-2"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            Filter By:
-          </h4>
           <div
-            style="margin-top: -1.57px;"
+            class="d-flex flex-row"
           >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
+            <h4
+              class="text-primary fw-bold me-1"
             >
-              Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Non-Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              None
-            </button>
-          </div>
-        </div>
-      </div>
-      <table
-        class="table table-striped"
-      >
-        <thead>
-          <tr
-            class="text-center"
-          >
-            <th>
-              ID
-            </th>
-            <th>
-              Username
-            </th>
-            <th>
-              Name
-            </th>
-            <th>
-              Email
-            </th>
-            <th>
-              Admin
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              5
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
+              <label
+                for="search"
+              >
+                Search By:
+              </label>
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
             >
               <button
-                class="btn borderless btn-danger"
-                style="color: rgb(41, 41, 41);"
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
               >
-                Remove
+                ID
               </button>
-            </td>
-          </tr>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              2
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
+            </div>
+            <div
+              style="margin-top: -1.57px;"
             >
               <button
-                class="btn borderless btn-success"
-                style="color: rgb(41, 41, 41);"
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
               >
-                Add
+                Username
               </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
+              >
+                Name
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Email
+              </button>
+            </div>
+          </div>
+        </div>
+        <input
+          class="form-control"
+          id="search"
+          type="text"
+        />
+        <div
+          class="mt-2 mb-2"
+        >
+          <div
+            class="d-flex flex-row"
+          >
+            <h4
+              class="text-primary fw-bold me-1"
+            >
+              Filter By:
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Non-Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
+              >
+                None
+              </button>
+            </div>
+          </div>
+        </div>
+        <table
+          class="table table-striped"
+        >
+          <thead>
+            <tr
+              class="text-center"
+            >
+              <th>
+                ID
+              </th>
+              <th>
+                Username
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Admin
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="text-center"
+            >
+              <td
+                class="align-middle"
+              >
+                5
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                some@mail.com
+              </td>
+              <td
+                class="align-middle"
+              >
+                <button
+                  class="btn borderless btn-danger"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="text-center"
+            >
+              <td
+                class="align-middle"
+              >
+                2
+              </td>
+              <td
+                class="align-middle"
+              >
+                newbie
+              </td>
+              <td
+                class="align-middle"
+              >
+                newbie newbie
+              </td>
+              <td
+                class="align-middle"
+              >
+                some@mail.com
+              </td>
+              <td
+                class="align-middle"
+              >
+                <button
+                  class="btn borderless btn-success"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Add
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <footer
-    class="mt-5 fw-light text-center pb-5 text-muted"
-  >
-    © Copyright 2022 GarageScript
-  </footer>
+    <footer
+      class="mt-5 fw-light text-center pb-5 text-muted"
+    >
+      © Copyright 2022 GarageScript
+    </footer>
+  </main>
 </div>
 `;
 
 exports[`Users test Should be able to switch search options 4`] = `
 <div>
-  <nav
-    class="navbar navbar navbar-expand-lg navbar-light bg-white"
-    id="appNav"
+  <main
+    class="light-gray"
   >
-    <div
-      class="container"
+    <nav
+      class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
-      <a
-        class="navbar-brand"
-        href="/"
-      >
-        <div
-          class="navbar-brand text-primary fw-bold"
-        >
-          C0D3
-          <span
-            class="isAdminBadge badge"
-          >
-             ADMIN 
-          </span>
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        class="navbar-toggler collapsed"
-        type="button"
-      >
-        <span
-          class="navbar-toggler-icon"
-        />
-      </button>
       <div
-        class="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
+        class="container"
       >
-        <div
-          class="m-auto navbar-nav"
-        >
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/curriculum"
-          >
-            Curriculum
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/docs/learn"
-          >
-            Learn
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          class="dropdown"
+        <a
+          class="navbar-brand"
+          href="/"
         >
           <div
-            class="d-none d-lg-block"
+            class="navbar-brand text-primary fw-bold"
+          >
+            C0D3
+            <span
+              class="isAdminBadge badge"
+            >
+               ADMIN 
+            </span>
+          </div>
+        </a>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="text-center navbar-collapse collapse"
+          id="basic-navbar-nav"
+        >
+          <div
+            class="m-auto navbar-nav"
+          >
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/docs/learn"
+            >
+              Learn
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://discord.gg/c0d3"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </div>
+          <div
+            class="dropdown"
           >
             <div
-              aria-expanded="false"
-              class="nav-user-toggle  dropdown-toggle"
-              id="user_nav_toggle"
+              class="d-none d-lg-block"
             >
               <div
-                class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                aria-expanded="false"
+                class="nav-user-toggle  dropdown-toggle"
+                id="user_nav_toggle"
               >
-                A 
+                <div
+                  class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
+                >
+                  A 
+                </div>
+                <span>
+                  Fakeusername
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="octicon octicon-chevron-down"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </div>
-              <span>
-                Fakeusername
-              </span>
-              <svg
-                aria-hidden="true"
-                class="octicon octicon-chevron-down"
-                fill="currentColor"
-                height="16"
-                role="img"
-                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-                viewBox="0 0 16 16"
-                width="16"
+            </div>
+            <div
+              class="d-lg-none"
+            >
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/lessons"
               >
-                <path
-                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                  fill-rule="evenodd"
-                />
-              </svg>
+                Lessons
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/users"
+              >
+                Users
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/admin/alerts"
+              >
+                Alerts
+              </a>
+              <a
+                class="dropdown-item dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="/profile/fakeusername"
+              >
+                Profile
+              </a>
+              <a
+                class="dropdown-item  dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  <div
+                    class="light-button d-inline"
+                  >
+                    <button
+                      class="btn border btn-light ms-2"
+                      style="color: rgb(41, 41, 41);"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </span>
+              </a>
             </div>
           </div>
-          <div
-            class="d-lg-none"
-          >
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/lessons"
-            >
-              Lessons
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/users"
-            >
-              Users
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/admin/alerts"
-            >
-              Alerts
-            </a>
-            <a
-              class="dropdown-item dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="/profile/fakeusername"
-            >
-              Profile
-            </a>
-            <a
-              class="dropdown-item  dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              role="button"
-              tabindex="0"
-            >
-              <span>
-                <div
-                  class="light-button d-inline"
-                >
-                  <button
-                    class="btn border btn-light ms-2"
-                    style="color: rgb(41, 41, 41);"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </span>
-            </a>
-          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <div
-    class="container-md"
-  >
+    </nav>
     <div
-      class="d-flex flex-column col-12"
+      class="container-md container"
     >
-      <h1
-        class="text-primary text-center fw-bold display-1"
-      >
-        Users
-      </h1>
       <div
-        class="mb-2"
+        class="d-flex flex-column col-12"
       >
-        <div
-          class="d-flex flex-row"
+        <h1
+          class="text-primary text-center fw-bold display-1"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            <label
-              for="search"
-            >
-              Search By:
-            </label>
-          </h4>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              ID
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Username
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Name
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Email
-            </button>
-          </div>
-        </div>
-      </div>
-      <input
-        class="form-control"
-        id="search"
-        type="text"
-      />
-      <div
-        class="mt-2 mb-2"
-      >
+          Users
+        </h1>
         <div
-          class="d-flex flex-row"
+          class="mb-2"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            Filter By:
-          </h4>
           <div
-            style="margin-top: -1.57px;"
+            class="d-flex flex-row"
           >
-            <button
-              class="btn borderless btn-primary"
-              style="color: rgb(255, 255, 255);"
+            <h4
+              class="text-primary fw-bold me-1"
             >
-              Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              Non-Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn borderless"
-              style="color: rgb(142, 142, 142);"
-            >
-              None
-            </button>
-          </div>
-        </div>
-      </div>
-      <table
-        class="table table-striped"
-      >
-        <thead>
-          <tr
-            class="text-center"
-          >
-            <th>
-              ID
-            </th>
-            <th>
-              Username
-            </th>
-            <th>
-              Name
-            </th>
-            <th>
-              Email
-            </th>
-            <th>
-              Admin
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              5
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
+              <label
+                for="search"
+              >
+                Search By:
+              </label>
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
             >
               <button
-                class="btn borderless btn-danger"
-                style="color: rgb(41, 41, 41);"
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
               >
-                Remove
+                ID
               </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Username
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
+              >
+                Name
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Email
+              </button>
+            </div>
+          </div>
+        </div>
+        <input
+          class="form-control"
+          id="search"
+          type="text"
+        />
+        <div
+          class="mt-2 mb-2"
+        >
+          <div
+            class="d-flex flex-row"
+          >
+            <h4
+              class="text-primary fw-bold me-1"
+            >
+              Filter By:
+            </h4>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless btn-primary"
+                style="color: rgb(255, 255, 255);"
+              >
+                Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                Non-Admins
+              </button>
+            </div>
+            <div
+              style="margin-top: -1.57px;"
+            >
+              <button
+                class="btn borderless"
+                style="color: rgb(142, 142, 142);"
+              >
+                None
+              </button>
+            </div>
+          </div>
+        </div>
+        <table
+          class="table table-striped"
+        >
+          <thead>
+            <tr
+              class="text-center"
+            >
+              <th>
+                ID
+              </th>
+              <th>
+                Username
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Admin
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="text-center"
+            >
+              <td
+                class="align-middle"
+              >
+                5
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                admin admin
+              </td>
+              <td
+                class="align-middle"
+              >
+                some@mail.com
+              </td>
+              <td
+                class="align-middle"
+              >
+                <button
+                  class="btn borderless btn-danger"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <footer
-    class="mt-5 fw-light text-center pb-5 text-muted"
-  >
-    © Copyright 2022 GarageScript
-  </footer>
+    <footer
+      class="mt-5 fw-light text-center pb-5 text-muted"
+    >
+      © Copyright 2022 GarageScript
+    </footer>
+  </main>
 </div>
 `;

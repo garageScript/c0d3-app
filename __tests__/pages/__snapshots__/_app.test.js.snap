@@ -2,175 +2,179 @@
 
 exports[`MyApp component should render Login component passed in as prop 1`] = `
 <div>
-  <nav
-    class="navbar navbar navbar-expand-lg navbar-light bg-white"
-    id="appNav"
+  <main
+    class="light-gray"
   >
-    <div
-      class="container"
-    >
-      <a
-        class="navbar-brand"
-        href="/"
-      >
-        <div
-          class="navbar-brand text-primary fw-bold"
-        >
-          C0D3
-          
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        class="navbar-toggler collapsed"
-        type="button"
-      >
-        <span
-          class="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        class="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
-      >
-        <div
-          class="m-auto navbar-nav"
-        >
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/curriculum"
-          >
-            Curriculum
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="/docs/learn"
-          >
-            Learn
-          </a>
-          <a
-            class="nav-item nav-link px-3 noUnderline"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div
-    class="container-md"
-  >
-    <div
-      class="row mt-5"
+    <nav
+      class="navbar navbar navbar-expand-lg navbar-light bg-white"
+      id="appNav"
     >
       <div
-        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+        class="container"
       >
-        <div
-          class="card-body text-center pt-5 pb-5"
+        <a
+          class="navbar-brand"
+          href="/"
         >
-          <h1
-            class="card-title h2 fw-bold mb-5"
-          >
-            Login
-          </h1>
-          <p
-            class="card-text"
-          />
-          <form
-            action="#"
-            data-testid="form"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="mt-3 d-grid"
-              >
-                <input
-                  class="form-control form-control-lg fw-light mb-3 "
-                  data-testid="username"
-                  name="username"
-                  placeholder="Username"
-                  value=""
-                />
-                <input
-                  class="form-control form-control-lg fw-light mb-3 "
-                  data-testid="password"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  value=""
-                />
-                <button
-                  class="btn btn-primary btn-lg btn"
-                  data-testid="submit"
-                  type="submit"
-                >
-                  Login to Your Account
-                </button>
-              </div>
-            </div>
-          </form>
           <div
-            class="d-grid mb-3"
+            class="navbar-brand text-primary fw-bold"
           >
-            <div
-              class="orContainer"
+            C0D3
+            
+          </div>
+        </a>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="text-center navbar-collapse collapse"
+          id="basic-navbar-nav"
+        >
+          <div
+            class="m-auto navbar-nav"
+          >
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/curriculum"
             >
-              <hr
-                class="lineLeft"
-              />
-              <span>
-                OR
-              </span>
-              <hr
-                class="lineRight"
-              />
-            </div>
-            <button
-              class="btn text-white btn-lg btn discord__button"
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="/docs/learn"
+            >
+              Learn
+            </a>
+            <a
+              class="nav-item nav-link px-3 noUnderline"
+              href="https://discord.gg/c0d3"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container-md container"
+    >
+      <div
+        class="row mt-5"
+      >
+        <div
+          class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+        >
+          <div
+            class="card-body text-center pt-5 pb-5"
+          >
+            <h1
+              class="card-title h2 fw-bold mb-5"
+            >
+              Login
+            </h1>
+            <p
+              class="card-text"
+            />
+            <form
+              action="#"
+              data-testid="form"
             >
               <div
-                class="discord__button__image__wrapper"
+                class="form-group"
               >
-                <img
-                  height="24"
-                  src="/assets/discordClydeLogoSmallWhite.svg"
-                  width="32"
+                <div
+                  class="mt-3 d-grid"
+                >
+                  <input
+                    class="form-control form-control-lg fw-light mb-3 "
+                    data-testid="username"
+                    name="username"
+                    placeholder="Username"
+                    value=""
+                  />
+                  <input
+                    class="form-control form-control-lg fw-light mb-3 "
+                    data-testid="password"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    value=""
+                  />
+                  <button
+                    class="btn btn-primary btn-lg btn"
+                    data-testid="submit"
+                    type="submit"
+                  >
+                    Login to Your Account
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div
+              class="d-grid mb-3"
+            >
+              <div
+                class="orContainer"
+              >
+                <hr
+                  class="lineLeft"
+                />
+                <span>
+                  OR
+                </span>
+                <hr
+                  class="lineRight"
                 />
               </div>
-              <span>
-                Login with Discord
-              </span>
-            </button>
+              <button
+                class="btn text-white btn-lg btn discord__button"
+              >
+                <div
+                  class="discord__button__image__wrapper"
+                >
+                  <img
+                    height="24"
+                    src="/assets/discordClydeLogoSmallWhite.svg"
+                    width="32"
+                  />
+                </div>
+                <span>
+                  Login with Discord
+                </span>
+              </button>
+            </div>
+            <a
+              class=" link"
+              href="/forgotpassword"
+            >
+              Forgot your password?
+            </a>
           </div>
-          <a
-            class=" link"
-            href="/forgotpassword"
-          >
-            Forgot your password?
-          </a>
         </div>
       </div>
     </div>
-  </div>
-  <footer
-    class="mt-5 fw-light text-center pb-5 text-muted"
-  >
-    © Copyright 2022 GarageScript
-  </footer>
+    <footer
+      class="mt-5 fw-light text-center pb-5 text-muted"
+    >
+      © Copyright 2022 GarageScript
+    </footer>
+  </main>
 </div>
 `;
