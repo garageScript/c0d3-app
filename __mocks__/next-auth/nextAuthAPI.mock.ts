@@ -2,11 +2,11 @@ import { ReactChildren } from 'react'
 import { SubmissionStatus } from '../../graphql'
 import dummySessionData from '../../__dummy__/sessionData'
 
-export const mockSessionProvider = jest
+const mockSessionProvider = jest
   .fn()
   .mockImplementation(({ children }: { children: ReactChildren }) => children)
-export const mockSignOut = jest.fn()
-export const mockSignIn = jest.fn()
+const mockSignOut = jest.fn()
+const mockSignIn = jest.fn()
 const useSessionReturn = {
   data: {
     ...dummySessionData,
@@ -127,11 +127,13 @@ const useSessionReturn = {
 }
 
 export const mockUseSession = jest.fn().mockReturnValue(useSessionReturn)
+const mockGetSession = jest.fn().mockReturnValue(useSessionReturn)
 
 jest.mock('next-auth/react', () => ({
   __esModule: true,
   signOut: mockSignOut,
   signIn: mockSignIn,
   SessionProvider: mockSessionProvider,
-  useSession: mockUseSession
+  useSession: mockUseSession,
+  getSession: mockGetSession
 }))
