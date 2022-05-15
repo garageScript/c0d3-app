@@ -1,4 +1,3 @@
-import '../__mocks__/next-auth/nextAuthAPI.mock'
 import '../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import { render, screen } from '@testing-library/react'

@@ -1,5 +1,4 @@
 import '../../../__mocks__/useBreakpoint.mock'
-import '../../../__mocks__/next-auth/nextAuthAPI.mock'
 import React from 'react'
 import {
   render,

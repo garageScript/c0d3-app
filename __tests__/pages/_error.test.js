@@ -1,4 +1,3 @@
-import '../../__mocks__/next-auth/nextAuthAPI.mock'
 import * as React from 'react'
 import { render } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'

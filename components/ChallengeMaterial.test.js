@@ -1,4 +1,3 @@
-import '../__mocks__/next-auth/nextAuthAPI.mock'
 import React, { useContext, useEffect } from 'react'
 import dayjs from 'dayjs'
 import {
