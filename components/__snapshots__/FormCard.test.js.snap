@@ -6,22 +6,23 @@ exports[`FormCard Component Should call function with updated array as parameter
     class="row"
   >
     <div
-      class="card shadow-sm col-12"
+      class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        class="card-body text-center"
+        class="p-0 card-body text-center align-self-start"
       />
       <div
         class="text-start"
       >
         <div
-          class="d-flex flex-column ms-3 me-3 mb-4"
+          class="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5fireStarter0"
+          <span
+            class="optionInfo__span"
+            data-testid="spanfireStarter0"
           >
             Firestarter
-          </h5>
+          </span>
           <div
             style="background-color: white;"
           >
@@ -232,7 +233,7 @@ exports[`FormCard Component Should call function with updated array as parameter
         </div>
       </div>
       <div
-        class="text-center mb-4"
+        class="text-center align-self-start"
       >
         <button
           class="btn borderless btn-primary"
@@ -252,22 +253,23 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
     class="row"
   >
     <div
-      class="card shadow-sm col-12"
+      class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        class="card-body text-center"
+        class="p-0 card-body text-center align-self-start"
       />
       <div
         class="text-start"
       >
         <div
-          class="d-flex flex-column ms-3 me-3 mb-4"
+          class="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h50"
+          <span
+            class="optionInfo__span"
+            data-testid="span0"
           />
           <input
-            class="form-control"
+            class="form-control optionInfo__input"
             data-testid="input0"
             placeholder=""
             type="text"
@@ -276,7 +278,7 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
         </div>
       </div>
       <div
-        class="text-center mb-4"
+        class="text-center align-self-start"
       >
         <button
           class="btn borderless btn-primary"
@@ -296,22 +298,23 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
     class="row"
   >
     <div
-      class="card shadow-sm col-12"
+      class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        class="card-body text-center"
+        class="p-0 card-body text-center align-self-start"
       />
       <div
         class="text-start"
       >
         <div
-          class="d-flex flex-column ms-3 me-3 mb-4"
+          class="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5fireStarter0"
+          <span
+            class="optionInfo__span"
+            data-testid="spanfireStarter0"
           >
             Firestarter
-          </h5>
+          </span>
           <div
             style="background-color: white;"
           >
@@ -522,7 +525,7 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
         </div>
       </div>
       <div
-        class="text-center mb-4"
+        class="text-center align-self-start"
       >
         <button
           class="btn borderless btn-primary"
@@ -542,16 +545,16 @@ exports[`FormCard Component Should render nothing if id is a title 1`] = `
     class="row"
   >
     <div
-      class="card shadow-sm col-12"
+      class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        class="card-body text-center"
+        class="p-0 card-body text-center align-self-start"
       />
       <div
         class="text-start"
       />
       <div
-        class="text-center mb-4"
+        class="text-center align-self-start"
       >
         <button
           class="btn borderless btn-primary"
@@ -571,24 +574,25 @@ exports[`FormCard Component Should update testing onChange variable when person 
     class="row"
   >
     <div
-      class="card shadow-sm col-12"
+      class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        class="card-body text-center"
+        class="p-0 card-body text-center align-self-start"
       />
       <div
         class="text-start"
       >
         <div
-          class="d-flex flex-column ms-3 me-3 mb-4"
+          class="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5fireStarter0"
+          <span
+            class="optionInfo__span"
+            data-testid="spanfireStarter0"
           >
             Firestarter
-          </h5>
+          </span>
           <input
-            class="form-control"
+            class="form-control optionInfo__input"
             data-testid="input0"
             placeholder=""
             type="text"
@@ -597,7 +601,7 @@ exports[`FormCard Component Should update testing onChange variable when person 
         </div>
       </div>
       <div
-        class="text-center mb-4"
+        class="text-center align-self-start"
       >
         <button
           class="btn borderless btn-primary"
@@ -617,22 +621,23 @@ exports[`FormCard Component Should update testing onChange variable when person 
     class="row"
   >
     <div
-      class="card shadow-sm col-12"
+      class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
     >
       <div
-        class="card-body text-center"
+        class="p-0 card-body text-center align-self-start"
       />
       <div
         class="text-start"
       >
         <div
-          class="d-flex flex-column ms-3 me-3 mb-4"
+          class="d-flex flex-column mb-4"
         >
-          <h5
-            data-testid="h5fireStarter0"
+          <span
+            class="optionInfo__span"
+            data-testid="spanfireStarter0"
           >
             Firestarter
-          </h5>
+          </span>
           <div
             style="background-color: white;"
           >
@@ -843,7 +848,7 @@ exports[`FormCard Component Should update testing onChange variable when person 
         </div>
       </div>
       <div
-        class="text-center mb-4"
+        class="text-center align-self-start"
       >
         <button
           class="btn borderless btn-primary"

@@ -105,6 +105,68 @@ const MockWithBorder: React.FC = () => {
   )
 }
 
+const MockWithNoBackground: React.FC = () => {
+  const [options, setOptions] = useState(mockValues)
+  const onChange = (value: string, index: number) => {
+    formChange(value, index, options, setOptions)
+  }
+
+  return (
+    <FormCard
+      onChange={onChange}
+      values={options}
+      title="clownfish"
+      onSubmit={mockBtn}
+      noBg
+    />
+  )
+}
+
+const MockAlignedRight: React.FC = () => {
+  const [options, setOptions] = useState(mockValues)
+  const onChange = (value: string, index: number) => {
+    formChange(value, index, options, setOptions)
+  }
+
+  return (
+    <FormCard
+      onChange={onChange}
+      values={options}
+      title="clownfish"
+      onSubmit={mockBtn}
+      align="right"
+    />
+  )
+}
+
+const MockAlignedCenter: React.FC = () => {
+  const [options, setOptions] = useState(mockValues)
+  const onChange = (value: string, index: number) => {
+    formChange(value, index, options, setOptions)
+  }
+
+  return (
+    <FormCard
+      onChange={onChange}
+      values={options}
+      title="clownfish"
+      onSubmit={mockBtn}
+      align="center"
+    />
+  )
+}
+
+const MockWithNewButton: React.FC = () => {
+  const [options, setOptions] = useState(mockValues)
+  const onChange = (value: string, index: number) => {
+    formChange(value, index, options, setOptions)
+  }
+
+  return (
+    <FormCard onChange={onChange} values={options} onSubmit={mockBtn} newBtn />
+  )
+}
+
 export const Basic: React.FC = () => (
   <div className="col-5 m-auto">
     <MockBasic />
@@ -126,5 +188,29 @@ export const _WithBorder: React.FC = () => (
 export const _WithValidation: React.FC = () => (
   <div className="col-5 m-auto">
     <MockWithValidation />
+  </div>
+)
+
+export const _WithNoBackground: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockWithNoBackground />
+  </div>
+)
+
+export const AlignedRight: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockAlignedRight />
+  </div>
+)
+
+export const AlignedCenter: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockAlignedCenter />
+  </div>
+)
+
+export const _WithNewButton: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockWithNewButton />
   </div>
 )

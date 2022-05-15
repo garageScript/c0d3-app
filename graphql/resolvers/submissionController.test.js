@@ -6,6 +6,9 @@ jest.mock('../../helpers/discordBot.ts')
 jest.mock('../../helpers/hasPassedLesson')
 jest.mock('../../helpers/updateSubmission')
 jest.mock('@sentry/node')
+
+import { IdType, sendSubmissionNotification } from '../../helpers/discordBot'
+
 import { SubmissionStatus } from '../../graphql'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { hasPassedLesson } from '../../helpers/hasPassedLesson'
@@ -26,6 +29,8 @@ describe('Submissions Mutations', () => {
     diff: 'fakeDiff',
     lesson: {
       order: 1,
+      id: 1,
+      slug: 'js1',
       title: 'Fake lesson',
       chatUrl: 'https://fake.com/lesson-chat'
     },
@@ -33,6 +38,7 @@ describe('Submissions Mutations', () => {
       title: 'Fake challenge'
     },
     user: {
+      username: 'fakeUser',
       email: 'fake@email.com'
     }
   }
@@ -60,14 +66,7 @@ describe('Submissions Mutations', () => {
 
       await expect(createSubmission(null, args, ctx)).resolves.toEqual({
         id: 1,
-        diff: 'fakeDiff',
-        lesson: {
-          order: 1,
-          title: 'Fake lesson',
-          chatUrl: 'https://fake.com/lesson-chat'
-        },
-        challenge: { title: 'Fake challenge' },
-        user: { email: 'fake@email.com' }
+        ...submissionMock
       })
     })
 
@@ -118,6 +117,44 @@ describe('Submissions Mutations', () => {
       await createSubmission(null, args, { ...ctx, req: { user: null } })
       expect(Sentry.captureException).toHaveBeenCalledWith({
         message: `${1210}/${'noob'} is using CLI version 2.2.6 - Must be 2.2.5^`
+      })
+    })
+
+    describe('should notify discord on submission creation', () => {
+      test('with discord id if available', async () => {
+        prismaMock.submission.create.mockResolvedValue({
+          id: 1,
+          ...submissionMock,
+          user: {
+            ...submissionMock.user,
+            discordId: 'fakeId'
+          }
+        })
+        await createSubmission(null, args, ctx)
+        expect(sendSubmissionNotification).toHaveBeenCalledWith(
+          IdType.DISCORD,
+          'fakeId',
+          submissionMock.lesson.id,
+          submissionMock.lesson.slug,
+          submissionMock.challenge.title
+        )
+      })
+      test('with c0d3 username if discord id is not available', async () => {
+        prismaMock.submission.create.mockResolvedValue({
+          id: 1,
+          ...submissionMock,
+          user: {
+            ...submissionMock.user
+          }
+        })
+        await createSubmission(null, args, ctx)
+        expect(sendSubmissionNotification).toHaveBeenCalledWith(
+          IdType.C0D3,
+          submissionMock.user.username,
+          submissionMock.lesson.id,
+          submissionMock.lesson.slug,
+          submissionMock.challenge.title
+        )
       })
     })
   })

@@ -18,24 +18,25 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         />
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title0"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle0"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input0"
               placeholder=""
               type="text"
@@ -43,13 +44,14 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description1"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription1"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -259,15 +261,16 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5docUrl2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandocUrl2"
             >
               Docurl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input2"
               placeholder=""
               type="text"
@@ -275,15 +278,16 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5githubUrl3"
+            <span
+              class="optionInfo__span"
+              data-testid="spangithubUrl3"
             >
               Githuburl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
               placeholder=""
               type="text"
@@ -291,15 +295,16 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5videoUrl4"
+            <span
+              class="optionInfo__span"
+              data-testid="spanvideoUrl4"
             >
               Videourl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input4"
               placeholder=""
               type="text"
@@ -307,15 +312,16 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order5"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder5"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input5"
               placeholder=""
               type="text"
@@ -323,15 +329,16 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5slug6"
+            <span
+              class="optionInfo__span"
+              data-testid="spanslug6"
             >
               Slug
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input6"
               placeholder=""
               type="text"
@@ -339,15 +346,16 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5chatUrl7"
+            <span
+              class="optionInfo__span"
+              data-testid="spanchatUrl7"
             >
               Chaturl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input7"
               placeholder=""
               type="text"
@@ -356,7 +364,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -389,24 +397,25 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         />
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title0"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle0"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input0"
               placeholder="New Lesson"
               type="text"
@@ -414,13 +423,14 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description1"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription1"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -632,15 +642,16 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5docUrl2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandocUrl2"
             >
               Docurl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input2"
               placeholder=""
               type="text"
@@ -648,15 +659,16 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5githubUrl3"
+            <span
+              class="optionInfo__span"
+              data-testid="spangithubUrl3"
             >
               Githuburl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
               placeholder=""
               type="text"
@@ -664,15 +676,16 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5videoUrl4"
+            <span
+              class="optionInfo__span"
+              data-testid="spanvideoUrl4"
             >
               Videourl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input4"
               placeholder=""
               type="text"
@@ -680,15 +693,16 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order5"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder5"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input5"
               placeholder="12"
               type="text"
@@ -696,15 +710,16 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5slug6"
+            <span
+              class="optionInfo__span"
+              data-testid="spanslug6"
             >
               Slug
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input6"
               placeholder="js12"
               type="text"
@@ -712,15 +727,16 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5chatUrl7"
+            <span
+              class="optionInfo__span"
+              data-testid="spanchatUrl7"
             >
               Chaturl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input7"
               placeholder=""
               type="text"
@@ -729,7 +745,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -761,30 +777,31 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Foundations of JavaScript
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Foundations of JavaScript"
                 type="text"
@@ -792,13 +809,14 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -1010,15 +1028,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5docUrl3"
+              <span
+                class="optionInfo__span"
+                data-testid="spandocUrl3"
               >
                 Docurl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
                 type="text"
@@ -1026,15 +1045,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5githubUrl4"
+              <span
+                class="optionInfo__span"
+                data-testid="spangithubUrl4"
               >
                 Githuburl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input4"
                 placeholder=""
                 type="text"
@@ -1042,15 +1062,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5videoUrl5"
+              <span
+                class="optionInfo__span"
+                data-testid="spanvideoUrl5"
               >
                 Videourl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input5"
                 placeholder="https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1"
                 type="text"
@@ -1058,15 +1079,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order6"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder6"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input6"
                 placeholder="0"
                 type="text"
@@ -1074,15 +1096,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5slug7"
+              <span
+                class="optionInfo__span"
+                data-testid="spanslug7"
               >
                 Slug
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input7"
                 placeholder="js0"
                 type="text"
@@ -1090,15 +1113,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5chatUrl8"
+              <span
+                class="optionInfo__span"
+                data-testid="spanchatUrl8"
               >
                 Chaturl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input8"
                 placeholder="https://chat.c0d3.com/c0d3/channels/js1-variablesfunction"
                 type="text"
@@ -1107,7 +1131,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -1136,24 +1160,25 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           />
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title0"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle0"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input0"
                 placeholder=""
                 type="text"
@@ -1161,13 +1186,14 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description1"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription1"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -1377,15 +1403,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order2"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder2"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input2"
                 placeholder=""
                 type="text"
@@ -1394,7 +1421,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -1419,30 +1446,31 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Sum of 2 Numbers
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Sum of 2 Numbers"
                 type="text"
@@ -1450,13 +1478,14 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -1675,15 +1704,16 @@ solution(4,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="1"
                 type="text"
@@ -1692,7 +1722,7 @@ solution(4,1) // Should return 5
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -1711,30 +1741,31 @@ solution(4,1) // Should return 5
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Sum of 3 Numbers
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Sum of 3 Numbers"
                 type="text"
@@ -1742,13 +1773,14 @@ solution(4,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -1967,15 +1999,16 @@ solution(4,1,9) // Should return 14
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="2"
                 type="text"
@@ -1984,7 +2017,7 @@ solution(4,1,9) // Should return 14
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -2003,30 +2036,31 @@ solution(4,1,9) // Should return 14
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Greater than 5
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Greater than 5"
                 type="text"
@@ -2034,13 +2068,14 @@ solution(4,1,9) // Should return 14
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -2259,15 +2294,16 @@ solution(4) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="3"
                 type="text"
@@ -2276,7 +2312,7 @@ solution(4) // Should return false
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -2295,30 +2331,31 @@ solution(4) // Should return false
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Biggest Num out of 2
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Biggest Num out of 2"
                 type="text"
@@ -2326,13 +2363,14 @@ solution(4) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -2551,15 +2589,16 @@ solution(4,1) // Should return 4
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="4"
                 type="text"
@@ -2568,7 +2607,7 @@ solution(4,1) // Should return 4
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -2587,30 +2626,31 @@ solution(4,1) // Should return 4
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Biggest Num Out of 3
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Biggest Num Out of 3"
                 type="text"
@@ -2618,13 +2658,14 @@ solution(4,1) // Should return 4
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -2844,15 +2885,16 @@ solution(4,5,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="5"
                 type="text"
@@ -2861,7 +2903,7 @@ solution(4,5,1) // Should return 5
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -2880,30 +2922,31 @@ solution(4,5,1) // Should return 5
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Is First Num Bigger
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Is First Num Bigger"
                 type="text"
@@ -2911,13 +2954,14 @@ solution(4,5,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -3136,15 +3180,16 @@ solution(4,1) // Should return true
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="6"
                 type="text"
@@ -3153,7 +3198,7 @@ solution(4,1) // Should return true
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -3172,30 +3217,31 @@ solution(4,1) // Should return true
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Is Sum &gt; 10
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Is Sum > 10"
                 type="text"
@@ -3203,13 +3249,14 @@ solution(4,1) // Should return true
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -3428,15 +3475,16 @@ solution(4,1) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="7"
                 type="text"
@@ -3445,7 +3493,7 @@ solution(4,1) // Should return false
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -3464,30 +3512,31 @@ solution(4,1) // Should return false
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Functional Sum
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Functional Sum"
                 type="text"
@@ -3495,13 +3544,14 @@ solution(4,1) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -3719,15 +3769,16 @@ const a = solution(5,6) // a is a function, and a() will return 11
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="8"
                 type="text"
@@ -3736,7 +3787,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -3755,30 +3806,31 @@ const a = solution(5,6) // a is a function, and a() will return 11
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Functional 3 Sum
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Functional 3 Sum"
                 type="text"
@@ -3786,13 +3838,14 @@ const a = solution(5,6) // a is a function, and a() will return 11
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -4012,15 +4065,16 @@ const a = solution(1,2); // a is a function
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="9"
                 type="text"
@@ -4029,7 +4083,7 @@ const a = solution(1,2); // a is a function
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -4048,30 +4102,31 @@ const a = solution(1,2); // a is a function
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Functional Sums
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Functional Sums"
                 type="text"
@@ -4079,13 +4134,14 @@ const a = solution(1,2); // a is a function
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -4304,15 +4360,16 @@ const c = solution(a, b) // c should be 11 because a() + b()
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="10"
                 type="text"
@@ -4321,7 +4378,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -4355,24 +4412,25 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
       class="row"
     >
       <div
-        class="card shadow-sm col-12"
+        class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
       >
         <div
-          class="card-body text-center"
+          class="p-0 card-body text-center align-self-start"
         />
         <div
           class="text-start"
         >
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5title0"
+            <span
+              class="optionInfo__span"
+              data-testid="spantitle0"
             >
               Title
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input0"
               placeholder=""
               type="text"
@@ -4380,13 +4438,14 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5description1"
+            <span
+              class="optionInfo__span"
+              data-testid="spandescription1"
             >
               Description
-            </h5>
+            </span>
             <div
               style="background-color: white;"
             >
@@ -4596,15 +4655,16 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5docUrl2"
+            <span
+              class="optionInfo__span"
+              data-testid="spandocUrl2"
             >
               Docurl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input2"
               placeholder=""
               type="text"
@@ -4612,15 +4672,16 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5githubUrl3"
+            <span
+              class="optionInfo__span"
+              data-testid="spangithubUrl3"
             >
               Githuburl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input3"
               placeholder=""
               type="text"
@@ -4628,15 +4689,16 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5videoUrl4"
+            <span
+              class="optionInfo__span"
+              data-testid="spanvideoUrl4"
             >
               Videourl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input4"
               placeholder=""
               type="text"
@@ -4644,15 +4706,16 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5order5"
+            <span
+              class="optionInfo__span"
+              data-testid="spanorder5"
             >
               Order
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input5"
               placeholder=""
               type="text"
@@ -4660,15 +4723,16 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5slug6"
+            <span
+              class="optionInfo__span"
+              data-testid="spanslug6"
             >
               Slug
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input6"
               placeholder=""
               type="text"
@@ -4676,15 +4740,16 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ms-3 me-3 mb-4"
+            class="d-flex flex-column mb-4"
           >
-            <h5
-              data-testid="h5chatUrl7"
+            <span
+              class="optionInfo__span"
+              data-testid="spanchatUrl7"
             >
               Chaturl
-            </h5>
+            </span>
             <input
-              class="form-control"
+              class="form-control optionInfo__input"
               data-testid="input7"
               placeholder=""
               type="text"
@@ -4693,7 +4758,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
           </div>
         </div>
         <div
-          class="text-center mb-4"
+          class="text-center align-self-start"
         >
           <button
             class="btn borderless btn-primary"
@@ -4725,30 +4790,31 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Foundations of JavaScript
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Foundations of JavaScript"
                 type="text"
@@ -4756,13 +4822,14 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -4974,15 +5041,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5docUrl3"
+              <span
+                class="optionInfo__span"
+                data-testid="spandocUrl3"
               >
                 Docurl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
                 type="text"
@@ -4990,15 +5058,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5githubUrl4"
+              <span
+                class="optionInfo__span"
+                data-testid="spangithubUrl4"
               >
                 Githuburl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input4"
                 placeholder=""
                 type="text"
@@ -5006,15 +5075,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5videoUrl5"
+              <span
+                class="optionInfo__span"
+                data-testid="spanvideoUrl5"
               >
                 Videourl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input5"
                 placeholder="https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1"
                 type="text"
@@ -5022,15 +5092,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order6"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder6"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input6"
                 placeholder="10"
                 type="text"
@@ -5038,15 +5109,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5slug7"
+              <span
+                class="optionInfo__span"
+                data-testid="spanslug7"
               >
                 Slug
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input7"
                 placeholder="js0"
                 type="text"
@@ -5054,15 +5126,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5chatUrl8"
+              <span
+                class="optionInfo__span"
+                data-testid="spanchatUrl8"
               >
                 Chaturl
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input8"
                 placeholder="https://chat.c0d3.com/c0d3/channels/js1-variablesfunction"
                 type="text"
@@ -5071,7 +5144,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -5100,24 +5173,25 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           />
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title0"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle0"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input0"
                 placeholder=""
                 type="text"
@@ -5125,13 +5199,14 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description1"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription1"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -5341,15 +5416,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order2"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder2"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input2"
                 placeholder=""
                 type="text"
@@ -5358,7 +5434,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -5383,30 +5459,31 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Sum of 2 Numbers
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="New Lesson"
                 type="text"
@@ -5414,13 +5491,14 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -5639,15 +5717,16 @@ solution(4,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="1"
                 type="text"
@@ -5656,7 +5735,7 @@ solution(4,1) // Should return 5
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -5675,30 +5754,31 @@ solution(4,1) // Should return 5
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Sum of 3 Numbers
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Sum of 3 Numbers"
                 type="text"
@@ -5706,13 +5786,14 @@ solution(4,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -5931,15 +6012,16 @@ solution(4,1,9) // Should return 14
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="2"
                 type="text"
@@ -5948,7 +6030,7 @@ solution(4,1,9) // Should return 14
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -5967,30 +6049,31 @@ solution(4,1,9) // Should return 14
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Greater than 5
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Greater than 5"
                 type="text"
@@ -5998,13 +6081,14 @@ solution(4,1,9) // Should return 14
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -6223,15 +6307,16 @@ solution(4) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="3"
                 type="text"
@@ -6240,7 +6325,7 @@ solution(4) // Should return false
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -6259,30 +6344,31 @@ solution(4) // Should return false
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Biggest Num out of 2
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Biggest Num out of 2"
                 type="text"
@@ -6290,13 +6376,14 @@ solution(4) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -6515,15 +6602,16 @@ solution(4,1) // Should return 4
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="4"
                 type="text"
@@ -6532,7 +6620,7 @@ solution(4,1) // Should return 4
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -6551,30 +6639,31 @@ solution(4,1) // Should return 4
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Biggest Num Out of 3
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Biggest Num Out of 3"
                 type="text"
@@ -6582,13 +6671,14 @@ solution(4,1) // Should return 4
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -6808,15 +6898,16 @@ solution(4,5,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="5"
                 type="text"
@@ -6825,7 +6916,7 @@ solution(4,5,1) // Should return 5
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -6844,30 +6935,31 @@ solution(4,5,1) // Should return 5
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Is First Num Bigger
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Is First Num Bigger"
                 type="text"
@@ -6875,13 +6967,14 @@ solution(4,5,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -7100,15 +7193,16 @@ solution(4,1) // Should return true
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="6"
                 type="text"
@@ -7117,7 +7211,7 @@ solution(4,1) // Should return true
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -7136,30 +7230,31 @@ solution(4,1) // Should return true
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Is Sum &gt; 10
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Is Sum > 10"
                 type="text"
@@ -7167,13 +7262,14 @@ solution(4,1) // Should return true
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -7392,15 +7488,16 @@ solution(4,1) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="7"
                 type="text"
@@ -7409,7 +7506,7 @@ solution(4,1) // Should return false
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -7428,30 +7525,31 @@ solution(4,1) // Should return false
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Functional Sum
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Functional Sum"
                 type="text"
@@ -7459,13 +7557,14 @@ solution(4,1) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -7683,15 +7782,16 @@ const a = solution(5,6) // a is a function, and a() will return 11
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="8"
                 type="text"
@@ -7700,7 +7800,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -7719,30 +7819,31 @@ const a = solution(5,6) // a is a function, and a() will return 11
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Functional 3 Sum
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Functional 3 Sum"
                 type="text"
@@ -7750,13 +7851,14 @@ const a = solution(5,6) // a is a function, and a() will return 11
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -7976,15 +8078,16 @@ const a = solution(1,2); // a is a function
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="9"
                 type="text"
@@ -7993,7 +8096,7 @@ const a = solution(1,2); // a is a function
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
@@ -8012,30 +8115,31 @@ const a = solution(1,2); // a is a function
         class="row"
       >
         <div
-          class="card shadow-sm col-12"
+          class="py-4 px-3 card shadow-sm col-12 align-items-stretch"
         >
           <div
-            class="card-body text-center"
+            class="p-0 card-body text-center align-self-start"
           >
-            <h2
-              class="card-title fw-bold mb-3"
+            <h3
+              class="card-title fw-bold mb-4"
             >
               Functional Sums
-            </h2>
+            </h3>
           </div>
           <div
             class="text-start"
           >
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5title1"
+              <span
+                class="optionInfo__span"
+                data-testid="spantitle1"
               >
                 Title
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input1"
                 placeholder="Functional Sums"
                 type="text"
@@ -8043,13 +8147,14 @@ const a = solution(1,2); // a is a function
               />
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5description2"
+              <span
+                class="optionInfo__span"
+                data-testid="spandescription2"
               >
                 Description
-              </h5>
+              </span>
               <div
                 style="background-color: white;"
               >
@@ -8268,15 +8373,16 @@ const c = solution(a, b) // c should be 11 because a() + b()
               </div>
             </div>
             <div
-              class="d-flex flex-column ms-3 me-3 mb-4"
+              class="d-flex flex-column mb-4"
             >
-              <h5
-                data-testid="h5order3"
+              <span
+                class="optionInfo__span"
+                data-testid="spanorder3"
               >
                 Order
-              </h5>
+              </span>
               <input
-                class="form-control"
+                class="form-control optionInfo__input"
                 data-testid="input3"
                 placeholder="10"
                 type="text"
@@ -8285,7 +8391,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
             </div>
           </div>
           <div
-            class="text-center mb-4"
+            class="text-center align-self-start"
           >
             <button
               class="btn borderless btn-primary"
