@@ -1819,16 +1819,16 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-react-apollo@^3.2.11":
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-3.2.11.tgz#dc13abc1ec24aa78f7f0774c1f52da5d982dd1fc"
-  integrity sha512-Bfo7/OprnWk/srhA/3I0cKySg/SyVPX3ZoxzTk6ChYVBsy69jKDkdPWwlmE7Fjfv7+5G+xXb99OoqUUgBLma3w==
+"@graphql-codegen/typescript-react-apollo@^3.2.14":
+  version "3.2.14"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-3.2.14.tgz#2506fab6bb17093b2d844be0577f1c755c7142ea"
+  integrity sha512-kqLrGSV+av1cMWjgkGpV2oD/JhKXzFZORBE+zqeKIwDk37fyj6P0DfRLTsLXoORFlQgBm5CN8k5aM9bQJHSVXg==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-codegen/visitor-plugin-common" "2.7.4"
+    "@graphql-codegen/visitor-plugin-common" "2.8.0"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
-    tslib "~2.3.0"
+    tslib "~2.4.0"
 
 "@graphql-codegen/typescript-resolvers@^2.6.1":
   version "2.6.1"
@@ -7146,10 +7146,10 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-dayjs@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.1.tgz#90b33a3dda3417258d48ad2771b415def6545eb0"
-  integrity sha512-ER7EjqVAMkRRsxNCC5YqJ9d9VQYuWdGt7aiH2qA5R5wt8ZmWaP2dLUSIK6y/kVzLMlmh1Tvu5xUf4M/wdGJ5KA==
+dayjs@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.2.tgz#fa0f5223ef0d6724b3d8327134890cfe3d72fbe5"
+  integrity sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==
 
 debounce@^1.2.0:
   version "1.2.1"
