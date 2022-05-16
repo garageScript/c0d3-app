@@ -35,7 +35,7 @@ export const Basic = () => {
   )
 }
 
-Basic.story = { parameters }
+Basic.parameters = parameters
 
 export const WithOmitHomeRoute = () => {
   const [lesson, setLesson] = useState({
@@ -54,4 +54,4 @@ export const WithOmitHomeRoute = () => {
   )
 }
 
-WithOmitHomeRoute.story = { parameters }
+WithOmitHomeRoute.parameters = parameters
