@@ -3,7 +3,6 @@ import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
 import AdminModuleInputs from '../../components/admin/lessons/AdminModuleInputs'
 import { AddModuleDocument, Module } from '../../graphql'
-import '../../__mocks__/matchMedia.mock'
 
 export default {
   component: AdminModuleInputs,
