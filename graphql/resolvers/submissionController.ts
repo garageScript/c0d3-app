@@ -69,14 +69,17 @@ export const createSubmission = async (
     },
     include: {
       challenge: true,
-      user: true,
+      user: {
+        select: {
+          discordId: true,
+          username: true
+        }
+      },
       lesson: true
     }
   })
 
   const { challenge, user, lesson } = submission
-
-  // TODO: Add support for discord ids when oauth implementation is complete
 
   // Get next lesson
   const nextLesson = await prisma.lesson.findFirst({
@@ -84,8 +87,8 @@ export const createSubmission = async (
   })
 
   await sendSubmissionNotification(
-    IdType.C0D3,
-    user.username,
+    user.discordId ? IdType.DISCORD : IdType.C0D3,
+    user.discordId || user.username,
     nextLesson?.id ?? lessonId,
     lesson.slug,
     challenge.title
