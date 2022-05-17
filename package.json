@@ -102,7 +102,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "babel-jest": "^28.1.0",
     "babel-plugin-prismjs": "^2.1.0",
-    "copy-webpack-plugin": "^10.2.4",
+    "copy-webpack-plugin": "^11.0.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^12.1.6",
     "eslint-config-prettier": "^8.5.0",
