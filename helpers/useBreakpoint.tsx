@@ -51,15 +51,17 @@ export default function useBreakpoint(
         ? `(min-width: ${pixels[index[breakpoint]]}px)`
         : `(max-width: ${pixels[index[breakpoint] + 1] - 0.02}px)`
 
-    const mql = window.matchMedia(query)
-    // Update if different from initial value
-    if (mql.matches !== matches) {
-      setMatches(mql.matches)
-    }
-    const changeHandler = (e: MediaQueryListEvent) => setMatches(e.matches)
+    if (typeof window.matchMedia !== 'undefined') {
+      const mql = window.matchMedia(query)
+      // Update if different from initial value
+      if (mql.matches !== matches) {
+        setMatches(mql.matches)
+      }
+      const changeHandler = (e: MediaQueryListEvent) => setMatches(e.matches)
 
-    mql.addEventListener('change', changeHandler)
-    return () => mql.removeEventListener('change', changeHandler)
+      mql.addEventListener('change', changeHandler)
+      return () => mql.removeEventListener('change', changeHandler)
+    }
   }, [])
 
   return matches
