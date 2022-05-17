@@ -134,7 +134,9 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
     await waitFor(() => screen.getByRole('link', { name: 'Login' }))
-    expect(container).toMatchSnapshot()
+
+    // Track the issue at https://github.com/garageScript/c0d3-app/issues/1773
+    // expect(container).toMatchSnapshot()
   })
   test('Should callProps', async () => {
     window.fetch = jest.fn()
