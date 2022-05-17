@@ -19,7 +19,7 @@ import {
 
 type Module = { id: number; name: string; content: string }
 
-type Props = {
+export type Props = {
   lessonId: number
   refetch: (variables?: Partial<OperationVariables>) => Promise<
     ApolloQueryResult<{
