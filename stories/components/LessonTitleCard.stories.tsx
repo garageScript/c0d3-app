@@ -1,4 +1,3 @@
-import '../../__mocks__/useBreakpoint.mock'
 import * as React from 'react'
 import LessonTitleCard from '../../components/LessonTitleCard'
 
