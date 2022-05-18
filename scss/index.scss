@@ -1,4 +1,6 @@
 @use '_variables.module';
+@use '_text.module';
+
 // Override default variables before the import
 $body-bg: rgba(84, 56, 220, 0.03);
 
@@ -51,6 +53,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  font-size: 100%; /* 16px */
   // Global accessibility feature allowing users to turn off smooth scroll
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
