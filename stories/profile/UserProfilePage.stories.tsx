@@ -72,9 +72,11 @@ const mocks = [
     }
   }
 ]
-const { query } = useRouter()
-query['username'] = 'fakeusername'
+
 export const _UserProfileZeroComments: React.FC = () => {
+  const { query } = useRouter()
+  query['username'] = 'fakeusername'
+
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <UserProfile />
@@ -83,6 +85,9 @@ export const _UserProfileZeroComments: React.FC = () => {
 }
 
 export const _UserProfileFewComments: React.FC = () => {
+  const { query } = useRouter()
+  query['username'] = 'fakeusername'
+
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <UserProfile />
@@ -91,6 +96,9 @@ export const _UserProfileFewComments: React.FC = () => {
 }
 
 export const _UserProfileManyComments: React.FC = () => {
+  const { query } = useRouter()
+  query['username'] = 'fakeusername'
+
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <UserProfile />
