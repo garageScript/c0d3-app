@@ -2,265 +2,261 @@
 
 exports[`ResetPassword Page Should render alert on error 1`] = `
 <div>
-  <main>
-    <nav
-      class="navbar navbar navbar-expand-lg navbar-light bg-white"
-      id="appNav"
-    >
-      <div
-        class="container"
-      >
-        <a
-          class="navbar-brand"
-          href="/"
-        >
-          <div
-            class="navbar-brand text-primary fw-bold"
-          >
-            C0D3
-            
-          </div>
-        </a>
-        <button
-          aria-controls="basic-navbar-nav"
-          aria-label="Toggle navigation"
-          class="navbar-toggler collapsed"
-          type="button"
-        >
-          <span
-            class="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          class="text-center navbar-collapse collapse"
-          id="basic-navbar-nav"
-        >
-          <div
-            class="m-auto navbar-nav"
-          >
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="/curriculum"
-            >
-              Curriculum
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="/docs/learn"
-            >
-              Learn
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
-          <div
-            class="nav-buttons"
-          >
-            <a
-              class="btn m-2 me-lg-3 login-btn noUnderline"
-              href="/login"
-            >
-              Login
-            </a>
-            <a
-              class="btn m-2 me-lg-3 signup-btn noUnderline"
-              href="/signup"
-            >
-              Signup
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <nav
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
+  >
     <div
-      class="container-md container"
+      class="container"
     >
-      <div
-        class="row mt-5"
+      <a
+        class="navbar-brand"
+        href="/"
       >
         <div
-          class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+          class="navbar-brand text-primary fw-bold"
         >
-          <div
-            class="card-body text-center pt-5 pb-5"
+          C0D3
+          
+        </div>
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        class="navbar-toggler collapsed"
+        type="button"
+      >
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          class="m-auto navbar-nav"
+        >
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="/curriculum"
           >
-            <img
-              alt="Dark red circle with a exclamation sign inside."
-              class="mb-4"
-              height="100px"
-              src="/assets/curriculum/icons/exclamation.svg"
-              width="100px"
-            />
-            <h1
-              class="card-title h2 fw-bold mb-5"
-            >
-              Link has expired.
-            </h1>
-            <p
-              class="card-text"
-            />
-            <a
-              class="btn btn-primary noUnderline"
-              href="/forgotpassword"
-            >
-              Request a new password reset
-            </a>
-          </div>
+            Curriculum
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          class="nav-buttons"
+        >
+          <a
+            class="btn m-2 me-lg-3 login-btn noUnderline"
+            href="/login"
+          >
+            Login
+          </a>
+          <a
+            class="btn m-2 me-lg-3 signup-btn noUnderline"
+            href="/signup"
+          >
+            Signup
+          </a>
         </div>
       </div>
     </div>
-    <footer
-      class="mt-5 fw-light text-center pb-5 text-muted"
+  </nav>
+  <div
+    class="container-md container"
+  >
+    <div
+      class="row mt-5"
     >
-      © Copyright 2022 GarageScript
-    </footer>
-  </main>
+      <div
+        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <img
+            alt="Dark red circle with a exclamation sign inside."
+            class="mb-4"
+            height="100px"
+            src="/assets/curriculum/icons/exclamation.svg"
+            width="100px"
+          />
+          <h1
+            class="card-title h2 fw-bold mb-5"
+          >
+            Link has expired.
+          </h1>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary noUnderline"
+            href="/forgotpassword"
+          >
+            Request a new password reset
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 fw-light text-center pb-5 text-muted"
+  >
+    © Copyright 2022 GarageScript
+  </footer>
 </div>
 `;
 
 exports[`ResetPassword Page Should render confirm success on success 1`] = `
 <div>
-  <main>
-    <nav
-      class="navbar navbar navbar-expand-lg navbar-light bg-white"
-      id="appNav"
-    >
-      <div
-        class="container"
-      >
-        <a
-          class="navbar-brand"
-          href="/"
-        >
-          <div
-            class="navbar-brand text-primary fw-bold"
-          >
-            C0D3
-            
-          </div>
-        </a>
-        <button
-          aria-controls="basic-navbar-nav"
-          aria-label="Toggle navigation"
-          class="navbar-toggler collapsed"
-          type="button"
-        >
-          <span
-            class="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          class="text-center navbar-collapse collapse"
-          id="basic-navbar-nav"
-        >
-          <div
-            class="m-auto navbar-nav"
-          >
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="/curriculum"
-            >
-              Curriculum
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="/docs/learn"
-            >
-              Learn
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
-          <div
-            class="nav-buttons"
-          >
-            <a
-              class="btn m-2 me-lg-3 login-btn noUnderline"
-              href="/login"
-            >
-              Login
-            </a>
-            <a
-              class="btn m-2 me-lg-3 signup-btn noUnderline"
-              href="/signup"
-            >
-              Signup
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <nav
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
+  >
     <div
-      class="container-md container"
+      class="container"
     >
-      <div
-        class="row mt-5"
+      <a
+        class="navbar-brand"
+        href="/"
       >
         <div
-          class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+          class="navbar-brand text-primary fw-bold"
         >
-          <div
-            class="card-body text-center pt-5 pb-5"
+          C0D3
+          
+        </div>
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        class="navbar-toggler collapsed"
+        type="button"
+      >
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          class="m-auto navbar-nav"
+        >
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="/curriculum"
           >
-            <img
-              alt="Green circle with a checkmark inside."
-              class="mb-4"
-              height="100px"
-              src="/assets/curriculum/icons/checked.svg"
-              width="100px"
-            />
-            <h1
-              class="card-title h2 fw-bold mb-5"
-            >
-              Password has been set!
-            </h1>
-            <p
-              class="card-text"
-            />
-            <a
-              class="btn btn-primary btn-lg mb-3"
-              href="/curriculum"
-              role="button"
-            >
-              Continue to dashboard
-            </a>
-          </div>
+            Curriculum
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          class="nav-buttons"
+        >
+          <a
+            class="btn m-2 me-lg-3 login-btn noUnderline"
+            href="/login"
+          >
+            Login
+          </a>
+          <a
+            class="btn m-2 me-lg-3 signup-btn noUnderline"
+            href="/signup"
+          >
+            Signup
+          </a>
         </div>
       </div>
     </div>
-    <footer
-      class="mt-5 fw-light text-center pb-5 text-muted"
+  </nav>
+  <div
+    class="container-md container"
+  >
+    <div
+      class="row mt-5"
     >
-      © Copyright 2022 GarageScript
-    </footer>
-  </main>
+      <div
+        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <img
+            alt="Green circle with a checkmark inside."
+            class="mb-4"
+            height="100px"
+            src="/assets/curriculum/icons/checked.svg"
+            width="100px"
+          />
+          <h1
+            class="card-title h2 fw-bold mb-5"
+          >
+            Password has been set!
+          </h1>
+          <p
+            class="card-text"
+          />
+          <a
+            class="btn btn-primary btn-lg mb-3"
+            href="/curriculum"
+            role="button"
+          >
+            Continue to dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 fw-light text-center pb-5 text-muted"
+  >
+    © Copyright 2022 GarageScript
+  </footer>
 </div>
 `;

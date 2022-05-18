@@ -2,86 +2,84 @@
 
 exports[`AdminLayout test Should render children 1`] = `
 <div>
-  <main>
-    <nav
-      class="navbar navbar navbar-expand-lg navbar-light bg-white"
-      id="appNav"
+  <nav
+    class="navbar navbar navbar-expand-lg navbar-light bg-white"
+    id="appNav"
+  >
+    <div
+      class="container"
     >
-      <div
-        class="container"
+      <a
+        class="navbar-brand"
+        href="/"
       >
-        <a
-          class="navbar-brand"
-          href="/"
-        >
-          <div
-            class="navbar-brand text-primary fw-bold"
-          >
-            C0D3
-            
-          </div>
-        </a>
-        <button
-          aria-controls="basic-navbar-nav"
-          aria-label="Toggle navigation"
-          class="navbar-toggler collapsed"
-          type="button"
-        >
-          <span
-            class="navbar-toggler-icon"
-          />
-        </button>
         <div
-          class="text-center navbar-collapse collapse"
-          id="basic-navbar-nav"
+          class="navbar-brand text-primary fw-bold"
         >
-          <div
-            class="m-auto navbar-nav"
+          C0D3
+          
+        </div>
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        class="navbar-toggler collapsed"
+        type="button"
+      >
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          class="m-auto navbar-nav"
+        >
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="/curriculum"
           >
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="/curriculum"
-            >
-              Curriculum
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="/docs/learn"
-            >
-              Learn
-            </a>
-            <a
-              class="nav-item nav-link px-3 noUnderline"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+            Curriculum
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
+          <a
+            class="nav-item nav-link px-3 noUnderline"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
         </div>
       </div>
-    </nav>
-    <div
-      class="container-md container"
-    >
-      <h1>
-        Test title
-      </h1>
     </div>
-    <footer
-      class="mt-5 fw-light text-center pb-5 text-muted"
-    >
-      © Copyright 2022 GarageScript
-    </footer>
-  </main>
+  </nav>
+  <div
+    class="container-md container"
+  >
+    <h1>
+      Test title
+    </h1>
+  </div>
+  <footer
+    class="mt-5 fw-light text-center pb-5 text-muted"
+  >
+    © Copyright 2022 GarageScript
+  </footer>
 </div>
 `;

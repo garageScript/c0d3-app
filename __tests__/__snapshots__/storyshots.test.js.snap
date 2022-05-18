@@ -5613,7 +5613,7 @@ Array [
 `;
 
 exports[`Storyshots Components/Error Internal 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -5687,7 +5687,7 @@ exports[`Storyshots Components/Error Internal 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -5753,17 +5753,17 @@ exports[`Storyshots Components/Error Internal 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/Error Not Found 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -5837,7 +5837,7 @@ exports[`Storyshots Components/Error Not Found 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -5903,13 +5903,13 @@ exports[`Storyshots Components/Error Not Found 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
@@ -10250,7 +10250,7 @@ exports[`Storyshots Components/InputGroup Size Small 1`] = `
 `;
 
 exports[`Storyshots Components/Layout Logged In 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -10324,7 +10324,7 @@ exports[`Storyshots Components/Layout Logged In 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -10361,17 +10361,17 @@ exports[`Storyshots Components/Layout Logged In 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/Layout Logged Out 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -10445,7 +10445,7 @@ exports[`Storyshots Components/Layout Logged Out 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -10482,13 +10482,13 @@ exports[`Storyshots Components/Layout Logged Out 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/Layout No Layout 1`] = `
@@ -10982,7 +10982,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 `;
 
 exports[`Storyshots Components/LessonLayout Get Layout 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -11056,7 +11056,7 @@ exports[`Storyshots Components/LessonLayout Get Layout 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -11120,13 +11120,13 @@ exports[`Storyshots Components/LessonLayout Get Layout 1`] = `
       </div>
       Page
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
@@ -22394,7 +22394,7 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
 `;
 
 exports[`Storyshots Pages/Contributors Contributors 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -22468,7 +22468,7 @@ exports[`Storyshots Pages/Contributors Contributors 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -22616,17 +22616,17 @@ exports[`Storyshots Pages/Contributors Contributors 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/Curriculum Basic 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -22700,7 +22700,7 @@ exports[`Storyshots Pages/Curriculum Basic 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -24118,17 +24118,17 @@ exports[`Storyshots Pages/Curriculum Basic 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -24202,7 +24202,7 @@ exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -25620,17 +25620,17 @@ exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -25704,7 +25704,7 @@ exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -27122,17 +27122,17 @@ exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/ForgotPassword Forgot Password 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -27206,7 +27206,7 @@ exports[`Storyshots Pages/ForgotPassword Forgot Password 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -27264,13 +27264,13 @@ exports[`Storyshots Pages/ForgotPassword Forgot Password 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/Landing Landing 1`] = `
@@ -28106,7 +28106,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
 `;
 
 exports[`Storyshots Pages/ResetPassword Reset Password 1`] = `
-<main>
+Array [
   <nav
     className="navbar navbar navbar-expand-lg navbar-light bg-white"
     id="appNav"
@@ -28180,7 +28180,7 @@ exports[`Storyshots Pages/ResetPassword Reset Password 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </nav>,
   <div
     className="container-md container"
   >
@@ -28248,13 +28248,13 @@ exports[`Storyshots Pages/ResetPassword Reset Password 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2022 GarageScript
-  </footer>
-</main>
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/Signup Signup 1`] = `
