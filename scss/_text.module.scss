@@ -1,0 +1,56 @@
+h1 {
+  font-family: 'Rubik';
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 120%;
+}
+
+h2 {
+  font-family: 'PT Mono';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 160%;
+}
+
+h3 {
+  font-family: 'PT Mono';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+
+// TODO: Add h4 element.
+
+p {
+  font-family: 'Inter';
+  font-weight: 400;
+  line-height: 160%;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: 'Fira Code';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+// TODO: Fix button lineheight.
+button,
+.btn {
+  font-family: 'PT Mono';
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.text__small {
+  font-size: 14px;
+}
+
+.text__large {
+  font-size: 18px;
+}

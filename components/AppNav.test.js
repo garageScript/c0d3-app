@@ -6,6 +6,7 @@ import LOGOUT_USER from '../graphql/queries/logoutUser'
 import LOGIN_USER from '../graphql/queries/loginUser'
 import dummySessionData from '../__dummy__/sessionData'
 import AppNav from './AppNav'
+import { SessionProviderWrapper } from '../helpers/sessionProvider'
 
 describe('AppNav Component', () => {
   test('Should redirect to / route on logout success', async () => {
@@ -38,9 +39,11 @@ describe('AppNav Component', () => {
     ]
 
     const { getByText, getAllByText } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <AppNav />
-      </MockedProvider>
+      <SessionProviderWrapper>
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <AppNav />
+        </MockedProvider>
+      </SessionProviderWrapper>
     )
 
     await act(async () => {
