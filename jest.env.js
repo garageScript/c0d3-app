@@ -4,4 +4,7 @@
  * solution that solved that by creating this file and adding the setupFilesAfterEnv
  * key into the jest.config.ts file
  */
+
+import './__mocks__/next-auth/nextAuthAPI.mock'
+
 global.setImmediate = jest.useRealTimers

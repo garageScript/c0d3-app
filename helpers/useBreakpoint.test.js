@@ -64,6 +64,34 @@ describe('useBreakpoint', () => {
     expect(mockRemoveEventListener).toHaveBeenCalled()
   })
 
+  test('should not attach change event listener if matchMedia is undefined', () => {
+    expect.assertions(1)
+
+    const mockAddEventListener = jest.fn()
+    const mockRemoveEventListener = jest.fn()
+
+    window.matchMedia.mockImplementation(query => ({
+      matches: true,
+      media: query,
+      addEventListener: mockAddEventListener,
+      removeEventListener: mockRemoveEventListener
+    }))
+
+    const initialMatchMediaValue = window.matchMedia
+
+    window.matchMedia = undefined
+
+    const { result, hydrate, unmount } = renderHook(() =>
+      useBreakpoint('xs', 'down', false)
+    )
+
+    hydrate()
+
+    expect(mockAddEventListener).not.toHaveBeenCalled()
+
+    window.matchMedia = initialMatchMediaValue
+  })
+
   test('should update matches when event listener is called', () => {
     const mockAddEventListener = jest.fn()
     const mockRemoveEventListener = jest.fn()
