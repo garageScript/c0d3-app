@@ -5,12 +5,8 @@ import Head from 'next/head'
 import type { LayoutGetter } from '../@types/page'
 import styles from '../scss/layout.module.scss'
 
-const Layout: React.FC<{ title?: string; bg?: 'white' | 'light-gray' }> = ({
-  children,
-  title,
-  bg
-}) => (
-  <main className={styles[bg === 'white' ? 'white' : 'light-gray']}>
+const Layout: React.FC<{ title?: string }> = ({ children, title }) => (
+  <main>
     <Head>
       <title key="title">{title ? `${title} — C0D3` : 'C0D3'}</title>
     </Head>
