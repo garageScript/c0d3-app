@@ -2,9 +2,7 @@
 
 exports[`MyApp component should render Login component passed in as prop 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"

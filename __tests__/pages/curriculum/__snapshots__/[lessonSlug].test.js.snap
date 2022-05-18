@@ -3,9 +3,7 @@
 exports[`Lesson Page Should correctly render challenges page for students who hadn't passed previous lessons 1`] = `
 <div>
   <div>
-    <main
-      class="light-gray"
-    >
+    <main>
       <nav
         class="navbar navbar navbar-expand-lg navbar-light bg-white"
         id="appNav"
@@ -488,9 +486,7 @@ solution(a); // should return 50
 
 exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -715,9 +711,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
 exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
 <div>
   <div>
-    <main
-      class="light-gray"
-    >
+    <main>
       <nav
         class="navbar navbar navbar-expand-lg navbar-light bg-white"
         id="appNav"
@@ -1227,9 +1221,7 @@ result = solution(0, "hello") // ""
 
 exports[`Lesson Page Should return Internal server Error if alerts or lessons are missing 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"

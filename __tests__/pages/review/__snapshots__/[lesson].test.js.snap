@@ -2,9 +2,7 @@
 
 exports[`Lesson Page Should render Error component if route is invalid 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -229,9 +227,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
 exports[`Lesson Page Should render empty submissions 1`] = `
 <div>
   <div>
-    <main
-      class="light-gray"
-    >
+    <main>
       <nav
         class="navbar navbar navbar-expand-lg navbar-light bg-white"
         id="appNav"
@@ -474,9 +470,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
 exports[`Lesson Page Should render new submissions 1`] = `
 <div>
   <div>
-    <main
-      class="light-gray"
-    >
+    <main>
       <nav
         class="navbar navbar navbar-expand-lg navbar-light bg-white"
         id="appNav"

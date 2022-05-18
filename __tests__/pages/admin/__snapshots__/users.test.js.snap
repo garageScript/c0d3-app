@@ -2,9 +2,7 @@
 
 exports[`Users test Should be able to switch search options 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -389,9 +387,7 @@ exports[`Users test Should be able to switch search options 1`] = `
 
 exports[`Users test Should be able to switch search options 2`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -776,9 +772,7 @@ exports[`Users test Should be able to switch search options 2`] = `
 
 exports[`Users test Should be able to switch search options 3`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -1163,9 +1157,7 @@ exports[`Users test Should be able to switch search options 3`] = `
 
 exports[`Users test Should be able to switch search options 4`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"

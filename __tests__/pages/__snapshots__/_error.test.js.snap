@@ -2,9 +2,7 @@
 
 exports[`_error page Should capture error when component is loading 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -133,9 +131,7 @@ exports[`_error page Should capture error when component is loading 1`] = `
 
 exports[`_error page Should return Error 500 component 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"

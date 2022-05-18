@@ -2,9 +2,7 @@
 
 exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -3922,9 +3920,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
 
 exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"

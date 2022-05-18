@@ -2,9 +2,7 @@
 
 exports[`user profile test Should render anonymous users 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -875,9 +873,7 @@ exports[`user profile test Should render anonymous users 1`] = `
 
 exports[`user profile test Should render if no stars received 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -1753,9 +1749,7 @@ exports[`user profile test Should render if no stars received 1`] = `
 
 exports[`user profile test Should render nulled challenges 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -2667,9 +2661,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
 
 exports[`user profile test Should render nulled submission lessonIds 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -3540,9 +3532,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
 
 exports[`user profile test Should render profile 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -4666,9 +4656,7 @@ exports[`user profile test Should render profile 1`] = `
 
 exports[`user profile test should render discord avatar and username if user connected to discord 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"

@@ -2,9 +2,7 @@
 
 exports[`Curriculum Page Should render curriculum with no session 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -1471,9 +1469,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
 
 exports[`Curriculum Page Should render with basic dummy data 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
@@ -3169,9 +3165,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
 
 exports[`Curriculum Page Should render with lessonStatus data 1`] = `
 <div>
-  <main
-    class="light-gray"
-  >
+  <main>
     <nav
       class="navbar navbar navbar-expand-lg navbar-light bg-white"
       id="appNav"
