@@ -172,6 +172,23 @@ describe('JWT callback', () => {
 
     expect(value.user.id).toBe(1)
   })
+
+  it('Should not set user in token if there is no user', () => {
+    expect.assertions(1)
+
+    const options = {
+      token: {
+        user: null
+      },
+      user: {
+        id: 1
+      }
+    }
+
+    const value = jwt({ ...options, user: null })
+
+    expect(value.user).toBeFalsy()
+  })
 })
 
 describe('Session callback', () => {
