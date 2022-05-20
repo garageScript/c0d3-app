@@ -1,11 +1,12 @@
 import { updateRefreshandAccessTokens } from './discordAuth'
-import { Account, User } from 'next-auth'
+import { Account, DefaultSession, Session, User } from 'next-auth'
 import { LoggedRequest } from '../@types/helpers'
 import { Request, Response } from 'express'
 import { NextApiResponse } from 'next'
 import DiscordProvider from 'next-auth/providers/discord'
 import { getUserSession } from './getUserSession'
 import prisma from '../prisma'
+import { JWT } from 'next-auth/jwt'
 
 export const providers = [
   DiscordProvider({
@@ -56,3 +57,20 @@ export const signIn =
 
     return true
   }
+
+// jwt callback is first called then session callback
+export const jwt = ({ token, user }: { token: JWT; user?: User }) => {
+  if (user) token.user = user
+  return token
+}
+
+export const session = async ({
+  session,
+  token
+}: {
+  session: Session
+  token: JWT
+}) => {
+  session.user = token.user as DefaultSession['user']
+  return session
+}
