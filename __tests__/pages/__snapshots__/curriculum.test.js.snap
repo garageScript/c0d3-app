@@ -163,7 +163,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
     </div>
   </nav>
   <div
-    class="container-md"
+    class="container-md container"
   >
     <img
       class="arrow false position-fixed d-xl-none"
@@ -1857,7 +1857,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
     </div>
   </nav>
   <div
-    class="container-md"
+    class="container-md container"
   >
     <img
       class="arrow false position-fixed d-xl-none"
