@@ -29280,7 +29280,12 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     <span
       className="token plain"
     >
-       React
+       
+    </span>
+    <span
+      className="token maybe-class-name"
+    >
+      React
     </span>
     <span
       className="token punctuation"
@@ -29414,7 +29419,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       .
     </span>
     <span
-      className="token function"
+      className="token method function property-access"
       style={
         Object {
           "color": "rgb(221, 74, 104)",
@@ -29490,7 +29495,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
        
     </span>
     <span
-      className="token keyword"
+      className="token keyword module"
       style={
         Object {
           "color": "rgb(0, 119, 170)",
@@ -29502,7 +29507,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     <span
       className="token plain"
     >
-       Language
+       
+    </span>
+    <span
+      className="token maybe-class-name"
+    >
+      Language
+    </span>
+    <span
+      className="token plain"
+    >
+      
     </span>
   </div>
   <div
@@ -29520,7 +29535,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
         
     </span>
     <span
-      className="token keyword"
+      className="token keyword control-flow"
       style={
         Object {
           "color": "rgb(0, 119, 170)",
@@ -30099,7 +30114,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
        
     </span>
     <span
-      className="token operator"
+      className="token arrow operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -30293,7 +30308,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
        
     </span>
     <span
-      className="token tag script language-javascript operator"
+      className="token tag script language-javascript spread operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -30466,7 +30481,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       .
     </span>
     <span
-      className="token function"
+      className="token method function property-access"
       style={
         Object {
           "color": "rgb(221, 74, 104)",
@@ -30535,7 +30550,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
        
     </span>
     <span
-      className="token operator"
+      className="token arrow operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -30698,7 +30713,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       ...
     </span>
     <span
-      className="token tag spread function"
+      className="token tag spread method function property-access"
       style={
         Object {
           "color": "rgb(221, 74, 104)",
@@ -30883,7 +30898,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       .
     </span>
     <span
-      className="token function"
+      className="token method function property-access"
       style={
         Object {
           "color": "rgb(221, 74, 104)",
@@ -30952,7 +30967,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
        
     </span>
     <span
-      className="token operator"
+      className="token arrow operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -31115,7 +31130,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       ...
     </span>
     <span
-      className="token tag spread function"
+      className="token tag spread method function property-access"
       style={
         Object {
           "color": "rgb(221, 74, 104)",
