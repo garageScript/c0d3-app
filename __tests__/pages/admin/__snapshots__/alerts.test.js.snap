@@ -163,7 +163,7 @@ exports[`Alerts page Should remove alert 1`] = `
     </div>
   </nav>
   <div
-    class="container-md"
+    class="container-md container"
   >
     <div
       class="row mt-5"
@@ -662,7 +662,7 @@ exports[`Alerts page Should remove alert 2`] = `
     </div>
   </nav>
   <div
-    class="container-md"
+    class="container-md container"
   >
     <div
       class="row mt-5"
