@@ -163,7 +163,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
     </div>
   </nav>
   <div
-    class="container-md"
+    class="container-md container"
   >
     <div
       class="container"
@@ -386,7 +386,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
       </div>
     </nav>
     <div
-      class="container-md"
+      class="container-md container"
     >
       <div
         class="row mt-4"
@@ -627,7 +627,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
       </div>
     </nav>
     <div
-      class="container-md"
+      class="container-md container"
     >
       <div
         class="row mt-4"

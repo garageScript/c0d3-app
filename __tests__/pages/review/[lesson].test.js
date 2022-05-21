@@ -18,7 +18,6 @@ import { useRouter } from 'next/router'
 import expectLoading from '../../utils/expectLoading'
 import getPreviousSubmissions from '../../../__dummy__/getPreviousSubmissionsData'
 import GET_PREVIOUS_SUBMISSIONS from '../../../graphql/queries/getPreviousSubmissions'
-import { SubmissionStatus } from '../../../graphql'
 
 const getAppMock = {
   request: { query: GET_APP },
