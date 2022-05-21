@@ -55,9 +55,6 @@ describe('Alerts page', () => {
     await userEvent.click(
       screen.getAllByRole('button', { name: 'Remove Alert' })[0]
     )
-    await waitForElementToBeRemoved(() =>
-      screen.queryByText('Set up your computer to submit challenges.')
-    )
     expect(container).toMatchSnapshot()
   })
   test('Should capture error', async () => {
