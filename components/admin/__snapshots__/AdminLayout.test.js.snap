@@ -70,7 +70,7 @@ exports[`AdminLayout test Should render children 1`] = `
     </div>
   </nav>
   <div
-    class="container-md"
+    class="container-md container"
   >
     <h1>
       Test title
