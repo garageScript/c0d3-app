@@ -121,7 +121,7 @@
     "remark-gfm": "^3.0.1",
     "remark-slug": "^7.0.1",
     "remark-toc": "^8.0.1",
-    "sass-loader": "^10.2.1",
+    "sass-loader": "^13.0.0",
     "storybook-addon-next-router": "^4.0.0",
     "svgo": "^2.8.0",
     "ts-node": "^10.7.0",
