@@ -97,7 +97,8 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   const hasMounted = useHasMounted()
   //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data, loading } = useGetSessionQuery({
-    fetchPolicy: 'cache-and-network',
+    fetchPolicy: 'network-only',
+    nextFetchPolicy: 'cache-and-network',
     ssr: false
   })
   const [state, setState] = useState<State>({
