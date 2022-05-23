@@ -1,10 +1,10 @@
-import '../../../__mocks__/useIsMac.mock'
-import '../../../__mocks__/useBreakpoint.mock'
+import '../../../../__mocks__/useIsMac.mock'
+import '../../../../__mocks__/useBreakpoint.mock'
 import React from 'react'
-import Lessons from '../../../pages/admin/lessons'
-import dummyLessonData from '../../../__dummy__/lessonData'
-import dummySessionData from '../../../__dummy__/sessionData'
-import dummyAlertData from '../../../__dummy__/alertData'
+import Lessons from '../../../../pages/admin/lessons/index'
+import dummyLessonData from '../../../../__dummy__/lessonData'
+import dummySessionData from '../../../../__dummy__/sessionData'
+import dummyAlertData from '../../../../__dummy__/alertData'
 import { MockedProvider } from '@apollo/client/testing'
 import {
   render,
@@ -13,7 +13,7 @@ import {
   waitFor
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import GET_APP from '../../../graphql/queries/getApp'
+import GET_APP from '../../../../graphql/queries/getApp'
 
 const mocks = [
   {
