@@ -10,6 +10,7 @@ import AdminModuleInputs, {
 import Breadcrumbs from '../../../../components/Breadcrumbs'
 import Layout from '../../../../components/Layout'
 import styles from '../../../../scss/modules.module.scss'
+import { AdminLayout } from '../../../../components/admin/AdminLayout'
 
 const MODULES = gql`
   query {
@@ -103,7 +104,7 @@ const Lessons = ({ data }: GetAppProps) => {
   }, [lessons])
 
   return (
-    <Layout>
+    <AdminLayout data={data}>
       <main className={styles.container}>
         <header>
           <h1>Lesson Info</h1>
@@ -117,7 +118,7 @@ const Lessons = ({ data }: GetAppProps) => {
           <AdminLessonNav panels={panels} />
         </section>
       </main>
-    </Layout>
+    </AdminLayout>
   )
 }
 
