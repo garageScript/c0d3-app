@@ -45,12 +45,10 @@ export const authorize =
 
     if (!user) return null
 
-    const dbUser = await prisma.user.findFirst({
+    // What we return here is passed to jwt and session callbacks
+    return prisma.user.findFirst({
       where: { id: user.id }
     })
-
-    // What we return here is passed to jwt and session callbacks
-    return dbUser
   }
 
 export const providers = (
