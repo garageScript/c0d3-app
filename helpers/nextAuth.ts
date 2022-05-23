@@ -3,14 +3,72 @@ import { Account, User } from 'next-auth'
 import { LoggedRequest } from '../@types/helpers'
 import { Request, Response } from 'express'
 import { NextApiResponse } from 'next'
-import DiscordProvider from 'next-auth/providers/discord'
 import { getUserSession } from './getUserSession'
+import { get } from 'lodash'
+import { login, signup } from '../graphql/resolvers/authController'
 import prisma from '../prisma'
+import DiscordProvider from 'next-auth/providers/discord'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
-export const providers = [
+type Credentials =
+  | Record<'username' | 'password' | 'email' | 'firstName' | 'lastName', string>
+  | undefined
+
+export const authorize =
+  (req: LoggedRequest & Request, res: NextApiResponse & Response) =>
+  async (credentials: Credentials) => {
+    const context = { req, res }
+
+    const username = get(credentials, 'username')
+    const password = get(credentials, 'password')
+    const email = get(credentials, 'email')
+    const firstName = get(credentials, 'firstName')
+    const lastName = get(credentials, 'lastName')
+
+    const isSignUpFlow = username && email && firstName && lastName && password
+    const isLoginFlow = username && password
+
+    const user = isSignUpFlow
+      ? await signup(
+          undefined,
+          {
+            username,
+            email,
+            // Will be uncommented when signup takes password as argument
+            // password,
+            firstName,
+            lastName
+          },
+          context
+        )
+      : isLoginFlow && (await login(undefined, { username, password }, context))
+
+    if (!user) return null
+
+    // What we return here is passed to jwt and session callbacks
+    return prisma.user.findFirst({
+      where: { id: user.id }
+    })
+  }
+
+export const providers = (
+  req: LoggedRequest & Request,
+  res: NextApiResponse & Response
+) => [
   DiscordProvider({
     clientId: process.env.DISCORD_KEY,
     clientSecret: process.env.DISCORD_SECRET
+  }),
+  CredentialsProvider({
+    name: 'Credentials',
+    credentials: {
+      username: { label: 'Username', type: 'text' },
+      password: { label: 'Password', type: 'password' },
+      email: { label: 'Email', type: 'text' },
+      firstName: { label: 'First name', type: 'text' },
+      lastName: { label: 'Last name', type: 'text' }
+    },
+    authorize: authorize(req, res)
   })
 ]
 
