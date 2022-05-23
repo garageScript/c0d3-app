@@ -4,7 +4,8 @@ import {
   render,
   waitFor,
   screen,
-  waitForElementToBeRemoved
+  waitForElementToBeRemoved,
+  act
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
@@ -101,6 +102,9 @@ describe('Lesson Page', () => {
     await waitFor(() =>
       getByRole('heading', { name: /Variables & Functions/i })
     )
+
+    // Used to wait for the query response to arrive
+    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })

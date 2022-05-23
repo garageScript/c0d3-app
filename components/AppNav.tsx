@@ -81,7 +81,10 @@ const AppNav: React.FC<{}> = () => {
   const [session, setSession] = useState<GetAppQuery['session']>()
   const isAdmin = _.get(session, 'user.isAdmin', false)
 
-  const { data, loading } = useGetAppQuery()
+  const { data, loading } = useGetAppQuery({
+    fetchPolicy: 'network-only',
+    nextFetchPolicy: 'cache-and-network'
+  })
 
   useEffect(() => {
     if (data && data.session) {
