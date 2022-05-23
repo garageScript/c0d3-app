@@ -8,7 +8,6 @@ import AdminModuleInputs, {
   Props
 } from '../../../../components/admin/lessons/AdminModuleInputs'
 import Breadcrumbs from '../../../../components/Breadcrumbs'
-import Layout from '../../../../components/Layout'
 import styles from '../../../../scss/modules.module.scss'
 import { AdminLayout } from '../../../../components/admin/AdminLayout'
 
