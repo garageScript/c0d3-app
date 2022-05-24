@@ -9,7 +9,7 @@ export default (
   res: NextApiResponse & Response
 ) =>
   NextAuth(req, res, {
-    providers,
+    providers: providers(req, res),
     callbacks: {
       signIn: signIn(req, res),
       jwt,

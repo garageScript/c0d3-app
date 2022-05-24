@@ -20,7 +20,7 @@ describe('next-auth middleware', () => {
     const req = {}
 
     const options = {
-      providers,
+      providers: providers(req, res),
       callbacks: {
         signIn: signIn(req, res),
         jwt,
