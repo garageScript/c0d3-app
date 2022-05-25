@@ -65,7 +65,7 @@
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
     "rehype-autolink-headings": "^6.1.0",
-    "sass": "^1.51.0",
+    "sass": "^1.52.1",
     "use-undo": "^1.1.0",
     "winston": "^3.7.2",
     "yup": "^0.32.11"
@@ -80,7 +80,7 @@
     "@jest/types": "^28.0.2",
     "@next/eslint-plugin-next": "^12.1.4",
     "@storybook/addon-actions": "^6.5.4",
-    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-essentials": "^6.5.5",
     "@storybook/addon-storyshots": "^6.5.4",
     "@storybook/addon-storysource": "^6.4.22",
     "@storybook/addon-viewport": "^6.5.3",
