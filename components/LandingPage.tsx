@@ -66,7 +66,7 @@ const LandingPage: React.FC = () => {
               alt="Modern curriculum"
               width="163"
             />
-            <h4 className="mt-3 fw-bold">Modern Curriculum</h4>
+            <p className="mt-3 fw-bold h3">Modern Curriculum</p>
             <p className="mt-4 fw-light">
               First the curriculum will help you achieve mastery in JavaScript.
               Using JavaScript, you will learn about different branches of
@@ -82,7 +82,7 @@ const LandingPage: React.FC = () => {
               alt="Support"
               width="259"
             />
-            <h4 className="mt-3 fw-bold">Support</h4>
+            <p className="mt-3 fw-bold h3">Support</p>
             <p className="mt-4 fw-light">
               One of the most important skills in a challenging workplace is
               knowing how to ask for help. Our curriculum is intentionally
@@ -98,7 +98,7 @@ const LandingPage: React.FC = () => {
               alt="Work Experience"
               layout="fixed"
             />
-            <h4 className="mt-3 fw-bold">Work Experience</h4>
+            <p className="mt-3 fw-bold h3">Work Experience</p>
             <p className="mt-4 fw-light">
               Once you have completed our curriculum and learned to communicate
               effectively, you will be invited to contribute to this open-source
@@ -165,7 +165,7 @@ const LandingPage: React.FC = () => {
                 The exercises and challenges are designed to be difficult to
                 force you to ask questions. Students who have passed the lessons
                 are available in the chatrooms to help you with your questions.{' '}
-                <span className="fw-light text-warning">
+                <span className="fw-bold">
                   (Meetups are currently unavailable due to COVID-19)
                 </span>
               </p>
