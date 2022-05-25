@@ -79,9 +79,9 @@
     "@graphql-codegen/typescript-resolvers": "^2.6.4",
     "@jest/types": "^28.0.2",
     "@next/eslint-plugin-next": "^12.1.4",
-    "@storybook/addon-actions": "^6.5.3",
+    "@storybook/addon-actions": "^6.5.4",
     "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-storyshots": "^6.5.3",
+    "@storybook/addon-storyshots": "^6.5.4",
     "@storybook/addon-storysource": "^6.4.22",
     "@storybook/addon-viewport": "^6.5.3",
     "@storybook/react": "^6.4.22",
@@ -124,7 +124,7 @@
     "sass-loader": "^10.2.1",
     "storybook-addon-next-router": "^4.0.0",
     "svgo": "^2.8.0",
-    "ts-node": "^10.7.0",
+    "ts-node": "^10.8.0",
     "typescript": "^4.6.4"
   }
 }

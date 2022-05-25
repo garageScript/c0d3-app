@@ -2,13 +2,23 @@ jest.mock('./discordAuth.ts')
 jest.mock('./middleware/user')
 jest.mock('./middleware/session')
 jest.mock('./middleware/logger')
+jest.mock('../graphql/resolvers/authController.ts')
 import { updateRefreshandAccessTokens } from './discordAuth'
 import prismaMock from '../__tests__/utils/prismaMock'
-import { signIn } from './nextAuth'
+import { authorize, providers, jwt, session, signIn } from './nextAuth'
 import loggingMiddleware from './middleware/logger'
 import sessionMiddleware from './middleware/session'
 import userMiddleware from './middleware/user'
 import { getUserSession } from './getUserSession'
+import { login, signup } from '../graphql/resolvers/authController'
+
+const partialCredentials = { username: 'noob', password: 'noob123' }
+const credentials = {
+  ...partialCredentials,
+  firstName: 'noob',
+  lastName: 'pro',
+  email: 'noob@gmail.com'
+}
 
 const res = {
   setHeader: jest.fn(),
@@ -21,6 +31,18 @@ const defaultMiddleware = (_req, _res, next) => next()
 
 loggingMiddleware.mockImplementation(defaultMiddleware)
 sessionMiddleware.mockReturnValue(defaultMiddleware)
+
+describe('Providers', () => {
+  test('Should call providers with request and response objects', () => {
+    expect.assertions(1)
+
+    const value = providers(req, res)
+    const hasProviders =
+      value[0].id === 'discord' && value[1].id === 'credentials'
+
+    expect(hasProviders).toBeTruthy()
+  })
+})
 
 describe('Signin callback', () => {
   beforeEach(() => {
@@ -152,5 +174,97 @@ describe('Signin callback', () => {
 
       expect(c0d3User).toBe(null)
     })
+  })
+})
+
+describe('JWT callback', () => {
+  it('Should set user in token', () => {
+    expect.assertions(1)
+
+    const options = {
+      token: {
+        user: null
+      },
+      user: {
+        id: 1
+      }
+    }
+
+    const value = jwt(options)
+
+    expect(value.user.id).toBe(1)
+  })
+
+  it('Should not set user in token if there is no user', () => {
+    expect.assertions(1)
+
+    const options = {
+      token: {
+        user: null
+      },
+      user: {
+        id: 1
+      }
+    }
+
+    const value = jwt({ ...options, user: null })
+
+    expect(value.user).toBeFalsy()
+  })
+})
+
+describe('Session callback', () => {
+  it('Should set session.user to token.user', async () => {
+    expect.assertions(1)
+
+    const options = {
+      token: {
+        user: {
+          id: 1
+        }
+      },
+      session: {
+        user: null
+      }
+    }
+
+    const value = await session(options)
+
+    expect(value.user.id).toBe(1)
+  })
+})
+
+describe('Authorize callback', () => {
+  test('Should login user', async () => {
+    expect.assertions(1)
+
+    const id = 123
+    prismaMock.user.findFirst.mockResolvedValue({ id })
+
+    login.mockImplementation(() => ({ id }))
+    const user = await authorize(req, res)(partialCredentials)
+
+    expect(user.id).toBe(id)
+  })
+
+  test('Should signup user', async () => {
+    expect.assertions(1)
+
+    const id = 124
+    prismaMock.user.findFirst.mockResolvedValue({ id })
+
+    signup.mockImplementation(() => ({ id }))
+    const user = await authorize(req, res)(credentials)
+
+    expect(user.id).toBe(id)
+  })
+
+  test('Should return null', async () => {
+    expect.assertions(1)
+
+    signup.mockImplementation(() => null)
+    const user = await authorize(req, res)(credentials)
+
+    expect(user).toBe(null)
   })
 })
