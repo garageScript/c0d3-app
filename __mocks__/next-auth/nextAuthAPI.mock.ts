@@ -126,6 +126,8 @@ const useSessionReturn = {
   status: 'authenticated'
 }
 
+Object.freeze(useSessionReturn)
+
 export const mockUseSession = jest.fn().mockReturnValue(useSessionReturn)
 const mockGetSession = jest.fn().mockReturnValue(useSessionReturn)
 
