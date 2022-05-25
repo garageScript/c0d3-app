@@ -32,45 +32,42 @@ type Module = {
 }
 type Modules = Module[]
 
-type ModulesPanelProps = {
+type ModulesTabProps = {
   filteredModules: Modules
   lessonId: number
   refetch: Props['refetch']
 }
 
-const modulesPanel = ({
+const ModulesTab = ({
   filteredModules,
   lessonId,
   refetch
-}: ModulesPanelProps) => ({
-  tabName: 'Modules',
-  tabComponent: () => {
-    const [selectedIndex, setSelectedIndex] = useState(-1)
-    const onAddItem = () => setSelectedIndex(-1)
-    const onSelect = (item: Module) => setSelectedIndex(item.id)
+}: ModulesTabProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(-1)
+  const onAddItem = () => setSelectedIndex(-1)
+  const onSelect = (item: Module) => setSelectedIndex(item.id)
 
-    useEffect(() => setSelectedIndex(filteredModules[0]?.id), [lessonId])
+  useEffect(() => setSelectedIndex(filteredModules[0]?.id), [lessonId])
 
-    return (
-      <div className={styles.container__modulesPanel}>
-        <AdminLessonSideNav
-          title="Modules"
-          items={filteredModules}
-          onAddItem={onAddItem}
-          onSelect={onSelect}
-          selectedIndex={selectedIndex}
+  return (
+    <div className={styles.container__modulesPanel}>
+      <AdminLessonSideNav
+        title="Modules"
+        items={filteredModules}
+        onAddItem={onAddItem}
+        onSelect={onSelect}
+        selectedIndex={selectedIndex}
+      />
+      <div className={styles.container__modulesPanel__inputs}>
+        <AdminModuleInputs
+          lessonId={lessonId}
+          refetch={refetch}
+          module={filteredModules.find(module => module.id === selectedIndex)}
         />
-        <div className={styles.container__modulesPanel__inputs}>
-          <AdminModuleInputs
-            lessonId={lessonId}
-            refetch={refetch}
-            module={filteredModules.find(module => module.id === selectedIndex)}
-          />
-        </div>
       </div>
-    )
-  }
-})
+    </div>
+  )
+}
 
 const Lessons = ({ data }: GetAppProps) => {
   const { lessons } = data
@@ -85,11 +82,16 @@ const Lessons = ({ data }: GetAppProps) => {
 
   const panels = useMemo(
     () => [
-      modulesPanel({
-        filteredModules,
-        refetch,
-        lessonId: lesson.id
-      })
+      {
+        tabName: 'Modules',
+        tabComponent: () => (
+          <ModulesTab
+            filteredModules={filteredModules}
+            refetch={refetch}
+            lessonId={lesson.id}
+          />
+        )
+      }
     ],
     [lesson.id, filteredModules]
   )
