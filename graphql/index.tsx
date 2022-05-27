@@ -106,6 +106,7 @@ export type Module = {
   id: Scalars['Int']
   lesson: Lesson
   name: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Mutation = {
@@ -1404,6 +1405,7 @@ export type ModuleResolvers<
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
@@ -4668,6 +4670,7 @@ export type ModuleKeySpecifier = (
   | 'id'
   | 'lesson'
   | 'name'
+  | 'order'
   | ModuleKeySpecifier
 )[]
 export type ModuleFieldPolicy = {
@@ -4676,6 +4679,7 @@ export type ModuleFieldPolicy = {
   id?: FieldPolicy<any> | FieldReadFunction<any>
   lesson?: FieldPolicy<any> | FieldReadFunction<any>
   name?: FieldPolicy<any> | FieldReadFunction<any>
+  order?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type MutationKeySpecifier = (
   | 'acceptSubmission'

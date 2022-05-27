@@ -240,6 +240,7 @@ export default gql`
     lesson: Lesson!
     name: String!
     content: String!
+    order: Int!
   }
 
   type Exercise {
