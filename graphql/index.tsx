@@ -169,6 +169,7 @@ export type MutationAddModuleArgs = {
   content: Scalars['String']
   lessonId: Scalars['Int']
   name: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type MutationChangeAdminRightsArgs = {
@@ -285,6 +286,7 @@ export type MutationUpdateModuleArgs = {
   id: Scalars['Int']
   lessonId: Scalars['Int']
   name: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Query = {
@@ -454,6 +456,7 @@ export type AddModuleMutationVariables = Exact<{
   content: Scalars['String']
   lessonId: Scalars['Int']
   name: Scalars['String']
+  order: Scalars['Int']
 }>
 
 export type AddModuleMutation = {
@@ -1049,6 +1052,7 @@ export type UpdateModuleMutationVariables = Exact<{
   lessonId: Scalars['Int']
   name: Scalars['String']
   content: Scalars['String']
+  order: Scalars['Int']
 }>
 
 export type UpdateModuleMutation = {
@@ -1444,7 +1448,10 @@ export type MutationResolvers<
     ResolversTypes['Module'],
     ParentType,
     ContextType,
-    RequireFields<MutationAddModuleArgs, 'content' | 'lessonId' | 'name'>
+    RequireFields<
+      MutationAddModuleArgs,
+      'content' | 'lessonId' | 'name' | 'order'
+    >
   >
   changeAdminRights?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
@@ -1580,7 +1587,7 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationUpdateModuleArgs,
-      'content' | 'id' | 'lessonId' | 'name'
+      'content' | 'id' | 'lessonId' | 'name' | 'order'
     >
   >
 }>
@@ -2114,8 +2121,18 @@ export type AddCommentMutationOptions = Apollo.BaseMutationOptions<
   AddCommentMutationVariables
 >
 export const AddModuleDocument = gql`
-  mutation addModule($content: String!, $lessonId: Int!, $name: String!) {
-    addModule(content: $content, lessonId: $lessonId, name: $name) {
+  mutation addModule(
+    $content: String!
+    $lessonId: Int!
+    $name: String!
+    $order: Int!
+  ) {
+    addModule(
+      content: $content
+      lessonId: $lessonId
+      name: $name
+      order: $order
+    ) {
       id
       name
       content
@@ -2177,6 +2194,7 @@ export function withAddModule<
  *      content: // value for 'content'
  *      lessonId: // value for 'lessonId'
  *      name: // value for 'name'
+ *      order: // value for 'order'
  *   },
  * });
  */
@@ -4243,8 +4261,15 @@ export const UpdateModuleDocument = gql`
     $lessonId: Int!
     $name: String!
     $content: String!
+    $order: Int!
   ) {
-    updateModule(id: $id, lessonId: $lessonId, name: $name, content: $content) {
+    updateModule(
+      id: $id
+      lessonId: $lessonId
+      name: $name
+      content: $content
+      order: $order
+    ) {
       id
       name
       content
@@ -4307,6 +4332,7 @@ export function withUpdateModule<
  *      lessonId: // value for 'lessonId'
  *      name: // value for 'name'
  *      content: // value for 'content'
+ *      order: // value for 'order'
  *   },
  * });
  */

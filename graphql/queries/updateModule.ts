@@ -6,8 +6,15 @@ const UPDATE_MODULE = gql`
     $lessonId: Int!
     $name: String!
     $content: String!
+    $order: Int!
   ) {
-    updateModule(id: $id, lessonId: $lessonId, name: $name, content: $content) {
+    updateModule(
+      id: $id
+      lessonId: $lessonId
+      name: $name
+      content: $content
+      order: $order
+    ) {
       id
       name
       content
