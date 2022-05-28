@@ -18,6 +18,7 @@ const UPDATE_MODULE = gql`
       id
       name
       content
+      order
       lesson {
         title
       }

@@ -466,6 +466,7 @@ export type AddModuleMutation = {
     id: number
     name: string
     content: string
+    order: number
     lesson: { __typename?: 'Lesson'; title: string }
   }
 }
@@ -597,6 +598,7 @@ export type DeleteModuleMutation = {
   deleteModule: {
     __typename?: 'Module'
     id: number
+    order: number
     name: string
     content: string
     lesson: { __typename?: 'Lesson'; title: string }
@@ -1062,6 +1064,7 @@ export type UpdateModuleMutation = {
     id: number
     name: string
     content: string
+    order: number
     lesson: { __typename?: 'Lesson'; title: string }
   }
 }
@@ -2136,6 +2139,7 @@ export const AddModuleDocument = gql`
       id
       name
       content
+      order
       lesson {
         title
       }
@@ -2763,6 +2767,7 @@ export const DeleteModuleDocument = gql`
       lesson {
         title
       }
+      order
       name
       content
     }
@@ -4273,6 +4278,7 @@ export const UpdateModuleDocument = gql`
       id
       name
       content
+      order
       lesson {
         title
       }

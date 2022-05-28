@@ -13,11 +13,13 @@ const lesson = { title: 'Foundations of JavaScript', id: 1 }
 const modules = {
   basic: {
     name: 'Functions',
-    content: 'Functions are cool'
+    content: 'Functions are cool',
+    order: 1
   },
   withId: {
     name: 'Functions',
     content: 'Functions are cool',
+    order: 1,
     id: 1
   }
 }
@@ -120,6 +122,9 @@ describe('AdminModuleInputs component', () => {
     await userEvent.type(getByTestId('input0'), 'Functions', {
       delay: 1
     })
+    await userEvent.type(getByTestId('input2'), '1', {
+      delay: 1
+    })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
       delay: 1
     })
@@ -149,6 +154,9 @@ describe('AdminModuleInputs component', () => {
     )
 
     await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('input2'), '1', {
       delay: 1
     })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
@@ -225,6 +233,9 @@ describe('AdminModuleInputs component', () => {
     await userEvent.type(getByTestId('input0'), 'Functions', {
       delay: 1
     })
+    await userEvent.type(getByTestId('input2'), '1', {
+      delay: 1
+    })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
       delay: 1
     })
@@ -271,6 +282,9 @@ describe('AdminModuleInputs component', () => {
     await userEvent.type(getByTestId('input0'), 'Functions', {
       delay: 1
     })
+    await userEvent.type(getByTestId('input2'), '1', {
+      delay: 1
+    })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
       delay: 1
     })
@@ -304,6 +318,9 @@ describe('AdminModuleInputs component', () => {
     )
 
     await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('input2'), '1', {
       delay: 1
     })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
@@ -353,6 +370,9 @@ describe('AdminModuleInputs component', () => {
     await userEvent.type(getByTestId('input0'), 'Functions', {
       delay: 1
     })
+    await userEvent.type(getByTestId('input2'), '1', {
+      delay: 1
+    })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
       delay: 1
     })
@@ -380,6 +400,9 @@ describe('AdminModuleInputs component', () => {
     )
 
     await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('input2'), '1', {
       delay: 1
     })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
@@ -422,6 +445,9 @@ describe('AdminModuleInputs component', () => {
     )
 
     await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('input2'), '1', {
       delay: 1
     })
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {

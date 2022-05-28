@@ -16,6 +16,7 @@ const ADD_MODULE = gql`
       id
       name
       content
+      order
       lesson {
         title
       }
