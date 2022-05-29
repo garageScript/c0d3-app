@@ -170,6 +170,7 @@ model Module {
   name      String     @db.VarChar(255)
   content   String
   exercises Exercise[]
+  order     Int
 
   @@map("modules")
 }

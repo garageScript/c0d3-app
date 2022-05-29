@@ -24,11 +24,11 @@ export const addModule = async (
 ): Promise<Module> => {
   const { req } = ctx
   await isAdminOrThrow(req)
-  const { content, lessonId, name } = args
+  const { content, lessonId, name, order } = args
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
   return prisma.module.create({
-    data: { authorId, content, lessonId, name },
+    data: { authorId, content, lessonId, name, order },
     include: {
       author: true,
       lesson: true
