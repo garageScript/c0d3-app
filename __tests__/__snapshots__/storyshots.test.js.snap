@@ -27393,11 +27393,11 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           src="/assets/landing/choose-01.svg"
           width="163"
         />
-        <h4
-          className="mt-3 fw-bold"
+        <p
+          className="mt-3 fw-bold h3"
         >
           Modern Curriculum
-        </h4>
+        </p>
         <p
           className="mt-4 fw-light"
         >
@@ -27415,11 +27415,11 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           src="/assets/landing/choose-02.svg"
           width="259"
         />
-        <h4
-          className="mt-3 fw-bold"
+        <p
+          className="mt-3 fw-bold h3"
         >
           Support
-        </h4>
+        </p>
         <p
           className="mt-4 fw-light"
         >
@@ -27437,11 +27437,11 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           src="/assets/landing/choose-03.svg"
           width="93"
         />
-        <h4
-          className="mt-3 fw-bold"
+        <p
+          className="mt-3 fw-bold h3"
         >
           Work Experience
-        </h4>
+        </p>
         <p
           className="mt-4 fw-light"
         >
@@ -27547,7 +27547,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Students who have passed the lessons are available in the chatrooms to help you with your questions.
              
             <span
-              className="fw-light text-warning"
+              className="fw-bold"
             >
               (Meetups are currently unavailable due to COVID-19)
             </span>
