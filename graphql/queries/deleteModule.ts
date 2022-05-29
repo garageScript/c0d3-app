@@ -7,6 +7,7 @@ const DELETE_MODULE = gql`
       lesson {
         title
       }
+      order
       name
       content
     }

@@ -921,6 +921,25 @@ Array [
               />
             </div>
           </div>
+          <div
+            className="d-flex flex-column mb-4"
+          >
+            <span
+              className="optionInfo__span"
+              data-testid="spanOrder2"
+            >
+              Order
+            </span>
+            <input
+              className="form-control optionInfo__input"
+              data-testid="input2"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </div>
         </div>
         <div
           className="text-center align-self-start"
