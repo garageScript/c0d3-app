@@ -13,7 +13,8 @@ const lesson = { title: 'Foundations of JavaScript', id: 1 }
 const modules = [
   {
     name: 'Functions',
-    content: 'Functions are cool'
+    content: 'Functions are cool',
+    order: 1
   }
 ]
 

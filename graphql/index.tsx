@@ -106,6 +106,7 @@ export type Module = {
   id: Scalars['Int']
   lesson: Lesson
   name: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Mutation = {
@@ -168,6 +169,7 @@ export type MutationAddModuleArgs = {
   content: Scalars['String']
   lessonId: Scalars['Int']
   name: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type MutationChangeAdminRightsArgs = {
@@ -284,6 +286,7 @@ export type MutationUpdateModuleArgs = {
   id: Scalars['Int']
   lessonId: Scalars['Int']
   name: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Query = {
@@ -453,6 +456,7 @@ export type AddModuleMutationVariables = Exact<{
   content: Scalars['String']
   lessonId: Scalars['Int']
   name: Scalars['String']
+  order: Scalars['Int']
 }>
 
 export type AddModuleMutation = {
@@ -462,6 +466,7 @@ export type AddModuleMutation = {
     id: number
     name: string
     content: string
+    order: number
     lesson: { __typename?: 'Lesson'; title: string }
   }
 }
@@ -593,6 +598,7 @@ export type DeleteModuleMutation = {
   deleteModule: {
     __typename?: 'Module'
     id: number
+    order: number
     name: string
     content: string
     lesson: { __typename?: 'Lesson'; title: string }
@@ -1048,6 +1054,7 @@ export type UpdateModuleMutationVariables = Exact<{
   lessonId: Scalars['Int']
   name: Scalars['String']
   content: Scalars['String']
+  order: Scalars['Int']
 }>
 
 export type UpdateModuleMutation = {
@@ -1057,6 +1064,7 @@ export type UpdateModuleMutation = {
     id: number
     name: string
     content: string
+    order: number
     lesson: { __typename?: 'Lesson'; title: string }
   }
 }
@@ -1404,6 +1412,7 @@ export type ModuleResolvers<
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
@@ -1442,7 +1451,10 @@ export type MutationResolvers<
     ResolversTypes['Module'],
     ParentType,
     ContextType,
-    RequireFields<MutationAddModuleArgs, 'content' | 'lessonId' | 'name'>
+    RequireFields<
+      MutationAddModuleArgs,
+      'content' | 'lessonId' | 'name' | 'order'
+    >
   >
   changeAdminRights?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
@@ -1578,7 +1590,7 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationUpdateModuleArgs,
-      'content' | 'id' | 'lessonId' | 'name'
+      'content' | 'id' | 'lessonId' | 'name' | 'order'
     >
   >
 }>
@@ -2112,11 +2124,22 @@ export type AddCommentMutationOptions = Apollo.BaseMutationOptions<
   AddCommentMutationVariables
 >
 export const AddModuleDocument = gql`
-  mutation addModule($content: String!, $lessonId: Int!, $name: String!) {
-    addModule(content: $content, lessonId: $lessonId, name: $name) {
+  mutation addModule(
+    $content: String!
+    $lessonId: Int!
+    $name: String!
+    $order: Int!
+  ) {
+    addModule(
+      content: $content
+      lessonId: $lessonId
+      name: $name
+      order: $order
+    ) {
       id
       name
       content
+      order
       lesson {
         title
       }
@@ -2175,6 +2198,7 @@ export function withAddModule<
  *      content: // value for 'content'
  *      lessonId: // value for 'lessonId'
  *      name: // value for 'name'
+ *      order: // value for 'order'
  *   },
  * });
  */
@@ -2743,6 +2767,7 @@ export const DeleteModuleDocument = gql`
       lesson {
         title
       }
+      order
       name
       content
     }
@@ -4241,11 +4266,19 @@ export const UpdateModuleDocument = gql`
     $lessonId: Int!
     $name: String!
     $content: String!
+    $order: Int!
   ) {
-    updateModule(id: $id, lessonId: $lessonId, name: $name, content: $content) {
+    updateModule(
+      id: $id
+      lessonId: $lessonId
+      name: $name
+      content: $content
+      order: $order
+    ) {
       id
       name
       content
+      order
       lesson {
         title
       }
@@ -4305,6 +4338,7 @@ export function withUpdateModule<
  *      lessonId: // value for 'lessonId'
  *      name: // value for 'name'
  *      content: // value for 'content'
+ *      order: // value for 'order'
  *   },
  * });
  */
@@ -4668,6 +4702,7 @@ export type ModuleKeySpecifier = (
   | 'id'
   | 'lesson'
   | 'name'
+  | 'order'
   | ModuleKeySpecifier
 )[]
 export type ModuleFieldPolicy = {
@@ -4676,6 +4711,7 @@ export type ModuleFieldPolicy = {
   id?: FieldPolicy<any> | FieldReadFunction<any>
   lesson?: FieldPolicy<any> | FieldReadFunction<any>
   name?: FieldPolicy<any> | FieldReadFunction<any>
+  order?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type MutationKeySpecifier = (
   | 'acceptSubmission'
