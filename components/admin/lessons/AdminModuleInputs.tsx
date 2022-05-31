@@ -6,18 +6,18 @@ import {
   useUpdateModuleMutation
 } from '../../../graphql'
 import { formChange } from '../../../helpers/formChange'
-import { FormCard, MD_INPUT, TextField } from '../../FormCard'
+import { FormCard, MD_INPUT, Option, TextField } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from '../../../scss/adminModuleInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
-import { get } from 'lodash'
+import { get, isNumber } from 'lodash'
 import {
   ApolloError,
   OperationVariables,
   ApolloQueryResult
 } from '@apollo/client'
 
-type Module = { id: number; name: string; content: string }
+type Module = { id: number; name: string; content: string; order: number }
 
 export type Props = {
   lessonId: number
@@ -32,19 +32,20 @@ export type Props = {
       | (AddModuleMutation['addModule'] & { lesson: { id: number } })
       | (UpdateModuleMutation['updateModule'] & { lesson: { id: number } })
       | null,
-    e: { name: string; content: string } | null
+    e: { name: string; content: string; order: number } | null
   ) => void
   module?: Module
 }
 
 enum Error {
-  InvalidData = 'missing module name or description'
+  InvalidData = 'missing module name, description, or order'
 }
 
 const initValues = (
   nameValue?: string,
-  descValue?: string
-): [TextField, TextField] => [
+  descValue?: string,
+  orderValue?: number
+): [TextField, TextField, Option] => [
   {
     title: 'Module Name',
     value: nameValue || ''
@@ -53,6 +54,10 @@ const initValues = (
     title: 'Description',
     type: MD_INPUT,
     value: descValue || ''
+  },
+  {
+    title: 'Order',
+    value: orderValue || 0
   }
 ]
 
@@ -64,7 +69,7 @@ const AdminModuleInputs = ({
   refetch
 }: Props) => {
   const [formOptions, setFormOptions] = useState<any>(initValues())
-  const [name, content] = formOptions
+  const [name, content, order] = formOptions
 
   useEffect(
     () =>
@@ -75,7 +80,8 @@ const AdminModuleInputs = ({
   const mutationVariables = {
     content: content.value,
     lessonId,
-    name: name.value
+    name: name.value,
+    order: +order.value
   }
 
   const [moduleMutation, { data, error, loading }] = module
@@ -93,7 +99,7 @@ const AdminModuleInputs = ({
   const onSubmit = async () => {
     try {
       // Empty strings aren't handled in the resolver
-      if (!content.value || !name.value) {
+      if (!content.value || !name.value || !isNumber(+order.value)) {
         return setErrorMsg(Error.InvalidData)
       }
 
@@ -122,7 +128,8 @@ const AdminModuleInputs = ({
       if (onAddModule) {
         onAddModule(null, {
           content: content.value,
-          name: name.value
+          name: name.value,
+          order: +order.value
         })
       }
 
