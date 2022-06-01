@@ -3,14 +3,13 @@
 
 $dark: hsl(0, 0%, 33.7%);
 $light: hsl(0, 0%, 98.4%);
-$light_secondary: hsl(0, 0%, 92.9%); // Border
 $dark_primary: color.adjust(variables.$primary, $lightness: -20%);
 $light_primary: color.adjust(variables.$primary, $lightness: 28%);
 
 .lessons_tabsNav {
   font-family: 'PT Mono';
   max-width: fit-content;
-  padding: 10px 7px;
+  padding: 8px 16px;
   background: white;
   box-shadow: 0px 4px 25px hsla(0deg, 0%, 0%, 0.1);
   border-radius: 4px;
@@ -37,6 +36,7 @@ $light_primary: color.adjust(variables.$primary, $lightness: 28%);
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .lessons_tabsNav__nav__item:hover {
@@ -44,15 +44,15 @@ $light_primary: color.adjust(variables.$primary, $lightness: 28%);
 }
 
 .lessons_tabsNav__nav__item--inactive {
-  padding: 7px 16px 7px 16px;
+  padding: 7px 16px;
   border-radius: 4px;
-  background-color: hsl(0, 0%, 98.4%);
   color: $dark_primary;
   cursor: pointer;
   font-weight: bold;
   border: none;
   text-decoration: none;
   transition: background-color 0.1s ease-in;
+  font-size: 14px;
 }
 
 .lessons_tabsNav__nav__item--inactive:hover {
