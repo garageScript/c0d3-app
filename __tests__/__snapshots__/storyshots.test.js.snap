@@ -93,315 +93,40 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 `;
 
 exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
-Array [
+<div>
   <div
-    className="lessons_tabsNav col"
+    className="lessons_tabsNav"
   >
     <div
-      className="lessons__tabsNav__nav nav nav-pills"
-      onKeyDown={[Function]}
-      role="tablist"
+      className="lessons__tabsNav__nav"
     >
-      <div
-        className="nav-item"
+      <a
+        className="lessons_tabsNav__nav__item--inactive nav-pills"
+        href="/admin/lessons/1/introduction"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-introduction"
-          aria-selected={true}
-          className="lessons_tabsNav__nav__item active"
-          data-rr-ui-event-key="introduction"
-          disabled={false}
-          id="admin-nav-tabs-tab-introduction"
-          onClick={[Function]}
-          role="tab"
-        >
-          INTRODUCTION
-        </a>
-      </div>
-      <div
-        className="nav-item"
+        INTRODUCTION
+      </a>
+      <a
+        className="lessons_tabsNav__nav__item--inactive nav-pills"
+        href="/admin/lessons/1/modules"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-modules"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="modules"
-          disabled={false}
-          id="admin-nav-tabs-tab-modules"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          MODULES
-        </a>
-      </div>
+        MODULES
+      </a>
+      <a
+        className="lessons_tabsNav__nav__item--inactive nav-pills"
+        href="/admin/lessons/1/challenges"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        CHALLENGES
+      </a>
     </div>
-  </div>,
-  <div
-    className="lessons_tabs col"
-  >
-    <div
-      className="tab-content"
-    >
-      <div
-        aria-labelledby="admin-nav-tabs-tab-introduction"
-        className="fade tab-pane active show"
-        id="admin-nav-tabs-tabpane-introduction"
-        role="tabpanel"
-      >
-        <h1>
-          Some text
-        </h1>
-        <p>
-          Some paragraph that makes sense
-        </p>
-        <small>
-          Small text for the vibes
-        </small>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-modules"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-modules"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-    </div>
-  </div>,
-]
-`;
-
-exports[`Storyshots Components/AdminLessonNav With Many Items 1`] = `
-Array [
-  <div
-    className="lessons_tabsNav col"
-  >
-    <div
-      className="lessons__tabsNav__nav nav nav-pills"
-      onKeyDown={[Function]}
-      role="tablist"
-    >
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-introduction"
-          aria-selected={true}
-          className="lessons_tabsNav__nav__item active"
-          data-rr-ui-event-key="introduction"
-          disabled={false}
-          id="admin-nav-tabs-tab-introduction"
-          onClick={[Function]}
-          role="tab"
-        >
-          INTRODUCTION
-        </a>
-      </div>
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-Zaziuz"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Zaziuz"
-          disabled={false}
-          id="admin-nav-tabs-tab-Zaziuz"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          ZAZIUZ
-        </a>
-      </div>
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-Vanvied"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Vanvied"
-          disabled={false}
-          id="admin-nav-tabs-tab-Vanvied"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          VANVIED
-        </a>
-      </div>
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-Bovsoaca"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Bovsoaca"
-          disabled={false}
-          id="admin-nav-tabs-tab-Bovsoaca"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          BOVSOACA
-        </a>
-      </div>
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-Evesific"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Evesific"
-          disabled={false}
-          id="admin-nav-tabs-tab-Evesific"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          EVESIFIC
-        </a>
-      </div>
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-Tehocon"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Tehocon"
-          disabled={false}
-          id="admin-nav-tabs-tab-Tehocon"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          TEHOCON
-        </a>
-      </div>
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-Malujo"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Malujo"
-          disabled={false}
-          id="admin-nav-tabs-tab-Malujo"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          MALUJO
-        </a>
-      </div>
-      <div
-        className="nav-item"
-      >
-        <a
-          aria-controls="admin-nav-tabs-tabpane-Vicolki"
-          className="lessons_tabsNav__nav__item--inactive"
-          data-rr-ui-event-key="Vicolki"
-          disabled={false}
-          id="admin-nav-tabs-tab-Vicolki"
-          onClick={[Function]}
-          role="tab"
-          tabIndex={-1}
-        >
-          VICOLKI
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    className="lessons_tabs col"
-  >
-    <div
-      className="tab-content"
-    >
-      <div
-        aria-labelledby="admin-nav-tabs-tab-introduction"
-        className="fade tab-pane active show"
-        id="admin-nav-tabs-tabpane-introduction"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-Zaziuz"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Zaziuz"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-Vanvied"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Vanvied"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-Bovsoaca"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Bovsoaca"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-Evesific"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Evesific"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-Tehocon"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Tehocon"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-Malujo"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Malujo"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-      <div
-        aria-labelledby="admin-nav-tabs-tab-Vicolki"
-        className="fade tab-pane"
-        id="admin-nav-tabs-tabpane-Vicolki"
-        role="tabpanel"
-      >
-        <p>
-          Modules with delete and add
-        </p>
-      </div>
-    </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
