@@ -293,6 +293,22 @@ steps ([video instructions](https://www.youtube.com/watch?v=jzZqwUXIc00)):
 > branch) and type `git diff master`. It should not print anything, meaning
 > there is no difference between your branch and master.
 
+### Reusing your branches
+
+
+1. Go to an existing branch that you plan to use for problem 1 (e.g. `p1`)
+    - `git checkout p1`
+        - (Notice how we did not add a `-b` flag because we are not creating a new branch)
+2. Update this branch with all the code in master: `git merge master` 
+3. Write the solution by opening and editing `js1/1.js` 
+4. Test your file by running `npm run test` (make sure tests are passing 100%)
+5. Add and commit changed files
+    - `git add js1/1.js`
+    - `git commit -m "solves problem 1"` → saves the changes
+        - If you forget to put `-m`, you will be put into vim. To get out, type `:wq` to save and exit.
+    - `c0d3 submit` to upload your work to [c0d3.com](http://c0d3.com) for code review
+6. Start from step 1 and repeat for the next challenge
+
 # Next Step
 
 Congratulations! You have written your first JavaScript program and you know how

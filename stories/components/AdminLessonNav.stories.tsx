@@ -1,73 +1,52 @@
+import { toUpper } from 'lodash'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import * as React from 'react'
 import AdminLessonNav from '../../components/admin/lessons/AdminLessonNav'
+import styles from '../../scss/adminLessonNav.module.scss'
 
 export default {
   component: AdminLessonNav,
   title: 'Components/AdminLessonNav'
 }
 
-const fn = (text: string) => () => <p>{text}</p>
+export const Basic = () => {
+  const router = useRouter()
 
-export const Basic: React.FC = () => {
   return (
     <AdminLessonNav
-      panels={[
-        {
-          tabName: 'introduction',
-          tabComponent: () => (
-            <>
-              <h1>Some text</h1>
-              <p>Some paragraph that makes sense</p>
-              <small>Small text for the vibes</small>
-            </>
-          )
-        },
-        {
-          tabName: 'modules',
-          tabComponent: fn('Modules with delete and add')
-        }
+      tabs={[
+        { tabName: 'introduction', urlPageName: 'introduction' },
+        { tabName: 'modules', urlPageName: 'modules' },
+        { tabName: 'challenges', urlPageName: 'challenges' }
       ]}
+      render={navItem => {
+        const isSelected =
+          router.asPath.split('/').slice(-1)[0] === navItem.urlPageName
+
+        const className =
+          styles[
+            isSelected
+              ? 'lessons_tabsNav__nav__item'
+              : 'lessons_tabsNav__nav__item--inactive'
+          ]
+
+        return (
+          <Link href={`/admin/lessons/1/${navItem.urlPageName}`}>
+            <a className={className + ' ' + 'nav-pills'}>
+              {toUpper(navItem.tabName)}
+            </a>
+          </Link>
+        )
+      }}
     />
   )
 }
 
-export const WithManyItems: React.FC = () => {
-  return (
-    <AdminLessonNav
-      panels={[
-        {
-          tabName: 'introduction',
-          tabComponent: fn('Modules with delete and add')
-        },
-        {
-          tabName: 'Zaziuz',
-          tabComponent: fn('Modules with delete and add')
-        },
-        {
-          tabName: 'Vanvied',
-          tabComponent: fn('Modules with delete and add')
-        },
-        {
-          tabName: 'Bovsoaca',
-          tabComponent: fn('Modules with delete and add')
-        },
-        {
-          tabName: 'Evesific',
-          tabComponent: fn('Modules with delete and add')
-        },
-        {
-          tabName: 'Tehocon',
-          tabComponent: fn('Modules with delete and add')
-        },
-        {
-          tabName: 'Malujo',
-          tabComponent: fn('Modules with delete and add')
-        },
-        {
-          tabName: 'Vicolki',
-          tabComponent: fn('Modules with delete and add')
-        }
-      ]}
-    />
-  )
+const parameters = {
+  nextRouter: {
+    asPath: 'c0d3.com/admin/lessons/1/introduction'
+  }
 }
+
+Basic.parameters = parameters
