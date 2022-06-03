@@ -65,7 +65,7 @@
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.10",
     "rehype-autolink-headings": "^6.1.0",
-    "sass": "^1.52.1",
+    "sass": "^1.52.2",
     "use-undo": "^1.1.0",
     "winston": "^3.7.2",
     "yup": "^0.32.11"
