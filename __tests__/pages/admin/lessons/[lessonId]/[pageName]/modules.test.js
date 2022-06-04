@@ -1,11 +1,11 @@
 import React from 'react'
-import Modules from '../../../../../pages/admin/lessons/dojo/modules'
+import Modules from '../../../../../../pages/admin/lessons/[lessonId]/[pageName]/index'
 import { act, render, screen, waitFor } from '@testing-library/react'
-import dummyLessonData from '../../../../../__dummy__/lessonData'
-import dummySessionData from '../../../../../__dummy__/sessionData'
-import dummyAlertData from '../../../../../__dummy__/alertData'
+import dummyLessonData from '../../../../../../__dummy__/lessonData'
+import dummySessionData from '../../../../../../__dummy__/sessionData'
+import dummyAlertData from '../../../../../../__dummy__/alertData'
 import '@testing-library/jest-dom'
-import GET_APP from '../../../../../graphql/queries/getApp'
+import GET_APP from '../../../../../../graphql/queries/getApp'
 import { MockedProvider } from '@apollo/client/testing'
 import { gql } from '@apollo/client'
 import userEvent from '@testing-library/user-event'
@@ -22,6 +22,7 @@ const MODULES = gql`
       lesson {
         id
       }
+      order
     }
   }
 `
@@ -33,7 +34,8 @@ const modules = [
     content: 'this is module1',
     lesson: {
       id: 1
-    }
+    },
+    order: 1
   },
   {
     id: 2,
@@ -41,7 +43,8 @@ const modules = [
     content: 'this is module2',
     lesson: {
       id: 1
-    }
+    },
+    order: 2
   },
   {
     id: 3,
@@ -49,7 +52,8 @@ const modules = [
     content: 'this is module3',
     lesson: {
       id: 2
-    }
+    },
+    order: 3
   },
   {
     id: 4,
@@ -57,7 +61,8 @@ const modules = [
     content: 'this is module4',
     lesson: {
       id: 2
-    }
+    },
+    order: 4
   }
 ]
 
@@ -91,14 +96,17 @@ const mocks = [getAppQueryMock, modulesQueryMock]
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
+useRouter.mockImplementation(() => ({
+  asPath: 'c0d3.com/admin/lessons/1/modules',
+  query: {
+    pageName: 'modules',
+    lessonId: 1
+  }
+}))
+
 describe('modules', () => {
   it('Should render modules', async () => {
-    // expect.assertions(2)
-
-    // Modify the path so the lessons dropdown appears
-    useRouter.mockImplementation(() => ({
-      asPath: 'c0d3.com/admin/lessons/dojo/modules'
-    }))
+    expect.assertions(2)
 
     render(
       <MockedProvider mocks={mocks}>
@@ -127,11 +135,6 @@ describe('modules', () => {
   it('Should set "add module" mode', async () => {
     expect.assertions(2)
 
-    // Modify the path so the lessons dropdown appears
-    useRouter.mockImplementation(() => ({
-      asPath: 'c0d3.com/admin/lessons/dojo/modules'
-    }))
-
     render(
       <MockedProvider mocks={mocks}>
         <Modules />
@@ -157,11 +160,6 @@ describe('modules', () => {
   it('Should switch to another module', async () => {
     expect.assertions(2)
 
-    // Modify the path so the lessons dropdown appears
-    useRouter.mockImplementation(() => ({
-      asPath: 'c0d3.com/admin/lessons/dojo/modules'
-    }))
-
     render(
       <MockedProvider mocks={mocks}>
         <Modules />
@@ -184,5 +182,48 @@ describe('modules', () => {
 
     expect(screen.getByTestId('input0').value).toBe(selectedModule.name)
     expect(screen.getByTestId('textbox').value).toBe(selectedModule.content)
+  })
+
+  it('Should render default page', async () => {
+    expect.assertions(1)
+
+    useRouter.mockImplementation(() => ({
+      asPath: 'c0d3.com/admin/lessons/1/none',
+      query: {
+        pageName: 'none',
+        lessonId: 1
+      }
+    }))
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <Modules />
+      </MockedProvider>
+    )
+
+    expect(screen.queryByTestId('textbox')).not.toBeInTheDocument()
+  })
+
+  it('Should set default lesson if there is no lesson param', async () => {
+    expect.assertions(1)
+
+    useRouter.mockImplementation(() => ({
+      asPath: 'c0d3.com/admin/lessons/1/modules',
+      query: {
+        pageName: 'modules',
+        lessonId: undefined
+      }
+    }))
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <Modules />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    expect(screen.queryByText('None')).toBeInTheDocument()
   })
 })
