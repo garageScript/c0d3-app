@@ -10,7 +10,7 @@ import { FormCard, MD_INPUT, Option, TextField } from '../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from '../../../scss/adminModuleInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
-import { get, isNumber } from 'lodash'
+import { get } from 'lodash'
 import {
   ApolloError,
   OperationVariables,
@@ -57,7 +57,7 @@ const initValues = (
   },
   {
     title: 'Order',
-    value: orderValue || 0
+    value: orderValue
   }
 ]
 
@@ -73,7 +73,13 @@ const AdminModuleInputs = ({
 
   useEffect(
     () =>
-      setFormOptions(initValues(get(module, 'name'), get(module, 'content'))),
+      setFormOptions(
+        initValues(
+          get(module, 'name'),
+          get(module, 'content'),
+          get(module, 'order')
+        )
+      ),
     [module]
   )
 
@@ -99,7 +105,12 @@ const AdminModuleInputs = ({
   const onSubmit = async () => {
     try {
       // Empty strings aren't handled in the resolver
-      if (!content.value || !name.value || !isNumber(+order.value)) {
+      if (
+        !content.value ||
+        !name.value ||
+        order.value === '' ||
+        order.value < 0
+      ) {
         return setErrorMsg(Error.InvalidData)
       }
 
