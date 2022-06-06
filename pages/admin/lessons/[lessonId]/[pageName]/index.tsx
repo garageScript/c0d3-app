@@ -52,8 +52,6 @@ const ModulesTab = ({
   const onAddItem = () => setSelectedIndex(-1)
   const onSelect = (item: Omit<Module, 'order'>) => setSelectedIndex(item.id)
 
-  useEffect(() => setSelectedIndex(get(filteredModules[0], 'id')), [lessonId])
-
   return (
     <div className={styles.container__modulesPanel}>
       <AdminLessonSideNav
