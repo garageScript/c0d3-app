@@ -83,18 +83,15 @@ const Lessons = ({ data }: GetAppProps) => {
     title: '',
     id: -1
   })
-  const [modules, setModules] = useState(
-    sortBy(get(modulesData, 'modules'), 'order')
+  const modules = useMemo(
+    () => sortBy(get(modulesData, 'modules'), 'order'),
+    [modulesData]
   )
 
   const filteredModules = useMemo(
     () => modules.filter(module => module.lesson.id === lesson.id),
     [lesson.id, modules]
   )
-
-  useEffect(() => {
-    setModules(sortBy(get(modulesData, 'modules'), 'order'))
-  }, [get(modulesData, 'modules')])
 
   useEffect(() => {
     if (lessons) {
