@@ -136,7 +136,9 @@ const Lessons = ({ data }: GetAppProps) => {
           <h1>Lesson Info</h1>
           <Breadcrumbs
             lesson={lesson}
-            setLesson={setLesson}
+            setLesson={lesson => {
+              router.push(`/admin/lessons/${lesson.id}/${pageName}`)
+            }}
             lessons={lessons}
           />
         </header>
@@ -162,7 +164,7 @@ const Lessons = ({ data }: GetAppProps) => {
                 ]
 
               return (
-                <Link href={`/admin/lessons/1/${navItem.urlPageName}`}>
+                <Link href={`/1/${navItem.urlPageName}`}>
                   <a className={`${className} nav-pills`}>
                     {toUpper(navItem.tabName)}
                   </a>
