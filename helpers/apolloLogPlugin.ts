@@ -5,6 +5,10 @@ import {
 } from 'apollo-server-plugin-base'
 
 import * as Sentry from '@sentry/nextjs'
+import { SeverityLevel } from '@sentry/types'
+import { BaseContext } from 'next/dist/shared/lib/utils'
+
+const levelDebug: SeverityLevel = 'debug'
 
 /**
  * Plugin to capture errors during apollo transaction and send a copy to sentry/logflare
@@ -12,7 +16,7 @@ import * as Sentry from '@sentry/nextjs'
 export const apolloLogPlugin: ApolloServerPlugin = {
   requestDidStart<TContext>(
     _: GraphQLRequestContext<TContext>
-  ): GraphQLRequestListener<TContext> {
+  ): GraphQLRequestListener<BaseContext> {
     return {
       didEncounterErrors(ctx) {
         for (const err of ctx.errors) {
@@ -25,7 +29,7 @@ export const apolloLogPlugin: ApolloServerPlugin = {
               scope.addBreadcrumb({
                 category: 'query-path',
                 message: err.path.join(' > '),
-                level: Sentry.Severity.Debug
+                level: levelDebug
               })
             }
 
