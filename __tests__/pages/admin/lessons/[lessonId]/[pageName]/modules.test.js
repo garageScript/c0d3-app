@@ -232,4 +232,29 @@ describe('modules', () => {
 
     expect(useRouterObj.push).toBeCalled()
   })
+
+  it('Should not set a tab as selected', async () => {
+    expect.assertions(1)
+
+    useRouter.mockImplementation(() => ({
+      ...useRouterObj,
+      query: {
+        pageName: 'none',
+        lessonId: undefined
+      }
+    }))
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <Modules />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    expect(screen.getByText('MODULES').className).not.toEqual(
+      'lessons_tabsNav__nav__item'
+    )
+  })
 })
