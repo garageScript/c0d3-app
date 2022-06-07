@@ -14,6 +14,8 @@ import { AdminLayout } from '../../../../../components/admin/AdminLayout'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
+const MAIN_PATH = '/admin/lessons'
+
 const MODULES = gql`
   query {
     modules {
@@ -137,7 +139,7 @@ const Lessons = ({ data }: GetAppProps) => {
           <Breadcrumbs
             lesson={lesson}
             setLesson={lesson => {
-              router.push(`/admin/lessons/${lesson.id}/${pageName}`)
+              router.push(`${MAIN_PATH}/${lesson.id}/${pageName}`)
             }}
             lessons={lessons}
           />
@@ -148,10 +150,6 @@ const Lessons = ({ data }: GetAppProps) => {
               {
                 tabName: 'modules',
                 urlPageName: 'modules'
-              },
-              {
-                tabName: 'exercises',
-                urlPageName: 'exercises'
               }
             ]}
             render={navItem => {
@@ -164,7 +162,7 @@ const Lessons = ({ data }: GetAppProps) => {
                 ]
 
               return (
-                <Link href={`/1/${navItem.urlPageName}`}>
+                <Link href={`${MAIN_PATH}/${lesson.id}/${navItem.urlPageName}`}>
                   <a className={`${className} nav-pills`}>
                     {toUpper(navItem.tabName)}
                   </a>
