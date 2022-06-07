@@ -95,14 +95,16 @@ const modulesQueryMock = {
 const mocks = [getAppQueryMock, modulesQueryMock]
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
-
-useRouter.mockImplementation(() => ({
+const useRouterObj = {
   asPath: 'c0d3.com/admin/lessons/1/modules',
   query: {
     pageName: 'modules',
     lessonId: 1
-  }
-}))
+  },
+  push: jest.fn()
+}
+
+useRouter.mockImplementation(() => useRouterObj)
 
 describe('modules', () => {
   it('Should render modules', async () => {
@@ -117,15 +119,8 @@ describe('modules', () => {
     // Used to make the queries resolve
     await act(() => new Promise(res => setTimeout(res, 0)))
 
-    // Had to switch the lesson because useMemo won't update otherwise.
-    const dropdown = screen.getByText(dummyLessonData[0].title)
-    await userEvent.click(dropdown)
-
-    const item = screen.getByText(dummyLessonData[1].title)
-    await userEvent.click(item)
-
-    const module3 = modules[2].name
-    const module4 = modules[3].name
+    const module3 = modules[0].name
+    const module4 = modules[1].name
 
     // The default input values are set as module3 name and content.
     expect(screen.getAllByText(module3)[0]).toBeInTheDocument()
@@ -143,14 +138,6 @@ describe('modules', () => {
 
     // Used to make the queries resolve
     await act(() => new Promise(res => setTimeout(res, 0)))
-
-    // Had to switch the lesson because useMemo won't update otherwise.
-    const dropdown = screen.getByText(dummyLessonData[0].title)
-    await userEvent.click(dropdown)
-
-    const item = screen.getByText(dummyLessonData[1].title)
-    await userEvent.click(item)
-
     await userEvent.click(screen.getByText('ADD NEW MODULE'))
 
     expect(screen.getByTestId('input0').value).toBe('')
@@ -170,15 +157,9 @@ describe('modules', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     // Had to switch the lesson because useMemo won't update otherwise.
-    const dropdown = screen.getByText(dummyLessonData[0].title)
-    await userEvent.click(dropdown)
+    const selectedModule = modules[0]
 
-    const item = screen.getByText(dummyLessonData[1].title)
-    await userEvent.click(item)
-
-    const selectedModule = modules[3]
-
-    await userEvent.click(screen.getByText(modules[3].name))
+    await userEvent.click(screen.getByText(selectedModule.name))
 
     expect(screen.getByTestId('input0').value).toBe(selectedModule.name)
     expect(screen.getByTestId('textbox').value).toBe(selectedModule.content)
@@ -225,5 +206,28 @@ describe('modules', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     expect(screen.queryByText('None')).toBeInTheDocument()
+  })
+
+  it('Should switch lessons', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <Modules />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    const dropdown = screen.getByText(dummyLessonData[0].title)
+
+    await userEvent.click(dropdown)
+
+    const secondLesson = screen.getByText(dummyLessonData[1].title)
+
+    await userEvent.click(secondLesson)
+
+    expect(useRouterObj.push).toBeCalled()
   })
 })
