@@ -39,26 +39,31 @@ type Module = {
 }
 type Modules = Module[]
 
-type ModulesTabProps = {
-  filteredModules: Modules
+type ContentProps = {
+  pageName: string | string[] | undefined
+  modules: Modules
   lessonId: number
   refetch: Props['refetch']
 }
 
-const ModulesTab = ({
-  filteredModules,
-  lessonId,
-  refetch
-}: ModulesTabProps) => {
+const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const onAddItem = () => setSelectedIndex(-1)
   const onSelect = (item: Omit<Module, 'order'>) => setSelectedIndex(item.id)
+
+  if (pageName !== 'modules') {
+    return (
+      <h1>
+        For now, you can only access <code>/modules</code> page
+      </h1>
+    )
+  }
 
   return (
     <div className={styles.container__modulesPanel}>
       <AdminLessonSideNav
         title="Modules"
-        items={filteredModules}
+        items={modules}
         onAddItem={onAddItem}
         onSelect={onSelect}
         selectedIndex={selectedIndex}
@@ -67,7 +72,7 @@ const ModulesTab = ({
         <AdminModuleInputs
           lessonId={lessonId}
           refetch={refetch}
-          module={filteredModules.find(module => module.id === selectedIndex)}
+          module={modules.find(module => module.id === selectedIndex)}
         />
       </div>
     </div>
@@ -94,6 +99,7 @@ const Lessons = ({ data }: GetAppProps) => {
 
     return { title: '', id: -1 }
   }, [lessons, lessonId])
+
   const modules = useMemo(
     () => sortBy(get(modulesData, 'modules'), 'order'),
     [modulesData]
@@ -103,27 +109,6 @@ const Lessons = ({ data }: GetAppProps) => {
     () => modules.filter(module => module.lesson.id === lesson.id),
     [lesson.id, modules]
   )
-
-  const modulesTab = useMemo(
-    () => (
-      <ModulesTab
-        filteredModules={filteredModules}
-        lessonId={lesson.id}
-        refetch={refetch}
-      />
-    ),
-    [pageName, lessonId, filteredModules, lesson.id]
-  )
-
-  const renderPage = () => {
-    if (pageName === 'modules') return modulesTab
-
-    return (
-      <h1>
-        For now, you can only access <code>/modules</code> page
-      </h1>
-    )
-  }
 
   return (
     <AdminLayout data={data}>
@@ -165,7 +150,14 @@ const Lessons = ({ data }: GetAppProps) => {
             }}
           />
         </section>
-        <section>{renderPage()}</section>
+        <section>
+          <Content
+            pageName={pageName}
+            modules={filteredModules}
+            lessonId={toNumber(lessonId)}
+            refetch={refetch}
+          />
+        </section>
       </main>
     </AdminLayout>
   )
