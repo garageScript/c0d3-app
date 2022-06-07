@@ -2,7 +2,7 @@ import { toUpper } from 'lodash'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import AdminLessonNav from '../../components/admin/lessons/AdminLessonNav'
+import AdminLessonNav from '../../components/admin/lessons/AdminLessonSideNavLayout'
 import styles from '../../scss/adminLessonNav.module.scss'
 
 export default {
@@ -14,13 +14,11 @@ export const Basic = () => {
   const router = useRouter()
 
   const SideNavComponent = ({
-    urlPageName,
-    tabName
+    tab
   }: {
-    urlPageName: string
-    tabName: string
+    tab: { tabName: string; urlPageName: string }
   }) => {
-    const isSelected = router.asPath.split('/').slice(-1)[0] === urlPageName
+    const isSelected = router.asPath.split('/').slice(-1)[0] === tab.urlPageName
 
     const className =
       styles[
@@ -30,8 +28,8 @@ export const Basic = () => {
       ]
 
     return (
-      <Link href={`/admin/lessons/1/${urlPageName}`}>
-        <a className={className + ' ' + 'nav-pills'}>{toUpper(tabName)}</a>
+      <Link href={`/admin/lessons/1/${tab.urlPageName}`}>
+        <a className={className + ' ' + 'nav-pills'}>{toUpper(tab.tabName)}</a>
       </Link>
     )
   }
