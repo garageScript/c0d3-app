@@ -13,6 +13,29 @@ export default {
 export const Basic = () => {
   const router = useRouter()
 
+  const SideNavComponent = ({
+    urlPageName,
+    tabName
+  }: {
+    urlPageName: string
+    tabName: string
+  }) => {
+    const isSelected = router.asPath.split('/').slice(-1)[0] === urlPageName
+
+    const className =
+      styles[
+        isSelected
+          ? 'lessons_tabsNav__nav__item'
+          : 'lessons_tabsNav__nav__item--inactive'
+      ]
+
+    return (
+      <Link href={`/admin/lessons/1/${urlPageName}`}>
+        <a className={className + ' ' + 'nav-pills'}>{toUpper(tabName)}</a>
+      </Link>
+    )
+  }
+
   return (
     <AdminLessonNav
       tabs={[
@@ -20,25 +43,7 @@ export const Basic = () => {
         { tabName: 'modules', urlPageName: 'modules' },
         { tabName: 'challenges', urlPageName: 'challenges' }
       ]}
-      render={navItem => {
-        const isSelected =
-          router.asPath.split('/').slice(-1)[0] === navItem.urlPageName
-
-        const className =
-          styles[
-            isSelected
-              ? 'lessons_tabsNav__nav__item'
-              : 'lessons_tabsNav__nav__item--inactive'
-          ]
-
-        return (
-          <Link href={`/admin/lessons/1/${navItem.urlPageName}`}>
-            <a className={className + ' ' + 'nav-pills'}>
-              {toUpper(navItem.tabName)}
-            </a>
-          </Link>
-        )
-      }}
+      Component={SideNavComponent}
     />
   )
 }
