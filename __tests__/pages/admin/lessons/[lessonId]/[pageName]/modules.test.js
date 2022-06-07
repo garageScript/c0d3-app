@@ -119,12 +119,12 @@ describe('modules', () => {
     // Used to make the queries resolve
     await act(() => new Promise(res => setTimeout(res, 0)))
 
-    const module3 = modules[0].name
-    const module4 = modules[1].name
+    const module1 = modules[0].name
+    const module2 = modules[1].name
 
     // The default input values are set as module3 name and content.
-    expect(screen.getAllByText(module3)[0]).toBeInTheDocument()
-    expect(screen.getByText(module4)).toBeInTheDocument()
+    expect(screen.getAllByText(module1)[0]).toBeInTheDocument()
+    expect(screen.getByText(module2)).toBeInTheDocument()
   })
 
   it('Should set "add module" mode', async () => {
@@ -210,6 +210,8 @@ describe('modules', () => {
 
   it('Should switch lessons', async () => {
     expect.assertions(1)
+
+    useRouter.mockImplementation(() => useRouterObj)
 
     render(
       <MockedProvider mocks={mocks}>
