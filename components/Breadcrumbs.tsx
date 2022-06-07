@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from '../scss/breadcrumbs.module.scss'
@@ -13,7 +13,7 @@ type Props = {
   omitHomeRoute?: boolean
   homeTitle?: string
   lesson: Lesson
-  setLesson: Dispatch<SetStateAction<Lesson>>
+  setLesson: (lesson: Lesson) => void
   lessons: GetAppQuery['lessons'] | undefined
 }
 
