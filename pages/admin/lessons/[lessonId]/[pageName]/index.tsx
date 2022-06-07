@@ -1,7 +1,7 @@
 import { gql, useQuery } from '@apollo/client'
 import { GetAppProps, withGetApp } from '../../../../../graphql'
 import { get, sortBy, toNumber, toUpper } from 'lodash'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonNav'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
 import AdminModuleInputs, {
@@ -81,10 +81,19 @@ const Lessons = ({ data }: GetAppProps) => {
   const { lessons } = data
   const { data: modulesData, refetch } = useQuery<{ modules: Modules }>(MODULES)
 
-  const [lesson, setLesson] = useState({
-    title: '',
-    id: -1
-  })
+  const lesson = useMemo(() => {
+    if (lessons) {
+      const lessonFromParam = lessons.find(e => e.id === toNumber(lessonId))
+
+      if (lessonFromParam)
+        return {
+          title: lessonFromParam.title,
+          id: lessonFromParam.id
+        }
+    }
+
+    return { title: '', id: -1 }
+  }, [lessons, lessonId])
   const modules = useMemo(
     () => sortBy(get(modulesData, 'modules'), 'order'),
     [modulesData]
@@ -94,21 +103,6 @@ const Lessons = ({ data }: GetAppProps) => {
     () => modules.filter(module => module.lesson.id === lesson.id),
     [lesson.id, modules]
   )
-
-  useEffect(() => {
-    if (lessons) {
-      const lessonFromParam = lessons.find(e => e.id === toNumber(lessonId))
-
-      setLesson(
-        lessonFromParam
-          ? {
-              title: lessonFromParam.title,
-              id: lessonFromParam.id
-            }
-          : { title: '', id: -1 }
-      )
-    }
-  }, [lessons, lessonId])
 
   const modulesTab = useMemo(
     () => (
