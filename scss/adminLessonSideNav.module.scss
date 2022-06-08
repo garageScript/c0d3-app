@@ -16,26 +16,26 @@ $light-border: hsla(0, 0%, 85%);
   padding: 28px 21px;
   gap: 10px;
 
-  width: 369.01px;
-  height: 460px;
-
   background: colors.$secondary;
+
+  width: 100%;
+  max-width: 369.01px;
+  row-gap: 23px;
+  justify-content: center;
 
   box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
 }
 
 .container__heading {
-  width: 327px;
-  height: 22px;
+
   left: 0px;
   right: 0px;
 
   font-weight: 700;
   font-size: 18px;
   font-family: Inter;
-  font-weight: 700;
-  font-size: 18px;
+
   line-height: 22px;
   text-align: center;
   margin-bottom: 15px;
@@ -53,11 +53,7 @@ $light-border: hsla(0, 0%, 85%);
 
   font-family: Inter;
   font-size: 14px;
-
-  width: 327.01px;
-  height: 284px;
-  left: 0px;
-  top: 45px;
+  
 }
 
 .container__modulesList--loading {
