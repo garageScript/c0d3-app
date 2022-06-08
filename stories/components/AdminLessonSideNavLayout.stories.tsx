@@ -2,7 +2,7 @@ import { toUpper } from 'lodash'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import AdminLessonNav from '../../components/admin/lessons/AdminLessonNav'
+import AdminLessonNav from '../../components/admin/lessons/AdminLessonSideNavLayout'
 import styles from '../../scss/adminLessonNav.module.scss'
 
 export default {
@@ -13,6 +13,27 @@ export default {
 export const Basic = () => {
   const router = useRouter()
 
+  const SideNavComponent = ({
+    tab
+  }: {
+    tab: { tabName: string; urlPageName: string }
+  }) => {
+    const isSelected = router.asPath.split('/').slice(-1)[0] === tab.urlPageName
+
+    const className =
+      styles[
+        isSelected
+          ? 'lessons_tabsNav__nav__item'
+          : 'lessons_tabsNav__nav__item--inactive'
+      ]
+
+    return (
+      <Link href={`/admin/lessons/1/${tab.urlPageName}`}>
+        <a className={className + ' ' + 'nav-pills'}>{toUpper(tab.tabName)}</a>
+      </Link>
+    )
+  }
+
   return (
     <AdminLessonNav
       tabs={[
@@ -20,25 +41,7 @@ export const Basic = () => {
         { tabName: 'modules', urlPageName: 'modules' },
         { tabName: 'challenges', urlPageName: 'challenges' }
       ]}
-      render={navItem => {
-        const isSelected =
-          router.asPath.split('/').slice(-1)[0] === navItem.urlPageName
-
-        const className =
-          styles[
-            isSelected
-              ? 'lessons_tabsNav__nav__item'
-              : 'lessons_tabsNav__nav__item--inactive'
-          ]
-
-        return (
-          <Link href={`/admin/lessons/1/${navItem.urlPageName}`}>
-            <a className={className + ' ' + 'nav-pills'}>
-              {toUpper(navItem.tabName)}
-            </a>
-          </Link>
-        )
-      }}
+      Component={SideNavComponent}
     />
   )
 }
