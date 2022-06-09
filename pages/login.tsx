@@ -18,6 +18,18 @@ import styles from '../scss/login.module.scss'
 import { signIn } from 'next-auth/react'
 import Image from 'next/image'
 
+
+//for getServerSideProps
+import { NextApiResponse } from 'next'
+import { Request, Response } from 'express'
+import { LoggedRequest } from '../@types/helpers'
+import { User } from '@prisma/client'
+
+import loggingMiddleware from '../helpers/middleware/logger'
+import sessionMiddleware from '../helpers/middleware/session'
+import userMiddleware from '../helpers/middleware/user'
+import runMiddlewares from '../helpers/runMiddlewares'
+
 type Values = {
   username: string
   password: string
@@ -79,9 +91,8 @@ export const Login: React.FC<LoginFormProps> = ({
             />
 
             <button
-              className={`btn ${
-                isLoading ? 'btn-dark' : 'btn-primary'
-              } btn-lg btn`}
+              className={`btn ${isLoading ? 'btn-dark' : 'btn-primary'
+                } btn-lg btn`}
               type="submit"
               data-testid="submit"
             >
@@ -156,7 +167,7 @@ const LoginPage: React.FC & WithLayout = () => {
   const handleSubmit = async (values: Values) => {
     try {
       await loginUser({ variables: values })
-    } catch {} // catch error that's thrown by default from mutation
+    } catch { } // catch error that's thrown by default from mutation
   }
   return (
     <>
@@ -168,6 +179,39 @@ const LoginPage: React.FC & WithLayout = () => {
       />
     </>
   )
+}
+
+
+export const getServerSideProps = async ({
+  req,
+  res
+}: {
+  req: LoggedRequest & Request
+  res: NextApiResponse & Response
+}) => {
+  const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
+  const session = await new Promise<User | null>(resolve => {
+    runMiddlewares(middlewares, req, res, async () => {
+      if (req.user) {
+        return resolve(req.user)
+      }
+
+      return resolve(null)
+    })
+  })
+
+  if (session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/curriculum",
+      },
+      props: {}
+    }
+  }
+
+  return { props: {} }
+
 }
 
 LoginPage.getLayout = getLayout
