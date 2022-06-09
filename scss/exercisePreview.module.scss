@@ -1,0 +1,9 @@
+@use 'colors.module.scss';
+
+.exercise__pre__bg {
+  background: colors.$bg-light-gray;
+}
+
+.exercise__p__bold {
+  font-weight: 700;
+}
