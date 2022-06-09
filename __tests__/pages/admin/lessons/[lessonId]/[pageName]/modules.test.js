@@ -119,12 +119,12 @@ describe('modules', () => {
     // Used to make the queries resolve
     await act(() => new Promise(res => setTimeout(res, 0)))
 
-    const module1 = modules[0].name
-    const module2 = modules[1].name
+    const module2 = modules[2].name
+    const module3 = modules[3].name
 
     // The default input values are set as module3 name and content.
-    expect(screen.getAllByText(module1)[0]).toBeInTheDocument()
     expect(screen.getByText(module2)).toBeInTheDocument()
+    expect(screen.getByText(module3)).toBeInTheDocument()
   })
 
   it('Should set "add module" mode', async () => {
@@ -157,7 +157,7 @@ describe('modules', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     // Had to switch the lesson because useMemo won't update otherwise.
-    const selectedModule = modules[0]
+    const selectedModule = modules[2]
 
     await userEvent.click(screen.getByText(selectedModule.name))
 
@@ -222,13 +222,11 @@ describe('modules', () => {
     // Used to make the queries resolve
     await act(() => new Promise(res => setTimeout(res, 0)))
 
-    const dropdown = screen.getByText(dummyLessonData[0].title)
-
+    const dropdown = screen.getByText(dummyLessonData[1].title)
     await userEvent.click(dropdown)
 
-    const secondLesson = screen.getByText(dummyLessonData[1].title)
-
-    await userEvent.click(secondLesson)
+    const dropdownItem = screen.getByText(dummyLessonData[2].title)
+    await userEvent.click(dropdownItem)
 
     expect(useRouterObj.push).toBeCalled()
   })

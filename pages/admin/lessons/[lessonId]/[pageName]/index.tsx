@@ -48,6 +48,8 @@ type ContentProps = {
   refetch: Props['refetch']
 }
 
+const extractLessonOrder = (x: string) => x.split('').slice(2).join()
+
 const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const onAddItem = () => setSelectedIndex(-1)
@@ -90,16 +92,19 @@ const Lessons = ({ data }: GetAppProps) => {
 
   const lesson = useMemo(() => {
     if (lessons) {
-      const lessonFromParam = lessons.find(e => e.id === toNumber(lessonId))
+      const lessonFromParam = lessons.find(
+        e => toNumber(extractLessonOrder(e.slug)) === toNumber(lessonId)
+      )
 
       if (lessonFromParam)
         return {
           title: lessonFromParam.title,
+          slug: lessonFromParam.slug,
           id: lessonFromParam.id
         }
     }
 
-    return { title: '', id: -1 }
+    return { title: '', slug: '', id: -1 }
   }, [lessons, lessonId])
 
   const modules = useMemo(
@@ -140,7 +145,9 @@ const Lessons = ({ data }: GetAppProps) => {
           <Breadcrumbs
             lesson={lesson}
             setLesson={lesson => {
-              router.push(`${MAIN_PATH}/${lesson.id}/${pageName}`)
+              router.push(
+                `${MAIN_PATH}/${extractLessonOrder(lesson.slug)}/${pageName}`
+              )
             }}
             lessons={lessons}
           />
