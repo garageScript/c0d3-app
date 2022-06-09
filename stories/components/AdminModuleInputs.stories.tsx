@@ -14,7 +14,8 @@ const modules = [
   {
     name: 'Functions',
     content: 'Functions are cool',
-    order: 1
+    order: 1,
+    id: 1
   }
 ]
 
@@ -42,7 +43,6 @@ export const Basic = () => (
           result: {
             data: {
               addModule: {
-                id: 1,
                 ...modules[0],
                 lesson: {
                   title: 'Foundations of JavaScript'
@@ -54,6 +54,7 @@ export const Basic = () => (
       ]}
     >
       <AdminModuleInputs
+        module={modules[0]}
         lessonId={lesson.id}
         title={lesson.title}
         refetch={
