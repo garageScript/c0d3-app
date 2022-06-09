@@ -18,7 +18,6 @@ import styles from '../scss/login.module.scss'
 import { signIn } from 'next-auth/react'
 import Image from 'next/image'
 
-
 //for getServerSideProps
 import { NextApiResponse } from 'next'
 import { Request, Response } from 'express'
@@ -91,8 +90,9 @@ export const Login: React.FC<LoginFormProps> = ({
             />
 
             <button
-              className={`btn ${isLoading ? 'btn-dark' : 'btn-primary'
-                } btn-lg btn`}
+              className={`btn ${
+                isLoading ? 'btn-dark' : 'btn-primary'
+              } btn-lg btn`}
               type="submit"
               data-testid="submit"
             >
@@ -167,7 +167,7 @@ const LoginPage: React.FC & WithLayout = () => {
   const handleSubmit = async (values: Values) => {
     try {
       await loginUser({ variables: values })
-    } catch { } // catch error that's thrown by default from mutation
+    } catch {} // catch error that's thrown by default from mutation
   }
   return (
     <>
@@ -180,7 +180,6 @@ const LoginPage: React.FC & WithLayout = () => {
     </>
   )
 }
-
 
 export const getServerSideProps = async ({
   req,
@@ -204,14 +203,13 @@ export const getServerSideProps = async ({
     return {
       redirect: {
         permanent: false,
-        destination: "/curriculum",
+        destination: '/curriculum'
       },
       props: {}
     }
   }
 
   return { props: {} }
-
 }
 
 LoginPage.getLayout = getLayout

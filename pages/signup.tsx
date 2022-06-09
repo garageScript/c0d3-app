@@ -22,7 +22,6 @@ import sessionMiddleware from '../helpers/middleware/session'
 import userMiddleware from '../helpers/middleware/user'
 import runMiddlewares from '../helpers/runMiddlewares'
 
-
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
 import { Spinner } from 'react-bootstrap'
@@ -125,8 +124,9 @@ const SignupForm: React.FC<SignupFormProps> = ({
             />
 
             <button
-              className={`btn ${isLoading ? 'btn-dark' : 'btn-primary'
-                } btn-lg btn mb-3`}
+              className={`btn ${
+                isLoading ? 'btn-dark' : 'btn-primary'
+              } btn-lg btn mb-3`}
               type="submit"
               data-testid="submit"
             >
@@ -153,8 +153,6 @@ const SignupForm: React.FC<SignupFormProps> = ({
     </Card>
   )
 }
-
-
 
 const SignUpPage: React.FC & WithLayout = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
@@ -245,15 +243,13 @@ export const getServerSideProps = async ({
     return {
       redirect: {
         permanent: false,
-        destination: "/curriculum",
+        destination: '/curriculum'
       },
       props: {}
     }
   }
 
-
   return { props: {} }
-
 }
 
 SignUpPage.getLayout = getLayout
