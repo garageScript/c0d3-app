@@ -7,7 +7,7 @@ import { GetAppQuery } from '../graphql'
 import { ChevronRightIcon } from '@primer/octicons-react'
 import { lowerCase } from 'lodash'
 
-type Lesson = { title: string; id: number }
+type Lesson = { title: string; id: number; slug: string }
 
 type Props = {
   omitHomeRoute?: boolean
@@ -90,7 +90,13 @@ const Breadcrumbs = ({
           {lessons?.map((lesson, index) => (
             <Dropdown.Item
               key={`${lesson}-${index}`}
-              onClick={() => setLesson({ title: lesson.title, id: lesson.id })}
+              onClick={() =>
+                setLesson({
+                  title: lesson.title,
+                  id: lesson.id,
+                  slug: lesson.slug
+                })
+              }
             >
               {lesson.title}
             </Dropdown.Item>
