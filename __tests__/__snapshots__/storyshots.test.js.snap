@@ -673,7 +673,7 @@ Array [
             className="formCard--submitButton"
             onClick={[Function]}
           >
-            ADD MODULE
+            SAVE CHANGES
           </button>
         </div>
       </div>
