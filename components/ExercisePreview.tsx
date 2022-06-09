@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from '../scss/exercisePreview.module.scss'
 
-type exerciseProps = {
+type Exercise = {
   question: string
   answers: string[]
 }
 
 type Props = {
-  exercise: exerciseProps
+  exercise: Exercise
   classes?: string
 }
 
