@@ -16,6 +16,6 @@ a = b;
   }
 }
 
-export const _ExercisePreview: React.FC = () => {
+export const Basic: React.FC = () => {
   return <ExercisePreview exercise={exerciseData.exercise} />
 }
