@@ -167,7 +167,7 @@ const Lessons = ({ data }: GetAppProps) => {
           <Content
             pageName={pageName}
             modules={filteredModules}
-            lessonId={toNumber(lessonId)}
+            lessonId={lesson.id}
             refetch={refetch}
           />
         </section>
