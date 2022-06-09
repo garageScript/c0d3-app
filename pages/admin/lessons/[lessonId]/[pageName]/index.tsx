@@ -2,7 +2,7 @@ import { gql, useQuery } from '@apollo/client'
 import { GetAppProps, withGetApp } from '../../../../../graphql'
 import { get, sortBy, toNumber, toUpper } from 'lodash'
 import React, { useMemo, useState } from 'react'
-import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonNav'
+import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
 import AdminModuleInputs, {
   Props
@@ -39,8 +39,10 @@ type Module = {
 }
 type Modules = Module[]
 
+type ReqParam = string | string[] | undefined
+
 type ContentProps = {
-  pageName: string | string[] | undefined
+  pageName: ReqParam
   modules: Modules
   lessonId: number
   refetch: Props['refetch']
@@ -110,6 +112,26 @@ const Lessons = ({ data }: GetAppProps) => {
     [lesson.id, modules]
   )
 
+  const LessonNav = ({
+    tab
+  }: {
+    tab: { tabName: string; urlPageName: string }
+  }) => {
+    const isSelected = tab.urlPageName === pageName
+    const className =
+      navStyles[
+        isSelected
+          ? 'lessons_tabsNav__nav__item'
+          : 'lessons_tabsNav__nav__item--inactive'
+      ]
+
+    return (
+      <Link href={`${MAIN_PATH}/${lessonId}/${tab.urlPageName}`}>
+        <a className={`${className} nav-pills`}>{toUpper(tab.tabName)}</a>
+      </Link>
+    )
+  }
+
   return (
     <AdminLayout data={data}>
       <main className={styles.container}>
@@ -131,23 +153,7 @@ const Lessons = ({ data }: GetAppProps) => {
                 urlPageName: 'modules'
               }
             ]}
-            render={navItem => {
-              const isSelected = navItem.urlPageName === pageName
-              const className =
-                navStyles[
-                  isSelected
-                    ? 'lessons_tabsNav__nav__item'
-                    : 'lessons_tabsNav__nav__item--inactive'
-                ]
-
-              return (
-                <Link href={`${MAIN_PATH}/${lesson.id}/${navItem.urlPageName}`}>
-                  <a className={`${className} nav-pills`}>
-                    {toUpper(navItem.tabName)}
-                  </a>
-                </Link>
-              )
-            }}
+            Component={LessonNav}
           />
         </section>
         <section>
