@@ -5656,6 +5656,54 @@ Array [
 ]
 `;
 
+exports[`Storyshots Components/ExercisePreview Exercise Preview 1`] = `
+<div
+  className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-5 m-auto px-md-3 border-0 rounded"
+>
+  <div
+    className="card-body pt-3 pb-3 "
+  >
+    <p
+      className="card-text"
+    >
+      <p
+        className="exercise__p__bold"
+      >
+        Problem
+      </p>
+      <pre
+        className="exercise__pre__bg rounded px-4 py-4"
+      >
+        a = 1;
+b = 2;
+a = b;
+// What is a?
+      </pre>
+      <p
+        className="exercise__p__bold"
+      >
+        Choose an answer
+      </p>
+      <pre
+        className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+      >
+        1
+      </pre>
+      <pre
+        className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+      >
+        2
+      </pre>
+      <pre
+        className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+      >
+        b
+      </pre>
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
 <div
   className="d-flex flex-row"
