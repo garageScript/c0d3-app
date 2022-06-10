@@ -1,5 +1,5 @@
 import React from 'react'
-import Modules from '../../../../../../pages/admin/lessons/[lessonId]/[pageName]/index'
+import Modules from '../../../../../../pages/admin/lessons/[lessonSlug]/[pageName]/index'
 import { act, render, screen, waitFor } from '@testing-library/react'
 import dummyLessonData from '../../../../../../__dummy__/lessonData'
 import dummySessionData from '../../../../../../__dummy__/sessionData'
@@ -99,7 +99,7 @@ const useRouterObj = {
   asPath: 'c0d3.com/admin/lessons/1/modules',
   query: {
     pageName: 'modules',
-    lessonId: 1
+    lessonSlug: 1
   },
   push: jest.fn()
 }
@@ -238,7 +238,7 @@ describe('modules', () => {
       ...useRouterObj,
       query: {
         pageName: 'none',
-        lessonId: undefined
+        lessonSlug: undefined
       }
     }))
 

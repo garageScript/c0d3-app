@@ -83,7 +83,7 @@ const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
 
 const Lessons = ({ data }: GetAppProps) => {
   const router = useRouter()
-  const { pageName, lessonId } = router.query
+  const { pageName, lessonSlug } = router.query
 
   const { lessons } = data
   const { data: modulesData, refetch } = useQuery<{ modules: Modules }>(MODULES)
@@ -91,7 +91,7 @@ const Lessons = ({ data }: GetAppProps) => {
   const lesson = useMemo(() => {
     if (lessons) {
       const lessonFromParam = lessons.find(
-        e => toNumber(extractLessonOrder(e.slug)) === toNumber(lessonId)
+        e => toNumber(extractLessonOrder(e.slug)) === toNumber(lessonSlug)
       )
 
       if (lessonFromParam)
@@ -103,7 +103,7 @@ const Lessons = ({ data }: GetAppProps) => {
     }
 
     return { title: '', slug: '', id: -1 }
-  }, [lessons, lessonId])
+  }, [lessons, lessonSlug])
 
   const modules = useMemo(
     () => sortBy(get(modulesData, 'modules'), 'order'),
@@ -129,7 +129,7 @@ const Lessons = ({ data }: GetAppProps) => {
       ]
 
     return (
-      <Link href={`${MAIN_PATH}/${lessonId}/${tab.urlPageName}`}>
+      <Link href={`${MAIN_PATH}/${lessonSlug}/${tab.urlPageName}`}>
         <a className={`${className} nav-pills`}>{toUpper(tab.tabName)}</a>
       </Link>
     )
