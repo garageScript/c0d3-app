@@ -39,10 +39,8 @@ type Module = {
 }
 type Modules = Module[]
 
-type ReqParam = string | string[] | undefined
-
 type ContentProps = {
-  pageName: ReqParam
+  pageName?: string | string[]
   modules: Modules
   lessonId: number
   refetch: Props['refetch']
