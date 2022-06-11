@@ -12,7 +12,7 @@ const exerciseData = {
 b = 2;
 a = b;
 // What is a?`,
-    answers: ['1', '2', 'b']
+    options: ['1', '2', 'b']
   }
 }
 
