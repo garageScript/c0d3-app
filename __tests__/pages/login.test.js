@@ -8,8 +8,14 @@ import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
 import { useRouter } from 'next/router'
 import { getLayout } from '../../components/Layout'
+import { AlreadyLoggedIn } from '../../components/AlreadyLoggedIn'
 import { cloneDeep } from 'lodash'
 import { signIn } from 'next-auth/react'
+
+import dummyLessonData from '../../__dummy__/lessonData'
+import dummySessionData from '../../__dummy__/sessionData'
+import dummyAlertData from '../../__dummy__/alertData'
+import { act } from 'react-test-renderer'
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -170,5 +176,57 @@ describe('Login Page', () => {
     await userEvent.click(discordButton)
 
     await waitFor(() => expect(signIn).toBeCalled())
+  })
+
+  test('Should show AlreadyLoggedIn component if there is a session', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: dummyLessonData,
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <AlreadyLoggedIn />
+      </MockedProvider>
+    )
+
+    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
+    await waitFor(() => expect(container).toMatchSnapshot())
+    await waitFor(() =>
+      expect(container).toHaveTextContent('You are already logged in.')
+    )
+  })
+
+  test('Should show Login card with username and password fields if there is no session', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: null,
+            alerts: null
+          }
+        }
+      }
+    ]
+
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <LoginPage />
+      </MockedProvider>
+    )
+
+    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
+    await waitFor(() => expect(container).toMatchSnapshot())
+    await waitFor(() => expect(container).toHaveTextContent('Login'))
   })
 })

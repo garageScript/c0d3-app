@@ -6,6 +6,11 @@ import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
 import userEvent from '@testing-library/user-event'
 import { getLayout } from '../../components/Layout'
+import { AlreadyLoggedIn } from '../../components/AlreadyLoggedIn'
+
+import dummyLessonData from '../../__dummy__/lessonData'
+import dummySessionData from '../../__dummy__/sessionData'
+import dummyAlertData from '../../__dummy__/alertData'
 
 describe('Signup Page', () => {
   const fakeEmail = 'fake@email.com'
@@ -133,5 +138,57 @@ describe('Signup Page', () => {
       ).toBeTruthy()
       expect(container).toMatchSnapshot()
     })
+  })
+
+  test('Should show AlreadyLoggedIn component if there is a session', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: dummyLessonData,
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <AlreadyLoggedIn />
+      </MockedProvider>
+    )
+
+    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
+    await waitFor(() => expect(container).toMatchSnapshot())
+    await waitFor(() =>
+      expect(container).toHaveTextContent('You are already logged in.')
+    )
+  })
+
+  test('Should show Signup card with email, username, first name, and last name fields if there is no session', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: null,
+            alerts: null
+          }
+        }
+      }
+    ]
+
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <SignupPage />
+      </MockedProvider>
+    )
+
+    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
+    await waitFor(() => expect(container).toMatchSnapshot())
+    await waitFor(() => expect(container).toHaveTextContent('Create Account'))
   })
 })
