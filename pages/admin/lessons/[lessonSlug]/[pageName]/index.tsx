@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client'
 import { GetAppProps, withGetApp } from '../../../../../graphql'
-import { get, sortBy, toNumber, toUpper } from 'lodash'
+import { toNumber, toUpper } from 'lodash'
 import React, { useMemo, useState } from 'react'
 import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
@@ -13,6 +13,7 @@ import navStyles from '../../../../../scss/adminLessonNav.module.scss'
 import { AdminLayout } from '../../../../../components/admin/AdminLayout'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { compose, filter, get, sortBy } from 'lodash/fp'
 
 const MAIN_PATH = '/admin/lessons'
 
@@ -105,15 +106,15 @@ const Lessons = ({ data }: GetAppProps) => {
     return { title: '', slug: '', id: -1 }
   }, [lessons, lessonSlug])
 
-  const modules = useMemo(
-    () => sortBy(get(modulesData, 'modules'), 'order'),
-    [modulesData]
-  )
+  const filteredModules = useMemo(() => {
+    const sortModules = compose(
+      sortBy('order'),
+      filter((module: Module) => module.lesson.id === lesson.id),
+      get('modules')
+    )
 
-  const filteredModules = useMemo(
-    () => modules.filter(module => module.lesson.id === lesson.id),
-    [lesson.id, modules]
-  )
+    return sortModules(modulesData)
+  }, [lesson.id, get('modules', modulesData)])
 
   const LessonNav = ({
     tab
