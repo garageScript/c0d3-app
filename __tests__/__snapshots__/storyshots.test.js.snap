@@ -5684,21 +5684,25 @@ a = b;
       >
         Choose an answer
       </p>
-      <pre
-        className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+      <div
+        className="excercise__options overflow-auto"
       >
-        1
-      </pre>
-      <pre
-        className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-      >
-        2
-      </pre>
-      <pre
-        className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-      >
-        b
-      </pre>
+        <pre
+          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+        >
+          1
+        </pre>
+        <pre
+          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+        >
+          2
+        </pre>
+        <pre
+          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+        >
+          b
+        </pre>
+      </div>
     </p>
   </div>
 </div>
