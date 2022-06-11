@@ -3,24 +3,20 @@ import { useMutation } from '@apollo/client'
 import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
 import _ from 'lodash'
-import { NextApiResponse } from 'next'
-import { Request, Response } from 'express'
-import { LoggedRequest } from '../@types/helpers'
-import { User } from '@prisma/client'
 
 //import components
 import Card from '../components/Card'
 import { getLayout } from '../components/Layout'
 import Input from '../components/Input'
 import NavLink from '../components/NavLink'
+import { AlreadyLoggedIn } from '../components/AlreadyLoggedIn'
 
 //import helpers
 import { signupValidation } from '../helpers/formValidation'
+
+//import queries
 import SIGNUP_USER from '../graphql/queries/signupUser'
-import loggingMiddleware from '../helpers/middleware/logger'
-import sessionMiddleware from '../helpers/middleware/session'
-import userMiddleware from '../helpers/middleware/user'
-import runMiddlewares from '../helpers/runMiddlewares'
+import { withGetApp, GetAppProps } from '../graphql'
 
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
@@ -154,7 +150,9 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-const SignUpPage: React.FC & WithLayout = () => {
+const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
+  data: session_data
+}) => {
   const [signupSuccess, setSignupSuccess] = useState(false)
   const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -185,6 +183,11 @@ const SignUpPage: React.FC & WithLayout = () => {
     }
     setIsSubmitting(false)
   }
+
+  //checks if user is already logged in
+  const session = session_data?.session?.user
+  if (session) return <AlreadyLoggedIn />
+
   return (
     <>
       <Title title="Sign up" />
@@ -221,36 +224,5 @@ export const Signup: React.FC<SignupFormProps> = ({
   )
 }
 
-export const getServerSideProps = async ({
-  req,
-  res
-}: {
-  req: LoggedRequest & Request
-  res: NextApiResponse & Response
-}) => {
-  const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
-  const session = await new Promise<User | null>(resolve => {
-    runMiddlewares(middlewares, req, res, async () => {
-      if (req.user) {
-        return resolve(req.user)
-      }
-
-      return resolve(null)
-    })
-  })
-
-  if (session) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/curriculum'
-      },
-      props: {}
-    }
-  }
-
-  return { props: {} }
-}
-
 SignUpPage.getLayout = getLayout
-export default SignUpPage
+export default withGetApp()(SignUpPage)

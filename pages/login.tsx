@@ -17,17 +17,8 @@ import { Spinner } from 'react-bootstrap'
 import styles from '../scss/login.module.scss'
 import { signIn } from 'next-auth/react'
 import Image from 'next/image'
-
-//for getServerSideProps
-import { NextApiResponse } from 'next'
-import { Request, Response } from 'express'
-import { LoggedRequest } from '../@types/helpers'
-import { User } from '@prisma/client'
-
-import loggingMiddleware from '../helpers/middleware/logger'
-import sessionMiddleware from '../helpers/middleware/session'
-import userMiddleware from '../helpers/middleware/user'
-import runMiddlewares from '../helpers/runMiddlewares'
+import { withGetApp, GetAppProps } from '../graphql'
+import { AlreadyLoggedIn } from '../components/AlreadyLoggedIn'
 
 type Values = {
   username: string
@@ -137,7 +128,9 @@ export const Login: React.FC<LoginFormProps> = ({
   </Card>
 )
 
-const LoginPage: React.FC & WithLayout = () => {
+const LoginPage: React.FC<GetAppProps> & WithLayout = ({
+  data: session_data
+}) => {
   const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
   const [loginUser, { data, error, loading }] = useMutation(LOGIN_USER, {
@@ -146,6 +139,7 @@ const LoginPage: React.FC & WithLayout = () => {
     awaitRefetchQueries: true
   })
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
+
   useEffect(() => {
     const { success } = _.get(data, 'login', false)
     if (success) {
@@ -169,6 +163,11 @@ const LoginPage: React.FC & WithLayout = () => {
       await loginUser({ variables: values })
     } catch {} // catch error that's thrown by default from mutation
   }
+
+  //checks if user is already logged in
+  const session = session_data?.session?.user
+  if (session) return <AlreadyLoggedIn />
+
   return (
     <>
       <Title title="Login" />
@@ -181,36 +180,5 @@ const LoginPage: React.FC & WithLayout = () => {
   )
 }
 
-export const getServerSideProps = async ({
-  req,
-  res
-}: {
-  req: LoggedRequest & Request
-  res: NextApiResponse & Response
-}) => {
-  const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
-  const session = await new Promise<User | null>(resolve => {
-    runMiddlewares(middlewares, req, res, async () => {
-      if (req.user) {
-        return resolve(req.user)
-      }
-
-      return resolve(null)
-    })
-  })
-
-  if (session) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/curriculum'
-      },
-      props: {}
-    }
-  }
-
-  return { props: {} }
-}
-
 LoginPage.getLayout = getLayout
-export default LoginPage
+export default withGetApp()(LoginPage)
