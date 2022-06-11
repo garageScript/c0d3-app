@@ -25,14 +25,16 @@ const ExercisePreview: React.FC<Props> = ({ exercise, classes }) => {
             {exercise.question}
           </pre>
           <p className={`${styles['exercise__p__bold']}`}>Choose an answer</p>
-          {exercise.options.map((option, index) => (
-            <pre
-              key={index}
-              className={`${styles['exercise__pre__bg']} ${styles['exercise__pre__answer']} rounded px-4 py-4`}
-            >
-              {option}
-            </pre>
-          ))}
+          <div className="excercise__options overflow-auto">
+            {exercise.options.map((option, index) => (
+              <pre
+                key={index}
+                className={`${styles['exercise__pre__bg']} ${styles['exercise__pre__answer']} rounded px-4 py-4`}
+              >
+                {option}
+              </pre>
+            ))}
+          </div>
         </p>
       </div>
     </div>
