@@ -3,7 +3,7 @@ import styles from '../scss/exercisePreview.module.scss'
 
 type Exercise = {
   question: string
-  answers: string[]
+  options: string[]
 }
 
 type Props = {
@@ -25,12 +25,12 @@ const ExercisePreview: React.FC<Props> = ({ exercise, classes }) => {
             {exercise.question}
           </pre>
           <p className={`${styles['exercise__p__bold']}`}>Choose an answer</p>
-          {exercise.answers.map((answer, index) => (
+          {exercise.options.map((option, index) => (
             <pre
               key={index}
               className={`${styles['exercise__pre__bg']} ${styles['exercise__pre__answer']} rounded px-4 py-4`}
             >
-              {answer}
+              {option}
             </pre>
           ))}
         </p>
