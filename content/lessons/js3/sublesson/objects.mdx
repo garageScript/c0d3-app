@@ -2090,7 +2090,7 @@ You’ll notice that an alternative solution is to let the one reduce call do al
 the work for us. In the first solution, we sort of tricked `reduce` into passing
 along 2 accumulator arguments, and in this one we're making it pass along all 3
 things: all the frequencies as well the current most common element and its
-frequeny. Even though reduce technically only takes one accumulator, we can get
+frequency. Even though reduce technically only takes one accumulator, we can get
 away with this by wrapping the 3 pieces of information we need in an array!
 
 </Spoiler>
@@ -2393,14 +2393,14 @@ access its `indexCounter`.
    ```
 
 <Spoiler name = "Hint">
-
-</Spoiler>
-
+	
 Did you know that you can override existing prototype functions? It's as easy as
 assigning a new value to a key inside of the setMaxSize object. Just make sure
 to save the old one into a variable first so you can keep using its
 functionality.
-
+	
+</Spoiler>
+	
 <Spoiler>
 
 1. **Tests**
@@ -2494,7 +2494,7 @@ So your defined Array.prototype.push function will call `this.oldPush` which is
 also your defined `Array.prototype.push` function, so it just keeps calling
 itself forever.
 
-**This is an example of why it is conidered bad practice to overwrite _built-in_
+**This is an example of why it is considered bad practice to overwrite _built-in_
 Javascript prototypes and methods.**
 
 </Spoiler>
