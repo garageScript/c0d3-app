@@ -72,7 +72,7 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
-    "@graphql-codegen/typescript": "^2.4.11",
+    "@graphql-codegen/typescript": "^2.5.1",
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.19",
     "@graphql-codegen/typescript-operations": "^2.4.1",
     "@graphql-codegen/typescript-react-apollo": "^3.2.16",
@@ -83,7 +83,7 @@
     "@storybook/addon-essentials": "^6.5.6",
     "@storybook/addon-storyshots": "^6.5.7",
     "@storybook/addon-storysource": "^6.5.8",
-    "@storybook/addon-viewport": "^6.5.6",
+    "@storybook/addon-viewport": "^6.5.8",
     "@storybook/react": "^6.4.22",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
