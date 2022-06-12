@@ -742,7 +742,7 @@ steps.
      if (num < i) return false
      if (num === i) return true
      if (num % i === 0) return false
-     return isPrime(n, i + 1)
+     return isPrime(num, i + 1)
    }
 
    const allPrime = (arr, i = 0) => {
@@ -1524,7 +1524,7 @@ const copyLast = (a, b, result = []) => {
 
   result.push(a[b])
 
-  return copyLast3(a, b + 1, result)
+  return copyLast(a, b + 1, result)
 }
 ```
 
