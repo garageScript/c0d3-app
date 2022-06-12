@@ -1979,13 +1979,13 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-apollo-client-helpers@^2.1.19":
-  version "2.1.19"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-apollo-client-helpers/-/typescript-apollo-client-helpers-2.1.19.tgz#08e5769e24b9d0e5f11f402db51392296c3a1f96"
-  integrity sha512-ey62vplykHIJFLGPQhgU+y0pRifP6Z/XTbjbiG5RfG4mPJuR8ir1ZqqfeVrgtH12fXJQVrzJ4N+DaAB52q08hw==
+"@graphql-codegen/typescript-apollo-client-helpers@^2.1.20":
+  version "2.1.20"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-apollo-client-helpers/-/typescript-apollo-client-helpers-2.1.20.tgz#71cbaadf2bd6b6d0005ae88d13b09e8386bd932b"
+  integrity sha512-Yf9vHaGQYweT8cPJ20NGZieje8vCc+gjp2BbAaIGTGirmHxCH58PfwMt8LxbJdXkyJrLe53bauZPm2wGqiQIXQ==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-codegen/visitor-plugin-common" "2.9.0"
+    "@graphql-codegen/visitor-plugin-common" "2.9.1"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
     tslib "~2.4.0"
@@ -3313,24 +3313,7 @@
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-viewport@6.5.8", "@storybook/addon-viewport@^6.5.6":
-  version "6.5.8"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.5.8.tgz#3184a6ef12582af6f2361af27f404dffee0b32ae"
-  integrity sha512-MTpZWkBWNPH55iNHK4tBNKTdew5xKfoNvOj0pZn1rYDHlylMTlq7aoccwRjjK2jZeHHNnb1rm6ZkQDjmYu0Tcw==
-  dependencies:
-    "@storybook/addons" "6.5.8"
-    "@storybook/api" "6.5.8"
-    "@storybook/client-logger" "6.5.8"
-    "@storybook/components" "6.5.8"
-    "@storybook/core-events" "6.5.8"
-    "@storybook/theming" "6.5.8"
-    core-js "^3.8.2"
-    global "^4.4.0"
-    memoizerific "^1.11.3"
-    prop-types "^15.7.2"
-    regenerator-runtime "^0.13.7"
-
-"@storybook/addon-viewport@^6.5.8":
+"@storybook/addon-viewport@6.5.8", "@storybook/addon-viewport@^6.5.8":
   version "6.5.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.5.8.tgz#3184a6ef12582af6f2361af27f404dffee0b32ae"
   integrity sha512-MTpZWkBWNPH55iNHK4tBNKTdew5xKfoNvOj0pZn1rYDHlylMTlq7aoccwRjjK2jZeHHNnb1rm6ZkQDjmYu0Tcw==
