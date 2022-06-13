@@ -6,11 +6,8 @@ import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
 import userEvent from '@testing-library/user-event'
 import { getLayout } from '../../components/Layout'
-import { AlreadyLoggedIn } from '../../components/AlreadyLoggedIn'
 
-import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import dummyAlertData from '../../__dummy__/alertData'
 
 describe('Signup Page', () => {
   const fakeEmail = 'fake@email.com'
@@ -142,28 +139,26 @@ describe('Signup Page', () => {
 
   test('Should show AlreadyLoggedIn component if there is a session', async () => {
     const mocks = [
-      
-    {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          session: dummySessionData,
-          lessons: [],
-          alerts: []
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
         }
       }
-    },
-    {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          session: dummySessionData,
-          lessons: [],
-          alerts: []
-        }
-      }
-    }
-      
     ]
 
     const { getByText } = render(
@@ -171,7 +166,7 @@ describe('Signup Page', () => {
         <SignupPage />
       </MockedProvider>
     )
-  
+
     await waitFor(() =>
       expect(getByText('You are already logged in.')).toBeTruthy()
     )

@@ -8,14 +8,10 @@ import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
 import { useRouter } from 'next/router'
 import { getLayout } from '../../components/Layout'
-import { AlreadyLoggedIn } from '../../components/AlreadyLoggedIn'
 import { cloneDeep } from 'lodash'
 import { signIn } from 'next-auth/react'
 
-import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import dummyAlertData from '../../__dummy__/alertData'
-import { act } from 'react-test-renderer'
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -180,28 +176,26 @@ describe('Login Page', () => {
 
   test('Should show AlreadyLoggedIn component if there is a session', async () => {
     const mocks = [
-      
-    {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          session: dummySessionData,
-          lessons: [],
-          alerts: []
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
         }
       }
-    },
-    {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          session: dummySessionData,
-          lessons: [],
-          alerts: []
-        }
-      }
-    }
-      
     ]
 
     const { getByText } = render(
@@ -209,10 +203,9 @@ describe('Login Page', () => {
         <LoginPage />
       </MockedProvider>
     )
-    
+
     await waitFor(() =>
       expect(getByText('You are already logged in.')).toBeTruthy()
     )
   })
-
 })
