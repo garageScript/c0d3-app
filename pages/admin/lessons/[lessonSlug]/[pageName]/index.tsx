@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client'
 import { GetAppProps, withGetApp } from '../../../../../graphql'
-import { toNumber, toUpper } from 'lodash'
+import { toUpper } from 'lodash'
 import React, { useMemo, useState } from 'react'
 import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
@@ -47,8 +47,6 @@ type ContentProps = {
   refetch: Props['refetch']
 }
 
-const extractLessonOrder = (x: string) => x.split('').slice(2).join()
-
 const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const onAddItem = () => setSelectedIndex(-1)
@@ -91,9 +89,7 @@ const Lessons = ({ data }: GetAppProps) => {
 
   const lesson = useMemo(() => {
     if (lessons) {
-      const lessonFromParam = lessons.find(
-        e => toNumber(extractLessonOrder(e.slug)) === toNumber(lessonSlug)
-      )
+      const lessonFromParam = lessons.find(e => e.slug === lessonSlug)
 
       if (lessonFromParam)
         return {
@@ -144,9 +140,7 @@ const Lessons = ({ data }: GetAppProps) => {
           <Breadcrumbs
             lesson={lesson}
             setLesson={lesson => {
-              router.push(
-                `${MAIN_PATH}/${extractLessonOrder(lesson.slug)}/${pageName}`
-              )
+              router.push(`${MAIN_PATH}/${lesson.slug}/${pageName}`)
             }}
             lessons={lessons}
           />

@@ -99,7 +99,7 @@ const useRouterObj = {
   asPath: 'c0d3.com/admin/lessons/1/modules',
   query: {
     pageName: 'modules',
-    lessonSlug: 1
+    lessonSlug: 'js1'
   },
   push: jest.fn()
 }
@@ -172,7 +172,7 @@ describe('modules', () => {
       asPath: 'c0d3.com/admin/lessons/1/none',
       query: {
         pageName: 'none',
-        lessonId: 1
+        lessonSlug: 'js1'
       }
     }))
 
@@ -192,7 +192,7 @@ describe('modules', () => {
       asPath: 'c0d3.com/admin/lessons/1/modules',
       query: {
         pageName: 'modules',
-        lessonId: undefined
+        lessonSlug: undefined
       }
     }))
 
