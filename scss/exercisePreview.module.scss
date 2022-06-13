@@ -1,0 +1,13 @@
+@use 'colors.module.scss';
+
+.exercise__options {
+  max-height: 500px;
+}
+
+.exercise__pre__bg {
+  background: colors.$bg-light-gray;
+}
+
+.exercise__p__bold {
+  font-weight: 700;
+}
