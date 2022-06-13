@@ -151,7 +151,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
 }
 
 const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
-  data: session_data
+  data: sessionData
 }) => {
   const [signupSuccess, setSignupSuccess] = useState(false)
   const [forgotToken, setForgotToken] = useState('')
@@ -185,7 +185,7 @@ const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
   }
 
   //checks if user is already logged in
-  const session = session_data?.session?.user
+  const session = sessionData?.session?.user
   if (session) return <AlreadyLoggedIn />
 
   return (

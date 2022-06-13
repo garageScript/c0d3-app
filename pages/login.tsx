@@ -129,7 +129,7 @@ export const Login: React.FC<LoginFormProps> = ({
 )
 
 const LoginPage: React.FC<GetAppProps> & WithLayout = ({
-  data: session_data
+  data: sessionData
 }) => {
   const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
@@ -165,7 +165,7 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
   }
 
   //checks if user is already logged in
-  const session = session_data?.session?.user
+  const session = sessionData?.session?.user
   if (session) return <AlreadyLoggedIn />
 
   return (
