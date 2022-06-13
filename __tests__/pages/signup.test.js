@@ -142,53 +142,38 @@ describe('Signup Page', () => {
 
   test('Should show AlreadyLoggedIn component if there is a session', async () => {
     const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: dummySessionData,
-            lessons: dummyLessonData,
-            alerts: dummyAlertData
-          }
+      
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          session: dummySessionData,
+          lessons: [],
+          alerts: []
         }
       }
-    ]
-
-    const { container } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <AlreadyLoggedIn />
-      </MockedProvider>
-    )
-
-    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
-    await waitFor(() => expect(container).toMatchSnapshot())
-    await waitFor(() =>
-      expect(container).toHaveTextContent('You are already logged in.')
-    )
-  })
-
-  test('Should show Signup card with email, username, first name, and last name fields if there is no session', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: null,
-            lessons: null,
-            alerts: null
-          }
+    },
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          session: dummySessionData,
+          lessons: [],
+          alerts: []
         }
       }
+    }
+      
     ]
 
-    const { container } = render(
+    const { getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <SignupPage />
       </MockedProvider>
     )
-
-    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
-    await waitFor(() => expect(container).toMatchSnapshot())
-    await waitFor(() => expect(container).toHaveTextContent('Create Account'))
+  
+    await waitFor(() =>
+      expect(getByText('You are already logged in.')).toBeTruthy()
+    )
   })
 })
