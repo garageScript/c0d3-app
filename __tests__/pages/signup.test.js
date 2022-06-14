@@ -7,6 +7,8 @@ import SignupPage from '../../pages/signup'
 import userEvent from '@testing-library/user-event'
 import { getLayout } from '../../components/Layout'
 
+import dummySessionData from '../../__dummy__/sessionData'
+
 describe('Signup Page', () => {
   const fakeEmail = 'fake@email.com'
   const fakeUsername = 'fakeusername'
@@ -133,5 +135,42 @@ describe('Signup Page', () => {
       ).toBeTruthy()
       expect(container).toMatchSnapshot()
     })
+  })
+
+  test('Should show AlreadyLoggedIn component if there is a session', async () => {
+    expect.assertions(1)
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    const { getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <SignupPage />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      expect(getByText('You are already logged in.')).toBeTruthy()
+    )
   })
 })

@@ -9,10 +9,14 @@ import Card from '../components/Card'
 import { getLayout } from '../components/Layout'
 import Input from '../components/Input'
 import NavLink from '../components/NavLink'
+import { AlreadyLoggedIn } from '../components/AlreadyLoggedIn'
 
 //import helpers
 import { signupValidation } from '../helpers/formValidation'
+
+//import queries
 import SIGNUP_USER from '../graphql/queries/signupUser'
+import { withGetApp, GetAppProps } from '../graphql'
 
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
@@ -146,12 +150,15 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-const SignUpPage: React.FC & WithLayout = () => {
+const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
+  data: sessionData
+}) => {
   const [signupSuccess, setSignupSuccess] = useState(false)
   const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [signupErrors, setSignupErrors] = useState<string[]>([])
   const [signupUser] = useMutation(SIGNUP_USER)
+
   const handleSubmit = async (values: Values) => {
     setIsSubmitting(true)
     try {
@@ -176,6 +183,11 @@ const SignUpPage: React.FC & WithLayout = () => {
     }
     setIsSubmitting(false)
   }
+
+  //checks if user is already logged in
+  const session = _.get(sessionData, 'session.user')
+  if (session) return <AlreadyLoggedIn />
+
   return (
     <>
       <Title title="Sign up" />
@@ -213,4 +225,4 @@ export const Signup: React.FC<SignupFormProps> = ({
 }
 
 SignUpPage.getLayout = getLayout
-export default SignUpPage
+export default withGetApp()(SignUpPage)
