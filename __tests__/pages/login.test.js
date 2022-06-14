@@ -11,6 +11,8 @@ import { getLayout } from '../../components/Layout'
 import { cloneDeep } from 'lodash'
 import { signIn } from 'next-auth/react'
 
+import dummySessionData from '../../__dummy__/sessionData'
+
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
   const fakePassword = 'fake password'
@@ -170,5 +172,42 @@ describe('Login Page', () => {
     await userEvent.click(discordButton)
 
     await waitFor(() => expect(signIn).toBeCalled())
+  })
+
+  test('Should show AlreadyLoggedIn component if there is a session', async () => {
+    expect.assertions(1)
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    const { getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <LoginPage />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      expect(getByText('You are already logged in.')).toBeTruthy()
+    )
   })
 })
