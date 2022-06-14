@@ -4,17 +4,15 @@ import { getLayout } from '../../components/Layout'
 import Title from '../../components/Title'
 import Card from '../../components/Card'
 import NavLink from '../../components/NavLink'
-import { NextApiResponse } from 'next'
-import { Request, Response } from 'express'
+import { Request } from 'express'
 import { LoggedRequest } from '../../@types/helpers'
 import Link from 'next/link'
 import Image from 'next/image'
 import { DiscordUserInfo, getDiscordUserInfo } from '../../helpers/discordAuth'
 import { User } from '@prisma/client'
-import loggingMiddleware from '../../helpers/middleware/logger'
-import sessionMiddleware from '../../helpers/middleware/session'
-import userMiddleware from '../../helpers/middleware/user'
-import runMiddlewares from '../../helpers/runMiddlewares'
+import { getSession } from 'next-auth/react'
+import { DefaultSession } from 'next-auth'
+import { get } from 'lodash'
 
 type ConnectToDiscordSuccessProps = {
   errorCode: number
@@ -48,8 +46,9 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
   navPath,
   navText
 }) => {
-  let errorMessage = <></>,
-    errorLog = <></>
+  let errorMessage = <></>
+  let errorLog = <></>
+
   if (!username) {
     errorMessage = (
       <>
@@ -62,14 +61,12 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
     )
   } else {
     errorMessage = (
-      <>
-        <p>
-          Dear {username}, we had trouble connecting to Discord, please try
-          again.
-        </p>
-      </>
+      <p>
+        Dear {username}, we had trouble connecting to Discord, please try again.
+      </p>
     )
   }
+
   if (error?.message) {
     errorLog = (
       <>
@@ -79,6 +76,7 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
       </>
     )
   }
+
   return (
     <>
       <Title title="Error" />
@@ -115,6 +113,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
         navText="Try Again"
       />
     )
+
   if (errorCode === ErrorCode.USER_NOT_LOGGED_IN)
     return (
       <DiscordErrorPage
@@ -124,6 +123,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
         navText="Log In Here"
       />
     )
+
   return (
     <>
       <Title title="Success!" />
@@ -163,31 +163,20 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
 }
 
 export const getServerSideProps = async ({
-  req,
-  res
+  req
 }: {
   // NextJS request and response types are extended with Express request and response types
   // request type is initially NextApiRequest until it goes through all the middlewares
   req: LoggedRequest & Request
-  res: NextApiResponse & Response
 }) => {
-  const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
-  const session = await new Promise<User | null>(resolve => {
-    runMiddlewares(middlewares, req, res, async () => {
-      if (req.user) {
-        return resolve(req.user)
-      }
-      return resolve(null)
-    })
-  })
-
+  const session = (await getSession({ req })) as DefaultSession & { user: User }
   if (!session) return { props: { errorCode: ErrorCode.USER_NOT_LOGGED_IN } }
 
-  const userInfo = await getDiscordUserInfo(session)
+  const userInfo = await getDiscordUserInfo(session.user)
+  if (!get(userInfo, 'userId'))
+    return { props: { errorCode: ErrorCode.DISCORD_ERROR } }
 
-  if (!userInfo.userId) return { props: { errorCode: ErrorCode.DISCORD_ERROR } }
-
-  return { props: { userInfo, username: session.username } }
+  return { props: { userInfo, username: session.user.username } }
 }
 
 ConnectToDiscordSuccess.getLayout = getLayout

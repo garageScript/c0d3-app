@@ -16,6 +16,7 @@ import {
   ConnectToDiscordSuccess,
   getServerSideProps
 } from '../../../pages/discord/success'
+import { getSession } from 'next-auth/react'
 
 const defaultMiddleware = (_req, _res, next) => next()
 
@@ -45,13 +46,15 @@ const discordErrorProps = {
 const successfulAuthFlowProps = {
   props: {
     userInfo: mockDiscordUserInfo,
-    username: 'fakeUser'
+    username: mockDiscordUserInfo.username
   }
 }
 
+getSession.mockResolvedValue({ user: { ...mockDiscordUserInfo } })
+
 describe('getServerSideProps function', () => {
   it('should return error if user not logged in', async () => {
-    userMiddleware.mockImplementation(defaultMiddleware)
+    getSession.mockResolvedValueOnce(null)
     const response = await getServerSideProps({
       req: {}
     })
