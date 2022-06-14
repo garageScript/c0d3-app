@@ -17,6 +17,8 @@ import { Spinner } from 'react-bootstrap'
 import styles from '../scss/login.module.scss'
 import { signIn } from 'next-auth/react'
 import Image from 'next/image'
+import { withGetApp, GetAppProps } from '../graphql'
+import { AlreadyLoggedIn } from '../components/AlreadyLoggedIn'
 
 type Values = {
   username: string
@@ -126,7 +128,9 @@ export const Login: React.FC<LoginFormProps> = ({
   </Card>
 )
 
-const LoginPage: React.FC & WithLayout = () => {
+const LoginPage: React.FC<GetAppProps> & WithLayout = ({
+  data: sessionData
+}) => {
   const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
   const [loginUser, { data, error, loading }] = useMutation(LOGIN_USER, {
@@ -135,6 +139,7 @@ const LoginPage: React.FC & WithLayout = () => {
     awaitRefetchQueries: true
   })
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
+
   useEffect(() => {
     const { success } = _.get(data, 'login', false)
     if (success) {
@@ -158,6 +163,11 @@ const LoginPage: React.FC & WithLayout = () => {
       await loginUser({ variables: values })
     } catch {} // catch error that's thrown by default from mutation
   }
+
+  //checks if user is already logged in
+  const session = _.get(sessionData, 'session.user')
+  if (session) return <AlreadyLoggedIn />
+
   return (
     <>
       <Title title="Login" />
@@ -171,4 +181,4 @@ const LoginPage: React.FC & WithLayout = () => {
 }
 
 LoginPage.getLayout = getLayout
-export default LoginPage
+export default withGetApp()(LoginPage)
