@@ -2,14 +2,30 @@ import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
-import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
 import userEvent from '@testing-library/user-event'
 import { getLayout } from '../../components/Layout'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/router'
+
+const mocks = [
+  {
+    request: { query: GET_APP },
+    result: {
+      data: {
+        session: null,
+        lessons: [],
+        alerts: []
+      }
+    }
+  }
+]
 
 import dummySessionData from '../../__dummy__/sessionData'
 
 describe('Signup Page', () => {
+  const { push, query } = useRouter()
+
   const fakeEmail = 'fake@email.com'
   const fakeUsername = 'fakeusername'
   const fakeFirstName = 'fakefirstname'
@@ -28,44 +44,16 @@ describe('Signup Page', () => {
     await userEvent.type(lastNameField, fakeLastName, { delay: 1 })
   }
 
-  test('Should use Layout component getLayout ', async () => {
-    expect(SignupPage.getLayout === getLayout).toBe(true)
-  })
-  test('Should render success component on success', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: null,
-            lessons: [],
-            alerts: []
-          }
-        }
-      },
-      {
-        request: {
-          query: SIGNUP_USER,
-          variables: {
-            firstName: fakeFirstName,
-            lastName: fakeLastName,
-            email: fakeEmail,
-            username: fakeUsername
-          }
-        },
-        result: {
-          data: {
-            signup: {
-              success: true,
-              username: fakeUsername,
-              error: null
-            }
-          }
-        }
-      }
-    ]
+  test('Should redirect to /curriculum on success', async () => {
+    query.next = null
 
-    const { container, getByTestId, getByText } = render(
+    signIn.mockReturnValue({
+      error: null,
+      status: null,
+      ok: true
+    })
+
+    const { getByTestId } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <SignupPage />
       </MockedProvider>
@@ -76,45 +64,18 @@ describe('Signup Page', () => {
     await fillOutSignupForm(getByTestId)
     fireEvent.click(submitButton)
 
-    await waitFor(() => {
-      expect(getByText('Account created successfully!')).toBeTruthy()
-      expect(container).toMatchSnapshot()
-    })
+    await waitFor(() => expect(push).toBeCalledWith('/curriculum'))
   })
 
-  test('Should render errors on fail', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: null,
-            lessons: [],
-            alerts: []
-          }
-        }
-      },
-      {
-        request: {
-          query: SIGNUP_USER,
-          variables: {
-            firstName: fakeFirstName,
-            lastName: fakeLastName,
-            email: fakeEmail,
-            username: fakeUsername
-          }
-        },
-        result: {
-          data: {
-            signup: {
-              success: false,
-              username: null,
-              error: null
-            }
-          }
-        }
-      }
-    ]
+  test('Should use Layout component getLayout ', async () => {
+    expect(SignupPage.getLayout === getLayout).toBe(true)
+  })
+
+  test('Should render error message on fail', async () => {
+    signIn.mockReturnValue({
+      error: 'Server side error found',
+      status: 401
+    })
 
     const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -133,6 +94,29 @@ describe('Signup Page', () => {
           'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
         )
       ).toBeTruthy()
+      expect(container).toMatchSnapshot()
+    })
+  })
+
+  test('Should render network error on fail', async () => {
+    signIn.mockReturnValue({
+      error: 'Server side error found',
+      status: null
+    })
+
+    const { container, getByTestId, getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <SignupPage />
+      </MockedProvider>
+    )
+
+    const submitButton = getByTestId('submit')
+
+    await fillOutSignupForm(getByTestId)
+    fireEvent.click(submitButton)
+
+    await waitFor(() => {
+      expect(getByText('Server side error found')).toBeTruthy()
       expect(container).toMatchSnapshot()
     })
   })
