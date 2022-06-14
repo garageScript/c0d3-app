@@ -4,12 +4,12 @@ import { LoggedRequest } from '../@types/helpers'
 import { Request, Response } from 'express'
 import { NextApiResponse } from 'next'
 import { getUserSession } from './getUserSession'
-import { get } from 'lodash'
+import { get, toNumber, toString } from 'lodash'
 import { login, signup } from '../graphql/resolvers/authController'
 import prisma from '../prisma'
-import { JWT } from 'next-auth/jwt'
 import DiscordProvider from 'next-auth/providers/discord'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import { JWT } from 'next-auth/jwt'
 
 type Credentials =
   | Record<'username' | 'password' | 'email' | 'firstName' | 'lastName', string>
@@ -35,21 +35,21 @@ export const authorize =
           {
             username,
             email,
-            // Will be uncommented when signup takes password as argument
-            // password,
+            password,
             firstName,
             lastName
           },
           context
         )
-      : isLoginFlow && (await login(undefined, { username, password }, context))
+      : isLoginFlow && (await login(undefined, { username, password }))
 
     if (!user) return null
 
-    // What we return here is passed to jwt and session callbacks
-    return prisma.user.findFirst({
+    const dbUser = await prisma.user.findFirst({
       where: { id: user.id }
     })
+
+    return dbUser
   }
 
 export const providers = (
@@ -92,8 +92,7 @@ export const signIn =
           new Date(expires_at! * 1000)
         )
 
-        // Cancel auth flow. Session won't be created
-        return '/discord/success'
+        return true
       }
 
       // Login with Discord
@@ -104,10 +103,7 @@ export const signIn =
       })
 
       if (userInfo) {
-        req.session.userId = userInfo.id
-
-        // Cancel auth flow. Session won't be created
-        return '/curriculum'
+        return true
       }
 
       return '/discord/404user'
@@ -117,8 +113,31 @@ export const signIn =
   }
 
 // jwt callback is first called then session callback
-export const jwt = ({ token, user }: { token: JWT; user?: User }) => {
-  if (user) token.user = user
+export const jwt = async ({
+  token,
+  user,
+  account
+}: {
+  token: JWT
+  user?: User
+  account?: Account
+}) => {
+  // For Discord. Will only run once.
+  if (get(account, 'type') === 'oauth' && user) {
+    const dbUser = await prisma.user.findFirst({
+      where: {
+        discordId: toString(user.id)
+      }
+    })
+
+    token.user = dbUser
+  }
+
+  // For Credentials or Login/Signup. Will only run once
+  if (get(account, 'type') === 'credentials') {
+    token.user = user
+  }
+
   return token
 }
 
@@ -129,6 +148,13 @@ export const session = async ({
   session: Session
   token: JWT
 }) => {
-  session.user = token.user as DefaultSession['user']
+  // Will run for each getSession or useSession call
+  const dbUser = await prisma.user.findFirst({
+    where: {
+      id: toNumber((token.user as User).id)
+    }
+  })
+
+  session.user = dbUser as DefaultSession['user']
   return session
 }

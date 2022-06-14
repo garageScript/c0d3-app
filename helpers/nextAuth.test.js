@@ -87,7 +87,7 @@ describe('Signin callback', () => {
       })
 
       expect(updateRefreshandAccessTokens).toBeCalled()
-      expect(value).toBe('/discord/success')
+      expect(value).toBe(true)
     })
   })
 
@@ -115,7 +115,7 @@ describe('Signin callback', () => {
         }
       })
 
-      expect(value).toBe('/curriculum')
+      expect(value).toBe(true)
     })
 
     it('Should redirect to /discord/404user when user is not found', async () => {
@@ -178,7 +178,7 @@ describe('Signin callback', () => {
 })
 
 describe('JWT callback', () => {
-  it('Should set user in token', () => {
+  it('Should set user in token if flow type is credentials (login/signup)', async () => {
     expect.assertions(1)
 
     const options = {
@@ -187,15 +187,16 @@ describe('JWT callback', () => {
       },
       user: {
         id: 1
-      }
+      },
+      account: { type: 'credentials' }
     }
 
-    const value = jwt(options)
+    const value = await jwt(options)
 
     expect(value.user.id).toBe(1)
   })
 
-  it('Should not set user in token if there is no user', () => {
+  it('Should not set user in token if there is no user', async () => {
     expect.assertions(1)
 
     const options = {
@@ -207,9 +208,27 @@ describe('JWT callback', () => {
       }
     }
 
-    const value = jwt({ ...options, user: null })
+    const value = await jwt({ ...options, user: null })
 
     expect(value.user).toBeFalsy()
+  })
+
+  it('Should set user from database as token user if flow type is oauth (discord)', async () => {
+    expect.assertions(1)
+
+    const options = {
+      token: {
+        user: null
+      },
+      user: {
+        id: 1
+      },
+      account: { type: 'oauth' }
+    }
+
+    await jwt(options)
+
+    expect(prismaMock.user.findFirst).toBeCalled()
   })
 })
 
@@ -227,6 +246,8 @@ describe('Session callback', () => {
         user: null
       }
     }
+
+    prismaMock.user.findFirst.mockResolvedValue({ id: options.token.user.id })
 
     const value = await session(options)
 
