@@ -36,10 +36,6 @@ export const _Signup: React.FC = () => {
 
 export const _SignupBasic: React.FC = () => <Signup handleSubmit={noop} />
 
-export const _SignupSuccess: React.FC = () => (
-  <Signup handleSubmit={noop} isSuccess={true} />
-)
-
 export const _SignupErrors: React.FC = () => (
   <Signup handleSubmit={noop} signupErrors={errorMessages} />
 )
