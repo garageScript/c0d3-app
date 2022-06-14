@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signup Page Should render errors on fail 1`] = `
+exports[`Signup Page Should render error message on fail 1`] = `
 <div>
   <div
     class="row mt-5"
@@ -70,6 +70,14 @@ exports[`Signup Page Should render errors on fail 1`] = `
               placeholder="Last name"
               value="fakelastname"
             />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="password"
+              name="password"
+              placeholder="Password"
+              type="password"
+              value=""
+            />
             <button
               class="btn btn-primary btn-lg btn mb-3"
               data-testid="submit"
@@ -97,7 +105,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
 </div>
 `;
 
-exports[`Signup Page Should render success component on success 1`] = `
+exports[`Signup Page Should render network error on fail 1`] = `
 <div>
   <div
     class="row mt-5"
@@ -108,27 +116,94 @@ exports[`Signup Page Should render success component on success 1`] = `
       <div
         class="card-body text-center pt-5 pb-5"
       >
-        <img
-          alt="Green circle with a checkmark inside."
-          class="mb-4"
-          height="100px"
-          src="/assets/curriculum/icons/checked.svg"
-          width="100px"
-        />
         <h1
           class="card-title h2 fw-bold mb-5"
         >
-          Account created successfully!
+          Create Account
         </h1>
         <p
           class="card-text"
         />
-        <a
-          class="btn btn-primary noUnderline"
-          href="/confirm/undefined"
+        <div
+          class="alert d-flex justify-content-between mt-3 alert-danger"
+          role="alert"
         >
-          Click here to set your password.
-        </a>
+          <div
+            class="d-flex gap-3"
+          >
+            <img
+              height="24"
+              src="/assets/curriculum/icons/exclamation.svg"
+              width="24"
+            />
+            Server side error found 
+          </div>
+        </div>
+        <form
+          action="#"
+          data-testid="form"
+        >
+          <div
+            class="form-group d-grid mt-3"
+          >
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="email"
+              name="email"
+              placeholder="Email address"
+              type="email"
+              value="fake@email.com"
+            />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="username"
+              name="username"
+              placeholder="Username"
+              value="fakeusername"
+            />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="firstName"
+              name="firstName"
+              placeholder="First name"
+              value="fakefirstname"
+            />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="lastName"
+              name="lastName"
+              placeholder="Last name"
+              value="fakelastname"
+            />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="password"
+              name="password"
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              class="btn btn-primary btn-lg btn mb-3"
+              data-testid="submit"
+              type="submit"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+        <p
+          class="text-black-50"
+        >
+          Already have an account?
+           
+          <a
+            class="text-primary link"
+            href="/login"
+          >
+            Login
+          </a>
+        </p>
       </div>
     </div>
   </div>

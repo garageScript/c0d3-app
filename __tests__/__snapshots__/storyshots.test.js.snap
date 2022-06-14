@@ -28118,6 +28118,16 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             placeholder="Last name"
             value=""
           />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28209,6 +28219,16 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
             value=""
           />
           <button
@@ -28320,6 +28340,16 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             placeholder="Last name"
             value=""
           />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28413,6 +28443,16 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             placeholder="Last name"
             value=""
           />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
           <button
             className="btn btn-dark btn-lg btn mb-3"
             data-testid="submit"
@@ -28455,29 +28495,94 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
     <div
       className="card-body text-center pt-5 pb-5"
     >
-      <img
-        alt="Green circle with a checkmark inside."
-        className="mb-4"
-        height="100px"
-        src="/assets/curriculum/icons/checked.svg"
-        width="100px"
-      />
       <h1
         className="card-title h2 fw-bold mb-5"
       >
-        Account created successfully!
+        Create Account
       </h1>
       <p
         className="card-text"
       />
-      <a
-        className="btn btn-primary noUnderline"
-        href="/confirm/undefined"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
       >
-        Click here to set your password.
-      </a>
+        <div
+          className="form-group d-grid mt-3"
+        >
+          <input
+            autoFocus={true}
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email address"
+            type="email"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Username"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="firstName"
+            name="firstName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="First name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="lastName"
+            name="lastName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Last name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg fw-light mb-3 "
+            data-testid="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+          <button
+            className="btn btn-primary btn-lg btn mb-3"
+            data-testid="submit"
+            type="submit"
+          >
+            Create Account
+          </button>
+        </div>
+      </form>
+      <p
+        className="text-black-50"
+      >
+        Already have an account?
+         
+        <a
+          className="text-primary link"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </p>
     </div>
   </div>
 </div>
