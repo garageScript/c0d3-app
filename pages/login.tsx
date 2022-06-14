@@ -165,7 +165,7 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
   }
 
   //checks if user is already logged in
-  const session = sessionData?.session?.user
+  const session = _.get(sessionData, 'session.user')
   if (session) return <AlreadyLoggedIn />
 
   return (
