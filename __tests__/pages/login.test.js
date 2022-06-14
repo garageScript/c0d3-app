@@ -175,6 +175,8 @@ describe('Login Page', () => {
   })
 
   test('Should show AlreadyLoggedIn component if there is a session', async () => {
+    expect.assertions(1)
+
     const mocks = [
       {
         request: { query: GET_APP },
