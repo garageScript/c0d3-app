@@ -44,10 +44,10 @@ export const updateModule = async (
   isAdminOrThrow(req)
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
-  const { id, lessonId, name, content } = args
+  const { id, lessonId, name, content, order } = args
   return prisma.module.update({
     where: { id },
-    data: { lessonId, name, content },
+    data: { lessonId, name, content, order },
     include: {
       author: true,
       lesson: true

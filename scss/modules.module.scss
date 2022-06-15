@@ -1,0 +1,14 @@
+.container {
+  margin-top: 32px;
+  display: grid;
+  row-gap: 40px;
+}
+
+.container__modulesPanel {
+  display: flex;
+  column-gap: 40px;
+}
+
+.container__modulesPanel__inputs {
+  flex: 1;
+}
