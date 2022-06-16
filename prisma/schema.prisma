@@ -187,6 +187,8 @@ model Exercise {
   answer      String
   testStr     String?
   explanation String?
+  flagged     Boolean?
+  flagReason  String?
 
   @@map("exercises")
 }
