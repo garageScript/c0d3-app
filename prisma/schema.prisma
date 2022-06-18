@@ -156,6 +156,7 @@ model User {
   modules                   Module[]
   exercises                 Exercise[]
 
+  Exercise Exercise[] @relation("flaggedBy")
   @@map("users")
 }
 
@@ -189,6 +190,8 @@ model Exercise {
   explanation String?
   flaggedAt   DateTime?
   flagReason  String?
+  flaggedBy   User?     @relation("flaggedBy", fields: [flaggedById], references: [id])
+  flaggedById Int?
 
   @@map("exercises")
 }
