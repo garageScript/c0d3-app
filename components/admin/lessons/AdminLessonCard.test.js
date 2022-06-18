@@ -19,7 +19,6 @@ const dummyLessonData = {
 describe('AdminLessonCard component', () => {
   test("Button href should be '_blank' if lesson docUrl is undefined ", async () => {
     expect.assertions(2)
-
     const { container, getByTestId } = render(
       <AdminLessonCard {...dummyLessonData} />
     )
