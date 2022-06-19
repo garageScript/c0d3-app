@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 53px 30px 53px;
+  padding: 30px 53px;
   background: colors.$bg-white;
   border-radius: 10px;
   box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.07);
@@ -30,8 +30,8 @@
   font-weight: 700;
   font-family: Inter;
   font-size: 14px;
-  margin-bottom: 3%;
-  margin-top: 2%;
+  margin-bottom: 24px;
+  margin-top: 32px;
 }
 
 .container__button {
