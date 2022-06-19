@@ -794,6 +794,8 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/AlreadyLoggedIn Basic 1`] = `null`;
+
 exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 <div
   className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
@@ -5654,6 +5656,117 @@ Array [
     © Copyright 2022 GarageScript
   </footer>,
 ]
+`;
+
+exports[`Storyshots Components/ExerciseCard Basic 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card__header"
+  >
+    <p
+      className="card__header__username"
+    >
+      noob
+    </p>
+    <div
+      className="card__header__contact__container"
+    >
+      <div
+        className="card__header__contact"
+      >
+        <span>
+          noob@c0d3.com
+        </span>
+      </div>
+      <div
+        className="card__header__contact"
+      >
+        <span>
+          noob#123
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="card__section"
+  >
+    <h3
+      className="card__section__header"
+    >
+      Description
+    </h3>
+    <p
+      className="card__section__desc"
+    >
+      It’s all about context. The reason you get the above error is because, when you invoke setTimeout(), you are actually invoking window.setTimeout(). As a result, the anonymous function being passed to setTimeout()
+    </p>
+  </div>
+  <div
+    className="card__section"
+  >
+    <h3
+      className="card__section__header"
+    >
+      Answer
+    </h3>
+    <p
+      className="card__section__desc"
+    >
+      The right answer is setTimeout
+    </p>
+    <button
+      className="card__section--explanation"
+      onClick={[Function]}
+    >
+      Show
+       explanation
+    </button>
+    <div
+      aria-expanded={null}
+      className="card__section__explanation collapse"
+      id="explanation-collapse-text"
+    >
+      It's setTimeout because it's an async function and not sync
+    </div>
+  </div>
+  <div
+    className="card__section"
+  >
+    <h3
+      className="card__section__header"
+    >
+      Reason for flag
+    </h3>
+    <p
+      className="card__section__desc"
+    >
+      setTimeout takes a callback function and not a number
+    </p>
+  </div>
+  <div
+    className="card__footer"
+  >
+    <button
+      className="card__footer__btn"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <span>
+        REMOVE EXERCISE
+      </span>
+    </button>
+    <button
+      className="card__footer__btn"
+      disabled={true}
+    >
+      <span>
+        UNFLAG EXERCISE
+      </span>
+    </button>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Components/ExercisePreview Basic 1`] = `
