@@ -7,7 +7,6 @@ const dummyLessonData = {
   lesson: {
     title: 'Foundations of Javascript',
     description: 'A super simple introduction to help you get started!',
-    docUrl: undefined,
     challenges: [],
     id: 0,
     order: 0,
