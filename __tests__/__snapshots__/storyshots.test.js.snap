@@ -92,6 +92,41 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/AdminLessonCard Basic 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container__heading"
+  >
+    Foundations of Javascript
+  </div>
+  <div
+    className="container__description"
+  >
+    A super simple introduction to help you get started!
+  </div>
+  <div
+    className="container__flaggedQuestions"
+  >
+    3
+     Pending Questions
+  </div>
+  <a
+    data-testid="button"
+    href="/_blank"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <button
+      className="btn btn-secondary container__button"
+    >
+      Edit Lesson
+    </button>
+  </a>
+</div>
+`;
+
 exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
 <div>
   <div
@@ -793,6 +828,8 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
   </button>
 </div>
 `;
+
+exports[`Storyshots Components/AlreadyLoggedIn Basic 1`] = `null`;
 
 exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 <div
