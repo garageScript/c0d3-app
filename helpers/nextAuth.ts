@@ -57,8 +57,8 @@ export const providers = (
   res: NextApiResponse & Response
 ) => [
   DiscordProvider({
-    clientId: process.env.DISCORD_KEY,
-    clientSecret: process.env.DISCORD_SECRET
+    clientId: process.env.DISCORD_KEY!,
+    clientSecret: process.env.DISCORD_SECRET!
   }),
   CredentialsProvider({
     name: 'Credentials',
