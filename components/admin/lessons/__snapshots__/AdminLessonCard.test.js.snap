@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminLessonCard component Button href should be '_blank' if lesson docUrl is undefined  1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="container__heading"
+    >
+      Foundations of Javascript
+    </div>
+    <div
+      class="container__description"
+    >
+      A super simple introduction to help you get started!
+    </div>
+    <div
+      class="container__flaggedQuestions"
+    >
+      2
+       Pending Questions
+    </div>
+    <a
+      data-testid="button"
+      href="/_blank"
+    >
+      <button
+        class="btn btn-secondary container__button"
+      >
+        Edit Lesson
+      </button>
+    </a>
+  </div>
+</div>
+`;
