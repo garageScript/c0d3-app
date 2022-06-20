@@ -1,0 +1,40 @@
+@use './colors.module';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 53px;
+  background: colors.$bg-white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.07);
+  gap: 10px;
+  min-height: 254px;
+  font-family: Rubik;
+}
+
+.container__heading {
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+}
+
+.container__description {
+  font-family: Inter;
+  font-size: 14px;
+  text-align: center;
+}
+
+.container__flaggedQuestions {
+  font-weight: 700;
+  font-family: Inter;
+  font-size: 14px;
+  margin-bottom: 24px;
+  margin-top: 32px;
+}
+
+.container__button {
+  color: colors.$primary;
+  font-weight: 700;
+}
