@@ -18,10 +18,7 @@ export const AdminLessonCard: React.FC<Props> = ({
     <div className={styles.container}>
       <div className={styles.container__heading}>{title}</div>
 
-      <div className={styles.container__description}>
-        {description} The Dojo is a space for you to store your coding journal
-        and keep track of your learnings
-      </div>
+      <div className={styles.container__description}>{description}</div>
       <div className={styles.container__flaggedQuestions}>
         {pendingFlaggedQuestions} Pending Questions
       </div>
