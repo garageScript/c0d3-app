@@ -264,6 +264,7 @@ export type MutationUpdateExerciseArgs = {
   answer: Scalars['String']
   description: Scalars['String']
   explanation?: InputMaybe<Scalars['String']>
+  flaggedAt?: InputMaybe<Scalars['String']>
   id: Scalars['Int']
   moduleId: Scalars['Int']
   testStr?: InputMaybe<Scalars['String']>
