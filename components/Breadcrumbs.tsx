@@ -53,7 +53,12 @@ const Breadcrumbs = ({
       }
     })
 
-    setBreadcrumbs(pathArray)
+    setBreadcrumbs(
+      pathArray.slice(
+        0,
+        pathArray.findIndex(breadcrumb => breadcrumb.title === 'lessons') + 1
+      )
+    )
   }, [])
 
   if (!breadcrumbs) return null
@@ -110,19 +115,12 @@ const Breadcrumbs = ({
     <nav aria-label="breadcrumbs">
       <ol className={styles.breadcrumbs}>
         {homeBreadcrumb}
-        {breadcrumbs
-          .slice(
-            0,
-            breadcrumbs.findIndex(
-              breadcrumb => breadcrumb.title === 'lessons'
-            ) + 1
-          )
-          .map((breadcrumb, index) => (
-            <React.Fragment key={`${breadcrumb.title}-${index}`}>
-              <Breadcrumb breadcrumb={breadcrumb} index={index} />
-              {lowerCase(breadcrumb.title) === 'lessons' && <LessonsDropdown />}
-            </React.Fragment>
-          ))}
+        {breadcrumbs.map((breadcrumb, index) => (
+          <React.Fragment key={`${breadcrumb.title}-${index}`}>
+            <Breadcrumb breadcrumb={breadcrumb} index={index} />
+            {lowerCase(breadcrumb.title) === 'lessons' && <LessonsDropdown />}
+          </React.Fragment>
+        ))}
       </ol>
     </nav>
   )
