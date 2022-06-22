@@ -257,5 +257,9 @@ export default gql`
     answer: String!
     testStr: String
     explanation: String
+    flaggedAt: String
+    flagReason: String
+    flaggedBy: User
+    flaggedById: Int
   }
 `
