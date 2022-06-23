@@ -2873,10 +2873,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@quixo3/prisma-session-store@^3.1.5":
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.5.tgz#a4fa490bb7980aa1e0af98a4e642ed27a6672198"
-  integrity sha512-krgMHru5I3kAh3ngtD3TKWrTiF2HVW145YkuWvsQ/USbAEbmOIJliEMFPSxVwtJ6mrsp1IY7btqL8Bt3/n1Kaw==
+"@quixo3/prisma-session-store@^3.1.6":
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.6.tgz#4822f6f4f084daf664fd5f186ee655573f7ea1f0"
+  integrity sha512-8/3pYVdaK2Ej77x7qjDVyUU9eUEIz8eCziIeDJFwPvhbHFAP/Efa23eEDpasLU+iigvyzHsXKBcg7uEDWzwETg==
   dependencies:
     cuid "^2.1.8"
     ts-dedent "^2.2.0"
@@ -4499,10 +4499,10 @@
     lodash "^4.17.15"
     redent "^3.0.0"
 
-"@testing-library/react-hooks@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-8.0.0.tgz#7d0164bffce4647f506039de0a97f6fcbd20f4bf"
-  integrity sha512-uZqcgtcUUtw7Z9N32W13qQhVAD+Xki2hxbTR461MKax8T6Jr8nsUvZB+vcBTkzY2nFvsUet434CsgF0ncW2yFw==
+"@testing-library/react-hooks@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-8.0.1.tgz#0924bbd5b55e0c0c0502d1754657ada66947ca12"
+  integrity sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==
   dependencies:
     "@babel/runtime" "^7.12.5"
     react-error-boundary "^3.1.0"
@@ -14591,10 +14591,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.23.0:
-  version "1.23.0"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.23.0.tgz#116059607f54b13cd487a4261b0405aa23481596"
-  integrity sha512-tO+RLn/SVKYj/1CVsct4j2KNzM14uNo+G/JrGsfMQkMDOmCLREfuOHCnWFrfMSu7W0l69WYadYRnyNnsgpDRFA==
+posthog-js@^1.24.0:
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.24.0.tgz#f3b349b3fc32e1721676ea5f3793c5a0acbde757"
+  integrity sha512-sN1TjIGmz/xHrvIhfPqQYFdEQgPtO8BXnD/oMw3N4osFYbBxJ1GBQ2Ljs39ren6PCs2VZAvVNM8fKPK3aftH6w==
   dependencies:
     "@sentry/types" "^6.11.0"
     fflate "^0.4.1"
