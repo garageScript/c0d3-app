@@ -3,7 +3,8 @@ import Component from './AdminLessonExerciseCard'
 import userEvent from '@testing-library/user-event'
 import { render, screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import { gql } from '@apollo/client'
+import DELETE_EXERCISE from '../../../graphql/queries/deleteExercise'
+import UPDATE_EXERCISE from '../../../graphql/queries/updateExercise'
 
 const user = {
   username: 'noob',
@@ -17,26 +18,41 @@ const exercise = {
     'It’s all about context. The reason you get the above error is because, when you invoke setTimeout(), you are actually invoking window.setTimeout(). As a result, the anonymous function being passed to setTimeout()',
   answer: 'The right answer is setTimeout',
   explanation: "It's setTimeout because it's an async function and not sync",
-  flagReason: 'setTimeout takes a callback function and not a number'
-}
-
-const REMOVE_EXERCISE = gql`
-  mutation deleteExercise($id: Int!) {
-    deleteExercise(id: $id) {
-      id
-    }
+  flagReason: 'setTimeout takes a callback function and not a number',
+  module: {
+    name: 'Variables',
+    moduleId: 1
   }
-`
+}
 
 const mocks = [
   {
     request: {
-      query: REMOVE_EXERCISE,
+      query: DELETE_EXERCISE,
       variables: { id: 1 }
     },
     result: {
       data: {
         deleteExercise: {
+          id: 1
+        }
+      }
+    }
+  },
+  {
+    request: {
+      query: UPDATE_EXERCISE,
+      variables: {
+        id: 1,
+        description: exercise.description,
+        answer: exercise.answer,
+        moduleId: exercise.module.id,
+        flaggedAt: null
+      }
+    },
+    result: {
+      data: {
+        updateExercise: {
           id: 1
         }
       }
@@ -47,7 +63,7 @@ const mocks = [
 const loadingMocks = [
   {
     request: {
-      query: REMOVE_EXERCISE,
+      query: DELETE_EXERCISE,
       variables: { id: 1 }
     },
     result: {
@@ -96,6 +112,10 @@ describe('AdminLessonExerciseCard component', () => {
   })
 
   it('Should not call onRemove if not passed', async () => {
+    expect.assertions(1)
+
+    const onRemoveMock = jest.fn()
+
     render(
       <MockedProvider mocks={mocks}>
         <Component user={user} exercise={exercise} />
@@ -104,10 +124,12 @@ describe('AdminLessonExerciseCard component', () => {
 
     const btn = screen.getByText('REMOVE EXERCISE')
     await userEvent.click(btn)
+
+    expect(onRemoveMock).not.toBeCalled()
   })
 
   it('Should unflag exercise', async () => {
-    // expect.assertions(1)
+    expect.assertions(1)
 
     const onUnflag = jest.fn()
 
@@ -120,8 +142,24 @@ describe('AdminLessonExerciseCard component', () => {
     const btn = screen.getByText('UNFLAG EXERCISE')
     await userEvent.click(btn)
 
-    // expect(onUnflag).toBeCalled()
-    // Will be uncommented when the unflag mutation is implemented
+    expect(onUnflag).toBeCalled()
+  })
+
+  it('Should not call unflag if not passed', async () => {
+    expect.assertions(1)
+
+    const onUnflag = jest.fn()
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <Component user={user} exercise={exercise} />
+      </MockedProvider>
+    )
+
+    const btn = screen.getByText('UNFLAG EXERCISE')
+    await userEvent.click(btn)
+
+    expect(onUnflag).not.toBeCalled()
   })
 
   it('Should show loading spinner', async () => {
@@ -137,5 +175,17 @@ describe('AdminLessonExerciseCard component', () => {
     await userEvent.click(btn)
 
     expect(screen.queryByText('REMOVE EXERCISE')).toBeFalsy()
+  })
+
+  it('Should not show the explanation if not provided', () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <Component user={user} exercise={{ ...exercise, explanation: '' }} />
+      </MockedProvider>
+    )
+
+    expect(screen.queryByText('Show explanation')).toBeFalsy()
   })
 })

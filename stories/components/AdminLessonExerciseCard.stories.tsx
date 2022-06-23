@@ -19,7 +19,10 @@ const exercise = {
     'It’s all about context. The reason you get the above error is because, when you invoke setTimeout(), you are actually invoking window.setTimeout(). As a result, the anonymous function being passed to setTimeout()',
   answer: 'The right answer is setTimeout',
   explanation: "It's setTimeout because it's an async function and not sync",
-  flagReason: 'setTimeout takes a callback function and not a number'
+  flagReason: 'setTimeout takes a callback function and not a number',
+  module: {
+    name: 'Variables'
+  }
 }
 
 export const Basic = () => (
