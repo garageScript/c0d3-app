@@ -78,6 +78,10 @@ export type Exercise = {
   author: User
   description: Scalars['String']
   explanation?: Maybe<Scalars['String']>
+  flagReason?: Maybe<Scalars['String']>
+  flaggedAt?: Maybe<Scalars['String']>
+  flaggedBy?: Maybe<User>
+  flaggedById?: Maybe<Scalars['Int']>
   id: Scalars['Int']
   module: Module
   testStr?: Maybe<Scalars['String']>
@@ -588,6 +592,15 @@ export type DeleteCommentMutationVariables = Exact<{
 export type DeleteCommentMutation = {
   __typename?: 'Mutation'
   deleteComment?: { __typename?: 'Comment'; id: number } | null
+}
+
+export type DeleteExerciseMutationVariables = Exact<{
+  id: Scalars['Int']
+}>
+
+export type DeleteExerciseMutation = {
+  __typename?: 'Mutation'
+  deleteExercise: { __typename?: 'Exercise'; id: number }
 }
 
 export type DeleteModuleMutationVariables = Exact<{
@@ -1371,6 +1384,14 @@ export type ExerciseResolvers<
     ParentType,
     ContextType
   >
+  flagReason?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
+  flaggedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  flaggedBy?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  flaggedById?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
   testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -2760,6 +2781,87 @@ export type DeleteCommentMutationResult =
 export type DeleteCommentMutationOptions = Apollo.BaseMutationOptions<
   DeleteCommentMutation,
   DeleteCommentMutationVariables
+>
+export const DeleteExerciseDocument = gql`
+  mutation deleteExercise($id: Int!) {
+    deleteExercise(id: $id) {
+      id
+    }
+  }
+`
+export type DeleteExerciseMutationFn = Apollo.MutationFunction<
+  DeleteExerciseMutation,
+  DeleteExerciseMutationVariables
+>
+export type DeleteExerciseProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables
+  >
+} & TChildProps
+export function withDeleteExercise<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables,
+    DeleteExerciseProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables,
+    DeleteExerciseProps<TChildProps, TDataName>
+  >(DeleteExerciseDocument, {
+    alias: 'deleteExercise',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useDeleteExerciseMutation__
+ *
+ * To run a mutation, you first call `useDeleteExerciseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteExerciseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteExerciseMutation, { data, loading, error }] = useDeleteExerciseMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteExerciseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables
+  >(DeleteExerciseDocument, options)
+}
+export type DeleteExerciseMutationHookResult = ReturnType<
+  typeof useDeleteExerciseMutation
+>
+export type DeleteExerciseMutationResult =
+  Apollo.MutationResult<DeleteExerciseMutation>
+export type DeleteExerciseMutationOptions = Apollo.BaseMutationOptions<
+  DeleteExerciseMutation,
+  DeleteExerciseMutationVariables
 >
 export const DeleteModuleDocument = gql`
   mutation deleteModule($id: Int!) {
@@ -4654,6 +4756,10 @@ export type ExerciseKeySpecifier = (
   | 'author'
   | 'description'
   | 'explanation'
+  | 'flagReason'
+  | 'flaggedAt'
+  | 'flaggedBy'
+  | 'flaggedById'
   | 'id'
   | 'module'
   | 'testStr'
@@ -4664,6 +4770,10 @@ export type ExerciseFieldPolicy = {
   author?: FieldPolicy<any> | FieldReadFunction<any>
   description?: FieldPolicy<any> | FieldReadFunction<any>
   explanation?: FieldPolicy<any> | FieldReadFunction<any>
+  flagReason?: FieldPolicy<any> | FieldReadFunction<any>
+  flaggedAt?: FieldPolicy<any> | FieldReadFunction<any>
+  flaggedBy?: FieldPolicy<any> | FieldReadFunction<any>
+  flaggedById?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   module?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
