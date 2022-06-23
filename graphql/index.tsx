@@ -1027,6 +1027,19 @@ export type UpdateChallengeMutation = {
   } | null> | null
 }
 
+export type UpdateExerciseMutationVariables = Exact<{
+  id: Scalars['Int']
+  answer: Scalars['String']
+  moduleId: Scalars['Int']
+  description: Scalars['String']
+  flaggedAt?: InputMaybe<Scalars['String']>
+}>
+
+export type UpdateExerciseMutation = {
+  __typename?: 'Mutation'
+  updateExercise: { __typename?: 'Exercise'; id: number }
+}
+
 export type UpdateLessonMutationVariables = Exact<{
   id: Scalars['Int']
   docUrl?: InputMaybe<Scalars['String']>
@@ -4251,6 +4264,103 @@ export type UpdateChallengeMutationResult =
 export type UpdateChallengeMutationOptions = Apollo.BaseMutationOptions<
   UpdateChallengeMutation,
   UpdateChallengeMutationVariables
+>
+export const UpdateExerciseDocument = gql`
+  mutation updateExercise(
+    $id: Int!
+    $answer: String!
+    $moduleId: Int!
+    $description: String!
+    $flaggedAt: String
+  ) {
+    updateExercise(
+      id: $id
+      answer: $answer
+      moduleId: $moduleId
+      description: $description
+      flaggedAt: $flaggedAt
+    ) {
+      id
+    }
+  }
+`
+export type UpdateExerciseMutationFn = Apollo.MutationFunction<
+  UpdateExerciseMutation,
+  UpdateExerciseMutationVariables
+>
+export type UpdateExerciseProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    UpdateExerciseMutation,
+    UpdateExerciseMutationVariables
+  >
+} & TChildProps
+export function withUpdateExercise<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UpdateExerciseMutation,
+    UpdateExerciseMutationVariables,
+    UpdateExerciseProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UpdateExerciseMutation,
+    UpdateExerciseMutationVariables,
+    UpdateExerciseProps<TChildProps, TDataName>
+  >(UpdateExerciseDocument, {
+    alias: 'updateExercise',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUpdateExerciseMutation__
+ *
+ * To run a mutation, you first call `useUpdateExerciseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateExerciseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateExerciseMutation, { data, loading, error }] = useUpdateExerciseMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      answer: // value for 'answer'
+ *      moduleId: // value for 'moduleId'
+ *      description: // value for 'description'
+ *      flaggedAt: // value for 'flaggedAt'
+ *   },
+ * });
+ */
+export function useUpdateExerciseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UpdateExerciseMutation,
+    UpdateExerciseMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    UpdateExerciseMutation,
+    UpdateExerciseMutationVariables
+  >(UpdateExerciseDocument, options)
+}
+export type UpdateExerciseMutationHookResult = ReturnType<
+  typeof useUpdateExerciseMutation
+>
+export type UpdateExerciseMutationResult =
+  Apollo.MutationResult<UpdateExerciseMutation>
+export type UpdateExerciseMutationOptions = Apollo.BaseMutationOptions<
+  UpdateExerciseMutation,
+  UpdateExerciseMutationVariables
 >
 export const UpdateLessonDocument = gql`
   mutation updateLesson(
