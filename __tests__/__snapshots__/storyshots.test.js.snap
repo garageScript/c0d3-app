@@ -92,6 +92,41 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/AdminLessonCard Basic 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container__heading"
+  >
+    Foundations of Javascript
+  </div>
+  <div
+    className="container__description"
+  >
+    A super simple introduction to help you get started!
+  </div>
+  <div
+    className="container__flaggedQuestions"
+  >
+    3
+     Pending Questions
+  </div>
+  <a
+    data-testid="button"
+    href="/_blank"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <button
+      className="btn btn-secondary container__button"
+    >
+      Edit Lesson
+    </button>
+  </a>
+</div>
+`;
+
 exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
 <div
   className="card"
@@ -99,6 +134,11 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
   <div
     className="card__header"
   >
+    <div>
+      <span>
+        Variables
+      </span>
+    </div>
     <p
       className="card__header__username"
     >
@@ -193,7 +233,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
     </button>
     <button
       className="card__footer__btn"
-      disabled={true}
+      onClick={[Function]}
     >
       <span>
         UNFLAG EXERCISE
