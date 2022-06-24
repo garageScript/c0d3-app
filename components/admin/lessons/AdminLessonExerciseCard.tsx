@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import { get, toUpper } from 'lodash'
 import React, { useState } from 'react'
 import { Collapse, Spinner } from 'react-bootstrap'
 import {
@@ -13,8 +13,19 @@ type HeaderProps = { user: User; exercise: Exercise }
 const Header = ({ user, exercise }: HeaderProps) => {
   return (
     <div className={styles.card__header}>
-      <div>
-        <span>{exercise.module.name}</span>
+      <div className={styles.card__badges}>
+        {exercise.flaggedAt && (
+          <span
+            className={`${styles.card__header__badge} ${styles.card__header__badge__flagged}`}
+          >
+            FLAGGED
+          </span>
+        )}
+        <span
+          className={`${styles.card__header__badge} ${styles.card__header__badge__module}`}
+        >
+          {toUpper(exercise.module.name)}
+        </span>
       </div>
       <p className={styles.card__header__username}>{user.username}</p>
       <div className={styles.card__header__contact__container}>

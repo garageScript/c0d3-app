@@ -22,7 +22,8 @@ const exercise = {
   flagReason: 'setTimeout takes a callback function and not a number',
   module: {
     name: 'Variables'
-  }
+  },
+  flaggedAt: new Date()
 }
 
 export const Basic = () => (

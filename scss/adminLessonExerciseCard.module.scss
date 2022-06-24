@@ -14,8 +14,9 @@
 }
 
 .card__header {
+  font-family: 'Inter';
+
   .card__header__username {
-    font-family: 'Inter';
     font-size: 14px;
     font-weight: 700;
   }
@@ -25,13 +26,39 @@
     gap: 13px;
 
     .card__header__contact {
-      background-color: colors.$bg-purple;
+      background-color: transparent;
       display: flex;
       padding: 2px 16px;
       border-radius: 20px;
-      color: colors.$fg-light;
+      color: colors.$primary;
       align-items: center;
+      border: 1px solid colors.$primary;
+      font-weight: 700;
     }
+  }
+
+  .card__badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .card__header__badge {
+    padding: 4px 24px;
+    background: transparent;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .card__header__badge__flagged {
+    $red: hsl(346, 66%, 38%);
+    border: 1px solid $red;
+    color: $red;
+  }
+
+  .card__header__badge__module {
+    border: 1px solid hsl(0, 0, 0);
   }
 }
 
