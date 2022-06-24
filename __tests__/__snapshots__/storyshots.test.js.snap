@@ -127,6 +127,7 @@ exports[`Storyshots Components/AdminLessonCard Basic 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
 <div
   className="card"
@@ -252,6 +253,8 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
 </div>
 `;
 
+=======
+>>>>>>> upstream/master
 exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
 <div>
   <div
