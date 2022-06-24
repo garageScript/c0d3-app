@@ -134,9 +134,18 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
   <div
     className="card__header"
   >
-    <div>
-      <span>
-        Variables
+    <div
+      className="card__badges"
+    >
+      <span
+        className="card__header__badge card__header__badge__flagged"
+      >
+        FLAGGED
+      </span>
+      <span
+        className="card__header__badge card__header__badge__module"
+      >
+        VARIABLES
       </span>
     </div>
     <p
