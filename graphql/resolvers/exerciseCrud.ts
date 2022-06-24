@@ -2,7 +2,9 @@ import prisma from '../../prisma'
 import {
   MutationAddExerciseArgs,
   MutationUpdateExerciseArgs,
-  MutationDeleteExerciseArgs
+  MutationDeleteExerciseArgs,
+  MutationFlagExerciseArgs,
+  MutationRemoveExerciseFlagArgs
 } from '..'
 import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
@@ -41,8 +43,7 @@ export const updateExercise = async (
 ): Promise<Exercise> => {
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
-  const { id, testStr, description, answer, moduleId, explanation, flaggedAt } =
-    args
+  const { id, testStr, description, answer, moduleId, explanation } = args
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
@@ -59,7 +60,7 @@ export const updateExercise = async (
     where: {
       id
     },
-    data: { explanation, testStr, description, answer, moduleId, flaggedAt },
+    data: { explanation, testStr, description, answer, moduleId },
     include: {
       author: true,
       module: true
@@ -85,6 +86,70 @@ export const deleteExercise = async (
   }
   return prisma.exercise.delete({
     where: { id },
+    include: {
+      author: true,
+      module: true
+    }
+  })
+}
+
+export const flagExercise = async (
+  _parent: void,
+  arg: MutationFlagExerciseArgs,
+  { req }: Context
+): Promise<Exercise> => {
+  const { id } = arg
+
+  const authorId = req.user?.id
+  if (!authorId) throw new Error('No User')
+
+  const exercise = await prisma.exercise.findUnique({
+    where: {
+      id
+    }
+  })
+
+  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+    throw new Error('Not authorized to flag')
+  }
+
+  return prisma.exercise.update({
+    where: { id },
+    data: {
+      flaggedAt: new Date().toISOString()
+    },
+    include: {
+      author: true,
+      module: true
+    }
+  })
+}
+
+export const removeExerciseFlag = async (
+  _parent: void,
+  arg: MutationRemoveExerciseFlagArgs,
+  { req }: Context
+): Promise<Exercise> => {
+  const { id } = arg
+
+  const authorId = req.user?.id
+  if (!authorId) throw new Error('No User')
+
+  const exercise = await prisma.exercise.findUnique({
+    where: {
+      id
+    }
+  })
+
+  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+    throw new Error('Not authorized to unflag')
+  }
+
+  return prisma.exercise.update({
+    where: { id },
+    data: {
+      flaggedAt: null
+    },
     include: {
       author: true,
       module: true

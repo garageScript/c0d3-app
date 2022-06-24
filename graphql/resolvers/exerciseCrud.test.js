@@ -6,7 +6,9 @@ import {
   exercises,
   deleteExercise,
   addExercise,
-  updateExercise
+  updateExercise,
+  flagExercise,
+  removeExerciseFlag
 } from './exerciseCrud'
 
 const AdminCtx = {
@@ -161,5 +163,111 @@ describe('It should test delete', () => {
         }
       )
     ).rejects.toThrow(new Error('Not authorized to delete'))
+  })
+})
+
+describe('It should test flag', () => {
+  test('It should flag exercise', () => {
+    const exer = {
+      id: 1,
+      description: 'Whats 2',
+      answer: 2
+    }
+    prismaMock.exercise.update.mockResolvedValue(exer)
+
+    expect(
+      flagExercise(
+        {},
+        {
+          id: 2
+        },
+        AdminCtx
+      )
+    ).resolves.toEqual({
+      id: 1,
+      description: 'Whats 2',
+      answer: 2
+    })
+  })
+
+  test('It should check if user is signed in', () => {
+    expect(
+      flagExercise(
+        {},
+        {
+          id: 1
+        },
+        {
+          req: {}
+        }
+      )
+    ).rejects.toThrowError()
+  })
+
+  test('It should check user is author of exercise', () => {
+    expect(
+      flagExercise(
+        {},
+        {
+          id: 1
+        },
+        {
+          req: { user: { id: 333 } }
+        }
+      )
+    ).rejects.toThrow(new Error('Not authorized to flag'))
+  })
+})
+
+describe('It should test remove flag', () => {
+  test('It should remove flag from exercise', () => {
+    const exer = {
+      id: 1,
+      description: 'Whats 2',
+      answer: 2
+    }
+    prismaMock.exercise.update.mockResolvedValue(exer)
+
+    expect(
+      removeExerciseFlag(
+        {},
+        {
+          id: 2
+        },
+        AdminCtx
+      )
+    ).resolves.toEqual({
+      id: 1,
+      description: 'Whats 2',
+      answer: 2
+    })
+  })
+
+  test('It should check if user is signed in', () => {
+    expect(
+      removeExerciseFlag(
+        {},
+        {
+          id: 1
+        },
+        {
+          req: {}
+        }
+      )
+    ).rejects.toThrowError()
+  })
+
+  test('It should check user is author of exercise', () => {
+    expect(
+      removeExerciseFlag(
+        {},
+        {
+          id: 1
+        },
+        {
+          req: { user: { id: 333 } }
+        }
+      )
+    ).rejects.toThrow(new Error('Not authorized to unflag'))
   })
 })
