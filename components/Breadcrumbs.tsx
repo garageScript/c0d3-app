@@ -50,6 +50,13 @@ const Breadcrumbs = ({
     }
   })
 
+  /* 
+  Breadcrumbs is used on the admin page, and a sample url looks like this:
+    - c0d3.com/admin/lessons/js0/modules
+
+  Breadcrumbs would display: Home -> Admin -> Lessons -> [Lesson Picker]
+    - Lesson picker is handled by a dropdown and navigation within a lesson (modules, challenges, content, etc) is handled in a separate navigation.
+  */
   const breadcrumbs = pathArray.slice(
     0,
     pathArray.findIndex(breadcrumb => breadcrumb.title === 'lessons') + 1
