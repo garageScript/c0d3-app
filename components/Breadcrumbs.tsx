@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from '../scss/breadcrumbs.module.scss'
@@ -41,22 +41,28 @@ const Breadcrumbs = ({
   lessons
 }: Props) => {
   const router = useRouter()
-  const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumb[] | null>(null)
+  const [_, ...urlPath] = router.asPath.split('/')
 
-  useEffect(() => {
-    const [_, ...urlPath] = router.asPath.split('/')
+  const pathArray = urlPath.map((path, i) => {
+    return {
+      title: path,
+      href: `/${urlPath.slice(0, i + 1).join('/')}`
+    }
+  })
 
-    const pathArray = urlPath.map((path, i) => {
-      return {
-        title: path,
-        href: `/${urlPath.slice(0, i + 1).join('/')}`
-      }
-    })
+  /* 
+  Breadcrumbs is used on the admin page, and a sample url looks like this:
+    - c0d3.com/admin/lessons/js0/modules
 
-    setBreadcrumbs(pathArray)
-  }, [])
+  Breadcrumbs would display: Home -> Admin -> Lessons -> [Lesson Picker]
+    - Lesson picker is handled by a dropdown and navigation within a lesson (modules, challenges, content, etc) is handled in a separate navigation.
+  */
+  const breadcrumbs = pathArray.slice(
+    0,
+    pathArray.findIndex(breadcrumb => breadcrumb.title === 'lessons') + 1
+  )
 
-  if (!breadcrumbs) return null
+  if (!breadcrumbs.length) return null
 
   const ChevronRight = () => <ChevronRightIcon size={17} />
 
