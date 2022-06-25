@@ -9,6 +9,7 @@ import {
 import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
 import { isAdmin } from '../../helpers/isAdmin'
+import { get } from 'lodash'
 
 export const exercises = () => {
   return prisma.exercise.findMany({
@@ -98,10 +99,10 @@ export const flagExercise = async (
   arg: MutationFlagExerciseArgs,
   { req }: Context
 ): Promise<Exercise> => {
-  const { id } = arg
+  const { id, flagReason } = arg
 
-  const authorId = req.user?.id
-  if (!authorId) throw new Error('No User')
+  const flaggedById = req.user?.id
+  if (!flaggedById) throw new Error('No User')
 
   const exercise = await prisma.exercise.findUnique({
     where: {
@@ -109,14 +110,16 @@ export const flagExercise = async (
     }
   })
 
-  if (!isAdmin(req) && exercise?.authorId !== authorId) {
-    throw new Error('Not authorized to flag')
+  if (get(exercise, 'flaggedAt')) {
+    throw new Error('Exercise is already flagged')
   }
 
   return prisma.exercise.update({
     where: { id },
     data: {
-      flaggedAt: new Date().toISOString()
+      flaggedAt: new Date().toISOString(),
+      flaggedById,
+      flagReason
     },
     include: {
       author: true,
@@ -132,8 +135,8 @@ export const removeExerciseFlag = async (
 ): Promise<Exercise> => {
   const { id } = arg
 
-  const authorId = req.user?.id
-  if (!authorId) throw new Error('No User')
+  const adminId = req.user?.id
+  if (!adminId) throw new Error('No User')
 
   const exercise = await prisma.exercise.findUnique({
     where: {
@@ -141,14 +144,20 @@ export const removeExerciseFlag = async (
     }
   })
 
-  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+  if (!get(exercise, 'flaggedAt')) {
+    throw new Error('Exercise is already not flagged')
+  }
+
+  if (!isAdmin(req)) {
     throw new Error('Not authorized to unflag')
   }
 
   return prisma.exercise.update({
     where: { id },
     data: {
-      flaggedAt: null
+      flaggedAt: null,
+      flaggedById: null,
+      flagReason: null
     },
     include: {
       author: true,

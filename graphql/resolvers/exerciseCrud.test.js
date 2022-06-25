@@ -179,7 +179,8 @@ describe('It should test flag', () => {
       flagExercise(
         {},
         {
-          id: 2
+          id: 2,
+          flagReason: 'Bad input'
         },
         AdminCtx
       )
@@ -195,7 +196,8 @@ describe('It should test flag', () => {
       flagExercise(
         {},
         {
-          id: 1
+          id: 1,
+          flagReason: 'Bad input'
         },
         {
           req: {}
@@ -204,18 +206,28 @@ describe('It should test flag', () => {
     ).rejects.toThrowError()
   })
 
-  test('It should check user is author of exercise', () => {
+  test('It should check if the exercise is not flagged', () => {
+    const exer = {
+      id: 1,
+      description: 'Whats 2',
+      answer: 2,
+      flaggedAt: '123'
+    }
+
+    prismaMock.exercise.findUnique.mockResolvedValue(exer)
+
     expect(
       flagExercise(
         {},
         {
-          id: 1
+          id: 1,
+          flagReason: 'Bad input'
         },
         {
-          req: { user: { id: 333 } }
+          req: { user: { id: 1 } }
         }
       )
-    ).rejects.toThrow(new Error('Not authorized to flag'))
+    ).rejects.toThrow(new Error('Exercise is already flagged'))
   })
 })
 
@@ -224,8 +236,11 @@ describe('It should test remove flag', () => {
     const exer = {
       id: 1,
       description: 'Whats 2',
-      answer: 2
+      answer: 2,
+      flaggedAt: '123'
     }
+
+    prismaMock.exercise.findUnique.mockResolvedValue(exer)
     prismaMock.exercise.update.mockResolvedValue(exer)
 
     expect(
@@ -239,7 +254,8 @@ describe('It should test remove flag', () => {
     ).resolves.toEqual({
       id: 1,
       description: 'Whats 2',
-      answer: 2
+      answer: 2,
+      flaggedAt: '123'
     })
   })
 
@@ -257,16 +273,45 @@ describe('It should test remove flag', () => {
     ).rejects.toThrowError()
   })
 
-  test('It should check user is author of exercise', () => {
+  test('It should if the exercise is flagged', () => {
+    const exer = {
+      id: 1,
+      description: 'Whats 2',
+      answer: 2,
+      flaggedAt: null
+    }
+
+    prismaMock.exercise.findUnique.mockResolvedValue(exer)
+    prismaMock.exercise.update.mockResolvedValue(exer)
+
     expect(
       removeExerciseFlag(
         {},
         {
           id: 1
         },
+        AdminCtx
+      )
+    ).rejects.toThrow(new Error('Exercise is already not flagged'))
+  })
+
+  test('It should check if the user is admin', () => {
+    const exer = {
+      id: 1,
+      description: 'Whats 2',
+      answer: 2,
+      flaggedAt: '123'
+    }
+
+    prismaMock.exercise.findUnique.mockResolvedValue(exer)
+
+    expect(
+      removeExerciseFlag(
+        {},
         {
-          req: { user: { id: 333 } }
-        }
+          id: 1
+        },
+        { req: { user: { id: 1 } } }
       )
     ).rejects.toThrow(new Error('Not authorized to unflag'))
   })
