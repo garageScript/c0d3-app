@@ -128,7 +128,7 @@ export type Mutation = {
   deleteComment?: Maybe<Comment>
   deleteExercise: Exercise
   deleteModule: Module
-  flagExercise: Exercise
+  flagExercise?: Maybe<Exercise>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   rejectSubmission?: Maybe<Submission>
@@ -226,6 +226,7 @@ export type MutationDeleteModuleArgs = {
 }
 
 export type MutationFlagExerciseArgs = {
+  flagReason: Scalars['String']
   id: Scalars['Int']
 }
 
@@ -630,11 +631,12 @@ export type DeleteModuleMutation = {
 
 export type FlagExerciseMutationVariables = Exact<{
   id: Scalars['Int']
+  flagReason: Scalars['String']
 }>
 
 export type FlagExerciseMutation = {
   __typename?: 'Mutation'
-  flagExercise: { __typename?: 'Exercise'; id: number }
+  flagExercise?: { __typename?: 'Exercise'; id: number } | null
 }
 
 export type LessonAndChallengeInfoFragment = {
@@ -1563,10 +1565,10 @@ export type MutationResolvers<
     RequireFields<MutationDeleteModuleArgs, 'id'>
   >
   flagExercise?: Resolver<
-    ResolversTypes['Exercise'],
+    Maybe<ResolversTypes['Exercise']>,
     ParentType,
     ContextType,
-    RequireFields<MutationFlagExerciseArgs, 'id'>
+    RequireFields<MutationFlagExerciseArgs, 'flagReason' | 'id'>
   >
   login?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
@@ -2990,8 +2992,8 @@ export type DeleteModuleMutationOptions = Apollo.BaseMutationOptions<
   DeleteModuleMutationVariables
 >
 export const FlagExerciseDocument = gql`
-  mutation flagExercise($id: Int!) {
-    flagExercise(id: $id) {
+  mutation flagExercise($id: Int!, $flagReason: String!) {
+    flagExercise(id: $id, flagReason: $flagReason) {
       id
     }
   }
@@ -3046,6 +3048,7 @@ export function withFlagExercise<
  * const [flagExerciseMutation, { data, loading, error }] = useFlagExerciseMutation({
  *   variables: {
  *      id: // value for 'id'
+ *      flagReason: // value for 'flagReason'
  *   },
  * });
  */

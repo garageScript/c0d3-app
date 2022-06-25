@@ -85,7 +85,7 @@ export default gql`
       testStr: String
       explanation: String
     ): Exercise!
-    flagExercise(id: Int!): Exercise
+    flagExercise(id: Int!, flagReason: String!): Exercise
     removeExerciseFlag(id: Int!): Exercise!
     deleteExercise(id: Int!): Exercise!
     createLesson(
