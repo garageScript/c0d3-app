@@ -9,7 +9,6 @@ import {
 import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
 import { isAdmin } from '../../helpers/isAdmin'
-import { get } from 'lodash'
 
 export const exercises = () => {
   return prisma.exercise.findMany({
@@ -110,7 +109,7 @@ export const flagExercise = async (
     }
   })
 
-  if (get(exercise, 'flaggedAt')) {
+  if (exercise?.flaggedAt) {
     throw new Error('Exercise is already flagged')
   }
 
@@ -144,12 +143,12 @@ export const removeExerciseFlag = async (
     }
   })
 
-  if (!get(exercise, 'flaggedAt')) {
-    throw new Error('Exercise is already not flagged')
-  }
-
   if (!isAdmin(req)) {
     throw new Error('Not authorized to unflag')
+  }
+
+  if (!exercise?.flaggedAt) {
+    throw new Error('Exercise is already not flagged')
   }
 
   return prisma.exercise.update({
