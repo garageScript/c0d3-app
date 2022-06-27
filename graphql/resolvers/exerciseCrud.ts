@@ -76,14 +76,17 @@ export const deleteExercise = async (
   const { id } = arg
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
+
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
     }
   })
+
   if (!isAdmin(req) && exercise?.authorId !== authorId) {
     throw new Error('Not authorized to delete')
   }
+
   return prisma.exercise.delete({
     where: { id },
     include: {
@@ -137,15 +140,15 @@ export const removeExerciseFlag = async (
   const adminId = req.user?.id
   if (!adminId) throw new Error('No User')
 
+  if (!isAdmin(req)) {
+    throw new Error('Not authorized to unflag')
+  }
+
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
     }
   })
-
-  if (!isAdmin(req)) {
-    throw new Error('Not authorized to unflag')
-  }
 
   if (!exercise?.flaggedAt) {
     throw new Error('Exercise is already not flagged')
