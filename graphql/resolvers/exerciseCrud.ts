@@ -107,10 +107,10 @@ export const flagExercise = async (
   arg: MutationFlagExerciseArgs,
   { req }: Context
 ): Promise<Exercise> => {
-  const { id, flagReason } = arg
-
   const flaggedById = req.user?.id
   if (!flaggedById) throw new Error('No User')
+
+  const { id, flagReason } = arg
 
   const exercise = await prisma.exercise.findUnique({
     where: {
@@ -141,11 +141,11 @@ export const removeExerciseFlag = async (
   arg: MutationRemoveExerciseFlagArgs,
   { req }: Context
 ): Promise<Exercise> => {
-  const { id } = arg
-
   if (!isAdmin(req)) {
     throw new Error('Not authorized to unflag')
   }
+
+  const { id } = arg
 
   const exercise = await prisma.exercise.findUnique({
     where: {
