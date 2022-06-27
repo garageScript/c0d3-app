@@ -1,0 +1,38 @@
+.lessonCard {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 6px;
+}
+
+.heading {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lessonText {
+  font-size: 32px;
+  font-family: PT Mono;
+  font-weight: 400;
+}
+
+.button {
+  width: 214px;
+  height: 49px;
+  font-weight: 700;
+}
+
+.container__lessonCard__outer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.container__lessonCard__inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
