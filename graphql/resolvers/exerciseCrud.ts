@@ -26,7 +26,9 @@ export const addExercise = async (
 ): Promise<Exercise> => {
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
+
   const { testStr, description, answer, moduleId, explanation } = args
+
   return prisma.exercise.create({
     data: { authorId, testStr, description, answer, moduleId, explanation },
     include: {
@@ -43,7 +45,9 @@ export const updateExercise = async (
 ): Promise<Exercise> => {
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
+
   const { id, testStr, description, answer, moduleId, explanation } = args
+
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
@@ -53,9 +57,11 @@ export const updateExercise = async (
       module: true
     }
   })
+
   if (!isAdmin(req) && exercise?.authorId !== authorId) {
     throw new Error('Not authorized to change')
   }
+
   return prisma.exercise.update({
     where: {
       id
@@ -136,9 +142,6 @@ export const removeExerciseFlag = async (
   { req }: Context
 ): Promise<Exercise> => {
   const { id } = arg
-
-  const adminId = req.user?.id
-  if (!adminId) throw new Error('No User')
 
   if (!isAdmin(req)) {
     throw new Error('Not authorized to unflag')
