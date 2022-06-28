@@ -9,6 +9,7 @@ import {
 import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
 import { isAdmin } from '../../helpers/isAdmin'
+import { get } from 'lodash'
 
 export const exercises = () => {
   return prisma.exercise.findMany({
@@ -107,7 +108,7 @@ export const flagExercise = async (
   arg: MutationFlagExerciseArgs,
   { req }: Context
 ): Promise<Exercise> => {
-  const flaggedById = req.user?.id
+  const flaggedById = get(req, 'user.id')
   if (!flaggedById) throw new Error('No User')
 
   const { id, flagReason } = arg
@@ -118,7 +119,7 @@ export const flagExercise = async (
     }
   })
 
-  if (exercise?.flaggedAt) {
+  if (get(exercise, 'flaggedAt')) {
     throw new Error('Exercise is already flagged')
   }
 
@@ -153,7 +154,7 @@ export const removeExerciseFlag = async (
     }
   })
 
-  if (!exercise?.flaggedAt) {
+  if (!get(exercise, 'flaggedAt')) {
     throw new Error('Exercise is already not flagged')
   }
 
