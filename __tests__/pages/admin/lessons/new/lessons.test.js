@@ -137,11 +137,11 @@ describe('new admin lessons page tests', () => {
     // Used to wait for the query response to arrive
     await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
 
-    await waitFor(() => expect(container).toMatchSnapshot())
-    expect(getByText('3 Pending Questions')).toBeTruthy()
+    await waitFor(() => expect(getByText('3 Pending Questions')).toBeTruthy())
     expect(getByText('2 Pending Questions')).toBeTruthy()
     expect(getAllByText('No Pending Questions')).toBeTruthy()
     expect(getByText('Arrays')).toBeTruthy()
+    expect(container).toMatchSnapshot()
   })
   test('should not render any components if lessons data does not load', async () => {
     expect.assertions(3)
@@ -153,8 +153,8 @@ describe('new admin lessons page tests', () => {
     )
 
     await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
-    await waitFor(() => expect(container).toMatchSnapshot())
     expect(() => getAllByText('No Pending Questions')).toThrow()
     expect(() => getByText('Arrays')).toThrow()
+    expect(container).toMatchSnapshot()
   })
 })
