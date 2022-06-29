@@ -8,6 +8,7 @@ import {
   useUpdateExerciseMutation
 } from '../../../graphql'
 import styles from '../../../scss/adminLessonExerciseCard.module.scss'
+import CopyButton from '../../CopyButton'
 
 type HeaderProps = { user: User; exercise: Exercise }
 const Header = ({ user, exercise }: HeaderProps) => {
@@ -31,9 +32,11 @@ const Header = ({ user, exercise }: HeaderProps) => {
       <div className={styles.card__header__contact__container}>
         <div className={styles.card__header__contact}>
           <span>{user.email}</span>
+          <CopyButton value={user.email} color={'primary'} />
         </div>
         <div className={styles.card__header__contact}>
           <span>{user.discordUsername}</span>
+          <CopyButton value={user.discordUsername} color={'primary'} />
         </div>
       </div>
     </div>
