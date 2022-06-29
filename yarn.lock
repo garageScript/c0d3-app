@@ -2873,10 +2873,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@quixo3/prisma-session-store@^3.1.6":
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.6.tgz#4822f6f4f084daf664fd5f186ee655573f7ea1f0"
-  integrity sha512-8/3pYVdaK2Ej77x7qjDVyUU9eUEIz8eCziIeDJFwPvhbHFAP/Efa23eEDpasLU+iigvyzHsXKBcg7uEDWzwETg==
+"@quixo3/prisma-session-store@^3.1.7":
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.7.tgz#72c67592872861bbbec62a6412c8a0a8250e1278"
+  integrity sha512-yERRapINEt5J17LHojVKPDo67rsEjt3a//i2a5lPBp9CEt5dGDf0yEGYONB24xmjGM9PQ+jPvkOnG8+IFwQM2Q==
   dependencies:
     cuid "^2.1.8"
     ts-dedent "^2.2.0"
@@ -8771,10 +8771,10 @@ eslint-plugin-mdx@^1.17.0:
     tslib "^2.3.1"
     vfile "^4.2.1"
 
-eslint-plugin-prettier@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-4.0.0.tgz#8b99d1e4b8b24a762472b4567992023619cb98e0"
-  integrity sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==
+eslint-plugin-prettier@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-4.1.0.tgz#1cd4b3fadf3b3cdb30b1874b55e7f93f85eb43ad"
+  integrity sha512-A3AXIEfTnq3D5qDFjWJdQ9c4BLhw/TqhSR+6+SVaoPJBAWciFEuJiNQh275OnjRrAi7yssZzuWBRw66VG2g6UA==
   dependencies:
     prettier-linter-helpers "^1.0.0"
 

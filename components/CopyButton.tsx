@@ -17,18 +17,20 @@ enum ColorType {
   Mute = 'mute'
 }
 
-const CopyButton: React.FC<{ value: string }> = ({
-  value
-}: {
+type Props = {
   value: string
-}) => {
+  color?: 'success' | 'danger' | 'primary' | 'light' | 'info' | 'mute'
+}
+
+const CopyButton = ({ value, color }: Props) => {
+  const bgColor = color || ColorType.Mute
   const [copyState, setCopyState] = useState<State>(State.NotCopied)
-  const [type, setType] = useState(ColorType.Mute)
+  const [type, setType] = useState(bgColor)
 
   const showSuccess = () => {
     setTimeout(() => {
       setCopyState(State.NotCopied)
-      setType(ColorType.Mute)
+      setType(bgColor)
     }, 2000)
 
     return <CheckIcon />
@@ -36,7 +38,7 @@ const CopyButton: React.FC<{ value: string }> = ({
 
   const handleOnClick = async () => {
     try {
-      setType(ColorType.Mute)
+      setType(bgColor)
       await navigator.clipboard.writeText(value)
       setCopyState(State.Copied)
       setType(ColorType.Success)

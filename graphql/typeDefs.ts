@@ -84,8 +84,9 @@ export default gql`
       answer: String!
       testStr: String
       explanation: String
-      flaggedAt: String
     ): Exercise!
+    flagExercise(id: Int!, flagReason: String!): Exercise
+    removeExerciseFlag(id: Int!): Exercise!
     deleteExercise(id: Int!): Exercise!
     createLesson(
       description: String!
