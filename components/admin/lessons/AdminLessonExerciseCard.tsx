@@ -5,7 +5,7 @@ import {
   Exercise,
   useDeleteExerciseMutation,
   User,
-  useUpdateExerciseMutation
+  useRemoveExerciseFlagMutation
 } from '../../../graphql'
 import styles from '../../../scss/adminLessonExerciseCard.module.scss'
 import CopyButton from '../../CopyButton'
@@ -86,7 +86,7 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
   const [deleteExercise, { loading: deleteLoading }] =
     useDeleteExerciseMutation()
   const [unflagExercise, { loading: unflagLoading }] =
-    useUpdateExerciseMutation()
+    useRemoveExerciseFlagMutation()
 
   const handleRemove = async () => {
     const deletedExercise = await deleteExercise({
@@ -104,18 +104,14 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
   const handleUnflag = async () => {
     const unflaggedExercise = await unflagExercise({
       variables: {
-        id: exercise.id,
-        moduleId: exercise.module.id,
-        description: exercise.description,
-        answer: exercise.answer,
-        flaggedAt: null
+        id: exercise.id
       }
     })
 
     if (onUnflag) {
       const unFlaggedExerciseData = get(
         unflaggedExercise,
-        'data.unflagExercise'
+        'data.removeExerciseFlag'
       )
 
       onUnflag(unFlaggedExerciseData)

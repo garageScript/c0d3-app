@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import { render, screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import DELETE_EXERCISE from '../../../graphql/queries/deleteExercise'
-import UPDATE_EXERCISE from '../../../graphql/queries/updateExercise'
+import REMOVE_EXERCISE_FLAG from '../../../graphql/queries/removeExerciseFlag'
 
 const user = {
   username: 'noob',
@@ -41,18 +41,14 @@ const mocks = [
   },
   {
     request: {
-      query: UPDATE_EXERCISE,
+      query: REMOVE_EXERCISE_FLAG,
       variables: {
-        id: 1,
-        description: exercise.description,
-        answer: exercise.answer,
-        moduleId: exercise.module.id,
-        flaggedAt: null
+        id: 1
       }
     },
     result: {
       data: {
-        updateExercise: {
+        removeExerciseFlag: {
           id: 1
         }
       }
