@@ -112,7 +112,7 @@
     "fetch-mock": "^9.11.0",
     "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.5.1",
+    "jest": "^28.1.2",
     "jest-mock-extended": "^2.0.6",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
