@@ -107,7 +107,7 @@
     "eslint-config-next": "^12.2.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-mdx": "^1.17.0",
-    "eslint-plugin-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "fetch-mock": "^9.11.0",
     "husky": "^8.0.1",
