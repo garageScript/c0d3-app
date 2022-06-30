@@ -59,7 +59,7 @@ const Section = ({ header, paragraph, explanation }: SectionProps) => {
         <>
           <button
             className={styles['card__section--explanation']}
-            onClick={() => setShow(!show)}
+            onClick={() => setShow(prev => !prev)}
           >
             {show ? 'Hide' : 'Show'} explanation
           </button>
