@@ -6,6 +6,9 @@ import { MockedProvider } from '@apollo/client/testing'
 import DELETE_EXERCISE from '../../../graphql/queries/deleteExercise'
 import REMOVE_EXERCISE_FLAG from '../../../graphql/queries/removeExerciseFlag'
 
+// Imported to be able to use expect(...).toBeInTheDocument()
+import '@testing-library/jest-dom'
+
 const user = {
   username: 'noob',
   discordUsername: 'noob#123',
@@ -87,7 +90,7 @@ describe('AdminLessonExerciseCard component', () => {
     const btn = screen.getByText('Show explanation')
     await userEvent.click(btn)
 
-    expect(screen.getByText('Hide explanation')).toBeTruthy()
+    expect(screen.getByText('Hide explanation')).toBeInTheDocument()
   })
 
   it('Should remove exercise', async () => {
@@ -170,7 +173,7 @@ describe('AdminLessonExerciseCard component', () => {
     const btn = screen.getByText('REMOVE EXERCISE')
     await userEvent.click(btn)
 
-    expect(screen.queryByText('REMOVE EXERCISE')).toBeFalsy()
+    expect(screen.queryByText('REMOVE EXERCISE')).not.toBeInTheDocument()
   })
 
   it('Should not show the explanation if not provided', () => {
@@ -182,6 +185,6 @@ describe('AdminLessonExerciseCard component', () => {
       </MockedProvider>
     )
 
-    expect(screen.queryByText('Show explanation')).toBeFalsy()
+    expect(screen.queryByText('Show explanation')).not.toBeInTheDocument()
   })
 })
