@@ -33,7 +33,9 @@ import {
   exercises,
   addExercise,
   updateExercise,
-  deleteExercise
+  deleteExercise,
+  flagExercise,
+  removeExerciseFlag
 } from './resolvers/exerciseCrud'
 export default {
   Query: {
@@ -74,6 +76,8 @@ export default {
     updateModule,
     deleteModule,
     addComment,
-    deleteComment
+    deleteComment,
+    flagExercise,
+    removeExerciseFlag
   }
 }
