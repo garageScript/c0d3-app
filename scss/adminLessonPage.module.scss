@@ -23,14 +23,7 @@
   font-weight: 700;
 }
 
-.container__lessonCard__outer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.container__lessonCard__inner {
+.container__lessonCard {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -1,11 +1,28 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from '../../../scss/adminLessonCard.module.scss'
-import { Lesson } from '../../../graphql/'
+
+type Lesson = {
+  id: number
+  title: string
+  description: string
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
+  order: number
+  slug: string
+  chatUrl?: string | null
+  challenges: Array<{
+    id: number
+    title: string
+    description: string
+    order: number
+  }>
+}
 
 type Props = {
   lesson: Lesson
-  pendingFlaggedQuestions: number
+  pendingFlaggedQuestions: number | string
 }
 
 export const AdminLessonCard: React.FC<Props> = ({

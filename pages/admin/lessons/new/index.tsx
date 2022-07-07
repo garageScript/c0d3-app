@@ -1,94 +1,91 @@
-import React, { useState } from 'react'
-import { gql, useLazyQuery } from '@apollo/client'
+import React from 'react'
+import _ from 'lodash'
 import { AdminLessonCard } from '../../../../components/admin/lessons/AdminLessonCard'
-import { withGetApp, GetAppProps } from '../../../../graphql'
+import {
+  withGetApp,
+  GetAppProps,
+  useGetFlaggedExercisesQuery,
+  GetFlaggedExercisesQuery
+} from '../../../../graphql'
 import { AdminLayout } from '../../../../components/admin/AdminLayout'
 import Link from 'next/link'
 import styles from '../../../../scss/adminLessonPage.module.scss'
 
-const EXERCISES = gql`
-  query {
-    exercises {
-      flaggedAt
-      module {
-        lesson {
-          title
-        }
-      }
-    }
-  }
-`
-type Exercise = {
-  flaggedAt?: string
-  module: {
-    lesson: {
-      title: string
-    }
-  }
+type Lesson = {
+  id: number
+  title: string
+  description: string
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
+  order: number
+  slug: string
+  chatUrl?: string | null
+  challenges: Array<{
+    id: number
+    title: string
+    description: string
+    order: number
+  }>
 }
 
-type Exercises = Exercise[]
+type LoadedLessonCardsProps = {
+  lessonsData: Lesson[] | undefined
+  exercisesData: GetFlaggedExercisesQuery | undefined
+}
+
+const LoadedLessonCards = ({
+  lessonsData,
+  exercisesData
+}: LoadedLessonCardsProps) => {
+  const exerciseMapping = exercisesData?.exercises.reduce(
+    (acc: { [key: string]: number }, cur) => {
+      const curTitle = _.get(cur, 'module.lesson.title', undefined)
+      if (cur?.flaggedAt && curTitle) {
+        if (!acc[curTitle]) {
+          acc[curTitle] = 1
+          return acc
+        }
+        acc[curTitle]++
+      }
+      return acc
+    },
+    {}
+  )
+
+  const lessonCardComponents = lessonsData?.map((e, i) => {
+    return (
+      <div key={i} className={styles.lessonCard}>
+        <AdminLessonCard
+          lesson={e}
+          pendingFlaggedQuestions={exerciseMapping?.[e.title] || 'No'}
+        />
+      </div>
+    )
+  })
+
+  return (
+    <div className={styles.container__lessonCard}>{lessonCardComponents}</div>
+  )
+}
 
 const Lessons: React.FC<GetAppProps> = ({ data }) => {
   const { lessons } = data
-  const [lessonCards, setCards] = useState<[]>([])
-  const [getExercises, { data: exercisesData }] = useLazyQuery<{
-    exercises: Exercises
-  }>(EXERCISES, {
-    onCompleted: async () => {
-      const exerciseMapping = await exercisesData?.exercises.reduce(
-        (prev: any, cur) => {
-          if (cur.flaggedAt) {
-            if (!prev[cur.module?.lesson?.title]) {
-              prev[cur.module?.lesson?.title] = 1
-              return prev
-            }
-            prev[cur.module?.lesson?.title]++
-          }
-
-          return prev
-        },
-        {}
-      )
-
-      setCards(
-        lessons?.reduce((prev: any, cur: any, i) => {
-          prev.push(
-            <div key={i} className={styles.lessonCard}>
-              <AdminLessonCard
-                lesson={cur}
-                pendingFlaggedQuestions={
-                  exerciseMapping[cur.title] ? exerciseMapping[cur.title] : 'No'
-                }
-              />
-            </div>
-          )
-          return prev
-        }, [])
-      )
-    }
-  })
-
-  React.useEffect(() => {
-    lessons && getExercises()
-  }, [lessons, exercisesData])
+  const { data: exercisesData } = useGetFlaggedExercisesQuery()
 
   return (
-    <AdminLayout data={data} title="Admin Lessons Homepage">
+    <AdminLayout data={data}>
       <div className={styles.heading}>
         <span className={styles.lessonText}>Lessons</span>
         <span>
-          <Link href={'../../admin/lessons'}>
+          <Link href="../../admin/lessons">
             <button className={`btn btn-primary ${styles.button}`}>
               Add New Lesson
             </button>
           </Link>
         </span>
       </div>
-
-      <div className={styles.container__lessonCard__outer}>
-        <div className={styles.container__lessonCard__inner}>{lessonCards}</div>
-      </div>
+      <LoadedLessonCards lessonsData={lessons} exercisesData={exercisesData} />
     </AdminLayout>
   )
 }
