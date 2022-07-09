@@ -420,6 +420,57 @@ export type UserLesson = {
   userId?: Maybe<Scalars['String']>
 }
 
+export type LessonAndChallengeInfoFragment = {
+  __typename?: 'Lesson'
+  id: number
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
+  chatUrl?: string | null
+  order: number
+  description: string
+  title: string
+  challenges: Array<{
+    __typename?: 'Challenge'
+    id: number
+    description: string
+    lessonId: number
+    title: string
+    order: number
+  }>
+}
+
+export type SubmissionsInfoFragment = {
+  __typename?: 'Submission'
+  id: number
+  status: SubmissionStatus
+  diff?: string | null
+  comment?: string | null
+  challengeId: number
+  lessonId: number
+  createdAt?: string | null
+  updatedAt: string
+  challenge: { __typename?: 'Challenge'; title: string; description: string }
+  user: { __typename?: 'User'; id: number; username: string }
+  reviewer?: {
+    __typename?: 'User'
+    id: number
+    username: string
+    name: string
+  } | null
+  comments?: Array<{
+    __typename?: 'Comment'
+    id: number
+    content: string
+    submissionId: number
+    createdAt: string
+    authorId: number
+    line?: number | null
+    fileName?: string | null
+    author?: { __typename?: 'User'; username: string; name: string } | null
+  }> | null
+}
+
 export type AcceptSubmissionMutationVariables = Exact<{
   submissionId: Scalars['Int']
   comment: Scalars['String']
@@ -637,57 +688,6 @@ export type FlagExerciseMutationVariables = Exact<{
 export type FlagExerciseMutation = {
   __typename?: 'Mutation'
   flagExercise?: { __typename?: 'Exercise'; id: number } | null
-}
-
-export type LessonAndChallengeInfoFragment = {
-  __typename?: 'Lesson'
-  id: number
-  docUrl?: string | null
-  githubUrl?: string | null
-  videoUrl?: string | null
-  chatUrl?: string | null
-  order: number
-  description: string
-  title: string
-  challenges: Array<{
-    __typename?: 'Challenge'
-    id: number
-    description: string
-    lessonId: number
-    title: string
-    order: number
-  }>
-}
-
-export type SubmissionsInfoFragment = {
-  __typename?: 'Submission'
-  id: number
-  status: SubmissionStatus
-  diff?: string | null
-  comment?: string | null
-  challengeId: number
-  lessonId: number
-  createdAt?: string | null
-  updatedAt: string
-  challenge: { __typename?: 'Challenge'; title: string; description: string }
-  user: { __typename?: 'User'; id: number; username: string }
-  reviewer?: {
-    __typename?: 'User'
-    id: number
-    username: string
-    name: string
-  } | null
-  comments?: Array<{
-    __typename?: 'Comment'
-    id: number
-    content: string
-    submissionId: number
-    createdAt: string
-    authorId: number
-    line?: number | null
-    fileName?: string | null
-    author?: { __typename?: 'User'; username: string; name: string } | null
-  }> | null
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
@@ -1185,6 +1185,20 @@ export type UserInfoQuery = {
       } | null> | null
     }>
   } | null
+}
+
+export type GetFlaggedExercisesQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetFlaggedExercisesQuery = {
+  __typename?: 'Query'
+  exercises: Array<{
+    __typename?: 'Exercise'
+    flaggedAt?: string | null
+    module: {
+      __typename?: 'Module'
+      lesson: { __typename?: 'Lesson'; title: string }
+    }
+  } | null>
 }
 
 export type WithIndex<TObject> = TObject & Record<string, any>
@@ -4888,6 +4902,99 @@ export type UserInfoLazyQueryHookResult = ReturnType<
 export type UserInfoQueryResult = Apollo.QueryResult<
   UserInfoQuery,
   UserInfoQueryVariables
+>
+export const GetFlaggedExercisesDocument = gql`
+  query getFlaggedExercises {
+    exercises {
+      flaggedAt
+      module {
+        lesson {
+          title
+        }
+      }
+    }
+  }
+`
+export type GetFlaggedExercisesProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >
+} & TChildProps
+export function withGetFlaggedExercises<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables,
+    GetFlaggedExercisesProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables,
+    GetFlaggedExercisesProps<TChildProps, TDataName>
+  >(GetFlaggedExercisesDocument, {
+    alias: 'getFlaggedExercises',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetFlaggedExercisesQuery__
+ *
+ * To run a query within a React component, call `useGetFlaggedExercisesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFlaggedExercisesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFlaggedExercisesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFlaggedExercisesQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >(GetFlaggedExercisesDocument, options)
+}
+export function useGetFlaggedExercisesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >(GetFlaggedExercisesDocument, options)
+}
+export type GetFlaggedExercisesQueryHookResult = ReturnType<
+  typeof useGetFlaggedExercisesQuery
+>
+export type GetFlaggedExercisesLazyQueryHookResult = ReturnType<
+  typeof useGetFlaggedExercisesLazyQuery
+>
+export type GetFlaggedExercisesQueryResult = Apollo.QueryResult<
+  GetFlaggedExercisesQuery,
+  GetFlaggedExercisesQueryVariables
 >
 export type AlertKeySpecifier = (
   | 'id'
