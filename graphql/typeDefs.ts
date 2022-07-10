@@ -44,7 +44,7 @@ export default gql`
     createSubmission(
       lessonId: Int!
       challengeId: Int!
-      cliToken: String!
+      cliToken: String
       diff: String!
     ): Submission
     acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
