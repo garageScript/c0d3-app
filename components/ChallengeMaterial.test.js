@@ -233,6 +233,7 @@ const getMockedProps = () => {
     userSubmissions: _.cloneDeep(userSubmissions),
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
     lessonId: '5',
+    lessonSlug: 'js0',
     setShow: jest.fn()
   }
 }
