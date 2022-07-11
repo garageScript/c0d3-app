@@ -60,6 +60,7 @@ export const Basic: React.FC = () => (
       lessonStatus={lessonStatus}
       chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
       lessonId={5}
+      lessonSlug={'js0'}
       show={false}
       setShow={() => {}}
     />
@@ -137,6 +138,7 @@ export const WithDiff: React.FC = () => (
       lessonStatus={lessonStatus}
       chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
       lessonId={5}
+      lessonSlug={'js0'}
       show={false}
       setShow={() => {}}
     />
@@ -225,6 +227,7 @@ export const WithComments: React.FC = () => (
       lessonStatus={lessonStatus}
       chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
       lessonId={5}
+      lessonSlug={'js0'}
       show={false}
       setShow={() => {}}
     />
@@ -238,6 +241,7 @@ export const NoChallenges: React.FC = () => (
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
     lessonId={5}
+    lessonSlug={'js0'}
     show={false}
     setShow={() => {}}
   />
@@ -325,6 +329,7 @@ export const FinalChallenge: React.FC = () => (
       lessonStatus={{ ...lessonStatus, passedAt: 'aef' }}
       chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
       lessonId={5}
+      lessonSlug={'js0'}
       show={false}
       setShow={() => {}}
     />
