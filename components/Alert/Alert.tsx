@@ -1,8 +1,8 @@
 import React from 'react'
-import NavLink from './NavLink'
-import { Alert as AlertType } from '../graphql/'
+import NavLink from '../NavLink'
+import { Alert as AlertType } from '../../graphql'
 import _ from 'lodash'
-import styles from '../scss/alerts.module.scss'
+import styles from './alerts.module.scss'
 import Image from 'next/image'
 
 type Props = {
