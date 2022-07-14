@@ -326,6 +326,7 @@ type ChallengeMaterialProps = {
   lessonStatus: UserLesson
   chatUrl: string
   lessonId: number
+  lessonSlug: string
   show: boolean
   setShow: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -336,6 +337,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   lessonStatus,
   chatUrl,
   lessonId,
+  lessonSlug,
   show,
   setShow
 }) => {
@@ -445,7 +447,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
             starGiven={lessonStatus.starGiven || ''}
             imageSrc="icon-challenge-complete.jpg"
             chatUrl={chatUrl}
-            reviewUrl={`https://www.c0d3.com/review/${lessonId}`}
+            reviewUrl={`https://www.c0d3.com/review/${lessonSlug}`}
           />
         )}
       </div>
