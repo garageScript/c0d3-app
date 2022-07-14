@@ -31639,23 +31639,35 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
 `;
 
 exports[`Storyshots mdx/Spoiler Default 1`] = `
-<details>
+<details
+  className="mb-4"
+>
   <summary>
     Answer
   </summary>
-  <h1>
-    This should be hidden
-  </h1>
+  <div
+    className="ms-4"
+  >
+    <h1>
+      This should be hidden
+    </h1>
+  </div>
 </details>
 `;
 
 exports[`Storyshots mdx/Spoiler With Custom Name 1`] = `
-<details>
+<details
+  className="mb-4"
+>
   <summary>
     Click me!
   </summary>
-  <h1>
-    Surprise!
-  </h1>
+  <div
+    className="ms-4"
+  >
+    <h1>
+      Surprise!
+    </h1>
+  </div>
 </details>
 `;
