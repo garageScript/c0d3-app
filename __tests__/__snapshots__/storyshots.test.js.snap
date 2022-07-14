@@ -29254,6 +29254,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     Object {
       "backgroundColor": "#f7f6f3",
       "color": "rgb(36, 41, 46)",
+      "marginBottom": 0,
       "padding": "20px 20px 0 20px",
     }
   }
@@ -31640,13 +31641,13 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
 
 exports[`Storyshots mdx/Spoiler Default 1`] = `
 <details
-  className="mb-4"
+  className="mb-3"
 >
   <summary>
     Answer
   </summary>
   <div
-    className="ms-4"
+    className="content"
   >
     <h1>
       This should be hidden
@@ -31657,13 +31658,13 @@ exports[`Storyshots mdx/Spoiler Default 1`] = `
 
 exports[`Storyshots mdx/Spoiler With Custom Name 1`] = `
 <details
-  className="mb-4"
+  className="mb-3"
 >
   <summary>
     Click me!
   </summary>
   <div
-    className="ms-4"
+    className="content"
   >
     <h1>
       Surprise!
