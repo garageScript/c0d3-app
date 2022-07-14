@@ -4,9 +4,9 @@ type Props = {
 }
 const Spoiler: React.FC<Props> = ({ children, name }) => {
   return (
-    <details>
+    <details className="mb-4">
       <summary>{name || 'Answer'}</summary>
-      {children}
+      <div className="ms-4">{children}</div>
     </details>
   )
 }
