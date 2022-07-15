@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import NavLink, { NavLinkProps } from './NavLink'
+import NavLink, { NavLinkProps } from '../NavLink'
 import { useRouter } from 'next/router'
-import { useGetAppQuery, GetAppQuery } from '../graphql'
+import { useGetAppQuery, GetAppQuery } from '../../graphql'
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav } from 'react-bootstrap'
-import ProfileDropdownMenu from './ProfileDropdownMenu'
-import styles from '../scss/appNav.module.scss'
+import ProfileDropdownMenu from '../ProfileDropdownMenu'
+import styles from './appNav.module.scss'
 import {
   REPO_PATH,
   DOCS_PATH,
@@ -13,7 +13,7 @@ import {
   DISCORD_PATH,
   LOGIN_PATH,
   SIGNUP_PATH
-} from '../constants'
+} from '../../constants'
 import _ from 'lodash'
 
 type AuthLinkProps = {
