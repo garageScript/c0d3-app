@@ -1,6 +1,6 @@
 import React from 'react'
-import NavLink from '../NavLink'
-import styles from './additionalResources.module.scss'
+import NavLink from './NavLink'
+import styles from '../scss/additionalResources.module.scss'
 
 const AdditionalResources: React.FC = () => {
   return (
