@@ -4,9 +4,8 @@ import { toUpper } from 'lodash'
 import React, { useMemo, useState } from 'react'
 import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
-import AdminModuleInputs, {
-  Props
-} from '../../../../../components/admin/lessons/AdminModuleInputs'
+import AdminLessonInputs from '../../../../../components/admin/lessons/AdminLessonInputs'
+import { Props } from '../../../../../components/admin/lessons/AdminLessonInputs/AdminLessonInputs'
 import Breadcrumbs from '../../../../../components/Breadcrumbs'
 import styles from '../../../../../scss/modules.module.scss'
 import navStyles from '../../../../../scss/adminLessonNav.module.scss'
@@ -44,10 +43,15 @@ type ContentProps = {
   pageName?: string | string[]
   modules: Modules
   lessonId: number
-  refetch: Props['refetch']
+  refetchModules: Props['refetchModules']
 }
 
-const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
+const Content = ({
+  pageName,
+  modules,
+  lessonId,
+  refetchModules
+}: ContentProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const onAddItem = () => setSelectedIndex(-1)
   const onSelect = (item: Omit<Module, 'order'>) => setSelectedIndex(item.id)
@@ -70,9 +74,9 @@ const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
         selectedIndex={selectedIndex}
       />
       <div className={styles.container__modulesPanel__inputs}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lessonId}
-          refetch={refetch}
+          refetchModules={refetchModules}
           module={modules.find(module => module.id === selectedIndex)}
         />
       </div>
@@ -85,7 +89,9 @@ const Lessons = ({ data }: GetAppProps) => {
   const { pageName, lessonSlug } = router.query
 
   const { lessons } = data
-  const { data: modulesData, refetch } = useQuery<{ modules: Modules }>(MODULES)
+  const { data: modulesData, refetch: refetchModules } = useQuery<{
+    modules: Modules
+  }>(MODULES)
 
   const lesson = useMemo(() => {
     if (lessons) {
@@ -161,7 +167,7 @@ const Lessons = ({ data }: GetAppProps) => {
             pageName={pageName}
             modules={filteredModules}
             lessonId={lesson.id}
-            refetch={refetch}
+            refetchModules={refetchModules}
           />
         </section>
       </main>
