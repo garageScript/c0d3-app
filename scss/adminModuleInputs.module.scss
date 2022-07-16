@@ -1,4 +1,4 @@
-@use '../../../../scss/_variables.module';
+@use '_variables.module';
 
 @mixin message($bg, $color) {
   display: flex;
