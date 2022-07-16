@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Alert from '../Alert'
-import { Alert as AlertType } from '../../graphql'
+import Alert from './Alert'
+import { Alert as AlertType } from '../graphql/'
 import _ from 'lodash'
 
 type Props = {
