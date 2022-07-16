@@ -2,7 +2,7 @@ import { ApolloQueryResult, OperationVariables } from '@apollo/client'
 import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
 import AdminLessonInputs from '../../components/admin/lessons/AdminLessonInputs'
-import { AddModuleDocument, Module, UpdateModuleDocument } from '../../graphql'
+import { Module, UpdateModuleDocument } from '../../graphql'
 
 export default {
   component: AdminLessonInputs,
