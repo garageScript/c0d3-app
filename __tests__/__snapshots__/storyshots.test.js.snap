@@ -316,165 +316,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
-<div>
-  <div
-    className="lessons_tabsNav"
-  >
-    <div
-      className="lessons__tabsNav__nav"
-    >
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/introduction"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        INTRODUCTION
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/modules"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        MODULES
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/challenges"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        CHALLENGES
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
-<div
-  className="container"
->
-  <span
-    className="container__heading"
-  >
-    Existing 
-    modules
-  </span>
-  <ol
-    className="container__modulesList"
-  >
-    <li
-      className="container__modulesList__module--active"
-      onClick={[Function]}
-    >
-      <span>
-        First module
-      </span>
-    </li>
-    <li
-      className="container__modulesList__module"
-      onClick={[Function]}
-    >
-      <span>
-        Second module
-      </span>
-      <svg
-        aria-hidden="true"
-        className="octicon octicon-chevron-right"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
-          }
-        }
-        fill="currentColor"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "display": "inline-block",
-            "overflow": "visible",
-            "userSelect": "none",
-            "verticalAlign": "text-bottom",
-          }
-        }
-        viewBox="0 0 16 16"
-        width={16}
-      />
-    </li>
-    <li
-      className="container__modulesList__module"
-      onClick={[Function]}
-    >
-      <span>
-        Third module
-      </span>
-      <svg
-        aria-hidden="true"
-        className="octicon octicon-chevron-right"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
-          }
-        }
-        fill="currentColor"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "display": "inline-block",
-            "overflow": "visible",
-            "userSelect": "none",
-            "verticalAlign": "text-bottom",
-          }
-        }
-        viewBox="0 0 16 16"
-        width={16}
-      />
-    </li>
-    <li
-      className="container__modulesList__module"
-      onClick={[Function]}
-    >
-      <span>
-        Fourth module
-      </span>
-      <svg
-        aria-hidden="true"
-        className="octicon octicon-chevron-right"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
-          }
-        }
-        fill="currentColor"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "display": "inline-block",
-            "overflow": "visible",
-            "userSelect": "none",
-            "verticalAlign": "text-bottom",
-          }
-        }
-        viewBox="0 0 16 16"
-        width={16}
-      />
-    </li>
-  </ol>
-  <button
-    className="container--button"
-    onClick={[Function]}
-  >
-    ADD NEW MODULE
-  </button>
-</div>
-`;
-
-exports[`Storyshots Components/AdminModuleInputs Basic 1`] = `
+exports[`Storyshots Components/AdminLessonInputs Basic 1`] = `
 Array [
   <div>
     <ol>
@@ -904,6 +746,164 @@ Array [
     </div>
   </div>,
 ]
+`;
+
+exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
+<div>
+  <div
+    className="lessons_tabsNav"
+  >
+    <div
+      className="lessons__tabsNav__nav"
+    >
+      <a
+        className="lessons_tabsNav__nav__item--inactive nav-pills"
+        href="/admin/lessons/1/introduction"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        INTRODUCTION
+      </a>
+      <a
+        className="lessons_tabsNav__nav__item--inactive nav-pills"
+        href="/admin/lessons/1/modules"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        MODULES
+      </a>
+      <a
+        className="lessons_tabsNav__nav__item--inactive nav-pills"
+        href="/admin/lessons/1/challenges"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        CHALLENGES
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
+<div
+  className="container"
+>
+  <span
+    className="container__heading"
+  >
+    Existing 
+    modules
+  </span>
+  <ol
+    className="container__modulesList"
+  >
+    <li
+      className="container__modulesList__module--active"
+      onClick={[Function]}
+    >
+      <span>
+        First module
+      </span>
+    </li>
+    <li
+      className="container__modulesList__module"
+      onClick={[Function]}
+    >
+      <span>
+        Second module
+      </span>
+      <svg
+        aria-hidden="true"
+        className="octicon octicon-chevron-right"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+          }
+        }
+        fill="currentColor"
+        height={16}
+        role="img"
+        style={
+          Object {
+            "display": "inline-block",
+            "overflow": "visible",
+            "userSelect": "none",
+            "verticalAlign": "text-bottom",
+          }
+        }
+        viewBox="0 0 16 16"
+        width={16}
+      />
+    </li>
+    <li
+      className="container__modulesList__module"
+      onClick={[Function]}
+    >
+      <span>
+        Third module
+      </span>
+      <svg
+        aria-hidden="true"
+        className="octicon octicon-chevron-right"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+          }
+        }
+        fill="currentColor"
+        height={16}
+        role="img"
+        style={
+          Object {
+            "display": "inline-block",
+            "overflow": "visible",
+            "userSelect": "none",
+            "verticalAlign": "text-bottom",
+          }
+        }
+        viewBox="0 0 16 16"
+        width={16}
+      />
+    </li>
+    <li
+      className="container__modulesList__module"
+      onClick={[Function]}
+    >
+      <span>
+        Fourth module
+      </span>
+      <svg
+        aria-hidden="true"
+        className="octicon octicon-chevron-right"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+          }
+        }
+        fill="currentColor"
+        height={16}
+        role="img"
+        style={
+          Object {
+            "display": "inline-block",
+            "overflow": "visible",
+            "userSelect": "none",
+            "verticalAlign": "text-bottom",
+          }
+        }
+        viewBox="0 0 16 16"
+        width={16}
+      />
+    </li>
+  </ol>
+  <button
+    className="container--button"
+    onClick={[Function]}
+  >
+    ADD NEW MODULE
+  </button>
+</div>
 `;
 
 exports[`Storyshots Components/Alert Info 1`] = `
