@@ -1,12 +1,12 @@
 import { ApolloQueryResult, OperationVariables } from '@apollo/client'
 import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
-import AdminModuleInputs from '../../components/admin/lessons/AdminModuleInputs'
-import { AddModuleDocument, Module } from '../../graphql'
+import AdminLessonInputs from '../../components/admin/lessons/AdminLessonInputs'
+import { AddModuleDocument, Module, UpdateModuleDocument } from '../../graphql'
 
 export default {
-  component: AdminModuleInputs,
-  title: 'Components/AdminModuleInputs'
+  component: AdminLessonInputs,
+  title: 'Components/AdminLessonInputs'
 }
 
 const lesson = { title: 'Foundations of JavaScript', id: 1 }
@@ -34,7 +34,7 @@ export const Basic = () => (
       mocks={[
         {
           request: {
-            query: AddModuleDocument,
+            query: UpdateModuleDocument,
             variables: {
               ...modules[0],
               lessonId: 1
@@ -42,7 +42,7 @@ export const Basic = () => (
           },
           result: {
             data: {
-              addModule: {
+              updateModule: {
                 ...modules[0],
                 lesson: {
                   title: 'Foundations of JavaScript'
@@ -53,11 +53,11 @@ export const Basic = () => (
         }
       ]}
     >
-      <AdminModuleInputs
+      <AdminLessonInputs
         module={modules[0]}
         lessonId={lesson.id}
         title={lesson.title}
-        refetch={
+        refetchModules={
           (() => {}) as (variables?: Partial<OperationVariables>) => Promise<
             ApolloQueryResult<{
               modules: Module[]
