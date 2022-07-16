@@ -2,13 +2,19 @@
 
 exports[`Spoiler component test Should render spoiler 1`] = `
 <div>
-  <details>
+  <details
+    class="mb-3"
+  >
     <summary>
       TestSpoiler
     </summary>
-    <h1>
-      Hidden text
-    </h1>
+    <div
+      class="content"
+    >
+      <h1>
+        Hidden text
+      </h1>
+    </div>
   </details>
 </div>
 `;

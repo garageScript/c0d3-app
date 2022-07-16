@@ -21,11 +21,17 @@ exports[`[docSlug] Page should match screenshot 1`] = `
     >
       markdown
     </h1>
-    <details>
+    <details
+      class="mb-3"
+    >
       <summary>
         what am i?
       </summary>
-       mdx to jsx :)
+      <div
+        class="content"
+      >
+         mdx to jsx :)
+      </div>
     </details>
     <a
       class="MDX_a edit"
