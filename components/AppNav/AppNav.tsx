@@ -5,7 +5,7 @@ import { useGetAppQuery, GetAppQuery } from '../../graphql'
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav } from 'react-bootstrap'
 import ProfileDropdownMenu from '../ProfileDropdownMenu'
-import styles from './appNav.module.scss'
+import styles from '../../scss/appNav.module.scss'
 import {
   REPO_PATH,
   DOCS_PATH,
