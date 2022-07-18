@@ -4,9 +4,9 @@ import { toUpper } from 'lodash'
 import React, { useMemo, useState } from 'react'
 import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
-import AdminModuleInputs, {
+import AdminLessonInputs, {
   Props
-} from '../../../../../components/admin/lessons/AdminModuleInputs'
+} from '../../../../../components/admin/lessons/AdminLessonInputs'
 import Breadcrumbs from '../../../../../components/Breadcrumbs'
 import styles from '../../../../../scss/modules.module.scss'
 import navStyles from '../../../../../scss/adminLessonNav.module.scss'
@@ -70,7 +70,7 @@ const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
         selectedIndex={selectedIndex}
       />
       <div className={styles.container__modulesPanel__inputs}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lessonId}
           refetch={refetch}
           module={modules.find(module => module.id === selectedIndex)}
