@@ -1,12 +1,12 @@
 import { ApolloQueryResult, OperationVariables } from '@apollo/client'
 import { MockedProvider } from '@apollo/client/testing'
 import React from 'react'
-import AdminModuleInputs from '../../components/admin/lessons/AdminModuleInputs'
+import AdminLessonInputs from '../../components/admin/lessons/AdminLessonInputs'
 import { AddModuleDocument, Module } from '../../graphql'
 
 export default {
-  component: AdminModuleInputs,
-  title: 'Components/AdminModuleInputs'
+  component: AdminLessonInputs,
+  title: 'Components/AdminLessonInputs'
 }
 
 const lesson = { title: 'Foundations of JavaScript', id: 1 }
@@ -53,7 +53,7 @@ export const Basic = () => (
         }
       ]}
     >
-      <AdminModuleInputs
+      <AdminLessonInputs
         module={modules[0]}
         lessonId={lesson.id}
         title={lesson.title}
