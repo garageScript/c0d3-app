@@ -1,7 +1,7 @@
 import { useMutation } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
 import * as Sentry from '@sentry/browser'
-import Alert from '../../../components/Alert'
+import Alert from '../../Alert'
 import { FormCard } from '../../../components/FormCard'
 import ADD_ALERT from '../../../graphql/queries/addAlert'
 import { Alert as AlertType } from '../../../graphql'
