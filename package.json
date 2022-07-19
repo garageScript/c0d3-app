@@ -24,6 +24,9 @@
     "prepare": "husky install",
     "vercel-build": "node scripts/prismaUtils.js migrate && next build"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mdx}": "eslint --fix",
     "*.{json,md,scss}": "prettier --write",
