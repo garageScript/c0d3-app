@@ -1,28 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from '../../../scss/adminLessonCard.module.scss'
+import { Lesson } from '../../../graphql'
 
-type Lesson = {
-  id: number
-  title: string
-  description: string
-  docUrl?: string | null
-  githubUrl?: string | null
-  videoUrl?: string | null
-  order: number
-  slug: string
-  chatUrl?: string | null
-  challenges: Array<{
-    id: number
-    title: string
-    description: string
-    order: number
-  }>
+type Subset<K> = {
+  [attr in keyof K]?: K[attr] extends object ? Subset<K[attr]> : K[attr]
 }
 
+export type LessonType = Subset<Lesson>
+
 type Props = {
-  lesson: Lesson
-  pendingFlaggedQuestions: number | string
+  lesson: LessonType
+  pendingFlaggedQuestions: number
 }
 
 export const AdminLessonCard: React.FC<Props> = ({

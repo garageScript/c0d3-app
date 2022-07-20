@@ -1,67 +1,44 @@
 import React from 'react'
 import _ from 'lodash'
-import { AdminLessonCard } from '../../../../components/admin/lessons/AdminLessonCard'
+import {
+  AdminLessonCard,
+  LessonType
+} from '../../../../components/admin/lessons/AdminLessonCard'
 import {
   withGetApp,
   GetAppProps,
-  useGetFlaggedExercisesQuery,
-  GetFlaggedExercisesQuery
+  useGetFlaggedExercisesQuery
 } from '../../../../graphql'
 import { AdminLayout } from '../../../../components/admin/AdminLayout'
 import Link from 'next/link'
 import styles from '../../../../scss/adminLessonPage.module.scss'
 
-type Lesson = {
-  id: number
-  title: string
-  description: string
-  docUrl?: string | null
-  githubUrl?: string | null
-  videoUrl?: string | null
-  order: number
-  slug: string
-  chatUrl?: string | null
-  challenges: Array<{
-    id: number
-    title: string
-    description: string
-    order: number
-  }>
-}
-
 type LoadedLessonCardsProps = {
-  lessonsData: Lesson[] | undefined
-  exercisesData: GetFlaggedExercisesQuery | undefined
+  lessonsData?: LessonType[]
 }
 
-const LoadedLessonCards = ({
-  lessonsData,
-  exercisesData
-}: LoadedLessonCardsProps) => {
-  const exerciseMapping = exercisesData?.exercises.reduce(
-    (acc: { [key: string]: number }, cur) => {
-      const curTitle = _.get(cur, 'module.lesson.title', undefined)
-      if (cur?.flaggedAt && curTitle) {
-        if (!acc[curTitle]) {
-          acc[curTitle] = 1
-          return acc
-        }
-        acc[curTitle]++
-      }
-      return acc
-    },
-    {}
-  )
+const LoadedLessonCards = ({ lessonsData }: LoadedLessonCardsProps) => {
+  const { data: exercisesData } = useGetFlaggedExercisesQuery()
+  const exerciseMapping: { [key: string]: number } = {}
+  const exercises = _.get(exercisesData, 'exercises', [])
+
+  exercises.forEach(e => {
+    const curTitle = _.get(e, 'module.lesson.title', undefined)
+    if (e?.flaggedAt && curTitle)
+      exerciseMapping[curTitle] = (exerciseMapping[curTitle] || 0) + 1
+  })
 
   const lessonCardComponents = lessonsData?.map((e, i) => {
-    return (
-      <div key={i} className={styles.lessonCard}>
-        <AdminLessonCard
-          lesson={e}
-          pendingFlaggedQuestions={exerciseMapping?.[e.title] || 'No'}
-        />
-      </div>
-    )
+    if (e.title) {
+      return (
+        <div key={i} className={styles.lessonCard}>
+          <AdminLessonCard
+            lesson={e}
+            pendingFlaggedQuestions={exerciseMapping?.[e.title] || 0}
+          />
+        </div>
+      )
+    }
   })
 
   return (
@@ -71,7 +48,6 @@ const LoadedLessonCards = ({
 
 const Lessons: React.FC<GetAppProps> = ({ data }) => {
   const { lessons } = data
-  const { data: exercisesData } = useGetFlaggedExercisesQuery()
 
   return (
     <AdminLayout data={data}>
@@ -85,7 +61,7 @@ const Lessons: React.FC<GetAppProps> = ({ data }) => {
           </Link>
         </span>
       </div>
-      <LoadedLessonCards lessonsData={lessons} exercisesData={exercisesData} />
+      <LoadedLessonCards lessonsData={lessons} />
     </AdminLayout>
   )
 }
