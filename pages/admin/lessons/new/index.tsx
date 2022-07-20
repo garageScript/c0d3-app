@@ -29,16 +29,14 @@ const LoadedLessonCards = ({ lessonsData }: LoadedLessonCardsProps) => {
   })
 
   const lessonCardComponents = lessonsData?.map((e, i) => {
-    if (e.title) {
-      return (
-        <div key={i} className={styles.lessonCard}>
-          <AdminLessonCard
-            lesson={e}
-            pendingFlaggedQuestions={exerciseMapping?.[e.title] || 0}
-          />
-        </div>
-      )
-    }
+    return (
+      <div key={i} className={styles.lessonCard}>
+        <AdminLessonCard
+          lesson={e}
+          pendingFlaggedQuestions={exerciseMapping?.[e.title] || 0}
+        />
+      </div>
+    )
   })
 
   return (

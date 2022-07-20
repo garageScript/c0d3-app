@@ -3,11 +3,13 @@ import Link from 'next/link'
 import styles from '../../../scss/adminLessonCard.module.scss'
 import { Lesson } from '../../../graphql'
 
-type Subset<K> = {
-  [attr in keyof K]?: K[attr] extends object ? Subset<K[attr]> : K[attr]
+type optionalKeys<T> = {
+  [P in keyof T]?: optionalKeys<T[P]>
 }
 
-export type LessonType = Subset<Lesson>
+type optionalKeysExcept<T, K extends keyof T> = optionalKeys<T> & Pick<T, K>
+
+export type LessonType = optionalKeysExcept<Lesson, 'title'>
 
 type Props = {
   lesson: LessonType
