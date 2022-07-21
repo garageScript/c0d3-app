@@ -24,20 +24,22 @@ const LoadedLessonCards = ({ lessonsData }: LoadedLessonCardsProps) => {
 
   exercises.forEach(e => {
     const curTitle = _.get(e, 'module.lesson.title', undefined)
-    if (e?.flaggedAt && curTitle)
+    if (_.get(e, 'flaggedAt') && curTitle)
       exerciseMapping[curTitle] = (exerciseMapping[curTitle] || 0) + 1
   })
 
-  const lessonCardComponents = lessonsData?.map((e, i) => {
-    return (
-      <div key={i} className={styles.lessonCard}>
-        <AdminLessonCard
-          lesson={e}
-          pendingFlaggedQuestions={exerciseMapping?.[e.title] || 0}
-        />
-      </div>
-    )
-  })
+  const lessonCardComponents =
+    lessonsData &&
+    lessonsData.map((e, i) => {
+      return (
+        <div key={i} className={styles.lessonCard}>
+          <AdminLessonCard
+            lesson={e}
+            pendingFlaggedQuestions={_.get(exerciseMapping, `${e.title}`) || 0}
+          />
+        </div>
+      )
+    })
 
   return (
     <div className={styles.container__lessonCard}>{lessonCardComponents}</div>
