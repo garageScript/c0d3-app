@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../scss/announcementCard.module.scss'
+import styles from './announcementCard.module.scss'
 
 type Props = {
   announcements: string[]
