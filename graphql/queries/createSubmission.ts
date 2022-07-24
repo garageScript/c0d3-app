@@ -4,7 +4,7 @@ export const POST_SUBMISSION = gql`
   mutation createSubmission(
     $lessonId: Int!
     $challengeId: Int!
-    $cliToken: String!
+    $cliToken: String
     $diff: String!
   ) {
     createSubmission(

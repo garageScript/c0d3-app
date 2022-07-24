@@ -15,7 +15,7 @@ import styles from '../scss/login.module.scss'
 import { signIn, SignInResponse } from 'next-auth/react'
 import Image from 'next/image'
 import { withGetApp, GetAppProps } from '../graphql'
-import { AlreadyLoggedIn } from '../components/AlreadyLoggedIn'
+import AlreadyLoggedIn from '../components/AlreadyLoggedIn'
 
 type Values = {
   username: string

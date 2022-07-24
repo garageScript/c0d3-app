@@ -156,7 +156,9 @@ describe('Lesson Page', () => {
 
     await waitFor(() => getByRole('heading', { name: /Trees/i }))
 
-    await waitFor(() => expect(container).toMatchSnapshot())
+    await new Promise(res => setTimeout(res, 0))
+
+    expect(container).toMatchSnapshot()
   })
   test('Should return Internal server Error if alerts or lessons are missing', async () => {
     const mocks = [

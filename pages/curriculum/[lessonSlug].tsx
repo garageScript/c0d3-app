@@ -74,6 +74,7 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 lessonId={currentLesson.id}
+                lessonSlug={currentLesson.slug}
                 chatUrl={currentLesson.chatUrl!}
                 show={show}
                 setShow={setShow}

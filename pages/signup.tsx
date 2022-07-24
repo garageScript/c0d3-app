@@ -8,7 +8,7 @@ import Card from '../components/Card'
 import { getLayout } from '../components/Layout'
 import Input from '../components/Input'
 import NavLink from '../components/NavLink'
-import { AlreadyLoggedIn } from '../components/AlreadyLoggedIn'
+import AlreadyLoggedIn from '../components/AlreadyLoggedIn'
 
 //import helpers
 import { signupValidation } from '../helpers/formValidation'

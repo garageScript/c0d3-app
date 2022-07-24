@@ -78,6 +78,10 @@ export type Exercise = {
   author: User
   description: Scalars['String']
   explanation?: Maybe<Scalars['String']>
+  flagReason?: Maybe<Scalars['String']>
+  flaggedAt?: Maybe<Scalars['String']>
+  flaggedBy?: Maybe<User>
+  flaggedById?: Maybe<Scalars['Int']>
   id: Scalars['Int']
   module: Module
   testStr?: Maybe<Scalars['String']>
@@ -124,10 +128,12 @@ export type Mutation = {
   deleteComment?: Maybe<Comment>
   deleteExercise: Exercise
   deleteModule: Module
+  flagExercise?: Maybe<Exercise>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   rejectSubmission?: Maybe<Submission>
   removeAlert?: Maybe<SuccessResponse>
+  removeExerciseFlag: Exercise
   reqPwReset: SuccessResponse
   setStar: SuccessResponse
   signup?: Maybe<AuthResponse>
@@ -202,7 +208,7 @@ export type MutationCreateLessonArgs = {
 
 export type MutationCreateSubmissionArgs = {
   challengeId: Scalars['Int']
-  cliToken: Scalars['String']
+  cliToken?: InputMaybe<Scalars['String']>
   diff: Scalars['String']
   lessonId: Scalars['Int']
 }
@@ -219,6 +225,11 @@ export type MutationDeleteModuleArgs = {
   id: Scalars['Int']
 }
 
+export type MutationFlagExerciseArgs = {
+  flagReason: Scalars['String']
+  id: Scalars['Int']
+}
+
 export type MutationLoginArgs = {
   password: Scalars['String']
   username: Scalars['String']
@@ -231,6 +242,10 @@ export type MutationRejectSubmissionArgs = {
 }
 
 export type MutationRemoveAlertArgs = {
+  id: Scalars['Int']
+}
+
+export type MutationRemoveExerciseFlagArgs = {
   id: Scalars['Int']
 }
 
@@ -567,7 +582,7 @@ export type CreateLessonMutation = {
 export type CreateSubmissionMutationVariables = Exact<{
   lessonId: Scalars['Int']
   challengeId: Scalars['Int']
-  cliToken: Scalars['String']
+  cliToken?: InputMaybe<Scalars['String']>
   diff: Scalars['String']
 }>
 
@@ -589,6 +604,15 @@ export type DeleteCommentMutation = {
   deleteComment?: { __typename?: 'Comment'; id: number } | null
 }
 
+export type DeleteExerciseMutationVariables = Exact<{
+  id: Scalars['Int']
+}>
+
+export type DeleteExerciseMutation = {
+  __typename?: 'Mutation'
+  deleteExercise: { __typename?: 'Exercise'; id: number }
+}
+
 export type DeleteModuleMutationVariables = Exact<{
   id: Scalars['Int']
 }>
@@ -603,6 +627,16 @@ export type DeleteModuleMutation = {
     content: string
     lesson: { __typename?: 'Lesson'; title: string }
   }
+}
+
+export type FlagExerciseMutationVariables = Exact<{
+  id: Scalars['Int']
+  flagReason: Scalars['String']
+}>
+
+export type FlagExerciseMutation = {
+  __typename?: 'Mutation'
+  flagExercise?: { __typename?: 'Exercise'; id: number } | null
 }
 
 export type LessonAndChallengeInfoFragment = {
@@ -731,6 +765,20 @@ export type GetAppQuery = {
     url?: string | null
     urlCaption?: string | null
   }>
+}
+
+export type GetFlaggedExercisesQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetFlaggedExercisesQuery = {
+  __typename?: 'Query'
+  exercises: Array<{
+    __typename?: 'Exercise'
+    flaggedAt?: string | null
+    module: {
+      __typename?: 'Module'
+      lesson: { __typename?: 'Lesson'; title: string }
+    }
+  } | null>
 }
 
 export type LessonMentorsQueryVariables = Exact<{
@@ -942,6 +990,15 @@ export type RemoveAlertMutation = {
     __typename?: 'SuccessResponse'
     success?: boolean | null
   } | null
+}
+
+export type RemoveExerciseFlagMutationVariables = Exact<{
+  id: Scalars['Int']
+}>
+
+export type RemoveExerciseFlagMutation = {
+  __typename?: 'Mutation'
+  removeExerciseFlag: { __typename?: 'Exercise'; id: number }
 }
 
 export type ReqPwResetMutationVariables = Exact<{
@@ -1371,6 +1428,14 @@ export type ExerciseResolvers<
     ParentType,
     ContextType
   >
+  flagReason?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
+  flaggedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  flaggedBy?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  flaggedById?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
   testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1493,7 +1558,7 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationCreateSubmissionArgs,
-      'challengeId' | 'cliToken' | 'diff' | 'lessonId'
+      'challengeId' | 'diff' | 'lessonId'
     >
   >
   deleteComment?: Resolver<
@@ -1513,6 +1578,12 @@ export type MutationResolvers<
     ParentType,
     ContextType,
     RequireFields<MutationDeleteModuleArgs, 'id'>
+  >
+  flagExercise?: Resolver<
+    Maybe<ResolversTypes['Exercise']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationFlagExerciseArgs, 'flagReason' | 'id'>
   >
   login?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
@@ -1536,6 +1607,12 @@ export type MutationResolvers<
     ParentType,
     ContextType,
     RequireFields<MutationRemoveAlertArgs, 'id'>
+  >
+  removeExerciseFlag?: Resolver<
+    ResolversTypes['Exercise'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationRemoveExerciseFlagArgs, 'id'>
   >
   reqPwReset?: Resolver<
     ResolversTypes['SuccessResponse'],
@@ -2589,7 +2666,7 @@ export const CreateSubmissionDocument = gql`
   mutation createSubmission(
     $lessonId: Int!
     $challengeId: Int!
-    $cliToken: String!
+    $cliToken: String
     $diff: String!
   ) {
     createSubmission(
@@ -2761,6 +2838,87 @@ export type DeleteCommentMutationOptions = Apollo.BaseMutationOptions<
   DeleteCommentMutation,
   DeleteCommentMutationVariables
 >
+export const DeleteExerciseDocument = gql`
+  mutation deleteExercise($id: Int!) {
+    deleteExercise(id: $id) {
+      id
+    }
+  }
+`
+export type DeleteExerciseMutationFn = Apollo.MutationFunction<
+  DeleteExerciseMutation,
+  DeleteExerciseMutationVariables
+>
+export type DeleteExerciseProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables
+  >
+} & TChildProps
+export function withDeleteExercise<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables,
+    DeleteExerciseProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables,
+    DeleteExerciseProps<TChildProps, TDataName>
+  >(DeleteExerciseDocument, {
+    alias: 'deleteExercise',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useDeleteExerciseMutation__
+ *
+ * To run a mutation, you first call `useDeleteExerciseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteExerciseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteExerciseMutation, { data, loading, error }] = useDeleteExerciseMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteExerciseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    DeleteExerciseMutation,
+    DeleteExerciseMutationVariables
+  >(DeleteExerciseDocument, options)
+}
+export type DeleteExerciseMutationHookResult = ReturnType<
+  typeof useDeleteExerciseMutation
+>
+export type DeleteExerciseMutationResult =
+  Apollo.MutationResult<DeleteExerciseMutation>
+export type DeleteExerciseMutationOptions = Apollo.BaseMutationOptions<
+  DeleteExerciseMutation,
+  DeleteExerciseMutationVariables
+>
 export const DeleteModuleDocument = gql`
   mutation deleteModule($id: Int!) {
     deleteModule(id: $id) {
@@ -2847,6 +3005,88 @@ export type DeleteModuleMutationResult =
 export type DeleteModuleMutationOptions = Apollo.BaseMutationOptions<
   DeleteModuleMutation,
   DeleteModuleMutationVariables
+>
+export const FlagExerciseDocument = gql`
+  mutation flagExercise($id: Int!, $flagReason: String!) {
+    flagExercise(id: $id, flagReason: $flagReason) {
+      id
+    }
+  }
+`
+export type FlagExerciseMutationFn = Apollo.MutationFunction<
+  FlagExerciseMutation,
+  FlagExerciseMutationVariables
+>
+export type FlagExerciseProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    FlagExerciseMutation,
+    FlagExerciseMutationVariables
+  >
+} & TChildProps
+export function withFlagExercise<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    FlagExerciseMutation,
+    FlagExerciseMutationVariables,
+    FlagExerciseProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    FlagExerciseMutation,
+    FlagExerciseMutationVariables,
+    FlagExerciseProps<TChildProps, TDataName>
+  >(FlagExerciseDocument, {
+    alias: 'flagExercise',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useFlagExerciseMutation__
+ *
+ * To run a mutation, you first call `useFlagExerciseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useFlagExerciseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [flagExerciseMutation, { data, loading, error }] = useFlagExerciseMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      flagReason: // value for 'flagReason'
+ *   },
+ * });
+ */
+export function useFlagExerciseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    FlagExerciseMutation,
+    FlagExerciseMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    FlagExerciseMutation,
+    FlagExerciseMutationVariables
+  >(FlagExerciseDocument, options)
+}
+export type FlagExerciseMutationHookResult = ReturnType<
+  typeof useFlagExerciseMutation
+>
+export type FlagExerciseMutationResult =
+  Apollo.MutationResult<FlagExerciseMutation>
+export type FlagExerciseMutationOptions = Apollo.BaseMutationOptions<
+  FlagExerciseMutation,
+  FlagExerciseMutationVariables
 >
 export const GetAppDocument = gql`
   query getApp {
@@ -2990,6 +3230,99 @@ export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>
 export type GetAppQueryResult = Apollo.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
+>
+export const GetFlaggedExercisesDocument = gql`
+  query getFlaggedExercises {
+    exercises {
+      flaggedAt
+      module {
+        lesson {
+          title
+        }
+      }
+    }
+  }
+`
+export type GetFlaggedExercisesProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >
+} & TChildProps
+export function withGetFlaggedExercises<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables,
+    GetFlaggedExercisesProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables,
+    GetFlaggedExercisesProps<TChildProps, TDataName>
+  >(GetFlaggedExercisesDocument, {
+    alias: 'getFlaggedExercises',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetFlaggedExercisesQuery__
+ *
+ * To run a query within a React component, call `useGetFlaggedExercisesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFlaggedExercisesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFlaggedExercisesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFlaggedExercisesQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >(GetFlaggedExercisesDocument, options)
+}
+export function useGetFlaggedExercisesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<
+    GetFlaggedExercisesQuery,
+    GetFlaggedExercisesQueryVariables
+  >(GetFlaggedExercisesDocument, options)
+}
+export type GetFlaggedExercisesQueryHookResult = ReturnType<
+  typeof useGetFlaggedExercisesQuery
+>
+export type GetFlaggedExercisesLazyQueryHookResult = ReturnType<
+  typeof useGetFlaggedExercisesLazyQuery
+>
+export type GetFlaggedExercisesQueryResult = Apollo.QueryResult<
+  GetFlaggedExercisesQuery,
+  GetFlaggedExercisesQueryVariables
 >
 export const LessonMentorsDocument = gql`
   query lessonMentors($lessonId: Int!) {
@@ -3797,6 +4130,87 @@ export type RemoveAlertMutationResult =
 export type RemoveAlertMutationOptions = Apollo.BaseMutationOptions<
   RemoveAlertMutation,
   RemoveAlertMutationVariables
+>
+export const RemoveExerciseFlagDocument = gql`
+  mutation removeExerciseFlag($id: Int!) {
+    removeExerciseFlag(id: $id) {
+      id
+    }
+  }
+`
+export type RemoveExerciseFlagMutationFn = Apollo.MutationFunction<
+  RemoveExerciseFlagMutation,
+  RemoveExerciseFlagMutationVariables
+>
+export type RemoveExerciseFlagProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    RemoveExerciseFlagMutation,
+    RemoveExerciseFlagMutationVariables
+  >
+} & TChildProps
+export function withRemoveExerciseFlag<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    RemoveExerciseFlagMutation,
+    RemoveExerciseFlagMutationVariables,
+    RemoveExerciseFlagProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    RemoveExerciseFlagMutation,
+    RemoveExerciseFlagMutationVariables,
+    RemoveExerciseFlagProps<TChildProps, TDataName>
+  >(RemoveExerciseFlagDocument, {
+    alias: 'removeExerciseFlag',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useRemoveExerciseFlagMutation__
+ *
+ * To run a mutation, you first call `useRemoveExerciseFlagMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemoveExerciseFlagMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeExerciseFlagMutation, { data, loading, error }] = useRemoveExerciseFlagMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRemoveExerciseFlagMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    RemoveExerciseFlagMutation,
+    RemoveExerciseFlagMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    RemoveExerciseFlagMutation,
+    RemoveExerciseFlagMutationVariables
+  >(RemoveExerciseFlagDocument, options)
+}
+export type RemoveExerciseFlagMutationHookResult = ReturnType<
+  typeof useRemoveExerciseFlagMutation
+>
+export type RemoveExerciseFlagMutationResult =
+  Apollo.MutationResult<RemoveExerciseFlagMutation>
+export type RemoveExerciseFlagMutationOptions = Apollo.BaseMutationOptions<
+  RemoveExerciseFlagMutation,
+  RemoveExerciseFlagMutationVariables
 >
 export const ReqPwResetDocument = gql`
   mutation reqPwReset($userOrEmail: String!) {
@@ -4657,6 +5071,10 @@ export type ExerciseKeySpecifier = (
   | 'author'
   | 'description'
   | 'explanation'
+  | 'flagReason'
+  | 'flaggedAt'
+  | 'flaggedBy'
+  | 'flaggedById'
   | 'id'
   | 'module'
   | 'testStr'
@@ -4667,6 +5085,10 @@ export type ExerciseFieldPolicy = {
   author?: FieldPolicy<any> | FieldReadFunction<any>
   description?: FieldPolicy<any> | FieldReadFunction<any>
   explanation?: FieldPolicy<any> | FieldReadFunction<any>
+  flagReason?: FieldPolicy<any> | FieldReadFunction<any>
+  flaggedAt?: FieldPolicy<any> | FieldReadFunction<any>
+  flaggedBy?: FieldPolicy<any> | FieldReadFunction<any>
+  flaggedById?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   module?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
@@ -4731,10 +5153,12 @@ export type MutationKeySpecifier = (
   | 'deleteComment'
   | 'deleteExercise'
   | 'deleteModule'
+  | 'flagExercise'
   | 'login'
   | 'logout'
   | 'rejectSubmission'
   | 'removeAlert'
+  | 'removeExerciseFlag'
   | 'reqPwReset'
   | 'setStar'
   | 'signup'
@@ -4758,10 +5182,12 @@ export type MutationFieldPolicy = {
   deleteComment?: FieldPolicy<any> | FieldReadFunction<any>
   deleteExercise?: FieldPolicy<any> | FieldReadFunction<any>
   deleteModule?: FieldPolicy<any> | FieldReadFunction<any>
+  flagExercise?: FieldPolicy<any> | FieldReadFunction<any>
   login?: FieldPolicy<any> | FieldReadFunction<any>
   logout?: FieldPolicy<any> | FieldReadFunction<any>
   rejectSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   removeAlert?: FieldPolicy<any> | FieldReadFunction<any>
+  removeExerciseFlag?: FieldPolicy<any> | FieldReadFunction<any>
   reqPwReset?: FieldPolicy<any> | FieldReadFunction<any>
   setStar?: FieldPolicy<any> | FieldReadFunction<any>
   signup?: FieldPolicy<any> | FieldReadFunction<any>

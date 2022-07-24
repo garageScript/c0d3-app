@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import AdminModuleInputs from './AdminModuleInputs'
+import AdminLessonInputs from './AdminLessonInputs'
 import { MockedProvider } from '@apollo/client/testing'
 import { AddModuleDocument, UpdateModuleDocument } from '../../../graphql'
 import '../../../__mocks__/matchMedia.mock'
@@ -105,13 +105,13 @@ const updateModuleMocks = [basicUpdateModuleMock]
 const errorMocks = [errorMock, { ...errorMock }]
 const loadingMocks = [loadingMock]
 
-describe('AdminModuleInputs component', () => {
+describe('AdminLessonInputs component', () => {
   it('Should add module', async () => {
     expect.assertions(1)
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={mocks}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}
@@ -144,7 +144,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={updateModuleMocks}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}
@@ -178,7 +178,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={mocks}>
-        <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -198,7 +198,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={errorMocks}>
-        <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
     )
 
@@ -222,7 +222,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId, container } = render(
       <MockedProvider mocks={loadingMocks}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}
@@ -251,7 +251,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
-        <AdminModuleInputs lessonId={lesson.id} title={''} refetch={() => {}} />
+        <AdminLessonInputs lessonId={lesson.id} title={''} refetch={() => {}} />
       </MockedProvider>
     )
 
@@ -270,7 +270,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           onAddModule={onAddModule}
@@ -307,7 +307,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={updateModuleMocks}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           onAddModule={onAddModule}
@@ -358,7 +358,7 @@ describe('AdminModuleInputs component', () => {
           }
         ]}
       >
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           onAddModule={onAddModule}
@@ -390,7 +390,7 @@ describe('AdminModuleInputs component', () => {
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={errorMocks}>
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           onAddModule={onAddModule}
@@ -435,7 +435,7 @@ describe('AdminModuleInputs component', () => {
           }
         ]}
       >
-        <AdminModuleInputs
+        <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}

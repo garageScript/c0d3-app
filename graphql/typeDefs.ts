@@ -44,7 +44,7 @@ export default gql`
     createSubmission(
       lessonId: Int!
       challengeId: Int!
-      cliToken: String!
+      cliToken: String
       diff: String!
     ): Submission
     acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
@@ -85,6 +85,8 @@ export default gql`
       testStr: String
       explanation: String
     ): Exercise!
+    flagExercise(id: Int!, flagReason: String!): Exercise
+    removeExerciseFlag(id: Int!): Exercise!
     deleteExercise(id: Int!): Exercise!
     createLesson(
       description: String!
@@ -257,5 +259,9 @@ export default gql`
     answer: String!
     testStr: String
     explanation: String
+    flaggedAt: String
+    flagReason: String
+    flaggedBy: User
+    flaggedById: Int
   }
 `
