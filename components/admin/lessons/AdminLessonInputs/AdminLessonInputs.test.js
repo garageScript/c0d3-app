@@ -3,8 +3,8 @@ import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import AdminLessonInputs from './AdminLessonInputs'
 import { MockedProvider } from '@apollo/client/testing'
-import { AddModuleDocument, UpdateModuleDocument } from '../../../graphql'
-import '../../../__mocks__/matchMedia.mock'
+import { AddModuleDocument, UpdateModuleDocument } from '../../../../graphql'
+import '../../../../__mocks__/matchMedia.mock'
 
 // Imported to be able to use .toBeInTheDocument()
 import '@testing-library/jest-dom'
