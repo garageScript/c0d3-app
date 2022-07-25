@@ -4,9 +4,8 @@ import { toUpper } from 'lodash'
 import React, { useMemo, useState } from 'react'
 import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
-import AdminLessonInputs, {
-  Props
-} from '../../../../../components/admin/lessons/AdminLessonInputs'
+import AdminLessonInputs from '../../../../../components/admin/lessons/AdminLessonInputs'
+import { Props } from '../../../../../components/admin/lessons/AdminLessonInputs/AdminLessonInputs'
 import Breadcrumbs from '../../../../../components/Breadcrumbs'
 import styles from '../../../../../scss/modules.module.scss'
 import navStyles from '../../../../../scss/adminLessonNav.module.scss'
