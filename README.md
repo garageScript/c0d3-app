@@ -4,16 +4,15 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/garageScript/c0d3-app/branch/master/graph/badge.svg)](https://codecov.io/gh/garageScript/c0d3-app)
+![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/garageScript/c0d3-app/branch/master/graph/badge.svg)](https://codecov.io/gh/garageScript/c0d3-app)
 
 Repo for c0d3.com powered by NextJS. A website to train people to be full stack
 software engineers.
 
 ## Prerequisites
 
-- Node.JS
-- Git
+- [Node.js](https://nodejs.org/en/)
+- [Git](https://github.com/git-guides)
 
 ## How to Start
 
@@ -27,9 +26,7 @@ Follow
 
 ## Contributing
 
-Watch the video below to find out how to develop with TypeScript in React
-
-[![React TypeScript Tutorial](http://i3.ytimg.com/vi/Z5iWr6Srsj8/hqdefault.jpg)](https://www.youtube.com/watch?v=Z5iWr6Srsj8)
+[Learn how to develop with TypeScript in React (video)](https://www.youtube.com/watch?v=Z5iWr6Srsj8)
 
 ### PR Criteria
 
