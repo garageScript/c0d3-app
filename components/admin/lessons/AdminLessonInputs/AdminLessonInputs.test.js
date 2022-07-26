@@ -1,9 +1,14 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import AdminLessonInputs from './AdminLessonInputs'
+import AdminModuleInputs from './AdminLessonInputs'
 import { MockedProvider } from '@apollo/client/testing'
-import { AddModuleDocument, UpdateModuleDocument } from '../../../../graphql'
+import {
+  AddModuleDocument,
+  CreateChallengeDocument,
+  UpdateChallengeDocument,
+  UpdateModuleDocument
+} from '../../../../graphql'
 import '../../../../__mocks__/matchMedia.mock'
 
 // Imported to be able to use .toBeInTheDocument()
@@ -24,7 +29,7 @@ const modules = {
   }
 }
 
-const basicMock = {
+const basicAddModuleMock = {
   request: {
     query: AddModuleDocument,
     variables: {
@@ -66,7 +71,7 @@ const basicUpdateModuleMock = {
   }
 }
 
-const errorMock = {
+const moduleErrorMock = {
   request: {
     query: AddModuleDocument,
     variables: {
@@ -77,7 +82,7 @@ const errorMock = {
   error: new Error('Error')
 }
 
-const loadingMock = {
+const moduleLoadingMock = {
   request: {
     query: AddModuleDocument,
     variables: {
@@ -100,365 +105,628 @@ const loadingMock = {
   delay: 100_000_000_000_000
 }
 
-const mocks = [basicMock]
-const updateModuleMocks = [basicUpdateModuleMock]
-const errorMocks = [errorMock, { ...errorMock }]
-const loadingMocks = [loadingMock]
+const challenges = {
+  basic: {
+    title: 'Function call',
+    description: 'Functions are cool',
+    order: 1
+  },
+  withId: {
+    title: 'Function call',
+    description: 'Functions are cool',
+    order: 1,
+    id: 1
+  }
+}
 
-describe('AdminLessonInputs component', () => {
-  it('Should add module', async () => {
-    expect.assertions(1)
+const basicAddChallengeMock = {
+  request: {
+    query: CreateChallengeDocument,
+    variables: {
+      ...challenges.basic,
+      lessonId: 1
+    }
+  },
+  result: {
+    data: {
+      createChallenge: {
+        id: 1,
+        ...challenges.basic
+      }
+    }
+  }
+}
 
-    const { getByText, getByTestId, container } = render(
-      <MockedProvider mocks={mocks}>
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          refetch={() => {}}
-        />
-      </MockedProvider>
-    )
+const basicUpdateChallengeMock = {
+  request: {
+    query: UpdateChallengeDocument,
+    variables: {
+      ...challenges.withId,
+      lessonId: 1
+    }
+  },
+  result: {
+    data: {
+      updateChallenge: {
+        id: 1,
+        ...challenges.withId
+      }
+    }
+  }
+}
 
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
+const challengeErrorMock = {
+  request: {
+    query: CreateChallengeDocument,
+    variables: {
+      ...challenges.basic,
+      lessonId: 1
+    }
+  },
+  error: new Error('Error')
+}
 
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
+const moduleMocks = [basicAddModuleMock]
+const moduleUpdateModuleMocks = [basicUpdateModuleMock]
+const moduleErrorMocks = [moduleErrorMock, { ...moduleErrorMock }]
+const moduleLoadingMocks = [moduleLoadingMock]
 
-    await waitFor(() =>
-      expect(
-        container.querySelector('.octicon-check-circle')
-      ).toBeInTheDocument()
-    )
-  })
+const challengeMocks = [basicAddChallengeMock]
+const challengeUpdateModuleMocks = [basicUpdateChallengeMock]
+const challengeErrorMocks = [challengeErrorMock, { ...challengeErrorMock }]
 
-  it('Should update module', async () => {
-    expect.assertions(1)
+describe('AdminModuleInputs component', () => {
+  describe('Challenges', () => {
+    it('Should add challenge', async () => {
+      expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
-      <MockedProvider mocks={updateModuleMocks}>
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          refetch={() => {}}
-          module={modules.withId}
-        />
-      </MockedProvider>
-    )
-
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
-
-    const submit = getByText('SAVE CHANGES')
-    await userEvent.click(submit)
-
-    await waitFor(() =>
-      expect(
-        container.querySelector('.octicon-check-circle')
-      ).toBeInTheDocument()
-    )
-  })
-
-  it('Should display error message if inputs are empty', async () => {
-    expect.assertions(1)
-
-    const { getByText, getByTestId, container } = render(
-      <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
-      </MockedProvider>
-    )
-
-    await userEvent.clear(getByTestId('input0'))
-    await userEvent.clear(getByTestId('textbox'))
-
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
-
-    await waitFor(() =>
-      expect(container.querySelector('.octicon-alert-fill')).toBeInTheDocument()
-    )
-  })
-
-  it('Should display error message if network or GraphQL error', async () => {
-    expect.assertions(1)
-
-    const { getByText, getByTestId, container } = render(
-      <MockedProvider mocks={errorMocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
-      </MockedProvider>
-    )
-
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
-
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
-
-    await waitFor(() =>
-      expect(container.querySelector('.octicon-alert-fill')).toBeInTheDocument()
-    )
-  })
-
-  it('Should display loading message', async () => {
-    expect.assertions(1)
-
-    const { getByText, getByTestId, container } = render(
-      <MockedProvider mocks={loadingMocks}>
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          refetch={() => {}}
-        />
-      </MockedProvider>
-    )
-
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
-
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
-
-    expect(container.querySelector('.spinner-grow')).toBeInTheDocument()
-  })
-
-  it('Should display "Untitled" if no title is provided', async () => {
-    expect.assertions(1)
-
-    const { getByText, getByTestId } = render(
-      <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={''} refetch={() => {}} />
-      </MockedProvider>
-    )
-
-    await userEvent.clear(getByTestId('input0'))
-
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
-
-    expect(getByText('Untitled')).toBeInTheDocument()
-  })
-
-  it('Should call onAddModule when a module is added', async () => {
-    expect.hasAssertions()
-
-    const onAddModule = jest.fn()
-
-    const { getByText, getByTestId } = render(
-      <MockedProvider mocks={mocks}>
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          onAddModule={onAddModule}
-          refetch={() => {}}
-        />
-      </MockedProvider>
-    )
-
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
-
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
-
-    await waitFor(() =>
-      expect(onAddModule).toBeCalledWith(
-        { ...basicMock.result.data.addModule, lesson: { id: lesson.id } },
-        null
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={challengeMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchChallenges={() => {}}
+          />
+        </MockedProvider>
       )
-    )
-  })
 
-  it('Should call onAddModule when a module is updated', async () => {
-    expect.hasAssertions()
+      await userEvent.type(getByTestId('input0'), 'Function call', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
 
-    const onAddModule = jest.fn()
+      const submit = getByText('ADD CHALLENGE')
+      await userEvent.click(submit)
 
-    const { getByText, getByTestId } = render(
-      <MockedProvider mocks={updateModuleMocks}>
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          onAddModule={onAddModule}
-          refetch={() => {}}
-          module={modules.withId}
-        />
-      </MockedProvider>
-    )
-
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
-
-    const submit = getByText('SAVE CHANGES')
-    await userEvent.click(submit)
-
-    await waitFor(() =>
-      expect(onAddModule).toBeCalledWith(
-        {
-          ...basicUpdateModuleMock.result.data.updateModule,
-          lesson: { id: lesson.id }
-        },
-        null
+      await waitFor(() =>
+        expect(
+          container.querySelector('.octicon-check-circle')
+        ).toBeInTheDocument()
       )
-    )
-  })
+    })
 
-  it('Should call onAddModule with null when a module is added', async () => {
-    expect.hasAssertions()
+    it('Should not refetch the challenges', async () => {
+      expect.assertions(1)
 
-    const onAddModule = jest.fn()
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={challengeMocks}>
+          <AdminModuleInputs lessonId={lesson.id} title={lesson.title} />
+        </MockedProvider>
+      )
 
-    const { getByText, getByTestId } = render(
-      <MockedProvider
-        mocks={[
+      await userEvent.type(getByTestId('input0'), 'Function call', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('ADD CHALLENGE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(
+          container.querySelector('.octicon-check-circle')
+        ).toBeInTheDocument()
+      )
+    })
+
+    it('Should update challenge', async () => {
+      expect.assertions(1)
+
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={challengeUpdateModuleMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchChallenges={() => {}}
+            challenge={challenges.withId}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Function call', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('SAVE CHANGES')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(
+          container.querySelector('.octicon-check-circle')
+        ).toBeInTheDocument()
+      )
+    })
+
+    it('Should call onAddItem when a challenge is added', async () => {
+      expect.hasAssertions()
+
+      const onAddItem = jest.fn()
+
+      const { getByText, getByTestId } = render(
+        <MockedProvider mocks={challengeMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            onAddItem={onAddItem}
+            refetchChallenges={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Function call', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('ADD CHALLENGE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(onAddItem).toBeCalledWith(
           {
-            ...basicMock,
-            result: {
-              ...basicMock.result,
-              data: null
+            ...basicAddChallengeMock.result.data.createChallenge,
+            lesson: { id: lesson.id }
+          },
+          null
+        )
+      )
+    })
+
+    it('Should call onAddModule when there is error', async () => {
+      expect.hasAssertions()
+
+      const onAddItem = jest.fn()
+
+      const { getByText, getByTestId } = render(
+        <MockedProvider mocks={challengeErrorMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            onAddItem={onAddItem}
+            refetchChallenges={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Function call', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+      const submit = getByText('ADD CHALLENGE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(onAddItem).toBeCalledWith(null, {
+          ...challenges.basic,
+          id: -1,
+          lessonId: lesson.id
+        })
+      )
+    })
+  })
+
+  describe('Modules', () => {
+    it('Should add module', async () => {
+      expect.assertions(1)
+
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={moduleMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(
+          container.querySelector('.octicon-check-circle')
+        ).toBeInTheDocument()
+      )
+    })
+
+    it('Should update module', async () => {
+      expect.assertions(1)
+
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={moduleUpdateModuleMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchModules={() => {}}
+            module={modules.withId}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('SAVE CHANGES')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(
+          container.querySelector('.octicon-check-circle')
+        ).toBeInTheDocument()
+      )
+    })
+
+    it('Should display error message if inputs are empty', async () => {
+      expect.assertions(1)
+
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={moduleMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.clear(getByTestId('input0'))
+      await userEvent.clear(getByTestId('textbox'))
+
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(
+          container.querySelector('.octicon-alert-fill')
+        ).toBeInTheDocument()
+      )
+    })
+
+    it('Should display error message if network or GraphQL error', async () => {
+      expect.assertions(1)
+
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={moduleErrorMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(
+          container.querySelector('.octicon-alert-fill')
+        ).toBeInTheDocument()
+      )
+    })
+
+    it('Should display loading message', async () => {
+      expect.assertions(1)
+
+      const { getByText, getByTestId, container } = render(
+        <MockedProvider mocks={moduleLoadingMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      expect(container.querySelector('.spinner-grow')).toBeInTheDocument()
+    })
+
+    it('Should display "Untitled" if no title is provided', async () => {
+      expect.assertions(1)
+
+      const { getByText, getByTestId } = render(
+        <MockedProvider mocks={moduleMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={''}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.clear(getByTestId('input0'))
+
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      expect(getByText('Untitled')).toBeInTheDocument()
+    })
+
+    it('Should call onAddItem when a module is added', async () => {
+      expect.hasAssertions()
+
+      const onAddModule = jest.fn()
+
+      const { getByText, getByTestId } = render(
+        <MockedProvider mocks={moduleMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            onAddItem={onAddModule}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(onAddModule).toBeCalledWith(
+          {
+            ...basicAddModuleMock.result.data.addModule,
+            lesson: { id: lesson.id }
+          },
+          null
+        )
+      )
+    })
+
+    it('Should call onAddModule when a module is updated', async () => {
+      expect.hasAssertions()
+
+      const onAddItem = jest.fn()
+
+      const { getByText, getByTestId } = render(
+        <MockedProvider mocks={moduleUpdateModuleMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            onAddItem={onAddItem}
+            refetchModules={() => {}}
+            module={modules.withId}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('SAVE CHANGES')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(onAddItem).toBeCalledWith(
+          {
+            ...basicUpdateModuleMock.result.data.updateModule,
+            lesson: { id: lesson.id }
+          },
+          null
+        )
+      )
+    })
+
+    it('Should call onAddModule with null when a module is added', async () => {
+      expect.hasAssertions()
+
+      const onAddItem = jest.fn()
+
+      const { getByText, getByTestId } = render(
+        <MockedProvider
+          mocks={[
+            {
+              ...basicAddModuleMock,
+              result: {
+                ...basicAddModuleMock.result,
+                data: null
+              }
             }
-          }
-        ]}
-      >
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          onAddModule={onAddModule}
-          refetch={() => {}}
-        />
-      </MockedProvider>
-    )
+          ]}
+        >
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            onAddItem={onAddItem}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
 
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      await waitFor(() => expect(onAddItem).toBeCalledWith(null, null))
     })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
+
+    it('Should call onAddModule when there is error', async () => {
+      expect.hasAssertions()
+
+      const onAddItem = jest.fn()
+
+      const { getByText, getByTestId } = render(
+        <MockedProvider mocks={moduleErrorMocks}>
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            onAddItem={onAddItem}
+            refetchModules={() => {}}
+          />
+        </MockedProvider>
+      )
+
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
+      const submit = getByText('ADD MODULE')
+      await userEvent.click(submit)
+
+      await waitFor(() =>
+        expect(onAddItem).toBeCalledWith(null, { ...modules.basic, id: -1 })
+      )
     })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
 
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
+    it('Should handle false module update/add query response name', async () => {
+      expect.assertions(1)
 
-    await waitFor(() => expect(onAddModule).toBeCalledWith(null, null))
-  })
-
-  it('Should call onAddModule when there is error', async () => {
-    expect.hasAssertions()
-
-    const onAddModule = jest.fn()
-
-    const { getByText, getByTestId } = render(
-      <MockedProvider mocks={errorMocks}>
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          onAddModule={onAddModule}
-          refetch={() => {}}
-        />
-      </MockedProvider>
-    )
-
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
-    const submit = getByText('ADD MODULE')
-    await userEvent.click(submit)
-
-    await waitFor(() =>
-      expect(onAddModule).toBeCalledWith(null, { ...modules.basic })
-    )
-  })
-
-  it('Should handle false module update/add query response name', async () => {
-    expect.assertions(1)
-
-    const { getByText, getByTestId } = render(
-      <MockedProvider
-        mocks={[
-          {
-            ...updateModuleMocks[0],
-            result: {
-              data: {
-                updateModule: {
-                  ...updateModuleMocks[0].result.data.updateModule,
-                  name: undefined
+      const { getByText, getByTestId } = render(
+        <MockedProvider
+          mocks={[
+            {
+              ...moduleUpdateModuleMocks[0],
+              result: {
+                data: {
+                  updateModule: {
+                    ...moduleUpdateModuleMocks[0].result.data.updateModule,
+                    name: undefined
+                  }
                 }
               }
             }
-          }
-        ]}
-      >
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          refetch={() => {}}
-          module={modules.withId}
-        />
-      </MockedProvider>
-    )
+          ]}
+        >
+          <AdminModuleInputs
+            lessonId={lesson.id}
+            title={lesson.title}
+            refetchModules={() => {}}
+            module={modules.withId}
+          />
+        </MockedProvider>
+      )
 
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
+      await userEvent.type(getByTestId('input0'), 'Functions', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('input2'), '1', {
+        delay: 1
+      })
+      await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+        delay: 1
+      })
 
-    const submit = getByText('SAVE CHANGES')
-    await userEvent.click(submit)
+      const submit = getByText('SAVE CHANGES')
+      await userEvent.click(submit)
 
-    await waitFor(() =>
-      expect(getByText('Updated the module successfully!')).toBeInTheDocument()
-    )
+      await waitFor(() =>
+        expect(
+          getByText('Updated the module successfully!')
+        ).toBeInTheDocument()
+      )
+    })
   })
 })
