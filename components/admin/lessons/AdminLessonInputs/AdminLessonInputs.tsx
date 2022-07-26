@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {
-  AddModuleMutation,
-  UpdateModuleMutation,
   useAddModuleMutation,
+  useCreateChallengeMutation,
+  useUpdateChallengeMutation,
   useUpdateModuleMutation
 } from '../../../../graphql'
 import { formChange } from '../../../../helpers/formChange'
@@ -18,36 +18,50 @@ import {
 } from '@apollo/client'
 
 type Module = { id: number; name: string; content: string; order: number }
+type Challenge = {
+  id: number
+  title: string
+  description: string
+  order: number
+  lessonId: number
+}
 
 export type Props = {
   lessonId: number
-  refetch: (variables?: Partial<OperationVariables>) => Promise<
+  refetchModules?: (variables?: Partial<OperationVariables>) => Promise<
     ApolloQueryResult<{
       modules: Module[]
     }>
   >
+  refetchChallenges?: (variables?: Partial<OperationVariables>) => Promise<
+    ApolloQueryResult<{
+      modules: Challenge[]
+    }>
+  >
   title?: string
-  onAddModule?: (
+  onAddItem?: (
     m:
-      | (AddModuleMutation['addModule'] & { lesson: { id: number } })
-      | (UpdateModuleMutation['updateModule'] & { lesson: { id: number } })
+      | (Module & { lesson: { id: number } })
+      | (Challenge & { lesson: { id: number } })
       | null,
-    e: { name: string; content: string; order: number } | null
+    e: Module | Challenge | null
   ) => void
   module?: Module
+  challenge?: Challenge
 }
 
 enum Error {
-  InvalidData = 'missing module name, description, or order'
+  InvalidData = 'missing item name, description, or order'
 }
 
 const initValues = (
+  itemName?: string,
   nameValue?: string,
   descValue?: string,
   orderValue?: number
 ): [TextField, TextField, Option] => [
   {
-    title: 'Module Name',
+    title: `${itemName} Name`,
     value: nameValue || ''
   },
   {
@@ -64,39 +78,69 @@ const initValues = (
 const AdminModuleInputs = ({
   title,
   lessonId,
-  onAddModule,
+  onAddItem,
   module,
-  refetch
+  refetchModules,
+  challenge,
+  refetchChallenges
 }: Props) => {
-  const [formOptions, setFormOptions] = useState<any>(initValues())
+  const isModule = !!refetchModules
+
+  const [formOptions, setFormOptions] = useState<any>(
+    initValues(isModule ? 'Module' : 'Challenge')
+  )
   const [name, content, order] = formOptions
 
   useEffect(
     () =>
       setFormOptions(
         initValues(
+          isModule ? 'Module' : 'Challenge',
           get(module, 'name'),
           get(module, 'content'),
           get(module, 'order')
         )
       ),
-    [module]
+    [module, challenge, refetchChallenges, refetchModules]
   )
 
-  const mutationVariables = {
+  const moduleMutationVariables = {
     content: content.value,
     lessonId,
     name: name.value,
     order: +order.value
   }
 
-  const [moduleMutation, { data, error, loading }] = module
-    ? useUpdateModuleMutation({
-        variables: { ...mutationVariables, id: module.id }
-      })
-    : useAddModuleMutation({ variables: mutationVariables })
+  const challengeMutationVariables = {
+    description: content.value,
+    lessonId,
+    title: name.value,
+    order: +order.value
+  }
 
-  const [errorMsg, setErrorMsg] = useState(get(error, 'message', ''))
+  const [
+    moduleMutation,
+    { data: moduleData, error: moduleError, loading: moduleLoading }
+  ] = module
+    ? useUpdateModuleMutation({
+        variables: { ...moduleMutationVariables, id: module.id }
+      })
+    : useAddModuleMutation({
+        variables: moduleMutationVariables
+      })
+
+  const [
+    challengeMutation,
+    { data: challengeData, error: challengeError, loading: challengeLoading }
+  ] = challenge
+    ? useUpdateChallengeMutation({
+        variables: { ...challengeMutationVariables, id: challenge.id }
+      })
+    : useCreateChallengeMutation({ variables: challengeMutationVariables })
+
+  const [errorMsg, setErrorMsg] = useState(
+    get(moduleError || challengeError, 'message', '')
+  )
 
   const handleChange = async (value: string, propertyIndex: number) => {
     await formChange(value, propertyIndex, formOptions, setFormOptions)
@@ -115,20 +159,32 @@ const AdminModuleInputs = ({
       }
 
       setErrorMsg('')
-      const newModule = await moduleMutation()
-      refetch()
 
-      if (onAddModule) {
-        const updateModuleData = get(newModule, 'data.updateModule')
-        const addModuleData = get(newModule, 'data.addModule')
+      const newItem = isModule
+        ? await moduleMutation()
+        : await challengeMutation()
 
-        onAddModule(
-          (updateModuleData && {
-            ...updateModuleData,
+      if (isModule) {
+        refetchModules()
+      } else if (refetchChallenges) {
+        refetchChallenges()
+      }
+
+      if (onAddItem) {
+        const updateItemData = isModule
+          ? get(newItem, 'data.updateModule')
+          : get(newItem, 'data.updateChallenge')
+        const addItemData = isModule
+          ? get(newItem, 'data.addModule')
+          : get(newItem, 'data.createChallenge')
+
+        onAddItem(
+          (updateItemData && {
+            ...updateItemData,
             lesson: { id: lessonId }
           }) ||
-            (addModuleData && {
-              ...addModuleData,
+            (addItemData && {
+              ...addItemData,
               lesson: { id: lessonId }
             }) ||
             null,
@@ -136,12 +192,23 @@ const AdminModuleInputs = ({
         )
       }
     } catch (err) {
-      if (onAddModule) {
-        onAddModule(null, {
-          content: content.value,
-          name: name.value,
-          order: +order.value
-        })
+      if (onAddItem) {
+        if (isModule) {
+          onAddItem(null, {
+            content: content.value,
+            name: name.value,
+            order: +order.value,
+            id: -1
+          })
+        } else {
+          onAddItem(null, {
+            description: content.value,
+            title: name.value,
+            order: +order.value,
+            id: -1,
+            lessonId
+          })
+        }
       }
 
       setErrorMsg((err as ApolloError).message)
@@ -149,7 +216,7 @@ const AdminModuleInputs = ({
   }
 
   const QueryStateMessage = () => {
-    if (loading) {
+    if (isModule ? moduleLoading : challengeLoading) {
       return (
         <div className={styles.loading}>
           <Spinner animation="grow" size="sm" />
@@ -162,22 +229,29 @@ const AdminModuleInputs = ({
       return (
         <div className={styles.error}>
           <AlertFillIcon />
-          <span>Failed to add the module: {errorMsg}</span>
+          <span>
+            Failed to add the {isModule ? 'module' : 'challenge'}: {errorMsg}
+          </span>
         </div>
       )
     }
 
-    if (data) {
-      const updateModule = get(data, 'updateModule')
-      const addModule = get(data, 'addModule')
+    if (moduleData || challengeData) {
+      const updateItem = isModule
+        ? get(moduleData, 'updateModule')
+        : get(challengeData, 'updateChallenge')
+      const addItem = isModule
+        ? get(moduleData, 'addModule')
+        : get(challengeData, 'createChallenge')
 
       return (
         <div className={styles.success}>
           <CheckCircleIcon />
           <span>
-            {updateModule ? 'Updated' : 'Added'} the module{' '}
+            {updateItem ? 'Updated' : 'Added'} the{' '}
+            {isModule ? 'module' : 'challenge'}{' '}
             <strong>
-              {get(addModule, 'name') || get(updateModule, 'name') || ''}
+              {get(addItem, 'name') || get(updateItem, 'name') || ''}
             </strong>{' '}
             successfully!
           </span>
@@ -195,7 +269,10 @@ const AdminModuleInputs = ({
         title={name.value || title || 'Untitled'}
         values={formOptions}
         onSubmit={{
-          title: module ? 'SAVE CHANGES' : 'ADD MODULE',
+          title:
+            module || challenge
+              ? 'SAVE CHANGES'
+              : `ADD ${isModule ? 'MODULE' : 'CHALLENGE'}`,
           onClick: onSubmit
         }}
         onChange={handleChange}
