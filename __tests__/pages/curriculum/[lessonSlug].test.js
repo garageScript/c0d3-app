@@ -106,7 +106,7 @@ describe('Lesson Page', () => {
     // Used to wait for the query response to arrive
     await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
 
-    await waitFor(() => expect(container).toMatchSnapshot())
+    expect(container).toMatchSnapshot()
   })
 
   test('Should render correctly with invalid lesson route', async () => {
