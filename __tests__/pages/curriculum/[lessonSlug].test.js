@@ -131,7 +131,10 @@ describe('Lesson Page', () => {
 
     await waitFor(() => getByText(/Page not found/i))
 
-    await waitFor(() => expect(container).toMatchSnapshot())
+    // Used to wait for the query response to arrive
+    await new Promise(res => setTimeout(res, 0))
+
+    expect(container).toMatchSnapshot()
   })
   test("Should correctly render challenges page for students who hadn't passed previous lessons", async () => {
     query['lessonSlug'] = 'js8'
@@ -156,6 +159,7 @@ describe('Lesson Page', () => {
 
     await waitFor(() => getByRole('heading', { name: /Trees/i }))
 
+    // Used to wait for the query response to arrive
     await new Promise(res => setTimeout(res, 0))
 
     expect(container).toMatchSnapshot()
@@ -183,7 +187,10 @@ describe('Lesson Page', () => {
     const element = await findByText(/Internal server error/i)
     expect(element).toBeTruthy()
 
-    await waitFor(() => expect(container).toMatchSnapshot())
+    // Used to wait for the query response to arrive
+    await new Promise(res => setTimeout(res, 0))
+
+    expect(container).toMatchSnapshot()
   })
   test('Should render with nulled submissions', async () => {
     query['lessonSlug'] = 'js1'
