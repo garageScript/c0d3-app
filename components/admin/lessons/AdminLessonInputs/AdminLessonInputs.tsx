@@ -4,11 +4,11 @@ import {
   UpdateModuleMutation,
   useAddModuleMutation,
   useUpdateModuleMutation
-} from '../../../graphql'
-import { formChange } from '../../../helpers/formChange'
-import { FormCard, MD_INPUT, Option, TextField } from '../../FormCard'
+} from '../../../../graphql'
+import { formChange } from '../../../../helpers/formChange'
+import { FormCard, MD_INPUT, Option, TextField } from '../../../FormCard'
 import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
-import styles from '../../../scss/adminLessonInputs.module.scss'
+import styles from './adminLessonInputs.module.scss'
 import { Spinner } from 'react-bootstrap'
 import { get } from 'lodash'
 import {
