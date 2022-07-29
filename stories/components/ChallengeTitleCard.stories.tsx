@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { action } from '@storybook/addon-actions'
-import { ChallengeTitleCard } from '../../components/ChallengeMaterial'
+import { ChallengeTitleCard } from '../../components/ChallengeMaterial/ChallengeMaterial'
 
 export default {
   component: ChallengeTitleCard,

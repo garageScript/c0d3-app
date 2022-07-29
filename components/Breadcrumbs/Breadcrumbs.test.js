@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Breadcrumbs from './Breadcrumbs.tsx'
+import Breadcrumbs from './Breadcrumbs'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
