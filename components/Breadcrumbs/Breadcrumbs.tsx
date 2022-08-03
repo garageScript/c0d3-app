@@ -1,9 +1,9 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import styles from '../scss/breadcrumbs.module.scss'
+import styles from './breadcrumbs.module.scss'
 import { Dropdown } from 'react-bootstrap'
-import { GetAppQuery } from '../graphql'
+import { GetAppQuery } from '../../graphql'
 import { ChevronRightIcon } from '@primer/octicons-react'
 import { lowerCase } from 'lodash'
 
