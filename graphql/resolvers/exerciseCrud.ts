@@ -10,6 +10,7 @@ import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
 import { isAdmin } from '../../helpers/isAdmin'
 import { get } from 'lodash'
+import { withUserContainer } from '../../helpers/withUserContainer'
 
 export const exercises = () => {
   return prisma.exercise.findMany({
@@ -41,14 +42,11 @@ export const addExercise = async (
   })
 }
 
-export const updateExercise = async (
-  _parent: void,
-  args: MutationUpdateExerciseArgs,
-  { req }: Context
-): Promise<Exercise> => {
-  const authorId = req.user?.id
-  if (!authorId) throw new Error('No user')
-
+export const updateExercise = withUserContainer<
+  Promise<Exercise>,
+  MutationUpdateExerciseArgs
+>(async (_parent: void, args: MutationUpdateExerciseArgs, ctx: Context) => {
+  const { req } = ctx
   const { id, testStr, description, answer, moduleId, explanation } = args
 
   const exercise = await prisma.exercise.findUnique({
@@ -60,10 +58,10 @@ export const updateExercise = async (
       module: true
     }
   })
+  const authorId = req.user?.id
 
-  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+  if (!isAdmin(req) && exercise?.authorId !== authorId)
     throw new Error('Not authorized to change')
-  }
 
   return prisma.exercise.update({
     where: {
@@ -75,26 +73,24 @@ export const updateExercise = async (
       module: true
     }
   })
-}
+})
 
-export const deleteExercise = async (
-  _parent: void,
-  arg: MutationDeleteExerciseArgs,
-  { req }: Context
-): Promise<Exercise> => {
-  const { id } = arg
-  const authorId = req.user?.id
-  if (!authorId) throw new Error('No User')
-
+export const deleteExercise = withUserContainer<
+  Promise<Exercise>,
+  MutationDeleteExerciseArgs
+>(async (_parent: void, args: MutationDeleteExerciseArgs, ctx: Context) => {
+  const { req } = ctx
+  const { id } = args
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
     }
   })
 
-  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+  const authorId = req.user?.id
+
+  if (!isAdmin(req) && exercise?.authorId !== authorId)
     throw new Error('Not authorized to delete')
-  }
 
   return prisma.exercise.delete({
     where: { id },
@@ -103,17 +99,14 @@ export const deleteExercise = async (
       module: true
     }
   })
-}
+})
 
-export const flagExercise = async (
-  _parent: void,
-  arg: MutationFlagExerciseArgs,
-  { req }: Context
-): Promise<Exercise> => {
-  const flaggedById = get(req, 'user.id')
-  if (!flaggedById) throw new Error('No User')
-
-  const { id, flagReason } = arg
+export const flagExercise = withUserContainer<
+  Promise<Exercise>,
+  MutationFlagExerciseArgs
+>(async (_parent: void, args: MutationFlagExerciseArgs, ctx: Context) => {
+  const { req } = ctx
+  const { id, flagReason } = args
 
   const exercise = await prisma.exercise.findUnique({
     where: {
@@ -121,10 +114,9 @@ export const flagExercise = async (
     }
   })
 
-  if (get(exercise, 'flaggedAt')) {
-    throw new Error('Exercise is already flagged')
-  }
+  if (get(exercise, 'flaggedAt')) throw new Error('Exercise is already flagged')
 
+  const flaggedById = get(req, 'user.id')
   return prisma.exercise.update({
     where: { id },
     data: {
@@ -137,16 +129,15 @@ export const flagExercise = async (
       module: true
     }
   })
-}
+})
 
-export const removeExerciseFlag = async (
-  _parent: void,
-  arg: MutationRemoveExerciseFlagArgs,
-  { req }: Context
-): Promise<Exercise> => {
-  if (!isAdmin(req)) {
-    throw new Error('Not authorized to unflag')
-  }
+export const removeExerciseFlag = withUserContainer<
+  Promise<Exercise>,
+  MutationRemoveExerciseFlagArgs
+>(async (_parent: void, arg: MutationRemoveExerciseFlagArgs, ctx: Context) => {
+  const { req } = ctx
+
+  if (!isAdmin(req)) throw new Error('Not authorized to unflag')
 
   const { id } = arg
 
@@ -156,9 +147,8 @@ export const removeExerciseFlag = async (
     }
   })
 
-  if (!get(exercise, 'flaggedAt')) {
+  if (!get(exercise, 'flaggedAt'))
     throw new Error('Exercise is already not flagged')
-  }
 
   return prisma.exercise.update({
     where: { id },
@@ -172,4 +162,4 @@ export const removeExerciseFlag = async (
       module: true
     }
   })
-}
+})
