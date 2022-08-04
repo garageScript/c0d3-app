@@ -15,7 +15,9 @@ export const exercises = () => {
   return prisma.exercise.findMany({
     include: {
       author: true,
-      module: true
+      module: {
+        include: { lesson: true }
+      }
     }
   })
 }

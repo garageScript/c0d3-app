@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ChallengeQuestionCard } from '../../components/ChallengeMaterial'
+import { ChallengeQuestionCard } from '../../components/ChallengeMaterial/ChallengeMaterial'
 import { MockedProvider } from '@apollo/client/testing'
 
 export default {

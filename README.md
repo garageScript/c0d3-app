@@ -1,10 +1,13 @@
 # c0d3.com
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/garageScript/c0d3-app/branch/master/graph/badge.svg)](https://codecov.io/gh/garageScript/c0d3-app)
+![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/garageScript/c0d3-app/branch/master/graph/badge.svg)](https://codecov.io/gh/garageScript/c0d3-app)
 
 Repo for c0d3.com powered by NextJS. A website to train people to be full stack
 software engineers.
