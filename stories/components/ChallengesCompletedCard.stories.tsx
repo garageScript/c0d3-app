@@ -1,6 +1,6 @@
 import { MockedProvider } from '@apollo/client/testing'
 import * as React from 'react'
-import { ChallengesCompletedCard } from '../../components/ChallengeMaterial'
+import { ChallengesCompletedCard } from '../../components/ChallengeMaterial/ChallengeMaterial'
 import SET_STAR from '../../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../../__dummy__/getLessonMentorsData'

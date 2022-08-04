@@ -1,3 +1,5 @@
+@use './colors.module.scss';
+
 .card__descAccordion {
   z-index: 3;
   top: 0;
@@ -13,4 +15,5 @@
 .accordion__item {
   border-radius: 8px !important;
   border-color: #eee;
+  color: inherit;
 }

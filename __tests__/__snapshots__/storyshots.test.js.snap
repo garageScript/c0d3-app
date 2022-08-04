@@ -11119,10 +11119,10 @@ Array [
             </div>
           </div>
           <div
-            className="card-footer bg-white p-0"
+            className="card-footer d-flex bg-white p-0"
           >
             <a
-              className="btn border-end rounded-0 px-4 py-3 noUnderline"
+              className="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
               href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
               rel="noopener noreferrer"
               target="_blank"
@@ -11130,7 +11130,7 @@ Array [
               LESSON
             </a>
             <a
-              className="btn border-end rounded-0 px-4 py-3 noUnderline"
+              className="text-dark border-end rounded-0 px-4 py-3 noUnderline"
               href="/curriculum/js0"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -11189,10 +11189,10 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
         </div>
       </div>
       <div
-        className="card-footer bg-white p-0"
+        className="card-footer d-flex bg-white p-0"
       >
         <a
-          className="btn border-end rounded-0 px-4 py-3 noUnderline"
+          className="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
           href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
           rel="noopener noreferrer"
           target="_blank"
@@ -11200,7 +11200,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
           LESSON
         </a>
         <a
-          className="btn border-end rounded-0 px-4 py-3 noUnderline"
+          className="text-dark border-end rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -11251,10 +11251,10 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
         </div>
       </div>
       <div
-        className="card-footer bg-white p-0"
+        className="card-footer d-flex bg-white p-0"
       >
         <a
-          className="btn border-end rounded-0 px-4 py-3 noUnderline"
+          className="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
           href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
           rel="noopener noreferrer"
           target="_blank"
@@ -11262,7 +11262,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
           LESSON
         </a>
         <a
-          className="btn border-end rounded-0 px-4 py-3 noUnderline"
+          className="text-dark border-end rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -11313,10 +11313,10 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       </div>
     </div>
     <div
-      className="card-footer bg-white p-0"
+      className="card-footer d-flex bg-white p-0"
     >
       <a
-        className="btn border-end rounded-0 px-4 py-3 noUnderline"
+        className="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
         href="#"
         rel="noopener noreferrer"
         target="_blank"
@@ -11324,7 +11324,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         LESSON
       </a>
       <a
-        className="btn border-end rounded-0 px-4 py-3 noUnderline"
+        className="text-dark border-end rounded-0 px-4 py-3 noUnderline"
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -11371,10 +11371,10 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       </div>
     </div>
     <div
-      className="card-footer bg-white p-0"
+      className="card-footer d-flex bg-white p-0"
     >
       <a
-        className="btn border-end rounded-0 px-4 py-3 noUnderline"
+        className="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
         href="#"
         rel="noopener noreferrer"
         target="_blank"
@@ -11382,7 +11382,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         LESSON
       </a>
       <a
-        className="btn border-end rounded-0 px-4 py-3 noUnderline"
+        className="text-dark border-end rounded-0 px-4 py-3 noUnderline"
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -11390,7 +11390,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         CHALLENGES
       </a>
       <a
-        className="btn border-end rounded-0 px-4 py-3 noUnderline"
+        className="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
