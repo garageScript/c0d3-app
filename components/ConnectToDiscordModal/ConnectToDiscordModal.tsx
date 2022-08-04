@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { ModalCard, ModalSize } from './ModalCard'
-import styles from '../scss/connectToDiscordModal.module.scss'
+import { ModalCard, ModalSize } from '../ModalCard'
+import styles from './connectToDiscordModal.module.scss'
 import { signIn } from 'next-auth/react'
 type ConnectToDiscordModalProps = {
   show: boolean
