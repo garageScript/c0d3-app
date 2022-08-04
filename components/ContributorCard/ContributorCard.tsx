@@ -1,7 +1,7 @@
 import React from 'react'
 import { Linkedin, GitHub, File, Code } from 'react-feather'
-import UserInfoImage from './UserInfoImage'
-import styles from '../scss/contributorCard.module.scss'
+import UserInfoImage from '../UserInfoImage'
+import styles from './contributorCard.module.scss'
 
 type ContributorCardProps = {
   user: {
