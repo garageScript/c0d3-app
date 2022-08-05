@@ -424,10 +424,10 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               </div>
             </div>
             <div
-              class="card-footer bg-white p-0"
+              class="card-footer d-flex bg-white p-0"
             >
               <a
-                class="btn border-end rounded-0 px-4 py-3 noUnderline"
+                class="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
                 href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -435,13 +435,13 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 LESSON
               </a>
               <a
-                class="btn border-end rounded-0 px-4 py-3 noUnderline"
+                class="text-dark border-end rounded-0 px-4 py-3 noUnderline"
                 href="/curriculum/js1"
               >
                 CHALLENGES
               </a>
               <a
-                class="btn border-end rounded-0 px-4 py-3 noUnderline"
+                class="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
                 href="/review/js1"
               >
                 REVIEW
@@ -665,10 +665,10 @@ exports[`Lesson Page Should render new submissions 1`] = `
               </div>
             </div>
             <div
-              class="card-footer bg-white p-0"
+              class="card-footer d-flex bg-white p-0"
             >
               <a
-                class="btn border-end rounded-0 px-4 py-3 noUnderline"
+                class="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
                 href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -676,13 +676,13 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 LESSON
               </a>
               <a
-                class="btn border-end rounded-0 px-4 py-3 noUnderline"
+                class="text-dark border-end rounded-0 px-4 py-3 noUnderline"
                 href="/curriculum/js1"
               >
                 CHALLENGES
               </a>
               <a
-                class="btn border-end rounded-0 px-4 py-3 noUnderline"
+                class="text-dark d-block border-end rounded-0 px-4 py-3 noUnderline"
                 href="/review/js1"
               >
                 REVIEW
