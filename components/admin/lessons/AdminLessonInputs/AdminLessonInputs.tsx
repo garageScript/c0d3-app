@@ -3,7 +3,8 @@ import {
   useAddModuleMutation,
   useCreateChallengeMutation,
   useUpdateChallengeMutation,
-  useUpdateModuleMutation
+  useUpdateModuleMutation,
+  Challenge
 } from '../../../../graphql'
 import { formChange } from '../../../../helpers/formChange'
 import { FormCard, MD_INPUT, Option, TextField } from '../../../FormCard'
@@ -18,13 +19,6 @@ import {
 } from '@apollo/client'
 
 type Module = { id: number; name: string; content: string; order: number }
-type Challenge = {
-  id: number
-  title: string
-  description: string
-  order: number
-  lessonId: number
-}
 
 export type Props = {
   lessonId: number
