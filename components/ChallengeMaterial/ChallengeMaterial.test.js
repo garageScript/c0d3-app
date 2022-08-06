@@ -9,23 +9,23 @@ import {
   within
 } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { mockUseBreakpoint } from '../__mocks__/useBreakpoint.mock'
-import ChallengeMaterial from './ChallengeMaterial'
+import { mockUseBreakpoint } from '../../__mocks__/useBreakpoint.mock'
+import ChallengeMaterial from '.'
 import { MockedProvider } from '@apollo/client/testing'
-import ADD_COMMENT from '../graphql/queries/addComment'
-import SET_STAR from '../graphql/queries/setStar'
-import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
-import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
-import lessonMentorsData from '../__dummy__/getLessonMentorsData'
+import ADD_COMMENT from '../../graphql/queries/addComment'
+import SET_STAR from '../../graphql/queries/setStar'
+import GET_PREVIOUS_SUBMISSIONS from '../../graphql/queries/getPreviousSubmissions'
+import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
+import lessonMentorsData from '../../__dummy__/getLessonMentorsData'
 import '@testing-library/jest-dom'
-import { SubmissionStatus } from '../graphql'
-import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
-import dummySessionData from '../__dummy__/sessionData'
-import { ContextProvider, GlobalContext } from '../helpers/globalContext'
+import { SubmissionStatus } from '../../graphql'
+import getPreviousSubmissionsData from '../../__dummy__/getPreviousSubmissionsData'
+import dummySessionData from '../../__dummy__/sessionData'
+import { ContextProvider, GlobalContext } from '../../helpers/globalContext'
 import _ from 'lodash'
 
-jest.mock('../helpers/updateCache')
-import { updateCache } from '../helpers/updateCache'
+jest.mock('../../helpers/updateCache')
+import { updateCache } from '../../helpers/updateCache'
 
 jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 

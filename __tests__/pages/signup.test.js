@@ -30,18 +30,21 @@ describe('Signup Page', () => {
   const fakeUsername = 'fakeusername'
   const fakeFirstName = 'fakefirstname'
   const fakeLastName = 'fakelastname'
+  const fakePassword = 'fakepassword'
 
   const fillOutSignupForm = async getByTestId => {
     const emailField = getByTestId('email')
     const usernameField = getByTestId('username')
     const firstNameField = getByTestId('firstName')
     const lastNameField = getByTestId('lastName')
+    const passwordField = getByTestId('password')
 
     // the type event needs to be delayed so the Formik validations finish
     await userEvent.type(emailField, fakeEmail, { delay: 1 })
     await userEvent.type(usernameField, fakeUsername, { delay: 1 })
     await userEvent.type(firstNameField, fakeFirstName, { delay: 1 })
     await userEvent.type(lastNameField, fakeLastName, { delay: 1 })
+    await userEvent.type(passwordField, fakePassword, { delay: 1 })
   }
 
   test('Should redirect to /curriculum on success', async () => {
@@ -77,7 +80,7 @@ describe('Signup Page', () => {
       status: 401
     })
 
-    const { container, getByTestId, getByText } = render(
+    const { getByTestId } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <SignupPage />
       </MockedProvider>

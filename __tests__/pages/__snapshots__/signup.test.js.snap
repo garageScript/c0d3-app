@@ -104,6 +104,7 @@ exports[`Signup Page Should render error message on fail 1`] = `
   </div>
 </div>
 `;
+<<<<<<< HEAD
 
 exports[`Signup Page Should render network error on fail 1`] = `
 <div>

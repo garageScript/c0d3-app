@@ -9,12 +9,11 @@ datasource db {
 
 model Session {
   id        String   @id
-  sid       String   @unique
+  sid       String   @unique(map: "Session.sid_unique")
   data      String
   expiresAt DateTime
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   updatedAt DateTime @updatedAt @db.Timestamptz(6)
-
 }
 
 model Alert {
@@ -37,7 +36,7 @@ model Challenge {
   createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   lessonId    Int
-  lesson      Lesson       @relation(fields: [lessonId], references: [id])
+  lesson      Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade, map: "challenges_lessonId_fk")
   submissions Submission[]
 
   @@map("challenges")
@@ -45,7 +44,6 @@ model Challenge {
 
 model Lesson {
   id          Int          @id @default(autoincrement())
-  slug        String       @unique @db.VarChar(50)
   description String
   docUrl      String?      @db.VarChar(255)
   githubUrl   String?      @db.VarChar(255)
@@ -55,11 +53,12 @@ model Lesson {
   createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
+  slug        String       @unique(map: "lessons.slug_unique") @db.VarChar(50)
   challenges  Challenge[]
+  modules     Module[]
   starLesson  Star[]       @relation("starLesson")
   submissions Submission[]
   userLessons UserLesson[]
-  modules     Module[]
 
   @@map("lessons")
 }
@@ -72,11 +71,11 @@ model Star {
   studentId Int
   mentorId  Int
   comment   String?  @db.VarChar(255)
-  lesson    Lesson   @relation("starLesson", fields: [lessonId], references: [id])
-  mentor    User     @relation("starMentor", fields: [mentorId], references: [id])
-  student   User     @relation("starStudent", fields: [studentId], references: [id])
+  lesson    Lesson   @relation("starLesson", fields: [lessonId], references: [id], onDelete: Cascade)
+  mentor    User     @relation("starMentor", fields: [mentorId], references: [id], onDelete: Cascade)
+  student   User     @relation("starStudent", fields: [studentId], references: [id], onDelete: Cascade)
 
-  @@unique([studentId, lessonId])
+  @@unique([studentId, lessonId], map: "stars.studentId_lessonId_unique")
   @@map("stars")
 }
 
@@ -93,10 +92,10 @@ model Submission {
   reviewerId  Int?
   challengeId Int
   lessonId    Int
-  challenge   Challenge @relation(fields: [challengeId], references: [id])
-  lesson      Lesson    @relation(fields: [lessonId], references: [id])
+  challenge   Challenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  lesson      Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
   reviewer    User?     @relation("userReviewedSubmissions", fields: [reviewerId], references: [id])
-  user        User      @relation("userSubmissions", fields: [userId], references: [id])
+  user        User      @relation("userSubmissions", fields: [userId], references: [id], onDelete: Cascade)
   comments    Comment[]
 
   @@map("submissions")
@@ -108,10 +107,10 @@ model Comment {
   line         Int?
   content      String
   authorId     Int
-  author       User       @relation(fields: [authorId], references: [id])
   submissionId Int
-  submission   Submission @relation(fields: [submissionId], references: [id])
   createdAt    DateTime   @default(now())
+  author       User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  submission   Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
 }
 
 model UserLesson {
@@ -120,8 +119,8 @@ model UserLesson {
   updatedAt DateTime  @updatedAt @db.Timestamptz(6)
   lessonId  Int
   userId    Int
-  lesson    Lesson    @relation(fields: [lessonId], references: [id])
-  user      User      @relation(fields: [userId], references: [id])
+  lesson    Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([lessonId, userId])
   @@map("userLessons")
@@ -140,23 +139,23 @@ model User {
   isAdmin                   Boolean      @default(false)
   forgotToken               String?      @db.VarChar(255)
   cliToken                  String?      @db.VarChar(255)
-  cliVersion                String?      @db.VarChar(255)
   emailVerificationToken    String?      @db.VarChar(255)
   tokenExpiration           DateTime?    @db.Timestamptz(6)
-  discordId                 String?      @db.VarChar(255)
   discordRefreshToken       String?      @db.VarChar(255)
   discordAccessToken        String?      @db.VarChar(255)
   discordAccessTokenExpires DateTime?    @db.Timestamptz(6)
+  discordId                 String?      @db.VarChar(255)
+  cliVersion                String?      @db.VarChar(255)
+  comments                  Comment[]
+  exercises                 Exercise[]
+  Exercise                  Exercise[]   @relation("flaggedExercises")
+  modules                   Module[]
   starsMentor               Star[]       @relation("starMentor")
   starsGiven                Star[]       @relation("starStudent")
   submissionsReviewed       Submission[] @relation("userReviewedSubmissions")
   submissions               Submission[] @relation("userSubmissions")
   userLessons               UserLesson[]
-  comments                  Comment[]
-  modules                   Module[]
-  exercises                 Exercise[]
 
-  Exercise Exercise[] @relation("flaggedExercises")
   @@map("users")
 }
 
@@ -164,14 +163,14 @@ model Module {
   id        Int        @id @default(autoincrement())
   createdAt DateTime   @default(now()) @db.Timestamptz(6)
   updatedAt DateTime   @updatedAt @db.Timestamptz(6)
-  author    User       @relation(fields: [authorId], references: [id])
   authorId  Int
-  lesson    Lesson     @relation(fields: [lessonId], references: [id])
   lessonId  Int
   name      String     @db.VarChar(255)
   content   String
-  exercises Exercise[]
   order     Int
+  author    User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  lesson    Lesson     @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  exercises Exercise[]
 
   @@map("modules")
 }
@@ -180,18 +179,18 @@ model Exercise {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime  @updatedAt @db.Timestamptz(6)
-  author      User      @relation(fields: [authorId], references: [id])
   authorId    Int
-  module      Module    @relation(fields: [moduleId], references: [id])
   moduleId    Int
   description String
   answer      String
   testStr     String?
   explanation String?
-  flaggedAt   DateTime?
   flagReason  String?
-  flaggedBy   User?     @relation("flaggedExercises", fields: [flaggedById], references: [id])
+  flaggedAt   DateTime?
   flaggedById Int?
+  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  flaggedBy   User?     @relation("flaggedExercises", fields: [flaggedById], references: [id])
+  module      Module    @relation(fields: [moduleId], references: [id], onDelete: Cascade)
 
   @@map("exercises")
 }
