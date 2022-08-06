@@ -80,7 +80,7 @@ describe('Signup Page', () => {
       status: 401
     })
 
-    const { getByTestId } = render(
+    const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <SignupPage />
       </MockedProvider>
@@ -97,6 +97,7 @@ describe('Signup Page', () => {
           'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
         )
       ).toBeTruthy()
+
       expect(container).toMatchSnapshot()
     })
   })
