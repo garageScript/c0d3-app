@@ -76,7 +76,7 @@ exports[`Signup Page Should render error message on fail 1`] = `
               name="password"
               placeholder="Password"
               type="password"
-              value=""
+              value="fakepassword"
             />
             <button
               class="btn btn-primary btn-lg btn mb-3"
@@ -104,7 +104,6 @@ exports[`Signup Page Should render error message on fail 1`] = `
   </div>
 </div>
 `;
-<<<<<<< HEAD
 
 exports[`Signup Page Should render network error on fail 1`] = `
 <div>
@@ -182,7 +181,7 @@ exports[`Signup Page Should render network error on fail 1`] = `
               name="password"
               placeholder="Password"
               type="password"
-              value=""
+              value="fakepassword"
             />
             <button
               class="btn btn-primary btn-lg btn mb-3"
