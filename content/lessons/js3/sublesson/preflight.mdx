@@ -829,7 +829,7 @@ or removed, because the user could close the page at any time.
    local storage.
 3. When the page loads, set `todoList` to
    `JSON.parse(localStorage.getItem("storedTasks") || '[]')`
-   - Notice how we add `|| []''`so that if the `localStorage` is empty(user's
+   - Notice how we add `|| '[]'`so that if the `localStorage` is empty(user's
      first time on the page), we parse an empty array string instead. So
      `todoList` is set to an empty array.
 4. Run the `render` function after you set `todoList` when the page loads.
