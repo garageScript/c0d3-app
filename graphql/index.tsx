@@ -96,6 +96,7 @@ export type Lesson = {
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
   id: Scalars['Int']
+  modules?: Maybe<Array<Module>>
   order: Scalars['Int']
   slug: Scalars['String']
   title: Scalars['String']
@@ -712,6 +713,13 @@ export type GetAppQuery = {
       description: string
       order: number
     }>
+    modules?: Array<{
+      __typename?: 'Module'
+      id: number
+      name: string
+      content: string
+      order: number
+    }> | null
   }>
   session: {
     __typename?: 'Session'
@@ -1457,6 +1465,11 @@ export type LessonResolvers<
   docUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  modules?: Resolver<
+    Maybe<Array<ResolversTypes['Module']>>,
+    ParentType,
+    ContextType
+  >
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
@@ -3103,6 +3116,12 @@ export const GetAppDocument = gql`
         id
         title
         description
+        order
+      }
+      modules {
+        id
+        name
+        content
         order
       }
       chatUrl
@@ -5101,6 +5120,7 @@ export type LessonKeySpecifier = (
   | 'docUrl'
   | 'githubUrl'
   | 'id'
+  | 'modules'
   | 'order'
   | 'slug'
   | 'title'
@@ -5116,6 +5136,7 @@ export type LessonFieldPolicy = {
   docUrl?: FieldPolicy<any> | FieldReadFunction<any>
   githubUrl?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
+  modules?: FieldPolicy<any> | FieldReadFunction<any>
   order?: FieldPolicy<any> | FieldReadFunction<any>
   slug?: FieldPolicy<any> | FieldReadFunction<any>
   title?: FieldPolicy<any> | FieldReadFunction<any>
