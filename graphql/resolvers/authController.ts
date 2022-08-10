@@ -8,7 +8,10 @@ import type {
 } from '../../graphql'
 import prisma from '../../prisma'
 import { decode, encode } from '../../helpers/encoding'
-import { signupValidation } from '../../helpers/formValidation'
+import {
+  passwordValidation,
+  signupValidation
+} from '../../helpers/formValidation'
 import { sendSignupEmail } from '../../helpers/mail'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
@@ -92,9 +95,8 @@ export const signup = async (
   ctx: Context
 ) => {
   const { req } = ctx
-
   const { session } = req
-  const { firstName, lastName, username, email } = arg
+  const { firstName, lastName, username, email, password } = arg
 
   if (!session) {
     throw new Error('Session Error')
@@ -132,13 +134,22 @@ export const signup = async (
     throw new UserInputError('Email already exists')
   }
 
+  const validPw = await passwordValidation.isValid({ password })
+
+  if (!validPw) {
+    throw new UserInputError('Password does not meet criteria')
+  }
+
   const name = `${firstName} ${lastName}`
+
+  const hash = await bcrypt.hash(password, 10)
 
   let newUser = await prisma.user.create({
     data: {
       name,
       username,
-      email
+      email,
+      password: hash
     }
   })
 
@@ -168,6 +179,7 @@ export const signup = async (
       `)
   }
 
+  session.userId = newUser.id
   return {
     success: true,
     username: newUser.username,

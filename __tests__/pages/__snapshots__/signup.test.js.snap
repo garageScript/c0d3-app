@@ -70,6 +70,14 @@ exports[`Signup Page Should render errors on fail 1`] = `
               placeholder="Last name"
               value="fakelastname"
             />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="password"
+              name="password"
+              placeholder="Password"
+              type="password"
+              value="fakepassword"
+            />
             <button
               class="btn btn-primary btn-lg btn mb-3"
               data-testid="submit"
@@ -91,44 +99,6 @@ exports[`Signup Page Should render errors on fail 1`] = `
             Login
           </a>
         </p>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Signup Page Should render success component on success 1`] = `
-<div>
-  <div
-    class="row mt-5"
-  >
-    <div
-      class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-    >
-      <div
-        class="card-body text-center pt-5 pb-5"
-      >
-        <img
-          alt="Green circle with a checkmark inside."
-          class="mb-4"
-          height="100px"
-          src="/assets/curriculum/icons/checked.svg"
-          width="100px"
-        />
-        <h1
-          class="card-title h2 fw-bold mb-5"
-        >
-          Account created successfully!
-        </h1>
-        <p
-          class="card-text"
-        />
-        <a
-          class="btn btn-primary noUnderline"
-          href="/confirm/undefined"
-        >
-          Click here to set your password.
-        </a>
       </div>
     </div>
   </div>

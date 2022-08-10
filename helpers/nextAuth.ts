@@ -35,8 +35,7 @@ export const authorize =
           {
             username,
             email,
-            // Will be uncommented when signup takes password as argument
-            // password,
+            password,
             firstName,
             lastName
           },
