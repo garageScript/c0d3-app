@@ -29,6 +29,8 @@ const mockExercises = [
   }
 ]
 
+const options = ['option 1', 'option 2']
+
 describe('It should return all exercises', () => {
   test('Should return exercises', () => {
     prismaMock.exercise.findMany.mockResolvedValue(mockExercises)
@@ -43,12 +45,13 @@ describe('It should add exercises', () => {
       authorId: 1,
       description: "What's 2",
       answer: 'Number',
-      testable: false
+      testable: false,
+      options
     })
     expect(
       await addExercise(
         {},
-        { description: "What's 2", answer: 'Number' },
+        { description: "What's 2", answer: 'Number', options },
         AdminCtx
       )
     ).toEqual({
@@ -56,7 +59,8 @@ describe('It should add exercises', () => {
       authorId: 1,
       description: "What's 2",
       answer: 'Number',
-      testable: false
+      testable: false,
+      options
     })
   })
   test('it should check user id ', () => {
@@ -67,7 +71,8 @@ describe('It should add exercises', () => {
           description: 'testing',
           answer: 'Using functions to make pie',
           moduleId: 1,
-          testable: false
+          testable: false,
+          options
         },
         {
           req: {}
@@ -82,7 +87,8 @@ describe('It should update an exercise', () => {
     const exer = {
       id: 1,
       description: 'Whats 2',
-      answer: 2
+      answer: 2,
+      options
     }
 
     prismaMock.exercise.update.mockResolvedValue(exer)
@@ -90,7 +96,8 @@ describe('It should update an exercise', () => {
     await expect(updateExercise({}, exer, AdminCtx)).resolves.toEqual({
       id: 1,
       description: 'Whats 2',
-      answer: 2
+      answer: 2,
+      options
     })
   })
   test('It should check if user is signed in', () => {
@@ -101,7 +108,8 @@ describe('It should update an exercise', () => {
           answer: 'testing',
           description: 'Using functions to make pie',
           moduleId: 1,
-          testable: false
+          testable: false,
+          options
         },
         {
           req: {}
@@ -118,7 +126,8 @@ describe('It should update an exercise', () => {
           name: 'Using functions to make pie',
           lessonId: 1,
           testable: false,
-          authorId: 2
+          authorId: 2,
+          options
         },
         {
           req: { user: { id: 333 } }
