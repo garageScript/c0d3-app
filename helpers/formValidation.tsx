@@ -123,6 +123,12 @@ const resetPasswordValidation = Yup.object({
     .required(errorMessages.REQUIRED)
 })
 
+const exercisesValidation = Yup.object({
+  description: Yup.string().required(errorMessages.REQUIRED),
+  answer: Yup.string().required(errorMessages.REQUIRED),
+  explanation: Yup.string().required(errorMessages.REQUIRED)
+})
+
 export {
   alertValidation,
   challengeSchema,
@@ -131,5 +137,6 @@ export {
   loginValidation,
   passwordValidation,
   confirmPasswordValidation,
-  resetPasswordValidation
+  resetPasswordValidation,
+  exercisesValidation
 }
