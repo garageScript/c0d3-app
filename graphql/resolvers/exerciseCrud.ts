@@ -30,18 +30,10 @@ export const addExercise = async (
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
 
-  const { testStr, description, answer, moduleId, explanation, options } = args
+  const { testStr, description, answer, moduleId, explanation } = args
 
   return prisma.exercise.create({
-    data: {
-      authorId,
-      testStr,
-      description,
-      answer,
-      moduleId,
-      explanation,
-      options
-    },
+    data: { authorId, testStr, description, answer, moduleId, explanation },
     include: {
       author: true,
       module: true
@@ -57,8 +49,7 @@ export const updateExercise = async (
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
 
-  const { id, testStr, description, answer, moduleId, explanation, options } =
-    args
+  const { id, testStr, description, answer, moduleId, explanation } = args
 
   const exercise = await prisma.exercise.findUnique({
     where: {
@@ -78,7 +69,7 @@ export const updateExercise = async (
     where: {
       id
     },
-    data: { explanation, testStr, description, answer, moduleId, options },
+    data: { explanation, testStr, description, answer, moduleId },
     include: {
       author: true,
       module: true

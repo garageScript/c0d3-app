@@ -76,7 +76,6 @@ export default gql`
       answer: String!
       testStr: String
       explanation: String
-      options: [String!]!
     ): Exercise!
     updateExercise(
       id: Int!
@@ -85,7 +84,6 @@ export default gql`
       answer: String!
       testStr: String
       explanation: String
-      options: [String!]!
     ): Exercise!
     flagExercise(id: Int!, flagReason: String!): Exercise
     removeExerciseFlag(id: Int!): Exercise!
@@ -265,6 +263,5 @@ export default gql`
     flagReason: String
     flaggedBy: User
     flaggedById: Int
-    options: [String!]!
   }
 `
