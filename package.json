@@ -44,7 +44,7 @@
     "bcrypt": "5.0.0",
     "bootstrap": "5.2.0",
     "c0d3-diff": "^0.0.9",
-    "dayjs": "^1.11.4",
+    "dayjs": "^1.11.5",
     "discord.js": "^12.5.3",
     "express-session": "^1.17.3",
     "formik": "^2.2.8",
