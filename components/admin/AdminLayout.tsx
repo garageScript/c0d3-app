@@ -3,12 +3,11 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import Layout from '../../components/Layout'
 import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
-import Error, { StatusCode } from '../../components/Error'
+import ErrorCard, { StatusCode } from '../../components/ErrorCard'
 import { useRouter } from 'next/router'
 export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   data,
-  children,
-  title
+  children
 }) => {
   const router = useRouter()
   const { loading, error, session } = data
@@ -18,7 +17,7 @@ export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   }
 
   if (error) {
-    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} />
+    return <ErrorCard code={StatusCode.INTERNAL_SERVER_ERROR} />
   }
 
   if (!session) router.push('/login')
@@ -26,11 +25,7 @@ export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
 
   if (!isAdmin) {
-    return (
-      <Layout title={title}>
-        <h1>You must be admin to access this page</h1>
-      </Layout>
-    )
+    return <ErrorCard code={StatusCode.FORBIDDEN} />
   }
 
   return <Layout>{children}</Layout>

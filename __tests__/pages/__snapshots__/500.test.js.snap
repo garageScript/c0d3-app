@@ -75,46 +75,53 @@ exports[`500 Error Page should render 1`] = `
     <div
       class="container"
     >
+      <img
+        height="360"
+        src="/assets/errors/500.svg"
+        width="360"
+      />
       <div
-        class="row"
+        class="container_text_buttons"
       >
+        <h1>
+          500 Error!
+        </h1>
         <div
-          class="d-flex col-sm-3 align-items-center justify-content-center"
+          style="color: rgb(41, 41, 41); font-size: 1.25rem;"
         >
-          <div
-            class="text-center mt-3"
-          >
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
-            >
-              <strong>
-                Internal server error
-              </strong>
-            </div>
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1rem;"
-            />
-            <a
-              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-            >
-              <h3
-                class="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          Internal server error
         </div>
         <div
-          class="mb-3 col-sm-9"
+          class="container_buttons"
         >
-          <img
-            height="1200"
-            layout="responsive"
-            src="/assets/errors/500.svg"
-            width="1200"
-          />
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+          >
+            Curriculum
+          </a>
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="https://discord.com/invite/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
         </div>
       </div>
     </div>

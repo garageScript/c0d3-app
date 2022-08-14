@@ -1,5 +1,5 @@
 import React from 'react'
-import Error, { StatusCode } from '../components/Error'
+import ErrorCard, { StatusCode } from '../components/ErrorCard'
 export default function NotFound() {
-  return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
+  return <ErrorCard code={StatusCode.NOT_FOUND} />
 }

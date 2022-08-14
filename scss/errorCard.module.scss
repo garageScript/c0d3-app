@@ -1,0 +1,41 @@
+@use './colors.module';
+
+.container {
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter;
+  padding: 30px 53px;
+  font-size: 75px;
+  font-weight: bold;
+}
+
+.container_text_buttons {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0px;
+}
+
+.container_buttons {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image {
+  margin-top: 15px;
+  width: 400px;
+  height: 400px;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.07);
+}
+
+.button {
+  min-width: 180px;
+}
