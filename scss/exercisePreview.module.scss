@@ -1,10 +1,14 @@
 @use 'colors.module.scss';
 
-.exercise__options {
+.exercise__answer {
   max-height: 500px;
 }
 
-.exercise__pre__bg {
+pre {
+  margin: 0 !important;
+}
+
+.exercise__bg {
   background: colors.$bg-light-gray;
 }
 
