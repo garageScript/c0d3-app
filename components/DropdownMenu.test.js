@@ -2,6 +2,9 @@ import React from 'react'
 import { render, fireEvent, screen, waitFor } from '@testing-library/react'
 import { DropdownMenu } from './DropdownMenu'
 
+// Imported to be able to use expect(...).toBeInTheDocument()
+import '@testing-library/jest-dom'
+
 const dropdownMenuItems = [
   { title: 'Lessons', path: '/admin/lessons', as: 'button' },
   null,
@@ -20,6 +23,12 @@ describe('MdInput Component', () => {
 
     expect(div).toBeTruthy
     expect(container).toMatchSnapshot()
+  })
+
+  test('Should display default title when no title is passed', () => {
+    const { queryByText } = render(<DropdownMenu items={dropdownMenuItems} />)
+
+    expect(queryByText('None')).toBeInTheDocument()
   })
 
   test('Should change value of testBtnOnClick upon click', () => {
