@@ -79,43 +79,31 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                   Type
                 </span>
                 <div
-                  class="d-none d-lg-block"
+                  class="dropdown"
                 >
-                  <div
-                    class="dropdown"
+                  <button
+                    aria-expanded="false"
+                    class="dropdown btn btn-primary"
+                    id="dropdown-lesson"
+                    type="button"
                   >
-                    <button
-                      aria-expanded="false"
-                      class="dropdown-toggle title title-none"
-                      type="button"
+                    info
+                    <svg
+                      aria-hidden="true"
+                      class="octicon octicon-chevron-right"
+                      fill="currentColor"
+                      height="17"
+                      role="img"
+                      style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                      viewBox="0 0 16 16"
+                      width="17"
                     >
-                      info
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="d-lg-none"
-                >
-                  <div
-                    class="text-center py-2 px-4"
-                  >
-                    <button
-                      class="dropdown-item"
-                      data-rr-ui-dropdown-item=""
-                    >
-                      info
-                    </button>
-                  </div>
-                  <div
-                    class="text-center py-2 px-4"
-                  >
-                    <button
-                      class="dropdown-item"
-                      data-rr-ui-dropdown-item=""
-                    >
-                      urgent
-                    </button>
-                  </div>
+                      <path
+                        d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
               <div
@@ -277,43 +265,31 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                   Type
                 </span>
                 <div
-                  class="d-none d-lg-block"
+                  class="dropdown"
                 >
-                  <div
-                    class="dropdown"
+                  <button
+                    aria-expanded="false"
+                    class="dropdown btn btn-primary"
+                    id="dropdown-lesson"
+                    type="button"
                   >
-                    <button
-                      aria-expanded="false"
-                      class="dropdown-toggle title title-none"
-                      type="button"
+                    info
+                    <svg
+                      aria-hidden="true"
+                      class="octicon octicon-chevron-right"
+                      fill="currentColor"
+                      height="17"
+                      role="img"
+                      style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                      viewBox="0 0 16 16"
+                      width="17"
                     >
-                      info
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="d-lg-none"
-                >
-                  <div
-                    class="text-center py-2 px-4"
-                  >
-                    <button
-                      class="dropdown-item"
-                      data-rr-ui-dropdown-item=""
-                    >
-                      info
-                    </button>
-                  </div>
-                  <div
-                    class="text-center py-2 px-4"
-                  >
-                    <button
-                      class="dropdown-item"
-                      data-rr-ui-dropdown-item=""
-                    >
-                      urgent
-                    </button>
-                  </div>
+                      <path
+                        d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
               <div
