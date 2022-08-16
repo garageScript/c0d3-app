@@ -7,15 +7,14 @@ import {
 } from '../../../../graphql'
 import { formChange } from '../../../../helpers/formChange'
 import { FormCard, MD_INPUT, Option, TextField } from '../../../FormCard'
-import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from './adminLessonInputs.module.scss'
-import { Spinner } from 'react-bootstrap'
 import { get } from 'lodash'
 import {
   ApolloError,
   OperationVariables,
   ApolloQueryResult
 } from '@apollo/client'
+import QueryInfo from '../../../QueryInfo'
 
 type Module = { id: number; name: string; content: string; order: number }
 
@@ -148,49 +147,31 @@ const AdminModuleInputs = ({
     }
   }
 
-  const QueryStateMessage = () => {
-    if (loading) {
-      return (
-        <div className={styles.loading}>
-          <Spinner animation="grow" size="sm" />
-          <span>Adding the module...</span>
-        </div>
-      )
-    }
-
-    if (errorMsg) {
-      return (
-        <div className={styles.error}>
-          <AlertFillIcon />
-          <span>Failed to add the module: {errorMsg}</span>
-        </div>
-      )
-    }
-
-    if (data) {
-      const updateModule = get(data, 'updateModule')
-      const addModule = get(data, 'addModule')
-
-      return (
-        <div className={styles.success}>
-          <CheckCircleIcon />
-          <span>
-            {updateModule ? 'Updated' : 'Added'} the module{' '}
-            <strong>
-              {get(addModule, 'name') || get(updateModule, 'name') || ''}
-            </strong>{' '}
-            successfully!
-          </span>
-        </div>
-      )
-    }
-
-    return <></>
-  }
-
   return (
     <div className={styles.container}>
-      <QueryStateMessage />
+      <QueryInfo
+        data={data}
+        loading={loading}
+        error={errorMsg}
+        texts={{
+          loading: 'Adding the module...',
+          errorTitle: 'Failed to add the module'
+        }}
+        DataMessage={() => {
+          const updateModule = get(data, 'updateModule')
+          const addModule = get(data, 'addModule')
+
+          return (
+            <span>
+              {updateModule ? 'Updated' : 'Added'} the module{' '}
+              <strong>
+                {get(addModule, 'name') || get(updateModule, 'name') || ''}
+              </strong>{' '}
+              successfully!
+            </span>
+          )
+        }}
+      />
       <FormCard
         title={name.value || title || 'Untitled'}
         values={formOptions}
