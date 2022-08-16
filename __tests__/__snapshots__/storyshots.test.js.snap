@@ -1,5 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Component/QueryInfo Basic 1`] = `
+<div
+  className="success"
+>
+  <svg
+    aria-hidden="true"
+    className="octicon octicon-check-circle"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z\\"></path>",
+      }
+    }
+    fill="currentColor"
+    height={16}
+    role="img"
+    style={
+      Object {
+        "display": "inline-block",
+        "overflow": "visible",
+        "userSelect": "none",
+        "verticalAlign": "text-bottom",
+      }
+    }
+    viewBox="0 0 16 16"
+    width={16}
+  />
+  <span>
+    Updated
+     the module
+     
+    <strong>
+      Functions in JS
+    </strong>
+     
+    successfully!
+  </span>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo With Error 1`] = `
+<div
+  className="error"
+>
+  <svg
+    aria-hidden="true"
+    className="octicon octicon-alert-fill"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
+      }
+    }
+    fill="currentColor"
+    height={16}
+    role="img"
+    style={
+      Object {
+        "display": "inline-block",
+        "overflow": "visible",
+        "userSelect": "none",
+        "verticalAlign": "text-bottom",
+      }
+    }
+    viewBox="0 0 12 12"
+    width={16}
+  />
+  <span>
+    Failed to find the lesson because of
+    : 
+    JavaScript is not related to Java!
+  </span>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo With Loading 1`] = `
+<div
+  className="loading"
+>
+  <div
+    className="spinner-grow spinner-grow-sm"
+  />
+  <span>
+    Sending the request...
+  </span>
+</div>
+`;
+
 exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 <div
   className="additional-resources__container ms-4 d-flex flex-column justify-content-around"
