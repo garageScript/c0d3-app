@@ -165,7 +165,7 @@ const AdminModuleInputs = ({
             <span>
               {updateModule ? 'Updated' : 'Added'} the module{' '}
               <strong>
-                {get(addModule, 'name') || get(updateModule, 'name') || ''}
+                {get(addModule, 'name') || get(updateModule, 'name')}
               </strong>{' '}
               successfully!
             </span>
