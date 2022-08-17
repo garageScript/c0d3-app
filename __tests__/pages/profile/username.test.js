@@ -3,7 +3,8 @@ import {
   render,
   waitForElementToBeRemoved,
   screen,
-  waitFor
+  waitFor,
+  findByText
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../graphql/queries/getApp'
@@ -609,13 +610,13 @@ describe('user profile test', () => {
       }
     ]
 
-    const { findByRole } = render(
+    const { findByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
 
-    const element = await findByRole('heading', { name: /Back/i })
+    const element = await findByText(/Home/i)
     expect(element).toBeTruthy()
   })
 })

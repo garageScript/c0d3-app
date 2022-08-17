@@ -1,6 +1,6 @@
 import React from 'react'
-import ErrorCard, { StatusCode } from '../components/ErrorCard'
+import Error, { StatusCode } from '../components/Error'
 
 export default function InternalServerError() {
-  return <ErrorCard code={StatusCode.INTERNAL_SERVER_ERROR} />
+  return <Error code={StatusCode.INTERNAL_SERVER_ERROR} />
 }

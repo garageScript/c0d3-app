@@ -36,7 +36,7 @@ describe('Curriculum Page', () => {
         <Curriculum />
       </MockedProvider>
     )
-    const element = await screen.findByText(/Internal server error/i)
+    const element = await screen.findByText(/Bad data/i)
     expect(element).toBeTruthy()
   })
 

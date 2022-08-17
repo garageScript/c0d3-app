@@ -98,29 +98,13 @@ exports[`404 Error Page should render 1`] = `
             class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
             href="/curriculum"
           >
-            Curriculum
-          </a>
-          <a
-            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
+            Home
           </a>
           <a
             class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
             href="/docs/learn"
           >
             Learn
-          </a>
-          <a
-            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
-            href="https://discord.com/invite/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
           </a>
         </div>
       </div>
