@@ -3,8 +3,8 @@ import React from 'react'
 import { Spinner } from 'react-bootstrap'
 import styles from '../../scss/queryInfo.module.scss'
 
-type QueryInfo = {
-  data: any
+type QueryInfo<T> = {
+  data: T
   loading: boolean
   error: string
   texts: {
@@ -14,7 +14,13 @@ type QueryInfo = {
   DataMessage?: () => JSX.Element
 }
 
-const QueryInfo = ({ data, loading, error, texts, DataMessage }: QueryInfo) => {
+const QueryInfo = <T,>({
+  data,
+  loading,
+  error,
+  texts,
+  DataMessage
+}: QueryInfo<T>) => {
   if (loading) {
     return (
       <div className={styles.loading}>
