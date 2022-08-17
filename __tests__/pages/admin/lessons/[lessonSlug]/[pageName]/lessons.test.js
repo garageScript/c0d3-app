@@ -1,6 +1,9 @@
+jest.mock('@sentry/react')
+import * as Sentry from '@sentry/react'
+
 import React from 'react'
-import Modules from '../../../../../../pages/admin/lessons/[lessonSlug]/[pageName]/index'
-import { act, render, screen, waitFor } from '@testing-library/react'
+import LessonPage from '../../../../../../pages/admin/lessons/[lessonSlug]/[pageName]/index'
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import dummyLessonData from '../../../../../../__dummy__/lessonData'
 import dummySessionData from '../../../../../../__dummy__/sessionData'
 import dummyAlertData from '../../../../../../__dummy__/alertData'
@@ -9,6 +12,7 @@ import GET_APP from '../../../../../../graphql/queries/getApp'
 import { MockedProvider } from '@apollo/client/testing'
 import { gql } from '@apollo/client'
 import userEvent from '@testing-library/user-event'
+import UPDATE_LESSON from '../../../../../../graphql/queries/updateLesson'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
@@ -92,11 +96,45 @@ const modulesQueryMock = {
   }
 }
 
-const mocks = [getAppQueryMock, modulesQueryMock]
+const js1 = {
+  id: 2,
+  title: 'Functions & JavaScript',
+  description:
+    'Learn how to solve simple algorithm problems recursively with the following exercises. ',
+  docUrl:
+    'https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184',
+  githubUrl: 'https://git.c0d3.com/song/curriculum',
+  videoUrl:
+    'https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1',
+  order: 1,
+  slug: 'js1',
+  chatUrl: 'https://chat.c0d3.com/c0d3/channels/js2-arrays'
+}
+
+const updateLessonMutationMock = {
+  request: { query: UPDATE_LESSON, variables: js1 },
+  result: jest.fn(() => ({
+    data: {
+      updateLesson: js1
+    }
+  }))
+}
+
+const updateLessonMutationMockWithError = {
+  request: { query: UPDATE_LESSON, variables: js1 },
+  error: new Error('Error')
+}
+
+const mocks = [getAppQueryMock, modulesQueryMock, updateLessonMutationMock]
+const mocksWithError = [
+  getAppQueryMock,
+  modulesQueryMock,
+  updateLessonMutationMockWithError
+]
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 const useRouterObj = {
-  asPath: 'c0d3.com/admin/lessons/1/modules',
+  asPath: 'c0d3.com/admin/lessons/js1/modules',
   query: {
     pageName: 'modules',
     lessonSlug: 'js1'
@@ -104,15 +142,15 @@ const useRouterObj = {
   push: jest.fn()
 }
 
-useRouter.mockImplementation(() => useRouterObj)
-
 describe('modules', () => {
-  it('Should render modules', async () => {
+  beforeAll(() => useRouter.mockImplementation(() => useRouterObj))
+
+  it('Should render modules page', async () => {
     expect.assertions(2)
 
     render(
       <MockedProvider mocks={mocks}>
-        <Modules />
+        <LessonPage />
       </MockedProvider>
     )
 
@@ -132,7 +170,7 @@ describe('modules', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <Modules />
+        <LessonPage />
       </MockedProvider>
     )
 
@@ -149,7 +187,7 @@ describe('modules', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <Modules />
+        <LessonPage />
       </MockedProvider>
     )
 
@@ -178,7 +216,7 @@ describe('modules', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <Modules />
+        <LessonPage />
       </MockedProvider>
     )
 
@@ -198,7 +236,7 @@ describe('modules', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <Modules />
+        <LessonPage />
       </MockedProvider>
     )
 
@@ -215,7 +253,7 @@ describe('modules', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <Modules />
+        <LessonPage />
       </MockedProvider>
     )
 
@@ -244,7 +282,7 @@ describe('modules', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <Modules />
+        <LessonPage />
       </MockedProvider>
     )
 
@@ -254,5 +292,115 @@ describe('modules', () => {
     expect(screen.getByText('MODULES').className).not.toEqual(
       'lessons_tabsNav__nav__item'
     )
+  })
+})
+
+describe('introduction', () => {
+  const useRouterIntroduction = {
+    ...useRouterObj,
+    asPath: 'c0d3.com/admin/lessons/js1/introduction',
+    query: {
+      ...useRouterObj.query,
+      pageName: 'introduction'
+    }
+  }
+
+  beforeAll(() => useRouter.mockImplementation(() => useRouterIntroduction))
+
+  const randomTitle = 'Functions & JavaScript'
+
+  const fillOutIntroductionForms = async () => {
+    const titleField = screen.getByTestId('input1')
+
+    // the type event needs to be delayed so the Formik validations finish
+    await userEvent.type(titleField, randomTitle, { delay: 1 })
+  }
+
+  it('Should render introduction', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await fillOutIntroductionForms()
+
+    await waitFor(() =>
+      // input1 is the Title
+      expect(screen.getByTestId('input1').value).toBe(randomTitle)
+    )
+  })
+
+  it('Should update lesson (submit)', async () => {
+    expect.hasAssertions()
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await fillOutIntroductionForms()
+    fireEvent.click(screen.queryByText('Save changes'))
+
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await waitFor(() => {
+      expect(mocks[2].result).toBeCalled()
+    })
+  })
+
+  it('Should not update lesson on invalid inputs', async () => {
+    expect.hasAssertions()
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    const titleInput = screen.getByTestId('input1')
+    await userEvent.clear(titleInput)
+
+    fireEvent.click(screen.queryByText('Save changes'))
+
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await waitFor(() => {
+      expect(screen.queryByText('Required')).toBeInTheDocument()
+    })
+  })
+
+  it('Should capture error with Sentry', async () => {
+    expect.hasAssertions()
+
+    render(
+      <MockedProvider mocks={mocksWithError}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await fillOutIntroductionForms()
+    fireEvent.click(screen.queryByText('Save changes'))
+
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await waitFor(() => {
+      expect(Sentry.captureException).toBeCalled()
+    })
   })
 })

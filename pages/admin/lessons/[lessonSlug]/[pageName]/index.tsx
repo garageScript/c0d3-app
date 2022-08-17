@@ -1,7 +1,13 @@
+import React, { useEffect, useMemo, useState } from 'react'
+import * as Sentry from '@sentry/react'
 import { gql, useQuery } from '@apollo/client'
-import { GetAppProps, withGetApp } from '../../../../../graphql'
+import {
+  GetAppProps,
+  Lesson,
+  useUpdateLessonMutation,
+  withGetApp
+} from '../../../../../graphql'
 import { toUpper } from 'lodash'
-import React, { useMemo, useState } from 'react'
 import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
 import AdminLessonInputs from '../../../../../components/admin/lessons/AdminLessonInputs'
@@ -13,6 +19,14 @@ import { AdminLayout } from '../../../../../components/admin/AdminLayout'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { compose, filter, get, sortBy } from 'lodash/fp'
+import { FormCard } from '../../../../../components/FormCard'
+import { formChange } from '../../../../../helpers/formChange'
+import { lessonSchema } from '../../../../../helpers/formValidation'
+import {
+  getPropertyArr,
+  errorCheckAllFields,
+  makeGraphqlVariable
+} from '../../../../../helpers/admin/adminHelpers'
 
 const MAIN_PATH = '/admin/lessons'
 
@@ -39,25 +53,75 @@ type Module = {
 }
 type Modules = Module[]
 
-type ContentProps = {
-  pageName?: string | string[]
+const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
+  const [updateLesson] = useUpdateLessonMutation()
+
+  const [formOptions, setFormOptions] = useState(
+    getPropertyArr(lesson, ['challenges', '__typename'])
+  )
+
+  // Update the Inputs values when the lesson changes
+  useEffect(
+    () => setFormOptions(getPropertyArr(lesson, ['challenges', '__typename'])),
+    [lesson]
+  )
+
+  const handleChange = async (value: string, propertyIndex: number) => {
+    await formChange(
+      value,
+      propertyIndex,
+      formOptions,
+      setFormOptions,
+      lessonSchema
+    )
+  }
+
+  const onClick = async () => {
+    try {
+      const newProperties = [...formOptions]
+      const valid = await errorCheckAllFields(newProperties, lessonSchema)
+
+      if (!valid) {
+        // Update the forms so the error messages appear
+        setFormOptions(newProperties)
+        return
+      }
+
+      await updateLesson(makeGraphqlVariable(formOptions))
+    } catch (err) {
+      // TODO: Display error with QueryStateMessage #2181
+      Sentry.captureException(err)
+    }
+  }
+
+  return (
+    <div>
+      <h4>Lesson Info</h4>
+      <div>
+        <FormCard
+          noBg
+          values={formOptions}
+          onSubmit={{
+            title: 'Save changes',
+            onClick
+          }}
+          onChange={handleChange}
+          newBtn
+        />
+      </div>
+    </div>
+  )
+}
+
+type ModulesPageProps = {
   modules: Modules
   lessonId: number
   refetch: Props['refetch']
 }
-
-const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
+const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const onAddItem = () => setSelectedIndex(-1)
   const onSelect = (item: Omit<Module, 'order'>) => setSelectedIndex(item.id)
-
-  if (pageName !== 'modules') {
-    return (
-      <h1>
-        For now, you can only access <code>/modules</code> page
-      </h1>
-    )
-  }
 
   return (
     <div className={styles.container__modulesPanel}>
@@ -79,6 +143,29 @@ const Content = ({ pageName, modules, lessonId, refetch }: ContentProps) => {
   )
 }
 
+type ContentProps = {
+  pageName?: string | string[]
+  modules: Modules
+  lessonId: number
+  refetch: Props['refetch']
+  lesson: Lesson
+}
+const Content = ({
+  pageName,
+  modules,
+  lessonId,
+  refetch,
+  lesson
+}: ContentProps) => {
+  if (pageName === 'modules') {
+    return (
+      <ModulesPage lessonId={lessonId} refetch={refetch} modules={modules} />
+    )
+  }
+
+  return <IntroductionPage lesson={lesson} />
+}
+
 const Lessons = ({ data }: GetAppProps) => {
   const router = useRouter()
   const { pageName, lessonSlug } = router.query
@@ -92,9 +179,7 @@ const Lessons = ({ data }: GetAppProps) => {
 
       if (lessonFromParam)
         return {
-          title: lessonFromParam.title,
-          slug: lessonFromParam.slug,
-          id: lessonFromParam.id
+          ...lessonFromParam
         }
     }
 
@@ -150,6 +235,10 @@ const Lessons = ({ data }: GetAppProps) => {
               {
                 tabName: 'modules',
                 urlPageName: 'modules'
+              },
+              {
+                tabName: 'introduction',
+                urlPageName: 'introduction'
               }
             ]}
             Component={LessonNav}
@@ -161,6 +250,7 @@ const Lessons = ({ data }: GetAppProps) => {
             modules={filteredModules}
             lessonId={lesson.id}
             refetch={refetch}
+            lesson={lesson as Lesson}
           />
         </section>
       </main>
