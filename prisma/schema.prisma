@@ -183,7 +183,6 @@ model Exercise {
   moduleId    Int
   description String
   answer      String
-  options     String[]
   testStr     String?
   explanation String?
   flagReason  String?

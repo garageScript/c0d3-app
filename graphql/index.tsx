@@ -84,7 +84,6 @@ export type Exercise = {
   flaggedById?: Maybe<Scalars['Int']>
   id: Scalars['Int']
   module: Module
-  options: Array<Scalars['String']>
   testStr?: Maybe<Scalars['String']>
 }
 
@@ -169,7 +168,6 @@ export type MutationAddExerciseArgs = {
   description: Scalars['String']
   explanation?: InputMaybe<Scalars['String']>
   moduleId: Scalars['Int']
-  options: Array<Scalars['String']>
   testStr?: InputMaybe<Scalars['String']>
 }
 
@@ -283,7 +281,6 @@ export type MutationUpdateExerciseArgs = {
   explanation?: InputMaybe<Scalars['String']>
   id: Scalars['Int']
   moduleId: Scalars['Int']
-  options: Array<Scalars['String']>
   testStr?: InputMaybe<Scalars['String']>
 }
 
@@ -1441,7 +1438,6 @@ export type ExerciseResolvers<
   flaggedById?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
-  options?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>
   testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
@@ -1514,7 +1510,7 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationAddExerciseArgs,
-      'answer' | 'description' | 'moduleId' | 'options'
+      'answer' | 'description' | 'moduleId'
     >
   >
   addModule?: Resolver<
@@ -1654,7 +1650,7 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationUpdateExerciseArgs,
-      'answer' | 'description' | 'id' | 'moduleId' | 'options'
+      'answer' | 'description' | 'id' | 'moduleId'
     >
   >
   updateLesson?: Resolver<
@@ -5081,7 +5077,6 @@ export type ExerciseKeySpecifier = (
   | 'flaggedById'
   | 'id'
   | 'module'
-  | 'options'
   | 'testStr'
   | ExerciseKeySpecifier
 )[]
@@ -5096,7 +5091,6 @@ export type ExerciseFieldPolicy = {
   flaggedById?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   module?: FieldPolicy<any> | FieldReadFunction<any>
-  options?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type LessonKeySpecifier = (
