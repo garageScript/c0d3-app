@@ -1406,7 +1406,8 @@ When the function is running, `this` refers to the object that comes before `.`.
 ```jsx
 Array.prototype.last = function () {
   return this[this.length - 1]
-}[(1, 2, 3)].last() // When the last function is run, 'this' refers to [1,2,3]
+};
+[1, 2, 3].last() // When the last function is run, 'this' refers to [1,2,3]
 const jackfruit = [1, 2, 3].last() // What is jackfruit?
 ```
 
