@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from '../scss/exercisePreview.module.scss'
+import Markdown from 'markdown-to-jsx'
 
 type Exercise = {
-  question: string
-  options: string[]
+  description: string
+  answer: string
+  explanation: string
 }
 
 type Props = {
@@ -18,24 +20,23 @@ const ExercisePreview: React.FC<Props> = ({ exercise, classes }) => {
 
   return (
     <div className={`card shadow-sm ${classesList}`}>
-      <div className="card-body pt-3 pb-3 ">
-        <p className="card-text">
-          <p className={`${styles['exercise__p__bold']}`}>Problem</p>
-          <pre className={`${styles['exercise__pre__bg']} rounded px-4 py-4`}>
-            {exercise.question}
-          </pre>
-          <p className={`${styles['exercise__p__bold']}`}>Choose an answer</p>
-          <div className="excercise__options overflow-auto">
-            {exercise.options.map((option, index) => (
-              <pre
-                key={index}
-                className={`${styles['exercise__pre__bg']} ${styles['exercise__pre__answer']} rounded px-4 py-4`}
-              >
-                {option}
-              </pre>
-            ))}
+      <div className="card-body pb-3 ">
+        <div className="card-text">
+          <p className={`${styles['exercise__p__bold']} my-4`}>Problem</p>
+          <div className={`${styles['exercise__bg']} rounded px-4 py-4`}>
+            <Markdown>{exercise.description}</Markdown>
           </div>
-        </p>
+          <p className={`${styles['exercise__p__bold']} my-4`}>Answer</p>
+          <div className={`${styles.excercise__answer} overflow-auto`}>
+            <div className={`${styles['exercise__bg']} rounded px-4 py-4`}>
+              {exercise.answer}
+            </div>
+          </div>
+          <p className={`${styles['exercise__p__bold']} my-4`}>Explanation</p>
+          <div className={`${styles['exercise__bg']} rounded px-4 py-4`}>
+            <Markdown>{exercise.explanation}</Markdown>
+          </div>
+        </div>
       </div>
     </div>
   )
