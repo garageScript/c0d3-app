@@ -1,6 +1,6 @@
 import React from 'react'
 import QueryInfo from './'
-import { render, screen } from '@testing-library/react'
+import { render, screen, act, waitFor } from '@testing-library/react'
 
 // Imported to be able to use .toBeInTheDocument()
 import '@testing-library/jest-dom'
@@ -11,6 +11,7 @@ describe('QueryInfo component', () => {
 
     render(
       <QueryInfo
+        hide={false}
         data={{
           name: 'noob'
         }}
@@ -32,6 +33,7 @@ describe('QueryInfo component', () => {
 
     render(
       <QueryInfo
+        hide={false}
         data={{
           name: 'noob'
         }}
@@ -53,6 +55,7 @@ describe('QueryInfo component', () => {
 
     render(
       <QueryInfo
+        hide={false}
         data={{
           name: 'noob'
         }}
@@ -76,6 +79,7 @@ describe('QueryInfo component', () => {
 
     render(
       <QueryInfo
+        hide={false}
         data={{
           name: 'noob'
         }}
@@ -98,6 +102,7 @@ describe('QueryInfo component', () => {
 
     render(
       <QueryInfo
+        hide={false}
         data={undefined}
         loading={false}
         error={''}
@@ -112,5 +117,65 @@ describe('QueryInfo component', () => {
       screen.queryByText('Submitted the item successfully!')
     ).not.toBeInTheDocument()
     expect(screen.queryByText('Loading message...')).not.toBeInTheDocument()
+  })
+
+  it('should hide successful message after 4 seconds', async () => {
+    expect.assertions(1)
+
+    jest.useFakeTimers()
+    jest.spyOn(global, 'setTimeout')
+
+    render(
+      <QueryInfo
+        data={{
+          name: 'noob'
+        }}
+        loading={false}
+        error={''}
+        texts={{
+          loading: 'Loading message...',
+          errorTitle: 'An error occurred because of'
+        }}
+        DataMessage={() => <span>Submitted successfully</span>}
+      />
+    )
+
+    act(() => jest.advanceTimersByTime(4000))
+
+    await waitFor(() => {
+      expect(
+        screen.queryByText('Submitted successfully')
+      ).not.toBeInTheDocument()
+    })
+  })
+
+  it('should hide error message after 4 seconds', async () => {
+    expect.assertions(1)
+
+    jest.useFakeTimers()
+    jest.spyOn(global, 'setTimeout')
+
+    render(
+      <QueryInfo
+        data={{
+          name: 'noob'
+        }}
+        loading={false}
+        error={'Missing arguments'}
+        texts={{
+          loading: 'Loading message...',
+          errorTitle: 'An error occurred because of'
+        }}
+        DataMessage={() => <span>Submitted successfully</span>}
+      />
+    )
+
+    act(() => jest.advanceTimersByTime(4000))
+
+    await waitFor(() => {
+      expect(
+        screen.queryByText('An error occurred because of: Missing arguments')
+      ).not.toBeInTheDocument()
+    })
   })
 })

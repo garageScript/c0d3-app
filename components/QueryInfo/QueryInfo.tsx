@@ -1,5 +1,5 @@
 import { CheckCircleIcon, AlertFillIcon } from '@primer/octicons-react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
 import styles from '../../scss/queryInfo.module.scss'
 
@@ -12,6 +12,7 @@ type QueryInfo<T> = {
     errorTitle: string
   }
   DataMessage?: () => JSX.Element
+  hide?: boolean
 }
 
 const QueryInfo = <T,>({
@@ -19,8 +20,13 @@ const QueryInfo = <T,>({
   loading,
   error,
   texts,
-  DataMessage
+  DataMessage,
+  hide = true
 }: QueryInfo<T>) => {
+  const [x, setX] = useState(false)
+
+  useEffect(() => setX(false), [data, error])
+
   if (loading) {
     return (
       <div className={styles.loading}>
@@ -30,7 +36,11 @@ const QueryInfo = <T,>({
     )
   }
 
+  if (x) return <></>
+
   if (error) {
+    if (hide) setTimeout(() => setX(true), 4000)
+
     return (
       <div className={styles.error}>
         <AlertFillIcon />
@@ -42,6 +52,8 @@ const QueryInfo = <T,>({
   }
 
   if (data) {
+    if (hide) setTimeout(() => setX(true), 4000)
+
     return (
       <div className={styles.success}>
         <CheckCircleIcon />
