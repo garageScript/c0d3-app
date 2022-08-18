@@ -5973,49 +5973,76 @@ exports[`Storyshots Components/ExercisePreview Basic 1`] = `
   className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-5 m-auto px-md-3 border-0 rounded"
 >
   <div
-    className="card-body pt-3 pb-3 "
+    className="card-body pb-3 "
   >
-    <p
+    <div
       className="card-text"
     >
       <p
-        className="exercise__p__bold"
+        className="exercise__p__bold my-4"
       >
         Problem
       </p>
-      <pre
-        className="exercise__pre__bg rounded px-4 py-4"
+      <div
+        className="exercise__bg rounded px-4 py-4"
       >
-        a = 1;
-b = 2;
-a = b;
+        <div>
+          <p>
+            Description here
+          </p>
+          <pre>
+            <code
+              className="lang-jsx"
+            >
+              a = 1; 
+b = 2; 
+a = b; 
 // What is a?
-      </pre>
+            </code>
+          </pre>
+        </div>
+      </div>
       <p
-        className="exercise__p__bold"
+        className="exercise__p__bold my-4"
       >
-        Choose an answer
+        Answer
       </p>
       <div
-        className="excercise__options overflow-auto"
+        className="excercise__answer overflow-auto"
       >
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+        <div
+          className="exercise__bg rounded px-4 py-4"
         >
           1
-        </pre>
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-        >
-          2
-        </pre>
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-        >
-          b
-        </pre>
+        </div>
       </div>
-    </p>
+      <p
+        className="exercise__p__bold my-4"
+      >
+        Explanation
+      </p>
+      <div
+        className="exercise__bg rounded px-4 py-4"
+      >
+        <span>
+          <code>
+            a
+          </code>
+           is getting assigned 
+          <code>
+            1
+          </code>
+          , so 
+          <code>
+            a
+          </code>
+           is 
+          <code>
+            1
+          </code>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
