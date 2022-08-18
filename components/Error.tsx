@@ -14,7 +14,7 @@ export enum StatusCode {
 
 type ErrorProps = {
   code: StatusCode
-  message?: string | undefined
+  message?: string
 }
 
 const errorTitle: Readonly<{ [key in StatusCode]: string }> = {
@@ -30,7 +30,7 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
         <Image src={`/assets/errors/${code}.svg`} height={360} width={360} />
         <div className={styles.container_text_buttons}>
           <h1>{code + ' Error!'}</h1>
-          <Text size="lg">{message ? message : errorTitle[code]}</Text>
+          <Text size="lg">{message || errorTitle[code]}</Text>
 
           <div className={styles.container_buttons}>
             <NavLink
