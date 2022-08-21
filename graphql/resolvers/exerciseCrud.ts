@@ -10,7 +10,7 @@ import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
 import { isAdmin } from '../../helpers/isAdmin'
 import { get } from 'lodash'
-import { withUserContainer } from '../../helpers/withUserContainer'
+import { withUserContainer } from '../../containers/withUserContainer'
 
 export const exercises = () => {
   return prisma.exercise.findMany({

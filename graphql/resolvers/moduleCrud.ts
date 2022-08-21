@@ -7,7 +7,7 @@ import prisma from '../../prisma'
 import { Context } from '../../@types/helpers'
 import { isAdminOrThrow } from '../../helpers/isAdmin'
 import type { Module } from '@prisma/client'
-import { withUserContainer } from '../../helpers/withUserContainer'
+import { withUserContainer } from '../../containers/withUserContainer'
 
 export const modules = (): Promise<Module[]> => {
   return prisma.module.findMany({
