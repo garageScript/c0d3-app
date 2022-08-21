@@ -2,11 +2,18 @@
   padding: 0.75rem 1.25rem;
   border-radius: 0.25rem;
   margin-bottom: 0;
-  .alert-dismiss {
-    background: none;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    padding: 0;
-  }
+}
+
+.alert-dismiss {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.info_image {
+  // Change the white bg to purple
+  filter: brightness(0) saturate(100%) invert(17%) sepia(19%) saturate(2978%)
+    hue-rotate(216deg) brightness(101%) contrast(114%);
 }
