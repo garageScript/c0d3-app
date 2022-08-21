@@ -908,18 +908,22 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
 
 exports[`Storyshots Components/Alert Info 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 bg-primary text-white"
+  className="alert d-flex justify-content-between mt-3 alert alert-primary"
   role="alert"
 >
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/icon-tip.svg"
-      width={24}
-    />
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
     Set up your computer to submit challenges. 
   </div>
 </div>
@@ -927,21 +931,25 @@ exports[`Storyshots Components/Alert Info 1`] = `
 
 exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 bg-primary text-white"
+  className="alert d-flex justify-content-between mt-3 alert alert-primary"
   role="alert"
 >
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/icon-tip.svg"
-      width={24}
-    />
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
     Set up your computer to submit challenges. 
     <a
-      className="text-white noUnderline"
+      className="alert-link noUnderline"
       href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
       rel="noopener noreferrer"
       target="_blank"
@@ -950,13 +958,16 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
     </a>
   </div>
   <button
-    className="alert-dismiss"
+    className="info_image alert-dismiss"
     data-testid="dismiss-info"
     onClick={[Function]}
     role="dismiss"
   >
     <img
+      className="img-fluid"
+      height={24}
       src="/assets/curriculum/icons/dismiss-info.svg"
+      width={24}
     />
   </button>
 </div>
@@ -964,18 +975,22 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
 
 exports[`Storyshots Components/Alert Urgent 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert-danger"
+  className="alert d-flex justify-content-between mt-3 alert alert-danger"
   role="alert"
 >
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/exclamation.svg"
-      width={24}
-    />
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
     Invalid password 
   </div>
 </div>
@@ -983,21 +998,25 @@ exports[`Storyshots Components/Alert Urgent 1`] = `
 
 exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert-danger"
+  className="alert d-flex justify-content-between mt-3 alert alert-danger"
   role="alert"
 >
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/exclamation.svg"
-      width={24}
-    />
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
     Please upgrade your CLI client by running npm update c0d3. 
     <a
-      className="text-danger noUnderline"
+      className="alert-link noUnderline"
       href="https://www.npmjs.com/package/c0d3"
       rel="noopener noreferrer"
       target="_blank"
@@ -1006,13 +1025,16 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
     </a>
   </div>
   <button
-    className="alert-dismiss"
+    className=" alert-dismiss"
     data-testid="dismiss-urgent"
     onClick={[Function]}
     role="dismiss"
   >
     <img
+      className="img-fluid"
+      height={24}
       src="/assets/curriculum/icons/dismiss-urgent.svg"
+      width={24}
     />
   </button>
 </div>
@@ -5664,62 +5686,47 @@ Array [
     <div
       className="container"
     >
+      <img
+        className="img-fluid"
+        height={360}
+        src="/assets/errors/500.svg"
+        width={360}
+      />
       <div
-        className="row"
+        className="container_text_buttons"
       >
+        <h1>
+          500 Error!
+        </h1>
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          style={
+            Object {
+              "color": "#292929",
+              "fontSize": "1.25rem",
+            }
+          }
         >
-          <div
-            className="text-center mt-3"
-          >
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1.5rem",
-                }
-              }
-            >
-              <strong>
-                Internal server error
-              </strong>
-            </div>
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
-                }
-              }
-            >
-              No data
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          No data
         </div>
         <div
-          className="mb-3 col-sm-9"
+          className="container_buttons"
         >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/500.svg"
-            width={1200}
-          />
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Home
+          </a>
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -5814,62 +5821,47 @@ Array [
     <div
       className="container"
     >
+      <img
+        className="img-fluid"
+        height={360}
+        src="/assets/errors/404.svg"
+        width={360}
+      />
       <div
-        className="row"
+        className="container_text_buttons"
       >
+        <h1>
+          404 Error!
+        </h1>
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          style={
+            Object {
+              "color": "#292929",
+              "fontSize": "1.25rem",
+            }
+          }
         >
-          <div
-            className="text-center mt-3"
-          >
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1.5rem",
-                }
-              }
-            >
-              <strong>
-                Page not found
-              </strong>
-            </div>
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
-                }
-              }
-            >
-              404 error
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          404 error
         </div>
         <div
-          className="mb-3 col-sm-9"
+          className="container_buttons"
         >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/404.svg"
-            width={1200}
-          />
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Home
+          </a>
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -5887,49 +5879,76 @@ exports[`Storyshots Components/ExercisePreview Basic 1`] = `
   className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-5 m-auto px-md-3 border-0 rounded"
 >
   <div
-    className="card-body pt-3 pb-3 "
+    className="card-body pb-3 "
   >
-    <p
+    <div
       className="card-text"
     >
       <p
-        className="exercise__p__bold"
+        className="exercise__p__bold my-4"
       >
         Problem
       </p>
-      <pre
-        className="exercise__pre__bg rounded px-4 py-4"
+      <div
+        className="exercise__bg rounded px-4 py-4"
       >
-        a = 1;
-b = 2;
-a = b;
+        <div>
+          <p>
+            Description here
+          </p>
+          <pre>
+            <code
+              className="lang-jsx"
+            >
+              a = 1; 
+b = 2; 
+a = b; 
 // What is a?
-      </pre>
+            </code>
+          </pre>
+        </div>
+      </div>
       <p
-        className="exercise__p__bold"
+        className="exercise__p__bold my-4"
       >
-        Choose an answer
+        Answer
       </p>
       <div
-        className="excercise__options overflow-auto"
+        className="excercise__answer overflow-auto"
       >
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+        <div
+          className="exercise__bg rounded px-4 py-4"
         >
           1
-        </pre>
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-        >
-          2
-        </pre>
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-        >
-          b
-        </pre>
+        </div>
       </div>
-    </p>
+      <p
+        className="exercise__p__bold my-4"
+      >
+        Explanation
+      </p>
+      <div
+        className="exercise__bg rounded px-4 py-4"
+      >
+        <span>
+          <code>
+            a
+          </code>
+           is getting assigned 
+          <code>
+            1
+          </code>
+          , so 
+          <code>
+            a
+          </code>
+           is 
+          <code>
+            1
+          </code>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -28031,18 +28050,22 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
           className="form-group"
         >
           <div
-            className="alert d-flex justify-content-between mt-3 alert-danger"
+            className="alert d-flex justify-content-between mt-3 alert alert-danger"
             role="alert"
           >
             <div
-              className="d-flex gap-3"
+              className="d-flex align-items-center gap-3"
             >
-              <img
-                className="img-fluid"
-                height={24}
-                src="/assets/curriculum/icons/exclamation.svg"
-                width={24}
-              />
+              <div
+                className=""
+              >
+                <img
+                  className="img-fluid"
+                  height={24}
+                  src="/assets/curriculum/icons/exclamation.svg"
+                  width={24}
+                />
+              </div>
               Please try again! 
             </div>
           </div>
@@ -28504,18 +28527,22 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         className="card-text"
       />
       <div
-        className="alert d-flex justify-content-between mt-3 alert-danger"
+        className="alert d-flex justify-content-between mt-3 alert alert-danger"
         role="alert"
       >
         <div
-          className="d-flex gap-3"
+          className="d-flex align-items-center gap-3"
         >
-          <img
-            className="img-fluid"
-            height={24}
-            src="/assets/curriculum/icons/exclamation.svg"
-            width={24}
-          />
+          <div
+            className=""
+          >
+            <img
+              className="img-fluid"
+              height={24}
+              src="/assets/curriculum/icons/exclamation.svg"
+              width={24}
+            />
+          </div>
           UserInput Error: User does not exist 
         </div>
       </div>
