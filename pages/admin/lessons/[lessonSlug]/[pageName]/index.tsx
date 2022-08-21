@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import * as Sentry from '@sentry/react'
 import { gql, useQuery } from '@apollo/client'
 import {
@@ -61,10 +61,10 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
   )
 
   // Update the Inputs values when the lesson changes
-  useEffect(
-    () => setFormOptions(getPropertyArr(lesson, ['challenges', '__typename'])),
-    [lesson]
-  )
+  // useEffect(
+  //   () => setFormOptions(getPropertyArr(lesson, ['challenges', '__typename'])),
+  //   [lesson]
+  // )
 
   const handleChange = async (value: string, propertyIndex: number) => {
     await formChange(
@@ -163,7 +163,7 @@ const Content = ({
     )
   }
 
-  return <IntroductionPage lesson={lesson} />
+  return <IntroductionPage lesson={lesson} key={lessonId} />
 }
 
 const Lessons = ({ data }: GetAppProps) => {
