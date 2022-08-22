@@ -60,12 +60,6 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
     getPropertyArr(lesson, ['challenges', '__typename'])
   )
 
-  // Update the Inputs values when the lesson changes
-  // useEffect(
-  //   () => setFormOptions(getPropertyArr(lesson, ['challenges', '__typename'])),
-  //   [lesson]
-  // )
-
   const handleChange = async (value: string, propertyIndex: number) => {
     await formChange(
       value,
