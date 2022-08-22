@@ -2,74 +2,47 @@
 
 exports[`Storyshots Component/QueryInfo Basic 1`] = `
 <div
-  className="success"
+  className="alert d-flex justify-content-between mt-3 alert alert-primary"
+  role="alert"
 >
-  <svg
-    aria-hidden="true"
-    className="octicon octicon-check-circle"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z\\"></path>",
-      }
-    }
-    fill="currentColor"
-    height={16}
-    role="img"
-    style={
-      Object {
-        "display": "inline-block",
-        "overflow": "visible",
-        "userSelect": "none",
-        "verticalAlign": "text-bottom",
-      }
-    }
-    viewBox="0 0 16 16"
-    width={16}
-  />
-  <span>
-    Updated
-     the module
-     
-    <strong>
-      Functions in JS
-    </strong>
-     
-    successfully!
-  </span>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
+    Update the module successfully! 
+  </div>
 </div>
 `;
 
 exports[`Storyshots Component/QueryInfo With Error 1`] = `
 <div
-  className="error"
+  className="alert d-flex justify-content-between mt-3 alert alert-danger"
+  role="alert"
 >
-  <svg
-    aria-hidden="true"
-    className="octicon octicon-alert-fill"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<path fill-rule=\\"evenodd\\" d=\\"M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z\\"></path>",
-      }
-    }
-    fill="currentColor"
-    height={16}
-    role="img"
-    style={
-      Object {
-        "display": "inline-block",
-        "overflow": "visible",
-        "userSelect": "none",
-        "verticalAlign": "text-bottom",
-      }
-    }
-    viewBox="0 0 12 12"
-    width={16}
-  />
-  <span>
-    Failed to find the lesson because of
-    : 
-    JavaScript is not related to Java!
-  </span>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    An error occurred. Please try again. 
+  </div>
 </div>
 `;
 
@@ -79,40 +52,24 @@ exports[`Storyshots Component/QueryInfo With Hide 1`] = `
     Hides after 4 seconds
   </p>
   <div
-    className="success"
+    className="alert d-flex justify-content-between mt-3 alert alert-primary"
+    role="alert"
   >
-    <svg
-      aria-hidden="true"
-      className="octicon octicon-check-circle"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z\\"></path>",
-        }
-      }
-      fill="currentColor"
-      height={16}
-      role="img"
-      style={
-        Object {
-          "display": "inline-block",
-          "overflow": "visible",
-          "userSelect": "none",
-          "verticalAlign": "text-bottom",
-        }
-      }
-      viewBox="0 0 16 16"
-      width={16}
-    />
-    <span>
-      Updated
-       the module
-       
-      <strong>
-        Functions in JS
-      </strong>
-       
-      successfully!
-    </span>
+    <div
+      className="d-flex align-items-center gap-3"
+    >
+      <div
+        className="info_image"
+      >
+        <img
+          className="img-fluid"
+          height={24}
+          src="/assets/curriculum/icons/icon-tip.svg"
+          width={24}
+        />
+      </div>
+      Hiding in 4 seconds 
+    </div>
   </div>
 </div>
 `;
