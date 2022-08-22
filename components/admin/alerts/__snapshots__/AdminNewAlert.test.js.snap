@@ -12,27 +12,33 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
         class="mb-3"
       >
         <div
-          class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+          class="alert d-flex justify-content-between mt-3 alert alert-primary"
           role="alert"
         >
           <div
-            class="d-flex gap-3"
+            class="d-flex align-items-center gap-3"
           >
-            <img
-              height="24"
-              src="/assets/curriculum/icons/icon-tip.svg"
-              width="24"
-            />
+            <div
+              class="info_image"
+            >
+              <img
+                height="24"
+                src="/assets/curriculum/icons/icon-tip.svg"
+                width="24"
+              />
+            </div>
              
             
           </div>
           <button
-            class="alert-dismiss"
+            class="info_image alert-dismiss"
             data-testid="dismiss-info"
             role="dismiss"
           >
             <img
+              height="24"
               src="/assets/curriculum/icons/dismiss-info.svg"
+              width="24"
             />
           </button>
         </div>
@@ -171,20 +177,24 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
         class="mb-3"
       >
         <div
-          class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+          class="alert d-flex justify-content-between mt-3 alert alert-primary"
           role="alert"
         >
           <div
-            class="d-flex gap-3"
+            class="d-flex align-items-center gap-3"
           >
-            <img
-              height="24"
-              src="/assets/curriculum/icons/icon-tip.svg"
-              width="24"
-            />
+            <div
+              class="info_image"
+            >
+              <img
+                height="24"
+                src="/assets/curriculum/icons/icon-tip.svg"
+                width="24"
+              />
+            </div>
              
             <a
-              class="text-white noUnderline"
+              class="alert-link noUnderline"
               href="url"
               rel="noopener noreferrer"
               target="_blank"
@@ -193,12 +203,14 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
             </a>
           </div>
           <button
-            class="alert-dismiss"
+            class="info_image alert-dismiss"
             data-testid="dismiss-info"
             role="dismiss"
           >
             <img
+              height="24"
               src="/assets/curriculum/icons/dismiss-info.svg"
+              width="24"
             />
           </button>
         </div>
