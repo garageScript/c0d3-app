@@ -157,6 +157,7 @@ const Content = ({
     )
   }
 
+  // The "key" prop is passed so the component update its states (re-render and reset states)
   return <IntroductionPage lesson={lesson} key={lessonId} />
 }
 
