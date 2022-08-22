@@ -145,7 +145,7 @@ describe('It should test delete', () => {
           req: { user: {} }
         }
       )
-    ).rejects.toThrow(new Error('No User'))
+    ).rejects.toThrowError()
   })
   test('It should check if user can delte their own exercise', () => {
     expect(
