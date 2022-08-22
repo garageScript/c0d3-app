@@ -18,19 +18,6 @@
   }
 }
 
-.success {
-  // Local variable
-  $color: adjust-color(
-    $color: variables.$success,
-    $blackness: 15%
-  );
-  @include message(variables.$success, $color);
-}
-
-.error {
-  @include message(variables.$danger, variables.$danger);
-}
-
 .loading {
   @include message(variables.$mute, variables.$mute);
 }
