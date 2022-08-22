@@ -134,7 +134,7 @@ describe('AdminLessonInputs component', () => {
 
     await waitFor(() =>
       expect(
-        container.querySelector('.octicon-check-circle')
+        getByText('Added the item Functions successfully!')
       ).toBeInTheDocument()
     )
   })
@@ -168,7 +168,7 @@ describe('AdminLessonInputs component', () => {
 
     await waitFor(() =>
       expect(
-        container.querySelector('.octicon-check-circle')
+        getByText('Updated the item Functions successfully!')
       ).toBeInTheDocument()
     )
   })
@@ -189,7 +189,9 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(container.querySelector('.octicon-alert-fill')).toBeInTheDocument()
+      expect(
+        getByText('An error occurred. Please try again.')
+      ).toBeInTheDocument()
     )
   })
 
@@ -213,7 +215,9 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(container.querySelector('.octicon-alert-fill')).toBeInTheDocument()
+      expect(
+        getByText('An error occurred. Please try again.')
+      ).toBeInTheDocument()
     )
   })
 
@@ -458,7 +462,7 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(getByText('Updated the module successfully!')).toBeInTheDocument()
+      expect(getByText('Updated the item successfully!')).toBeInTheDocument()
     )
   })
 })

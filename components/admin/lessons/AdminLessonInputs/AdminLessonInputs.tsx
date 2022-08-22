@@ -152,7 +152,7 @@ const AdminModuleInputs = ({
     const addModule = get(data, 'addModule')
 
     return `${updateModule ? 'Updated' : 'Added'} the item ${
-      get(addModule, 'name') || get(updateModule, 'name')
+      get(addModule, 'name') || get(updateModule, 'name') || ''
     } successfully!`
   }
 
