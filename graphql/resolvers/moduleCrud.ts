@@ -7,6 +7,7 @@ import prisma from '../../prisma'
 import { Context } from '../../@types/helpers'
 import { isAdminOrThrow } from '../../helpers/isAdmin'
 import type { Module } from '@prisma/client'
+import { withUserContainer } from '../../containers/withUserContainer'
 
 export const modules = (): Promise<Module[]> => {
   return prisma.module.findMany({
@@ -36,14 +37,12 @@ export const addModule = async (
   })
 }
 
-export const updateModule = async (
-  _parent: void,
-  args: MutationUpdateModuleArgs,
-  { req }: Context
-): Promise<Module> => {
+export const updateModule = withUserContainer<
+  Promise<Module>,
+  MutationUpdateModuleArgs
+>(async (_parent: void, args: MutationUpdateModuleArgs, ctx: Context) => {
+  const { req } = ctx
   isAdminOrThrow(req)
-  const authorId = req.user?.id
-  if (!authorId) throw new Error('No User')
   const { id, lessonId, name, content, order } = args
   return prisma.module.update({
     where: { id },
@@ -53,17 +52,14 @@ export const updateModule = async (
       lesson: true
     }
   })
-}
+})
 
-export const deleteModule = async (
-  _parent: void,
-  arg: MutationDeleteModuleArgs,
-  ctx: Context
-): Promise<Module> => {
+export const deleteModule = withUserContainer<
+  Promise<Module>,
+  MutationDeleteModuleArgs
+>(async (_parent: void, arg: MutationDeleteModuleArgs, ctx: Context) => {
   const { req } = ctx
   isAdminOrThrow(req)
-  const authorId = req.user?.id
-  if (!authorId) throw new Error('No User')
   const { id } = arg
   return prisma.module.delete({
     where: { id },
@@ -72,4 +68,4 @@ export const deleteModule = async (
       lesson: true
     }
   })
-}
+})
