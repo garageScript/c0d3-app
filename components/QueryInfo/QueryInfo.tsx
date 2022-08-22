@@ -1,7 +1,7 @@
-import { CheckCircleIcon, AlertFillIcon } from '@primer/octicons-react'
 import React, { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
 import styles from '../../scss/queryInfo.module.scss'
+import Alert from '../Alert'
 
 type QueryInfo<T> = {
   data: T
@@ -9,9 +9,8 @@ type QueryInfo<T> = {
   error: string
   texts: {
     loading: string
-    errorTitle: string
+    data: string
   }
-  DataMessage?: () => JSX.Element
   hide?: boolean
 }
 
@@ -20,12 +19,11 @@ const QueryInfo = <T,>({
   loading,
   error,
   texts,
-  DataMessage,
   hide = true
 }: QueryInfo<T>) => {
-  const [x, setX] = useState(false)
+  const [isHidden, setHidden] = useState(false)
 
-  useEffect(() => setX(false), [data, error])
+  useEffect(() => setHidden(false), [data, error])
 
   if (loading) {
     return (
@@ -36,33 +34,33 @@ const QueryInfo = <T,>({
     )
   }
 
-  if (x) return <></>
+  if (isHidden) return <></>
 
   if (error) {
-    if (hide) setTimeout(() => setX(true), 4000)
+    if (hide) setTimeout(() => setHidden(true), 4000)
 
     return (
-      <div className={styles.error}>
-        <AlertFillIcon />
-        <span>
-          {texts.errorTitle}: {error}
-        </span>
-      </div>
+      <Alert
+        alert={{
+          text: 'An error occurred. Please try again.',
+          type: 'urgent',
+          id: 1
+        }}
+      />
     )
   }
 
   if (data) {
-    if (hide) setTimeout(() => setX(true), 4000)
+    if (hide) setTimeout(() => setHidden(true), 4000)
 
     return (
-      <div className={styles.success}>
-        <CheckCircleIcon />
-        {DataMessage ? (
-          <DataMessage />
-        ) : (
-          <span>Submitted the item successfully!</span>
-        )}
-      </div>
+      <Alert
+        alert={{
+          text: texts.data,
+          type: 'info',
+          id: 2
+        }}
+      />
     )
   }
 

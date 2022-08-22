@@ -4,14 +4,15 @@
   display: flex;
   align-items: center;
   column-gap: 5px;
-  background: #ffbbc1;
-  width: fit-content;
-  padding: 5px 15px;
-  border-radius: 8px;
   background-color: rgba($color: $bg, $alpha: 0.2);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
 
   @if $color {
     color: $color;
+    border: 1px solid rgba($color: $color, $alpha: 0.2);
   } @else {
     color: $bg;
   }

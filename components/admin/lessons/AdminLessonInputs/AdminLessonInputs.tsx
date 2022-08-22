@@ -147,6 +147,15 @@ const AdminModuleInputs = ({
     }
   }
 
+  const dataText = () => {
+    const updateModule = get(data, 'updateModule')
+    const addModule = get(data, 'addModule')
+
+    return `${updateModule ? 'Updated' : 'Added'} the item ${
+      get(addModule, 'name') || get(updateModule, 'name')
+    } successfully!`
+  }
+
   return (
     <div className={styles.container}>
       <QueryInfo
@@ -155,21 +164,7 @@ const AdminModuleInputs = ({
         error={errorMsg}
         texts={{
           loading: 'Adding the module...',
-          errorTitle: 'Failed to add the module'
-        }}
-        DataMessage={() => {
-          const updateModule = get(data, 'updateModule')
-          const addModule = get(data, 'addModule')
-
-          return (
-            <span>
-              {updateModule ? 'Updated' : 'Added'} the module{' '}
-              <strong>
-                {get(addModule, 'name') || get(updateModule, 'name')}
-              </strong>{' '}
-              successfully!
-            </span>
-          )
+          data: dataText()
         }}
       />
       <FormCard

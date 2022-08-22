@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import React from 'react'
 import QueryInfo from '../../components/QueryInfo'
 
@@ -6,12 +5,6 @@ export default {
   component: QueryInfo,
   title: 'Component/QueryInfo'
 }
-
-const updateModule = {
-  name: 'Functions in JS'
-}
-
-const addModule = null
 
 export const Basic = () => (
   <QueryInfo
@@ -22,16 +15,9 @@ export const Basic = () => (
     error={''}
     texts={{
       loading: 'Sending the request...',
-      errorTitle: 'Failed to find the text because of'
+      data: 'Update the module successfully!'
     }}
     hide={false}
-    DataMessage={() => (
-      <span>
-        {updateModule ? 'Updated' : 'Added'} the module{' '}
-        <strong>{get(addModule, 'name') || get(updateModule, 'name')}</strong>{' '}
-        successfully!
-      </span>
-    )}
   />
 )
 
@@ -44,7 +30,7 @@ export const _WithError = () => (
     error={'JavaScript is not related to Java!'}
     texts={{
       loading: 'Sending the request...',
-      errorTitle: 'Failed to find the lesson because of'
+      data: ''
     }}
     hide={false}
   />
@@ -59,14 +45,14 @@ export const _WithLoading = () => (
     error={''}
     texts={{
       loading: 'Sending the request...',
-      errorTitle: 'Failed to find the lesson because of'
+      data: ''
     }}
     hide={false}
   />
 )
 
 export const _WithHide = () => (
-  // hide prop is optional and it's true by default
+  // "hide" prop is optional and it's true by default
   <div>
     <p>Hides after 4 seconds</p>
     <QueryInfo
@@ -77,15 +63,8 @@ export const _WithHide = () => (
       error={''}
       texts={{
         loading: 'Sending the request...',
-        errorTitle: 'Failed to find the text because of'
+        data: 'Hiding in 4 seconds'
       }}
-      DataMessage={() => (
-        <span>
-          {updateModule ? 'Updated' : 'Added'} the module{' '}
-          <strong>{get(addModule, 'name') || get(updateModule, 'name')}</strong>{' '}
-          successfully!
-        </span>
-      )}
     />
   </div>
 )

@@ -19,9 +19,8 @@ describe('QueryInfo component', () => {
         error={''}
         texts={{
           loading: 'Loading message...',
-          errorTitle: 'An error occurred because of'
+          data: 'Submitted successfully'
         }}
-        DataMessage={() => <span>Submitted successfully</span>}
       />
     )
 
@@ -41,9 +40,8 @@ describe('QueryInfo component', () => {
         error={''}
         texts={{
           loading: 'Loading message...',
-          errorTitle: 'An error occurred because of'
+          data: 'Submitted successfully'
         }}
-        DataMessage={() => <span>Submitted successfully</span>}
       />
     )
 
@@ -63,37 +61,13 @@ describe('QueryInfo component', () => {
         error={'Missing arguments'}
         texts={{
           loading: 'Loading message...',
-          errorTitle: 'An error occurred because of'
-        }}
-        DataMessage={() => <span>Submitted successfully</span>}
-      />
-    )
-
-    expect(
-      screen.getByText('An error occurred because of: Missing arguments')
-    ).toBeInTheDocument()
-  })
-
-  it('should set default success message', () => {
-    expect.assertions(1)
-
-    render(
-      <QueryInfo
-        hide={false}
-        data={{
-          name: 'noob'
-        }}
-        loading={false}
-        error={''}
-        texts={{
-          loading: 'Loading message...',
-          errorTitle: 'An error occurred because of'
+          data: 'Submitted successfully'
         }}
       />
     )
 
     expect(
-      screen.getByText('Submitted the item successfully!')
+      screen.getByText('An error occurred. Please try again.')
     ).toBeInTheDocument()
   })
 
@@ -108,7 +82,7 @@ describe('QueryInfo component', () => {
         error={''}
         texts={{
           loading: 'Loading message...',
-          errorTitle: 'An error occurred because of'
+          data: 'Submitted successfully'
         }}
       />
     )
@@ -134,9 +108,8 @@ describe('QueryInfo component', () => {
         error={''}
         texts={{
           loading: 'Loading message...',
-          errorTitle: 'An error occurred because of'
+          data: 'Submitted successfully'
         }}
-        DataMessage={() => <span>Submitted successfully</span>}
       />
     )
 
@@ -164,9 +137,8 @@ describe('QueryInfo component', () => {
         error={'Missing arguments'}
         texts={{
           loading: 'Loading message...',
-          errorTitle: 'An error occurred because of'
+          data: 'Submitted successfully'
         }}
-        DataMessage={() => <span>Submitted successfully</span>}
       />
     )
 
