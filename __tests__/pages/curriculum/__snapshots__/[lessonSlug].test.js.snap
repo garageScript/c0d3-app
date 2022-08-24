@@ -221,9 +221,14 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="alerts-container  p-0"
           >
             <div
-              class="alert d-flex justify-content-between mt-3 alert alert-primary"
+              class="fade alert alert-primary alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
                 class="d-flex align-items-center gap-3"
               >
@@ -246,22 +251,16 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                   View Instructions
                 </a>
               </div>
-              <button
-                class="info_image alert-dismiss"
-                data-testid="dismiss-info"
-                role="dismiss"
-              >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/dismiss-info.svg"
-                  width="24"
-                />
-              </button>
             </div>
             <div
-              class="alert d-flex justify-content-between mt-3 alert alert-danger"
+              class="fade alert alert-danger alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
                 class="d-flex align-items-center gap-3"
               >
@@ -277,17 +276,6 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                 Please upgrade your CLI client by running npm update c0d3. 
                 
               </div>
-              <button
-                class=" alert-dismiss"
-                data-testid="dismiss-urgent"
-                role="dismiss"
-              >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/dismiss-urgent.svg"
-                  width="24"
-                />
-              </button>
             </div>
           </div>
           <div
@@ -933,9 +921,14 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="alerts-container  p-0"
           >
             <div
-              class="alert d-flex justify-content-between mt-3 alert alert-primary"
+              class="fade alert alert-primary alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
                 class="d-flex align-items-center gap-3"
               >
@@ -958,22 +951,16 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                   View Instructions
                 </a>
               </div>
-              <button
-                class="info_image alert-dismiss"
-                data-testid="dismiss-info"
-                role="dismiss"
-              >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/dismiss-info.svg"
-                  width="24"
-                />
-              </button>
             </div>
             <div
-              class="alert d-flex justify-content-between mt-3 alert alert-danger"
+              class="fade alert alert-danger alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
                 class="d-flex align-items-center gap-3"
               >
@@ -989,17 +976,6 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 Please upgrade your CLI client by running npm update c0d3. 
                 
               </div>
-              <button
-                class=" alert-dismiss"
-                data-testid="dismiss-urgent"
-                role="dismiss"
-              >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/dismiss-urgent.svg"
-                  width="24"
-                />
-              </button>
             </div>
           </div>
           <div

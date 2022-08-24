@@ -908,7 +908,7 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
 
 exports[`Storyshots Components/Alert Info 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert alert-primary"
+  className="fade alert alert-primary show"
   role="alert"
 >
   <div
@@ -931,9 +931,15 @@ exports[`Storyshots Components/Alert Info 1`] = `
 
 exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert alert-primary"
+  className="fade alert alert-primary alert-dismissible show"
   role="alert"
 >
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
   <div
     className="d-flex align-items-center gap-3"
   >
@@ -957,25 +963,12 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
       View Instructions
     </a>
   </div>
-  <button
-    className="info_image alert-dismiss"
-    data-testid="dismiss-info"
-    onClick={[Function]}
-    role="dismiss"
-  >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/dismiss-info.svg"
-      width={24}
-    />
-  </button>
 </div>
 `;
 
 exports[`Storyshots Components/Alert Urgent 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert alert-danger"
+  className="fade alert alert-danger show"
   role="alert"
 >
   <div
@@ -998,9 +991,15 @@ exports[`Storyshots Components/Alert Urgent 1`] = `
 
 exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert alert-danger"
+  className="fade alert alert-danger alert-dismissible show"
   role="alert"
 >
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
   <div
     className="d-flex align-items-center gap-3"
   >
@@ -1024,19 +1023,6 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
       View NPM Package
     </a>
   </div>
-  <button
-    className=" alert-dismiss"
-    data-testid="dismiss-urgent"
-    onClick={[Function]}
-    role="dismiss"
-  >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/dismiss-urgent.svg"
-      width={24}
-    />
-  </button>
 </div>
 `;
 
@@ -28050,7 +28036,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
           className="form-group"
         >
           <div
-            className="alert d-flex justify-content-between mt-3 alert alert-danger"
+            className="fade alert alert-danger show"
             role="alert"
           >
             <div
@@ -28527,7 +28513,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         className="card-text"
       />
       <div
-        className="alert d-flex justify-content-between mt-3 alert alert-danger"
+        className="fade alert alert-danger show"
         role="alert"
       >
         <div
