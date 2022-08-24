@@ -3260,10 +3260,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@quixo3/prisma-session-store@^3.1.8":
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.8.tgz#8f5ec9acb303254636c407e70e5caf1bf979f67f"
-  integrity sha512-UYIlrbObHwi8W6ayride4awFoL6KDc8xMV8bo59IMe+VSdxZG/+YFcGZ05pyjnKTawFyO2qujMXkc1dxRV/yCQ==
+"@quixo3/prisma-session-store@^3.1.9":
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.9.tgz#48266c518bda8f128c62f33dba4a3ce87ebde869"
+  integrity sha512-u9wJrqFHzPYpTRBBbqN2c+uehG+5xqIvwnZzvrQp9EpBH6CTs9I6nOo800HFPobAfBNO6G7/Z4cWIdVJr3zqCg==
   dependencies:
     cuid "^2.1.8"
     ts-dedent "^2.2.0"
