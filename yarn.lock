@@ -3260,10 +3260,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@quixo3/prisma-session-store@^3.1.8":
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.8.tgz#8f5ec9acb303254636c407e70e5caf1bf979f67f"
-  integrity sha512-UYIlrbObHwi8W6ayride4awFoL6KDc8xMV8bo59IMe+VSdxZG/+YFcGZ05pyjnKTawFyO2qujMXkc1dxRV/yCQ==
+"@quixo3/prisma-session-store@^3.1.9":
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.9.tgz#48266c518bda8f128c62f33dba4a3ce87ebde869"
+  integrity sha512-u9wJrqFHzPYpTRBBbqN2c+uehG+5xqIvwnZzvrQp9EpBH6CTs9I6nOo800HFPobAfBNO6G7/Z4cWIdVJr3zqCg==
   dependencies:
     cuid "^2.1.8"
     ts-dedent "^2.2.0"
@@ -15931,10 +15931,10 @@ sass-loader@^10.2.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.54.4:
-  version "1.54.4"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.54.4.tgz#803ff2fef5525f1dd01670c3915b4b68b6cba72d"
-  integrity sha512-3tmF16yvnBwtlPrNBHw/H907j8MlOX8aTBnlNX1yrKx24RKcJGPyLhFUwkoKBKesR3unP93/2z14Ll8NicwQUA==
+sass@^1.54.5:
+  version "1.54.5"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.54.5.tgz#93708f5560784f6ff2eab8542ade021a4a947b3a"
+  integrity sha512-p7DTOzxkUPa/63FU0R3KApkRHwcVZYC0PLnLm5iyZACyp15qSi32x7zVUhRdABAATmkALqgGrjCJAcWvobmhHw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
