@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { get } from 'lodash'
+import React from 'react'
 import { Spinner } from 'react-bootstrap'
 import styles from '../../scss/queryInfo.module.scss'
 import Alert from '../Alert'
@@ -12,6 +13,10 @@ type QueryInfo<T> = {
     data: string
   }
   hide?: boolean
+  dismiss?: {
+    onDismissError?: (id: number) => void
+    onDismissData?: (id: number) => void
+  }
 }
 
 const QueryInfo = <T,>({
@@ -19,12 +24,8 @@ const QueryInfo = <T,>({
   loading,
   error,
   texts,
-  hide = true
+  dismiss
 }: QueryInfo<T>) => {
-  const [isHidden, setHidden] = useState(false)
-
-  useEffect(() => setHidden(false), [data, error])
-
   if (loading) {
     return (
       <div className={styles.loading}>
@@ -34,11 +35,7 @@ const QueryInfo = <T,>({
     )
   }
 
-  if (isHidden) return <></>
-
   if (error) {
-    if (hide) setTimeout(() => setHidden(true), 4000)
-
     return (
       <Alert
         alert={{
@@ -46,13 +43,13 @@ const QueryInfo = <T,>({
           type: 'urgent',
           id: 1
         }}
+        onDismiss={get(dismiss, 'onDismissError')}
+        key={error}
       />
     )
   }
 
   if (data) {
-    if (hide) setTimeout(() => setHidden(true), 4000)
-
     return (
       <Alert
         alert={{
@@ -60,6 +57,7 @@ const QueryInfo = <T,>({
           type: 'info',
           id: 2
         }}
+        onDismiss={get(dismiss, 'onDismissData')}
       />
     )
   }

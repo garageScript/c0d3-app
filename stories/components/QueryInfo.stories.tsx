@@ -50,21 +50,3 @@ export const _WithLoading = () => (
     hide={false}
   />
 )
-
-export const _WithHide = () => (
-  // "hide" prop is optional and it's true by default
-  <div>
-    <p>Hides after 4 seconds</p>
-    <QueryInfo
-      data={{
-        title: 'JavaScript'
-      }}
-      loading={false}
-      error={''}
-      texts={{
-        loading: 'Sending the request...',
-        data: 'Hiding in 4 seconds'
-      }}
-    />
-  </div>
-)
