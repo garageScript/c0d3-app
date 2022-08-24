@@ -7,8 +7,7 @@ import Error, { StatusCode } from '../../components/Error'
 import { useRouter } from 'next/router'
 export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   data,
-  children,
-  title
+  children
 }) => {
   const router = useRouter()
   const { loading, error, session } = data
@@ -26,11 +25,7 @@ export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
 
   if (!isAdmin) {
-    return (
-      <Layout title={title}>
-        <h1>You must be admin to access this page</h1>
-      </Layout>
-    )
+    return <Error code={StatusCode.FORBIDDEN} />
   }
 
   return <Layout>{children}</Layout>
