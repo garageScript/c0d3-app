@@ -8,7 +8,7 @@ import {
 import { formChange } from '../../../../helpers/formChange'
 import { FormCard, MD_INPUT, Option, TextField } from '../../../FormCard'
 import styles from './adminLessonInputs.module.scss'
-import { get } from 'lodash'
+import { get, isEqual } from 'lodash'
 import {
   ApolloError,
   OperationVariables,
@@ -95,6 +95,12 @@ const AdminModuleInputs = ({
       })
     : useAddModuleMutation({ variables: mutationVariables })
 
+  const [dataDiff, setDataDiff] = useState<undefined | typeof data>(data)
+  useEffect(
+    () => setDataDiff(prev => (isEqual(data, prev) ? undefined : data)),
+    [data]
+  )
+
   const [errorMsg, setErrorMsg] = useState(get(error, 'message', ''))
 
   const handleChange = async (value: string, propertyIndex: number) => {
@@ -159,12 +165,19 @@ const AdminModuleInputs = ({
   return (
     <div className={styles.container}>
       <QueryInfo
-        data={data}
+        data={dataDiff}
         loading={loading}
         error={errorMsg}
         texts={{
           loading: 'Adding the module...',
           data: dataText()
+        }}
+        dismiss={{
+          onDismissError: _ => {
+            setErrorMsg('')
+            setDataDiff(undefined)
+          },
+          onDismissData: () => {}
         }}
       />
       <FormCard

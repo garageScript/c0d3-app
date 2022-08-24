@@ -109,7 +109,7 @@ describe('AdminLessonInputs component', () => {
   it('Should add module', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
@@ -142,7 +142,7 @@ describe('AdminLessonInputs component', () => {
   it('Should update module', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={updateModuleMocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
@@ -176,7 +176,7 @@ describe('AdminLessonInputs component', () => {
   it('Should display error message if inputs are empty', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
         <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
@@ -198,7 +198,7 @@ describe('AdminLessonInputs component', () => {
   it('Should display error message if network or GraphQL error', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={errorMocks}>
         <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
@@ -463,6 +463,67 @@ describe('AdminLessonInputs component', () => {
 
     await waitFor(() =>
       expect(getByText('Updated the item successfully!')).toBeInTheDocument()
+    )
+  })
+
+  it('Should dismiss success message', async () => {
+    // expect.assertions(1)
+
+    const { getByText, getByTestId, queryByText } = render(
+      <MockedProvider mocks={mocks}>
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          refetch={() => {}}
+        />
+      </MockedProvider>
+    )
+
+    await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('input2'), '1', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+      delay: 1
+    })
+
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    await userEvent.click(getByTestId('dismiss-info'))
+
+    // TODO: Not implemented yet. Refer to issue #2215
+    // await waitFor(() =>
+    //   expect(
+    //     queryByText('Added the item Functions successfully!')
+    //   ).not.toBeInTheDocument()
+    // )
+  })
+
+  it('Should dismiss error message', async () => {
+    expect.assertions(1)
+
+    const { getByText, getByTestId, queryByText } = render(
+      <MockedProvider mocks={mocks}>
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+      </MockedProvider>
+    )
+
+    await userEvent.clear(getByTestId('input0'))
+    await userEvent.clear(getByTestId('textbox'))
+
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    await userEvent.click(getByTestId('dismiss-urgent'))
+
+    // This is working compared to line 500 because the error state is set to ""
+    await waitFor(() =>
+      expect(
+        queryByText('An error occurred. Please try again.')
+      ).not.toBeInTheDocument()
     )
   })
 })
