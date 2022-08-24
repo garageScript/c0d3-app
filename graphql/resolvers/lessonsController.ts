@@ -1,4 +1,3 @@
-import { Context } from '../../@types/helpers'
 import type {
   CreateLessonMutation,
   CreateLessonMutationVariables,
@@ -7,27 +6,23 @@ import type {
 } from '../../graphql'
 import { lessons } from './lessons'
 import prisma from '../../prisma'
-import { isAdminOrThrow } from '../../helpers/isAdmin'
 import { validateLessonId } from '../../helpers/validation/validateLessonId'
+import { withAdminContainer } from '../../containers/withAdminContainer'
 
-export const createLesson = async (
-  _parent: void,
-  arg: CreateLessonMutationVariables,
-  { req }: Context
-): Promise<CreateLessonMutation['createLesson']> => {
-  isAdminOrThrow(req)
-  await prisma.lesson.create({ data: arg })
+export const createLesson = withAdminContainer<
+  Promise<CreateLessonMutation['createLesson']>,
+  CreateLessonMutationVariables
+>(async (_parent: void, args) => {
+  await prisma.lesson.create({ data: args })
   return lessons()
-}
+})
 
-export const updateLesson = async (
-  _parent: void,
-  arg: UpdateLessonMutationVariables,
-  { req }: Context
-): Promise<UpdateLessonMutation['updateLesson']> => {
-  isAdminOrThrow(req)
-  const { id, ...data } = arg
+export const updateLesson = withAdminContainer<
+  Promise<UpdateLessonMutation['updateLesson']>,
+  UpdateLessonMutationVariables
+>(async (_parent: void, args) => {
+  const { id, ...data } = args
   await validateLessonId(id)
   await prisma.lesson.update({ where: { id }, data })
   return lessons()
-}
+})
