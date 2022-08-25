@@ -7,7 +7,7 @@ import _ from 'lodash'
 export const withAdminContainer =
   <Type, ArgsType>(
     resolver: (_parent: void, args: ArgsType, ctx: Context) => Type,
-    errorMessage: string | undefined = undefined
+    errorMessage?: string
   ) =>
   async (_parent: void, args: ArgsType, ctx: Context) => {
     const { req } = ctx
