@@ -3260,10 +3260,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@quixo3/prisma-session-store@^3.1.8":
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.8.tgz#8f5ec9acb303254636c407e70e5caf1bf979f67f"
-  integrity sha512-UYIlrbObHwi8W6ayride4awFoL6KDc8xMV8bo59IMe+VSdxZG/+YFcGZ05pyjnKTawFyO2qujMXkc1dxRV/yCQ==
+"@quixo3/prisma-session-store@^3.1.9":
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.9.tgz#48266c518bda8f128c62f33dba4a3ce87ebde869"
+  integrity sha512-u9wJrqFHzPYpTRBBbqN2c+uehG+5xqIvwnZzvrQp9EpBH6CTs9I6nOo800HFPobAfBNO6G7/Z4cWIdVJr3zqCg==
   dependencies:
     cuid "^2.1.8"
     ts-dedent "^2.2.0"
@@ -14700,10 +14700,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.29.0:
-  version "1.29.0"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.29.0.tgz#be0ea05e0c787b37835173e5ecb0d8cf31d7c2dd"
-  integrity sha512-toM7mUcDKo3sW5D4gxj0e0o3A2npX/VVjEKsO62lfeq1vavySEhJajzw652K0bXC5adGqA2Q/MzrBGWOeFoWrA==
+posthog-js@^1.29.1:
+  version "1.29.1"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.29.1.tgz#fbe62073acd71aa1f2f67aa65b80aa1f3a50415f"
+  integrity sha512-n0m9UAKzLZeVRNM+SabExeF2rqtH3fVCVLiKYPy6c8yMksnKCjMidwPwhALhti1H7xqQ++wEL0+tHNljQD8XsA==
   dependencies:
     "@sentry/types" "^7.2.0"
     fflate "^0.4.1"
@@ -14802,10 +14802,10 @@ prisma@4:
   dependencies:
     "@prisma/engines" "3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11"
 
-prismjs@^1.21.0, prismjs@^1.27.0, prismjs@^1.28.0:
-  version "1.28.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.28.0.tgz#0d8f561fa0f7cf6ebca901747828b149147044b6"
-  integrity sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==
+prismjs@^1.21.0, prismjs@^1.27.0, prismjs@^1.29.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
 
 prismjs@~1.23.0:
   version "1.23.0"
@@ -15931,10 +15931,10 @@ sass-loader@^10.2.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.54.4:
-  version "1.54.4"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.54.4.tgz#803ff2fef5525f1dd01670c3915b4b68b6cba72d"
-  integrity sha512-3tmF16yvnBwtlPrNBHw/H907j8MlOX8aTBnlNX1yrKx24RKcJGPyLhFUwkoKBKesR3unP93/2z14Ll8NicwQUA==
+sass@^1.54.5:
+  version "1.54.5"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.54.5.tgz#93708f5560784f6ff2eab8542ade021a4a947b3a"
+  integrity sha512-p7DTOzxkUPa/63FU0R3KApkRHwcVZYC0PLnLm5iyZACyp15qSi32x7zVUhRdABAATmkALqgGrjCJAcWvobmhHw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
