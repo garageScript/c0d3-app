@@ -1,4 +1,5 @@
 import { Context } from '../@types/helpers'
+import { isAdmin } from '../helpers/isAdmin'
 import { withUserContainer } from './withUserContainer'
 import _ from 'lodash'
 
@@ -11,7 +12,7 @@ export const withAdminContainer =
   async (_parent: void, args: ArgsType, ctx: Context) => {
     const { req } = ctx
 
-    if (!_.get(req, 'user.isAdmin')) {
+    if (!isAdmin(req)) {
       throw new Error(errorMessage || 'User is not an admin')
     }
 
