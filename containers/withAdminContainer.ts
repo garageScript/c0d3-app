@@ -1,5 +1,4 @@
 import { Context } from '../@types/helpers'
-import { isAdmin, isAdminOrThrow } from '../helpers/isAdmin'
 import { withUserContainer } from './withUserContainer'
 import _ from 'lodash'
 
@@ -7,17 +6,14 @@ import _ from 'lodash'
 export const withAdminContainer =
   <Type, ArgsType>(
     resolver: (_parent: void, args: ArgsType, ctx: Context) => Type,
-    errorMessage?: string
+    errorMessage: string | undefined = undefined
   ) =>
   async (_parent: void, args: ArgsType, ctx: Context) => {
     const { req } = ctx
 
-    //check if is admin
-    if (errorMessage) {
-      if (!isAdmin(req)) throw new Error(errorMessage)
+    if (!_.get(req, 'user.isAdmin')) {
+      throw new Error(errorMessage || 'User is not an admin')
     }
-
-    isAdminOrThrow(req)
 
     return resolver(_parent, args, ctx)
   }
@@ -28,7 +24,9 @@ export const withAdminUserContainer =
     errorMessage?: string
   ) =>
   async (_parent: void, args: ArgsType, ctx: Context) => {
-    return withUserContainer(
-      withAdminContainer(resolver, errorMessage && errorMessage)
-    )(_parent, args, ctx)
+    return withUserContainer(withAdminContainer(resolver, errorMessage))(
+      _parent,
+      args,
+      ctx
+    )
   }
