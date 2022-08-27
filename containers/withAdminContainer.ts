@@ -19,15 +19,9 @@ export const withAdminContainer =
     return resolver(_parent, args, ctx)
   }
 
-export const withAdminUserContainer =
-  <Type, ArgsType>(
-    resolver: (_parent: void, args: ArgsType, ctx: Context) => Type,
-    errorMessage?: string
-  ) =>
-  async (_parent: void, args: ArgsType, ctx: Context) => {
-    return withUserContainer(withAdminContainer(resolver, errorMessage))(
-      _parent,
-      args,
-      ctx
-    )
-  }
+export function withAdminUserContainer<Type, ArgsType>(
+  resolver: (_parent: void, args: ArgsType, ctx: Context) => Type,
+  errorMessage?: string
+) {
+  return withUserContainer(withAdminContainer(resolver, errorMessage))
+}
