@@ -26,7 +26,7 @@ export const authorize =
     const firstName = get(credentials, 'firstName')
     const lastName = get(credentials, 'lastName')
 
-    const isSignUpFlow = username && email && firstName && lastName && password
+    const isSignUpFlow = username && email && firstName && lastName
     const isLoginFlow = username && password
 
     const user = isSignUpFlow
@@ -35,7 +35,6 @@ export const authorize =
           {
             username,
             email,
-            password,
             firstName,
             lastName
           },
