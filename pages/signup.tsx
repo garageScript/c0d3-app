@@ -22,32 +22,35 @@ import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
 import { Spinner } from 'react-bootstrap'
 import Alert from '../components/Alert'
-import { useRouter } from 'next/router'
 
 type Values = {
   email: string
   username: string
   firstName: string
   lastName: string
-  password: string
 }
 
 type SignupFormProps = {
   handleSubmit: (values: Values) => void
   isLoading?: boolean
   signupErrors?: string[]
+  isSuccess?: boolean
+  forgotToken?: string
 }
 
 type ErrorDisplayProps = {
   signupErrors?: string[]
 }
 
+type SignupSuccessProps = {
+  forgotToken?: string
+}
+
 const initialValues: Values = {
   email: '',
   username: '',
   firstName: '',
-  lastName: '',
-  password: ''
+  lastName: ''
 }
 
 const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
@@ -57,6 +60,18 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
   })
   return <>{errorMessages}</>
 }
+
+const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
+  <Card
+    type="success"
+    data-testid="signup-success"
+    title="Account created successfully!"
+  >
+    <NavLink path={`/confirm/${forgotToken}`} className="btn btn-primary">
+      Click here to set your password.
+    </NavLink>
+  </Card>
+)
 
 const SignupForm: React.FC<SignupFormProps> = ({
   signupErrors,
@@ -104,14 +119,6 @@ const SignupForm: React.FC<SignupFormProps> = ({
               as={Input}
             />
 
-            <Field
-              name="password"
-              placeholder="Password"
-              data-testid="password"
-              type="password"
-              as={Input}
-            />
-
             <button
               className={`btn ${
                 isLoading ? 'btn-dark' : 'btn-primary'
@@ -146,7 +153,8 @@ const SignupForm: React.FC<SignupFormProps> = ({
 const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
   data: sessionData
 }) => {
-  const router = useRouter()
+  const [signupSuccess, setSignupSuccess] = useState(false)
+  const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [signupErrors, setSignupErrors] = useState<string[]>([])
   const [signupUser] = useMutation(SIGNUP_USER)
@@ -156,7 +164,8 @@ const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
     try {
       const { data } = await signupUser({ variables: values })
       if (data.signup.success) {
-        return router.push('/curriculum')
+        setForgotToken(data.signup.cliToken)
+        return setSignupSuccess(true)
       }
 
       const err = new Error(
@@ -188,6 +197,8 @@ const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
       <Signup
         handleSubmit={handleSubmit}
         isLoading={isSubmitting}
+        isSuccess={signupSuccess}
+        forgotToken={forgotToken}
         signupErrors={signupErrors}
       />
     </>
@@ -196,15 +207,23 @@ const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
 
 export const Signup: React.FC<SignupFormProps> = ({
   handleSubmit,
+  isSuccess,
   signupErrors,
-  isLoading
+  isLoading,
+  forgotToken
 }) => {
   return (
-    <SignupForm
-      handleSubmit={handleSubmit}
-      signupErrors={signupErrors}
-      isLoading={isLoading}
-    />
+    <>
+      {isSuccess ? (
+        <SignupSuccess forgotToken={forgotToken} />
+      ) : (
+        <SignupForm
+          handleSubmit={handleSubmit}
+          signupErrors={signupErrors}
+          isLoading={isLoading}
+        />
+      )}
+    </>
   )
 }
 
