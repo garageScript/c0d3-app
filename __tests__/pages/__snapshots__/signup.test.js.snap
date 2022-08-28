@@ -20,7 +20,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
           class="card-text"
         />
         <div
-          class="alert d-flex justify-content-between mt-3 alert alert-danger"
+          class="fade alert alert-danger show"
           role="alert"
         >
           <div

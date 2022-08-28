@@ -27,7 +27,7 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
             class="form-group"
           >
             <div
-              class="alert d-flex justify-content-between mt-3 alert alert-danger"
+              class="fade alert alert-danger show"
               role="alert"
             >
               <div
