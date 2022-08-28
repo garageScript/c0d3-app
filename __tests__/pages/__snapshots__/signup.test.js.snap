@@ -122,17 +122,14 @@ exports[`Signup Page Should render success component on success 1`] = `
         <h1
           class="card-title h2 fw-bold mb-5"
         >
-          Account created successfully!
+          Please verify your email!
         </h1>
         <p
           class="card-text"
         />
-        <a
-          class="btn btn-primary noUnderline"
-          href="/confirm/undefined"
-        >
-          Click here to set your password.
-        </a>
+        <p>
+          An email verification has been sent to your inbox. Please verify it in order to continue.
+        </p>
       </div>
     </div>
   </div>
