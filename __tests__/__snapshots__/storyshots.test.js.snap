@@ -117,7 +117,6 @@ exports[`Storyshots Components/AdminLessonCard Basic 1`] = `
     href="/_blank"
     onClick={[Function]}
     onMouseEnter={[Function]}
-    onTouchStart={[Function]}
   >
     <button
       className="btn btn-secondary container__button"
@@ -762,7 +761,6 @@ exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
         href="/admin/lessons/1/introduction"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         INTRODUCTION
       </a>
@@ -771,7 +769,6 @@ exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
         href="/admin/lessons/1/modules"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         MODULES
       </a>
@@ -780,7 +777,6 @@ exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
         href="/admin/lessons/1/challenges"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         CHALLENGES
       </a>
@@ -1135,7 +1131,6 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Curriculum
         </a>
@@ -1152,7 +1147,6 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Learn
         </a>
@@ -1214,7 +1208,6 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Curriculum
         </a>
@@ -1231,7 +1224,6 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Learn
         </a>
@@ -5657,7 +5649,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -5674,7 +5665,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -5705,59 +5695,38 @@ Array [
       <div
         className="container_text_buttons"
       >
+        <h1>
+          500 Error!
+        </h1>
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          style={
+            Object {
+              "color": "#292929",
+              "fontSize": "1.25rem",
+            }
+          }
         >
-          <div
-            className="text-center mt-3"
-          >
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1.5rem",
-                }
-              }
-            >
-              <strong>
-                Internal server error
-              </strong>
-            </div>
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
-                }
-              }
-            >
-              No data
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          No data
         </div>
         <div
-          className="mb-3 col-sm-9"
+          className="container_buttons"
         >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/500.svg"
-            width={1200}
-          />
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Home
+          </a>
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -5815,7 +5784,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -5832,7 +5800,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -5863,59 +5830,38 @@ Array [
       <div
         className="container_text_buttons"
       >
+        <h1>
+          404 Error!
+        </h1>
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          style={
+            Object {
+              "color": "#292929",
+              "fontSize": "1.25rem",
+            }
+          }
         >
-          <div
-            className="text-center mt-3"
-          >
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1.5rem",
-                }
-              }
-            >
-              <strong>
-                Page not found
-              </strong>
-            </div>
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
-                }
-              }
-            >
-              404 error
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          404 error
         </div>
         <div
-          className="mb-3 col-sm-9"
+          className="container_buttons"
         >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/404.svg"
-            width={1200}
-          />
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Home
+          </a>
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -10389,7 +10335,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -10406,7 +10351,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -10512,7 +10456,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -10529,7 +10472,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -10647,7 +10589,6 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10711,7 +10652,6 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10767,7 +10707,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10837,7 +10776,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      onTouchStart={[Function]}
     >
       Review 
       <div
@@ -10872,7 +10810,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10934,7 +10871,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         Review 
         <div
@@ -10969,7 +10905,6 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -11033,7 +10968,6 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -11081,7 +11015,6 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       href="/curriculum/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      onTouchStart={[Function]}
     >
       View Challenges
     </a>
@@ -11134,7 +11067,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -11151,7 +11083,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -11222,7 +11153,6 @@ Array [
               href="/curriculum/js0"
               onClick={[Function]}
               onMouseEnter={[Function]}
-              onTouchStart={[Function]}
             >
               CHALLENGES
             </a>
@@ -11293,7 +11223,6 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           CHALLENGES
         </a>
@@ -11356,7 +11285,6 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           CHALLENGES
         </a>
@@ -11419,7 +11347,6 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         CHALLENGES
       </a>
@@ -11478,7 +11405,6 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         CHALLENGES
       </a>
@@ -11487,7 +11413,6 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         REVIEW
       </a>
@@ -12913,7 +12838,6 @@ Array [
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
-    onTouchStart={[Function]}
   >
     <span
       className="visually-hidden"
@@ -12927,7 +12851,6 @@ Array [
     href="/other"
     onClick={[Function]}
     onMouseEnter={[Function]}
-    onTouchStart={[Function]}
   >
     Non-Active Link
   </a>,
@@ -12940,7 +12863,6 @@ exports[`Storyshots Components/NavLink Basic 1`] = `
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
-  onTouchStart={[Function]}
 >
   Basic NavLink
 </a>
@@ -12974,7 +12896,6 @@ exports[`Storyshots Components/NavLink Styled Link 1`] = `
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
-  onTouchStart={[Function]}
 >
   Styled Link
 </a>
@@ -13029,7 +12950,6 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
         href="https://discordapp.com/users/fakeDiscordId/"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         fakeDiscordUsername
       </a>
@@ -14192,7 +14112,6 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -14311,7 +14230,6 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -14354,7 +14272,6 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -14473,7 +14390,6 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -22563,7 +22479,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -22580,7 +22495,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -22797,7 +22711,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -22814,7 +22727,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -22872,7 +22784,6 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -22899,7 +22810,6 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -22963,7 +22873,6 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -23016,7 +22925,6 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -23080,7 +22988,6 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -23133,7 +23040,6 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -23197,7 +23103,6 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -23250,7 +23155,6 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -23314,7 +23218,6 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -23367,7 +23270,6 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -23431,7 +23333,6 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -23484,7 +23385,6 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -23548,7 +23448,6 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -23601,7 +23500,6 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -23665,7 +23563,6 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -23718,7 +23615,6 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -23782,7 +23678,6 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -23835,7 +23730,6 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -23899,7 +23793,6 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -23952,7 +23845,6 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -24016,7 +23908,6 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -24129,7 +24020,6 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -24323,7 +24213,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -24340,7 +24229,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -24398,7 +24286,6 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -24425,7 +24312,6 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -24489,7 +24375,6 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -24542,7 +24427,6 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -24606,7 +24490,6 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -24659,7 +24542,6 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -24723,7 +24605,6 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -24776,7 +24657,6 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -24840,7 +24720,6 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -24893,7 +24772,6 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -24957,7 +24835,6 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -25010,7 +24887,6 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -25074,7 +24950,6 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -25127,7 +25002,6 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -25191,7 +25065,6 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -25244,7 +25117,6 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -25308,7 +25180,6 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -25361,7 +25232,6 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -25425,7 +25295,6 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -25478,7 +25347,6 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -25542,7 +25410,6 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -25655,7 +25522,6 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -25849,7 +25715,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -25866,7 +25731,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -25924,7 +25788,6 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -25951,7 +25814,6 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -26015,7 +25877,6 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -26068,7 +25929,6 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -26132,7 +25992,6 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -26185,7 +26044,6 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -26249,7 +26107,6 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -26302,7 +26159,6 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -26366,7 +26222,6 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -26419,7 +26274,6 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -26483,7 +26337,6 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -26536,7 +26389,6 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -26600,7 +26452,6 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -26653,7 +26504,6 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -26717,7 +26567,6 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -26770,7 +26619,6 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -26834,7 +26682,6 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -26887,7 +26734,6 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -26951,7 +26797,6 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -27004,7 +26849,6 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -27068,7 +26912,6 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -27181,7 +27024,6 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -27375,7 +27217,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -27392,7 +27233,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -27543,7 +27383,6 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Get Started
         </a>
@@ -27852,7 +27691,6 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       href="/curriculum"
       onClick={[Function]}
       onMouseEnter={[Function]}
-      onTouchStart={[Function]}
     >
       Get Started
     </a>
@@ -28068,7 +27906,6 @@ exports[`Storyshots Pages/Login Login 1`] = `
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         Forgot your password?
       </a>
@@ -28177,7 +28014,6 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         Forgot your password?
       </a>
@@ -28306,7 +28142,6 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        onTouchStart={[Function]}
       >
         Forgot your password?
       </a>
@@ -28360,7 +28195,6 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -28377,7 +28211,6 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -28563,7 +28396,6 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -28667,7 +28499,6 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -28791,7 +28622,6 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -28899,7 +28729,6 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -29003,7 +28832,6 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          onTouchStart={[Function]}
         >
           Login
         </a>
