@@ -11,6 +11,7 @@ import type { Exercise } from '@prisma/client'
 import { isAdmin } from '../../helpers/isAdmin'
 import { get } from 'lodash'
 import { withUserContainer } from '../../containers/withUserContainer'
+import { withAdminUserContainer } from '../../containers/withAdminContainer'
 
 export const exercises = () => {
   return prisma.exercise.findMany({
@@ -131,14 +132,10 @@ export const flagExercise = withUserContainer<
   })
 })
 
-export const removeExerciseFlag = withUserContainer<
+export const removeExerciseFlag = withAdminUserContainer<
   Promise<Exercise>,
   MutationRemoveExerciseFlagArgs
->(async (_parent: void, arg: MutationRemoveExerciseFlagArgs, ctx: Context) => {
-  const { req } = ctx
-
-  if (!isAdmin(req)) throw new Error('Not authorized to unflag')
-
+>(async (_parent: void, arg) => {
   const { id } = arg
 
   const exercise = await prisma.exercise.findUnique({
@@ -162,4 +159,4 @@ export const removeExerciseFlag = withUserContainer<
       module: true
     }
   })
-})
+}, 'Not authorized to unflag')
