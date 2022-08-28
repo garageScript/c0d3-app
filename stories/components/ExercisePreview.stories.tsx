@@ -7,15 +7,12 @@ export default {
 }
 
 const exerciseData = {
-  exercise: {
-    question: `a = 1;
-b = 2;
-a = b;
-// What is a?`,
-    options: ['1', '2', 'b']
-  }
+  description:
+    'Description here \n\n ```jsx \na = 1; \nb = 2; \na = b; \n// What is a?\n```',
+  answer: '1',
+  explanation: '`a` is getting assigned `1`, so `a` is `1`'
 }
 
 export const Basic: React.FC = () => {
-  return <ExercisePreview exercise={exerciseData.exercise} />
+  return <ExercisePreview exercise={exerciseData} />
 }

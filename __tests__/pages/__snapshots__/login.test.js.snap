@@ -27,17 +27,21 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
             class="form-group"
           >
             <div
-              class="alert d-flex justify-content-between mt-3 alert-danger"
+              class="alert d-flex justify-content-between mt-3 alert alert-danger"
               role="alert"
             >
               <div
-                class="d-flex gap-3"
+                class="d-flex align-items-center gap-3"
               >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/exclamation.svg"
-                  width="24"
-                />
+                <div
+                  class=""
+                >
+                  <img
+                    height="24"
+                    src="/assets/curriculum/icons/exclamation.svg"
+                    width="24"
+                  />
+                </div>
                 User does not exist! 
               </div>
             </div>
