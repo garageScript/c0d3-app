@@ -1,8 +1,6 @@
-import { Context } from '../../@types/helpers'
-import { isAdminOrThrow } from '../../helpers/isAdmin'
 import prisma from '../../prisma'
+import { withAdminContainer } from '../../containers/withAdminContainer'
 
-export const allUsers = (_parent: void, _args: void, { req }: Context) => {
-  isAdminOrThrow(req)
+export const allUsers = withAdminContainer((_parent: void, _args: void) => {
   return prisma.user.findMany()
-}
+})

@@ -1,7 +1,7 @@
 jest.mock('next-auth/react')
 
 import React from 'react'
-import ConnectToDiscordModal from './ConnectToDiscordModal'
+import ConnectToDiscordModal from '.'
 import { render, waitFor, fireEvent, screen } from '@testing-library/react'
 import { signIn } from 'next-auth/react'
 

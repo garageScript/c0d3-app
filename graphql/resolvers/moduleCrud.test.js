@@ -127,7 +127,7 @@ describe('It should update a module', () => {
           req: { user: { isAdmin: true } }
         }
       )
-    ).rejects.toThrow(new Error('No User'))
+    ).rejects.toThrowError()
   })
 })
 describe('It should test delete', () => {
@@ -161,6 +161,6 @@ describe('It should test delete', () => {
           req: { user: { isAdmin: true } }
         }
       )
-    ).rejects.toThrow(new Error('No User'))
+    ).rejects.toThrowError()
   })
 })
