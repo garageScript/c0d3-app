@@ -77,7 +77,7 @@ describe('Signup Page', () => {
     fireEvent.click(submitButton)
 
     await waitFor(() => {
-      expect(getByText('Account created successfully!')).toBeTruthy()
+      expect(getByText('Please verify your email!')).toBeTruthy()
       expect(container).toMatchSnapshot()
     })
   })

@@ -61,15 +61,16 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
   return <>{errorMessages}</>
 }
 
-const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
+const SignupSuccess: React.FC<SignupSuccessProps> = () => (
   <Card
     type="success"
     data-testid="signup-success"
-    title="Account created successfully!"
+    title="Please verify your email!"
   >
-    <NavLink path={`/confirm/${forgotToken}`} className="btn btn-primary">
-      Click here to set your password.
-    </NavLink>
+    <p>
+      An email verification has been sent to your inbox. Please verify it in
+      order to continue.
+    </p>
   </Card>
 )
 
