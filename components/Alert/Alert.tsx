@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavLink from '../NavLink'
 import { Alert as AlertType } from '../../graphql/'
 import _ from 'lodash'
 import styles from './alerts.module.scss'
 import Image from 'next/image'
+import { Alert as AlertBS } from 'react-bootstrap'
 
 type Props = {
   alert: AlertType
@@ -21,16 +22,20 @@ const alertIconMap: { [type: string]: string } = {
 }
 
 const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
+  const [show, setShow] = useState(true)
+
   const { text, type, url, urlCaption, id } = alert
   const icon = alertIconMap[_.defaultTo(type, '-1')]
-  const alertClasses =
-    type === 'urgent' ? 'alert alert-danger' : `alert alert-primary`
   const imageClass = type === 'urgent' ? '' : styles.info_image
 
-  return (
-    <div
-      className={`${styles.alert} d-flex justify-content-between mt-3 ${alertClasses}`}
-      role="alert"
+  return show ? (
+    <AlertBS
+      variant={`${type === 'urgent' ? 'danger' : 'primary'}`}
+      onClose={() => {
+        setShow(false)
+        onDismiss && onDismiss(id)
+      }}
+      dismissible={!!onDismiss}
     >
       <div className="d-flex align-items-center gap-3">
         <div className={imageClass}>
@@ -43,21 +48,9 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
           </NavLink>
         )}
       </div>
-      {onDismiss && (
-        <button
-          role="dismiss"
-          className={`${imageClass} ${styles['alert-dismiss']}`}
-          data-testid={`dismiss-${type}`}
-          onClick={() => onDismiss(id)}
-        >
-          <Image
-            src={`/assets/curriculum/icons/dismiss-${type}.svg`}
-            width={24}
-            height={24}
-          />
-        </button>
-      )}
-    </div>
+    </AlertBS>
+  ) : (
+    <></>
   )
 }
 
