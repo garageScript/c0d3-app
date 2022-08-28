@@ -23,19 +23,22 @@ const alertIconMap: { [type: string]: string } = {
 const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
   const { text, type, url, urlCaption, id } = alert
   const icon = alertIconMap[_.defaultTo(type, '-1')]
-  const textColor = type === 'urgent' ? 'text-danger' : 'text-white'
   const alertClasses =
-    type === 'urgent' ? 'alert-danger' : `bg-primary ${textColor}`
+    type === 'urgent' ? 'alert alert-danger' : `alert alert-primary`
+  const imageClass = type === 'urgent' ? '' : styles.info_image
+
   return (
     <div
-      className={`${styles['alert']} d-flex justify-content-between mt-3 ${alertClasses}`}
+      className={`${styles.alert} d-flex justify-content-between mt-3 ${alertClasses}`}
       role="alert"
     >
-      <div className="d-flex gap-3">
-        {icon && <Image src={icon} width={24} height={24} />}
-        {text + ' '}
+      <div className="d-flex align-items-center gap-3">
+        <div className={imageClass}>
+          {icon && <Image src={icon} width={24} height={24} />}
+        </div>
+        {`${text} `}
         {url && (
-          <NavLink path={url} className={textColor} external>
+          <NavLink path={url} className={'alert-link'} external>
             {urlCaption}
           </NavLink>
         )}
@@ -43,11 +46,15 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
       {onDismiss && (
         <button
           role="dismiss"
-          className={`${styles['alert-dismiss']}`}
+          className={`${imageClass} ${styles['alert-dismiss']}`}
           data-testid={`dismiss-${type}`}
           onClick={() => onDismiss(id)}
         >
-          <img src={`/assets/curriculum/icons/dismiss-${type}.svg`} />
+          <Image
+            src={`/assets/curriculum/icons/dismiss-${type}.svg`}
+            width={24}
+            height={24}
+          />
         </button>
       )}
     </div>

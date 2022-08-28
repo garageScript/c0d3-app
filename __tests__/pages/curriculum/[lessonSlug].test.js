@@ -129,7 +129,7 @@ describe('Lesson Page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => getByText(/Page not found/i))
+    await waitFor(() => getByText(/Lesson not found/i))
 
     // Used to wait for the query response to arrive
     await new Promise(res => setTimeout(res, 0))
@@ -164,7 +164,7 @@ describe('Lesson Page', () => {
 
     expect(container).toMatchSnapshot()
   })
-  test('Should return Internal server Error if alerts or lessons are missing', async () => {
+  test('Should return Bad data if alerts or lessons are missing', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
@@ -184,7 +184,7 @@ describe('Lesson Page', () => {
       </MockedProvider>
     )
 
-    const element = await findByText(/Internal server error/i)
+    const element = await findByText(/Bad data/i)
     expect(element).toBeTruthy()
 
     // Used to wait for the query response to arrive
