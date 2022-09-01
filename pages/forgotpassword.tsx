@@ -1,5 +1,5 @@
-import { useMutation } from '@apollo/client'
-import React from 'react'
+import { ApolloError, useMutation } from '@apollo/client'
+import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
 import RESET_PASSWORD from '../graphql/queries/resetPassword'
 import { resetPasswordValidation } from '../helpers/formValidation'
@@ -12,7 +12,10 @@ const initialValues = {
 }
 
 export const ResetPassword: React.FC = () => {
-  const [reqPwReset, { data, error }] = useMutation(RESET_PASSWORD)
+  const [error, setError] = useState<null | ApolloError>(null)
+  const [reqPwReset, { data }] = useMutation(RESET_PASSWORD, {
+    onError: setError
+  })
   const handleSubmit = async ({ userOrEmail }: { userOrEmail: string }) => {
     try {
       await reqPwReset({ variables: { userOrEmail } })
@@ -27,17 +30,16 @@ export const ResetPassword: React.FC = () => {
       </Card>
     )
   }
-  // Can't use NavLink since page needs to reload.
   if (error) {
     return (
       <Card title="Username or Email does not exist">
-        <a
-          href="/forgotpassword"
+        <button
           className="btn btn-primary btn-lg btn-block mb-3"
-          role="button"
+          onClick={() => setError(null)}
+          data-testid="back"
         >
           Go Back
-        </a>
+        </button>
       </Card>
     )
   }
