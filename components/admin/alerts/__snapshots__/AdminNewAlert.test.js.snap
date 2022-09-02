@@ -12,9 +12,14 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
         class="mb-3"
       >
         <div
-          class="alert d-flex justify-content-between mt-3 alert alert-primary"
+          class="fade alert alert-primary alert-dismissible show"
           role="alert"
         >
+          <button
+            aria-label="Close alert"
+            class="btn-close"
+            type="button"
+          />
           <div
             class="d-flex align-items-center gap-3"
           >
@@ -30,17 +35,6 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
              
             
           </div>
-          <button
-            class="info_image alert-dismiss"
-            data-testid="dismiss-info"
-            role="dismiss"
-          >
-            <img
-              height="24"
-              src="/assets/curriculum/icons/dismiss-info.svg"
-              width="24"
-            />
-          </button>
         </div>
       </div>
       <div
@@ -177,9 +171,14 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
         class="mb-3"
       >
         <div
-          class="alert d-flex justify-content-between mt-3 alert alert-primary"
+          class="fade alert alert-primary alert-dismissible show"
           role="alert"
         >
+          <button
+            aria-label="Close alert"
+            class="btn-close"
+            type="button"
+          />
           <div
             class="d-flex align-items-center gap-3"
           >
@@ -202,17 +201,6 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
               caption
             </a>
           </div>
-          <button
-            class="info_image alert-dismiss"
-            data-testid="dismiss-info"
-            role="dismiss"
-          >
-            <img
-              height="24"
-              src="/assets/curriculum/icons/dismiss-info.svg"
-              width="24"
-            />
-          </button>
         </div>
       </div>
       <div
