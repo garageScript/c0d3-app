@@ -467,9 +467,9 @@ describe('AdminLessonInputs component', () => {
   })
 
   it('Should dismiss success message', async () => {
-    // expect.assertions(1)
+    expect.assertions(1)
 
-    const { getByText, getByTestId, queryByText } = render(
+    const { getByText, getByTestId, queryByText, getByLabelText } = render(
       <MockedProvider mocks={mocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
@@ -492,20 +492,19 @@ describe('AdminLessonInputs component', () => {
     const submit = getByText('ADD MODULE')
     await userEvent.click(submit)
 
-    await userEvent.click(getByTestId('dismiss-info'))
+    await userEvent.click(getByLabelText('Close alert'))
 
-    // TODO: Not implemented yet. Refer to issue #2215
-    // await waitFor(() =>
-    //   expect(
-    //     queryByText('Added the item Functions successfully!')
-    //   ).not.toBeInTheDocument()
-    // )
+    await waitFor(() =>
+      expect(
+        queryByText('Added the item Functions successfully!')
+      ).not.toBeInTheDocument()
+    )
   })
 
   it('Should dismiss error message', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, queryByText } = render(
+    const { getByText, getByTestId, queryByText, getByLabelText } = render(
       <MockedProvider mocks={mocks}>
         <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
@@ -517,9 +516,8 @@ describe('AdminLessonInputs component', () => {
     const submit = getByText('ADD MODULE')
     await userEvent.click(submit)
 
-    await userEvent.click(getByTestId('dismiss-urgent'))
+    await userEvent.click(getByLabelText('Close alert'))
 
-    // This is working compared to line 500 because the error state is set to ""
     await waitFor(() =>
       expect(
         queryByText('An error occurred. Please try again.')
