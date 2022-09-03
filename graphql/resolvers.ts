@@ -23,6 +23,7 @@ import { changeAdminRights } from './resolvers/adminController'
 import { createLesson, updateLesson } from './resolvers/lessonsController'
 import { getPreviousSubmissions } from './resolvers/getPreviousSubmissions'
 import { deleteComment } from './resolvers/deleteComment'
+import { unlinkDiscord } from './resolvers/unlinkDiscord'
 import {
   addModule,
   modules,
@@ -78,6 +79,7 @@ export default {
     addComment,
     deleteComment,
     flagExercise,
-    removeExerciseFlag
+    removeExerciseFlag,
+    unlinkDiscord
   }
 }
