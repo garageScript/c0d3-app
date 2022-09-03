@@ -12933,7 +12933,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   className="card shadow-sm"
 >
   <div
-    className="ms-auto me-auto mt-4 profile_image_container"
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
   >
     <div
       className="jsx-3123111835 ms-auto me-auto mt-4"
@@ -12946,42 +12946,57 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       />
     </div>
   </div>
-  <h2
+  <h4
     className="text-center mt-4"
   >
     Rahul Kalra
-  </h2>
+  </h4>
   <div
     className="d-flex justify-content-center"
   >
-    <h4
+    <h5
       className="text-muted"
     >
       @noob101
-    </h4>
+    </h5>
   </div>
   <div
-    className="d-flex ms-auto me-auto mb-4"
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
   >
-    <img
-      className="img-fluid"
-      height={20}
-      objectFit="contain"
-      src="/assets/discordClydeLogo.svg"
-      width={20}
-    />
-    <h5
-      className="ms-2"
+    <div
+      className="d-flex align-items-center mb-2"
     >
-      <a
-        href="https://discordapp.com/users/fakeDiscordId/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
+      <img
+        className="img-fluid"
+        height={20}
+        objectFit="contain"
+        src="/assets/discordClydeLogo.svg"
+        width={20}
+      />
+      <h5
+        className="ms-2 mb-0"
       >
-        fakeDiscordUsername
-      </a>
-    </h5>
+        <a
+          href="https://discordapp.com/users/fakeDiscordId/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+        >
+          fakeDiscordUsername
+        </a>
+      </h5>
+    </div>
+    <button
+      className="btn borderless btn-outline-danger btn-outline-bg-danger"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "danger",
+        }
+      }
+    >
+      Unlink discord
+    </button>
   </div>
 </div>
 `;

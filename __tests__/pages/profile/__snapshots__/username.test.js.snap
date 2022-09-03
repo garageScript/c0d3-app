@@ -175,7 +175,7 @@ exports[`user profile test Should render anonymous users 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ms-auto me-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 mb-3 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
@@ -183,23 +183,30 @@ exports[`user profile test Should render anonymous users 1`] = `
               A 
             </div>
           </div>
-          <h2
+          <h4
             class="text-center mt-4"
           >
             A  
-          </h2>
+          </h4>
           <div
             class="d-flex justify-content-center"
           >
-            <h4
+            <h5
               class="text-muted"
             >
               @fake user
-            </h4>
+            </h5>
           </div>
           <div
-            class="d-flex ms-auto me-auto mb-4"
-          />
+            class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+          >
+            <button
+              class="btn btn-primary btn-md btn-block mt-3"
+              type="button"
+            >
+              Connect to discord
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -1044,7 +1051,7 @@ exports[`user profile test Should render if no stars received 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ms-auto me-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 mb-3 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
@@ -1052,23 +1059,30 @@ exports[`user profile test Should render if no stars received 1`] = `
               fu
             </div>
           </div>
-          <h2
+          <h4
             class="text-center mt-4"
           >
             fake user
-          </h2>
+          </h4>
           <div
             class="d-flex justify-content-center"
           >
-            <h4
+            <h5
               class="text-muted"
             >
               @fake user
-            </h4>
+            </h5>
           </div>
           <div
-            class="d-flex ms-auto me-auto mb-4"
-          />
+            class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+          >
+            <button
+              class="btn btn-primary btn-md btn-block mt-3"
+              type="button"
+            >
+              Connect to discord
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -1918,7 +1932,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ms-auto me-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 mb-3 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
@@ -1926,23 +1940,30 @@ exports[`user profile test Should render nulled challenges 1`] = `
               fu
             </div>
           </div>
-          <h2
+          <h4
             class="text-center mt-4"
           >
             fake user
-          </h2>
+          </h4>
           <div
             class="d-flex justify-content-center"
           >
-            <h4
+            <h5
               class="text-muted"
             >
               @fake user
-            </h4>
+            </h5>
           </div>
           <div
-            class="d-flex ms-auto me-auto mb-4"
-          />
+            class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+          >
+            <button
+              class="btn btn-primary btn-md btn-block mt-3"
+              type="button"
+            >
+              Connect to discord
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -2828,7 +2849,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ms-auto me-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 mb-3 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
@@ -2836,23 +2857,30 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               fu
             </div>
           </div>
-          <h2
+          <h4
             class="text-center mt-4"
           >
             fake user
-          </h2>
+          </h4>
           <div
             class="d-flex justify-content-center"
           >
-            <h4
+            <h5
               class="text-muted"
             >
               @fake user
-            </h4>
+            </h5>
           </div>
           <div
-            class="d-flex ms-auto me-auto mb-4"
-          />
+            class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+          >
+            <button
+              class="btn btn-primary btn-md btn-block mt-3"
+              type="button"
+            >
+              Connect to discord
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -3697,7 +3725,7 @@ exports[`user profile test Should render profile 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ms-auto me-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 mb-3 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
@@ -3705,23 +3733,30 @@ exports[`user profile test Should render profile 1`] = `
               fu
             </div>
           </div>
-          <h2
+          <h4
             class="text-center mt-4"
           >
             fake user
-          </h2>
+          </h4>
           <div
             class="d-flex justify-content-center"
           >
-            <h4
+            <h5
               class="text-muted"
             >
               @fake user
-            </h4>
+            </h5>
           </div>
           <div
-            class="d-flex ms-auto me-auto mb-4"
-          />
+            class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+          >
+            <button
+              class="btn btn-primary btn-md btn-block mt-3"
+              type="button"
+            >
+              Connect to discord
+            </button>
+          </div>
         </div>
         <div
           class="profile-comments"
@@ -4742,7 +4777,7 @@ exports[`user profile test should render discord avatar and username if user con
           class="card shadow-sm"
         >
           <div
-            class="ms-auto me-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 mb-3 profile_image_container"
           >
             <div
               class="jsx-3123111835 ms-auto me-auto mt-4"
@@ -4755,37 +4790,46 @@ exports[`user profile test should render discord avatar and username if user con
               />
             </div>
           </div>
-          <h2
+          <h4
             class="text-center mt-4"
           >
             fake user
-          </h2>
+          </h4>
           <div
             class="d-flex justify-content-center"
           >
-            <h4
+            <h5
               class="text-muted"
             >
               @fake user
-            </h4>
+            </h5>
           </div>
           <div
-            class="d-flex ms-auto me-auto mb-4"
+            class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
           >
-            <img
-              height="20"
-              src="/assets/discordClydeLogo.svg"
-              width="20"
-            />
-            <h5
-              class="ms-2"
+            <div
+              class="d-flex align-items-center mb-2"
             >
-              <a
-                href="https://discordapp.com/users/fakeDiscordId/"
+              <img
+                height="20"
+                src="/assets/discordClydeLogo.svg"
+                width="20"
+              />
+              <h5
+                class="ms-2 mb-0"
               >
-                fakeDiscordUser
-              </a>
-            </h5>
+                <a
+                  href="https://discordapp.com/users/fakeDiscordId/"
+                >
+                  fakeDiscordUser
+                </a>
+              </h5>
+            </div>
+            <button
+              class="btn borderless btn-outline-danger btn-outline-bg-danger"
+            >
+              Unlink discord
+            </button>
           </div>
         </div>
         <div
