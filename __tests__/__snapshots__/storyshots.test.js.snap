@@ -2,7 +2,7 @@
 
 exports[`Storyshots Component/QueryInfo Basic 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert alert-primary"
+  className="fade alert alert-primary show"
   role="alert"
 >
   <div
@@ -23,11 +23,69 @@ exports[`Storyshots Component/QueryInfo Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Component/QueryInfo With Error 1`] = `
+exports[`Storyshots Component/QueryInfo Basic With Dismiss 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert alert-danger"
+  className="fade alert alert-primary alert-dismissible show"
   role="alert"
 >
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
+    Update the module successfully! 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Error 1`] = `
+<div
+  className="fade alert alert-danger show"
+  role="alert"
+>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    An error occurred. Please try again. 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Error With Dismiss 1`] = `
+<div
+  className="fade alert alert-danger alert-dismissible show"
+  role="alert"
+>
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
   <div
     className="d-flex align-items-center gap-3"
   >
