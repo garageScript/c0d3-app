@@ -7,15 +7,14 @@ import {
 } from '../../../../graphql'
 import { formChange } from '../../../../helpers/formChange'
 import { FormCard, MD_INPUT, Option, TextField } from '../../../FormCard'
-import { AlertFillIcon, CheckCircleIcon } from '@primer/octicons-react'
 import styles from './adminLessonInputs.module.scss'
-import { Spinner } from 'react-bootstrap'
-import { get } from 'lodash'
+import { get, isEqual } from 'lodash'
 import {
   ApolloError,
   OperationVariables,
   ApolloQueryResult
 } from '@apollo/client'
+import QueryInfo from '../../../QueryInfo'
 
 type Module = { id: number; name: string; content: string; order: number }
 
@@ -96,6 +95,12 @@ const AdminModuleInputs = ({
       })
     : useAddModuleMutation({ variables: mutationVariables })
 
+  const [dataDiff, setDataDiff] = useState<undefined | typeof data>(data)
+  useEffect(
+    () => setDataDiff(prev => (isEqual(data, prev) ? undefined : data)),
+    [data]
+  )
+
   const [errorMsg, setErrorMsg] = useState(get(error, 'message', ''))
 
   const handleChange = async (value: string, propertyIndex: number) => {
@@ -148,49 +153,33 @@ const AdminModuleInputs = ({
     }
   }
 
-  const QueryStateMessage = () => {
-    if (loading) {
-      return (
-        <div className={styles.loading}>
-          <Spinner animation="grow" size="sm" />
-          <span>Adding the module...</span>
-        </div>
-      )
-    }
+  const dataText = () => {
+    const updateModule = get(data, 'updateModule')
+    const addModule = get(data, 'addModule')
 
-    if (errorMsg) {
-      return (
-        <div className={styles.error}>
-          <AlertFillIcon />
-          <span>Failed to add the module: {errorMsg}</span>
-        </div>
-      )
-    }
-
-    if (data) {
-      const updateModule = get(data, 'updateModule')
-      const addModule = get(data, 'addModule')
-
-      return (
-        <div className={styles.success}>
-          <CheckCircleIcon />
-          <span>
-            {updateModule ? 'Updated' : 'Added'} the module{' '}
-            <strong>
-              {get(addModule, 'name') || get(updateModule, 'name') || ''}
-            </strong>{' '}
-            successfully!
-          </span>
-        </div>
-      )
-    }
-
-    return <></>
+    return `${updateModule ? 'Updated' : 'Added'} the item ${
+      get(addModule, 'name') || get(updateModule, 'name') || ''
+    } successfully!`
   }
 
   return (
     <div className={styles.container}>
-      <QueryStateMessage />
+      <QueryInfo
+        data={dataDiff}
+        loading={loading}
+        error={errorMsg}
+        texts={{
+          loading: 'Adding the module...',
+          data: dataText()
+        }}
+        dismiss={{
+          onDismissError: _ => {
+            setErrorMsg('')
+            setDataDiff(undefined)
+          },
+          onDismissData: () => {}
+        }}
+      />
       <FormCard
         title={name.value || title || 'Untitled'}
         values={formOptions}
