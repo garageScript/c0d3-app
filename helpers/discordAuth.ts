@@ -64,8 +64,8 @@ const getTokenFromRefreshToken = (
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
     },
     body: new URLSearchParams({
-      client_id,
-      client_secret,
+      client_id: client_id!,
+      client_secret: client_secret!,
       grant_type: 'refresh_token',
       refresh_token
     })

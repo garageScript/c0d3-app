@@ -112,5 +112,11 @@ describe('ForgotPassword Page', () => {
 
     // wait for mutation updates after submitButton is clicked
     await waitFor(() => expect(container).toMatchSnapshot())
+
+    const backButton = getByTestId('back')
+
+    await waitFor(() => fireEvent.click(backButton))
+
+    await waitFor(() => getByRole('heading', { name: /reset your password/i }))
   })
 })

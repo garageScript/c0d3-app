@@ -166,7 +166,10 @@ const Lessons = ({ data }: GetAppProps) => {
   const { pageName, lessonSlug } = router.query
 
   const { lessons } = data
-  const { data: modulesData, refetch } = useQuery<{ modules: Modules }>(MODULES)
+  const { data: modulesData, refetch } = useQuery<{ modules: Modules }>(
+    MODULES,
+    { fetchPolicy: 'no-cache' }
+  )
 
   const lesson = useMemo(() => {
     if (lessons) {

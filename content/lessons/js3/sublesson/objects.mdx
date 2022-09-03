@@ -1206,7 +1206,7 @@ environment.
 2. **Shape**
 
    ```jsx
-   const. headers = () => {
+   const headers = () => {
 
    }
    ```
@@ -1235,7 +1235,7 @@ environment.
   `<h1>` tags.
 
   ```jsx
-  const ressult2 = headers(info)
+  const result2 = headers(info)
   // result2 is '<h1>ironman: arrogant</h1><h1>spiderman: naive</h1><h1>hulk: strong</h1>'
   ```
 
@@ -1311,7 +1311,7 @@ environment.
 
   ```jsx
   const result3 = headers(info)
-  // result3 is '<div><h1>ironman</h1><h2>arrogant</h2></div><div><h1>spiderman</h1><h2>arrogant</h2></div><div><h1>hulk</h1><h2>strong</h2></div>'
+  // result3 is '<div><h1>ironman</h1><h2>arrogant</h2></div><div><h1>spiderman</h1><h2>naive</h2></div><div><h1>hulk</h1><h2>strong</h2></div>'
   ```
 
 <Spoiler>
@@ -1936,11 +1936,10 @@ object `{}`, to store the results.
    common element.
 
 ```jsx
-;[9, 8, 7, 8, 7, 7, 7].getMostCommon()[
+;[9, 8, 7, 8, 7, 7, 7].getMostCommon()
   // returns 7 because it is the most common element
 
-  ('Batman', 8, 7, 'Batman', 'Robin')
-].getMostCommon()
+;['Batman', 8, 7, 'Batman', 'Robin'].getMostCommon()
 // returns "Batman" because it is the most common element
 ```
 
@@ -1993,7 +1992,7 @@ frequency, then store these little objects in an array.
 
    **Steps for Solution 1:**
 
-   - We need a local variable(let's call it `mapOfElments`) which stores the
+   - We need a local variable(let's call it `mapOfElements`) which stores the
      `reduce` method attached to `this`.
    - Inside the `reduce` method, build the object with the given array.
    - We need another local variable(let's call it `mostCommon`) which stores:
