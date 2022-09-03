@@ -12,7 +12,6 @@ type QueryInfo<T> = {
     loading: string
     data: string
   }
-  hide?: boolean
   dismiss?: {
     onDismissError?: (id: number) => void
     onDismissData?: (id: number) => void

@@ -17,11 +17,27 @@ export const Basic = () => (
       loading: 'Sending the request...',
       data: 'Update the module successfully!'
     }}
-    hide={false}
   />
 )
 
-export const _WithError = () => (
+export const BasicWithDismiss = () => (
+  <QueryInfo
+    data={{
+      title: 'JavaScript'
+    }}
+    loading={false}
+    error={''}
+    texts={{
+      loading: 'Sending the request...',
+      data: 'Update the module successfully!'
+    }}
+    dismiss={{
+      onDismissData: () => {}
+    }}
+  />
+)
+
+export const Error = () => (
   <QueryInfo
     data={{
       title: 'JavaScript'
@@ -32,7 +48,23 @@ export const _WithError = () => (
       loading: 'Sending the request...',
       data: ''
     }}
-    hide={false}
+  />
+)
+
+export const ErrorWithDismiss = () => (
+  <QueryInfo
+    data={{
+      title: 'JavaScript'
+    }}
+    loading={false}
+    error={'JavaScript is not related to Java!'}
+    texts={{
+      loading: 'Sending the request...',
+      data: ''
+    }}
+    dismiss={{
+      onDismissError: () => {}
+    }}
   />
 )
 
@@ -47,6 +79,5 @@ export const _WithLoading = () => (
       loading: 'Sending the request...',
       data: ''
     }}
-    hide={false}
   />
 )

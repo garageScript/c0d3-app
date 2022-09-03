@@ -1,6 +1,6 @@
 import React from 'react'
 import QueryInfo from './'
-import { render, screen, act, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 // Imported to be able to use .toBeInTheDocument()
 import '@testing-library/jest-dom'
