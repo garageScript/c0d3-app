@@ -3,8 +3,7 @@ import {
   render,
   waitForElementToBeRemoved,
   screen,
-  waitFor,
-  findByText
+  waitFor
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../graphql/queries/getApp'
@@ -16,10 +15,17 @@ import dummySessionData from '../../../__dummy__/sessionData'
 import { useRouter } from 'next/router'
 import expectLoading from '../../utils/expectLoading'
 import { SubmissionStatus } from '../../../graphql'
+import userEvent from '@testing-library/user-event'
+import { UNLINK_DISCORD } from '../../../graphql/queries/unlinkDiscord'
+import { signIn } from 'next-auth/react'
+
+jest.mock('@sentry/nextjs')
+import * as Sentry from '@sentry/nextjs'
 
 describe('user profile test', () => {
   const { query } = useRouter()
-  query['username'] = 'fake user'
+  query.username = 'fake user'
+
   test('Should render loading spinner if data is not ready', () => {
     expectLoading(<UserProfile />)
   })
@@ -332,6 +338,525 @@ describe('user profile test', () => {
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByRole('heading', { name: /fakeDiscordUser/i })
     expect(container).toMatchSnapshot()
+  })
+
+  test('should unlink discord from user account', async () => {
+    expect.assertions(1)
+
+    const session = {
+      user: {
+        id: 1,
+        username: 'fakeusername',
+        name: 'fake user',
+        email: 'fake@fakemail.com',
+        isAdmin: true,
+        discordUserId: 'fakeDiscordId',
+        discordUsername: 'fakeDiscordUser',
+        discordAvatarUrl: 'https://placeimg.com/640/480/any'
+      },
+      submissions: [
+        {
+          id: 1,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 146,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        },
+        {
+          id: 2,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 145,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: 5,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 5,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Foundations of JavaScript',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 2,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 1,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'anonymous',
+                name: ''
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: ''
+            }
+          ]
+        }
+      ]
+    }
+
+    const unlinkDiscordMock = {
+      request: {
+        query: UNLINK_DISCORD
+      },
+      result: jest.fn(() => ({
+        data: {
+          unlinkDiscord: {
+            id: 1
+          }
+        }
+      }))
+    }
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: USER_INFO,
+          variables: {
+            username: 'fake user'
+          }
+        },
+        result: {
+          data: {
+            userInfo: session
+          }
+        }
+      },
+      unlinkDiscordMock
+    ]
+    const { findByRole, getByText, getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <UserProfile />
+      </MockedProvider>
+    )
+
+    await waitForElementToBeRemoved(() => getByText('Loading...'))
+    await findByRole('heading', { name: /fakeDiscordUser/i })
+
+    await userEvent.click(getByText(/unlink discord/i))
+    await userEvent.click(getByTestId('unlink-discord-btn'))
+
+    await waitFor(() => expect(unlinkDiscordMock.result).toBeCalled())
+  })
+
+  test('should handle error when unlinking discord', async () => {
+    expect.assertions(1)
+
+    const session = {
+      user: {
+        id: 1,
+        username: 'fakeusername',
+        name: 'fake user',
+        email: 'fake@fakemail.com',
+        isAdmin: true,
+        discordUserId: 'fakeDiscordId',
+        discordUsername: 'fakeDiscordUser',
+        discordAvatarUrl: 'https://placeimg.com/640/480/any'
+      },
+      submissions: [
+        {
+          id: 1,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 146,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        },
+        {
+          id: 2,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 145,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: 5,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 5,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Foundations of JavaScript',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 2,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 1,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'anonymous',
+                name: ''
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: ''
+            }
+          ]
+        }
+      ]
+    }
+
+    const unlinkDiscordMockWithError = {
+      request: {
+        query: UNLINK_DISCORD
+      },
+      error: new Error('error')
+    }
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: USER_INFO,
+          variables: {
+            username: 'fake user'
+          }
+        },
+        result: {
+          data: {
+            userInfo: session
+          }
+        }
+      },
+      unlinkDiscordMockWithError
+    ]
+
+    const { findByRole, getByText, getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <UserProfile />
+      </MockedProvider>
+    )
+
+    await waitForElementToBeRemoved(() => getByText('Loading...'))
+    await findByRole('heading', { name: /fakeDiscordUser/i })
+
+    await userEvent.click(getByText(/unlink discord/i))
+    await userEvent.click(getByTestId('unlink-discord-btn'))
+
+    expect(Sentry.captureException).toBeCalled()
+  })
+
+  test('should link discord to user account', async () => {
+    expect.assertions(1)
+
+    const session = {
+      ...dummySessionData,
+      submissions: [
+        {
+          id: 1,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 146,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        },
+        {
+          id: 2,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 145,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: 5,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 5,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Foundations of JavaScript',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 2,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 1,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'anonymous',
+                name: ''
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: ''
+            }
+          ]
+        }
+      ]
+    }
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: USER_INFO,
+          variables: {
+            username: 'fake user'
+          }
+        },
+        result: {
+          data: {
+            userInfo: session
+          }
+        }
+      }
+    ]
+
+    const { findByRole, getByText, getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <UserProfile />
+      </MockedProvider>
+    )
+
+    await waitForElementToBeRemoved(() => getByText('Loading...'))
+    await findByRole('heading', { name: /@fake user/i })
+
+    await userEvent.click(getByText(/connect to discord/i))
+    await userEvent.click(getByTestId('connect-discord-btn'))
+
+    expect(signIn).toBeCalled()
   })
 
   test('Should render if no stars received', async () => {
