@@ -4760,842 +4760,81 @@ exports[`Storyshots Components/DiffView Default 1`] = `
 `;
 
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
-Array [
-  <div
-    className="d-none d-lg-block"
-  >
-    <div
-      className="dropdown"
-    >
-      <button
-        aria-expanded={false}
-        className="dropdown-toggle title title-none"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        Admin
-      </button>
-    </div>
-  </div>,
-  <div
-    className="d-lg-none"
-  >
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
-        onClick={[Function]}
-      >
-        Lessons
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/users"
-        onClick={[Function]}
-      >
-        Users
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts0
-      </a>
-    </div>
-  </div>,
-]
-`;
-
-exports[`Storyshots Components/DropdownMenu Colors 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Primary
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-success"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Success
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-danger"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Danger
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-info"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Info
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-warning"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Warning
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-none"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          None
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-]
-`;
-
-exports[`Storyshots Components/DropdownMenu Directions 1`] = `
 <div
-  style={
-    Object {
-      "padding": 130,
-      "paddingLeft": 170,
-    }
-  }
+  className="dropdown"
 >
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
+  <button
+    aria-expanded={false}
+    className="dropdown btn btn-primary"
+    disabled={false}
+    id="dropdown-lesson"
+    onClick={[Function]}
+    type="button"
   >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className=""
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Left
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
+    Admin
+    <svg
+      aria-hidden="true"
+      className="octicon octicon-chevron-right"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+        }
       }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-success"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Down
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
+      fill="currentColor"
+      height={17}
+      role="img"
+      style={
+        Object {
+          "display": "inline-block",
+          "overflow": "visible",
+          "userSelect": "none",
+          "verticalAlign": "text-bottom",
+        }
       }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropup"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-danger"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Up
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className=""
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-info"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Right
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
+      viewBox="0 0 16 16"
+      width={17}
+    />
+  </button>
 </div>
 `;
 
 exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
-Array [
-  <div
-    className="d-none d-lg-block"
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    className="dropdown btn btn-primary"
+    disabled={false}
+    id="dropdown-lesson"
+    onClick={[Function]}
+    type="button"
   >
-    <div
-      className="dropdown"
-    >
-      <button
-        aria-expanded={false}
-        className="dropdown-toggle title title-none"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        Admin
-      </button>
-    </div>
-  </div>,
-  <div
-    className="d-lg-none"
-  >
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
-        onClick={[Function]}
-      >
-        Lessons
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
+    Admin
+    <svg
+      aria-hidden="true"
+      className="octicon octicon-chevron-right"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+        }
+      }
+      fill="currentColor"
+      height={17}
+      role="img"
+      style={
+        Object {
+          "display": "inline-block",
+          "overflow": "visible",
+          "userSelect": "none",
+          "verticalAlign": "text-bottom",
+        }
+      }
+      viewBox="0 0 16 16"
+      width={17}
     />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/users"
-        onClick={[Function]}
-      >
-        Users
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
-    />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts1
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts2
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts3
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
-    />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts4
-      </a>
-    </div>
-  </div>,
-]
+  </button>
+</div>
 `;
 
 exports[`Storyshots Components/Error Internal 1`] = `
@@ -7609,47 +6848,40 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             Swiggity swag
           </span>
           <div
-            className="d-none d-lg-block"
+            className="dropdown"
           >
-            <div
-              className="dropdown"
+            <button
+              aria-expanded={false}
+              className="dropdown btn btn-primary"
+              disabled={false}
+              id="dropdown-lesson"
+              onClick={[Function]}
+              type="button"
             >
-              <button
-                aria-expanded={false}
-                className="dropdown-toggle title title-none"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Lolzz
-              </button>
-            </div>
-          </div>
-          <div
-            className="d-lg-none"
-          >
-            <div
-              className="text-center py-2 px-4"
-            >
-              <button
-                className="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                onClick={[Function]}
-              >
-                Lolzz
-              </button>
-            </div>
-            <div
-              className="text-center py-2 px-4"
-            >
-              <button
-                className="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                onClick={[Function]}
-              >
-                pineApple bananozna
-              </button>
-            </div>
+              Lolzz
+              <svg
+                aria-hidden="true"
+                className="octicon octicon-chevron-right"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+                  }
+                }
+                fill="currentColor"
+                height={17}
+                role="img"
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "overflow": "visible",
+                    "userSelect": "none",
+                    "verticalAlign": "text-bottom",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={17}
+              />
+            </button>
           </div>
         </div>
         <div
