@@ -1,3 +1,4 @@
+import { MockedProvider } from '@apollo/client/testing'
 import * as React from 'react'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 
@@ -16,5 +17,7 @@ const user = {
 }
 
 export const _ProfileImageInfo: React.FC = () => (
-  <ProfileImageInfo user={user} />
+  <MockedProvider>
+    <ProfileImageInfo user={user} />
+  </MockedProvider>
 )
