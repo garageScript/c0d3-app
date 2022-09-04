@@ -4,7 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../scss/profileImageInfo.module.scss'
 import { UserInfo } from '../@types/user'
-import { Modal } from 'react-bootstrap'
+import {
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle
+} from 'react-bootstrap'
 import { Button } from './theme/Button'
 import { signIn } from 'next-auth/react'
 import { Button as BsButton } from 'react-bootstrap'
@@ -76,18 +82,18 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
               Unlink discord
             </Button>
             <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Unlink discord</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
+              <ModalHeader closeButton>
+                <ModalTitle>Unlink discord</ModalTitle>
+              </ModalHeader>
+              <ModalBody>
                 <p>
                   You are about to unlink your discord account. Please be aware
                   that disconnecting your discord account will degrade your
                   learning experience in c0d3 as we use discord as our community
                   platform
                 </p>
-              </Modal.Body>
-              <Modal.Footer>
+              </ModalBody>
+              <ModalFooter>
                 <BsButton variant="secondary" onClick={handleClose}>
                   Close
                 </BsButton>
@@ -98,7 +104,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
                 >
                   Unlink
                 </BsButton>
-              </Modal.Footer>
+              </ModalFooter>
             </Modal>
           </>
         ) : (
@@ -111,10 +117,10 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
               Connect to discord
             </button>
             <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Connect to discord</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
+              <ModalHeader closeButton>
+                <ModalTitle>Connect to discord</ModalTitle>
+              </ModalHeader>
+              <ModalBody>
                 <p>
                   Please connect your Discord account, or create one if you
                   don&apos;t already have one. Our students and mentors use
@@ -134,8 +140,8 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
                   platform and if the reasons are compelling enough, may inspire
                   us to switch to an alternative.
                 </p>
-              </Modal.Body>
-              <Modal.Footer>
+              </ModalBody>
+              <ModalFooter>
                 <BsButton variant="secondary" onClick={handleClose}>
                   Close
                 </BsButton>
@@ -146,7 +152,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
                 >
                   Connect
                 </BsButton>
-              </Modal.Footer>
+              </ModalFooter>
             </Modal>
           </>
         )}
