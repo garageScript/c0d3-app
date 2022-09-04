@@ -16,7 +16,6 @@ import { signIn } from 'next-auth/react'
 import { Button as BsButton } from 'react-bootstrap'
 import { useMutation } from '@apollo/client'
 import { UNLINK_DISCORD } from '../graphql/queries/unlinkDiscord'
-import * as Sentry from '@sentry/nextjs'
 import { useRouter } from 'next/router'
 
 type ProfileImageInfoProps = {
@@ -43,7 +42,10 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
       await unlinkDiscord()
       router.reload()
     } catch (e) {
-      Sentry.captureException(e)
+      // Calling this function make DiscordBar in storyshots fail with:
+      // Warning: An update to DiscordBar inside a test was not wrapped in act(...)
+      // Track it on https://github.com/garageScript/c0d3-app/issues/2257
+      // Sentry.captureException(e)
     }
   }
 
