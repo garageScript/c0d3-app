@@ -204,7 +204,7 @@ exports[`user profile test Should render anonymous users 1`] = `
               class="btn btn-primary btn-md btn-block mt-3"
               type="button"
             >
-              Connect to discord
+              Connect to Discord
             </button>
           </div>
         </div>
@@ -1080,7 +1080,7 @@ exports[`user profile test Should render if no stars received 1`] = `
               class="btn btn-primary btn-md btn-block mt-3"
               type="button"
             >
-              Connect to discord
+              Connect to Discord
             </button>
           </div>
         </div>
@@ -1961,7 +1961,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
               class="btn btn-primary btn-md btn-block mt-3"
               type="button"
             >
-              Connect to discord
+              Connect to Discord
             </button>
           </div>
         </div>
@@ -2878,7 +2878,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               class="btn btn-primary btn-md btn-block mt-3"
               type="button"
             >
-              Connect to discord
+              Connect to Discord
             </button>
           </div>
         </div>
@@ -3754,7 +3754,7 @@ exports[`user profile test Should render profile 1`] = `
               class="btn btn-primary btn-md btn-block mt-3"
               type="button"
             >
-              Connect to discord
+              Connect to Discord
             </button>
           </div>
         </div>
@@ -4828,7 +4828,7 @@ exports[`user profile test should render discord avatar and username if user con
             <button
               class="btn borderless btn-outline-danger btn-outline-bg-danger"
             >
-              Unlink discord
+              Unlink Discord
             </button>
           </div>
         </div>
