@@ -81,17 +81,17 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
               </h5>
             </div>
             <Button onClick={handleShow} type="danger" outline color="danger">
-              Unlink discord
+              Unlink Discord
             </Button>
             <Modal show={show} onHide={handleClose}>
               <ModalHeader closeButton>
-                <ModalTitle>Unlink discord</ModalTitle>
+                <ModalTitle>Unlink Discord</ModalTitle>
               </ModalHeader>
               <ModalBody>
                 <p>
-                  You are about to unlink your discord account. Please be aware
-                  that disconnecting your discord account will degrade your
-                  learning experience in c0d3 as we use discord as our community
+                  You are about to unlink your Discord account. Please be aware
+                  that disconnecting your Discord account will degrade your
+                  learning experience in c0d3 as we use Discord as our community
                   platform
                 </p>
               </ModalBody>
@@ -116,11 +116,11 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
               className="btn btn-primary btn-md btn-block mt-3"
               onClick={handleConnectClick}
             >
-              Connect to discord
+              Connect to Discord
             </button>
             <Modal show={show} onHide={handleClose}>
               <ModalHeader closeButton>
-                <ModalTitle>Connect to discord</ModalTitle>
+                <ModalTitle>Connect to Discord</ModalTitle>
               </ModalHeader>
               <ModalBody>
                 <p>
