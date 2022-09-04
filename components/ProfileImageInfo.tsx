@@ -60,7 +60,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
         {`${user.firstName} ${user.lastName}`}
       </h4>
       <div className="d-flex justify-content-center">
-        <h5 className="text-muted">{`@${user.username}`}</h5>
+        <span className="fs-5 text-muted">{`@${user.username}`}</span>
       </div>
       <div className="d-flex ms-auto me-auto mb-4 mt-3 flex-column">
         {user.discordUserId ? (
@@ -72,13 +72,13 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
                 width={20}
                 objectFit="contain"
               />
-              <h5 className="ms-2 mb-0">
+              <span className="fs-5 ms-2 mb-0">
                 <Link
                   href={`https://discordapp.com/users/${user.discordUserId}/`}
                 >
                   {user.discordUsername}
                 </Link>
-              </h5>
+              </span>
             </div>
             <Button onClick={handleShow} type="danger" outline color="danger">
               Unlink Discord

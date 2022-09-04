@@ -12303,11 +12303,11 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   <div
     className="d-flex justify-content-center"
   >
-    <h5
-      className="text-muted"
+    <span
+      className="fs-5 text-muted"
     >
       @noob101
-    </h5>
+    </span>
   </div>
   <div
     className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
@@ -12322,8 +12322,8 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
         src="/assets/discordClydeLogo.svg"
         width={20}
       />
-      <h5
-        className="ms-2 mb-0"
+      <span
+        className="fs-5 ms-2 mb-0"
       >
         <a
           href="https://discordapp.com/users/fakeDiscordId/"
@@ -12333,7 +12333,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
         >
           fakeDiscordUsername
         </a>
-      </h5>
+      </span>
     </div>
     <button
       className="btn borderless btn-outline-danger btn-outline-bg-danger"

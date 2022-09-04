@@ -191,11 +191,11 @@ exports[`user profile test Should render anonymous users 1`] = `
           <div
             class="d-flex justify-content-center"
           >
-            <h5
-              class="text-muted"
+            <span
+              class="fs-5 text-muted"
             >
               @fake user
-            </h5>
+            </span>
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
@@ -1067,11 +1067,11 @@ exports[`user profile test Should render if no stars received 1`] = `
           <div
             class="d-flex justify-content-center"
           >
-            <h5
-              class="text-muted"
+            <span
+              class="fs-5 text-muted"
             >
               @fake user
-            </h5>
+            </span>
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
@@ -1948,11 +1948,11 @@ exports[`user profile test Should render nulled challenges 1`] = `
           <div
             class="d-flex justify-content-center"
           >
-            <h5
-              class="text-muted"
+            <span
+              class="fs-5 text-muted"
             >
               @fake user
-            </h5>
+            </span>
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
@@ -2865,11 +2865,11 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           <div
             class="d-flex justify-content-center"
           >
-            <h5
-              class="text-muted"
+            <span
+              class="fs-5 text-muted"
             >
               @fake user
-            </h5>
+            </span>
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
@@ -3741,11 +3741,11 @@ exports[`user profile test Should render profile 1`] = `
           <div
             class="d-flex justify-content-center"
           >
-            <h5
-              class="text-muted"
+            <span
+              class="fs-5 text-muted"
             >
               @fake user
-            </h5>
+            </span>
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
@@ -4798,11 +4798,11 @@ exports[`user profile test should render discord avatar and username if user con
           <div
             class="d-flex justify-content-center"
           >
-            <h5
-              class="text-muted"
+            <span
+              class="fs-5 text-muted"
             >
               @fake user
-            </h5>
+            </span>
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
@@ -4815,15 +4815,15 @@ exports[`user profile test should render discord avatar and username if user con
                 src="/assets/discordClydeLogo.svg"
                 width="20"
               />
-              <h5
-                class="ms-2 mb-0"
+              <span
+                class="fs-5 ms-2 mb-0"
               >
                 <a
                   href="https://discordapp.com/users/fakeDiscordId/"
                 >
                   fakeDiscordUser
                 </a>
-              </h5>
+              </span>
             </div>
             <button
               class="btn borderless btn-outline-danger btn-outline-bg-danger"

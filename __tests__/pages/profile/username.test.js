@@ -170,13 +170,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    const { container, findByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /@fake user/i })
+    await findByText(/@fake user/i)
     expect(container).toMatchSnapshot()
   })
 
@@ -330,13 +330,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    const { container, findByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /fakeDiscordUser/i })
+    await findByText(/fakeDiscordUser/i)
     expect(container).toMatchSnapshot()
   })
 
@@ -507,14 +507,14 @@ describe('user profile test', () => {
       },
       unlinkDiscordMock
     ]
-    const { findByRole, getByText, getByTestId } = render(
+    const { findByText, getByText, getByTestId } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
 
     await waitForElementToBeRemoved(() => getByText('Loading...'))
-    await findByRole('heading', { name: /fakeDiscordUser/i })
+    await findByText(/fakeDiscordUser/i)
 
     await userEvent.click(getByText(/unlink discord/i))
     await userEvent.click(getByTestId('unlink-discord-btn'))
@@ -667,14 +667,14 @@ describe('user profile test', () => {
       }
     ]
 
-    const { findByRole, getByText, getByTestId } = render(
+    const { findByText, getByText, getByTestId } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
 
     await waitForElementToBeRemoved(() => getByText('Loading...'))
-    await findByRole('heading', { name: /@fake user/i })
+    await findByText(/@fake user/i)
 
     await userEvent.click(getByText(/connect to discord/i))
     await userEvent.click(getByTestId('connect-discord-btn'))
@@ -748,13 +748,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    const { container, findByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /@fake user/i })
+    await findByText(/@fake user/i)
     expect(container).toMatchSnapshot()
   })
   test('Should render anonymous users', async () => {
@@ -795,13 +795,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    const { container, findByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /@fake user/i })
+    await findByText(/@fake user/i)
     expect(container).toMatchSnapshot()
   })
   test('Should render nulled lessons', async () => {
@@ -836,7 +836,7 @@ describe('user profile test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
-    await waitFor(() => screen.findByRole('heading', { name: /@fake user/i }))
+    await waitFor(() => screen.findByText(/@fake user/i))
     expect(screen.getAllByText('NaN%')[0]).toBeVisible()
   })
   test('Should render nulled challenges', async () => {
@@ -883,13 +883,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    const { container, findByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /@fake user/i })
+    await findByText(/@fake user/i)
     expect(container).toMatchSnapshot()
   })
   test('Should render nulled submission lessonIds', async () => {
@@ -941,13 +941,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    const { container, findByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /@fake user/i })
+    await findByText(/@fake user/i)
     expect(container).toMatchSnapshot()
   })
   test('Should return error on error', async () => {
