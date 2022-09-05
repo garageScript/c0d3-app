@@ -1,4 +1,3 @@
-import { resolveRequestDocument } from 'graphql-request'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { editComment } from './editComment'
 
@@ -8,7 +7,8 @@ const mockEditComment = {
 }
 
 describe('Edit comments resolver', () => {
-  test('should invoke prismaMock update', async () => {
+  test('should invoke prismaMock update', () => {
+    expect.assertions(1)
     prismaMock.comment.update.mockResolvedValue({
       id: 2,
       authorId: 1
@@ -16,7 +16,7 @@ describe('Edit comments resolver', () => {
     prismaMock.comment.findUnique.mockResolvedValue({
       authorId: 1
     })
-    await expect(
+    expect(
       editComment({}, mockEditComment, { req: { user: { id: 1 } } })
     ).resolves.toEqual({
       authorId: 1,
@@ -24,14 +24,16 @@ describe('Edit comments resolver', () => {
     })
   })
 
-  test('should throw error if no user.id in context', async () => {
-    await expect(editComment({}, mockEditComment, { req: {} })).rejects.toThrow(
+  test('should throw error if no user.id in context', () => {
+    expect.assertions(1)
+    expect(editComment({}, mockEditComment, { req: {} })).rejects.toThrow(
       'No user'
     )
   })
 
-  test('should throw error if user.id does not match author.id', async () => {
-    await expect(
+  test('should throw error if user.id does not match author.id', () => {
+    expect.assertions(1)
+    expect(
       editComment(
         {},
         {
