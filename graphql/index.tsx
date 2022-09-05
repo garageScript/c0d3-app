@@ -137,6 +137,7 @@ export type Mutation = {
   reqPwReset: SuccessResponse
   setStar: SuccessResponse
   signup?: Maybe<AuthResponse>
+  unlinkDiscord?: Maybe<User>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateExercise: Exercise
   updateLesson: Array<Lesson>
@@ -1057,6 +1058,13 @@ export type SignupMutation = {
   } | null
 }
 
+export type UnlinkDiscordMutationVariables = Exact<{ [key: string]: never }>
+
+export type UnlinkDiscordMutation = {
+  __typename?: 'Mutation'
+  unlinkDiscord?: { __typename?: 'User'; id: number } | null
+}
+
 export type UpdateChallengeMutationVariables = Exact<{
   lessonId: Scalars['Int']
   order: Scalars['Int']
@@ -1651,6 +1659,11 @@ export type MutationResolvers<
       MutationSignupArgs,
       'email' | 'firstName' | 'lastName' | 'username'
     >
+  >
+  unlinkDiscord?: Resolver<
+    Maybe<ResolversTypes['User']>,
+    ParentType,
+    ContextType
   >
   updateChallenge?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -4583,6 +4596,86 @@ export type SignupMutationOptions = Apollo.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
 >
+export const UnlinkDiscordDocument = gql`
+  mutation unlinkDiscord {
+    unlinkDiscord {
+      id
+    }
+  }
+`
+export type UnlinkDiscordMutationFn = Apollo.MutationFunction<
+  UnlinkDiscordMutation,
+  UnlinkDiscordMutationVariables
+>
+export type UnlinkDiscordProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables
+  >
+} & TChildProps
+export function withUnlinkDiscord<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables,
+    UnlinkDiscordProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables,
+    UnlinkDiscordProps<TChildProps, TDataName>
+  >(UnlinkDiscordDocument, {
+    alias: 'unlinkDiscord',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUnlinkDiscordMutation__
+ *
+ * To run a mutation, you first call `useUnlinkDiscordMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUnlinkDiscordMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [unlinkDiscordMutation, { data, loading, error }] = useUnlinkDiscordMutation({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useUnlinkDiscordMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables
+  >(UnlinkDiscordDocument, options)
+}
+export type UnlinkDiscordMutationHookResult = ReturnType<
+  typeof useUnlinkDiscordMutation
+>
+export type UnlinkDiscordMutationResult =
+  Apollo.MutationResult<UnlinkDiscordMutation>
+export type UnlinkDiscordMutationOptions = Apollo.BaseMutationOptions<
+  UnlinkDiscordMutation,
+  UnlinkDiscordMutationVariables
+>
 export const UpdateChallengeDocument = gql`
   mutation updateChallenge(
     $lessonId: Int!
@@ -5276,6 +5369,7 @@ export type MutationKeySpecifier = (
   | 'reqPwReset'
   | 'setStar'
   | 'signup'
+  | 'unlinkDiscord'
   | 'updateChallenge'
   | 'updateExercise'
   | 'updateLesson'
@@ -5305,6 +5399,7 @@ export type MutationFieldPolicy = {
   reqPwReset?: FieldPolicy<any> | FieldReadFunction<any>
   setStar?: FieldPolicy<any> | FieldReadFunction<any>
   signup?: FieldPolicy<any> | FieldReadFunction<any>
+  unlinkDiscord?: FieldPolicy<any> | FieldReadFunction<any>
   updateChallenge?: FieldPolicy<any> | FieldReadFunction<any>
   updateExercise?: FieldPolicy<any> | FieldReadFunction<any>
   updateLesson?: FieldPolicy<any> | FieldReadFunction<any>

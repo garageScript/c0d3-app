@@ -109,7 +109,7 @@ describe('AdminLessonInputs component', () => {
   it('Should add module', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
@@ -134,7 +134,7 @@ describe('AdminLessonInputs component', () => {
 
     await waitFor(() =>
       expect(
-        container.querySelector('.octicon-check-circle')
+        getByText('Added the item Functions successfully!')
       ).toBeInTheDocument()
     )
   })
@@ -142,7 +142,7 @@ describe('AdminLessonInputs component', () => {
   it('Should update module', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={updateModuleMocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
@@ -168,7 +168,7 @@ describe('AdminLessonInputs component', () => {
 
     await waitFor(() =>
       expect(
-        container.querySelector('.octicon-check-circle')
+        getByText('Updated the item Functions successfully!')
       ).toBeInTheDocument()
     )
   })
@@ -176,7 +176,7 @@ describe('AdminLessonInputs component', () => {
   it('Should display error message if inputs are empty', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
         <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
@@ -189,14 +189,16 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(container.querySelector('.octicon-alert-fill')).toBeInTheDocument()
+      expect(
+        getByText('An error occurred. Please try again.')
+      ).toBeInTheDocument()
     )
   })
 
   it('Should display error message if network or GraphQL error', async () => {
     expect.assertions(1)
 
-    const { getByText, getByTestId, container } = render(
+    const { getByText, getByTestId } = render(
       <MockedProvider mocks={errorMocks}>
         <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
       </MockedProvider>
@@ -213,7 +215,9 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(container.querySelector('.octicon-alert-fill')).toBeInTheDocument()
+      expect(
+        getByText('An error occurred. Please try again.')
+      ).toBeInTheDocument()
     )
   })
 
@@ -458,7 +462,66 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(getByText('Updated the module successfully!')).toBeInTheDocument()
+      expect(getByText('Updated the item successfully!')).toBeInTheDocument()
+    )
+  })
+
+  it('Should dismiss success message', async () => {
+    expect.assertions(1)
+
+    const { getByText, getByTestId, queryByText, getByLabelText } = render(
+      <MockedProvider mocks={mocks}>
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          refetch={() => {}}
+        />
+      </MockedProvider>
+    )
+
+    await userEvent.type(getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('input2'), '1', {
+      delay: 1
+    })
+    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
+      delay: 1
+    })
+
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    await userEvent.click(getByLabelText('Close alert'))
+
+    await waitFor(() =>
+      expect(
+        queryByText('Added the item Functions successfully!')
+      ).not.toBeInTheDocument()
+    )
+  })
+
+  it('Should dismiss error message', async () => {
+    expect.assertions(1)
+
+    const { getByText, getByTestId, queryByText, getByLabelText } = render(
+      <MockedProvider mocks={mocks}>
+        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+      </MockedProvider>
+    )
+
+    await userEvent.clear(getByTestId('input0'))
+    await userEvent.clear(getByTestId('textbox'))
+
+    const submit = getByText('ADD MODULE')
+    await userEvent.click(submit)
+
+    await userEvent.click(getByLabelText('Close alert'))
+
+    await waitFor(() =>
+      expect(
+        queryByText('An error occurred. Please try again.')
+      ).not.toBeInTheDocument()
     )
   })
 })

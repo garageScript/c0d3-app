@@ -121,6 +121,7 @@ export default gql`
       title: String!
       id: Int!
     ): [Lesson]
+    unlinkDiscord: User
   }
 
   type AuthResponse {
