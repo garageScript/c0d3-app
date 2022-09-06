@@ -114,7 +114,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
             <button
               type="button"
               className="btn btn-primary btn-md btn-block mt-3"
-              onClick={handleConnectClick}
+              onClick={handleShow}
             >
               Connect to Discord
             </button>
@@ -149,7 +149,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
                 </BsButton>
                 <BsButton
                   variant="primary"
-                  onClick={handleClose}
+                  onClick={handleConnectClick}
                   data-testid="connect-discord-btn"
                 >
                   Connect
