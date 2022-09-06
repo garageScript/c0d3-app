@@ -24,6 +24,7 @@ import { createLesson, updateLesson } from './resolvers/lessonsController'
 import { getPreviousSubmissions } from './resolvers/getPreviousSubmissions'
 import { deleteComment } from './resolvers/deleteComment'
 import { unlinkDiscord } from './resolvers/unlinkDiscord'
+import { editComment } from './resolvers/editComment'
 import {
   addModule,
   modules,
@@ -77,6 +78,7 @@ export default {
     updateModule,
     deleteModule,
     addComment,
+    editComment,
     deleteComment,
     flagExercise,
     removeExerciseFlag,
