@@ -1,8 +1,8 @@
-import React from 'react'
-import DropdownButton from 'react-bootstrap/DropdownButton'
+import React, { useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
 import styles from '../scss/dropDown.module.scss'
 import { DropDirection } from 'react-bootstrap/esm/DropdownContext'
+import { ChevronRightIcon } from '@primer/octicons-react'
 
 //a null item indicates a dropdown divider
 export type Item = {
@@ -14,62 +14,49 @@ export type Item = {
 
 type DropDownMenuProps = {
   drop?: DropDirection
-  items: Item[]
-  title: string
-  size?: 'sm' | 'lg' | undefined
-  variant?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'info'
-    | 'warning'
-    | 'danger'
-    | 'none'
+  items?: Item[] | null
+  title?: string
   //changes the underlying component CSS base class name
   //https://react-bootstrap.github.io/components/dropdowns/#api
   bsPrefix?: string
 }
 
+const ChevronRight = () => <ChevronRightIcon size={17} />
+
 export const DropdownMenu: React.FC<DropDownMenuProps> = ({
-  drop = 'down',
-  variant = 'none',
-  title,
-  size,
   items,
-  bsPrefix
+  title,
+  bsPrefix = ''
 }) => {
-  const menuItems = items.map((item: Item, itemsIndex: number) =>
-    !item ? (
-      <Dropdown.Divider key={itemsIndex} />
-    ) : (
-      <div className="text-center py-2 px-4" key={item.title}>
-        <Dropdown.Item
-          as={item.as || 'a'}
-          key={itemsIndex}
-          href={item.path}
-          onClick={() => item.onClick && item.onClick(item.title)}
-          bsPrefix={bsPrefix}
-        >
-          {item.title}
-        </Dropdown.Item>
-      </div>
-    )
-  )
+  const [activeItem, setActiveItem] = useState({ title })
 
   return (
-    <>
-      <div className="d-none d-lg-block">
-        <DropdownButton
-          title={title}
-          variant={variant}
-          size={size}
-          drop={drop}
-          bsPrefix={styles.title}
-        >
-          {menuItems}
-        </DropdownButton>
-      </div>
-      <div className="d-lg-none">{menuItems}</div>
-    </>
+    <Dropdown bsPrefix={bsPrefix}>
+      <Dropdown.Toggle bsPrefix={styles.dropdown} id="dropdown-lesson">
+        {activeItem.title || 'None'}
+        <ChevronRight />
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu className={styles.dropdown__menu}>
+        {items?.map((item, index) =>
+          item ? (
+            <Dropdown.Item
+              key={`${item?.title}-${index}`}
+              onClick={() => {
+                item?.onClick?.(item)
+
+                setActiveItem({
+                  title: item?.title
+                })
+              }}
+            >
+              {item?.title}
+            </Dropdown.Item>
+          ) : (
+            <Dropdown.Divider key={index} />
+          )
+        )}
+      </Dropdown.Menu>
+    </Dropdown>
   )
 }
