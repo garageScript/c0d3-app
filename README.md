@@ -9,7 +9,7 @@
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/garageScript/c0d3-app/branch/master/graph/badge.svg)](https://codecov.io/gh/garageScript/c0d3-app)
 
-Repo for c0d3.com powered by NextJS. A website to train people to be full stack
+c0d3.com repo powered by NextJS. An app to train people to be full stack
 software engineers.
 
 ## Prerequisites
@@ -29,6 +29,7 @@ Follow
 
 ## Contributing
 
+[React TypeScript Cheatsheets](https://react-typescript-cheatsheet.netlify.app/)
 [Learn how to develop with TypeScript in React (video)](https://www.youtube.com/watch?v=Z5iWr6Srsj8)
 
 ### PR Criteria

@@ -56,6 +56,7 @@ export default gql`
       content: String!
     ): Comment
     deleteComment(id: Int!): Comment
+    editComment(id: Int!, content: String!): Comment
     addModule(
       lessonId: Int!
       name: String!
