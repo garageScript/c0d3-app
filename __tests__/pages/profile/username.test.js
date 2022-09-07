@@ -20,7 +20,6 @@ import { UNLINK_DISCORD } from '../../../graphql/queries/unlinkDiscord'
 import { signIn } from 'next-auth/react'
 
 jest.mock('@sentry/nextjs')
-import * as Sentry from '@sentry/nextjs'
 
 describe('user profile test', () => {
   const { query } = useRouter()
