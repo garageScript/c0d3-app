@@ -128,6 +128,7 @@ export type Mutation = {
   deleteComment?: Maybe<Comment>
   deleteExercise: Exercise
   deleteModule: Module
+  editComment?: Maybe<Comment>
   flagExercise?: Maybe<Exercise>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
@@ -137,6 +138,7 @@ export type Mutation = {
   reqPwReset: SuccessResponse
   setStar: SuccessResponse
   signup?: Maybe<AuthResponse>
+  unlinkDiscord?: Maybe<User>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateExercise: Exercise
   updateLesson: Array<Lesson>
@@ -222,6 +224,11 @@ export type MutationDeleteExerciseArgs = {
 }
 
 export type MutationDeleteModuleArgs = {
+  id: Scalars['Int']
+}
+
+export type MutationEditCommentArgs = {
+  content: Scalars['String']
   id: Scalars['Int']
 }
 
@@ -418,6 +425,57 @@ export type UserLesson = {
   starGiven?: Maybe<Scalars['String']>
   starsReceived?: Maybe<Array<Maybe<Star>>>
   userId?: Maybe<Scalars['String']>
+}
+
+export type LessonAndChallengeInfoFragment = {
+  __typename?: 'Lesson'
+  id: number
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
+  chatUrl?: string | null
+  order: number
+  description: string
+  title: string
+  challenges: Array<{
+    __typename?: 'Challenge'
+    id: number
+    description: string
+    lessonId: number
+    title: string
+    order: number
+  }>
+}
+
+export type SubmissionsInfoFragment = {
+  __typename?: 'Submission'
+  id: number
+  status: SubmissionStatus
+  diff?: string | null
+  comment?: string | null
+  challengeId: number
+  lessonId: number
+  createdAt?: string | null
+  updatedAt: string
+  challenge: { __typename?: 'Challenge'; title: string; description: string }
+  user: { __typename?: 'User'; id: number; username: string }
+  reviewer?: {
+    __typename?: 'User'
+    id: number
+    username: string
+    name: string
+  } | null
+  comments?: Array<{
+    __typename?: 'Comment'
+    id: number
+    content: string
+    submissionId: number
+    createdAt: string
+    authorId: number
+    line?: number | null
+    fileName?: string | null
+    author?: { __typename?: 'User'; username: string; name: string } | null
+  }> | null
 }
 
 export type AcceptSubmissionMutationVariables = Exact<{
@@ -656,57 +714,6 @@ export type FlagExerciseMutationVariables = Exact<{
 export type FlagExerciseMutation = {
   __typename?: 'Mutation'
   flagExercise?: { __typename?: 'Exercise'; id: number } | null
-}
-
-export type LessonAndChallengeInfoFragment = {
-  __typename?: 'Lesson'
-  id: number
-  docUrl?: string | null
-  githubUrl?: string | null
-  videoUrl?: string | null
-  chatUrl?: string | null
-  order: number
-  description: string
-  title: string
-  challenges: Array<{
-    __typename?: 'Challenge'
-    id: number
-    description: string
-    lessonId: number
-    title: string
-    order: number
-  }>
-}
-
-export type SubmissionsInfoFragment = {
-  __typename?: 'Submission'
-  id: number
-  status: SubmissionStatus
-  diff?: string | null
-  comment?: string | null
-  challengeId: number
-  lessonId: number
-  createdAt?: string | null
-  updatedAt: string
-  challenge: { __typename?: 'Challenge'; title: string; description: string }
-  user: { __typename?: 'User'; id: number; username: string }
-  reviewer?: {
-    __typename?: 'User'
-    id: number
-    username: string
-    name: string
-  } | null
-  comments?: Array<{
-    __typename?: 'Comment'
-    id: number
-    content: string
-    submissionId: number
-    createdAt: string
-    authorId: number
-    line?: number | null
-    fileName?: string | null
-    author?: { __typename?: 'User'; username: string; name: string } | null
-  }> | null
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
@@ -1059,6 +1066,13 @@ export type SignupMutation = {
   } | null
 }
 
+export type UnlinkDiscordMutationVariables = Exact<{ [key: string]: never }>
+
+export type UnlinkDiscordMutation = {
+  __typename?: 'Mutation'
+  unlinkDiscord?: { __typename?: 'User'; id: number } | null
+}
+
 export type UpdateChallengeMutationVariables = Exact<{
   lessonId: Scalars['Int']
   order: Scalars['Int']
@@ -1219,6 +1233,16 @@ export type UserInfoQuery = {
       } | null> | null
     }>
   } | null
+}
+
+export type EditCommentMutationVariables = Exact<{
+  id: Scalars['Int']
+  content: Scalars['String']
+}>
+
+export type EditCommentMutation = {
+  __typename?: 'Mutation'
+  editComment?: { __typename?: 'Comment'; id: number; content: string } | null
 }
 
 export type WithIndex<TObject> = TObject & Record<string, any>
@@ -1598,6 +1622,12 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationDeleteModuleArgs, 'id'>
   >
+  editComment?: Resolver<
+    Maybe<ResolversTypes['Comment']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationEditCommentArgs, 'content' | 'id'>
+  >
   flagExercise?: Resolver<
     Maybe<ResolversTypes['Exercise']>,
     ParentType,
@@ -1653,6 +1683,11 @@ export type MutationResolvers<
       MutationSignupArgs,
       'email' | 'firstName' | 'lastName' | 'password' | 'username'
     >
+  >
+  unlinkDiscord?: Resolver<
+    Maybe<ResolversTypes['User']>,
+    ParentType,
+    ContextType
   >
   updateChallenge?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -4588,6 +4623,86 @@ export type SignupMutationOptions = Apollo.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
 >
+export const UnlinkDiscordDocument = gql`
+  mutation unlinkDiscord {
+    unlinkDiscord {
+      id
+    }
+  }
+`
+export type UnlinkDiscordMutationFn = Apollo.MutationFunction<
+  UnlinkDiscordMutation,
+  UnlinkDiscordMutationVariables
+>
+export type UnlinkDiscordProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables
+  >
+} & TChildProps
+export function withUnlinkDiscord<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables,
+    UnlinkDiscordProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables,
+    UnlinkDiscordProps<TChildProps, TDataName>
+  >(UnlinkDiscordDocument, {
+    alias: 'unlinkDiscord',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUnlinkDiscordMutation__
+ *
+ * To run a mutation, you first call `useUnlinkDiscordMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUnlinkDiscordMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [unlinkDiscordMutation, { data, loading, error }] = useUnlinkDiscordMutation({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useUnlinkDiscordMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    UnlinkDiscordMutation,
+    UnlinkDiscordMutationVariables
+  >(UnlinkDiscordDocument, options)
+}
+export type UnlinkDiscordMutationHookResult = ReturnType<
+  typeof useUnlinkDiscordMutation
+>
+export type UnlinkDiscordMutationResult =
+  Apollo.MutationResult<UnlinkDiscordMutation>
+export type UnlinkDiscordMutationOptions = Apollo.BaseMutationOptions<
+  UnlinkDiscordMutation,
+  UnlinkDiscordMutationVariables
+>
 export const UpdateChallengeDocument = gql`
   mutation updateChallenge(
     $lessonId: Int!
@@ -5119,6 +5234,89 @@ export type UserInfoQueryResult = Apollo.QueryResult<
   UserInfoQuery,
   UserInfoQueryVariables
 >
+export const EditCommentDocument = gql`
+  mutation editComment($id: Int!, $content: String!) {
+    editComment(id: $id, content: $content) {
+      id
+      content
+    }
+  }
+`
+export type EditCommentMutationFn = Apollo.MutationFunction<
+  EditCommentMutation,
+  EditCommentMutationVariables
+>
+export type EditCommentProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    EditCommentMutation,
+    EditCommentMutationVariables
+  >
+} & TChildProps
+export function withEditComment<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    EditCommentMutation,
+    EditCommentMutationVariables,
+    EditCommentProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    EditCommentMutation,
+    EditCommentMutationVariables,
+    EditCommentProps<TChildProps, TDataName>
+  >(EditCommentDocument, {
+    alias: 'editComment',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useEditCommentMutation__
+ *
+ * To run a mutation, you first call `useEditCommentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useEditCommentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [editCommentMutation, { data, loading, error }] = useEditCommentMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      content: // value for 'content'
+ *   },
+ * });
+ */
+export function useEditCommentMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    EditCommentMutation,
+    EditCommentMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<EditCommentMutation, EditCommentMutationVariables>(
+    EditCommentDocument,
+    options
+  )
+}
+export type EditCommentMutationHookResult = ReturnType<
+  typeof useEditCommentMutation
+>
+export type EditCommentMutationResult =
+  Apollo.MutationResult<EditCommentMutation>
+export type EditCommentMutationOptions = Apollo.BaseMutationOptions<
+  EditCommentMutation,
+  EditCommentMutationVariables
+>
 export type AlertKeySpecifier = (
   | 'id'
   | 'text'
@@ -5272,6 +5470,7 @@ export type MutationKeySpecifier = (
   | 'deleteComment'
   | 'deleteExercise'
   | 'deleteModule'
+  | 'editComment'
   | 'flagExercise'
   | 'login'
   | 'logout'
@@ -5281,6 +5480,7 @@ export type MutationKeySpecifier = (
   | 'reqPwReset'
   | 'setStar'
   | 'signup'
+  | 'unlinkDiscord'
   | 'updateChallenge'
   | 'updateExercise'
   | 'updateLesson'
@@ -5301,6 +5501,7 @@ export type MutationFieldPolicy = {
   deleteComment?: FieldPolicy<any> | FieldReadFunction<any>
   deleteExercise?: FieldPolicy<any> | FieldReadFunction<any>
   deleteModule?: FieldPolicy<any> | FieldReadFunction<any>
+  editComment?: FieldPolicy<any> | FieldReadFunction<any>
   flagExercise?: FieldPolicy<any> | FieldReadFunction<any>
   login?: FieldPolicy<any> | FieldReadFunction<any>
   logout?: FieldPolicy<any> | FieldReadFunction<any>
@@ -5310,6 +5511,7 @@ export type MutationFieldPolicy = {
   reqPwReset?: FieldPolicy<any> | FieldReadFunction<any>
   setStar?: FieldPolicy<any> | FieldReadFunction<any>
   signup?: FieldPolicy<any> | FieldReadFunction<any>
+  unlinkDiscord?: FieldPolicy<any> | FieldReadFunction<any>
   updateChallenge?: FieldPolicy<any> | FieldReadFunction<any>
   updateExercise?: FieldPolicy<any> | FieldReadFunction<any>
   updateLesson?: FieldPolicy<any> | FieldReadFunction<any>
