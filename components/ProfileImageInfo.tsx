@@ -18,6 +18,53 @@ import { useMutation } from '@apollo/client'
 import { UNLINK_DISCORD } from '../graphql/queries/unlinkDiscord'
 import { useRouter } from 'next/router'
 
+type DiscordModalProps = {
+  show: boolean
+  handleClose: () => void
+  handleOnClick: () => void
+  title: string
+  Body: () => JSX.Element
+  btnText: string
+  btnVariant: string
+  textId: string
+}
+
+const DiscordModal = ({
+  show,
+  handleClose,
+  handleOnClick,
+  title,
+  Body,
+  btnText,
+  btnVariant,
+  textId
+}: DiscordModalProps) => {
+  return (
+    <Modal show={show} onHide={handleClose}>
+      <ModalHeader closeButton>
+        <ModalTitle>{title}</ModalTitle>
+      </ModalHeader>
+      <ModalBody>
+        <p>
+          <Body />
+        </p>
+      </ModalBody>
+      <ModalFooter>
+        <BsButton variant="secondary" onClick={handleClose}>
+          Close
+        </BsButton>
+        <BsButton
+          variant={btnVariant}
+          onClick={handleOnClick}
+          data-testid={textId}
+        >
+          {btnText}
+        </BsButton>
+      </ModalFooter>
+    </Modal>
+  )
+}
+
 type ProfileImageInfoProps = {
   user: UserInfo
 }
@@ -49,10 +96,40 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
     }
   }
 
+  const UnlinkDiscordBody = () => (
+    <p>
+      You are about to unlink your Discord account. Please be aware that
+      disconnecting your Discord account will degrade your learning experience
+      in c0d3 as we use Discord as our community platform
+    </p>
+  )
+
+  const ConnectToDiscordBody = () => (
+    <>
+      <p>
+        Please connect your Discord account, or create one if you don&apos;t
+        already have one. Our students and mentors use Discord to communicate
+        and help each other, give you feedback on your challenges, and sometimes
+        do virtual hangouts.
+      </p>
+      <p>
+        If you don&apos;t want to connect to Discord, then you won&apos;t get
+        any value out of creating an account on C0D3.com. Feel free to browse
+        our lessons and study on your own!
+      </p>
+      <p>
+        Also, if you would like to share your reasons for not using Discord,
+        we&apos;d love to hear about it! Your thoughts will help us make more
+        informed decisions about our community platform and if the reasons are
+        compelling enough, may inspire us to switch to an alternative.
+      </p>
+    </>
+  )
+
   return (
     <div className="card shadow-sm">
       <div
-        className={`ms-auto me-auto mt-4 mb-3 ${styles['profile_image_container']}`}
+        className={`ms-auto me-auto mt-4 mb-3 ${styles.profile_image_container}`}
       >
         <UserInfoImage user={user} className="mt-4" />
       </div>
@@ -83,31 +160,16 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
             <Button onClick={handleShow} type="danger" outline color="danger">
               Unlink Discord
             </Button>
-            <Modal show={show} onHide={handleClose}>
-              <ModalHeader closeButton>
-                <ModalTitle>Unlink Discord</ModalTitle>
-              </ModalHeader>
-              <ModalBody>
-                <p>
-                  You are about to unlink your Discord account. Please be aware
-                  that disconnecting your Discord account will degrade your
-                  learning experience in c0d3 as we use Discord as our community
-                  platform
-                </p>
-              </ModalBody>
-              <ModalFooter>
-                <BsButton variant="secondary" onClick={handleClose}>
-                  Close
-                </BsButton>
-                <BsButton
-                  variant="danger"
-                  onClick={handleUnlinkClick}
-                  data-testid="unlink-discord-btn"
-                >
-                  Unlink
-                </BsButton>
-              </ModalFooter>
-            </Modal>
+            <DiscordModal
+              show={show}
+              handleClose={handleClose}
+              handleOnClick={handleUnlinkClick}
+              title={'Unlink Discord'}
+              Body={UnlinkDiscordBody}
+              btnText={'Unlink'}
+              btnVariant={'danger'}
+              textId={'unlink-discord-btn'}
+            />
           </>
         ) : (
           <>
@@ -118,44 +180,16 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
             >
               Connect to Discord
             </button>
-            <Modal show={show} onHide={handleClose}>
-              <ModalHeader closeButton>
-                <ModalTitle>Connect to Discord</ModalTitle>
-              </ModalHeader>
-              <ModalBody>
-                <p>
-                  Please connect your Discord account, or create one if you
-                  don&apos;t already have one. Our students and mentors use
-                  Discord to communicate and help each other, give you feedback
-                  on your challenges, and sometimes do virtual hangouts.
-                </p>
-                <p>
-                  If you don&apos;t want to connect to Discord, then you
-                  won&apos;t get any value out of creating an account on
-                  C0D3.com. Feel free to browse our lessons and study on your
-                  own!
-                </p>
-                <p>
-                  Also, if you would like to share your reasons for not using
-                  Discord, we&apos;d love to hear about it! Your thoughts will
-                  help us make more informed decisions about our community
-                  platform and if the reasons are compelling enough, may inspire
-                  us to switch to an alternative.
-                </p>
-              </ModalBody>
-              <ModalFooter>
-                <BsButton variant="secondary" onClick={handleClose}>
-                  Close
-                </BsButton>
-                <BsButton
-                  variant="primary"
-                  onClick={handleConnectClick}
-                  data-testid="connect-discord-btn"
-                >
-                  Connect
-                </BsButton>
-              </ModalFooter>
-            </Modal>
+            <DiscordModal
+              show={show}
+              handleClose={handleClose}
+              handleOnClick={handleConnectClick}
+              title={'Connect to Discord'}
+              Body={ConnectToDiscordBody}
+              btnText={'Connect to Discord'}
+              btnVariant={'primary'}
+              textId={'connect-discord-btn'}
+            />
           </>
         )}
       </div>
