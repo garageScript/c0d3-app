@@ -12350,6 +12350,47 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ProfileImageInfo Profile Image Info With Connect 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
+  >
+    <div
+      className="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
+    >
+      RK
+    </div>
+  </div>
+  <h4
+    className="text-center mt-4"
+  >
+    Rahul Kalra
+  </h4>
+  <div
+    className="d-flex justify-content-center"
+  >
+    <span
+      className="fs-5 text-muted"
+    >
+      @noob101
+    </span>
+  </div>
+  <div
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+  >
+    <button
+      className="btn btn-primary btn-md btn-block mt-3"
+      onClick={[Function]}
+      type="button"
+    >
+      Connect to Discord
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
 <div
   className="card shadow-sm"
