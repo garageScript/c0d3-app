@@ -21,3 +21,9 @@ export const _ProfileImageInfo: React.FC = () => (
     <ProfileImageInfo user={user} />
   </MockedProvider>
 )
+
+export const _ProfileImageInfoWithConnect: React.FC = () => (
+  <MockedProvider>
+    <ProfileImageInfo user={{ ...user, discordUserId: '' }} />
+  </MockedProvider>
+)
