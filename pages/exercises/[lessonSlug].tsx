@@ -26,25 +26,22 @@ const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
 
   return (
     <Layout title={currentLesson.title}>
-      <ExercisesTitleCard
-        lessonDocUrl={currentLesson.docUrl}
-        lessonSlug={slug}
-      />
+      <ExercisesNavCard lessonDocUrl={currentLesson.docUrl} lessonSlug={slug} />
       <h1>{currentLesson.title}</h1>
       {alerts && <AlertsDisplay alerts={alerts} />}
     </Layout>
   )
 }
 
-type ExercisesTitleCardProps = {
+type ExercisesNavCardProps = {
   lessonDocUrl: string | null | undefined
   lessonSlug: string
 }
 
-const ExercisesTitleCard = ({
+const ExercisesNavCard = ({
   lessonDocUrl,
   lessonSlug
-}: ExercisesTitleCardProps) => {
+}: ExercisesNavCardProps) => {
   return (
     <div className="card shadow-sm d-inline-flex flex-row p-2 mb-4">
       {lessonDocUrl && (
