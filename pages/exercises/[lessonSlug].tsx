@@ -9,6 +9,7 @@ import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import AlertsDisplay from '../../components/AlertsDisplay'
+import NavLink from '../../components/NavLink'
 
 const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, alerts } = queryData
@@ -25,9 +26,45 @@ const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
 
   return (
     <Layout title={currentLesson.title}>
+      <ExercisesTitleCard
+        lessonDocUrl={currentLesson.docUrl}
+        lessonSlug={slug}
+      />
       <h1>{currentLesson.title}</h1>
       {alerts && <AlertsDisplay alerts={alerts} />}
     </Layout>
+  )
+}
+
+type ExercisesTitleCardProps = {
+  lessonDocUrl: string | null | undefined
+  lessonSlug: string
+}
+
+const ExercisesTitleCard = ({
+  lessonDocUrl,
+  lessonSlug
+}: ExercisesTitleCardProps) => {
+  return (
+    <div className="card shadow-sm d-inline-flex flex-row p-2 mb-4">
+      {lessonDocUrl && (
+        <NavLink
+          path={lessonDocUrl}
+          className="py-2 px-3 mx-1 fw-bold text-primary"
+        >
+          LESSONS
+        </NavLink>
+      )}
+      <NavLink
+        path={`/curriculum/${lessonSlug}`}
+        className="py-2 px-3 mx-1 fw-bold text-primary"
+      >
+        CHALLENGES
+      </NavLink>
+      <div className="py-2 px-3 mx-1 fw-bold bg-primary text-white rounded">
+        EXERCISES
+      </div>
+    </div>
   )
 }
 
