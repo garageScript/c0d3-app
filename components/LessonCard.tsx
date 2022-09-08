@@ -27,50 +27,42 @@ type ReviewButtonProps = {
   className?: string
 }
 
-type ReviewCountProps = {
-  lessonId: number
-}
-
-const ReviewCount: React.FC<ReviewCountProps> = props => {
+const ReviewButton: React.FC<ReviewButtonProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: props.lessonId },
     fetchPolicy: 'network-only',
     nextFetchPolicy: 'cache-first'
   })
 
-  if (loading) {
-    return (
-      <div className="spinner-border spinner-border-sm mx-1" role="status" />
-    )
-  }
+  const style = `btn btn-sm btn-primary text-white float-end mb-2 me-2 ${
+    props.className || ''
+  }`
 
-  if (!data) {
-    return <span>0</span>
-  }
-  const pendingSubmissionsCount = data.submissions.reduce(
-    (acc: number, val: any) => {
-      if (val.status === SubmissionStatus.Open) {
-        return acc + 1
-      }
-      return acc
-    },
-    0
-  )
-
-  return <span>{pendingSubmissionsCount}</span>
-}
-
-const ReviewButton: React.FC<ReviewButtonProps> = props => {
-  let style = 'btn btn-sm btn-primary text-white float-end mb-2 me-2'
-  if (props.className) style += props.className
   if (!props.isCompleted) {
     return null
   }
 
+  const pendingSubmissionsCount =
+    data &&
+    data.submissions.reduce((acc: number, val: any) => {
+      if (val.status === SubmissionStatus.Open) {
+        return acc + 1
+      }
+      return acc
+    }, 0)
+
+  if (data && !pendingSubmissionsCount) return <></>
+
+  const content = loading ? (
+    <div className="spinner-border spinner-border-sm mx-1" role="status" />
+  ) : (
+    <span>{pendingSubmissionsCount}</span>
+  )
+
   return (
     <Link href={props.reviewUrl}>
-      <a className={style}>
-        Review <ReviewCount lessonId={props.lessonId} /> Submissions
+      <a data-testid="review-submissions-count" className={style}>
+        Review {content} Submissions
       </a>
     </Link>
   )
