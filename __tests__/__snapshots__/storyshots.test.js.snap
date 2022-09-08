@@ -10131,6 +10131,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
     </p>
     <a
       className="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+      data-testid="review-submissions-count"
       href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -10228,6 +10229,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       </div>
       <a
         className="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+        data-testid="review-submissions-count"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}

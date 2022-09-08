@@ -2066,6 +2066,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </p>
             <a
               class="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+              data-testid="review-submissions-count"
               href="/review/js0"
             >
               Review 
@@ -2153,6 +2154,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
               <a
                 class="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+                data-testid="review-submissions-count"
                 href="/review/js0"
               >
                 Review 
@@ -2245,6 +2247,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </p>
             <a
               class="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+              data-testid="review-submissions-count"
               href="/review/js1"
             >
               Review 
@@ -2332,6 +2335,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
               <a
                 class="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+                data-testid="review-submissions-count"
                 href="/review/js1"
               >
                 Review 
@@ -2424,6 +2428,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </p>
             <a
               class="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+              data-testid="review-submissions-count"
               href="/review/js2"
             >
               Review 
@@ -2511,6 +2516,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
               <a
                 class="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+                data-testid="review-submissions-count"
                 href="/review/js2"
               >
                 Review 
