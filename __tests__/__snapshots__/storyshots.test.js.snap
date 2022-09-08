@@ -866,46 +866,6 @@ Array [
 ]
 `;
 
-exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
-<div>
-  <div
-    className="lessons_tabsNav"
-  >
-    <div
-      className="lessons__tabsNav__nav"
-    >
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/introduction"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        INTRODUCTION
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/modules"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        MODULES
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/challenges"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        CHALLENGES
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
 <div
   className="container"
@@ -12201,6 +12161,44 @@ exports[`Storyshots Components/ModalCard Small 1`] = `
 >
   Launch demo modal
 </button>
+`;
+
+exports[`Storyshots Components/NavCard Basic 1`] = `
+<div
+  className="navCard__tabsNav"
+>
+  <div
+    className="navCard__tabsNav__nav"
+  >
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/introduction"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      INTRODUCTION
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/modules"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      MODULES
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/challenges"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      CHALLENGES
+    </a>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Components/NavLink Active Link 1`] = `
