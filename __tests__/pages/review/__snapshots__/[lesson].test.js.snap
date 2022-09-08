@@ -864,7 +864,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3056,7 +3056,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3246,7 +3246,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3303,7 +3303,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                                         >
                                           <svg
                                             aria-hidden="true"
