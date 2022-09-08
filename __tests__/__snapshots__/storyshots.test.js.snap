@@ -10130,7 +10130,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
     </p>
     <a
-      className="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
+      className="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
       href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -10227,7 +10227,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         </p>
       </div>
       <a
-        className="btn btn-sm btn-primary text-white float-end mb-2 me-2"
+        className="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}

@@ -78,7 +78,8 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         class="mt-2"
       />
       <a
-        class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
+        class="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+        data-testid="review-submissions-count"
         href="/reviewUrl"
       >
         Review 
@@ -162,7 +163,8 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
           />
         </div>
         <a
-          class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
+          class="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+          data-testid="review-submissions-count"
           href="/reviewUrl"
         >
           Review 
@@ -256,13 +258,12 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         class="mt-2"
       />
       <a
-        class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
+        class="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+        data-testid="review-submissions-count"
         href="/reviewUrl"
       >
         Review 
-        <span>
-          0
-        </span>
+        <span />
          Submissions
       </a>
     </div>
@@ -339,189 +340,12 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
           />
         </div>
         <a
-          class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
+          class="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+          data-testid="review-submissions-count"
           href="/reviewUrl"
         >
           Review 
-          <span>
-            0
-          </span>
-           Submissions
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Lesson Card Complete State Should render lessonCard with submission count 1`] = `
-<div>
-  <div
-    class="card shadow-sm mt-3 border-0"
-  >
-    <div
-      class="d-flex d-sm-none flex-column px-3"
-    >
-      <h4
-        class="lesson-card__title fw-bold mt-3 "
-      >
-        <div
-          class="d-flex justify-content-center"
-        >
-          <div
-            class="align-self-center"
-          >
-            <a
-              class=" noUnderline"
-              href="/challengeUrl"
-            />
-          </div>
-          <span
-            class="lesson-card__badge badge rounded-pill p-0"
-          >
-            <svg
-              fill="none"
-              height="15"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              width="15"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-              />
-              <polyline
-                points="22 4 12 14.01 9 11.01"
-              />
-            </svg>
-            <span
-              class="mx-1 d-none d-md-block"
-            >
-              COMPLETED
-            </span>
-          </span>
-        </div>
-      </h4>
-      <img
-        class="rounded"
-        height="165"
-        layout="intrinsic"
-        src="/assets/curriculum/undefined"
-        width="116"
-      />
-      <div>
-        <div
-          class="d-inline-block mt-3"
-        >
-          <img
-            alt="icon-challenge"
-            class="me-2"
-            src="/assets/curriculum/icons/icon-challenge.svg"
-          />
-          <span
-            class="lesson-card__icon-text"
-          >
-             CHALLENGES
-          </span>
-        </div>
-      </div>
-      <p
-        class="mt-2"
-      />
-      <a
-        class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
-        href="/reviewUrl"
-      >
-        Review 
-        <span>
-          2
-        </span>
-         Submissions
-      </a>
-    </div>
-    <div
-      class="d-none d-sm-flex p-2"
-    >
-      <img
-        class="align-self-center"
-        height="165"
-        src="/assets/curriculum/undefined"
-        width="116"
-      />
-      <div
-        class="lesson-card__description ps-4 d-none d-sm-block"
-      >
-        <div
-          class="d-flex"
-        >
-          <h4
-            class="lesson-card__title fw-bold mt-3"
-          >
-            <a
-              class="text-primary link"
-              href="/challengeUrl"
-            />
-          </h4>
-          <span
-            class="lesson-card__badge badge rounded-pill mt-2 me-2 py-2 d-flex align-items-center"
-          >
-            <svg
-              fill="none"
-              height="15"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              width="15"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-              />
-              <polyline
-                points="22 4 12 14.01 9 11.01"
-              />
-            </svg>
-            <span
-              class="mx-1 d-none d-md-block"
-            >
-              COMPLETED
-            </span>
-          </span>
-        </div>
-        <div>
-          <div>
-            <div
-              class="d-inline-block me-4"
-            >
-              <img
-                alt="icon-challenge"
-                class="me-2"
-                src="/assets/curriculum/icons/icon-challenge.svg"
-              />
-              <span
-                class="lesson-card__icon-text"
-              >
-                 CHALLENGES
-              </span>
-            </div>
-          </div>
-          <p
-            class="mt-2"
-          />
-        </div>
-        <a
-          class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
-          href="/reviewUrl"
-        >
-          Review 
-          <span>
-            2
-          </span>
+          <span />
            Submissions
         </a>
       </div>
