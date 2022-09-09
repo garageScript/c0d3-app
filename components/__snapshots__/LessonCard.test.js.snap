@@ -257,15 +257,6 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       <p
         class="mt-2"
       />
-      <a
-        class="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
-        data-testid="review-submissions-count"
-        href="/reviewUrl"
-      >
-        Review 
-        <span />
-         Submissions
-      </a>
     </div>
     <div
       class="d-none d-sm-flex p-2"
@@ -339,15 +330,6 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             class="mt-2"
           />
         </div>
-        <a
-          class="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
-          data-testid="review-submissions-count"
-          href="/reviewUrl"
-        >
-          Review 
-          <span />
-           Submissions
-        </a>
       </div>
     </div>
   </div>

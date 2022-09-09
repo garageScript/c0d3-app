@@ -51,7 +51,7 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
       return acc
     }, 0)
 
-  if (data && !pendingSubmissionsCount) return <></>
+  if ((data && !pendingSubmissionsCount) || (!data && !loading)) return <></>
 
   const content = loading ? (
     <div className="spinner-border spinner-border-sm mx-1" role="status" />
