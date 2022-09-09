@@ -5,7 +5,7 @@ import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
 import NavLink from './NavLink'
 import Image from 'next/image'
 import styles from '../scss/lessonCard.module.scss'
-import { SubmissionStatus } from '../graphql'
+import { Submission, SubmissionStatus } from '../graphql'
 import Link from 'next/link'
 
 type Props = {
@@ -28,11 +28,14 @@ type ReviewButtonProps = {
 }
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
-  const { loading, data } = useQuery(GET_SUBMISSIONS, {
-    variables: { lessonId: props.lessonId },
-    fetchPolicy: 'network-only',
-    nextFetchPolicy: 'cache-first'
-  })
+  const { loading, data } = useQuery<{ submissions: Submission[] }>(
+    GET_SUBMISSIONS,
+    {
+      variables: { lessonId: props.lessonId },
+      fetchPolicy: 'network-only',
+      nextFetchPolicy: 'cache-first'
+    }
+  )
 
   const style = `btn btn-sm btn-primary text-white float-end mb-2 me-2 ${
     props.className || ''
@@ -44,7 +47,7 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
 
   const pendingSubmissionsCount =
     data &&
-    data.submissions.reduce((acc: number, val: any) => {
+    data.submissions.reduce((acc, val) => {
       if (val.status === SubmissionStatus.Open) {
         return acc + 1
       }
