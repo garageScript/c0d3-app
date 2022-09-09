@@ -111,6 +111,14 @@ const Lessons = ({ data }: GetAppProps) => {
     return sortModules(modulesData)
   }, [lesson.id, get('modules', modulesData)])
 
+  const tabs = [
+    {
+      text: 'modules',
+      url: `${MAIN_PATH}/${lesson.slug}/modules`
+    }
+  ]
+  const tabSelected = tabs.findIndex(tab => tab.text === pageName)
+
   return (
     <AdminLayout data={data}>
       <main className={styles.container}>
@@ -125,15 +133,7 @@ const Lessons = ({ data }: GetAppProps) => {
           />
         </header>
         <section>
-          <NavCard
-            tabs={[
-              {
-                text: 'modules',
-                url: `${MAIN_PATH}/${lesson.slug}/modules`,
-                isSelected: pageName === 'modules'
-              }
-            ]}
-          />
+          <NavCard tabSelected={tabSelected} tabs={tabs} />
         </section>
         <section>
           <Content
