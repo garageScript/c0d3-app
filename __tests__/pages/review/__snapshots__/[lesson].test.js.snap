@@ -3246,6 +3246,12 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
+                                          class="btn borderless btn-info btn-sm"
+                                          style="color: rgb(255, 255, 255);"
+                                        >
+                                          Edit
+                                        </button>
+                                        <button
                                           class="btn borderless btn-outline-danger btn-outline-bg-danger"
                                         >
                                           <svg
@@ -3302,6 +3308,12 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                         </a>
                                       </div>
                                       <div>
+                                        <button
+                                          class="btn borderless btn-info btn-sm"
+                                          style="color: rgb(255, 255, 255);"
+                                        >
+                                          Edit
+                                        </button>
                                         <button
                                           class="btn borderless btn-outline-danger btn-outline-bg-danger"
                                         >

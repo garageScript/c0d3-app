@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, Alert } from 'react'
 import { SubmissionComments } from './SubmissionComments'
 import { fireEvent, waitFor, render } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
@@ -6,8 +6,10 @@ import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
 import { InMemoryCache } from '@apollo/client'
 import submissionData from '../__dummy__/submission'
 import DELETE_COMMENT from '../graphql/queries/deleteComment'
+import EDIT_COMMENT from '../graphql/queries/editComment'
 import dummySessionData from '../__dummy__/sessionData'
 import { GlobalContext } from '../helpers/globalContext'
+import userEvent from '@testing-library/user-event'
 
 const submissionsData = [submissionData, { ...submissionData, id: 101 }]
 
@@ -36,6 +38,21 @@ const mocks = [
         }
       }
     }))
+  },
+  {
+    request: {
+      query: EDIT_COMMENT,
+      variables: { id: 1, content: 'edited test comment' }
+    },
+    result: { data: { id: 1, content: 'edited test comment' } },
+    newData: jest.fn(() => ({
+      data: {
+        editComment: {
+          id: '1',
+          content: 'edited test comment'
+        }
+      }
+    }))
   }
 ]
 
@@ -51,10 +68,42 @@ const comments = [
     author: {
       username: 'admin'
     }
+  },
+  {
+    id: 2,
+    content: 'test comment 2',
+    submissionId: 101,
+    createdAt: '224',
+    authorId: 1,
+    line: 2,
+    fileName: 'js7/1.js',
+    author: {
+      username: 'admin'
+    }
   }
 ]
 
 describe('Test SubmissionComments Component', () => {
+  const fillOutLoginForm = async (getByTestId, str) => {
+    const textField = getByTestId('textbox')
+
+    // the type event needs to be delayed so the Formik validations finish
+    await userEvent.type(textField, str, { delay: 1 })
+  }
+
+  const Wrapper = ({ userId = 1, children }) => {
+    const context = useContext(GlobalContext)
+    const incorrectUserData = {
+      id: userId,
+      name: 'fake user',
+      email: 'fake@fakemail.com',
+      isAdmin: true
+    }
+    useEffect(() => {
+      context.setContext({ ...dummySessionData, user: incorrectUserData })
+    }, [])
+    return <>{children}</>
+  }
   it('Should render correctly', () => {
     const { container } = render(
       <MockedProvider>
@@ -73,21 +122,6 @@ describe('Test SubmissionComments Component', () => {
       variables: { userId: 3, challengeId: 6 },
       data: { getPreviousSubmissions: submissionsData }
     })
-
-    const Wrapper = ({ children }) => {
-      const context = useContext(GlobalContext)
-      const incorrectUserData = {
-        id: 1,
-        name: 'fake user',
-        email: 'fake@fakemail.com',
-        isAdmin: true
-      }
-      useEffect(() => {
-        context.setContext({ ...dummySessionData, user: incorrectUserData })
-      }, [])
-      return <>{children}</>
-    }
-
     const { container } = render(
       <MockedProvider cache={cache} addTypename={false} mocks={mocks}>
         <Wrapper>
@@ -104,5 +138,83 @@ describe('Test SubmissionComments Component', () => {
     await waitFor(() => {
       expect(deleteCommentMutation).toHaveBeenCalled()
     })
+  })
+
+  it('should allow user to edit comment and discard changes when edit button is pressed, but not edit more than 1 comment in a chain', async () => {
+    const cache = new InMemoryCache({ addTypename: false })
+
+    cache.writeQuery({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 3, challengeId: 6 },
+      data: { getPreviousSubmissions: submissionsData }
+    })
+    expect.assertions(3)
+    const { container } = render(
+      <MockedProvider cache={cache} addTypename={false} mocks={mocks}>
+        <Wrapper>
+          <SubmissionComments comments={comments} submission={submissionData} />
+        </Wrapper>
+      </MockedProvider>
+    )
+
+    const editButton = container.querySelector('.btn-info.btn-sm')
+    fireEvent.click(editButton)
+
+    await waitFor(() => {
+      const discardButton = container.querySelector('.btn-light')
+      expect(discardButton).toBeTruthy()
+      expect(container.querySelector('.btn-info')).toBeTruthy()
+
+      const editButtonTwo = container.querySelector('.btn-info.btn-sm')
+      fireEvent.click(editButtonTwo)
+
+      waitFor(() => {
+        expect(Alert.alert).toHaveBeenCalledWith(
+          'You can only edit one comment in a single comment chain at a time.'
+        )
+      })
+
+      fireEvent.click(discardButton)
+      waitFor(() => {
+        expect(editButton).toBeTruthy()
+      })
+    })
+  })
+  it('should update comment when save changes button is clicked', async () => {
+    const cache = new InMemoryCache({ addTypename: false })
+
+    cache.writeQuery({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 3, challengeId: 6 },
+      data: { getPreviousSubmissions: submissionsData }
+    })
+    const { container, getByTestId } = render(
+      <MockedProvider cache={cache} addTypename={false} mocks={mocks}>
+        <Wrapper>
+          <SubmissionComments
+            comments={comments.slice(0, 1)}
+            submission={submissionData}
+          />
+        </Wrapper>
+      </MockedProvider>
+    )
+
+    const editButton = container.querySelector('.btn-info.btn-sm')
+    const deleteButton = container.querySelector('.btn-outline-danger')
+
+    await userEvent.click(editButton)
+
+    await userEvent.clear(getByTestId('textbox'))
+    await fillOutLoginForm(getByTestId, 'edited test comment') // previous text: test comment
+
+    const saveButton = container.querySelector('.btn-info')
+    await userEvent.click(saveButton)
+
+    const editCommentMutation = mocks[2].newData
+
+    expect(editCommentMutation).toHaveBeenCalled()
+
+    expect(deleteButton).toBeTruthy()
+    expect(editButton).toBeTruthy()
   })
 })

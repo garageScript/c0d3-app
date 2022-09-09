@@ -21619,6 +21619,17 @@ Array [
       </div>
       <div>
         <button
+          className="btn borderless btn-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Edit
+        </button>
+        <button
           className="btn borderless btn-outline-danger btn-outline-bg-danger"
           onClick={[Function]}
           style={
@@ -21689,6 +21700,17 @@ Array [
       </div>
       <div>
         <button
+          className="btn borderless btn-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Edit
+        </button>
+        <button
           className="btn borderless btn-outline-danger btn-outline-bg-danger"
           onClick={[Function]}
           style={
@@ -21758,6 +21780,17 @@ Array [
         </a>
       </div>
       <div>
+        <button
+          className="btn borderless btn-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Edit
+        </button>
         <button
           className="btn borderless btn-outline-danger btn-outline-bg-danger"
           onClick={[Function]}
