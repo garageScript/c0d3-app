@@ -25,10 +25,10 @@ const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
 
   const tabs = [
-    { text: 'lessons', url: `/curriculum/${currentLesson.slug}` },
     ...(currentLesson.docUrl
-      ? [{ text: 'challenges', url: currentLesson.docUrl }]
+      ? [{ text: 'lessons', url: currentLesson.docUrl }]
       : []),
+    { text: 'challenges', url: `/curriculum/${currentLesson.slug}` },
     { text: 'exercises', url: `/exercises/${currentLesson.slug}` }
   ]
 
