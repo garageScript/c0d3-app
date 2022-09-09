@@ -9,7 +9,7 @@ import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import AlertsDisplay from '../../components/AlertsDisplay'
-import NavLink from '../../components/NavLink'
+import NavCard from '../../components/NavCard'
 
 const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, alerts } = queryData
@@ -24,44 +24,23 @@ const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   if (!currentLesson)
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
 
+  const tabs = [
+    { text: 'lessons', url: `/curriculum/${currentLesson.slug}` },
+    ...(currentLesson.docUrl
+      ? [{ text: 'challenges', url: currentLesson.docUrl }]
+      : []),
+    { text: 'exercises', url: `/exercises/${currentLesson.slug}` }
+  ]
+
   return (
     <Layout title={currentLesson.title}>
-      <ExercisesNavCard lessonDocUrl={currentLesson.docUrl} lessonSlug={slug} />
-      <h1>{currentLesson.title}</h1>
+      <NavCard
+        tabSelected={tabs.findIndex(tab => tab.text === 'exercises')}
+        tabs={tabs}
+      />
+      <h1 className="mt-3">{currentLesson.title}</h1>
       {alerts && <AlertsDisplay alerts={alerts} />}
     </Layout>
-  )
-}
-
-type ExercisesNavCardProps = {
-  lessonDocUrl: string | null | undefined
-  lessonSlug: string
-}
-
-const ExercisesNavCard = ({
-  lessonDocUrl,
-  lessonSlug
-}: ExercisesNavCardProps) => {
-  return (
-    <div className="card shadow-sm d-inline-flex flex-row p-2 mb-4">
-      {lessonDocUrl && (
-        <NavLink
-          path={lessonDocUrl}
-          className="py-2 px-3 mx-1 fw-bold text-primary"
-        >
-          LESSONS
-        </NavLink>
-      )}
-      <NavLink
-        path={`/curriculum/${lessonSlug}`}
-        className="py-2 px-3 mx-1 fw-bold text-primary"
-      >
-        CHALLENGES
-      </NavLink>
-      <div className="py-2 px-3 mx-1 fw-bold bg-primary text-white rounded">
-        EXERCISES
-      </div>
-    </div>
   )
 }
 
