@@ -11,13 +11,13 @@ export const Basic = () => {
   const router = useRouter()
   const pageName = router.asPath.split('/').slice(-1)[0]
   const tabTexts = ['introduction', 'modules', 'challenges']
+  const tabSelected = tabTexts.findIndex(text => text === pageName)
   const textToTab = (text: string) => ({
     text,
-    url: `/admin/lessons/1/${text}`,
-    isSelected: text === pageName
+    url: `/admin/lessons/1/${text}`
   })
 
-  return <NavCard tabs={tabTexts.map(textToTab)} />
+  return <NavCard tabSelected={tabSelected} tabs={tabTexts.map(textToTab)} />
 }
 
 const parameters = {

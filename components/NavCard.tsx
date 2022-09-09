@@ -5,19 +5,19 @@ import styles from '../scss/navCard.module.scss'
 type Tab = {
   text: string
   url: string
-  isSelected: boolean
 }
 
 type NavCardProps = {
+  tabSelected: number
   tabs: Tab[]
 }
 
-const NavCard = ({ tabs }: NavCardProps) => {
+const NavCard = ({ tabSelected, tabs }: NavCardProps) => {
   return (
     <div className={styles.navCard__tabsNav}>
       <div className={styles.navCard__tabsNav__nav}>
         {tabs.map((tab, i) => (
-          <NavCardItem key={i} tab={tab} />
+          <NavCardItem key={i} isSelected={i === tabSelected} tab={tab} />
         ))}
       </div>
     </div>
@@ -25,13 +25,14 @@ const NavCard = ({ tabs }: NavCardProps) => {
 }
 
 type NavCardItemProps = {
+  isSelected: boolean
   tab: Tab
 }
 
-const NavCardItem = ({ tab }: NavCardItemProps) => {
+const NavCardItem = ({ isSelected, tab }: NavCardItemProps) => {
   const className =
     styles[
-      tab.isSelected
+      isSelected
         ? 'navCard__tabsNav__nav__item'
         : 'navCard__tabsNav__nav__item--inactive'
     ]
