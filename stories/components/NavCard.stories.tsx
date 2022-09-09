@@ -10,14 +10,13 @@ export default {
 export const Basic = () => {
   const router = useRouter()
   const pageName = router.asPath.split('/').slice(-1)[0]
-  const tabTexts = ['introduction', 'modules', 'challenges']
-  const tabSelected = tabTexts.findIndex(text => text === pageName)
-  const textToTab = (text: string) => ({
+  const tabs = ['introduction', 'modules', 'challenges'].map(text => ({
     text,
     url: `/admin/lessons/1/${text}`
-  })
+  }))
+  const tabSelected = tabs.findIndex(tab => tab.text === pageName)
 
-  return <NavCard tabSelected={tabSelected} tabs={tabTexts.map(textToTab)} />
+  return <NavCard tabSelected={tabSelected} tabs={tabs} />
 }
 
 const parameters = {
