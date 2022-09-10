@@ -79,6 +79,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -86,9 +87,6 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -291,6 +289,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -298,9 +297,6 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -532,6 +528,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -539,9 +536,6 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
