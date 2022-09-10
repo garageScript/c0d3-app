@@ -7,6 +7,7 @@ import Image from 'next/image'
 import styles from '../scss/lessonCard.module.scss'
 import { Submission, SubmissionStatus } from '../graphql'
 import Link from 'next/link'
+import { get } from 'lodash'
 
 type Props = {
   lessonId: number
@@ -45,14 +46,14 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
     return null
   }
 
-  const pendingSubmissionsCount =
-    data &&
-    data.submissions.reduce((acc, val) => {
-      if (val.status === SubmissionStatus.Open) {
-        return acc + 1
-      }
-      return acc
-    }, 0)
+  const submissions = get(data, 'submissions') || []
+
+  const pendingSubmissionsCount = submissions.reduce((acc, val) => {
+    if (val.status === SubmissionStatus.Open) {
+      return acc + 1
+    }
+    return acc
+  }, 0)
 
   if ((data && !pendingSubmissionsCount) || (!data && !loading)) return <></>
 
