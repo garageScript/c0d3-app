@@ -71,7 +71,11 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => screen.getByRole('link', { name: 'CHALLENGES' }))
+    await waitFor(() =>
+      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
+    )
+
+    screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
     expect(screen.queryByRole('link', { name: 'LESSONS' })).toBeNull()
   })
