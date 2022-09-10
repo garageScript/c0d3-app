@@ -79,6 +79,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -86,9 +87,6 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -3995,6 +3993,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -4002,9 +4001,6 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"

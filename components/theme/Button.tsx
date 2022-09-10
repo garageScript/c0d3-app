@@ -29,10 +29,14 @@ export const Button: React.FC<ButtonProps> = ({
   const classes = ['btn']
 
   if (border && !outline) classes.push('border')
-  if (!border) classes.push(styles['borderless'])
+  if (!border) classes.push(styles.borderless)
   if (type) {
     if (outline)
-      classes.push(`btn-outline-${type} ${styles[`btn-outline-bg-${type}`]}`)
+      classes.push(
+        `btn-outline-${type} ${styles.onFocusBgFix} ${
+          styles[`btn-outline-bg-${type}`]
+        }`
+      )
     else classes.push(`btn-${type}`)
   }
   if (m) classes.push(`m-${m}`)
