@@ -79,6 +79,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -86,9 +87,6 @@ exports[`user profile test Should render anonymous users 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -955,6 +953,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -962,9 +961,6 @@ exports[`user profile test Should render if no stars received 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -1836,6 +1832,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -1843,9 +1840,6 @@ exports[`user profile test Should render nulled challenges 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -2753,6 +2747,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -2760,9 +2755,6 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -3629,6 +3621,7 @@ exports[`user profile test Should render profile 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -3636,9 +3629,6 @@ exports[`user profile test Should render profile 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -4826,7 +4816,7 @@ exports[`user profile test should render discord avatar and username if user con
               </span>
             </div>
             <button
-              class="btn borderless btn-outline-danger btn-outline-bg-danger"
+              class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
             >
               Unlink Discord
             </button>
