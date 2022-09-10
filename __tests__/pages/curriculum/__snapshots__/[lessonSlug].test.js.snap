@@ -80,6 +80,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -87,9 +88,6 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -561,6 +559,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -568,9 +567,6 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -773,6 +769,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -780,9 +777,6 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -1281,6 +1275,7 @@ exports[`Lesson Page Should return Bad data if alerts or lessons are missing 1`]
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -1288,9 +1283,6 @@ exports[`Lesson Page Should return Bad data if alerts or lessons are missing 1`]
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
