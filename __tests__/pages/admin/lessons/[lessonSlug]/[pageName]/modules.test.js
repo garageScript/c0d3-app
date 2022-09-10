@@ -252,7 +252,7 @@ describe('modules', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     expect(screen.getByText('MODULES').className).not.toEqual(
-      'lessons_tabsNav__nav__item'
+      'navCard__tabsNav__nav__item'
     )
   })
 })
