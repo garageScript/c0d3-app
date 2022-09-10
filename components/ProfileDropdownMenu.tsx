@@ -71,12 +71,12 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
     <Dropdown>
       <div className="d-none d-lg-block">
         <Dropdown.Toggle
+          data-testid="user-info-image"
           as={buttonMenuToggle}
           className={`${styles['nav-user-toggle']} `}
           id="user_nav_toggle"
         >
           <UserInfoImage user={userInfo} className={`${styles['user-icon']}`} />
-          <span>{_.capitalize(username)}</span>
           <ChevronDownIcon size={16} />
         </Dropdown.Toggle>
         <Dropdown.Menu className={`${styles['dropdown-menu']}`} align="end">

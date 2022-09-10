@@ -38,7 +38,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
       </div>
       <div>
         <button
-          class="btn borderless btn-outline-danger btn-outline-bg-danger"
+          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
         >
           <svg
             aria-hidden="true"

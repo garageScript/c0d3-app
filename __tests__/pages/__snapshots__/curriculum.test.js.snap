@@ -79,6 +79,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -86,9 +87,6 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -1773,6 +1771,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -1780,9 +1779,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"

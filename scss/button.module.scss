@@ -5,6 +5,13 @@
   border: 0;
 }
 
+.onFocusBgFix {
+  &:focus,
+  &:active {
+    background-color: transparent;
+  }
+}
+
 @each $name, $color in variables.$colors {
   .btn-outline-bg-#{$name}:hover {
     background-color: rgba($color, 0.2);
