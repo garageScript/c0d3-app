@@ -358,6 +358,28 @@ describe('introduction', () => {
     })
   })
 
+  it('Should close success alert', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await fillOutIntroductionForms()
+    fireEvent.click(screen.getByText('Save changes'))
+
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await userEvent.click(await screen.findByLabelText('Close alert'))
+
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+  })
+
   it('Should not update lesson on invalid inputs', async () => {
     expect.hasAssertions()
 
@@ -402,5 +424,27 @@ describe('introduction', () => {
     await waitFor(() => {
       expect(Sentry.captureException).toBeCalled()
     })
+  })
+
+  it('Should close error alert', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocksWithError}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await fillOutIntroductionForms()
+    fireEvent.click(screen.getByText('Save changes'))
+
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await userEvent.click(await screen.findByLabelText('Close alert'))
+
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
   })
 })

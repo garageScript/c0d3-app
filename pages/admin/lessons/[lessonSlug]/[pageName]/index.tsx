@@ -14,7 +14,8 @@ import Breadcrumbs from '../../../../../components/Breadcrumbs'
 import styles from '../../../../../scss/modules.module.scss'
 import { AdminLayout } from '../../../../../components/admin/AdminLayout'
 import { useRouter } from 'next/router'
-import { compose, filter, get, sortBy } from 'lodash/fp'
+import { compose, filter, sortBy, get } from 'lodash/fp'
+import { get as _get } from 'lodash'
 import NavCard from '../../../../../components/NavCard'
 import { FormCard } from '../../../../../components/FormCard'
 import { formChange } from '../../../../../helpers/formChange'
@@ -24,6 +25,7 @@ import {
   errorCheckAllFields,
   makeGraphqlVariable
 } from '../../../../../helpers/admin/adminHelpers'
+import QueryInfo from '../../../../../components/QueryInfo'
 
 const MAIN_PATH = '/admin/lessons'
 
@@ -51,7 +53,7 @@ type Module = {
 type Modules = Module[]
 
 const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
-  const [updateLesson] = useUpdateLessonMutation()
+  const [updateLesson, { data, error, loading }] = useUpdateLessonMutation()
 
   const [formOptions, setFormOptions] = useState(
     getPropertyArr(lesson, ['challenges', '__typename'])
@@ -88,6 +90,19 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
   return (
     <div>
       <h4>Lesson Info</h4>
+      <QueryInfo
+        data={data}
+        loading={loading}
+        error={_get(error, 'message', '')}
+        texts={{
+          loading: 'Updating the lesson...',
+          data: `Updated the lesson successfully!`
+        }}
+        dismiss={{
+          onDismissData: () => {},
+          onDismissError: () => {}
+        }}
+      />
       <div>
         <FormCard
           noBg
