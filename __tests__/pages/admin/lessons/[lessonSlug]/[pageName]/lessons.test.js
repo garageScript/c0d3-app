@@ -349,7 +349,7 @@ describe('introduction', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     await fillOutIntroductionForms()
-    fireEvent.click(screen.queryByText('Save changes'))
+    fireEvent.click(screen.getByText('Save changes'))
 
     await act(() => new Promise(res => setTimeout(res, 0)))
 
@@ -373,7 +373,7 @@ describe('introduction', () => {
     const titleInput = screen.getByTestId('input1')
     await userEvent.clear(titleInput)
 
-    fireEvent.click(screen.queryByText('Save changes'))
+    fireEvent.click(screen.getByText('Save changes'))
 
     await act(() => new Promise(res => setTimeout(res, 0)))
 
@@ -395,7 +395,7 @@ describe('introduction', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     await fillOutIntroductionForms()
-    fireEvent.click(screen.queryByText('Save changes'))
+    fireEvent.click(screen.getByText('Save changes'))
 
     await act(() => new Promise(res => setTimeout(res, 0)))
 

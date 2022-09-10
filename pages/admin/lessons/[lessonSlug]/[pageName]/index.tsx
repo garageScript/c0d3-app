@@ -7,8 +7,6 @@ import {
   useUpdateLessonMutation,
   withGetApp
 } from '../../../../../graphql'
-import { toUpper } from 'lodash'
-import AdminLessonNav from '../../../../../components/admin/lessons/AdminLessonSideNavLayout'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
 import AdminLessonInputs from '../../../../../components/admin/lessons/AdminLessonInputs'
 import { Props } from '../../../../../components/admin/lessons/AdminLessonInputs/AdminLessonInputs'
@@ -195,8 +193,12 @@ const Lessons = ({ data }: GetAppProps) => {
 
   const tabs = [
     {
+      text: 'introduction',
+      url: `${MAIN_PATH}/${lessonSlug}/introduction`
+    },
+    {
       text: 'modules',
-      url: `${MAIN_PATH}/${lesson.slug}/modules`
+      url: `${MAIN_PATH}/${lessonSlug}/modules`
     }
   ]
   const tabSelected = tabs.findIndex(tab => tab.text === pageName)
@@ -215,7 +217,10 @@ const Lessons = ({ data }: GetAppProps) => {
           />
         </header>
         <section>
-          <NavCard tabSelected={tabSelected} tabs={tabs} />
+          <NavCard
+            tabSelected={tabSelected < 0 ? 0 : tabSelected}
+            tabs={tabs}
+          />
         </section>
         <section>
           <Content
