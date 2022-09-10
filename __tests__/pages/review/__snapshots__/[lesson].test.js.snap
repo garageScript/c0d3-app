@@ -79,6 +79,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -86,9 +87,6 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -291,6 +289,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -298,9 +297,6 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -532,6 +528,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -539,9 +536,6 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -864,7 +858,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3056,7 +3050,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3246,7 +3240,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3303,7 +3297,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                                         >
                                           <svg
                                             aria-hidden="true"
