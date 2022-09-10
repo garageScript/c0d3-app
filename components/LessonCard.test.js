@@ -2,8 +2,11 @@ jest.mock('@apollo/client')
 import { useQuery } from '@apollo/client'
 import * as React from 'react'
 import LessonCard from './LessonCard'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { SubmissionStatus } from '../graphql'
+
+// Imported to be able to use expect(...).toBeInTheDocument()
+import '@testing-library/jest-dom'
 
 describe('Lesson Card Complete State', () => {
   const props = {
@@ -20,6 +23,7 @@ describe('Lesson Card Complete State', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
   test('Should render lessonCard with loading...', async () => {
     useQuery.mockReturnValue({
       loading: true
@@ -30,6 +34,7 @@ describe('Lesson Card Complete State', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
   test('Should render lessonCard with submission count', async () => {
     useQuery.mockReturnValue({
       data: {
@@ -47,10 +52,25 @@ describe('Lesson Card Complete State', () => {
       }
     })
 
-    const { container } = render(
-      <LessonCard {...props} currentState="completed" />
-    )
-    expect(container).toMatchSnapshot()
+    render(<LessonCard {...props} currentState="completed" />)
+
+    expect(
+      screen.getAllByTestId('review-submissions-count')[0]
+    ).toBeInTheDocument()
+  })
+
+  test('Should render lessonCard with no submission count', async () => {
+    useQuery.mockReturnValue({
+      data: {
+        submissions: []
+      }
+    })
+
+    render(<LessonCard {...props} currentState="completed" />)
+
+    expect(
+      screen.queryByTestId('review-submissions-count')
+    ).not.toBeInTheDocument()
   })
 })
 
