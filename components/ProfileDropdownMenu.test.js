@@ -49,15 +49,15 @@ describe('Profile Dropdown component', () => {
       query: ''
     }))
 
-    const { getByText, getAllByText } = render(
+    const { getByTestId, getAllByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ProfileDropdownMenu username="fakeusername" isAdmin={true} />
       </MockedProvider>
     )
 
     await act(async () => {
-      await waitFor(() => getByText('Fakeusername'))
-      fireEvent.click(getByText('Fakeusername'))
+      await waitFor(() => getByTestId('user-info-image'))
+      fireEvent.click(getByTestId('user-info-image'))
       await waitFor(() => getAllByText('Profile')[0])
       fireEvent.click(getAllByText('Profile')[0])
     })
