@@ -2060,16 +2060,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               A super simple introduction to help you get started!
             </p>
-            <a
-              class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
-              href="/review/js0"
-            >
-              Review 
-              <span>
-                0
-              </span>
-               Submissions
-            </a>
           </div>
           <div
             class="d-none d-sm-flex p-2"
@@ -2149,16 +2139,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   A super simple introduction to help you get started!
                 </p>
               </div>
-              <a
-                class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
-                href="/review/js0"
-              >
-                Review 
-                <span>
-                  0
-                </span>
-                 Submissions
-              </a>
             </div>
           </div>
         </div>
@@ -2243,16 +2223,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               Learn how to solve simple algorithm problems recursively with the following exercises. 
             </p>
-            <a
-              class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
-              href="/review/js1"
-            >
-              Review 
-              <span>
-                0
-              </span>
-               Submissions
-            </a>
           </div>
           <div
             class="d-none d-sm-flex p-2"
@@ -2332,16 +2302,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
               </div>
-              <a
-                class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
-                href="/review/js1"
-              >
-                Review 
-                <span>
-                  0
-                </span>
-                 Submissions
-              </a>
             </div>
           </div>
         </div>
@@ -2426,16 +2386,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
             </p>
-            <a
-              class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
-              href="/review/js2"
-            >
-              Review 
-              <span>
-                0
-              </span>
-               Submissions
-            </a>
           </div>
           <div
             class="d-none d-sm-flex p-2"
@@ -2515,16 +2465,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
               </div>
-              <a
-                class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
-                href="/review/js2"
-              >
-                Review 
-                <span>
-                  0
-                </span>
-                 Submissions
-              </a>
             </div>
           </div>
         </div>
