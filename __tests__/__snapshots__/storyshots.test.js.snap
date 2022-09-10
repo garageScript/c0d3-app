@@ -866,46 +866,6 @@ Array [
 ]
 `;
 
-exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
-<div>
-  <div
-    className="lessons_tabsNav"
-  >
-    <div
-      className="lessons__tabsNav__nav"
-    >
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/introduction"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        INTRODUCTION
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/modules"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        MODULES
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/challenges"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        CHALLENGES
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
 <div
   className="container"
@@ -12203,6 +12163,44 @@ exports[`Storyshots Components/ModalCard Small 1`] = `
 </button>
 `;
 
+exports[`Storyshots Components/NavCard Basic 1`] = `
+<div
+  className="navCard__tabsNav"
+>
+  <div
+    className="navCard__tabsNav__nav"
+  >
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/introduction"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      INTRODUCTION
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/modules"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      MODULES
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/challenges"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      CHALLENGES
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
@@ -12282,7 +12280,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   className="card shadow-sm"
 >
   <div
-    className="ms-auto me-auto mt-4 profile_image_container"
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
   >
     <div
       className="jsx-3123111835 ms-auto me-auto mt-4"
@@ -12295,42 +12293,98 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       />
     </div>
   </div>
-  <h2
+  <h4
     className="text-center mt-4"
   >
     Rahul Kalra
-  </h2>
+  </h4>
   <div
     className="d-flex justify-content-center"
   >
-    <h4
-      className="text-muted"
+    <span
+      className="fs-5 text-muted"
     >
       @noob101
-    </h4>
+    </span>
   </div>
   <div
-    className="d-flex ms-auto me-auto mb-4"
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
   >
-    <img
-      className="img-fluid"
-      height={20}
-      objectFit="contain"
-      src="/assets/discordClydeLogo.svg"
-      width={20}
-    />
-    <h5
-      className="ms-2"
+    <div
+      className="d-flex align-items-center mb-2"
     >
-      <a
-        href="https://discordapp.com/users/fakeDiscordId/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
+      <img
+        className="img-fluid"
+        height={20}
+        objectFit="contain"
+        src="/assets/discordClydeLogo.svg"
+        width={20}
+      />
+      <span
+        className="fs-5 ms-2 mb-0"
       >
-        fakeDiscordUsername
-      </a>
-    </h5>
+        <a
+          href="https://discordapp.com/users/fakeDiscordId/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+        >
+          fakeDiscordUsername
+        </a>
+      </span>
+    </div>
+    <button
+      className="btn borderless btn-outline-danger btn-outline-bg-danger"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "danger",
+        }
+      }
+    >
+      Unlink Discord
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ProfileImageInfo Profile Image Info With Connect 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
+  >
+    <div
+      className="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
+    >
+      RK
+    </div>
+  </div>
+  <h4
+    className="text-center mt-4"
+  >
+    Rahul Kalra
+  </h4>
+  <div
+    className="d-flex justify-content-center"
+  >
+    <span
+      className="fs-5 text-muted"
+    >
+      @noob101
+    </span>
+  </div>
+  <div
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+  >
+    <button
+      className="btn btn-primary btn-md btn-block mt-3"
+      onClick={[Function]}
+      type="button"
+    >
+      Connect to Discord
+    </button>
   </div>
 </div>
 `;
