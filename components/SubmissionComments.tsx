@@ -10,6 +10,7 @@ import { useDeleteCommentMutation, useEditCommentMutation } from '../graphql'
 import { GlobalContext } from '../helpers/globalContext'
 import { MdInput } from './MdInput'
 import _ from 'lodash'
+import Modal from 'react-bootstrap/Modal'
 
 export const SubmissionComments: React.FC<{
   comments: Comment[]
@@ -17,8 +18,9 @@ export const SubmissionComments: React.FC<{
 }> = ({ comments, submission }) => {
   const [deleteComment] = useDeleteCommentMutation()
   const [editComment] = useEditCommentMutation()
-  const [editing, setEditing] = useState<undefined | number>()
-  const [curInput, setCurInput] = useState('')
+  const [editing, setEditing] = useState<null | number>(null)
+  const [currInput, setCurrInput] = useState('')
+  const [show, setShow] = useState(false)
   const context = useContext(GlobalContext)
   const id = context.session?.user?.id
 
@@ -40,13 +42,10 @@ export const SubmissionComments: React.FC<{
   }
 
   const handleStartEditing = (index: number, initialInput: string) => {
-    if (editing !== undefined)
-      alert(
-        'You can only edit one comment in a single comment chain at a time.'
-      )
+    if (editing !== null) setShow(true)
     else {
       setEditing(index)
-      setCurInput(initialInput)
+      setCurrInput(initialInput)
     }
   }
 
@@ -67,21 +66,44 @@ export const SubmissionComments: React.FC<{
       update
     })
 
-    setEditing(undefined)
-    setCurInput('')
+    setEditing(null)
+    setCurrInput('')
   }
 
   const handleDiscardChange = () => {
-    setEditing(undefined)
-    setCurInput('')
+    setEditing(null)
+    setCurrInput('')
   }
 
+  const handleModalClose = () => {
+    setShow(false)
+  }
+
+  const modalText =
+    'You can only edit one comment in a single comment chain at a time.'
+
   //to make sure comments load in correct order
-  comments = _.orderBy(comments, ['id'], ['asc'])
+  const submissionsComments = _.orderBy(comments, ['id'], ['asc'])
 
   return (
     <>
-      {comments.map((c, i) => (
+      <Modal show={show} onHide={handleModalClose}>
+        <Modal.Header>
+          <Modal.Title>Error</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modalText}</Modal.Body>
+        <Modal.Footer>
+          <Button
+            onClick={handleModalClose}
+            type="info"
+            size="lg"
+            color="white"
+          >
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {submissionsComments.map((c, i) => (
         <div
           key={`${c.content}${i}`}
           className="border border-lightgray rounded my-1"
@@ -89,9 +111,9 @@ export const SubmissionComments: React.FC<{
           <div className="ms-3">
             {editing === i ? (
               <MdInput
-                onChange={setCurInput}
+                onChange={setCurrInput}
                 bgColor="white"
-                value={curInput}
+                value={currInput}
               />
             ) : (
               <Markdown wrapper="code_wrapper">{c.content}</Markdown>
@@ -123,7 +145,7 @@ export const SubmissionComments: React.FC<{
                     type="info"
                     color="white"
                     onClick={() => {
-                      handleUpdateComment(c, curInput)
+                      handleUpdateComment(c, currInput)
                     }}
                     data-testid="save-button"
                   >

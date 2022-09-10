@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, Alert } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { SubmissionComments } from './SubmissionComments'
-import { fireEvent, waitFor, render } from '@testing-library/react'
+import { fireEvent, waitFor, render, screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
 import { InMemoryCache } from '@apollo/client'
@@ -10,6 +10,7 @@ import EDIT_COMMENT from '../graphql/queries/editComment'
 import dummySessionData from '../__dummy__/sessionData'
 import { GlobalContext } from '../helpers/globalContext'
 import userEvent from '@testing-library/user-event'
+import '@testing-library/jest-dom'
 
 const submissionsData = [submissionData, { ...submissionData, id: 101 }]
 
@@ -84,7 +85,7 @@ const comments = [
 ]
 
 describe('Test SubmissionComments Component', () => {
-  const fillOutLoginForm = async (getByTestId, str) => {
+  const fillOutCommentInput = async (getByTestId, str) => {
     const textField = getByTestId('textbox')
 
     // the type event needs to be delayed so the Formik validations finish
@@ -148,8 +149,8 @@ describe('Test SubmissionComments Component', () => {
       variables: { userId: 3, challengeId: 6 },
       data: { getPreviousSubmissions: submissionsData }
     })
-    expect.assertions(3)
-    const { container } = render(
+    expect.assertions(4)
+    const { container, findByText } = render(
       <MockedProvider cache={cache} addTypename={false} mocks={mocks}>
         <Wrapper>
           <SubmissionComments comments={comments} submission={submissionData} />
@@ -162,21 +163,22 @@ describe('Test SubmissionComments Component', () => {
 
     await waitFor(() => {
       const discardButton = container.querySelector('.btn-light')
-      expect(discardButton).toBeTruthy()
-      expect(container.querySelector('.btn-info')).toBeTruthy()
+      expect(discardButton).toBeInTheDocument()
+      expect(container.querySelector('.btn-info')).toBeInTheDocument()
 
       const editButtonTwo = container.querySelector('.btn-info.btn-sm')
       fireEvent.click(editButtonTwo)
 
+      const warningText =
+        'You can only edit one comment in a single comment chain at a time.'
+
       waitFor(() => {
-        expect(Alert.alert).toHaveBeenCalledWith(
-          'You can only edit one comment in a single comment chain at a time.'
-        )
+        expect(findByText(warningText)).toBeTruthy()
       })
 
       fireEvent.click(discardButton)
       waitFor(() => {
-        expect(editButton).toBeTruthy()
+        expect(editButton).toBeInTheDocument()
       })
     })
   })
@@ -199,13 +201,10 @@ describe('Test SubmissionComments Component', () => {
       </MockedProvider>
     )
 
-    const editButton = container.querySelector('.btn-info.btn-sm')
-    const deleteButton = container.querySelector('.btn-outline-danger')
-
-    await userEvent.click(editButton)
+    await userEvent.click(container.querySelector('.btn-info.btn-sm'))
 
     await userEvent.clear(getByTestId('textbox'))
-    await fillOutLoginForm(getByTestId, 'edited test comment') // previous text: test comment
+    await fillOutCommentInput(getByTestId, 'edited test comment') // previous text: test comment
 
     const saveButton = container.querySelector('.btn-info')
     await userEvent.click(saveButton)
@@ -214,7 +213,31 @@ describe('Test SubmissionComments Component', () => {
 
     expect(editCommentMutation).toHaveBeenCalled()
 
-    expect(deleteButton).toBeTruthy()
-    expect(editButton).toBeTruthy()
+    expect(container.querySelector('.btn-outline-danger')).toBeInTheDocument()
+    expect(container.querySelector('.btn-info.btn-sm')).toBeInTheDocument()
+  })
+
+  it('should close Modal when you click Close button', async () => {
+    const cache = new InMemoryCache({ addTypename: false })
+
+    cache.writeQuery({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 3, challengeId: 6 },
+      data: { getPreviousSubmissions: submissionsData }
+    })
+
+    const { container } = render(
+      <MockedProvider cache={cache} addTypename={false} mocks={mocks}>
+        <Wrapper>
+          <SubmissionComments comments={comments} submission={submissionData} />
+        </Wrapper>
+      </MockedProvider>
+    )
+
+    await userEvent.click(container.querySelector('.btn-info.btn-sm'))
+    await userEvent.click(container.querySelector('.btn-info.btn-sm'))
+
+    await waitFor(() => fireEvent.click(screen.getByText(/Close/)))
+    await waitFor(() => expect(screen.queryByText('Error')).toBeFalsy())
   })
 })

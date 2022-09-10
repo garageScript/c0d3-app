@@ -21630,8 +21630,6 @@ Array [
           Edit
         </button>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
-
           className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
           onClick={[Function]}
           style={
@@ -21702,7 +21700,6 @@ Array [
       </div>
       <div>
         <button
-        editComments
           className="btn borderless btn-info btn-sm"
           onClick={[Function]}
           style={
@@ -21714,7 +21711,6 @@ Array [
           Edit
         </button>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
           className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
           onClick={[Function]}
           style={
@@ -21785,7 +21781,6 @@ Array [
       </div>
       <div>
         <button
-
           className="btn borderless btn-info btn-sm"
           onClick={[Function]}
           style={
@@ -21797,7 +21792,6 @@ Array [
           Edit
         </button>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
           className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
           onClick={[Function]}
           style={

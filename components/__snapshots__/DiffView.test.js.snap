@@ -3122,7 +3122,6 @@ exports[`DiffView component Should render diff with comments 1`] = `
                           Edit
                         </button>
                         <button
-                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
                           class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                         >
                           <svg
@@ -3451,7 +3450,6 @@ exports[`DiffView component Should render diff with comments 1`] = `
                           Edit
                         </button>
                         <button
-                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
                           class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                         >
                           <svg
