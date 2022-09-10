@@ -14,11 +14,10 @@ import AdminLessonInputs from '../../../../../components/admin/lessons/AdminLess
 import { Props } from '../../../../../components/admin/lessons/AdminLessonInputs/AdminLessonInputs'
 import Breadcrumbs from '../../../../../components/Breadcrumbs'
 import styles from '../../../../../scss/modules.module.scss'
-import navStyles from '../../../../../scss/adminLessonNav.module.scss'
 import { AdminLayout } from '../../../../../components/admin/AdminLayout'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import { compose, filter, get, sortBy } from 'lodash/fp'
+import NavCard from '../../../../../components/NavCard'
 import { FormCard } from '../../../../../components/FormCard'
 import { formChange } from '../../../../../helpers/formChange'
 import { lessonSchema } from '../../../../../helpers/formValidation'
@@ -194,25 +193,13 @@ const Lessons = ({ data }: GetAppProps) => {
     return sortModules(modulesData)
   }, [lesson.id, get('modules', modulesData)])
 
-  const LessonNav = ({
-    tab
-  }: {
-    tab: { tabName: string; urlPageName: string }
-  }) => {
-    const isSelected = tab.urlPageName === pageName
-    const className =
-      navStyles[
-        isSelected
-          ? 'lessons_tabsNav__nav__item'
-          : 'lessons_tabsNav__nav__item--inactive'
-      ]
-
-    return (
-      <Link href={`${MAIN_PATH}/${lessonSlug}/${tab.urlPageName}`}>
-        <a className={`${className} nav-pills`}>{toUpper(tab.tabName)}</a>
-      </Link>
-    )
-  }
+  const tabs = [
+    {
+      text: 'modules',
+      url: `${MAIN_PATH}/${lesson.slug}/modules`
+    }
+  ]
+  const tabSelected = tabs.findIndex(tab => tab.text === pageName)
 
   return (
     <AdminLayout data={data}>
@@ -228,19 +215,7 @@ const Lessons = ({ data }: GetAppProps) => {
           />
         </header>
         <section>
-          <AdminLessonNav
-            tabs={[
-              {
-                tabName: 'modules',
-                urlPageName: 'modules'
-              },
-              {
-                tabName: 'introduction',
-                urlPageName: 'introduction'
-              }
-            ]}
-            Component={LessonNav}
-          />
+          <NavCard tabSelected={tabSelected} tabs={tabs} />
         </section>
         <section>
           <Content
