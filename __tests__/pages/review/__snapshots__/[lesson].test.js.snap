@@ -79,6 +79,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -86,9 +87,6 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -168,48 +166,37 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
     <div
       class="container"
     >
+      <img
+        height="360"
+        src="/assets/errors/404.svg"
+        width="360"
+      />
       <div
-        class="row"
+        class="container_text_buttons"
       >
+        <h1>
+          404 Error!
+        </h1>
         <div
-          class="d-flex col-sm-3 align-items-center justify-content-center"
+          style="color: rgb(41, 41, 41); font-size: 1.25rem;"
         >
-          <div
-            class="text-center mt-3"
-          >
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
-            >
-              <strong>
-                Page not found
-              </strong>
-            </div>
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1rem;"
-            >
-              Page not found
-            </div>
-            <a
-              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-            >
-              <h3
-                class="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          Page not found
         </div>
         <div
-          class="mb-3 col-sm-9"
+          class="container_buttons"
         >
-          <img
-            height="1200"
-            layout="responsive"
-            src="/assets/errors/404.svg"
-            width="1200"
-          />
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+          >
+            Home
+          </a>
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -302,6 +289,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -309,9 +297,6 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -543,6 +528,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -550,9 +536,6 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -875,7 +858,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3067,7 +3050,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3257,7 +3240,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3314,7 +3297,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-danger btn-outline-bg-danger"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
                                         >
                                           <svg
                                             aria-hidden="true"

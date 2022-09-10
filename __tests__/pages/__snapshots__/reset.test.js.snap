@@ -245,7 +245,6 @@ exports[`ResetPassword Page Should render confirm success on success 1`] = `
           <a
             class="btn btn-primary btn-lg mb-3"
             href="/curriculum"
-            role="button"
           >
             Continue to dashboard
           </a>

@@ -20,17 +20,21 @@ exports[`Signup Page Should render errors on fail 1`] = `
           class="card-text"
         />
         <div
-          class="alert d-flex justify-content-between mt-3 alert-danger"
+          class="fade alert alert-danger show"
           role="alert"
         >
           <div
-            class="d-flex gap-3"
+            class="d-flex align-items-center gap-3"
           >
-            <img
-              height="24"
-              src="/assets/curriculum/icons/exclamation.svg"
-              width="24"
-            />
+            <div
+              class=""
+            >
+              <img
+                height="24"
+                src="/assets/curriculum/icons/exclamation.svg"
+                width="24"
+              />
+            </div>
             Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com 
           </div>
         </div>

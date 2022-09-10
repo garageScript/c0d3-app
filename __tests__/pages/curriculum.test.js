@@ -36,7 +36,7 @@ describe('Curriculum Page', () => {
         <Curriculum />
       </MockedProvider>
     )
-    const element = await screen.findByText(/Internal server error/i)
+    const element = await screen.findByText(/Bad data/i)
     expect(element).toBeTruthy()
   })
 
@@ -60,7 +60,6 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
 
-    await screen.findByText('Fakeusername')
     await waitFor(() => screen.getAllByText(`You're off to a great start!`))
     await waitFor(() => expect(container).toMatchSnapshot())
   })
@@ -110,7 +109,6 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
 
-    await screen.findByText('Fakeusername')
     await waitFor(() => screen.getAllByText('Keep up the great work!'))
 
     await waitFor(() => expect(container).toMatchSnapshot())

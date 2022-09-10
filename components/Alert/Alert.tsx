@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavLink from '../NavLink'
 import { Alert as AlertType } from '../../graphql/'
 import _ from 'lodash'
 import styles from './alerts.module.scss'
 import Image from 'next/image'
+import { Alert as AlertBS } from 'react-bootstrap'
 
 type Props = {
   alert: AlertType
@@ -21,36 +22,35 @@ const alertIconMap: { [type: string]: string } = {
 }
 
 const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
+  const [show, setShow] = useState(true)
+
   const { text, type, url, urlCaption, id } = alert
   const icon = alertIconMap[_.defaultTo(type, '-1')]
-  const textColor = type === 'urgent' ? 'text-danger' : 'text-white'
-  const alertClasses =
-    type === 'urgent' ? 'alert-danger' : `bg-primary ${textColor}`
-  return (
-    <div
-      className={`${styles['alert']} d-flex justify-content-between mt-3 ${alertClasses}`}
-      role="alert"
+  const imageClass = type === 'urgent' ? '' : styles.info_image
+
+  return show ? (
+    <AlertBS
+      variant={`${type === 'urgent' ? 'danger' : 'primary'}`}
+      onClose={() => {
+        setShow(false)
+        onDismiss && onDismiss(id)
+      }}
+      dismissible={!!onDismiss}
     >
-      <div className="d-flex gap-3">
-        {icon && <Image src={icon} width={24} height={24} />}
-        {text + ' '}
+      <div className="d-flex align-items-center gap-3">
+        <div className={imageClass}>
+          {icon && <Image src={icon} width={24} height={24} />}
+        </div>
+        {`${text} `}
         {url && (
-          <NavLink path={url} className={textColor} external>
+          <NavLink path={url} className={'alert-link'} external>
             {urlCaption}
           </NavLink>
         )}
       </div>
-      {onDismiss && (
-        <button
-          role="dismiss"
-          className={`${styles['alert-dismiss']}`}
-          data-testid={`dismiss-${type}`}
-          onClick={() => onDismiss(id)}
-        >
-          <img src={`/assets/curriculum/icons/dismiss-${type}.svg`} />
-        </button>
-      )}
-    </div>
+    </AlertBS>
+  ) : (
+    <></>
   )
 }
 

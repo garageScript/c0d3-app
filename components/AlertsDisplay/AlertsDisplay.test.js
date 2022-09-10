@@ -38,7 +38,7 @@ describe('Alerts Display Component', () => {
       <AlertsDisplay alerts={alerts} page="curriculum" />
     )
 
-    const displayedAlerts = getAllByRole('alert')
+    const displayedAlerts = getAllByRole('button')
     expect(displayedAlerts.length).toEqual(1)
   })
 
@@ -48,13 +48,13 @@ describe('Alerts Display Component', () => {
     const { getAllByRole } = render(
       <AlertsDisplay alerts={alerts} page="curriculum" />
     )
-    let displayedAlerts = getAllByRole('alert')
+    let displayedAlerts = getAllByRole('button')
     expect(displayedAlerts.length).toEqual(2)
-    const firstDismiss = getAllByRole('dismiss')[0]
+    const firstDismiss = getAllByRole('button')[0]
     act(() => {
       fireEvent.click(firstDismiss)
     })
-    displayedAlerts = getAllByRole('alert')
+    displayedAlerts = getAllByRole('button')
     expect(displayedAlerts.length).toEqual(1)
   })
 })

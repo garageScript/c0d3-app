@@ -80,6 +80,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -87,9 +88,6 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -221,20 +219,29 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="alerts-container  p-0"
           >
             <div
-              class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+              class="fade alert alert-primary alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
-                class="d-flex gap-3"
+                class="d-flex align-items-center gap-3"
               >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/icon-tip.svg"
-                  width="24"
-                />
+                <div
+                  class="info_image"
+                >
+                  <img
+                    height="24"
+                    src="/assets/curriculum/icons/icon-tip.svg"
+                    width="24"
+                  />
+                </div>
                 Set up your computer to submit challenges. 
                 <a
-                  class="text-white noUnderline"
+                  class="alert-link noUnderline"
                   href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -242,40 +249,31 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                   View Instructions
                 </a>
               </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-info"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-info.svg"
-                />
-              </button>
             </div>
             <div
-              class="alert d-flex justify-content-between mt-3 alert-danger"
+              class="fade alert alert-danger alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
-                class="d-flex gap-3"
+                class="d-flex align-items-center gap-3"
               >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/exclamation.svg"
-                  width="24"
-                />
+                <div
+                  class=""
+                >
+                  <img
+                    height="24"
+                    src="/assets/curriculum/icons/exclamation.svg"
+                    width="24"
+                  />
+                </div>
                 Please upgrade your CLI client by running npm update c0d3. 
                 
               </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-urgent"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-urgent.svg"
-                />
-              </button>
             </div>
           </div>
           <div
@@ -561,6 +559,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -568,9 +567,6 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -650,48 +646,37 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
     <div
       class="container"
     >
+      <img
+        height="360"
+        src="/assets/errors/404.svg"
+        width="360"
+      />
       <div
-        class="row"
+        class="container_text_buttons"
       >
+        <h1>
+          404 Error!
+        </h1>
         <div
-          class="d-flex col-sm-3 align-items-center justify-content-center"
+          style="color: rgb(41, 41, 41); font-size: 1.25rem;"
         >
-          <div
-            class="text-center mt-3"
-          >
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
-            >
-              <strong>
-                Page not found
-              </strong>
-            </div>
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1rem;"
-            >
-              Lesson not found
-            </div>
-            <a
-              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-            >
-              <h3
-                class="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          Lesson not found
         </div>
         <div
-          class="mb-3 col-sm-9"
+          class="container_buttons"
         >
-          <img
-            height="1200"
-            layout="responsive"
-            src="/assets/errors/404.svg"
-            width="1200"
-          />
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+          >
+            Home
+          </a>
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -784,6 +769,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               <div
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
+                data-testid="user-info-image"
                 id="user_nav_toggle"
               >
                 <div
@@ -791,9 +777,6 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 >
                   A 
                 </div>
-                <span>
-                  Fakeusername
-                </span>
                 <svg
                   aria-hidden="true"
                   class="octicon octicon-chevron-down"
@@ -932,20 +915,29 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="alerts-container  p-0"
           >
             <div
-              class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+              class="fade alert alert-primary alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
-                class="d-flex gap-3"
+                class="d-flex align-items-center gap-3"
               >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/icon-tip.svg"
-                  width="24"
-                />
+                <div
+                  class="info_image"
+                >
+                  <img
+                    height="24"
+                    src="/assets/curriculum/icons/icon-tip.svg"
+                    width="24"
+                  />
+                </div>
                 Set up your computer to submit challenges. 
                 <a
-                  class="text-white noUnderline"
+                  class="alert-link noUnderline"
                   href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -953,40 +945,31 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                   View Instructions
                 </a>
               </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-info"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-info.svg"
-                />
-              </button>
             </div>
             <div
-              class="alert d-flex justify-content-between mt-3 alert-danger"
+              class="fade alert alert-danger alert-dismissible show"
               role="alert"
             >
+              <button
+                aria-label="Close alert"
+                class="btn-close"
+                type="button"
+              />
               <div
-                class="d-flex gap-3"
+                class="d-flex align-items-center gap-3"
               >
-                <img
-                  height="24"
-                  src="/assets/curriculum/icons/exclamation.svg"
-                  width="24"
-                />
+                <div
+                  class=""
+                >
+                  <img
+                    height="24"
+                    src="/assets/curriculum/icons/exclamation.svg"
+                    width="24"
+                  />
+                </div>
                 Please upgrade your CLI client by running npm update c0d3. 
                 
               </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-urgent"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-urgent.svg"
-                />
-              </button>
             </div>
           </div>
           <div
@@ -1213,7 +1196,7 @@ result = solution(0, "hello") // ""
 </div>
 `;
 
-exports[`Lesson Page Should return Internal server Error if alerts or lessons are missing 1`] = `
+exports[`Lesson Page Should return Bad data if alerts or lessons are missing 1`] = `
 <div>
   <nav
     class="navbar navbar navbar-expand-lg navbar-light bg-white"
@@ -1292,6 +1275,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             <div
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
               id="user_nav_toggle"
             >
               <div
@@ -1299,9 +1283,6 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
               >
                 A 
               </div>
-              <span>
-                Fakeusername
-              </span>
               <svg
                 aria-hidden="true"
                 class="octicon octicon-chevron-down"
@@ -1381,48 +1362,37 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
     <div
       class="container"
     >
+      <img
+        height="360"
+        src="/assets/errors/500.svg"
+        width="360"
+      />
       <div
-        class="row"
+        class="container_text_buttons"
       >
+        <h1>
+          500 Error!
+        </h1>
         <div
-          class="d-flex col-sm-3 align-items-center justify-content-center"
+          style="color: rgb(41, 41, 41); font-size: 1.25rem;"
         >
-          <div
-            class="text-center mt-3"
-          >
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
-            >
-              <strong>
-                Internal server error
-              </strong>
-            </div>
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1rem;"
-            >
-              Bad data
-            </div>
-            <a
-              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-            >
-              <h3
-                class="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          Bad data
         </div>
         <div
-          class="mb-3 col-sm-9"
+          class="container_buttons"
         >
-          <img
-            height="1200"
-            layout="responsive"
-            src="/assets/errors/500.svg"
-            width="1200"
-          />
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+          >
+            Home
+          </a>
+          <a
+            class="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>

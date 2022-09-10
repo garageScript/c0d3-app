@@ -1,5 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Component/QueryInfo Basic 1`] = `
+<div
+  className="fade alert alert-primary show"
+  role="alert"
+>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
+    Update the module successfully! 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Basic With Dismiss 1`] = `
+<div
+  className="fade alert alert-primary alert-dismissible show"
+  role="alert"
+>
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
+    Update the module successfully! 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Error 1`] = `
+<div
+  className="fade alert alert-danger show"
+  role="alert"
+>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    An error occurred. Please try again. 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Error With Dismiss 1`] = `
+<div
+  className="fade alert alert-danger alert-dismissible show"
+  role="alert"
+>
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    An error occurred. Please try again. 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo With Loading 1`] = `
+<div
+  className="loading"
+>
+  <div
+    className="spinner-grow spinner-grow-sm"
+  />
+  <span>
+    Sending the request...
+  </span>
+</div>
+`;
+
 exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 <div
   className="additional-resources__container ms-4 d-flex flex-column justify-content-around"
@@ -117,6 +234,7 @@ exports[`Storyshots Components/AdminLessonCard Basic 1`] = `
     href="/_blank"
     onClick={[Function]}
     onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
     <button
       className="btn btn-secondary container__button"
@@ -163,7 +281,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob@c0d3.com
         </span>
         <button
-          className="btn borderless btn-outline-primary btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -202,7 +320,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob#123
         </span>
         <button
-          className="btn borderless btn-outline-primary btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -748,43 +866,6 @@ Array [
 ]
 `;
 
-exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
-<div>
-  <div
-    className="lessons_tabsNav"
-  >
-    <div
-      className="lessons__tabsNav__nav"
-    >
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/introduction"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        INTRODUCTION
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/modules"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        MODULES
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/challenges"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        CHALLENGES
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
 <div
   className="container"
@@ -908,18 +989,22 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
 
 exports[`Storyshots Components/Alert Info 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 bg-primary text-white"
+  className="fade alert alert-primary show"
   role="alert"
 >
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/icon-tip.svg"
-      width={24}
-    />
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
     Set up your computer to submit challenges. 
   </div>
 </div>
@@ -927,21 +1012,31 @@ exports[`Storyshots Components/Alert Info 1`] = `
 
 exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 bg-primary text-white"
+  className="fade alert alert-primary alert-dismissible show"
   role="alert"
 >
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/icon-tip.svg"
-      width={24}
-    />
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
     Set up your computer to submit challenges. 
     <a
-      className="text-white noUnderline"
+      className="alert-link noUnderline"
       href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
       rel="noopener noreferrer"
       target="_blank"
@@ -949,33 +1044,27 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
       View Instructions
     </a>
   </div>
-  <button
-    className="alert-dismiss"
-    data-testid="dismiss-info"
-    onClick={[Function]}
-    role="dismiss"
-  >
-    <img
-      src="/assets/curriculum/icons/dismiss-info.svg"
-    />
-  </button>
 </div>
 `;
 
 exports[`Storyshots Components/Alert Urgent 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert-danger"
+  className="fade alert alert-danger show"
   role="alert"
 >
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/exclamation.svg"
-      width={24}
-    />
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
     Invalid password 
   </div>
 </div>
@@ -983,21 +1072,31 @@ exports[`Storyshots Components/Alert Urgent 1`] = `
 
 exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
 <div
-  className="alert d-flex justify-content-between mt-3 alert-danger"
+  className="fade alert alert-danger alert-dismissible show"
   role="alert"
 >
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
   <div
-    className="d-flex gap-3"
+    className="d-flex align-items-center gap-3"
   >
-    <img
-      className="img-fluid"
-      height={24}
-      src="/assets/curriculum/icons/exclamation.svg"
-      width={24}
-    />
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
     Please upgrade your CLI client by running npm update c0d3. 
     <a
-      className="text-danger noUnderline"
+      className="alert-link noUnderline"
       href="https://www.npmjs.com/package/c0d3"
       rel="noopener noreferrer"
       target="_blank"
@@ -1005,16 +1104,6 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
       View NPM Package
     </a>
   </div>
-  <button
-    className="alert-dismiss"
-    data-testid="dismiss-urgent"
-    onClick={[Function]}
-    role="dismiss"
-  >
-    <img
-      src="/assets/curriculum/icons/dismiss-urgent.svg"
-    />
-  </button>
 </div>
 `;
 
@@ -1109,6 +1198,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Curriculum
         </a>
@@ -1125,6 +1215,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Learn
         </a>
@@ -1186,6 +1277,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Curriculum
         </a>
@@ -1202,6 +1294,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Learn
         </a>
@@ -1780,7 +1873,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -2649,7 +2742,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -3924,7 +4017,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 
 exports[`Storyshots Components/CopyButton Basic 1`] = `
 <button
-  className="btn borderless btn-outline-mute btn-outline-bg-mute"
+  className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
   onClick={[Function]}
   style={
     Object {
@@ -4003,7 +4096,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -4396,7 +4489,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -4744,842 +4837,81 @@ exports[`Storyshots Components/DiffView Default 1`] = `
 `;
 
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
-Array [
-  <div
-    className="d-none d-lg-block"
-  >
-    <div
-      className="dropdown"
-    >
-      <button
-        aria-expanded={false}
-        className="dropdown-toggle title title-none"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        Admin
-      </button>
-    </div>
-  </div>,
-  <div
-    className="d-lg-none"
-  >
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
-        onClick={[Function]}
-      >
-        Lessons
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/users"
-        onClick={[Function]}
-      >
-        Users
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts0
-      </a>
-    </div>
-  </div>,
-]
-`;
-
-exports[`Storyshots Components/DropdownMenu Colors 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Primary
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-success"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Success
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-danger"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Danger
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-info"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Info
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-warning"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Warning
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-none"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          None
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-]
-`;
-
-exports[`Storyshots Components/DropdownMenu Directions 1`] = `
 <div
-  style={
-    Object {
-      "padding": 130,
-      "paddingLeft": 170,
-    }
-  }
+  className="dropdown"
 >
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
+  <button
+    aria-expanded={false}
+    className="dropdown btn btn-primary"
+    disabled={false}
+    id="dropdown-lesson"
+    onClick={[Function]}
+    type="button"
   >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className=""
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Left
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
+    Admin
+    <svg
+      aria-hidden="true"
+      className="octicon octicon-chevron-right"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+        }
       }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-success"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Down
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
+      fill="currentColor"
+      height={17}
+      role="img"
+      style={
+        Object {
+          "display": "inline-block",
+          "overflow": "visible",
+          "userSelect": "none",
+          "verticalAlign": "text-bottom",
+        }
       }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropup"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-danger"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Up
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className=""
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-info"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Right
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
+      viewBox="0 0 16 16"
+      width={17}
+    />
+  </button>
 </div>
 `;
 
 exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
-Array [
-  <div
-    className="d-none d-lg-block"
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    className="dropdown btn btn-primary"
+    disabled={false}
+    id="dropdown-lesson"
+    onClick={[Function]}
+    type="button"
   >
-    <div
-      className="dropdown"
-    >
-      <button
-        aria-expanded={false}
-        className="dropdown-toggle title title-none"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        Admin
-      </button>
-    </div>
-  </div>,
-  <div
-    className="d-lg-none"
-  >
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
-        onClick={[Function]}
-      >
-        Lessons
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
+    Admin
+    <svg
+      aria-hidden="true"
+      className="octicon octicon-chevron-right"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+        }
+      }
+      fill="currentColor"
+      height={17}
+      role="img"
+      style={
+        Object {
+          "display": "inline-block",
+          "overflow": "visible",
+          "userSelect": "none",
+          "verticalAlign": "text-bottom",
+        }
+      }
+      viewBox="0 0 16 16"
+      width={17}
     />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/users"
-        onClick={[Function]}
-      >
-        Users
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
-    />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts1
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts2
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts3
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
-    />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts4
-      </a>
-    </div>
-  </div>,
-]
+  </button>
+</div>
 `;
 
 exports[`Storyshots Components/Error Internal 1`] = `
@@ -5627,6 +4959,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -5643,6 +4976,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -5664,62 +4998,49 @@ Array [
     <div
       className="container"
     >
+      <img
+        className="img-fluid"
+        height={360}
+        src="/assets/errors/500.svg"
+        width={360}
+      />
       <div
-        className="row"
+        className="container_text_buttons"
       >
+        <h1>
+          500 Error!
+        </h1>
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          style={
+            Object {
+              "color": "#292929",
+              "fontSize": "1.25rem",
+            }
+          }
         >
-          <div
-            className="text-center mt-3"
-          >
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1.5rem",
-                }
-              }
-            >
-              <strong>
-                Internal server error
-              </strong>
-            </div>
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
-                }
-              }
-            >
-              No data
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          No data
         </div>
         <div
-          className="mb-3 col-sm-9"
+          className="container_buttons"
         >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/500.svg"
-            width={1200}
-          />
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Home
+          </a>
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -5777,6 +5098,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -5793,6 +5115,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -5814,62 +5137,49 @@ Array [
     <div
       className="container"
     >
+      <img
+        className="img-fluid"
+        height={360}
+        src="/assets/errors/404.svg"
+        width={360}
+      />
       <div
-        className="row"
+        className="container_text_buttons"
       >
+        <h1>
+          404 Error!
+        </h1>
         <div
-          className="d-flex col-sm-3 align-items-center justify-content-center"
+          style={
+            Object {
+              "color": "#292929",
+              "fontSize": "1.25rem",
+            }
+          }
         >
-          <div
-            className="text-center mt-3"
-          >
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1.5rem",
-                }
-              }
-            >
-              <strong>
-                Page not found
-              </strong>
-            </div>
-            <div
-              style={
-                Object {
-                  "color": "#292929",
-                  "fontSize": "1rem",
-                }
-              }
-            >
-              404 error
-            </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <h3
-                className="fw-bold"
-              >
-                Back
-              </h3>
-            </a>
-          </div>
+          404 error
         </div>
         <div
-          className="mb-3 col-sm-9"
+          className="container_buttons"
         >
-          <img
-            className="img-fluid"
-            height={1200}
-            layout="responsive"
-            objectFit="contain"
-            src="/assets/errors/404.svg"
-            width={1200}
-          />
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Home
+          </a>
+          <a
+            className="button btn btn-primary py-2 px-3 mt-3 fw-bold noUnderline"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Learn
+          </a>
         </div>
       </div>
     </div>
@@ -5887,49 +5197,76 @@ exports[`Storyshots Components/ExercisePreview Basic 1`] = `
   className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-5 m-auto px-md-3 border-0 rounded"
 >
   <div
-    className="card-body pt-3 pb-3 "
+    className="card-body pb-3 "
   >
-    <p
+    <div
       className="card-text"
     >
       <p
-        className="exercise__p__bold"
+        className="exercise__p__bold my-4"
       >
         Problem
       </p>
-      <pre
-        className="exercise__pre__bg rounded px-4 py-4"
+      <div
+        className="exercise__bg rounded px-4 py-4"
       >
-        a = 1;
-b = 2;
-a = b;
+        <div>
+          <p>
+            Description here
+          </p>
+          <pre>
+            <code
+              className="lang-jsx"
+            >
+              a = 1; 
+b = 2; 
+a = b; 
 // What is a?
-      </pre>
+            </code>
+          </pre>
+        </div>
+      </div>
       <p
-        className="exercise__p__bold"
+        className="exercise__p__bold my-4"
       >
-        Choose an answer
+        Answer
       </p>
       <div
-        className="excercise__options overflow-auto"
+        className="excercise__answer overflow-auto"
       >
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
+        <div
+          className="exercise__bg rounded px-4 py-4"
         >
           1
-        </pre>
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-        >
-          2
-        </pre>
-        <pre
-          className="exercise__pre__bg exercise__pre__answer rounded px-4 py-4"
-        >
-          b
-        </pre>
+        </div>
       </div>
-    </p>
+      <p
+        className="exercise__p__bold my-4"
+      >
+        Explanation
+      </p>
+      <div
+        className="exercise__bg rounded px-4 py-4"
+      >
+        <span>
+          <code>
+            a
+          </code>
+           is getting assigned 
+          <code>
+            1
+          </code>
+          , so 
+          <code>
+            a
+          </code>
+           is 
+          <code>
+            1
+          </code>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -7588,47 +6925,40 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             Swiggity swag
           </span>
           <div
-            className="d-none d-lg-block"
+            className="dropdown"
           >
-            <div
-              className="dropdown"
+            <button
+              aria-expanded={false}
+              className="dropdown btn btn-primary"
+              disabled={false}
+              id="dropdown-lesson"
+              onClick={[Function]}
+              type="button"
             >
-              <button
-                aria-expanded={false}
-                className="dropdown-toggle title title-none"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Lolzz
-              </button>
-            </div>
-          </div>
-          <div
-            className="d-lg-none"
-          >
-            <div
-              className="text-center py-2 px-4"
-            >
-              <button
-                className="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                onClick={[Function]}
-              >
-                Lolzz
-              </button>
-            </div>
-            <div
-              className="text-center py-2 px-4"
-            >
-              <button
-                className="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                onClick={[Function]}
-              >
-                pineApple bananozna
-              </button>
-            </div>
+              Lolzz
+              <svg
+                aria-hidden="true"
+                className="octicon octicon-chevron-right"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+                  }
+                }
+                fill="currentColor"
+                height={17}
+                role="img"
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "overflow": "visible",
+                    "userSelect": "none",
+                    "verticalAlign": "text-bottom",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={17}
+              />
+            </button>
           </div>
         </div>
         <div
@@ -10316,6 +9646,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -10332,6 +9663,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -10437,6 +9769,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -10453,6 +9786,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -10570,6 +9904,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10633,6 +9968,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10688,6 +10024,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10753,10 +10090,12 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
     </p>
     <a
-      className="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
+      className="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+      data-testid="review-submissions-count"
       href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       Review 
       <div
@@ -10791,6 +10130,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10848,10 +10188,12 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         </p>
       </div>
       <a
-        className="btn btn-sm btn-primary text-white float-end mb-2 me-2"
+        className="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+        data-testid="review-submissions-count"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         Review 
         <div
@@ -10886,6 +10228,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10949,6 +10292,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -10996,6 +10340,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       href="/curriculum/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       View Challenges
     </a>
@@ -11048,6 +10393,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -11064,6 +10410,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -11134,6 +10481,7 @@ Array [
               href="/curriculum/js0"
               onClick={[Function]}
               onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
               CHALLENGES
             </a>
@@ -11204,6 +10552,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           CHALLENGES
         </a>
@@ -11266,6 +10615,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           CHALLENGES
         </a>
@@ -11328,6 +10678,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         CHALLENGES
       </a>
@@ -11386,6 +10737,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         CHALLENGES
       </a>
@@ -11394,6 +10746,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         REVIEW
       </a>
@@ -12812,6 +12165,44 @@ exports[`Storyshots Components/ModalCard Small 1`] = `
 </button>
 `;
 
+exports[`Storyshots Components/NavCard Basic 1`] = `
+<div
+  className="navCard__tabsNav"
+>
+  <div
+    className="navCard__tabsNav__nav"
+  >
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/introduction"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      INTRODUCTION
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/modules"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      MODULES
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/challenges"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      CHALLENGES
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
@@ -12819,6 +12210,7 @@ Array [
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
     <span
       className="visually-hidden"
@@ -12832,6 +12224,7 @@ Array [
     href="/other"
     onClick={[Function]}
     onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
     Non-Active Link
   </a>,
@@ -12844,6 +12237,7 @@ exports[`Storyshots Components/NavLink Basic 1`] = `
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
+  onTouchStart={[Function]}
 >
   Basic NavLink
 </a>
@@ -12877,6 +12271,7 @@ exports[`Storyshots Components/NavLink Styled Link 1`] = `
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
+  onTouchStart={[Function]}
 >
   Styled Link
 </a>
@@ -12887,7 +12282,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   className="card shadow-sm"
 >
   <div
-    className="ms-auto me-auto mt-4 profile_image_container"
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
   >
     <div
       className="jsx-3123111835 ms-auto me-auto mt-4"
@@ -12900,41 +12295,98 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       />
     </div>
   </div>
-  <h2
+  <h4
     className="text-center mt-4"
   >
     Rahul Kalra
-  </h2>
+  </h4>
   <div
     className="d-flex justify-content-center"
   >
-    <h4
-      className="text-muted"
+    <span
+      className="fs-5 text-muted"
     >
       @noob101
-    </h4>
+    </span>
   </div>
   <div
-    className="d-flex ms-auto me-auto mb-4"
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
   >
-    <img
-      className="img-fluid"
-      height={20}
-      objectFit="contain"
-      src="/assets/discordClydeLogo.svg"
-      width={20}
-    />
-    <h5
-      className="ms-2"
+    <div
+      className="d-flex align-items-center mb-2"
     >
-      <a
-        href="https://discordapp.com/users/fakeDiscordId/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+      <img
+        className="img-fluid"
+        height={20}
+        objectFit="contain"
+        src="/assets/discordClydeLogo.svg"
+        width={20}
+      />
+      <span
+        className="fs-5 ms-2 mb-0"
       >
-        fakeDiscordUsername
-      </a>
-    </h5>
+        <a
+          href="https://discordapp.com/users/fakeDiscordId/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+        >
+          fakeDiscordUsername
+        </a>
+      </span>
+    </div>
+    <button
+      className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "danger",
+        }
+      }
+    >
+      Unlink Discord
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ProfileImageInfo Profile Image Info With Connect 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
+  >
+    <div
+      className="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
+    >
+      RK
+    </div>
+  </div>
+  <h4
+    className="text-center mt-4"
+  >
+    Rahul Kalra
+  </h4>
+  <div
+    className="d-flex justify-content-center"
+  >
+    <span
+      className="fs-5 text-muted"
+    >
+      @noob101
+    </span>
+  </div>
+  <div
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+  >
+    <button
+      className="btn btn-primary btn-md btn-block mt-3"
+      onClick={[Function]}
+      type="button"
+    >
+      Connect to Discord
+    </button>
   </div>
 </div>
 `;
@@ -14093,6 +13545,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -14211,6 +13664,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -14253,6 +13707,7 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -14371,6 +13826,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       Setup Development Environment
     </a>
@@ -14520,7 +13976,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -15946,7 +15402,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -17370,7 +16826,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -18794,7 +18250,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -20218,7 +19674,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -22163,7 +21619,7 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
           onClick={[Function]}
           style={
             Object {
@@ -22233,7 +21689,7 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
           onClick={[Function]}
           style={
             Object {
@@ -22303,7 +21759,7 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
           onClick={[Function]}
           style={
             Object {
@@ -22460,6 +21916,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -22476,6 +21933,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -22692,6 +22150,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -22708,6 +22167,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -22765,6 +22225,7 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -22791,6 +22252,7 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -22854,6 +22316,7 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -22906,6 +22369,7 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -22969,6 +22433,7 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -23021,6 +22486,7 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -23084,6 +22550,7 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -23136,6 +22603,7 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -23199,6 +22667,7 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -23251,6 +22720,7 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -23314,6 +22784,7 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -23366,6 +22837,7 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -23429,6 +22901,7 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -23481,6 +22954,7 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -23544,6 +23018,7 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -23596,6 +23071,7 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -23659,6 +23135,7 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -23711,6 +23188,7 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -23774,6 +23252,7 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -23826,6 +23305,7 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -23889,6 +23369,7 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -24001,6 +23482,7 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -24194,6 +23676,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -24210,6 +23693,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -24267,6 +23751,7 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -24293,6 +23778,7 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -24356,6 +23842,7 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -24408,6 +23895,7 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -24471,6 +23959,7 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -24523,6 +24012,7 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -24586,6 +24076,7 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -24638,6 +24129,7 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -24701,6 +24193,7 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -24753,6 +24246,7 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -24816,6 +24310,7 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -24868,6 +24363,7 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -24931,6 +24427,7 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -24983,6 +24480,7 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -25046,6 +24544,7 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -25098,6 +24597,7 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -25161,6 +24661,7 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -25213,6 +24714,7 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -25276,6 +24778,7 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -25328,6 +24831,7 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -25391,6 +24895,7 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -25503,6 +25008,7 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -25696,6 +25202,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -25712,6 +25219,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -25769,6 +25277,7 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -25795,6 +25304,7 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -25858,6 +25368,7 @@ Array [
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Foundations of JavaScript
                   </a>
@@ -25910,6 +25421,7 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -25973,6 +25485,7 @@ Array [
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Variables & Functions
                   </a>
@@ -26025,6 +25538,7 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -26088,6 +25602,7 @@ Array [
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Arrays
                   </a>
@@ -26140,6 +25655,7 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -26203,6 +25719,7 @@ Array [
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Objects
                   </a>
@@ -26255,6 +25772,7 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -26318,6 +25836,7 @@ Array [
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Front End Engineering
                   </a>
@@ -26370,6 +25889,7 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -26433,6 +25953,7 @@ Array [
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     End To End
                   </a>
@@ -26485,6 +26006,7 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -26548,6 +26070,7 @@ Array [
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -26600,6 +26123,7 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -26663,6 +26187,7 @@ Array [
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     JavaScript Algorithms
                   </a>
@@ -26715,6 +26240,7 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -26778,6 +26304,7 @@ Array [
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     Trees
                   </a>
@@ -26830,6 +26357,7 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -26893,6 +26421,7 @@ Array [
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
                   >
                     General Algorithms
                   </a>
@@ -27005,6 +26534,7 @@ Array [
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 Setup Development Environment
               </a>
@@ -27198,6 +26728,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -27214,6 +26745,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -27364,6 +26896,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Get Started
         </a>
@@ -27672,6 +27205,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       href="/curriculum"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       Get Started
     </a>
@@ -27887,6 +27421,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         Forgot your password?
       </a>
@@ -27995,6 +27530,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         Forgot your password?
       </a>
@@ -28031,18 +27567,22 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
           className="form-group"
         >
           <div
-            className="alert d-flex justify-content-between mt-3 alert-danger"
+            className="fade alert alert-danger show"
             role="alert"
           >
             <div
-              className="d-flex gap-3"
+              className="d-flex align-items-center gap-3"
             >
-              <img
-                className="img-fluid"
-                height={24}
-                src="/assets/curriculum/icons/exclamation.svg"
-                width={24}
-              />
+              <div
+                className=""
+              >
+                <img
+                  className="img-fluid"
+                  height={24}
+                  src="/assets/curriculum/icons/exclamation.svg"
+                  width={24}
+                />
+              </div>
               Please try again! 
             </div>
           </div>
@@ -28119,6 +27659,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         Forgot your password?
       </a>
@@ -28172,6 +27713,7 @@ Array [
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Curriculum
           </a>
@@ -28188,6 +27730,7 @@ Array [
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             Learn
           </a>
@@ -28373,6 +27916,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -28476,6 +28020,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -28504,18 +28049,22 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         className="card-text"
       />
       <div
-        className="alert d-flex justify-content-between mt-3 alert-danger"
+        className="fade alert alert-danger show"
         role="alert"
       >
         <div
-          className="d-flex gap-3"
+          className="d-flex align-items-center gap-3"
         >
-          <img
-            className="img-fluid"
-            height={24}
-            src="/assets/curriculum/icons/exclamation.svg"
-            width={24}
-          />
+          <div
+            className=""
+          >
+            <img
+              className="img-fluid"
+              height={24}
+              src="/assets/curriculum/icons/exclamation.svg"
+              width={24}
+            />
+          </div>
           UserInput Error: User does not exist 
         </div>
       </div>
@@ -28595,6 +28144,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -28702,6 +28252,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -28805,6 +28356,7 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Login
         </a>
@@ -29044,7 +28596,7 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 exports[`Storyshots Theme/Button Outlined Button 1`] = `
 Array [
   <button
-    className="btn borderless btn-outline-primary btn-outline-bg-primary"
+    className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -29055,7 +28607,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn borderless btn-outline-success btn-outline-bg-success"
+    className="btn borderless btn-outline-success onFocusBgFix btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -29066,7 +28618,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn borderless btn-outline-danger btn-outline-bg-danger"
+    className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {
@@ -29082,7 +28634,7 @@ Array [
 exports[`Storyshots Theme/Button Outlined With Border Button 1`] = `
 Array [
   <button
-    className="btn btn-outline-primary btn-outline-bg-primary"
+    className="btn btn-outline-primary onFocusBgFix btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -29093,7 +28645,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn btn-outline-success btn-outline-bg-success"
+    className="btn btn-outline-success onFocusBgFix btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -29104,7 +28656,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn btn-outline-danger btn-outline-bg-danger"
+    className="btn btn-outline-danger onFocusBgFix btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {

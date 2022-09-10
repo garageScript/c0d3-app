@@ -3,102 +3,67 @@
 exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] = `
 <div>
   <div
-    class="d-none d-lg-block"
+    class="dropdown"
   >
-    <div
-      class="dropdown"
+    <button
+      aria-expanded="false"
+      class="dropdown btn btn-primary"
+      id="dropdown-lesson"
+      type="button"
     >
-      <button
-        aria-expanded="false"
-        class="dropdown-toggle title title-none"
-        type="button"
+      Lessons
+      <svg
+        aria-hidden="true"
+        class="octicon octicon-chevron-right"
+        fill="currentColor"
+        height="17"
+        role="img"
+        style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+        viewBox="0 0 16 16"
+        width="17"
       >
-        Admin
-      </button>
-      <div
-        aria-labelledby=""
-        class="dropdown-menu"
-        x-placement="bottom-start"
-      >
-        <div
-          class="text-center py-2 px-4"
-        >
-          <button
-            class="dropdown-item"
-            data-rr-ui-dropdown-item=""
-            href="/admin/lessons"
-          >
-            Lessons
-          </button>
-        </div>
-        <hr
-          class="dropdown-divider"
-          role="separator"
+        <path
+          d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"
+          fill-rule="evenodd"
         />
-        <div
-          class="text-center py-2 px-4"
-        >
-          <button
-            class="dropdown-item"
-            data-rr-ui-dropdown-item=""
-            href="/admin/users"
-          >
-            Users
-          </button>
-        </div>
-        <div
-          class="text-center py-2 px-4"
-        >
-          <button
-            class="dropdown-item"
-            data-rr-ui-dropdown-item=""
-            href="/admin/alerts"
-          >
-            Alerts
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="d-lg-none"
-  >
+      </svg>
+    </button>
     <div
-      class="text-center py-2 px-4"
+      aria-labelledby="dropdown-lesson"
+      class="dropdown__menu dropdown-menu"
+      x-placement="bottom-start"
     >
-      <button
+      <a
         class="dropdown-item"
         data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
+        href="#"
+        role="button"
+        tabindex="0"
       >
         Lessons
-      </button>
-    </div>
-    <hr
-      class="dropdown-divider"
-      role="separator"
-    />
-    <div
-      class="text-center py-2 px-4"
-    >
-      <button
+      </a>
+      <hr
+        class="dropdown-divider"
+        role="separator"
+      />
+      <a
         class="dropdown-item"
         data-rr-ui-dropdown-item=""
-        href="/admin/users"
+        href="#"
+        role="button"
+        tabindex="0"
       >
         Users
-      </button>
-    </div>
-    <div
-      class="text-center py-2 px-4"
-    >
-      <button
+      </a>
+      <a
         class="dropdown-item"
         data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
+        href="#"
+        role="button"
+        tabindex="0"
       >
         Alerts
-      </button>
+      </a>
     </div>
   </div>
 </div>
@@ -107,60 +72,31 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
 exports[`MdInput Component Should render divider when an item is null 1`] = `
 <div>
   <div
-    class="d-none d-lg-block"
+    class="dropdown"
   >
-    <div
-      class="dropdown"
+    <button
+      aria-expanded="false"
+      class="dropdown btn btn-primary"
+      id="dropdown-lesson"
+      type="button"
     >
-      <button
-        aria-expanded="false"
-        class="dropdown-toggle title title-none"
-        type="button"
+      Admin
+      <svg
+        aria-hidden="true"
+        class="octicon octicon-chevron-right"
+        fill="currentColor"
+        height="17"
+        role="img"
+        style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+        viewBox="0 0 16 16"
+        width="17"
       >
-        Admin
-      </button>
-    </div>
-  </div>
-  <div
-    class="d-lg-none"
-  >
-    <div
-      class="text-center py-2 px-4"
-    >
-      <button
-        class="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
-      >
-        Lessons
-      </button>
-    </div>
-    <hr
-      class="dropdown-divider"
-      role="separator"
-    />
-    <div
-      class="text-center py-2 px-4"
-    >
-      <button
-        class="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/users"
-      >
-        Users
-      </button>
-    </div>
-    <div
-      class="text-center py-2 px-4"
-    >
-      <button
-        class="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-      >
-        Alerts
-      </button>
-    </div>
+        <path
+          d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
   </div>
 </div>
 `;
