@@ -1,4 +1,4 @@
-import styles from '../../scss/__variables.module.scss'
+import styles from '../../scss/_variables.module.scss'
 
 export type ColorTypes =
   | 'white'
