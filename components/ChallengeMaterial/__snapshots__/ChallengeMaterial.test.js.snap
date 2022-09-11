@@ -215,7 +215,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                           </label>
                         </div>
                         <button
-                          class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                          class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                         >
                           <svg
                             aria-hidden="true"

@@ -32,7 +32,6 @@ export default gql`
       lastName: String!
       email: String!
       username: String!
-      password: String!
     ): AuthResponse
     addAlert(
       text: String!
@@ -56,6 +55,7 @@ export default gql`
       content: String!
     ): Comment
     deleteComment(id: Int!): Comment
+    editComment(id: Int!, content: String!): Comment
     addModule(
       lessonId: Int!
       name: String!
@@ -122,6 +122,7 @@ export default gql`
       title: String!
       id: Int!
     ): [Lesson]
+    unlinkDiscord: User
   }
 
   type AuthResponse {

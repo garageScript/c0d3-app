@@ -141,13 +141,6 @@ describe('auth controller', () => {
       ).rejects.toThrowError('User already exists')
     })
 
-    test('should reject if password is invalid', () => {
-      prismaMock.user.findFirst.mockResolvedValue(null)
-      return expect(
-        signup({}, { ...userArgs, password: '12' }, { req: { session: {} } })
-      ).rejects.toThrowError('Password does not meet criteria')
-    })
-
     test('should reject on second findOne. The first request checks for username, second request checks for email', () => {
       prismaMock.user.findFirst
         .mockResolvedValueOnce(null)

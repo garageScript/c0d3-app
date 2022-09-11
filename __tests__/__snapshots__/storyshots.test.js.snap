@@ -1,5 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Component/QueryInfo Basic 1`] = `
+<div
+  className="fade alert alert-primary show"
+  role="alert"
+>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
+    Update the module successfully! 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Basic With Dismiss 1`] = `
+<div
+  className="fade alert alert-primary alert-dismissible show"
+  role="alert"
+>
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className="info_image"
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/icon-tip.svg"
+        width={24}
+      />
+    </div>
+    Update the module successfully! 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Error 1`] = `
+<div
+  className="fade alert alert-danger show"
+  role="alert"
+>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    An error occurred. Please try again. 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo Error With Dismiss 1`] = `
+<div
+  className="fade alert alert-danger alert-dismissible show"
+  role="alert"
+>
+  <button
+    aria-label="Close alert"
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    An error occurred. Please try again. 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/QueryInfo With Loading 1`] = `
+<div
+  className="loading"
+>
+  <div
+    className="spinner-grow spinner-grow-sm"
+  />
+  <span>
+    Sending the request...
+  </span>
+</div>
+`;
+
 exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 <div
   className="additional-resources__container ms-4 d-flex flex-column justify-content-around"
@@ -164,7 +281,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob@c0d3.com
         </span>
         <button
-          className="btn borderless btn-outline-primary btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -203,7 +320,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob#123
         </span>
         <button
-          className="btn borderless btn-outline-primary btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -747,46 +864,6 @@ Array [
     </div>
   </div>,
 ]
-`;
-
-exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
-<div>
-  <div
-    className="lessons_tabsNav"
-  >
-    <div
-      className="lessons__tabsNav__nav"
-    >
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/introduction"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        INTRODUCTION
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/modules"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        MODULES
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/challenges"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        CHALLENGES
-      </a>
-    </div>
-  </div>
-</div>
 `;
 
 exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
@@ -1796,7 +1873,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -2665,7 +2742,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -3940,7 +4017,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 
 exports[`Storyshots Components/CopyButton Basic 1`] = `
 <button
-  className="btn borderless btn-outline-mute btn-outline-bg-mute"
+  className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
   onClick={[Function]}
   style={
     Object {
@@ -4019,7 +4096,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -4412,7 +4489,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -4760,842 +4837,81 @@ exports[`Storyshots Components/DiffView Default 1`] = `
 `;
 
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
-Array [
-  <div
-    className="d-none d-lg-block"
-  >
-    <div
-      className="dropdown"
-    >
-      <button
-        aria-expanded={false}
-        className="dropdown-toggle title title-none"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        Admin
-      </button>
-    </div>
-  </div>,
-  <div
-    className="d-lg-none"
-  >
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
-        onClick={[Function]}
-      >
-        Lessons
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/users"
-        onClick={[Function]}
-      >
-        Users
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts0
-      </a>
-    </div>
-  </div>,
-]
-`;
-
-exports[`Storyshots Components/DropdownMenu Colors 1`] = `
-Array [
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Primary
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-success"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Success
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-danger"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Danger
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-info"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Info
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-warning"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Warning
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-none"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          None
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>,
-]
-`;
-
-exports[`Storyshots Components/DropdownMenu Directions 1`] = `
 <div
-  style={
-    Object {
-      "padding": 130,
-      "paddingLeft": 170,
-    }
-  }
+  className="dropdown"
 >
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
+  <button
+    aria-expanded={false}
+    className="dropdown btn btn-primary"
+    disabled={false}
+    id="dropdown-lesson"
+    onClick={[Function]}
+    type="button"
   >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className=""
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Left
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
+    Admin
+    <svg
+      aria-hidden="true"
+      className="octicon octicon-chevron-right"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+        }
       }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-success"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Down
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
+      fill="currentColor"
+      height={17}
+      role="img"
+      style={
+        Object {
+          "display": "inline-block",
+          "overflow": "visible",
+          "userSelect": "none",
+          "verticalAlign": "text-bottom",
+        }
       }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className="dropup"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-danger"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Up
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="d-none d-lg-block"
-    >
-      <div
-        className=""
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown-toggle title title-info"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          Right
-        </button>
-      </div>
-    </div>
-    <div
-      className="d-lg-none"
-    >
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/lessons"
-          onClick={[Function]}
-        >
-          Lessons
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/users"
-          onClick={[Function]}
-        >
-          Users
-        </a>
-      </div>
-      <div
-        className="text-center py-2 px-4"
-      >
-        <a
-          className="dropdown-item"
-          data-rr-ui-dropdown-item=""
-          href="/admin/alerts"
-          onClick={[Function]}
-        >
-          Alerts0
-        </a>
-      </div>
-    </div>
-  </div>
+      viewBox="0 0 16 16"
+      width={17}
+    />
+  </button>
 </div>
 `;
 
 exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
-Array [
-  <div
-    className="d-none d-lg-block"
+<div
+  className="dropdown"
+>
+  <button
+    aria-expanded={false}
+    className="dropdown btn btn-primary"
+    disabled={false}
+    id="dropdown-lesson"
+    onClick={[Function]}
+    type="button"
   >
-    <div
-      className="dropdown"
-    >
-      <button
-        aria-expanded={false}
-        className="dropdown-toggle title title-none"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        Admin
-      </button>
-    </div>
-  </div>,
-  <div
-    className="d-lg-none"
-  >
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/lessons"
-        onClick={[Function]}
-      >
-        Lessons
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
+    Admin
+    <svg
+      aria-hidden="true"
+      className="octicon octicon-chevron-right"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+        }
+      }
+      fill="currentColor"
+      height={17}
+      role="img"
+      style={
+        Object {
+          "display": "inline-block",
+          "overflow": "visible",
+          "userSelect": "none",
+          "verticalAlign": "text-bottom",
+        }
+      }
+      viewBox="0 0 16 16"
+      width={17}
     />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/users"
-        onClick={[Function]}
-      >
-        Users
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
-    />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts1
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts2
-      </a>
-    </div>
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts3
-      </a>
-    </div>
-    <hr
-      className="dropdown-divider"
-      role="separator"
-    />
-    <div
-      className="text-center py-2 px-4"
-    >
-      <a
-        className="dropdown-item"
-        data-rr-ui-dropdown-item=""
-        href="/admin/alerts"
-        onClick={[Function]}
-      >
-        Alerts4
-      </a>
-    </div>
-  </div>,
-]
+  </button>
+</div>
 `;
 
 exports[`Storyshots Components/Error Internal 1`] = `
@@ -7609,47 +6925,40 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             Swiggity swag
           </span>
           <div
-            className="d-none d-lg-block"
+            className="dropdown"
           >
-            <div
-              className="dropdown"
+            <button
+              aria-expanded={false}
+              className="dropdown btn btn-primary"
+              disabled={false}
+              id="dropdown-lesson"
+              onClick={[Function]}
+              type="button"
             >
-              <button
-                aria-expanded={false}
-                className="dropdown-toggle title title-none"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Lolzz
-              </button>
-            </div>
-          </div>
-          <div
-            className="d-lg-none"
-          >
-            <div
-              className="text-center py-2 px-4"
-            >
-              <button
-                className="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                onClick={[Function]}
-              >
-                Lolzz
-              </button>
-            </div>
-            <div
-              className="text-center py-2 px-4"
-            >
-              <button
-                className="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                onClick={[Function]}
-              >
-                pineApple bananozna
-              </button>
-            </div>
+              Lolzz
+              <svg
+                aria-hidden="true"
+                className="octicon octicon-chevron-right"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z\\"></path>",
+                  }
+                }
+                fill="currentColor"
+                height={17}
+                role="img"
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "overflow": "visible",
+                    "userSelect": "none",
+                    "verticalAlign": "text-bottom",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={17}
+              />
+            </button>
           </div>
         </div>
         <div
@@ -10781,7 +10090,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
     </p>
     <a
-      className="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
+      className="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+      data-testid="review-submissions-count"
       href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -10878,7 +10188,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         </p>
       </div>
       <a
-        className="btn btn-sm btn-primary text-white float-end mb-2 me-2"
+        className="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+        data-testid="review-submissions-count"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -12854,6 +12165,44 @@ exports[`Storyshots Components/ModalCard Small 1`] = `
 </button>
 `;
 
+exports[`Storyshots Components/NavCard Basic 1`] = `
+<div
+  className="navCard__tabsNav"
+>
+  <div
+    className="navCard__tabsNav__nav"
+  >
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/introduction"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      INTRODUCTION
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/modules"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      MODULES
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/challenges"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      CHALLENGES
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
@@ -12933,7 +12282,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   className="card shadow-sm"
 >
   <div
-    className="ms-auto me-auto mt-4 profile_image_container"
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
   >
     <div
       className="jsx-3123111835 ms-auto me-auto mt-4"
@@ -12946,42 +12295,98 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       />
     </div>
   </div>
-  <h2
+  <h4
     className="text-center mt-4"
   >
     Rahul Kalra
-  </h2>
+  </h4>
   <div
     className="d-flex justify-content-center"
   >
-    <h4
-      className="text-muted"
+    <span
+      className="fs-5 text-muted"
     >
       @noob101
-    </h4>
+    </span>
   </div>
   <div
-    className="d-flex ms-auto me-auto mb-4"
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
   >
-    <img
-      className="img-fluid"
-      height={20}
-      objectFit="contain"
-      src="/assets/discordClydeLogo.svg"
-      width={20}
-    />
-    <h5
-      className="ms-2"
+    <div
+      className="d-flex align-items-center mb-2"
     >
-      <a
-        href="https://discordapp.com/users/fakeDiscordId/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
+      <img
+        className="img-fluid"
+        height={20}
+        objectFit="contain"
+        src="/assets/discordClydeLogo.svg"
+        width={20}
+      />
+      <span
+        className="fs-5 ms-2 mb-0"
       >
-        fakeDiscordUsername
-      </a>
-    </h5>
+        <a
+          href="https://discordapp.com/users/fakeDiscordId/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+        >
+          fakeDiscordUsername
+        </a>
+      </span>
+    </div>
+    <button
+      className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "danger",
+        }
+      }
+    >
+      Unlink Discord
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ProfileImageInfo Profile Image Info With Connect 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="ms-auto me-auto mt-4 mb-3 profile_image_container"
+  >
+    <div
+      className="text-uppercase bg-primary rounded-circle text-light user_info_image mt-4"
+    >
+      RK
+    </div>
+  </div>
+  <h4
+    className="text-center mt-4"
+  >
+    Rahul Kalra
+  </h4>
+  <div
+    className="d-flex justify-content-center"
+  >
+    <span
+      className="fs-5 text-muted"
+    >
+      @noob101
+    </span>
+  </div>
+  <div
+    className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
+  >
+    <button
+      className="btn btn-primary btn-md btn-block mt-3"
+      onClick={[Function]}
+      type="button"
+    >
+      Connect to Discord
+    </button>
   </div>
 </div>
 `;
@@ -14571,7 +13976,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -15997,7 +15402,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -17421,7 +16826,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -18845,7 +18250,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -20269,7 +19674,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -22214,7 +21619,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -22284,7 +21721,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -22354,7 +21823,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -28482,16 +27983,6 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28584,16 +28075,6 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28710,16 +28191,6 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28812,16 +28283,6 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28920,16 +28381,6 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -29191,7 +28642,7 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 exports[`Storyshots Theme/Button Outlined Button 1`] = `
 Array [
   <button
-    className="btn borderless btn-outline-primary btn-outline-bg-primary"
+    className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -29202,7 +28653,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn borderless btn-outline-success btn-outline-bg-success"
+    className="btn borderless btn-outline-success onFocusBgFix btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -29213,7 +28664,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn borderless btn-outline-danger btn-outline-bg-danger"
+    className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {
@@ -29229,7 +28680,7 @@ Array [
 exports[`Storyshots Theme/Button Outlined With Border Button 1`] = `
 Array [
   <button
-    className="btn btn-outline-primary btn-outline-bg-primary"
+    className="btn btn-outline-primary onFocusBgFix btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -29240,7 +28691,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn btn-outline-success btn-outline-bg-success"
+    className="btn btn-outline-success onFocusBgFix btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -29251,7 +28702,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn btn-outline-danger btn-outline-bg-danger"
+    className="btn btn-outline-danger onFocusBgFix btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {

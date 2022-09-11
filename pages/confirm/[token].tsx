@@ -2,6 +2,7 @@ import { useMutation } from '@apollo/client'
 import React from 'react'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field } from 'formik'
+import Link from 'next/link'
 import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
 import NavLink from '../../components/NavLink'
 import Input from '../../components/Input'
@@ -16,9 +17,9 @@ const initialValues = {
 
 const ConfirmSuccess: React.FC = () => (
   <Card type="success" title="Password has been set!">
-    <a className="btn btn-primary btn-lg mb-3" role="button" href="/curriculum">
-      Continue to dashboard
-    </a>
+    <Link href="/curriculum">
+      <a className="btn btn-primary btn-lg mb-3">Continue to dashboard</a>
+    </Link>
   </Card>
 )
 
