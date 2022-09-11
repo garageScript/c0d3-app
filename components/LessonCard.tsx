@@ -5,8 +5,9 @@ import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
 import NavLink from './NavLink'
 import Image from 'next/image'
 import styles from '../scss/lessonCard.module.scss'
-import { SubmissionStatus } from '../graphql'
+import { Submission, SubmissionStatus } from '../graphql'
 import Link from 'next/link'
+import { get } from 'lodash'
 
 type Props = {
   lessonId: number
@@ -27,50 +28,45 @@ type ReviewButtonProps = {
   className?: string
 }
 
-type ReviewCountProps = {
-  lessonId: number
-}
-
-const ReviewCount: React.FC<ReviewCountProps> = props => {
-  const { loading, data } = useQuery(GET_SUBMISSIONS, {
-    variables: { lessonId: props.lessonId },
-    fetchPolicy: 'network-only',
-    nextFetchPolicy: 'cache-first'
-  })
-
-  if (loading) {
-    return (
-      <div className="spinner-border spinner-border-sm mx-1" role="status" />
-    )
-  }
-
-  if (!data) {
-    return <span>0</span>
-  }
-  const pendingSubmissionsCount = data.submissions.reduce(
-    (acc: number, val: any) => {
-      if (val.status === SubmissionStatus.Open) {
-        return acc + 1
-      }
-      return acc
-    },
-    0
+const ReviewButton: React.FC<ReviewButtonProps> = props => {
+  const { loading, data } = useQuery<{ submissions: Submission[] }>(
+    GET_SUBMISSIONS,
+    {
+      variables: { lessonId: props.lessonId },
+      fetchPolicy: 'network-only',
+      nextFetchPolicy: 'cache-first'
+    }
   )
 
-  return <span>{pendingSubmissionsCount}</span>
-}
+  const style = `btn btn-sm btn-primary text-white float-end mb-2 me-2 ${
+    props.className || ''
+  }`
 
-const ReviewButton: React.FC<ReviewButtonProps> = props => {
-  let style = 'btn btn-sm btn-primary text-white float-end mb-2 me-2'
-  if (props.className) style += props.className
   if (!props.isCompleted) {
     return null
   }
 
+  const submissions = get(data, 'submissions') || []
+
+  const pendingSubmissionsCount = submissions.reduce((acc, val) => {
+    if (val.status === SubmissionStatus.Open) {
+      return acc + 1
+    }
+    return acc
+  }, 0)
+
+  if ((data && !pendingSubmissionsCount) || (!data && !loading)) return <></>
+
+  const content = loading ? (
+    <div className="spinner-border spinner-border-sm mx-1" role="status" />
+  ) : (
+    <span>{pendingSubmissionsCount}</span>
+  )
+
   return (
     <Link href={props.reviewUrl}>
-      <a className={style}>
-        Review <ReviewCount lessonId={props.lessonId} /> Submissions
+      <a data-testid="review-submissions-count" className={style}>
+        Review {content} Submissions
       </a>
     </Link>
   )

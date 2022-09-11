@@ -61,30 +61,34 @@ const mocks = [
 ]
 
 export const Basic: React.FC = () => (
-  <LessonCard
-    lessonId={4}
-    coverImg={`js-4-cover.svg`}
-    title={`HTML, CSS, JavaScript`}
-    challengeCount={7}
-    description={`Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.`}
-    reviewUrl="/review/js0"
-    challengesUrl="/curriculum/js0"
-    docUrl="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
-  />
+  <MockedProvider>
+    <LessonCard
+      lessonId={4}
+      coverImg={`js-4-cover.svg`}
+      title={`HTML, CSS, JavaScript`}
+      challengeCount={7}
+      description={`Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.`}
+      reviewUrl="/review/js0"
+      challengesUrl="/curriculum/js0"
+      docUrl="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
+    />
+  </MockedProvider>
 )
 
 export const withInProgress: React.FC = () => (
-  <LessonCard
-    lessonId={4}
-    coverImg={`js-4-cover.svg`}
-    title={`HTML, CSS, JavaScript`}
-    challengeCount={7}
-    description={`Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.`}
-    currentState="inProgress"
-    reviewUrl="/review/js0"
-    challengesUrl="/curriculum/js0"
-    docUrl="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
-  />
+  <MockedProvider>
+    <LessonCard
+      lessonId={4}
+      coverImg={`js-4-cover.svg`}
+      title={`HTML, CSS, JavaScript`}
+      challengeCount={7}
+      description={`Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.`}
+      currentState="inProgress"
+      reviewUrl="/review/js0"
+      challengesUrl="/curriculum/js0"
+      docUrl="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
+    />
+  </MockedProvider>
 )
 
 export const withCompleted: React.FC = () => (

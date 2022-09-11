@@ -18,6 +18,7 @@ const session = {
 describe('Exercises page', () => {
   const { query } = useRouter()
   query['lessonSlug'] = 'js0'
+
   test('Should render correctly', async () => {
     const mocks = [
       {
@@ -41,6 +42,42 @@ describe('Exercises page', () => {
     await waitFor(() =>
       screen.getByRole('heading', { name: /Foundations of JavaScript/i })
     )
+
+    screen.getByRole('link', { name: 'CHALLENGES' })
+    screen.getByRole('link', { name: 'EXERCISES' })
+    screen.getByRole('link', { name: 'LESSONS' })
+  })
+
+  test('Should not render lessons nav card tab if lesson docUrl is null', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData.map(lesson => ({
+              ...lesson,
+              docUrl: null
+            })),
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Exercises />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
+    )
+
+    screen.getByRole('link', { name: 'CHALLENGES' })
+    screen.getByRole('link', { name: 'EXERCISES' })
+    expect(screen.queryByRole('link', { name: 'LESSONS' })).toBeNull()
   })
 
   test('Should render a 500 error page if the lesson data is null', async () => {

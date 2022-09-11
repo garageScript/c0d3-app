@@ -281,7 +281,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob@c0d3.com
         </span>
         <button
-          className="btn borderless btn-outline-primary btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -320,7 +320,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob#123
         </span>
         <button
-          className="btn borderless btn-outline-primary btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -864,46 +864,6 @@ Array [
     </div>
   </div>,
 ]
-`;
-
-exports[`Storyshots Components/AdminLessonNav Basic 1`] = `
-<div>
-  <div
-    className="lessons_tabsNav"
-  >
-    <div
-      className="lessons__tabsNav__nav"
-    >
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/introduction"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        INTRODUCTION
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/modules"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        MODULES
-      </a>
-      <a
-        className="lessons_tabsNav__nav__item--inactive nav-pills"
-        href="/admin/lessons/1/challenges"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        CHALLENGES
-      </a>
-    </div>
-  </div>
-</div>
 `;
 
 exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
@@ -1913,7 +1873,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -2782,7 +2742,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -4057,7 +4017,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 
 exports[`Storyshots Components/CopyButton Basic 1`] = `
 <button
-  className="btn borderless btn-outline-mute btn-outline-bg-mute"
+  className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
   onClick={[Function]}
   style={
     Object {
@@ -4136,7 +4096,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -4529,7 +4489,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -10130,7 +10090,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
     </p>
     <a
-      className="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
+      className="btn btn-sm btn-primary text-white float-end mb-2 me-2 me-0"
+      data-testid="review-submissions-count"
       href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -10227,7 +10188,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         </p>
       </div>
       <a
-        className="btn btn-sm btn-primary text-white float-end mb-2 me-2"
+        className="btn btn-sm btn-primary text-white float-end mb-2 me-2 "
+        data-testid="review-submissions-count"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -12203,6 +12165,44 @@ exports[`Storyshots Components/ModalCard Small 1`] = `
 </button>
 `;
 
+exports[`Storyshots Components/NavCard Basic 1`] = `
+<div
+  className="navCard__tabsNav"
+>
+  <div
+    className="navCard__tabsNav__nav"
+  >
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/introduction"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      INTRODUCTION
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/modules"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      MODULES
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/admin/lessons/1/challenges"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      CHALLENGES
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
@@ -12336,7 +12336,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       </span>
     </div>
     <button
-      className="btn borderless btn-outline-danger btn-outline-bg-danger"
+      className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
       onClick={[Function]}
       style={
         Object {
@@ -13976,7 +13976,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -15402,7 +15402,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -16826,7 +16826,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -18250,7 +18250,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -19674,7 +19674,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -21619,7 +21619,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21689,7 +21721,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21759,7 +21823,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -27887,16 +27983,6 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -27989,16 +28075,6 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28115,16 +28191,6 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28217,16 +28283,6 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28325,16 +28381,6 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28596,7 +28642,7 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 exports[`Storyshots Theme/Button Outlined Button 1`] = `
 Array [
   <button
-    className="btn borderless btn-outline-primary btn-outline-bg-primary"
+    className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -28607,7 +28653,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn borderless btn-outline-success btn-outline-bg-success"
+    className="btn borderless btn-outline-success onFocusBgFix btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -28618,7 +28664,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn borderless btn-outline-danger btn-outline-bg-danger"
+    className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {
@@ -28634,7 +28680,7 @@ Array [
 exports[`Storyshots Theme/Button Outlined With Border Button 1`] = `
 Array [
   <button
-    className="btn btn-outline-primary btn-outline-bg-primary"
+    className="btn btn-outline-primary onFocusBgFix btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -28645,7 +28691,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn btn-outline-success btn-outline-bg-success"
+    className="btn btn-outline-success onFocusBgFix btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -28656,7 +28702,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn btn-outline-danger btn-outline-bg-danger"
+    className="btn btn-outline-danger onFocusBgFix btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {

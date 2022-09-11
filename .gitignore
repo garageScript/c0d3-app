@@ -122,3 +122,6 @@ package-lock.json
 
 # Jetbrains ide config files
 .idea
+
+# Storybook JS bundles and other static files
+storybook-static/
