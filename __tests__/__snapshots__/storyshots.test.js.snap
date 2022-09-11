@@ -27920,16 +27920,6 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28022,16 +28012,6 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28148,16 +28128,6 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28250,16 +28220,6 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28358,16 +28318,6 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
