@@ -2,14 +2,14 @@ import React from 'react'
 import styles from '../scss/exercisePreviewCard.module.scss'
 
 export type ExercisePreviewCardProps = {
-  topic: string
+  moduleName: string
   state: 'NOT ANSWERED' | 'ANSWERED'
   problem: string
   className?: string
 }
 
 const ExercisePreviewCard = ({
-  topic,
+  moduleName,
   state,
   problem,
   className = ''
@@ -31,7 +31,7 @@ const ExercisePreviewCard = ({
     >
       <div className={topBorderStyle} />
       <div className="d-flex align-items-center mb-3">
-        <h2 className="fw-bold fs-6 my-2 me-4">{topic.toUpperCase()}</h2>
+        <h2 className="fw-bold fs-6 my-2 me-4">{moduleName.toUpperCase()}</h2>
         <div className={`badge ${topMessageStyle}`}>{state}</div>
       </div>
       <div className="mb-2">Problem</div>

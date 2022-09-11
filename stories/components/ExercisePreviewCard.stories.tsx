@@ -13,7 +13,7 @@ a = a + 10
 export const Answered = () => {
   return (
     <ExercisePreviewCard
-      topic="Variables"
+      moduleName="Variables"
       state="ANSWERED"
       problem={exampleProblem}
     />
@@ -23,7 +23,7 @@ export const Answered = () => {
 export const NotAnswered = () => {
   return (
     <ExercisePreviewCard
-      topic="Variables"
+      moduleName="Variables"
       state="NOT ANSWERED"
       problem={exampleProblem}
     />

@@ -19,9 +19,9 @@ a = a + 10
 // what is a?`
 
 const mockExercisePreviews: ExercisePreviewCardProps[] = [
-  { topic: 'Variables', state: 'ANSWERED', problem: exampleProblem },
-  { topic: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
-  { topic: 'Variables', state: 'ANSWERED', problem: exampleProblem }
+  { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem }
 ]
 
 const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
@@ -58,7 +58,7 @@ const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
           {mockExercisePreviews.map((exercisePreview, i) => (
             <ExercisePreviewCard
               key={i}
-              topic={exercisePreview.topic}
+              moduleName={exercisePreview.moduleName}
               state={exercisePreview.state}
               problem={exercisePreview.problem}
               className={`col ${
