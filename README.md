@@ -1,9 +1,7 @@
 # c0d3.com
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -72,6 +70,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="http://www.thomasJherzog.com"><img src="https://avatars.githubusercontent.com/u/17365077?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Herzog</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=tomrule007" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=tomrule007" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/mino323"><img src="https://avatars.githubusercontent.com/u/86011419?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mino323</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=mino323" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=mino323" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/flacial"><img src="https://avatars.githubusercontent.com/u/35906419?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Flacial</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=flacial" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/HS-90"><img src="https://avatars.githubusercontent.com/u/77421872?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HS-90</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=HS-90" title="Code">💻</a></td>
   </tr>
 </table>
 

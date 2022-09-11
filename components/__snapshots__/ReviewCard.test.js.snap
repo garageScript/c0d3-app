@@ -133,7 +133,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                         </label>
                       </div>
                       <button
-                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       >
                         <svg
                           aria-hidden="true"
@@ -988,7 +988,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                         </label>
                       </div>
                       <button
-                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       >
                         <svg
                           aria-hidden="true"
@@ -1792,7 +1792,7 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                         </label>
                       </div>
                       <button
-                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       >
                         <svg
                           aria-hidden="true"
@@ -2596,7 +2596,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                         </label>
                       </div>
                       <button
-                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       >
                         <svg
                           aria-hidden="true"
@@ -4201,7 +4201,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                         </label>
                       </div>
                       <button
-                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       >
                         <svg
                           aria-hidden="true"
@@ -6181,7 +6181,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                         </label>
                       </div>
                       <button
-                        class="btn borderless btn-outline-mute btn-outline-bg-mute"
+                        class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                       >
                         <svg
                           aria-hidden="true"

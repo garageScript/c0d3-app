@@ -270,7 +270,6 @@ export type MutationSignupArgs = {
   email: Scalars['String']
   firstName: Scalars['String']
   lastName: Scalars['String']
-  password: Scalars['String']
   username: Scalars['String']
 }
 
@@ -1052,7 +1051,6 @@ export type SignupMutationVariables = Exact<{
   lastName: Scalars['String']
   email: Scalars['String']
   username: Scalars['String']
-  password: Scalars['String']
 }>
 
 export type SignupMutation = {
@@ -1681,7 +1679,7 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationSignupArgs,
-      'email' | 'firstName' | 'lastName' | 'password' | 'username'
+      'email' | 'firstName' | 'lastName' | 'username'
     >
   >
   unlinkDiscord?: Resolver<
@@ -4532,14 +4530,12 @@ export const SignupDocument = gql`
     $lastName: String!
     $email: String!
     $username: String!
-    $password: String!
   ) {
     signup(
       firstName: $firstName
       lastName: $lastName
       email: $email
       username: $username
-      password: $password
     ) {
       success
       username
@@ -4601,7 +4597,6 @@ export function withSignup<
  *      lastName: // value for 'lastName'
  *      email: // value for 'email'
  *      username: // value for 'username'
- *      password: // value for 'password'
  *   },
  * });
  */
