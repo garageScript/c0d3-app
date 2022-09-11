@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../scss/exercisePreviewCard.module.scss'
+import styles from './exercisePreviewCard.module.scss'
 
 export type ExercisePreviewCardProps = {
   moduleName: string
