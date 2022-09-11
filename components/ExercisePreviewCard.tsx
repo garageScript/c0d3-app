@@ -32,7 +32,7 @@ const ExercisePreviewCard = ({
       <div className={topBorderStyle} />
       <div className="d-flex align-items-center mb-3">
         <h2 className="fw-bold fs-6 my-2 me-4">{topic.toUpperCase()}</h2>
-        <div className={`px-3 py-1 rounded ${topMessageStyle}`}>{state}</div>
+        <div className={`badge ${topMessageStyle}`}>{state}</div>
       </div>
       <div className="mb-2">Problem</div>
       <pre className="bg-light py-2 px-3">{problem}</pre>
