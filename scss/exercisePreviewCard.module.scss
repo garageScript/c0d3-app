@@ -1,0 +1,35 @@
+@use './_variables.module';
+
+%exercisePreviewCard__topBorder {
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.exercisePreviewCard__topBorder__success {
+  @extend %exercisePreviewCard__topBorder;
+  background-color: variables.$success;
+}
+
+.exercisePreviewCard__topBorder__danger {
+  @extend %exercisePreviewCard__topBorder;
+  background-color: variables.$danger;
+}
+
+%exercisePreviewCard__topMessage {
+  font-size: 14px;
+}
+
+.exercisePreviewCard__topMessage__success {
+  @extend %exercisePreviewCard__topMessage;
+  color: variables.$success;
+  border: 1px solid variables.$success;
+}
+
+.exercisePreviewCard__topMessage__danger {
+  @extend %exercisePreviewCard__topMessage;
+  color: variables.$danger;
+  border: 1px solid variables.$danger;
+}
