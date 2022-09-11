@@ -3,7 +3,7 @@ import { Comment, Submission } from '../graphql'
 import Markdown from 'markdown-to-jsx'
 import ReviewerProfile from './ReviewerProfile'
 import { Button } from './theme/Button'
-import { TrashIcon } from '@primer/octicons-react'
+import { TrashIcon, PencilIcon } from '@primer/octicons-react'
 import styles from '../scss/submissionComments.module.scss'
 import { updateCache } from '../helpers/updateCache'
 import { useDeleteCommentMutation, useEditCommentMutation } from '../graphql'
@@ -96,7 +96,7 @@ export const SubmissionComments: React.FC<{
           <Button
             onClick={handleModalClose}
             type="info"
-            size="lg"
+            size="sm"
             color="white"
           >
             Close
@@ -108,13 +108,15 @@ export const SubmissionComments: React.FC<{
           key={`${c.content}${i}`}
           className="border border-lightgray rounded my-1"
         >
-          <div className="ms-3">
+          <div className={'ms-3'}>
             {editing === i ? (
-              <MdInput
-                onChange={setCurrInput}
-                bgColor="white"
-                value={currInput}
-              />
+              <div className={styles['text']}>
+                <MdInput
+                  onChange={setCurrInput}
+                  bgColor="white"
+                  value={currInput}
+                />
+              </div>
             ) : (
               <Markdown wrapper="code_wrapper">{c.content}</Markdown>
             )}
@@ -133,9 +135,7 @@ export const SubmissionComments: React.FC<{
                   <Button
                     type="light"
                     color="black"
-                    onClick={() => {
-                      handleDiscardChange()
-                    }}
+                    onClick={handleDiscardChange}
                     data-testid="discard-button"
                   >
                     Discard Changes
@@ -155,19 +155,21 @@ export const SubmissionComments: React.FC<{
               ) : (
                 <div>
                   <Button
+                    outline
                     type="info"
                     size="sm"
-                    color="white"
+                    color="info"
                     onClick={() => {
                       handleStartEditing(i, c.content)
                     }}
                     data-testid="edit-button"
                   >
-                    Edit
+                    <PencilIcon />
                   </Button>
                   <Button
                     outline
                     type="danger"
+                    size="sm"
                     color="danger"
                     onClick={() => handleDeleteComment(c)}
                     data-testid="delete-button"

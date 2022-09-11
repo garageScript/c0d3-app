@@ -158,7 +158,7 @@ describe('Test SubmissionComments Component', () => {
       </MockedProvider>
     )
 
-    const editButton = container.querySelector('.btn-info.btn-sm')
+    const editButton = container.querySelector('.btn-outline-info.btn-sm')
     fireEvent.click(editButton)
 
     await waitFor(() => {
@@ -166,7 +166,7 @@ describe('Test SubmissionComments Component', () => {
       expect(discardButton).toBeInTheDocument()
       expect(container.querySelector('.btn-info')).toBeInTheDocument()
 
-      const editButtonTwo = container.querySelector('.btn-info.btn-sm')
+      const editButtonTwo = container.querySelector('.btn-outline-info.btn-sm')
       fireEvent.click(editButtonTwo)
 
       const warningText =
@@ -201,7 +201,7 @@ describe('Test SubmissionComments Component', () => {
       </MockedProvider>
     )
 
-    await userEvent.click(container.querySelector('.btn-info.btn-sm'))
+    await userEvent.click(container.querySelector('.btn-outline-info.btn-sm'))
 
     await userEvent.clear(getByTestId('textbox'))
     await fillOutCommentInput(getByTestId, 'edited test comment') // previous text: test comment
@@ -214,7 +214,9 @@ describe('Test SubmissionComments Component', () => {
     expect(editCommentMutation).toHaveBeenCalled()
 
     expect(container.querySelector('.btn-outline-danger')).toBeInTheDocument()
-    expect(container.querySelector('.btn-info.btn-sm')).toBeInTheDocument()
+    expect(
+      container.querySelector('.btn-outline-info.btn-sm')
+    ).toBeInTheDocument()
   })
 
   it('should close Modal when you click Close button', async () => {
@@ -234,8 +236,8 @@ describe('Test SubmissionComments Component', () => {
       </MockedProvider>
     )
 
-    await userEvent.click(container.querySelector('.btn-info.btn-sm'))
-    await userEvent.click(container.querySelector('.btn-info.btn-sm'))
+    await userEvent.click(container.querySelector('.btn-outline-info.btn-sm'))
+    await userEvent.click(container.querySelector('.btn-outline-info.btn-sm'))
 
     await waitFor(() => fireEvent.click(screen.getByText(/Close/)))
     await waitFor(() => expect(screen.queryByText('Error')).toBeFalsy())
