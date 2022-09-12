@@ -5271,6 +5271,78 @@ a = b;
 </div>
 `;
 
+exports[`Storyshots Components/ExercisePreviewCard Answered 1`] = `
+<section
+  className="card p-3 d-inline-block border-0 shadow position-relative overflow-hidden "
+>
+  <div
+    className="exercisePreviewCard__topBorder__success"
+  />
+  <div
+    className="d-flex align-items-center mb-3"
+  >
+    <h2
+      className="fw-bold fs-6 my-2 me-4"
+    >
+      VARIABLES
+    </h2>
+    <div
+      className="badge exercisePreviewCard__topMessage__success"
+    >
+      ANSWERED
+    </div>
+  </div>
+  <div
+    className="mb-2"
+  >
+    Problem
+  </div>
+  <pre
+    className="bg-light py-2 px-3"
+  >
+    const a = 5
+a = a + 10
+// what is a?
+  </pre>
+</section>
+`;
+
+exports[`Storyshots Components/ExercisePreviewCard Not Answered 1`] = `
+<section
+  className="card p-3 d-inline-block border-0 shadow position-relative overflow-hidden "
+>
+  <div
+    className="exercisePreviewCard__topBorder__danger"
+  />
+  <div
+    className="d-flex align-items-center mb-3"
+  >
+    <h2
+      className="fw-bold fs-6 my-2 me-4"
+    >
+      VARIABLES
+    </h2>
+    <div
+      className="badge exercisePreviewCard__topMessage__danger"
+    >
+      NOT ANSWERED
+    </div>
+  </div>
+  <div
+    className="mb-2"
+  >
+    Problem
+  </div>
+  <pre
+    className="bg-light py-2 px-3"
+  >
+    const a = 5
+a = a + 10
+// what is a?
+  </pre>
+</section>
+`;
+
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
 <div
   className="d-flex flex-row"
