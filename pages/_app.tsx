@@ -12,12 +12,16 @@ import Head from 'next/head'
 import '../scss/index.scss'
 import { useApollo } from '../helpers/apolloClient'
 import { ContextProvider } from '../helpers/globalContext'
+import { Session } from 'next-auth'
 import { SessionProvider } from 'next-auth/react'
 import type { NextPageWithLayout } from '../@types/page'
-interface IProps extends AppProps {
+interface IProps<P = Record<string, unknown>> extends AppProps {
   err: any
   apollo: ApolloClient<NormalizedCacheObject>
   Component: NextPageWithLayout
+  pageProps: P & {
+    session?: Session
+  }
 }
 
 function MyApp({
