@@ -11,6 +11,12 @@ import { GlobalContext } from '../helpers/globalContext'
 import { MdInput } from './MdInput'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
+import {
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle
+} from 'react-bootstrap'
 
 export const SubmissionComments: React.FC<{
   comments: Comment[]
@@ -88,11 +94,11 @@ export const SubmissionComments: React.FC<{
   return (
     <>
       <Modal show={show} onHide={handleModalClose}>
-        <Modal.Header>
-          <Modal.Title>Error</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{modalText}</Modal.Body>
-        <Modal.Footer>
+        <ModalHeader>
+          <ModalTitle>Error</ModalTitle>
+        </ModalHeader>
+        <ModalBody>{modalText}</ModalBody>
+        <ModalFooter>
           <Button
             onClick={handleModalClose}
             type="info"
@@ -101,7 +107,7 @@ export const SubmissionComments: React.FC<{
           >
             Close
           </Button>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
       {submissionsComments.map((c, i) => (
         <div
