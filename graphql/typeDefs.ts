@@ -32,7 +32,6 @@ export default gql`
       lastName: String!
       email: String!
       username: String!
-      password: String!
     ): AuthResponse
     addAlert(
       text: String!

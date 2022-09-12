@@ -5273,6 +5273,78 @@ a = b;
 </div>
 `;
 
+exports[`Storyshots Components/ExercisePreviewCard Answered 1`] = `
+<section
+  className="card p-3 d-inline-block border-0 shadow position-relative overflow-hidden "
+>
+  <div
+    className="exercisePreviewCard__topBorder__success"
+  />
+  <div
+    className="d-flex align-items-center mb-3"
+  >
+    <h2
+      className="fw-bold fs-6 my-2 me-4"
+    >
+      VARIABLES
+    </h2>
+    <div
+      className="badge exercisePreviewCard__topMessage__success"
+    >
+      ANSWERED
+    </div>
+  </div>
+  <div
+    className="mb-2"
+  >
+    Problem
+  </div>
+  <pre
+    className="bg-light py-2 px-3"
+  >
+    const a = 5
+a = a + 10
+// what is a?
+  </pre>
+</section>
+`;
+
+exports[`Storyshots Components/ExercisePreviewCard Not Answered 1`] = `
+<section
+  className="card p-3 d-inline-block border-0 shadow position-relative overflow-hidden "
+>
+  <div
+    className="exercisePreviewCard__topBorder__danger"
+  />
+  <div
+    className="d-flex align-items-center mb-3"
+  >
+    <h2
+      className="fw-bold fs-6 my-2 me-4"
+    >
+      VARIABLES
+    </h2>
+    <div
+      className="badge exercisePreviewCard__topMessage__danger"
+    >
+      NOT ANSWERED
+    </div>
+  </div>
+  <div
+    className="mb-2"
+  >
+    Problem
+  </div>
+  <pre
+    className="bg-light py-2 px-3"
+  >
+    const a = 5
+a = a + 10
+// what is a?
+  </pre>
+</section>
+`;
+
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
 <div
   className="d-flex flex-row"
@@ -21622,7 +21694,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21692,7 +21796,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21762,7 +21898,39 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "info",
+            }
+          }
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+        <button
+          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -27890,16 +28058,6 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -27992,16 +28150,6 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28118,16 +28266,6 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             placeholder="Last name"
             value=""
           />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
           <button
             className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
@@ -28220,16 +28358,6 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
@@ -28328,16 +28456,6 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Last name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg fw-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <button
