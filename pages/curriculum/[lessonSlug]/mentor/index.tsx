@@ -21,7 +21,7 @@ import { errorCheckAllFields } from '../../../../helpers/admin/adminHelpers'
 
 type HeaderProps<T> = {
   lesson: T
-  addExerciseData?: AddExerciseMutation | undefined | null
+  addExerciseData?: AddExerciseMutation | null
   loading: boolean
   error?: ApolloError
   setModule: (v: null | Omit<Module, 'author' | 'lesson'>) => void
