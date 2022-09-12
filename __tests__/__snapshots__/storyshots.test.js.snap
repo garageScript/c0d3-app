@@ -4843,8 +4843,9 @@ exports[`Storyshots Components/DropdownMenu Basic 1`] = `
   <button
     aria-expanded={false}
     className="dropdown btn btn-primary"
+    data-testid="dropdown-lesson"
     disabled={false}
-    id="dropdown-lesson"
+    id="react-aria6345207500-1"
     onClick={[Function]}
     type="button"
   >
@@ -4882,8 +4883,9 @@ exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
   <button
     aria-expanded={false}
     className="dropdown btn btn-primary"
+    data-testid="dropdown-lesson"
     disabled={false}
-    id="dropdown-lesson"
+    id="react-aria6345207500-2"
     onClick={[Function]}
     type="button"
   >
@@ -6930,8 +6932,9 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             <button
               aria-expanded={false}
               className="dropdown btn btn-primary"
+              data-testid="dropdown-lesson"
               disabled={false}
-              id="dropdown-lesson"
+              id="react-aria6345207500-3"
               onClick={[Function]}
               type="button"
             >

@@ -84,7 +84,8 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                   <button
                     aria-expanded="false"
                     class="dropdown btn btn-primary"
-                    id="dropdown-lesson"
+                    data-testid="dropdown-lesson"
+                    id="react-aria3371970643-1"
                     type="button"
                   >
                     info
@@ -270,7 +271,8 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                   <button
                     aria-expanded="false"
                     class="dropdown btn btn-primary"
-                    id="dropdown-lesson"
+                    data-testid="dropdown-lesson"
+                    id="react-aria3371970643-3"
                     type="button"
                   >
                     info
