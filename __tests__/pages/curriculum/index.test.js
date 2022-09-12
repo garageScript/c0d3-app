@@ -1,3 +1,5 @@
+jest.mock('@sentry/nextjs')
+
 import React from 'react'
 import MentorPage from '../../../pages/curriculum/[lessonSlug]/mentor/index.tsx'
 import userEvent from '@testing-library/user-event'
@@ -5,6 +7,8 @@ import { render, screen, waitFor, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
 import ADD_EXERCISE from '../../../graphql/queries/addExercise'
+
+import * as Sentry from '@sentry/nextjs'
 
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
@@ -202,7 +206,7 @@ describe('Mentor page', () => {
   })
 
   it('should set error when adding an exercise', async () => {
-    expect.assertions(1)
+    expect.assertions(2)
 
     render(
       <MockedProvider mocks={mocksWithError}>
@@ -227,6 +231,7 @@ describe('Mentor page', () => {
     expect(
       await screen.findByText('An error occurred. Please try again.')
     ).toBeInTheDocument()
+    expect(Sentry.captureException).toBeCalled()
   })
 
   it('should successfully add an exercise', async () => {

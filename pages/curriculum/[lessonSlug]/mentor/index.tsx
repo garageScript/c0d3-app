@@ -18,6 +18,7 @@ import { get } from 'lodash'
 import { ApolloError } from '@apollo/client'
 import QueryInfo from '../../../../components/QueryInfo'
 import { errorCheckAllFields } from '../../../../helpers/admin/adminHelpers'
+import * as Sentry from '@sentry/nextjs'
 
 type HeaderProps<T> = {
   lesson: T
@@ -173,7 +174,7 @@ const MentorPage = ({ data }: GetAppProps) => {
 
       await addExercise()
     } catch (err) {
-      // Handles addExercise rejection
+      Sentry.captureException(err)
     }
   }
 
