@@ -38,7 +38,7 @@ const Header = <
   error,
   setModule
 }: HeaderProps<T>) => {
-  const modules = get(lesson, 'modules')
+  const modules = get(lesson, 'modules') ?? []
 
   return (
     <header className={styles.header}>
@@ -49,14 +49,11 @@ const Header = <
         <span>Select a module</span>
         <DropdownMenu
           title="Select a module"
-          items={
-            modules &&
-            modules.map(m => ({
-              ...m,
-              title: m.name,
-              onClick: () => setModule({ ...m })
-            }))
-          }
+          items={modules.map(m => ({
+            ...m,
+            title: m.name,
+            onClick: () => setModule({ ...m })
+          }))}
         />
       </div>
       <QueryInfo
