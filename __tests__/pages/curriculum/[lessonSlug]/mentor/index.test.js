@@ -1,18 +1,18 @@
 jest.mock('@sentry/nextjs')
 
 import React from 'react'
-import MentorPage from '../../../pages/curriculum/[lessonSlug]/mentor/index.tsx'
+import MentorPage from '../../../../../pages/curriculum/[lessonSlug]/mentor/index'
 import userEvent from '@testing-library/user-event'
-import { render, screen, waitFor, act } from '@testing-library/react'
+import { render, screen, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import GET_APP from '../../../graphql/queries/getApp'
-import ADD_EXERCISE from '../../../graphql/queries/addExercise'
+import GET_APP from '../../../../../graphql/queries/getApp'
+import ADD_EXERCISE from '../../../../../graphql/queries/addExercise'
 
 import * as Sentry from '@sentry/nextjs'
 
-import dummyLessonData from '../../../__dummy__/lessonData'
-import dummySessionData from '../../../__dummy__/sessionData'
-import dummyAlertData from '../../../__dummy__/alertData'
+import dummyLessonData from '../../../../../__dummy__/lessonData'
+import dummySessionData from '../../../../../__dummy__/sessionData'
+import dummyAlertData from '../../../../../__dummy__/alertData'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
@@ -123,7 +123,7 @@ describe('Mentor page', () => {
   it('should not submit when inputs are empty', async () => {
     expect.assertions(1)
 
-    const { container } = render(
+    render(
       <MockedProvider mocks={mocks}>
         <MentorPage />
       </MockedProvider>
@@ -132,10 +132,10 @@ describe('Mentor page', () => {
     // Helps the data to resolve
     await act(() => new Promise(res => setTimeout(res, 0)))
 
-    const dropdownBtn = container.querySelector('#dropdown-lesson')
+    const dropdownBtn = screen.getByTestId('dropdown-lesson')
     await userEvent.click(dropdownBtn)
 
-    const dropdownItem = screen.queryByText('module1')
+    const dropdownItem = screen.getByText('module1')
     await userEvent.click(dropdownItem)
 
     const submitButton = await screen.findByText('Save exercise')
