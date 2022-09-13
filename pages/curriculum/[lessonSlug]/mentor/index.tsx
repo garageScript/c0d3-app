@@ -20,14 +20,18 @@ import QueryInfo from '../../../../components/QueryInfo'
 import { errorCheckAllFields } from '../../../../helpers/admin/adminHelpers'
 import * as Sentry from '@sentry/nextjs'
 
+type DetachedModule = Omit<Module, 'lesson' | 'author'>
+
 type HeaderProps<T> = {
-  lesson: T
+  lesson?: T
   addExerciseData?: AddExerciseMutation | null
   loading: boolean
   error?: ApolloError
-  setModule: (v: null | Omit<Module, 'author' | 'lesson'>) => void
+  setModule: (v: null | DetachedModule) => void
 }
-const Header = <T,>({
+const Header = <
+  T extends { title: string; modules?: DetachedModule[] | null }
+>({
   lesson,
   addExerciseData,
   loading,
@@ -42,19 +46,17 @@ const Header = <T,>({
       <span>Select a module</span>
       <DropdownMenu
         title="Select a module"
-        items={(get(lesson, 'modules') || []).map(
-          (m: Omit<Module, 'lesson' | 'author'>) => ({
-            ...m,
-            title: m.name,
-            onClick: () => setModule({ ...m })
-          })
-        )}
+        items={(get(lesson, 'modules') || []).map(m => ({
+          ...m,
+          title: m.name,
+          onClick: () => setModule({ ...m })
+        }))}
       />
     </div>
     <QueryInfo
       data={addExerciseData}
       loading={loading}
-      error={get(error, 'message') || ''}
+      error={get(error, 'message', '')}
       texts={{
         loading: 'Adding the exercise...',
         data: 'Added the exercise successfully!'
@@ -74,28 +76,26 @@ type MainProps = {
   }
 }
 const Main = ({ onClick, formOptions, handleChange, exercise }: MainProps) => (
-  <main>
-    <main className={styles.main}>
-      <div className={styles.wrapper}>
-        <div className={styles.forms}>
-          <FormCard
-            title={''}
-            onSubmit={{
-              title: 'Save exercise',
-              onClick
-            }}
-            values={formOptions}
-            onChange={handleChange}
-            newBtn
-            noBg
-          />
-        </div>
-        <ExercisePreview
-          exercise={{ ...exercise }}
-          classes={`col-sm-8 col-md-7 col-lg-6 col-xl-5 px-md-3 border-0 rounded ${styles.exerciseCard}`}
+  <main className={styles.main}>
+    <div className={styles.wrapper}>
+      <div className={styles.forms}>
+        <FormCard
+          title={''}
+          onSubmit={{
+            title: 'Save exercise',
+            onClick
+          }}
+          values={formOptions}
+          onChange={handleChange}
+          newBtn
+          noBg
         />
       </div>
-    </main>
+      <ExercisePreview
+        exercise={{ ...exercise }}
+        classes={`col-sm-8 col-md-7 col-lg-6 col-xl-5 px-md-3 border-0 rounded ${styles.exerciseCard}`}
+      />
+    </div>
   </main>
 )
 
@@ -124,10 +124,7 @@ const MentorPage = ({ data }: GetAppProps) => {
   const { lessonSlug } = router.query
 
   // Omitting author and lesson because data.lessons[i].modules[i] mismatching type
-  const [module, setModule] = useState<null | Omit<
-    Module,
-    'author' | 'lesson'
-  >>(null)
+  const [module, setModule] = useState<null | DetachedModule>(null)
 
   const { lessons } = data
   const lesson = useMemo(
