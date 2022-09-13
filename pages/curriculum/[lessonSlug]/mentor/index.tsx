@@ -37,33 +37,40 @@ const Header = <
   loading,
   error,
   setModule
-}: HeaderProps<T>) => (
-  <header className={styles.header}>
-    <div>
-      <h1>{get(lesson, 'title')}</h1>
-    </div>
-    <div className={styles.dropdownWrapper}>
-      <span>Select a module</span>
-      <DropdownMenu
-        title="Select a module"
-        items={(get(lesson, 'modules') || []).map(m => ({
-          ...m,
-          title: m.name,
-          onClick: () => setModule({ ...m })
-        }))}
+}: HeaderProps<T>) => {
+  const modules = get(lesson, 'modules')
+
+  return (
+    <header className={styles.header}>
+      <div>
+        <h1>{get(lesson, 'title')}</h1>
+      </div>
+      <div className={styles.dropdownWrapper}>
+        <span>Select a module</span>
+        <DropdownMenu
+          title="Select a module"
+          items={
+            modules &&
+            modules.map(m => ({
+              ...m,
+              title: m.name,
+              onClick: () => setModule({ ...m })
+            }))
+          }
+        />
+      </div>
+      <QueryInfo
+        data={addExerciseData}
+        loading={loading}
+        error={get(error, 'message', '')}
+        texts={{
+          loading: 'Adding the exercise...',
+          data: 'Added the exercise successfully!'
+        }}
       />
-    </div>
-    <QueryInfo
-      data={addExerciseData}
-      loading={loading}
-      error={get(error, 'message', '')}
-      texts={{
-        loading: 'Adding the exercise...',
-        data: 'Added the exercise successfully!'
-      }}
-    />
-  </header>
-)
+    </header>
+  )
+}
 
 type MainProps = {
   onClick: () => void
