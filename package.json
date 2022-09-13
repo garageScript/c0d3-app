@@ -94,7 +94,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/bcrypt": "^5.0.0",
     "@types/express-session": "^1.17.5",
-    "@types/lodash": "^4.14.184",
+    "@types/lodash": "^4.14.185",
     "@types/mdx-js__react": "^1.5.5",
     "@types/node": "^16.7.5",
     "@types/nodemailer": "^6.4.6",
