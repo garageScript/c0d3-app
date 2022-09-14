@@ -71,6 +71,28 @@ describe('QueryInfo component', () => {
     ).toBeInTheDocument()
   })
 
+  it('should display custom error state', () => {
+    expect.assertions(1)
+
+    render(
+      <QueryInfo
+        hide={false}
+        data={{
+          name: 'noob'
+        }}
+        loading={false}
+        error={'Missing arguments'}
+        texts={{
+          loading: 'Loading message...',
+          data: 'Submitted successfully',
+          error: 'Bad error'
+        }}
+      />
+    )
+
+    expect(screen.getByText('Bad error')).toBeInTheDocument()
+  })
+
   it('should render nothing when there is no data, error, and loading', () => {
     expect.assertions(2)
 
