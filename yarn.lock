@@ -5233,10 +5233,10 @@
     "@types/koa-compose" "*"
     "@types/node" "*"
 
-"@types/lodash@^4.14.167", "@types/lodash@^4.14.175", "@types/lodash@^4.14.184":
-  version "4.14.184"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.184.tgz#23f96cd2a21a28e106dc24d825d4aa966de7a9fe"
-  integrity sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==
+"@types/lodash@^4.14.167", "@types/lodash@^4.14.175", "@types/lodash@^4.14.185":
+  version "4.14.185"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.185.tgz#c9843f5a40703a8f5edfd53358a58ae729816908"
+  integrity sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==
 
 "@types/long@^4.0.0":
   version "4.0.1"
@@ -5297,10 +5297,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.3.tgz#6d327abaa4be34a74e421ed6409a0ae2f47f4c3d"
   integrity sha512-e6ZowgGJmTuXa3GyaPbTGxX17tnThl2aSSizrFthQ7m9uLGZBXiGhgE55cjRZTF5kjZvYn9EOPOMljdjwbflxw==
 
-"@types/nodemailer@^6.4.5":
-  version "6.4.5"
-  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.5.tgz#09011ac73259245475d1688e4ba101860567dc39"
-  integrity sha512-zuP3nBRQHI6M2PkXnGGy1Ww4VB+MyYHGgnfV2T+JR9KLkeWqPJuyVUgLpKXuFnA/b7pZaIDFh2sV4759B7jK1g==
+"@types/nodemailer@^6.4.6":
+  version "6.4.6"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.6.tgz#ce21b4b474a08f672f182e15982b7945dde1f288"
+  integrity sha512-pD6fL5GQtUKvD2WnPmg5bC2e8kWCAPDwMPmHe/ohQbW+Dy0EcHgZ2oCSuPlWNqk74LS5BVMig1SymQbFMPPK3w==
   dependencies:
     "@types/node" "*"
 
@@ -11877,10 +11877,10 @@ jest-message-util@^27.5.1:
     slash "^3.0.0"
     stack-utils "^2.0.3"
 
-jest-mock-extended@^2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/jest-mock-extended/-/jest-mock-extended-2.0.7.tgz#73ad87d8a744949bc3415d840f03468229f73f2a"
-  integrity sha512-h8brJJN5BZb03hTwplvt+raT6Nj0U2U71Z26Py12Qc3kvYnAjDW/zSuQJLnXCNyyufy592VC9k3X7AOz+2H52g==
+jest-mock-extended@^2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/jest-mock-extended/-/jest-mock-extended-2.0.9.tgz#bc0e4a269cdb6047d7cc086e1d9722f7215ca795"
+  integrity sha512-eRZq7/FgwHbxOMm3Lo4DpQX6S2zi4OvwMVFHEb3FgDLp0Xy3P1WARkF93xxO5uD4nAHiEPYHZ25qVU9mAVxoLQ==
   dependencies:
     ts-essentials "^7.0.3"
 
@@ -14782,10 +14782,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.29.3:
-  version "1.29.3"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.29.3.tgz#8bd0161c7ecc56ed360f0d84915a5b9cbcbf45e7"
-  integrity sha512-hhfrRbKuU9gfm4AgUGPLvxycXE16hlCK1u/gn7laqFkvbs7+S12+SZ83lQN8+548w8V/84EgiUEsLvM+MproLQ==
+posthog-js@^1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.30.0.tgz#e44dc02795e97fe0270ec3399f1c40d1aacceb6c"
+  integrity sha512-uUcpIjuzke0QWwBpPRm8nVcSqgckGb+AzGTGQnhEn7gX9P7/BVoXmIo9zv1i5fj2jN3X95brO61ra9FJr5lrfQ==
   dependencies:
     "@sentry/types" "^7.2.0"
     fflate "^0.4.1"
