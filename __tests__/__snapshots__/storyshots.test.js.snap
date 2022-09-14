@@ -75,6 +75,29 @@ exports[`Storyshots Component/QueryInfo Error 1`] = `
 </div>
 `;
 
+exports[`Storyshots Component/QueryInfo Error With Custom Msg 1`] = `
+<div
+  className="fade alert alert-danger show"
+  role="alert"
+>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    Bad error 
+  </div>
+</div>
+`;
+
 exports[`Storyshots Component/QueryInfo Error With Dismiss 1`] = `
 <div
   className="fade alert alert-danger alert-dismissible show"
