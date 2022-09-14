@@ -20,7 +20,7 @@ export const AdminLessonCard: React.FC<Props> = ({
   lesson,
   pendingFlaggedQuestions
 }) => {
-  const { title, description, docUrl } = lesson
+  const { title, description, slug } = lesson
 
   return (
     <div className={styles.container}>
@@ -31,7 +31,7 @@ export const AdminLessonCard: React.FC<Props> = ({
         {pendingFlaggedQuestions} Pending Questions
       </div>
 
-      <Link href={docUrl || '_blank'}>
+      <Link href={`/admin/lessons/${slug}/introduction`}>
         <a data-testid="button">
           <button className={'btn btn-secondary ' + styles.container__button}>
             Edit Lesson

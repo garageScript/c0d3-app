@@ -231,7 +231,7 @@ exports[`Storyshots Components/AdminLessonCard Basic 1`] = `
   </div>
   <a
     data-testid="button"
-    href="/_blank"
+    href="/admin/lessons/js0/introduction"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onTouchStart={[Function]}
