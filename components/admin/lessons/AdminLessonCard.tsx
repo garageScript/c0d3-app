@@ -32,7 +32,7 @@ export const AdminLessonCard: React.FC<Props> = ({
         {pendingFlaggedQuestions} Pending Questions
       </div>
 
-      <Link href={ADMIN_PATH + `/lessons/${slug}/introduction`}>
+      <Link href={`${ADMIN_PATH}/lessons/${slug}/introduction`}>
         <a data-testid="button">
           <button className={'btn btn-secondary ' + styles.container__button}>
             Edit Lesson
