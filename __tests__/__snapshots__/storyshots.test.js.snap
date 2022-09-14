@@ -75,6 +75,29 @@ exports[`Storyshots Component/QueryInfo Error 1`] = `
 </div>
 `;
 
+exports[`Storyshots Component/QueryInfo Error With Custom Msg 1`] = `
+<div
+  className="fade alert alert-danger show"
+  role="alert"
+>
+  <div
+    className="d-flex align-items-center gap-3"
+  >
+    <div
+      className=""
+    >
+      <img
+        className="img-fluid"
+        height={24}
+        src="/assets/curriculum/icons/exclamation.svg"
+        width={24}
+      />
+    </div>
+    Bad error 
+  </div>
+</div>
+`;
+
 exports[`Storyshots Component/QueryInfo Error With Dismiss 1`] = `
 <div
   className="fade alert alert-danger alert-dismissible show"
@@ -281,7 +304,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob@c0d3.com
         </span>
         <button
-          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -320,7 +343,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
           noob#123
         </span>
         <button
-          className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
+          className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
           onClick={[Function]}
           style={
             Object {
@@ -1873,7 +1896,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -2742,7 +2765,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                         </label>
                       </div>
                       <button
-                        className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+                        className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
                         onClick={[Function]}
                         style={
                           Object {
@@ -4017,7 +4040,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 
 exports[`Storyshots Components/CopyButton Basic 1`] = `
 <button
-  className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+  className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
   onClick={[Function]}
   style={
     Object {
@@ -4096,7 +4119,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -4489,7 +4512,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
               </label>
             </div>
             <button
-              className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+              className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
               onClick={[Function]}
               style={
                 Object {
@@ -12408,7 +12431,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       </span>
     </div>
     <button
-      className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+      className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger"
       onClick={[Function]}
       style={
         Object {
@@ -14048,7 +14071,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -15474,7 +15497,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -16898,7 +16921,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -18322,7 +18345,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -19746,7 +19769,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                       </label>
                     </div>
                     <button
-                      className="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
+                      className="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
                       onClick={[Function]}
                       style={
                         Object {
@@ -21691,7 +21714,7 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21723,7 +21746,7 @@ Array [
           />
         </button>
         <button
-          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
+          className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21793,7 +21816,7 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21825,7 +21848,7 @@ Array [
           />
         </button>
         <button
-          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
+          className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21895,7 +21918,7 @@ Array [
       </div>
       <div>
         <button
-          className="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
+          className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -21927,7 +21950,7 @@ Array [
           />
         </button>
         <button
-          className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
+          className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
           onClick={[Function]}
           style={
             Object {
@@ -28714,7 +28737,7 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 exports[`Storyshots Theme/Button Outlined Button 1`] = `
 Array [
   <button
-    className="btn borderless btn-outline-primary onFocusBgFix btn-outline-bg-primary"
+    className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -28725,7 +28748,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn borderless btn-outline-success onFocusBgFix btn-outline-bg-success"
+    className="btn borderless btn-outline-success onFocusBgFix btnOutlineInfoBgFix-success btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -28736,7 +28759,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+    className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {
@@ -28752,7 +28775,7 @@ Array [
 exports[`Storyshots Theme/Button Outlined With Border Button 1`] = `
 Array [
   <button
-    className="btn btn-outline-primary onFocusBgFix btn-outline-bg-primary"
+    className="btn btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
     onClick={[Function]}
     style={
       Object {
@@ -28763,7 +28786,7 @@ Array [
     Outlined Primary Button
   </button>,
   <button
-    className="btn btn-outline-success onFocusBgFix btn-outline-bg-success"
+    className="btn btn-outline-success onFocusBgFix btnOutlineInfoBgFix-success btn-outline-bg-success"
     onClick={[Function]}
     style={
       Object {
@@ -28774,7 +28797,7 @@ Array [
     Outlined Success Button
   </button>,
   <button
-    className="btn btn-outline-danger onFocusBgFix btn-outline-bg-danger"
+    className="btn btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger"
     onClick={[Function]}
     style={
       Object {

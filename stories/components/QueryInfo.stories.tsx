@@ -51,6 +51,21 @@ export const Error = () => (
   />
 )
 
+export const ErrorWithCustomMsg = () => (
+  <QueryInfo
+    data={{
+      title: 'JavaScript'
+    }}
+    loading={false}
+    error={'JavaScript is not related to Java!'}
+    texts={{
+      loading: 'Sending the request...',
+      data: '',
+      error: 'Bad error'
+    }}
+  />
+)
+
 export const ErrorWithDismiss = () => (
   <QueryInfo
     data={{

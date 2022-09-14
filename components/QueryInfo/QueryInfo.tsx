@@ -11,6 +11,7 @@ type QueryInfo<T> = {
   texts: {
     loading: string
     data: string
+    error?: string
   }
   dismiss?: {
     onDismissError?: (id: number) => void
@@ -38,7 +39,7 @@ const QueryInfo = <T,>({
     return (
       <Alert
         alert={{
-          text: 'An error occurred. Please try again.',
+          text: texts.error || 'An error occurred. Please try again.',
           type: 'urgent',
           id: 1
         }}
