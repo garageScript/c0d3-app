@@ -38,7 +38,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
       </div>
       <div>
         <button
-          class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          class="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
         >
           <svg
             aria-hidden="true"
@@ -57,7 +57,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
           </svg>
         </button>
         <button
-          class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
         >
           <svg
             aria-hidden="true"
@@ -114,7 +114,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
       </div>
       <div>
         <button
-          class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          class="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
         >
           <svg
             aria-hidden="true"
@@ -133,7 +133,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
           </svg>
         </button>
         <button
-          class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
         >
           <svg
             aria-hidden="true"

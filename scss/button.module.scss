@@ -16,10 +16,4 @@
   .btn-outline-bg-#{$name}:hover {
     background-color: rgba($color, 0.2);
   }
-
-  .btnOutlineInfoBgFix-#{$name} {
-    &:hover {
-      background-color: rgba($color, 0.2) !important;
-    }
-  }
 }

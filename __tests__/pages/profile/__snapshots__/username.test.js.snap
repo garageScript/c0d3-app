@@ -4816,7 +4816,7 @@ exports[`user profile test should render discord avatar and username if user con
               </span>
             </div>
             <button
-              class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger"
+              class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger"
             >
               Unlink Discord
             </button>

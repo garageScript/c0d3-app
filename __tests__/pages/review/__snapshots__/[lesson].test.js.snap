@@ -858,7 +858,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3050,7 +3050,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 </label>
                               </div>
                               <button
-                                class="btn borderless btn-outline-mute onFocusBgFix btnOutlineInfoBgFix-mute btn-outline-bg-mute"
+                                class="btn borderless btn-outline-mute onFocusBgFix btn-outline-bg-mute"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -3240,7 +3240,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+                                          class="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3259,7 +3259,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                           </svg>
                                         </button>
                                         <button
-                                          class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3316,7 +3316,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       </div>
                                       <div>
                                         <button
-                                          class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+                                          class="btn borderless btn-outline-info onFocusBgFix btn-outline-bg-info btn-sm"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3335,7 +3335,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                           </svg>
                                         </button>
                                         <button
-                                          class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+                                          class="btn borderless btn-outline-danger onFocusBgFix btn-outline-bg-danger btn-sm"
                                         >
                                           <svg
                                             aria-hidden="true"
