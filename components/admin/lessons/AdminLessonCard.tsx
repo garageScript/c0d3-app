@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styles from '../../../scss/adminLessonCard.module.scss'
 import { Lesson } from '../../../graphql'
+import { ADMIN_PATH } from '../../../constants'
 
 type optionalKeys<T> = {
   [P in keyof T]?: optionalKeys<T[P]>
@@ -20,7 +21,7 @@ export const AdminLessonCard: React.FC<Props> = ({
   lesson,
   pendingFlaggedQuestions
 }) => {
-  const { title, description, docUrl } = lesson
+  const { title, description, slug } = lesson
 
   return (
     <div className={styles.container}>
@@ -31,7 +32,7 @@ export const AdminLessonCard: React.FC<Props> = ({
         {pendingFlaggedQuestions} Pending Questions
       </div>
 
-      <Link href={docUrl || '_blank'}>
+      <Link href={`${ADMIN_PATH}/lessons/${slug}/introduction`}>
         <a data-testid="button">
           <button className={'btn btn-secondary ' + styles.container__button}>
             Edit Lesson
