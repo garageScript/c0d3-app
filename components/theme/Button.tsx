@@ -13,6 +13,21 @@ type ButtonProps = {
   size?: 'lg' | 'sm'
   onClick?: Function
   outline?: boolean
+  testId?: string
+  autoFocus?: boolean
+  disabled?: boolean
+  name?: string
+  clickType?: 'submit' | 'reset' | 'button'
+  value?: string
+  form?: string
+  formAction?: string
+  formEncType?:
+    | 'application/x-www-form-urlencoded'
+    | 'multipart/form-data'
+    | 'text/plain'
+  formMethod?: 'post' | 'get'
+  formNoValidate?: boolean
+  formTarget?: string
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -24,7 +39,19 @@ export const Button: React.FC<ButtonProps> = ({
   onClick = noop,
   children,
   size,
-  outline
+  outline,
+  testId,
+  autoFocus,
+  disabled,
+  name,
+  clickType,
+  value,
+  form,
+  formAction,
+  formEncType,
+  formMethod,
+  formNoValidate,
+  formTarget
 }) => {
   const classes = ['btn']
 
@@ -48,6 +75,18 @@ export const Button: React.FC<ButtonProps> = ({
       className={classes.join(' ')}
       onClick={() => onClick()}
       style={{ color: colors[color] }}
+      data-testid={testId}
+      autoFocus={autoFocus}
+      disabled={disabled}
+      name={name}
+      type={clickType}
+      value={value}
+      form={form}
+      formAction={formAction}
+      formEncType={formEncType}
+      formMethod={formMethod}
+      formNoValidate={formNoValidate}
+      formTarget={formTarget}
     >
       {children}
     </button>
