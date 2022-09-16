@@ -192,7 +192,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             <span
               class="fs-5 text-muted"
             >
-              @fake user
+              @fakeusername
             </span>
           </div>
           <div
@@ -959,7 +959,7 @@ exports[`user profile test Should render if no stars received 1`] = `
               <div
                 class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                A 
+                fu
               </div>
               <svg
                 aria-hidden="true"
@@ -1066,7 +1066,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             <span
               class="fs-5 text-muted"
             >
-              @fake user
+              @fakeusername
             </span>
           </div>
           <div
@@ -1838,7 +1838,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
               <div
                 class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                A 
+                fu
               </div>
               <svg
                 aria-hidden="true"
@@ -1945,7 +1945,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             <span
               class="fs-5 text-muted"
             >
-              @fake user
+              @fakeusername
             </span>
           </div>
           <div
@@ -2753,7 +2753,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               <div
                 class="text-uppercase bg-primary rounded-circle text-light user_info_image user-icon"
               >
-                A 
+                fu
               </div>
               <svg
                 aria-hidden="true"
@@ -2860,7 +2860,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             <span
               class="fs-5 text-muted"
             >
-              @fake user
+              @fakeusername
             </span>
           </div>
           <div
@@ -3739,14 +3739,7 @@ exports[`user profile test Should render profile 1`] = `
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
-          >
-            <button
-              class="btn btn-primary btn-md btn-block mt-3"
-              type="button"
-            >
-              Connect to Discord
-            </button>
-          </div>
+          />
         </div>
         <div
           class="profile-comments"
@@ -4686,7 +4679,11 @@ exports[`user profile test should render discord avatar and username if user con
           class="navbar-brand text-primary fw-bold"
         >
           C0D3
-          
+          <span
+            class="isAdminBadge badge"
+          >
+             ADMIN 
+          </span>
         </div>
       </a>
       <button
@@ -4736,20 +4733,96 @@ exports[`user profile test should render discord avatar and username if user con
           </a>
         </div>
         <div
-          class="nav-buttons"
+          class="dropdown"
         >
-          <a
-            class="btn m-2 me-lg-3 login-btn noUnderline"
-            href="/login"
+          <div
+            class="d-none d-lg-block"
           >
-            Login
-          </a>
-          <a
-            class="btn m-2 me-lg-3 signup-btn noUnderline"
-            href="/signup"
+            <div
+              aria-expanded="false"
+              class="nav-user-toggle  dropdown-toggle"
+              data-testid="user-info-image"
+              id="user_nav_toggle"
+            >
+              <div
+                class="jsx-3123111835 ms-auto me-auto user-icon"
+              >
+                <img
+                  class="avatar"
+                  height="60"
+                  src="https://placeimg.com/640/480/any"
+                  width="60"
+                />
+              </div>
+              <svg
+                aria-hidden="true"
+                class="octicon octicon-chevron-down"
+                fill="currentColor"
+                height="16"
+                role="img"
+                style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="d-lg-none"
           >
-            Signup
-          </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/lessons"
+            >
+              Lessons
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/users"
+            >
+              Users
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/admin/alerts"
+            >
+              Alerts
+            </a>
+            <a
+              class="dropdown-item dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="/profile/fakeusername"
+            >
+              Profile
+            </a>
+            <a
+              class="dropdown-item  dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                <div
+                  class="light-button d-inline"
+                >
+                  <button
+                    class="btn border btn-light ms-2"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -4791,7 +4864,7 @@ exports[`user profile test should render discord avatar and username if user con
             <span
               class="fs-5 text-muted"
             >
-              @fake user
+              @fakeusername
             </span>
           </div>
           <div
