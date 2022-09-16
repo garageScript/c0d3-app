@@ -46,9 +46,7 @@ const DiscordModal = ({
         <ModalTitle>{title}</ModalTitle>
       </ModalHeader>
       <ModalBody>
-        <p>
-          <Body />
-        </p>
+        <Body />
       </ModalBody>
       <ModalFooter>
         <BsButton variant="secondary" onClick={handleClose}>
