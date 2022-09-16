@@ -53,3 +53,20 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   )
 }
+
+type NewButtonProps = {
+  className?: string
+  onClick: () => void
+}
+
+export const NewButton: React.FC<NewButtonProps> = ({
+  className = '',
+  onClick,
+  children
+}) => {
+  return (
+    <button className={`${styles.newButton} ${className}`} onClick={onClick}>
+      {children}
+    </button>
+  )
+}

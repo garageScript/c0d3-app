@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Button } from '../../components/theme/Button'
+import { Button, NewButton } from '../../components/theme/Button'
 
 export default {
   component: Button,
@@ -71,5 +71,46 @@ export const OutlinedWithBorderButton: React.FC = () => (
     <Button outline border type="danger">
       Outlined Danger Button
     </Button>
+  </>
+)
+
+export const NewButtons: React.FC = () => (
+  <>
+    <NewButton onClick={() => console.log('New button clicked')}>
+      New Button
+    </NewButton>
+    <NewButton
+      className="bg-primary mx-2"
+      onClick={() => console.log('Primary new button clicked')}
+    >
+      Primary
+    </NewButton>
+    <NewButton
+      className="bg-secondary text-black mx-2"
+      onClick={() => console.log('Secondary new button clicked')}
+    >
+      Secondary
+    </NewButton>
+    <NewButton
+      className="bg-dark mx-2"
+      onClick={() => console.log('Dark new button clicked')}
+    >
+      Dark
+    </NewButton>
+    <NewButton className="p-4 mx-2" onClick={() => console.log('Big clicked')}>
+      Big
+    </NewButton>
+    <NewButton
+      className="py-1 px-2 mx-2"
+      onClick={() => console.log('Small new button clicked')}
+    >
+      Small
+    </NewButton>
+    <NewButton
+      className="py-5 bg-warning text-primary mx-2"
+      onClick={() => console.log('Interesting new button clicked')}
+    >
+      You can style it however you want!
+    </NewButton>
   </>
 )
