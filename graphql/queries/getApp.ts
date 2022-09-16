@@ -17,6 +17,12 @@ const GET_APP = gql`
         description
         order
       }
+      modules {
+        id
+        name
+        content
+        order
+      }
       chatUrl
     }
     session {

@@ -1,5 +1,83 @@
 import { Lesson } from '../graphql'
 
+const moduleAuthor = {
+  id: 1,
+  username: 'dummyAuthor',
+  email: 'dummyAuth@email.com',
+  name: 'dummy author',
+  isAdmin: true,
+  isConnectedToDiscord: false,
+  discordUserId: '',
+  discordUsername: '',
+  discordAvatarUrl: ''
+}
+
+const modules = [
+  {
+    id: 1,
+    name: 'module1',
+    content: 'this is module1',
+    order: 1,
+    author: moduleAuthor,
+    lesson: {
+      title: 'Foundations of JavaScript',
+      order: 0,
+      slug: 'js0',
+      id: 5,
+      description: 'A super simple introduction to help you get started!',
+      challenges: []
+    }
+  },
+  {
+    id: 2,
+    name: 'module2',
+    content: 'this is module2',
+    order: 2,
+    author: moduleAuthor,
+    lesson: {
+      title: 'Variables & Functions',
+      order: 1,
+      slug: 'js1',
+      id: 2,
+      description:
+        'Learn how to solve simple algorithm problems recursively with the following exercises. ',
+      challenges: []
+    }
+  },
+  {
+    id: 3,
+    name: 'module3',
+    content: 'this is module3',
+    order: 3,
+    author: moduleAuthor,
+    lesson: {
+      title: 'Arrays',
+      order: 2,
+      slug: 'js2',
+      id: 1,
+      description:
+        'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.',
+      challenges: []
+    }
+  },
+  {
+    id: 4,
+    name: 'module4',
+    content: 'this is module4',
+    order: 4,
+    author: moduleAuthor,
+    lesson: {
+      title: 'Objects',
+      order: 3,
+      slug: 'js3',
+      id: 4,
+      description:
+        'These exercises will test your understanding of objects, which includes linked lists and trees',
+      challenges: []
+    }
+  }
+]
+
 const dummyLessonsData: Lesson[] = [
   {
     id: 5,
@@ -94,7 +172,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 5
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js1-variablesfunction'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js1-variablesfunction',
+    modules
   },
   {
     id: 2,
@@ -206,7 +285,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 2
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js2-arrays'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js2-arrays',
+    modules
   },
   {
     id: 1,
@@ -311,7 +391,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 1
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js3-objects'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js3-objects',
+    modules
   },
   {
     id: 4,
@@ -408,7 +489,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 4
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js5-htmlcssjs'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js5-htmlcssjs',
+    modules
   },
   {
     id: 24,
@@ -479,7 +561,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 24
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js4-endtoend'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js4-endtoend',
+    modules
   },
   {
     id: 3,
@@ -566,7 +649,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 3
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js6-reactgqlsocketio'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js6-reactgqlsocketio',
+    modules
   },
   {
     id: 29,
@@ -643,7 +727,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 29
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js7-javascriptalg'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js7-javascriptalg',
+    modules
   },
   {
     id: 28,
@@ -746,7 +831,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 28
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js8-trees'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js8-trees',
+    modules
   },
   {
     id: 25,
@@ -857,7 +943,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 25
       }
     ],
-    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js8-trees'
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js8-trees',
+    modules
   },
   {
     id: 27,
@@ -910,7 +997,8 @@ const dummyLessonsData: Lesson[] = [
         lessonId: 27
       }
     ],
-    chatUrl: null
+    chatUrl: null,
+    modules
   }
 ]
 

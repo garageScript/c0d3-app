@@ -8,6 +8,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
     <button
       aria-expanded="false"
       class="dropdown btn btn-primary"
+      data-testid="dropdown-lesson"
       id="dropdown-lesson"
       type="button"
     >
@@ -77,6 +78,7 @@ exports[`MdInput Component Should render divider when an item is null 1`] = `
     <button
       aria-expanded="false"
       class="dropdown btn btn-primary"
+      data-testid="dropdown-lesson"
       id="dropdown-lesson"
       type="button"
     >

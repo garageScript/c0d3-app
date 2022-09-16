@@ -1,0 +1,39 @@
+@use './colors.module.scss';
+@use './_variables.module';
+
+.wrapper {
+  display: flex;
+  flex-wrap: flex;
+  gap: 40px;
+}
+
+.header {
+  margin-bottom: 36px;
+
+  & h1 {
+    margin-bottom: 18px;
+  }
+}
+
+.exerciseCardWrapper {
+  flex: 1;
+}
+
+.exerciseCard {
+  margin-bottom: auto;
+}
+
+.forms {
+  flex: 1;
+}
+
+.dropdownWrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+  margin-bottom: 10px;
+
+  & span {
+    font-size: 20px;
+  }
+}
