@@ -877,7 +877,7 @@ Array [
           className="text-center align-self-start"
         >
           <button
-            className="formCard--submitButton"
+            className="newButton "
             onClick={[Function]}
           >
             SAVE CHANGES
@@ -7996,7 +7996,7 @@ exports[`Storyshots Components/FormCard With New Button 1`] = `
         className="text-center align-self-start"
       >
         <button
-          className="formCard--submitButton"
+          className="newButton "
           onClick={[Function]}
         >
           Create New Challenge
@@ -28738,6 +28738,53 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 >
   Margined Button
 </button>
+`;
+
+exports[`Storyshots Theme/Button New Buttons 1`] = `
+Array [
+  <button
+    className="newButton "
+    onClick={[Function]}
+  >
+    New Button
+  </button>,
+  <button
+    className="newButton bg-primary mx-2"
+    onClick={[Function]}
+  >
+    Primary
+  </button>,
+  <button
+    className="newButton bg-secondary text-black mx-2"
+    onClick={[Function]}
+  >
+    Secondary
+  </button>,
+  <button
+    className="newButton bg-dark mx-2"
+    onClick={[Function]}
+  >
+    Dark
+  </button>,
+  <button
+    className="newButton p-4 mx-2"
+    onClick={[Function]}
+  >
+    Big
+  </button>,
+  <button
+    className="newButton py-1 px-2 mx-2"
+    onClick={[Function]}
+  >
+    Small
+  </button>,
+  <button
+    className="newButton py-5 bg-warning text-primary mx-2"
+    onClick={[Function]}
+  >
+    You can style it however you want!
+  </button>,
+]
 `;
 
 exports[`Storyshots Theme/Button Outlined Button 1`] = `

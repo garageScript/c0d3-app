@@ -23,3 +23,37 @@
     }
   }
 }
+
+.newButton {
+  font-family: 'PT MONO';
+  padding: 15px 48px;
+  background-color: variables.$mint-green;
+  border-radius: 4px;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(variables.$mint-green, 0.5);
+    background-color: variables.$mint-green-dark;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    outline: 3px solid variables.$mint-green-dark;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .newButton {
+    font-size: 10px;
+    padding: 8px 24px;
+  }
+}
