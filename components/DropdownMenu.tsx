@@ -32,7 +32,11 @@ export const DropdownMenu: React.FC<DropDownMenuProps> = ({
 
   return (
     <Dropdown bsPrefix={bsPrefix}>
-      <Dropdown.Toggle bsPrefix={styles.dropdown} id="dropdown-lesson">
+      <Dropdown.Toggle
+        bsPrefix={styles.dropdown}
+        id="dropdown-lesson"
+        data-testid="dropdown-lesson"
+      >
         {activeItem.title || 'None'}
         <ChevronRight />
       </Dropdown.Toggle>
