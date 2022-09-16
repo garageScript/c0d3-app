@@ -205,6 +205,28 @@ describe('Mentor page', () => {
     ).toBeInTheDocument()
   })
 
+  it('should not add exercise (submit) if no module is selected', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <MentorPage />
+      </MockedProvider>
+    )
+
+    // Helps the data to resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await fillOutExerciseForms()
+
+    const submitButton = screen.getByText('Save exercise')
+    await userEvent.click(submitButton)
+
+    expect(
+      await screen.findByText('Please select a module')
+    ).toBeInTheDocument()
+  })
+
   it('should set error when adding an exercise', async () => {
     expect.assertions(2)
 

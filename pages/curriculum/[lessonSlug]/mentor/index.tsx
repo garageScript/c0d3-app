@@ -15,7 +15,6 @@ import { exercisesValidation } from '../../../../helpers/formValidation'
 import ExercisePreview from '../../../../components/ExercisePreview'
 import styles from '../../../../scss/mentorPage.module.scss'
 import { get } from 'lodash'
-import { ApolloError } from '@apollo/client'
 import QueryInfo from '../../../../components/QueryInfo'
 import { errorCheckAllFields } from '../../../../helpers/admin/adminHelpers'
 import * as Sentry from '@sentry/nextjs'
@@ -26,8 +25,13 @@ type HeaderProps<T> = {
   lesson?: T
   addExerciseData?: AddExerciseMutation | null
   loading: boolean
-  error?: ApolloError
+  error?:
+    | {
+        message: string
+      }
+    | string
   setModule: (v: null | DetachedModule) => void
+  setErrorMsg: (v: string) => void
 }
 const Header = <
   T extends { title: string; modules?: DetachedModule[] | null }
@@ -36,7 +40,8 @@ const Header = <
   addExerciseData,
   loading,
   error,
-  setModule
+  setModule,
+  setErrorMsg
 }: HeaderProps<T>) => {
   const modules = get(lesson, 'modules') ?? []
 
@@ -52,17 +57,21 @@ const Header = <
           items={modules.map(m => ({
             ...m,
             title: m.name,
-            onClick: () => setModule({ ...m })
+            onClick: () => {
+              setModule({ ...m })
+              setErrorMsg('')
+            }
           }))}
         />
       </div>
       <QueryInfo
         data={addExerciseData}
         loading={loading}
-        error={get(error, 'message', '')}
+        error={get(error, 'message', error)}
         texts={{
           loading: 'Adding the exercise...',
-          data: 'Added the exercise successfully!'
+          data: 'Added the exercise successfully!',
+          error: typeof error === 'string' ? error : ''
         }}
       />
     </header>
@@ -129,6 +138,7 @@ const MentorPage = ({ data }: GetAppProps) => {
 
   // Omitting author and lesson because data.lessons[i].modules[i] mismatching type
   const [module, setModule] = useState<null | DetachedModule>(null)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const { lessons } = data
   const lesson = useMemo(
@@ -167,6 +177,11 @@ const MentorPage = ({ data }: GetAppProps) => {
         exercisesValidation
       )
 
+      if (!module) {
+        setErrorMsg('Please select a module')
+        return
+      }
+
       if (!valid) {
         // Update the forms so the error messages appear
         setFormOptions(newProperties)
@@ -185,8 +200,9 @@ const MentorPage = ({ data }: GetAppProps) => {
         lesson={lesson}
         addExerciseData={addExerciseData}
         loading={loading}
-        error={error}
+        error={errorMsg || error}
         setModule={setModule}
+        setErrorMsg={setErrorMsg}
       />
       <Main
         onClick={onClick}
