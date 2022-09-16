@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from './theme/Button'
+import { Button, NewButton } from './theme/Button'
 import { MdInput } from './MdInput'
 import { DropdownMenu, Item } from './DropdownMenu'
 import _ from 'lodash'
@@ -169,12 +169,7 @@ export const FormCard: React.FC<FormCardProps> = ({
         {submitError && <ErrorMessage error={submitError} />}
         <div className={`text-center align-self-${textAlignment}`}>
           {newBtn ? (
-            <button
-              onClick={btnOnClick}
-              className={styles['formCard--submitButton']}
-            >
-              {onSubmit.title}
-            </button>
+            <NewButton onClick={btnOnClick}>{onSubmit.title}</NewButton>
           ) : (
             <Button onClick={btnOnClick} type="primary" color="white">
               {onSubmit.title}
