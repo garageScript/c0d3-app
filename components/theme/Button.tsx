@@ -41,17 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
   size,
   outline,
   testId,
-  autoFocus,
-  disabled,
-  name,
-  clickType,
-  value,
-  form,
-  formAction,
-  formEncType,
-  formMethod,
-  formNoValidate,
-  formTarget
+  ...other
 }) => {
   const classes = ['btn']
 
@@ -76,17 +66,7 @@ export const Button: React.FC<ButtonProps> = ({
       onClick={() => onClick()}
       style={{ color: colors[color] }}
       data-testid={testId}
-      autoFocus={autoFocus}
-      disabled={disabled}
-      name={name}
-      type={clickType}
-      value={value}
-      form={form}
-      formAction={formAction}
-      formEncType={formEncType}
-      formMethod={formMethod}
-      formNoValidate={formNoValidate}
-      formTarget={formTarget}
+      {...other}
     >
       {children}
     </button>
