@@ -12430,17 +12430,6 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
         </a>
       </span>
     </div>
-    <button
-      className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "danger",
-        }
-      }
-    >
-      Unlink Discord
-    </button>
   </div>
 </div>
 `;
@@ -12474,15 +12463,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info With Connect 
   </div>
   <div
     className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
-  >
-    <button
-      className="btn btn-primary btn-md btn-block mt-3"
-      onClick={[Function]}
-      type="button"
-    >
-      Connect to Discord
-    </button>
-  </div>
+  />
 </div>
 `;
 
