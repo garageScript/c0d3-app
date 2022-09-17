@@ -5251,7 +5251,7 @@ a = a + 10
         value=""
       />
       <div
-        className="my-2 invisible"
+        className="exerciseCard__message my-2"
       >
         <div
           style={
@@ -5261,7 +5261,7 @@ a = a + 10
             }
           }
         >
-          .
+          
         </div>
       </div>
       <div

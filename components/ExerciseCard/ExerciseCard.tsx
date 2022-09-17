@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NewButton } from '../theme/Button'
 import { Text } from '../theme/Text'
+import styles from './exerciseCard.module.scss'
 
 export type ExerciseCardProps = {
   challengeName: string
@@ -32,8 +33,8 @@ const ExerciseCard = ({
             value={studentAnswer}
             onChange={e => setStudentAnswer(e.target.value)}
           />
-          <div className={`my-2 ${message === '' ? 'invisible' : ''}`}>
-            <Text size="sm">{message === '' ? '.' : message}</Text>
+          <div className={`${styles.exerciseCard__message} my-2`}>
+            <Text size="sm">{message}</Text>
           </div>
           <div className="d-flex">
             <NewButton
