@@ -72,11 +72,12 @@ exports[`user profile test Should render anonymous users 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -102,7 +103,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -946,11 +947,12 @@ exports[`user profile test Should render if no stars received 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -976,7 +978,7 @@ exports[`user profile test Should render if no stars received 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -2665,11 +2667,12 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -2695,7 +2698,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -3539,11 +3542,12 @@ exports[`user profile test Should render profile 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -3569,7 +3573,7 @@ exports[`user profile test Should render profile 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
