@@ -3,33 +3,6 @@ import styles from '../../scss/button.module.scss'
 
 import { ColorTypes, colors } from './colors'
 import noop from '../../helpers/noop'
-
-// type ButtonProps = {
-//   border?: boolean
-//   btnType?: 'success' | 'danger' | 'primary' | 'light' | 'info' | 'mute'
-//   color?: ColorTypes
-//   m?: '1'
-//   ml?: '2'
-//   size?: 'lg' | 'sm'
-//   onClick?: Function
-//   outline?: boolean
-//   testId?: string
-//   autoFocus?: boolean
-//   disabled?: boolean
-//   name?: string
-//   clickType?: 'submit' | 'reset' | 'button'
-//   value?: string
-//   form?: string
-//   formAction?: string
-//   formEncType?:
-//     | 'application/x-www-form-urlencoded'
-//     | 'multipart/form-data'
-//     | 'text/plain'
-//   formMethod?: 'post' | 'get'
-//   formNoValidate?: boolean
-//   formTarget?: string
-// }
-
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   border?: boolean
   btnType?: 'success' | 'danger' | 'primary' | 'light' | 'info' | 'mute'
