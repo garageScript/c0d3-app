@@ -7,22 +7,20 @@ export type ExerciseCardProps = {
   problem: string
   answer: string
   explanation: string
-  className?: string
 }
 
 const ExerciseCard = ({
   challengeName,
   problem,
   answer,
-  explanation,
-  className = ''
+  explanation
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
   const [message, setMessage] = useState('')
   const [answerShown, setAnswerShown] = useState(false)
 
   return (
-    <section className={`card p-4 border-0 shadow ${className}`}>
+    <section className="card p-4 border-0 shadow">
       <div className="fw-bold mb-2">Problem</div>
       <div className="d-flex mb-2">
         <pre className="w-50 bg-light py-3 px-4 mb-0 me-3">{problem}</pre>
