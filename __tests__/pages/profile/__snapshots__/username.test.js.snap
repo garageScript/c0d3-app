@@ -1875,14 +1875,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
           </div>
           <div
             class="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
-          >
-            <button
-              class="btn btn-primary btn-md btn-block mt-3"
-              type="button"
-            >
-              Connect to Discord
-            </button>
-          </div>
+          />
         </div>
       </div>
       <div
