@@ -41,7 +41,7 @@ const SubmissionCard: React.FC<Props> = ({
       <div className="card-body">
         <p className="card-text text-primary">{challengeTitle}</p>
         <a className="d-inline-block" href={reviewUrl}>
-          <Button color="white" type="primary">
+          <Button color="white" btnType="primary">
             Review
           </Button>
         </a>

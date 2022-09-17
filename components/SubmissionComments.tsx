@@ -101,7 +101,7 @@ export const SubmissionComments: React.FC<{
         <ModalFooter>
           <Button
             onClick={handleModalClose}
-            type="info"
+            btnType="info"
             size="sm"
             color="white"
           >
@@ -139,7 +139,7 @@ export const SubmissionComments: React.FC<{
               editing === i ? (
                 <div>
                   <Button
-                    type="light"
+                    btnType="light"
                     color="black"
                     onClick={handleDiscardChange}
                     data-testid="discard-button"
@@ -148,7 +148,7 @@ export const SubmissionComments: React.FC<{
                   </Button>
                   <span> </span>
                   <Button
-                    type="info"
+                    btnType="info"
                     color="white"
                     onClick={() => {
                       handleUpdateComment(c, currInput)
@@ -162,7 +162,7 @@ export const SubmissionComments: React.FC<{
                 <div>
                   <Button
                     outline
-                    type="info"
+                    btnType="info"
                     size="sm"
                     color="info"
                     onClick={() => {
@@ -174,7 +174,7 @@ export const SubmissionComments: React.FC<{
                   </Button>
                   <Button
                     outline
-                    type="danger"
+                    btnType="danger"
                     size="sm"
                     color="danger"
                     onClick={() => handleDeleteComment(c)}

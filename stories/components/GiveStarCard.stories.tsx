@@ -38,7 +38,7 @@ const MockBasic: React.FC = () => {
   return (
     <>
       <Button onClick={() => setShow(!show)}>Launch demo modal</Button>
-      <Button onClick={() => setStarGiven('')} type="primary" color="white">
+      <Button onClick={() => setStarGiven('')} btnType="primary" color="white">
         Reset star
       </Button>
       <h1 className="mt-5">

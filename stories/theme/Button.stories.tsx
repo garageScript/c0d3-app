@@ -24,9 +24,9 @@ export const MarginedButton: React.FC = () => (
 
 export const TypedButton: React.FC = () => (
   <>
-    <Button type="primary">Primary Button</Button>
-    <Button type="success">Success Button</Button>
-    <Button type="danger">Danger Button</Button>
+    <Button btnType="primary">Primary Button</Button>
+    <Button btnType="success">Success Button</Button>
+    <Button btnType="danger">Danger Button</Button>
   </>
 )
 
@@ -48,13 +48,13 @@ export const BorderlessButton: React.FC = () => (
 
 export const OutlinedButton: React.FC = () => (
   <>
-    <Button outline type="primary">
+    <Button outline btnType="primary">
       Outlined Primary Button
     </Button>
-    <Button outline type="success">
+    <Button outline btnType="success">
       Outlined Success Button
     </Button>
-    <Button outline type="danger">
+    <Button outline btnType="danger">
       Outlined Danger Button
     </Button>
   </>
@@ -62,13 +62,13 @@ export const OutlinedButton: React.FC = () => (
 
 export const OutlinedWithBorderButton: React.FC = () => (
   <>
-    <Button outline border type="primary">
+    <Button outline border btnType="primary">
       Outlined Primary Button
     </Button>
-    <Button outline border type="success">
+    <Button outline border btnType="success">
       Outlined Success Button
     </Button>
-    <Button outline border type="danger">
+    <Button outline border btnType="danger">
       Outlined Danger Button
     </Button>
   </>

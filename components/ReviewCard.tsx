@@ -144,7 +144,7 @@ const ReviewButtons: React.FC<{
           </p>
         </label>
       </div>
-      <Button type="success" color="white" onClick={() => submitReview()}>
+      <Button btnType="success" color="white" onClick={() => submitReview()}>
         Submit
       </Button>
     </>

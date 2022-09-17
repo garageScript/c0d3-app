@@ -171,7 +171,7 @@ export const FormCard: React.FC<FormCardProps> = ({
           {newBtn ? (
             <NewButton onClick={btnOnClick}>{onSubmit.title}</NewButton>
           ) : (
-            <Button onClick={btnOnClick} type="primary" color="white">
+            <Button onClick={btnOnClick} btnType="primary" color="white">
               {onSubmit.title}
             </Button>
           )}
