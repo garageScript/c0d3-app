@@ -5217,6 +5217,85 @@ Array [
 ]
 `;
 
+exports[`Storyshots Components/ExerciseCard Basic 1`] = `
+<section
+  className="card p-4 border-0 shadow"
+>
+  <div
+    className="fw-bold mb-2"
+  >
+    Problem
+  </div>
+  <div
+    className="d-flex mb-2"
+  >
+    <pre
+      className="w-50 bg-light py-3 px-4 mb-0 me-3"
+    >
+      let a = 5
+a = a + 10
+// what is a?
+    </pre>
+    <div
+      className="w-50 ms-3"
+    >
+      <div
+        className="mb-2"
+      >
+        Variable mutation
+      </div>
+      <input
+        aria-label="User answer"
+        className="form-control mb-2"
+        onChange={[Function]}
+        value=""
+      />
+      <div
+        className="exerciseCard__message my-2"
+      >
+        <div
+          style={
+            Object {
+              "color": "#292929",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          
+        </div>
+      </div>
+      <div
+        className="d-flex"
+      >
+        <button
+          className="newButton "
+          onClick={[Function]}
+        >
+          SUBMIT
+        </button>
+        <button
+          className="bg-transparent ms-3 border-0 fw-normal"
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "color": "#292929",
+                "fontSize": "0.75rem",
+              }
+            }
+          >
+            <strong>
+              Show Answer
+            </strong>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
 exports[`Storyshots Components/ExercisePreview Basic 1`] = `
 <div
   className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-5 m-auto px-md-3 border-0 rounded"
@@ -12433,17 +12512,6 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
         </a>
       </span>
     </div>
-    <button
-      className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "danger",
-        }
-      }
-    >
-      Unlink Discord
-    </button>
   </div>
 </div>
 `;
@@ -12477,15 +12545,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info With Connect 
   </div>
   <div
     className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
-  >
-    <button
-      className="btn btn-primary btn-md btn-block mt-3"
-      onClick={[Function]}
-      type="button"
-    >
-      Connect to Discord
-    </button>
-  </div>
+  />
 </div>
 `;
 
