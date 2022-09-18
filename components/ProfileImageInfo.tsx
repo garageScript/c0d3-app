@@ -222,63 +222,6 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
       </div>
       <div className="d-flex ms-auto me-auto mb-4 mt-3 flex-column">
         <DiscordDetails />
-        {user.discordUserId ? (
-          <>
-            <div className="d-flex align-items-center mb-2">
-              <Image
-                src="/assets/discordClydeLogo.svg"
-                height={20}
-                width={20}
-                objectFit="contain"
-              />
-              <span className="fs-5 ms-2 mb-0">
-                <Link
-                  href={`https://discordapp.com/users/${user.discordUserId}/`}
-                >
-                  {user.discordUsername}
-                </Link>
-              </span>
-            </div>
-            <Button
-              onClick={handleShow}
-              btnType="danger"
-              outline
-              color="danger"
-            >
-              Unlink Discord
-            </Button>
-            <DiscordModal
-              show={show}
-              handleClose={handleClose}
-              handleOnClick={handleUnlinkClick}
-              title={'Unlink Discord'}
-              Body={UnlinkDiscordBody}
-              btnText={'Unlink'}
-              btnVariant={'danger'}
-              textId={'unlink-discord-btn'}
-            />
-          </>
-        ) : (
-          <>
-            <button
-              type="button"
-              className="btn btn-primary btn-md btn-block mt-3"
-              onClick={handleShow}
-            >
-              Connect to Discord
-            </button>
-            <DiscordModal
-              show={show}
-              handleClose={handleClose}
-              handleOnClick={handleConnectClick}
-              title={'Connect to Discord'}
-              Body={ConnectToDiscordBody}
-              btnText={'Connect to Discord'}
-              btnVariant={'primary'}
-              textId={'connect-discord-btn'}
-            />
-          </>
-        )}
       </div>
     </div>
   )

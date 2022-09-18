@@ -7,7 +7,14 @@ export const Thanks: React.FC<{ close: Function }> = ({ close }) => (
     <h2 className="mt-4 mb-4 pt-3 pb-3 fw-bold text-center">
       Thanks for letting us know!
     </h2>
-    <Button btnType="primary" color="white" size="lg" onClick={close}>
+    <Button
+      btnType="primary"
+      color="white"
+      size="lg"
+      onClick={() => {
+        close()
+      }}
+    >
       Done
     </Button>
   </div>
