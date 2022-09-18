@@ -61,7 +61,7 @@ const mockExercises: ExerciseCardProps[] = [
 const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, alerts } = queryData
   const router = useRouter()
-  const [exerciseIndex, setExerciseIndex] = useState<number>(-1)
+  const [exerciseIndex, setExerciseIndex] = useState(-1)
   if (!router.isReady) return <LoadingSpinner />
 
   const slug = router.query.lessonSlug as string
@@ -125,10 +125,7 @@ const Exercise = ({
         className="btn ps-0 d-flex align-items-center"
         onClick={() => setExerciseIndex(-1)}
       >
-        <ArrowLeftIcon size="medium" />
-        <div className="p-3">
-          <Text size="xs">Exit</Text>
-        </div>
+        <ArrowLeftIcon size="medium" aria-label="Exit" />
       </button>
 
       <h1 className="mb-4 fs-2">{lessonTitle}</h1>
