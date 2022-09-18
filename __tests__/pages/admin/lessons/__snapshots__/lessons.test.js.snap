@@ -72,11 +72,12 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -102,7 +103,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -3986,11 +3987,12 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -4016,7 +4018,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
