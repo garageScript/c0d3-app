@@ -21,7 +21,7 @@ const ExerciseCard = ({
   const [answerShown, setAnswerShown] = useState(false)
 
   return (
-    <section className="card p-4 border-0 shadow">
+    <section className="card p-5 border-0 shadow">
       <div className="fw-bold mb-2">Problem</div>
       <div className="d-flex mb-2">
         <pre className="w-50 bg-light py-3 px-4 mb-0 me-3">{problem}</pre>
