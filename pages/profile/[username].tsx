@@ -34,12 +34,7 @@ const UserProfile: React.FC = () => {
     return <LoadingSpinner />
   }
   if (error) {
-    return (
-      <Error
-        code={StatusCode.INTERNAL_SERVER_ERROR}
-        message="Internal server error"
-      />
-    )
+    return <Error code={StatusCode.NOT_FOUND} message="User not found" />
   }
   const { lessons } = data || {}
   const lessonsList = lessons || []
