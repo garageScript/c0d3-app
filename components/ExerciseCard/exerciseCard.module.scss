@@ -8,3 +8,7 @@ $error-red: #a0213e;
 .exerciseCard__message__error {
   color: $error-red;
 }
+
+.exerciseCard__input__error {
+  border: 1px solid $error-red;
+}

@@ -5246,7 +5246,7 @@ a = a + 10
       </div>
       <input
         aria-label="User answer"
-        className="form-control mb-2"
+        className="form-control mb-2 "
         onChange={[Function]}
         value=""
       />

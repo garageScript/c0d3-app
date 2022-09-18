@@ -38,7 +38,9 @@ const ExerciseCard = ({
           <div className="mb-2">{challengeName}</div>
           <input
             aria-label="User answer"
-            className="form-control mb-2"
+            className={`form-control mb-2 ${
+              messageKey === 'ERROR' ? styles.exerciseCard__input__error : ''
+            }`}
             value={studentAnswer}
             onChange={e => setStudentAnswer(e.target.value)}
           />
