@@ -1,3 +1,10 @@
+$error-red: #a0213e;
+
 .exerciseCard__message {
   min-height: 20px;
+  font-size: 12px;
+}
+
+.exerciseCard__message__error {
+  color: $error-red;
 }

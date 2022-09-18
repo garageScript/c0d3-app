@@ -5251,18 +5251,9 @@ a = a + 10
         value=""
       />
       <div
-        className="exerciseCard__message my-2"
+        className="exerciseCard__message  my-2"
       >
-        <div
-          style={
-            Object {
-              "color": "#292929",
-              "fontSize": "0.85rem",
-            }
-          }
-        >
-          
-        </div>
+        
       </div>
       <div
         className="d-flex"

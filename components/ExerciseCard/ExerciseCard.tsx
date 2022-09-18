@@ -10,6 +10,14 @@ export type ExerciseCardProps = {
   explanation: string
 }
 
+const messages = {
+  EMPTY: '',
+  ERROR: 'Your answer is incorrect - please try again.',
+  SUCCESS: '🎉 Your answer is correct!'
+} as const
+
+type MessageKey = keyof typeof messages
+
 const ExerciseCard = ({
   challengeName,
   problem,
@@ -17,8 +25,9 @@ const ExerciseCard = ({
   explanation
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
-  const [message, setMessage] = useState('')
   const [answerShown, setAnswerShown] = useState(false)
+  const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
+  const message = messages[messageKey]
 
   return (
     <section className="card p-4 border-0 shadow">
@@ -33,17 +42,21 @@ const ExerciseCard = ({
             value={studentAnswer}
             onChange={e => setStudentAnswer(e.target.value)}
           />
-          <div className={`${styles.exerciseCard__message} my-2`}>
-            <Text size="sm">{message}</Text>
+          <div
+            className={`${styles.exerciseCard__message} ${
+              messageKey === 'ERROR' ? styles.exerciseCard__message__error : ''
+            } my-2`}
+          >
+            {message}
           </div>
           <div className="d-flex">
             <NewButton
               onClick={() => {
                 if (studentAnswer.trim() === answer.trim()) {
-                  setMessage('🎉 Your answer is correct!')
+                  setMessageKey('SUCCESS')
                   setAnswerShown(true)
                 } else {
-                  setMessage('Your answer is incorrect - please try again.')
+                  setMessageKey('ERROR')
                 }
               }}
             >
