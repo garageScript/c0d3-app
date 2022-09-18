@@ -74,11 +74,12 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -104,7 +105,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -1766,11 +1767,12 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -1796,7 +1798,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"

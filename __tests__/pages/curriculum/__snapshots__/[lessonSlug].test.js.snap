@@ -73,11 +73,12 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
           </div>
           <div
             class="dropdown"
+            role="menu"
           >
             <div
               class="d-none d-lg-block"
             >
-              <div
+              <button
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
                 data-testid="user-info-image"
@@ -103,7 +104,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                     fill-rule="evenodd"
                   />
                 </svg>
-              </div>
+              </button>
             </div>
             <div
               class="d-lg-none"
@@ -552,11 +553,12 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -582,7 +584,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -762,11 +764,12 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
           </div>
           <div
             class="dropdown"
+            role="menu"
           >
             <div
               class="d-none d-lg-block"
             >
-              <div
+              <button
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
                 data-testid="user-info-image"
@@ -792,7 +795,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                     fill-rule="evenodd"
                   />
                 </svg>
-              </div>
+              </button>
             </div>
             <div
               class="d-lg-none"
@@ -1268,11 +1271,12 @@ exports[`Lesson Page Should return Bad data if alerts or lessons are missing 1`]
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -1298,7 +1302,7 @@ exports[`Lesson Page Should return Bad data if alerts or lessons are missing 1`]
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
