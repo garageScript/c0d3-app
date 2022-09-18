@@ -4656,11 +4656,12 @@ exports[`user profile test should render discord avatar and username if user con
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -4691,7 +4692,7 @@ exports[`user profile test should render discord avatar and username if user con
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
