@@ -72,11 +72,12 @@ exports[`Users test Should be able to switch search options 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -102,7 +103,7 @@ exports[`Users test Should be able to switch search options 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -453,11 +454,12 @@ exports[`Users test Should be able to switch search options 2`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -483,7 +485,7 @@ exports[`Users test Should be able to switch search options 2`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -834,11 +836,12 @@ exports[`Users test Should be able to switch search options 3`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -864,7 +867,7 @@ exports[`Users test Should be able to switch search options 3`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -1215,11 +1218,12 @@ exports[`Users test Should be able to switch search options 4`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -1245,7 +1249,7 @@ exports[`Users test Should be able to switch search options 4`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
