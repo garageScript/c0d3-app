@@ -173,12 +173,14 @@ const ExerciseList = ({
 }: ExerciseListProps) => {
   return (
     <>
-      <NavCard
-        tabSelected={tabs.findIndex(tab => tab.text === 'exercises')}
-        tabs={tabs}
-      />
+      <div className="mb-4">
+        <NavCard
+          tabSelected={tabs.findIndex(tab => tab.text === 'exercises')}
+          tabs={tabs}
+        />
+      </div>
       <div className="d-flex justify-content-between align-items-center">
-        <h1 className="my-4 fs-2">{lessonTitle}</h1>
+        <h1 className="my-5 fs-2">{lessonTitle}</h1>
         <NewButton onClick={() => setExerciseIndex(0)}>
           SOLVE EXERCISES
         </NewButton>
