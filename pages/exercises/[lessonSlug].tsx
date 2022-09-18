@@ -138,7 +138,8 @@ const Exercise = ({
         {showPreviousButton ? (
           <button
             onClick={() => setExerciseIndex(i => i - 1)}
-            className="btn btn-outline-primary"
+            className="btn btn-outline-primary fw-bold px-4 py-2"
+            style={{ fontFamily: 'PT Mono', fontSize: 14 }}
           >
             PREVIOUS
           </button>
@@ -148,7 +149,8 @@ const Exercise = ({
         {showSkipButton ? (
           <button
             onClick={() => setExerciseIndex(i => i + 1)}
-            className="btn btn-outline-primary"
+            className="btn btn-outline-primary fw-bold px-4 py-2"
+            style={{ fontFamily: 'PT Mono', fontSize: 14 }}
           >
             SKIP
           </button>
