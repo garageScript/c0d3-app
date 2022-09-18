@@ -16,7 +16,6 @@ import ExercisePreviewCard, {
 import { NewButton } from '../../components/theme/Button'
 import ExerciseCard, { ExerciseCardProps } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
-import { Text } from '../../components/theme/Text'
 
 const exampleProblem = `const a = 5
 a = a + 10
