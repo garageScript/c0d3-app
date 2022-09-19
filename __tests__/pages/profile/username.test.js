@@ -25,6 +25,8 @@ describe('user profile test', () => {
   const { query } = useRouter()
   query.username = 'fake user'
 
+  beforeAll(() => (query.username = 'fake user'))
+
   test('Should render loading spinner if data is not ready', () => {
     expectLoading(<UserProfile />)
   })
@@ -180,6 +182,8 @@ describe('user profile test', () => {
   })
 
   test('should render discord avatar and username if user connected to discord', async () => {
+    query.username = 'fakeusername'
+
     const session = {
       user: {
         id: 1,
@@ -189,7 +193,8 @@ describe('user profile test', () => {
         isAdmin: true,
         discordUserId: 'fakeDiscordId',
         discordUsername: 'fakeDiscordUser',
-        discordAvatarUrl: 'https://placeimg.com/640/480/any'
+        discordAvatarUrl: 'https://placeimg.com/640/480/any',
+        isConnectedToDiscord: true
       },
       submissions: [
         {
@@ -309,7 +314,7 @@ describe('user profile test', () => {
         request: { query: GET_APP },
         result: {
           data: {
-            session,
+            session: { ...session },
             lessons: dummyLessonData,
             alerts: []
           }
@@ -319,7 +324,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -334,13 +339,17 @@ describe('user profile test', () => {
         <UserProfile />
       </MockedProvider>
     )
+
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByText(/fakeDiscordUser/i)
+    await findByText('@fakeusername')
+
     expect(container).toMatchSnapshot()
   })
 
   test('should unlink discord from user account', async () => {
     expect.assertions(1)
+
+    query.username = 'fakeusername'
 
     const session = {
       user: {
@@ -351,7 +360,8 @@ describe('user profile test', () => {
         isAdmin: true,
         discordUserId: 'fakeDiscordId',
         discordUsername: 'fakeDiscordUser',
-        discordAvatarUrl: 'https://placeimg.com/640/480/any'
+        discordAvatarUrl: 'https://placeimg.com/640/480/any',
+        isConnectedToDiscord: true
       },
       submissions: [
         {
@@ -495,7 +505,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -523,6 +533,8 @@ describe('user profile test', () => {
 
   test('should link discord to user account', async () => {
     expect.assertions(1)
+
+    query.username = 'fakeusername'
 
     const session = {
       ...dummySessionData,
@@ -655,7 +667,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -673,7 +685,7 @@ describe('user profile test', () => {
     )
 
     await waitForElementToBeRemoved(() => getByText('Loading...'))
-    await findByText(/@fake user/i)
+    await findByText(/@fakeusername/i)
 
     await userEvent.click(getByText(/connect to discord/i))
     await userEvent.click(getByTestId('connect-discord-btn'))
@@ -737,7 +749,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -753,7 +765,7 @@ describe('user profile test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByText(/@fake user/i)
+    await findByText(/@fakeusername/i)
     expect(container).toMatchSnapshot()
   })
   test('Should render anonymous users', async () => {
@@ -761,12 +773,13 @@ describe('user profile test', () => {
       ...dummySessionData,
       user: {
         id: 1,
-        username: 'fake user',
+        username: 'fakeusername',
         name: '',
         isAdmin: true,
         discordUserId: '',
         discordUsername: '',
-        discordAvatarUrl: ''
+        discordAvatarUrl: '',
+        isConnectedToDiscord: false
       }
     }
     const mocks = [
@@ -774,7 +787,7 @@ describe('user profile test', () => {
         request: { query: GET_APP },
         result: {
           data: {
-            session: dummySessionData,
+            session: anonymous,
             lessons: dummyLessonData,
             alerts: []
           }
@@ -784,7 +797,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -800,7 +813,7 @@ describe('user profile test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByText(/@fake user/i)
+    await findByText(/@fakeusername/i)
     expect(container).toMatchSnapshot()
   })
   test('Should render nulled lessons', async () => {
@@ -819,7 +832,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -835,7 +848,7 @@ describe('user profile test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
-    await waitFor(() => screen.findByText(/@fake user/i))
+    await screen.findByText(/@fakeusername/i)
     expect(screen.getAllByText('NaN%')[0]).toBeVisible()
   })
   test('Should render nulled challenges', async () => {
@@ -863,7 +876,7 @@ describe('user profile test', () => {
         result: {
           data: {
             session: dummySessionData,
-            lessons: lessons,
+            lessons,
             alerts: []
           }
         }
@@ -872,7 +885,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -888,7 +901,7 @@ describe('user profile test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByText(/@fake user/i)
+    await findByText(/@fakeusername/i)
     expect(container).toMatchSnapshot()
   })
   test('Should render nulled submission lessonIds', async () => {
@@ -930,7 +943,7 @@ describe('user profile test', () => {
         request: {
           query: USER_INFO,
           variables: {
-            username: 'fake user'
+            username: 'fakeusername'
           }
         },
         result: {
@@ -946,7 +959,7 @@ describe('user profile test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByText(/@fake user/i)
+    await findByText(/@fakeusername/i)
     expect(container).toMatchSnapshot()
   })
   test('Should return error on error', async () => {

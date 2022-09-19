@@ -139,7 +139,7 @@ const GiveStar: React.FC<GiveStarProps> = ({
           className={`mb-4 border-bottom form-control w-75 d-inline-block ${styles['commentBox']}`}
           onChange={e => setComment(e.target.value)}
         />
-        <Button type="primary" color="white" onClick={giveStar}>
+        <Button btnType="primary" color="white" onClick={giveStar}>
           Give Star!
         </Button>
       </div>

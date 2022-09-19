@@ -72,11 +72,12 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
         </div>
         <div
           class="dropdown"
+          role="menu"
         >
           <div
             class="d-none d-lg-block"
           >
-            <div
+            <button
               aria-expanded="false"
               class="nav-user-toggle  dropdown-toggle"
               data-testid="user-info-image"
@@ -102,7 +103,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
                   fill-rule="evenodd"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div
             class="d-lg-none"
@@ -282,11 +283,12 @@ exports[`Lesson Page Should render empty submissions 1`] = `
           </div>
           <div
             class="dropdown"
+            role="menu"
           >
             <div
               class="d-none d-lg-block"
             >
-              <div
+              <button
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
                 data-testid="user-info-image"
@@ -312,7 +314,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                     fill-rule="evenodd"
                   />
                 </svg>
-              </div>
+              </button>
             </div>
             <div
               class="d-lg-none"
@@ -521,11 +523,12 @@ exports[`Lesson Page Should render new submissions 1`] = `
           </div>
           <div
             class="dropdown"
+            role="menu"
           >
             <div
               class="d-none d-lg-block"
             >
-              <div
+              <button
                 aria-expanded="false"
                 class="nav-user-toggle  dropdown-toggle"
                 data-testid="user-info-image"
@@ -551,7 +554,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                     fill-rule="evenodd"
                   />
                 </svg>
-              </div>
+              </button>
             </div>
             <div
               class="d-lg-none"
@@ -3241,6 +3244,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       <div>
                                         <button
                                           class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+                                          data-testid="edit-button"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3260,6 +3264,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                         </button>
                                         <button
                                           class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+                                          data-testid="delete-button"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3317,6 +3322,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                       <div>
                                         <button
                                           class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+                                          data-testid="edit-button"
                                         >
                                           <svg
                                             aria-hidden="true"
@@ -3336,6 +3342,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                         </button>
                                         <button
                                           class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+                                          data-testid="delete-button"
                                         >
                                           <svg
                                             aria-hidden="true"

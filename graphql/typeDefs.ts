@@ -217,6 +217,7 @@ export default gql`
     users: [User]
     currentUser: User
     chatUrl: String
+    modules: [Module!]
   }
 
   type Challenge {

@@ -8,7 +8,8 @@
   color: #343a40;
   align-items: center;
   grid-column-gap: 8px;
-  cursor: pointer;
+  background: none;
+  border: none;
   text-transform: capitalize;
   font-weight: 700;
   &::after {

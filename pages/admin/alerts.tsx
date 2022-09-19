@@ -36,7 +36,7 @@ const AlertRow: React.FC<AlertRowProps> = ({ alerts, alert, setAlerts }) => {
       </div>
       <div className="d-flex flex-column col-2 mt-3 justify-content-center">
         <Button
-          type="danger"
+          btnType="danger"
           onClick={() =>
             confirm('Are you sure you want to delete this alert?') &&
             removeDatAlert(alert.id)

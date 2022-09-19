@@ -26,7 +26,7 @@ const User404: React.FC & WithLayout = () => {
           <Button
             onClick={() => router.push('/login')}
             outline
-            type="primary"
+            btnType="primary"
             border
             color="primary"
             size="lg"
@@ -35,7 +35,7 @@ const User404: React.FC & WithLayout = () => {
           </Button>
           <Button
             onClick={() => router.push('/signup')}
-            type="primary"
+            btnType="primary"
             color="white"
             size="lg"
           >

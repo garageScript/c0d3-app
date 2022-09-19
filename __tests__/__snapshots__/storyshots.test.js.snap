@@ -877,7 +877,7 @@ Array [
           className="text-center align-self-start"
         >
           <button
-            className="formCard--submitButton"
+            className="newButton "
             onClick={[Function]}
           >
             SAVE CHANGES
@@ -4866,6 +4866,7 @@ exports[`Storyshots Components/DropdownMenu Basic 1`] = `
   <button
     aria-expanded={false}
     className="dropdown btn btn-primary"
+    data-testid="dropdown-lesson"
     disabled={false}
     id="dropdown-lesson"
     onClick={[Function]}
@@ -4905,6 +4906,7 @@ exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
   <button
     aria-expanded={false}
     className="dropdown btn btn-primary"
+    data-testid="dropdown-lesson"
     disabled={false}
     id="dropdown-lesson"
     onClick={[Function]}
@@ -5213,6 +5215,76 @@ Array [
     © Copyright 2022 GarageScript
   </footer>,
 ]
+`;
+
+exports[`Storyshots Components/ExerciseCard Basic 1`] = `
+<section
+  className="card p-5 border-0 shadow"
+>
+  <div
+    className="fw-bold mb-2"
+  >
+    Problem
+  </div>
+  <div
+    className="d-flex mb-2"
+  >
+    <pre
+      className="w-50 bg-light py-3 px-4 mb-0 me-3"
+    >
+      let a = 5
+a = a + 10
+// what is a?
+    </pre>
+    <div
+      className="w-50 ms-3"
+    >
+      <div
+        className="mb-2"
+      >
+        Variable mutation
+      </div>
+      <input
+        aria-label="User answer"
+        className="form-control mb-2 "
+        onChange={[Function]}
+        value=""
+      />
+      <div
+        className="exerciseCard__message  my-2"
+      >
+        
+      </div>
+      <div
+        className="d-flex"
+      >
+        <button
+          className="newButton "
+          onClick={[Function]}
+        >
+          SUBMIT
+        </button>
+        <button
+          className="bg-transparent ms-3 border-0 fw-normal"
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "color": "#292929",
+                "fontSize": "0.75rem",
+              }
+            }
+          >
+            <strong>
+              Show Answer
+            </strong>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 `;
 
 exports[`Storyshots Components/ExercisePreview Basic 1`] = `
@@ -7025,6 +7097,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             <button
               aria-expanded={false}
               className="dropdown btn btn-primary"
+              data-testid="dropdown-lesson"
               disabled={false}
               id="dropdown-lesson"
               onClick={[Function]}
@@ -7996,7 +8069,7 @@ exports[`Storyshots Components/FormCard With New Button 1`] = `
         className="text-center align-self-start"
       >
         <button
-          className="formCard--submitButton"
+          className="newButton "
           onClick={[Function]}
         >
           Create New Challenge
@@ -12430,17 +12503,6 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
         </a>
       </span>
     </div>
-    <button
-      className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "danger",
-        }
-      }
-    >
-      Unlink Discord
-    </button>
   </div>
 </div>
 `;
@@ -12474,15 +12536,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info With Connect 
   </div>
   <div
     className="d-flex ms-auto me-auto mb-4 mt-3 flex-column"
-  >
-    <button
-      className="btn btn-primary btn-md btn-block mt-3"
-      onClick={[Function]}
-      type="button"
-    >
-      Connect to Discord
-    </button>
-  </div>
+  />
 </div>
 `;
 
@@ -21715,6 +21769,7 @@ Array [
       <div>
         <button
           className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
           onClick={[Function]}
           style={
             Object {
@@ -21747,6 +21802,7 @@ Array [
         </button>
         <button
           className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
           onClick={[Function]}
           style={
             Object {
@@ -21817,6 +21873,7 @@ Array [
       <div>
         <button
           className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
           onClick={[Function]}
           style={
             Object {
@@ -21849,6 +21906,7 @@ Array [
         </button>
         <button
           className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
           onClick={[Function]}
           style={
             Object {
@@ -21919,6 +21977,7 @@ Array [
       <div>
         <button
           className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
           onClick={[Function]}
           style={
             Object {
@@ -21951,6 +22010,7 @@ Array [
         </button>
         <button
           className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
           onClick={[Function]}
           style={
             Object {
@@ -28732,6 +28792,53 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 >
   Margined Button
 </button>
+`;
+
+exports[`Storyshots Theme/Button New Buttons 1`] = `
+Array [
+  <button
+    className="newButton "
+    onClick={[Function]}
+  >
+    New Button
+  </button>,
+  <button
+    className="newButton bg-primary mx-2"
+    onClick={[Function]}
+  >
+    Primary
+  </button>,
+  <button
+    className="newButton bg-secondary text-black mx-2"
+    onClick={[Function]}
+  >
+    Secondary
+  </button>,
+  <button
+    className="newButton bg-dark mx-2"
+    onClick={[Function]}
+  >
+    Dark
+  </button>,
+  <button
+    className="newButton p-4 mx-2"
+    onClick={[Function]}
+  >
+    Big
+  </button>,
+  <button
+    className="newButton py-1 px-2 mx-2"
+    onClick={[Function]}
+  >
+    Small
+  </button>,
+  <button
+    className="newButton py-5 bg-warning text-primary mx-2"
+    onClick={[Function]}
+  >
+    You can style it however you want!
+  </button>,
+]
 `;
 
 exports[`Storyshots Theme/Button Outlined Button 1`] = `

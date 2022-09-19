@@ -56,7 +56,7 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
   const [updateLesson, { data, error, loading }] = useUpdateLessonMutation()
 
   const [formOptions, setFormOptions] = useState(
-    getPropertyArr(lesson, ['challenges', '__typename'])
+    getPropertyArr(lesson, ['challenges', '__typename', 'modules'])
   )
 
   const handleChange = async (value: string, propertyIndex: number) => {

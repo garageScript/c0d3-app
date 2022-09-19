@@ -74,7 +74,7 @@ const CommentBox: React.FC<{
             <MdInput onChange={setInput} bgColor="white" value={input} />
             <Button
               color="white"
-              type="success"
+              btnType="success"
               onClick={() => {
                 if (!input) return
                 addComment({
