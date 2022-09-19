@@ -149,7 +149,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
               </Link>
             </span>
           </div>
-          <Button onClick={handleShow} type="danger" outline color="danger">
+          <Button onClick={handleShow} btnType="danger" outline color="danger">
             Unlink Discord
           </Button>
           <DiscordModal

@@ -24,7 +24,7 @@ export const FilterButtons: React.FC<FilterProps> = ({
 
     return (
       <div key={buttonIndex} style={{ marginTop: '-1.57px' }}>
-        <Button onClick={() => onClick(option)} color={color} type={type}>
+        <Button onClick={() => onClick(option)} color={color} btnType={type}>
           {option}
         </Button>
       </div>

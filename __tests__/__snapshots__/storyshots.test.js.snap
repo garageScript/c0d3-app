@@ -21769,6 +21769,7 @@ Array [
       <div>
         <button
           className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
           onClick={[Function]}
           style={
             Object {
@@ -21801,6 +21802,7 @@ Array [
         </button>
         <button
           className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
           onClick={[Function]}
           style={
             Object {
@@ -21871,6 +21873,7 @@ Array [
       <div>
         <button
           className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
           onClick={[Function]}
           style={
             Object {
@@ -21903,6 +21906,7 @@ Array [
         </button>
         <button
           className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
           onClick={[Function]}
           style={
             Object {
@@ -21973,6 +21977,7 @@ Array [
       <div>
         <button
           className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
           onClick={[Function]}
           style={
             Object {
@@ -22005,6 +22010,7 @@ Array [
         </button>
         <button
           className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
           onClick={[Function]}
           style={
             Object {

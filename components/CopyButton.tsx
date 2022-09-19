@@ -52,7 +52,7 @@ const CopyButton = ({ value, color }: Props) => {
   return (
     <Button
       outline
-      type={type}
+      btnType={type}
       color={type as ColorTypes}
       onClick={handleOnClick}
     >

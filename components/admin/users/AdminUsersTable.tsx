@@ -65,7 +65,7 @@ const AdminOption: React.FC<AdminOptionProps> = ({
   }
 
   return (
-    <Button type={isAdmin ? 'danger' : 'success'} onClick={changeButton}>
+    <Button btnType={isAdmin ? 'danger' : 'success'} onClick={changeButton}>
       {isAdmin ? 'Remove' : 'Add'}
     </Button>
   )

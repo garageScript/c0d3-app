@@ -39,6 +39,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
       <div>
         <button
           class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
         >
           <svg
             aria-hidden="true"
@@ -58,6 +59,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
         </button>
         <button
           class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
         >
           <svg
             aria-hidden="true"
@@ -115,6 +117,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
       <div>
         <button
           class="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+          data-testid="edit-button"
         >
           <svg
             aria-hidden="true"
@@ -134,6 +137,7 @@ exports[`Test SubmissionComments Component Should render correctly 1`] = `
         </button>
         <button
           class="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+          data-testid="delete-button"
         >
           <svg
             aria-hidden="true"

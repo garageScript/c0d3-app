@@ -3,41 +3,41 @@ import styles from '../../scss/button.module.scss'
 
 import { ColorTypes, colors } from './colors'
 import noop from '../../helpers/noop'
-
-type ButtonProps = {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   border?: boolean
-  type?: 'success' | 'danger' | 'primary' | 'light' | 'info' | 'mute'
+  btnType?: 'success' | 'danger' | 'primary' | 'light' | 'info' | 'mute'
   color?: ColorTypes
   m?: '1'
   ml?: '2'
   size?: 'lg' | 'sm'
-  onClick?: Function
   outline?: boolean
 }
 
 export const Button: React.FC<ButtonProps> = ({
   m,
   ml,
-  type,
+  btnType,
   border,
   color = 'black',
   onClick = noop,
   children,
   size,
-  outline
+  outline,
+  className,
+  ...other
 }) => {
   const classes = ['btn']
-
+  className && classes.push(className)
   if (border && !outline) classes.push('border')
   if (!border) classes.push(styles.borderless)
-  if (type) {
+  if (btnType) {
     if (outline) {
       classes.push(
-        `btn-outline-${type} ${styles.onFocusBgFix} ${
-          styles[`btnOutlineInfoBgFix-${type}`]
-        } ${styles[`btn-outline-bg-${type}`]}`
+        `btn-outline-${btnType} ${styles.onFocusBgFix} ${
+          styles[`btnOutlineInfoBgFix-${btnType}`]
+        } ${styles[`btn-outline-bg-${btnType}`]}`
       )
-    } else classes.push(`btn-${type}`)
+    } else classes.push(`btn-${btnType}`)
   }
   if (m) classes.push(`m-${m}`)
   if (ml) classes.push(`ms-${ml}`)
@@ -46,8 +46,9 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={classes.join(' ')}
-      onClick={() => onClick()}
+      onClick={onClick}
       style={{ color: colors[color] }}
+      {...other}
     >
       {children}
     </button>

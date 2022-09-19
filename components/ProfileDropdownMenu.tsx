@@ -113,7 +113,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
         <Dropdown.Item className={`${styles['dropdown-item']} `}>
           <LogoutContainer>
             <div className={`${styles['light-button']} d-inline`}>
-              <Button border ml="2" type="light">
+              <Button border ml="2" btnType="light">
                 Logout
               </Button>
             </div>

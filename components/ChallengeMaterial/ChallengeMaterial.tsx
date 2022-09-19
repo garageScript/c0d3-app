@@ -208,7 +208,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
                 />
                 <Button
                   m="1"
-                  type="success"
+                  btnType="success"
                   color="white"
                   onClick={() => {
                     if (!commentValue) return
