@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, waitFor, screen } from '@testing-library/react'
+import { render, waitFor, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Exercises from '../../../pages/exercises/[lessonSlug]'
 import { useRouter } from 'next/router'
@@ -46,6 +46,56 @@ describe('Exercises page', () => {
     screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
     screen.getByRole('link', { name: 'LESSONS' })
+  })
+
+  test('Renders exercise card with the skip, previous, and exit buttons', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+
+    const { getByRole, queryByRole } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Exercises />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      getByRole('heading', { name: /Foundations of JavaScript/i })
+    )
+
+    const solveExercisesButton = getByRole('button', {
+      name: 'SOLVE EXERCISES'
+    })
+    fireEvent.click(solveExercisesButton)
+
+    // Previous button is not in the document on the first exercise.
+    expect(queryByRole('button', { name: 'PREVIOUS' })).not.toBeInTheDocument()
+
+    const skipButton = getByRole('button', { name: 'SKIP' })
+    fireEvent.click(skipButton)
+    expect(queryByRole('button', { name: 'PREVIOUS' })).toBeInTheDocument()
+
+    fireEvent.click(skipButton)
+    // Skip button should not be in the document because we're on the last exercise now.
+    expect(queryByRole('button', { name: 'SKIP' })).not.toBeInTheDocument()
+
+    const previousButton = getByRole('button', { name: 'PREVIOUS' })
+    fireEvent.click(previousButton)
+    expect(queryByRole('button', { name: 'SKIP' })).toBeInTheDocument()
+
+    const exitButton = getByRole('button', { name: 'Exit' })
+    fireEvent.click(exitButton)
+    expect(queryByRole('button', { name: 'PREVIOUS' })).not.toBeInTheDocument()
+    expect(queryByRole('button', { name: 'SKIP' })).not.toBeInTheDocument()
   })
 
   test('Should not render lessons nav card tab if lesson docUrl is null', async () => {
