@@ -10,13 +10,13 @@ export type ExerciseCardProps = {
   explanation: string
 }
 
-const messages = {
-  EMPTY: '',
-  ERROR: 'Your answer is incorrect - please try again.',
-  SUCCESS: '🎉 Your answer is correct!'
-} as const
+enum Message {
+  EMPTY = '',
+  ERROR = 'Your answer is incorrect - please try again.',
+  SUCCESS = '🎉 Your answer is correct!'
+}
 
-type MessageKey = keyof typeof messages
+type MessageKey = keyof typeof Message
 
 const ExerciseCard = ({
   challengeName,
@@ -27,7 +27,7 @@ const ExerciseCard = ({
   const [studentAnswer, setStudentAnswer] = useState('')
   const [answerShown, setAnswerShown] = useState(false)
   const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
-  const message = messages[messageKey]
+  const message = Message[messageKey]
 
   return (
     <section className="card p-4 border-0 shadow">
