@@ -10,6 +10,14 @@ export type ExerciseCardProps = {
   explanation: string
 }
 
+enum Message {
+  EMPTY = '',
+  ERROR = 'Your answer is incorrect - please try again.',
+  SUCCESS = '🎉 Your answer is correct!'
+}
+
+type MessageKey = keyof typeof Message
+
 const ExerciseCard = ({
   challengeName,
   problem,
@@ -17,11 +25,12 @@ const ExerciseCard = ({
   explanation
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
-  const [message, setMessage] = useState('')
   const [answerShown, setAnswerShown] = useState(false)
+  const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
+  const message = Message[messageKey]
 
   return (
-    <section className="card p-4 border-0 shadow">
+    <section className="card p-5 border-0 shadow">
       <div className="fw-bold mb-2">Problem</div>
       <div className="d-flex mb-2">
         <pre className="w-50 bg-light py-3 px-4 mb-0 me-3">{problem}</pre>
@@ -29,21 +38,27 @@ const ExerciseCard = ({
           <div className="mb-2">{challengeName}</div>
           <input
             aria-label="User answer"
-            className="form-control mb-2"
+            className={`form-control mb-2 ${
+              messageKey === 'ERROR' ? styles.exerciseCard__input__error : ''
+            }`}
             value={studentAnswer}
             onChange={e => setStudentAnswer(e.target.value)}
           />
-          <div className={`${styles.exerciseCard__message} my-2`}>
-            <Text size="sm">{message}</Text>
+          <div
+            className={`${styles.exerciseCard__message} ${
+              messageKey === 'ERROR' ? styles.exerciseCard__message__error : ''
+            } my-2`}
+          >
+            {message}
           </div>
           <div className="d-flex">
             <NewButton
               onClick={() => {
                 if (studentAnswer.trim() === answer.trim()) {
-                  setMessage('🎉 Your answer is correct!')
+                  setMessageKey('SUCCESS')
                   setAnswerShown(true)
                 } else {
-                  setMessage('Your answer is incorrect - please try again.')
+                  setMessageKey('ERROR')
                 }
               }}
             >

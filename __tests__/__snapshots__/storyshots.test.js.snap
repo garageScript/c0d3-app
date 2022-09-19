@@ -5219,7 +5219,7 @@ Array [
 
 exports[`Storyshots Components/ExerciseCard Basic 1`] = `
 <section
-  className="card p-4 border-0 shadow"
+  className="card p-5 border-0 shadow"
 >
   <div
     className="fw-bold mb-2"
@@ -5246,23 +5246,14 @@ a = a + 10
       </div>
       <input
         aria-label="User answer"
-        className="form-control mb-2"
+        className="form-control mb-2 "
         onChange={[Function]}
         value=""
       />
       <div
-        className="exerciseCard__message my-2"
+        className="exerciseCard__message  my-2"
       >
-        <div
-          style={
-            Object {
-              "color": "#292929",
-              "fontSize": "0.85rem",
-            }
-          }
-        >
-          
-        </div>
+        
       </div>
       <div
         className="d-flex"
