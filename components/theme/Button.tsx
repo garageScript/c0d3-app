@@ -23,10 +23,11 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   size,
   outline,
+  className,
   ...other
 }) => {
   const classes = ['btn']
-
+  className && classes.push(className)
   if (border && !outline) classes.push('border')
   if (!border) classes.push(styles.borderless)
   if (btnType) {
