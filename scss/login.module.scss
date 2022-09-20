@@ -21,7 +21,7 @@
 }
 
 .discord__button:hover {
-  background-color: color.change(#5865f2, $lightness: 60%);
+  background-color: color.change(#5865f2, $lightness: 60%) !important;
 }
 
 .discord__button__image__wrapper {

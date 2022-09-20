@@ -64,13 +64,13 @@ const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
     <NavLink
       path={LOGIN_PATH}
-      className={`btn m-2 me-lg-3 ${styles['login-btn']}`}
+      className={`btn m-2 me-lg-3 ${styles['login-btn']} ${styles['btn-hoverFix']}`}
     >
       Login
     </NavLink>
     <NavLink
       path={SIGNUP_PATH}
-      className={`btn m-2 me-lg-3 ${styles['signup-btn']}`}
+      className={`btn m-2 me-lg-3 ${styles['signup-btn']} ${styles['btn-hoverFix']}`}
     >
       Signup
     </NavLink>

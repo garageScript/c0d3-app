@@ -79,6 +79,18 @@
   }
 }
 
+.btn-hoverFix {
+  &:hover,
+  &:focus {
+    background-color: color.change(
+      variables.$primary,
+      $lightness: 90%
+    ) !important;
+    color: variables.$primary !important;
+    border: 1px solid variables.$primary !important;
+  }
+}
+
 .isAdminBadge {
   font-size: 11px;
   letter-spacing: 0.07em;
