@@ -64,10 +64,11 @@ describe('Exercises page', () => {
     // Previous button is not in the document on the first exercise.
     expect(queryByRole('button', { name: 'PREVIOUS' })).not.toBeInTheDocument()
 
-    const skipButton = getByRole('button', { name: 'SKIP' })
+    let skipButton = getByRole('button', { name: 'SKIP' })
     fireEvent.click(skipButton)
     expect(queryByRole('button', { name: 'PREVIOUS' })).toBeInTheDocument()
 
+    skipButton = getByRole('button', { name: 'SKIP' })
     fireEvent.click(skipButton)
     // Skip button should not be in the document because we're on the last exercise now.
     expect(queryByRole('button', { name: 'SKIP' })).not.toBeInTheDocument()
