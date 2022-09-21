@@ -4,16 +4,8 @@ import '@testing-library/jest-dom'
 import Exercises from '../../../pages/exercises/[lessonSlug]'
 import { useRouter } from 'next/router'
 import { MockedProvider } from '@apollo/client/testing'
-import dummyLessonData from '../../../__dummy__/lessonData'
-import dummySessionData from '../../../__dummy__/sessionData'
-import dummyAlertData from '../../../__dummy__/alertData'
-import GET_APP from '../../../graphql/queries/getApp'
-
-const session = {
-  ...dummySessionData,
-  submissions: [],
-  lessonStatus: []
-}
+import getExercisesData from '../../../__dummy__/getExercisesData'
+import GET_EXERCISES from '../../../graphql/queries/getExercises'
 
 describe('Exercises page', () => {
   const { query } = useRouter()
@@ -22,13 +14,9 @@ describe('Exercises page', () => {
   test('Should render correctly', async () => {
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_EXERCISES },
         result: {
-          data: {
-            session,
-            lessons: dummyLessonData,
-            alerts: dummyAlertData
-          }
+          data: getExercisesData
         }
       }
     ]
@@ -51,13 +39,9 @@ describe('Exercises page', () => {
   test('Renders exercise card with the skip, previous, and exit buttons', async () => {
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_EXERCISES },
         result: {
-          data: {
-            session,
-            lessons: dummyLessonData,
-            alerts: dummyAlertData
-          }
+          data: getExercisesData
         }
       }
     ]
@@ -101,15 +85,14 @@ describe('Exercises page', () => {
   test('Should not render lessons nav card tab if lesson docUrl is null', async () => {
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_EXERCISES },
         result: {
           data: {
-            session,
-            lessons: dummyLessonData.map(lesson => ({
+            ...getExercisesData,
+            lessons: getExercisesData.lessons.map(lesson => ({
               ...lesson,
               docUrl: null
-            })),
-            alerts: dummyAlertData
+            }))
           }
         }
       }
@@ -133,12 +116,11 @@ describe('Exercises page', () => {
   test('Should render a 500 error page if the lesson data is null', async () => {
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_EXERCISES },
         result: {
           data: {
-            session,
-            lessons: null,
-            alerts: dummyAlertData
+            ...getExercisesData,
+            lessons: null
           }
         }
       }
@@ -156,12 +138,11 @@ describe('Exercises page', () => {
   test('Should render a 404 error page if the lesson is not found', async () => {
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_EXERCISES },
         result: {
           data: {
-            session,
-            lessons: [],
-            alerts: dummyAlertData
+            ...getExercisesData,
+            lessons: []
           }
         }
       }
@@ -182,13 +163,9 @@ describe('Exercises page', () => {
     }))
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_EXERCISES },
         result: {
-          data: {
-            session,
-            lessons: dummyLessonData,
-            alerts: dummyAlertData
-          }
+          data: getExercisesData
         }
       }
     ]
