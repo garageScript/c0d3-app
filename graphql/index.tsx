@@ -315,7 +315,7 @@ export type Query = {
   __typename?: 'Query'
   alerts: Array<Alert>
   allUsers?: Maybe<Array<Maybe<User>>>
-  exercises: Array<Maybe<Exercise>>
+  exercises: Array<Exercise>
   getLessonMentors?: Maybe<Array<Maybe<User>>>
   getPreviousSubmissions?: Maybe<Array<Submission>>
   isTokenValid: Scalars['Boolean']
@@ -810,6 +810,37 @@ export type GetAppQuery = {
   }>
 }
 
+export type GetExercisesQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetExercisesQuery = {
+  __typename?: 'Query'
+  lessons: Array<{
+    __typename?: 'Lesson'
+    title: string
+    docUrl?: string | null
+    slug: string
+  }>
+  alerts: Array<{
+    __typename?: 'Alert'
+    id: number
+    text?: string | null
+    type?: string | null
+    url?: string | null
+    urlCaption?: string | null
+  }>
+  exercises: Array<{
+    __typename?: 'Exercise'
+    description: string
+    answer: string
+    explanation?: string | null
+    module: {
+      __typename?: 'Module'
+      name: string
+      lesson: { __typename?: 'Lesson'; slug: string }
+    }
+  }>
+}
+
 export type GetFlaggedExercisesQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetFlaggedExercisesQuery = {
@@ -821,7 +852,7 @@ export type GetFlaggedExercisesQuery = {
       __typename?: 'Module'
       lesson: { __typename?: 'Lesson'; title: string }
     }
-  } | null>
+  }>
 }
 
 export type LessonMentorsQueryVariables = Exact<{
@@ -1749,7 +1780,7 @@ export type QueryResolvers<
     ContextType
   >
   exercises?: Resolver<
-    Array<Maybe<ResolversTypes['Exercise']>>,
+    Array<ResolversTypes['Exercise']>,
     ParentType,
     ContextType
   >
@@ -3484,6 +3515,114 @@ export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>
 export type GetAppQueryResult = Apollo.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
+>
+export const GetExercisesDocument = gql`
+  query GetExercises {
+    lessons {
+      title
+      docUrl
+      slug
+    }
+    alerts {
+      id
+      text
+      type
+      url
+      urlCaption
+    }
+    exercises {
+      module {
+        name
+        lesson {
+          slug
+        }
+      }
+      description
+      answer
+      explanation
+    }
+  }
+`
+export type GetExercisesProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetExercisesQuery,
+    GetExercisesQueryVariables
+  >
+} & TChildProps
+export function withGetExercises<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetExercisesQuery,
+    GetExercisesQueryVariables,
+    GetExercisesProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetExercisesQuery,
+    GetExercisesQueryVariables,
+    GetExercisesProps<TChildProps, TDataName>
+  >(GetExercisesDocument, {
+    alias: 'getExercises',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetExercisesQuery__
+ *
+ * To run a query within a React component, call `useGetExercisesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetExercisesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetExercisesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetExercisesQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetExercisesQuery,
+    GetExercisesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetExercisesQuery, GetExercisesQueryVariables>(
+    GetExercisesDocument,
+    options
+  )
+}
+export function useGetExercisesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetExercisesQuery,
+    GetExercisesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetExercisesQuery, GetExercisesQueryVariables>(
+    GetExercisesDocument,
+    options
+  )
+}
+export type GetExercisesQueryHookResult = ReturnType<
+  typeof useGetExercisesQuery
+>
+export type GetExercisesLazyQueryHookResult = ReturnType<
+  typeof useGetExercisesLazyQuery
+>
+export type GetExercisesQueryResult = Apollo.QueryResult<
+  GetExercisesQuery,
+  GetExercisesQueryVariables
 >
 export const GetFlaggedExercisesDocument = gql`
   query getFlaggedExercises {

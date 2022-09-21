@@ -4,10 +4,9 @@ import Layout from '../../components/Layout'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
-import { GetAppQuery } from '../../graphql'
+import { GetExercisesQuery } from '../../graphql'
 import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
-import GET_APP from '../../graphql/queries/getApp'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import NavCard from '../../components/NavCard'
 import ExercisePreviewCard, {
@@ -16,17 +15,10 @@ import ExercisePreviewCard, {
 import { NewButton } from '../../components/theme/Button'
 import ExerciseCard, { ExerciseCardProps } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
+import GET_EXERCISES from '../../graphql/queries/getExercises'
 
 const exampleProblem = `const a = 5
 a = a + 10
-// what is a?`
-
-const exampleProblem2 = `let a = 5
-a = a + 10
-// what is a?`
-
-const exampleProblem3 = `let a = 5
-a = a + '10'
 // what is a?`
 
 const mockExercisePreviews: ExercisePreviewCardProps[] = [
@@ -35,36 +27,16 @@ const mockExercisePreviews: ExercisePreviewCardProps[] = [
   { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem }
 ]
 
-const mockExercises: ExerciseCardProps[] = [
-  {
-    challengeName: 'Variable mutation',
-    problem: exampleProblem,
-    answer: 'An error is thrown',
-    explanation: 'You cannot reassign variables that were created with "const".'
-  },
-  {
-    challengeName: 'Variable mutation 2',
-    problem: exampleProblem2,
-    answer: '15',
-    explanation: 'You can reassign variables that were created with "let".'
-  },
-  {
-    challengeName: 'Variable mutation 3',
-    problem: exampleProblem3,
-    answer: `'510'`,
-    explanation:
-      'If you add a string and number together, the number gets converted to a string and then they get concatenated.'
-  }
-]
-
-const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
-  const { lessons, alerts } = queryData
+const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
+  queryData
+}) => {
+  const { lessons, alerts, exercises } = queryData
   const router = useRouter()
   const [exerciseIndex, setExerciseIndex] = useState(-1)
   if (!router.isReady) return <LoadingSpinner />
 
   const slug = router.query.lessonSlug as string
-  if (!lessons || !alerts)
+  if (!lessons || !alerts || !exercises)
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
 
   const currentLesson = lessons.find(lesson => lesson.slug === slug)
@@ -79,17 +51,27 @@ const Exercises: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     { text: 'exercises', url: `/exercises/${currentLesson.slug}` }
   ]
 
-  const exercise = mockExercises[exerciseIndex]
+  const currentExercises = exercises
+    .filter(exercise => exercise?.module.lesson.slug === slug)
+    .map(exercise => ({
+      challengeName: exercise.module.name,
+      problem: exercise.description,
+      answer: exercise.answer,
+      explanation: exercise.explanation || ''
+    }))
+
+  const exercise = currentExercises[exerciseIndex]
 
   return (
     <Layout title={currentLesson.title}>
       {exercise ? (
         <Exercise
+          key={exerciseIndex}
           exercise={exercise}
           setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}
           showPreviousButton={exerciseIndex > 0}
-          showSkipButton={exerciseIndex < mockExercises.length - 1}
+          showSkipButton={exerciseIndex < currentExercises.length - 1}
         />
       ) : (
         <ExerciseList
@@ -206,9 +188,9 @@ const ExerciseList = ({
   )
 }
 
-export default withQueryLoader<GetAppQuery>(
+export default withQueryLoader<GetExercisesQuery>(
   {
-    query: GET_APP
+    query: GET_EXERCISES
   },
   Exercises
 )
