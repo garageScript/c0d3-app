@@ -87,7 +87,7 @@ const getExercisesData: GetExercisesQuery = {
       },
       description: '```\nlet a = 1\na -= 2\n// what is a?\n```',
       answer: '-1',
-      explanation: '`a -= 2` is a shorter way to write `a = a - 2`'
+      explanation: null
     }
   ]
 }
