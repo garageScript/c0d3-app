@@ -1825,13 +1825,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn m-2 me-lg-3 login-btn btn-hoverFix noUnderline"
+            class="m-2 me-lg-3 login-btn login-signup-size noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn m-2 me-lg-3 signup-btn btn-hoverFix noUnderline"
+            class="m-2 me-lg-3 signup-btn login-signup-size noUnderline"
             href="/signup"
           >
             Signup

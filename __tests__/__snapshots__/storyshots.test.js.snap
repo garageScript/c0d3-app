@@ -27649,7 +27649,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
           />
         </div>
         <button
-          className="btn text-white btn-lg btn discord__button"
+          className="text-white discord__button"
           onClick={[Function]}
         >
           <div
@@ -27662,7 +27662,9 @@ exports[`Storyshots Pages/Login Login 1`] = `
               width={32}
             />
           </div>
-          <span>
+          <span
+            className="discord_text"
+          >
             Login with Discord
           </span>
         </button>
@@ -27758,7 +27760,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
           />
         </div>
         <button
-          className="btn text-white btn-lg btn discord__button"
+          className="text-white discord__button"
           onClick={[Function]}
         >
           <div
@@ -27771,7 +27773,9 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
               width={32}
             />
           </div>
-          <span>
+          <span
+            className="discord_text"
+          >
             Login with Discord
           </span>
         </button>
@@ -27887,7 +27891,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
           />
         </div>
         <button
-          className="btn text-white btn-lg btn discord__button"
+          className="text-white discord__button"
           onClick={[Function]}
         >
           <div
@@ -27900,7 +27904,9 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
               width={32}
             />
           </div>
-          <span>
+          <span
+            className="discord_text"
+          >
             Login with Discord
           </span>
         </button>

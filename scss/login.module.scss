@@ -18,14 +18,25 @@
 
 .discord__button {
   @include thirdPartyAuthBtn(#5865f2);
+  height: 48px;
+  border: 0px transparent;
+  border-radius: 0.375rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.25rem;
 }
 
 .discord__button:hover {
-  background-color: color.change(#5865f2, $lightness: 60%) !important;
+  background-color: color.change(#5865f2, $lightness: 60%);
 }
 
 .discord__button__image__wrapper {
   display: flex;
+  padding-left: 11px;
+}
+
+.discord_text {
+  padding-right: 11px;
 }
 
 .orContainer {
