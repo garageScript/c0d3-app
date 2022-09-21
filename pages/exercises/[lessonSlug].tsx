@@ -54,10 +54,10 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   const currentExercises = exercises
     .filter(exercise => exercise?.module.lesson.slug === slug)
     .map(exercise => ({
-      challengeName: exercise?.module.name!,
-      problem: exercise?.description!,
-      answer: exercise?.answer!,
-      explanation: exercise?.explanation!
+      challengeName: exercise.module.name,
+      problem: exercise.description,
+      answer: exercise.answer,
+      explanation: exercise.explanation || ''
     }))
 
   const exercise = currentExercises[exerciseIndex]
@@ -66,6 +66,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
     <Layout title={currentLesson.title}>
       {exercise ? (
         <Exercise
+          key={exerciseIndex}
           exercise={exercise}
           setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}

@@ -315,7 +315,7 @@ export type Query = {
   __typename?: 'Query'
   alerts: Array<Alert>
   allUsers?: Maybe<Array<Maybe<User>>>
-  exercises: Array<Maybe<Exercise>>
+  exercises: Array<Exercise>
   getLessonMentors?: Maybe<Array<Maybe<User>>>
   getPreviousSubmissions?: Maybe<Array<Submission>>
   isTokenValid: Scalars['Boolean']
@@ -838,7 +838,7 @@ export type GetExercisesQuery = {
       name: string
       lesson: { __typename?: 'Lesson'; slug: string }
     }
-  } | null>
+  }>
 }
 
 export type GetFlaggedExercisesQueryVariables = Exact<{ [key: string]: never }>
@@ -852,7 +852,7 @@ export type GetFlaggedExercisesQuery = {
       __typename?: 'Module'
       lesson: { __typename?: 'Lesson'; title: string }
     }
-  } | null>
+  }>
 }
 
 export type LessonMentorsQueryVariables = Exact<{
@@ -1780,7 +1780,7 @@ export type QueryResolvers<
     ContextType
   >
   exercises?: Resolver<
-    Array<Maybe<ResolversTypes['Exercise']>>,
+    Array<ResolversTypes['Exercise']>,
     ParentType,
     ContextType
   >
