@@ -110,7 +110,7 @@ export const Login: React.FC<LoginFormProps> = ({
       </div>
       <button
         onClick={() => signIn('discord', { callbackUrl: '/curriculum' })}
-        className={`btn text-white btn-lg btn ${styles.discord__button}`}
+        className={`text-white ${styles.discord__button}`}
       >
         <div className={styles.discord__button__image__wrapper}>
           <Image
@@ -119,7 +119,7 @@ export const Login: React.FC<LoginFormProps> = ({
             width={32}
           />
         </div>
-        <span>Login with Discord</span>
+        <span className={styles.discord_text}>Login with Discord</span>
       </button>
     </div>
     <NavLink path="/forgotpassword" hoverUnderline>

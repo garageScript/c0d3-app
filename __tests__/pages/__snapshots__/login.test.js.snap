@@ -90,7 +90,7 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
             />
           </div>
           <button
-            class="btn text-white btn-lg btn discord__button"
+            class="text-white discord__button"
           >
             <div
               class="discord__button__image__wrapper"
@@ -101,7 +101,9 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
                 width="32"
               />
             </div>
-            <span>
+            <span
+              class="discord_text"
+            >
               Login with Discord
             </span>
           </button>
