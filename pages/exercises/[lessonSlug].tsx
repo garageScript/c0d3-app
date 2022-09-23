@@ -16,6 +16,7 @@ import { NewButton } from '../../components/theme/Button'
 import ExerciseCard, { ExerciseCardProps } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
+import chunk from 'lodash/chunk'
 
 const exampleProblem = `const a = 5
 a = a + 10
@@ -24,6 +25,7 @@ a = a + 10
 const mockExercisePreviews: ExercisePreviewCardProps[] = [
   { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem },
   { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem },
   { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem }
 ]
 
@@ -170,19 +172,20 @@ const ExerciseList = ({
         </NewButton>
       </div>
       <div className="container">
-        <div className="row">
-          {mockExercisePreviews.map((exercisePreview, i) => (
-            <ExercisePreviewCard
-              key={i}
-              moduleName={exercisePreview.moduleName}
-              state={exercisePreview.state}
-              problem={exercisePreview.problem}
-              className={`col ${
-                i < mockExercisePreviews.length - 1 ? 'me-4' : ''
-              }`}
-            />
-          ))}
-        </div>
+        {chunk(mockExercisePreviews, 3).map((exercisePreviewChunk, i) => (
+          <div key={i} className="row mb-4">
+            {exercisePreviewChunk.map((exercisePreview, j) => (
+              <div key={j} className="col-4 d-flex">
+                <ExercisePreviewCard
+                  moduleName={exercisePreview.moduleName}
+                  state={exercisePreview.state}
+                  problem={exercisePreview.problem}
+                  className="flex-grow-1"
+                />
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </>
   )
