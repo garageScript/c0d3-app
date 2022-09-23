@@ -23,7 +23,6 @@ const session = {
     {
       id: 1,
       status: SubmissionStatus.Passed,
-      mrUrl: '',
       diff: '',
       viewCount: 0,
       comment: '',
@@ -44,7 +43,6 @@ const session = {
     {
       id: 1,
       status: SubmissionStatus.Passed,
-      mrUrl: '',
       diff: '',
       viewCount: 0,
       comment: '',
