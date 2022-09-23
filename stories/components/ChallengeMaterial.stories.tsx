@@ -75,7 +75,6 @@ export const WithDiff: React.FC = () => (
         {
           status: SubmissionStatus.Open,
           id: 1,
-          mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```test comment```',
@@ -106,7 +105,6 @@ export const WithDiff: React.FC = () => (
         {
           status: SubmissionStatus.Open,
           id: 1,
-          mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```test comment```',
@@ -153,7 +151,6 @@ export const WithComments: React.FC = () => (
         {
           status: SubmissionStatus.Passed,
           id: 1,
-          mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```Great Job```',
@@ -195,7 +192,6 @@ export const WithComments: React.FC = () => (
         {
           status: SubmissionStatus.Open,
           id: 1,
-          mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```test comment```',
@@ -255,7 +251,6 @@ export const FinalChallenge: React.FC = () => (
         {
           status: SubmissionStatus.Passed,
           id: 1,
-          mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```Great Job```',
@@ -297,7 +292,6 @@ export const FinalChallenge: React.FC = () => (
         {
           status: SubmissionStatus.Passed,
           id: 1,
-          mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```test comment```',

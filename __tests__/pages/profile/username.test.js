@@ -37,7 +37,6 @@ describe('user profile test', () => {
         {
           id: 1,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -58,7 +57,6 @@ describe('user profile test', () => {
         {
           id: 2,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -200,7 +198,6 @@ describe('user profile test', () => {
         {
           id: 1,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -221,7 +218,6 @@ describe('user profile test', () => {
         {
           id: 2,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -367,7 +363,6 @@ describe('user profile test', () => {
         {
           id: 1,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -388,7 +383,6 @@ describe('user profile test', () => {
         {
           id: 2,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -542,7 +536,6 @@ describe('user profile test', () => {
         {
           id: 1,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -563,7 +556,6 @@ describe('user profile test', () => {
         {
           id: 2,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -700,7 +692,6 @@ describe('user profile test', () => {
         {
           id: 1,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
@@ -911,7 +902,6 @@ describe('user profile test', () => {
         {
           id: 1,
           status: SubmissionStatus.Passed,
-          mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',

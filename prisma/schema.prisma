@@ -81,7 +81,6 @@ model Star {
 
 model Submission {
   id          Int       @id @default(autoincrement())
-  mrUrl       String?   @db.VarChar(255)
   diff        String?
   comment     String?
   status      String    @default("open") @db.VarChar(255)

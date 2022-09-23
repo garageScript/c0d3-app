@@ -139,7 +139,6 @@ export default gql`
   type Submission {
     id: Int!
     status: SubmissionStatus!
-    mrUrl: String
     diff: String
     viewCount: Int
     comment: String

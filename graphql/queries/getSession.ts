@@ -13,7 +13,6 @@ const GET_SESSION = gql`
       submissions {
         id
         status
-        mrUrl
         diff
         viewCount
         comment

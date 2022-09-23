@@ -373,7 +373,6 @@ export type Submission = {
   diff?: Maybe<Scalars['String']>
   id: Scalars['Int']
   lessonId: Scalars['Int']
-  mrUrl?: Maybe<Scalars['String']>
   order?: Maybe<Scalars['Int']>
   reviewer?: Maybe<User>
   reviewerId?: Maybe<Scalars['String']>
@@ -770,7 +769,6 @@ export type GetAppQuery = {
       __typename?: 'Submission'
       id: number
       status: SubmissionStatus
-      mrUrl?: string | null
       diff?: string | null
       viewCount?: number | null
       comment?: string | null
@@ -952,7 +950,6 @@ export type GetSessionQuery = {
       __typename?: 'Submission'
       id: number
       status: SubmissionStatus
-      mrUrl?: string | null
       diff?: string | null
       viewCount?: number | null
       comment?: string | null
@@ -1256,7 +1253,6 @@ export type UserInfoQuery = {
       __typename?: 'Submission'
       id: number
       status: SubmissionStatus
-      mrUrl?: string | null
       diff?: string | null
       viewCount?: number | null
       comment?: string | null
@@ -1869,7 +1865,6 @@ export type SubmissionResolvers<
   diff?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   reviewer?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
   reviewerId?: Resolver<
@@ -3403,7 +3398,6 @@ export const GetAppDocument = gql`
       submissions {
         id
         status
-        mrUrl
         diff
         viewCount
         comment
@@ -4000,7 +3994,6 @@ export const GetSessionDocument = gql`
       submissions {
         id
         status
-        mrUrl
         diff
         viewCount
         comment
@@ -5360,7 +5353,6 @@ export const UserInfoDocument = gql`
       submissions {
         id
         status
-        mrUrl
         diff
         viewCount
         comment
@@ -5734,7 +5726,6 @@ export type SubmissionKeySpecifier = (
   | 'diff'
   | 'id'
   | 'lessonId'
-  | 'mrUrl'
   | 'order'
   | 'reviewer'
   | 'reviewerId'
@@ -5754,7 +5745,6 @@ export type SubmissionFieldPolicy = {
   diff?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   lessonId?: FieldPolicy<any> | FieldReadFunction<any>
-  mrUrl?: FieldPolicy<any> | FieldReadFunction<any>
   order?: FieldPolicy<any> | FieldReadFunction<any>
   reviewer?: FieldPolicy<any> | FieldReadFunction<any>
   reviewerId?: FieldPolicy<any> | FieldReadFunction<any>

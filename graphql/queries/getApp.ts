@@ -36,7 +36,6 @@ const GET_APP = gql`
       submissions {
         id
         status
-        mrUrl
         diff
         viewCount
         comment

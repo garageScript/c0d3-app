@@ -68,7 +68,6 @@ export const CompletedChallenges: React.FC = () => {
       {
         id: '1',
         status: SubmissionStatus.Passed,
-        mrUrl: '',
         diff: '',
         viewCount: 0,
         comment: '',
@@ -85,7 +84,6 @@ export const CompletedChallenges: React.FC = () => {
       {
         id: '1',
         status: SubmissionStatus.Passed,
-        mrUrl: '',
         diff: '',
         viewCount: 0,
         comment: '',
