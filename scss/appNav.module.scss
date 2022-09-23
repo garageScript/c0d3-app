@@ -79,6 +79,17 @@
   }
 }
 
+.login-signup-size {
+  margin: 8px;
+  padding: 10.2px 13.6px;
+  border-radius: 0.375rem;
+  &:hover,
+  &:focus {
+    border: 1px solid variables.$primary;
+    padding: 9.2px 12.6px;
+  }
+}
+
 .isAdminBadge {
   font-size: 11px;
   letter-spacing: 0.07em;
