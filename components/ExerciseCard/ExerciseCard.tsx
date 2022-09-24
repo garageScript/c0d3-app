@@ -25,13 +25,11 @@ const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
 
   return (
     <section className="card p-5 border-0 shadow">
-      <div className="fw-bold mb-2">Problem</div>
       <div className="d-flex flex-column flex-md-row mb-2">
-        <pre
-          className={`bg-light py-3 px-4 mb-0 me-md-3 ${styles.exerciseCard__section}`}
-        >
-          {problem}
-        </pre>
+        <div className={`mb-0 me-md-3 ${styles.exerciseCard__section}`}>
+          <div className="fw-bold mb-2">Problem</div>
+          <pre className="bg-light py-3 px-4">{problem}</pre>
+        </div>
         <div className={`ms-md-3 ${styles.exerciseCard__section}`}>
           <div className="fw-bold mt-2 mt-md-0 mb-2">Your Answer</div>
           <input
@@ -45,7 +43,7 @@ const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
           <div
             className={`${styles.exerciseCard__message} ${
               messageKey === 'ERROR' ? styles.exerciseCard__message__error : ''
-            } my-2`}
+            } my-3`}
           >
             {message}
           </div>
