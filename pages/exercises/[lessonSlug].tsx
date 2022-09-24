@@ -169,11 +169,18 @@ const ExerciseList = ({
           tabs={tabs}
         />
       </div>
-      <div className="d-flex justify-content-between align-items-center">
-        <h1 className="my-5 fs-2">{lessonTitle}</h1>
-        <NewButton onClick={() => setExerciseIndex(0)}>
-          SOLVE EXERCISES
-        </NewButton>
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <h1 className="my-2 my-md-5 fs-2">{lessonTitle}</h1>
+        <div
+          className={`mb-3 mb-md-0 d-flex d-md-block ${styles.exerciseList__solveExercisesButtonContainer}`}
+        >
+          <NewButton
+            className="flex-grow-1"
+            onClick={() => setExerciseIndex(0)}
+          >
+            SOLVE EXERCISES
+          </NewButton>
+        </div>
       </div>
       <div className={styles.exerciseList__container}>
         {mockExercisePreviews.map((exercisePreview, i) => (

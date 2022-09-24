@@ -3,3 +3,9 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2em;
 }
+
+.exerciseList__solveExercisesButtonContainer {
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
