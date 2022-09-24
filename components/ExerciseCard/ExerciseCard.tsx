@@ -4,7 +4,6 @@ import { Text } from '../theme/Text'
 import styles from './exerciseCard.module.scss'
 
 export type ExerciseCardProps = {
-  challengeName: string
   problem: string
   answer: string
   explanation: string
@@ -18,12 +17,7 @@ enum Message {
 
 type MessageKey = keyof typeof Message
 
-const ExerciseCard = ({
-  challengeName,
-  problem,
-  answer,
-  explanation
-}: ExerciseCardProps) => {
+const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
   const [answerShown, setAnswerShown] = useState(false)
   const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
@@ -32,10 +26,14 @@ const ExerciseCard = ({
   return (
     <section className="card p-5 border-0 shadow">
       <div className="fw-bold mb-2">Problem</div>
-      <div className="d-flex mb-2">
-        <pre className="w-50 bg-light py-3 px-4 mb-0 me-3">{problem}</pre>
-        <div className="w-50 ms-3">
-          <div className="mb-2">{challengeName}</div>
+      <div className="d-flex flex-column flex-md-row mb-2">
+        <pre
+          className={`bg-light py-3 px-4 mb-0 me-md-3 ${styles.exerciseCard__section}`}
+        >
+          {problem}
+        </pre>
+        <div className={`ms-md-3 ${styles.exerciseCard__section}`}>
+          <div className="fw-bold mt-2 mt-md-0 mb-2">Your Answer</div>
           <input
             aria-label="User answer"
             className={`form-control mb-2 ${
@@ -51,7 +49,7 @@ const ExerciseCard = ({
           >
             {message}
           </div>
-          <div className="d-flex">
+          <div className="d-flex flex-column flex-md-row">
             <NewButton
               onClick={() => {
                 if (studentAnswer.trim() === answer.trim()) {
@@ -65,7 +63,7 @@ const ExerciseCard = ({
               SUBMIT
             </NewButton>
             <button
-              className="bg-transparent ms-3 border-0 fw-normal"
+              className="bg-transparent mt-2 mt-md-0 ms-md-3 border-0 fw-normal"
               onClick={() => setAnswerShown(!answerShown)}
             >
               <Text size="xs" bold>
