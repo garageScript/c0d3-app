@@ -16,6 +16,7 @@ import { NewButton } from '../../components/theme/Button'
 import ExerciseCard, { ExerciseCardProps } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
+import styles from '../../scss/exercises.module.scss'
 
 const exampleProblem = `const a = 5
 a = a + 10
@@ -23,6 +24,11 @@ a = a + 10
 
 const mockExercisePreviews: ExercisePreviewCardProps[] = [
   { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
+  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
   { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
   { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem }
 ]
@@ -169,20 +175,15 @@ const ExerciseList = ({
           SOLVE EXERCISES
         </NewButton>
       </div>
-      <div className="container">
-        <div className="row">
-          {mockExercisePreviews.map((exercisePreview, i) => (
-            <ExercisePreviewCard
-              key={i}
-              moduleName={exercisePreview.moduleName}
-              state={exercisePreview.state}
-              problem={exercisePreview.problem}
-              className={`col ${
-                i < mockExercisePreviews.length - 1 ? 'me-4' : ''
-              }`}
-            />
-          ))}
-        </div>
+      <div className={styles.exerciseList__container}>
+        {mockExercisePreviews.map((exercisePreview, i) => (
+          <ExercisePreviewCard
+            key={i}
+            moduleName={exercisePreview.moduleName}
+            state={exercisePreview.state}
+            problem={exercisePreview.problem}
+          />
+        ))}
       </div>
     </>
   )
