@@ -5222,27 +5222,31 @@ exports[`Storyshots Components/ExerciseCard Basic 1`] = `
   className="card p-5 border-0 shadow"
 >
   <div
-    className="fw-bold mb-2"
+    className="d-flex flex-column flex-md-row mb-2"
   >
-    Problem
-  </div>
-  <div
-    className="d-flex mb-2"
-  >
-    <pre
-      className="w-50 bg-light py-3 px-4 mb-0 me-3"
-    >
-      let a = 5
-a = a + 10
-// what is a?
-    </pre>
     <div
-      className="w-50 ms-3"
+      className="mb-0 me-md-3 exerciseCard__section"
     >
       <div
-        className="mb-2"
+        className="fw-bold mb-2"
       >
-        Variable mutation
+        Problem
+      </div>
+      <pre
+        className="bg-light py-3 px-4"
+      >
+        let a = 5
+a = a + 10
+// what is a?
+      </pre>
+    </div>
+    <div
+      className="ms-md-3 exerciseCard__section"
+    >
+      <div
+        className="fw-bold mt-2 mt-md-0 mb-2"
+      >
+        Your Answer
       </div>
       <input
         aria-label="User answer"
@@ -5251,12 +5255,12 @@ a = a + 10
         value=""
       />
       <div
-        className="exerciseCard__message  my-2"
+        className="exerciseCard__message  my-3"
       >
         
       </div>
       <div
-        className="d-flex"
+        className="d-flex flex-column flex-md-row"
       >
         <button
           className="newButton "
@@ -5265,7 +5269,7 @@ a = a + 10
           SUBMIT
         </button>
         <button
-          className="bg-transparent ms-3 border-0 fw-normal"
+          className="bg-transparent mt-2 mt-md-0 ms-md-3 border-0 fw-normal"
           onClick={[Function]}
         >
           <div
