@@ -5222,20 +5222,24 @@ exports[`Storyshots Components/ExerciseCard Basic 1`] = `
   className="card p-5 border-0 shadow"
 >
   <div
-    className="fw-bold mb-2"
-  >
-    Problem
-  </div>
-  <div
     className="d-flex flex-column flex-md-row mb-2"
   >
-    <pre
-      className="bg-light py-3 px-4 mb-0 me-md-3 exerciseCard__section"
+    <div
+      className="mb-0 me-md-3 exerciseCard__section"
     >
-      let a = 5
+      <div
+        className="fw-bold mb-2"
+      >
+        Problem
+      </div>
+      <pre
+        className="bg-light py-3 px-4"
+      >
+        let a = 5
 a = a + 10
 // what is a?
-    </pre>
+      </pre>
+    </div>
     <div
       className="ms-md-3 exerciseCard__section"
     >
@@ -5251,7 +5255,7 @@ a = a + 10
         value=""
       />
       <div
-        className="exerciseCard__message  my-2"
+        className="exerciseCard__message  my-3"
       >
         
       </div>
