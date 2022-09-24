@@ -9,3 +9,10 @@
     width: 100%;
   }
 }
+
+.exercise__container {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 75%;
+  }
+}

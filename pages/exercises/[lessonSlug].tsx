@@ -107,7 +107,7 @@ const Exercise = ({
   showSkipButton
 }: ExerciseProps) => {
   return (
-    <div className="w-75 mx-auto">
+    <div className={`mx-auto ${styles.exercise__container}`}>
       <button
         className="btn ps-0 d-flex align-items-center"
         onClick={() => setExerciseIndex(-1)}
@@ -117,7 +117,6 @@ const Exercise = ({
 
       <h1 className="mb-4 fs-2">{lessonTitle}</h1>
       <ExerciseCard
-        challengeName={exercise.challengeName}
         problem={exercise.problem}
         answer={exercise.answer}
         explanation={exercise.explanation}

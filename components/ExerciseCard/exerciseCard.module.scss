@@ -1,5 +1,13 @@
 $error-red: #a0213e;
 
+.exerciseCard__section {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+}
+
 .exerciseCard__message {
   min-height: 20px;
   font-size: 12px;
