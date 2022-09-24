@@ -75,9 +75,15 @@ const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
         <>
           <hr />
           <div className="fw-bold mb-2">Answer</div>
-          <div className="d-flex mb-2">
-            <pre className="w-50 bg-light py-3 px-4 mb-0 me-3">{answer}</pre>
-            <div className="w-50 ms-3">{explanation}</div>
+          <div className="d-flex flex-column flex-md-row mb-2">
+            <pre
+              className={`bg-light py-3 px-4 mb-2 mb-md-0 me-md-3 ${styles.exerciseCard__section}`}
+            >
+              {answer}
+            </pre>
+            <div className={`ms-md-3 ${styles.exerciseCard__section}`}>
+              {explanation}
+            </div>
           </div>
         </>
       )}
