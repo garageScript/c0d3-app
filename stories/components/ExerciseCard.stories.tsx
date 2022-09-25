@@ -17,7 +17,6 @@ const exampleExplanation = `You can reassign variables that are initialized with
 export const Basic = () => {
   return (
     <ExerciseCard
-      challengeName="Variable mutation"
       problem={exampleProblem}
       answer={exampleAnswer}
       explanation={exampleExplanation}

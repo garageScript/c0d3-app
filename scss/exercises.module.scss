@@ -1,0 +1,18 @@
+.exerciseList__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2em;
+}
+
+.exerciseList__solveExercisesButtonContainer {
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.exercise__container {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 75%;
+  }
+}
