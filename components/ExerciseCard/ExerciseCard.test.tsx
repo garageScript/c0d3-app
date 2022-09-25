@@ -13,7 +13,6 @@ a = a + 10
 
     const { getByRole, queryByText, getByLabelText } = render(
       <ExerciseCard
-        challengeName="Variable mutation"
         problem={exampleProblem}
         answer={exampleAnswer}
         explanation={exampleExplanation}
