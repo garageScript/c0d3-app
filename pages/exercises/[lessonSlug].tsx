@@ -146,7 +146,11 @@ const Exercise = ({
         ) : (
           <div />
         )}
-        {hasNext ? (
+        {messageKey === 'SUCCESS' ? (
+          <NewButton onClick={() => setExerciseIndex(i => i + 1)}>
+            NEXT QUESTION
+          </NewButton>
+        ) : hasNext ? (
           <button
             onClick={() => setExerciseIndex(i => i + 1)}
             className="btn btn-outline-primary fw-bold px-4 py-2"
