@@ -25,8 +25,12 @@ session.mockImplementation(() => {
 })
 
 describe('Graphql Api', () => {
+  const OLD_ENV = process.env
   let apolloServerInput
+
   beforeEach(() => {
+    process.env = { ...OLD_ENV, VERCEL_ENV: 'preview' }
+
     nextConnect.mockImplementation(() => {
       return {
         use: returnHandler,
@@ -42,6 +46,10 @@ describe('Graphql Api', () => {
     }
   })
 
+  afterEach(() => {
+    process.env = OLD_ENV
+  })
+
   test('Should have correct config object', async () => {
     const { config } = require('../../../pages/api/graphql.ts')
     expect(config).toEqual({
@@ -49,6 +57,13 @@ describe('Graphql Api', () => {
         bodyParser: false
       }
     })
+  })
+
+  test('Should have correct config object when deployed as a preview deployment', async () => {
+    require('../../../pages/api/graphql.ts')
+    expect(
+      apolloServerInput.playground && apolloServerInput.introspection
+    ).toBeTruthy()
   })
 
   test('Should call context', () => {
