@@ -13,6 +13,7 @@ describe('ExerciseCard component', () => {
   it('Should render an exercise card', async () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText } = render(
       <ExerciseCard
@@ -23,6 +24,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.EMPTY}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 
@@ -41,6 +43,7 @@ describe('ExerciseCard component', () => {
   it('Should render an error message', () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText, getByLabelText } = render(
       <ExerciseCard
@@ -51,6 +54,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.ERROR}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 
@@ -76,6 +80,7 @@ describe('ExerciseCard component', () => {
   it('Should render a success message', () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText } = render(
       <ExerciseCard
@@ -86,6 +91,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.SUCCESS}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 
@@ -105,6 +111,7 @@ describe('ExerciseCard component', () => {
   it('Should hide the answer', () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { queryByText, getByRole } = render(
       <ExerciseCard
@@ -115,6 +122,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.SUCCESS}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 

@@ -11,6 +11,7 @@ export type ExerciseCardProps = {
   setAnswerShown: (answerShown: boolean) => void
   message: Message
   setMessage: (message: Message) => void
+  submitUserAnswer: (userAnswer: string) => void
 }
 
 export enum Message {
@@ -26,7 +27,8 @@ const ExerciseCard = ({
   answerShown,
   setAnswerShown,
   message,
-  setMessage
+  setMessage,
+  submitUserAnswer
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
 
@@ -65,6 +67,7 @@ const ExerciseCard = ({
                 } else {
                   setMessage(Message.ERROR)
                 }
+                submitUserAnswer(studentAnswer.trim())
               }}
             >
               SUBMIT

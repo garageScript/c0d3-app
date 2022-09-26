@@ -15,11 +15,6 @@ import ExerciseCard, { Message } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
 import styles from '../../scss/exercises.module.scss'
-import getExercisesData from '../../__dummy__/getExercisesData'
-
-const mockExercises = getExercisesData.exercises
-
-const mockUserAnswers: Record<number, string> = { 1: '15', 3: '0' }
 
 const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   queryData
@@ -27,6 +22,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   const { lessons, alerts, exercises } = queryData
   const router = useRouter()
   const [exerciseIndex, setExerciseIndex] = useState(-1)
+  const [userAnswers, setUserAnswers] = useState<Record<number, string>>({})
 
   if (!router.isReady) return <LoadingSpinner />
 
@@ -49,6 +45,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   const currentExercises = exercises
     .filter(exercise => exercise?.module.lesson.slug === slug)
     .map(exercise => ({
+      id: exercise.id,
       challengeName: exercise.module.name,
       problem: exercise.description,
       answer: exercise.answer,
@@ -67,17 +64,20 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           lessonTitle={currentLesson.title}
           hasPrevious={exerciseIndex > 0}
           hasNext={exerciseIndex < currentExercises.length - 1}
+          submitUserAnswer={(userAnswer: string) =>
+            setUserAnswers({ ...userAnswers, [exercise.id]: userAnswer })
+          }
         />
       ) : (
         <ExerciseList
           tabs={tabs}
           setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}
-          exercises={mockExercises.map(exercise => ({
+          exercises={exercises.map(exercise => ({
             problem: exercise.description,
             answer: exercise.answer,
             moduleName: exercise.module.name,
-            userAnswer: mockUserAnswers[exercise.id] ?? null
+            userAnswer: userAnswers[exercise.id] ?? null
           }))}
         />
       )}
@@ -98,6 +98,7 @@ type ExerciseProps = {
   lessonTitle: string
   hasPrevious: boolean
   hasNext: boolean
+  submitUserAnswer: (userAnswer: string) => void
 }
 
 const Exercise = ({
@@ -105,7 +106,8 @@ const Exercise = ({
   setExerciseIndex,
   lessonTitle,
   hasPrevious,
-  hasNext
+  hasNext,
+  submitUserAnswer
 }: ExerciseProps) => {
   const [answerShown, setAnswerShown] = useState(false)
   const [message, setMessage] = useState(Message.EMPTY)
@@ -128,6 +130,7 @@ const Exercise = ({
         setAnswerShown={setAnswerShown}
         message={message}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
       <div className="d-flex justify-content-between mt-4">
         {hasPrevious ? (
