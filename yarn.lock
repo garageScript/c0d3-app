@@ -14448,10 +14448,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.30.0:
-  version "1.30.0"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.30.0.tgz#e44dc02795e97fe0270ec3399f1c40d1aacceb6c"
-  integrity sha512-uUcpIjuzke0QWwBpPRm8nVcSqgckGb+AzGTGQnhEn7gX9P7/BVoXmIo9zv1i5fj2jN3X95brO61ra9FJr5lrfQ==
+posthog-js@^1.31.0:
+  version "1.31.0"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.31.0.tgz#43ffb5a11948a5b10af75e749108936a07519963"
+  integrity sha512-d6vBb/ChS+t33voi37HA76etwWIukEcvJLZLZvkhJZcIrR29shwkAFUzd8lL7VdAelLlaAtmoPMwr820Yq5GUg==
   dependencies:
     "@sentry/types" "^7.2.0"
     fflate "^0.4.1"
@@ -15669,10 +15669,10 @@ sass-loader@^10.2.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.54.9:
-  version "1.54.9"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.54.9.tgz#b05f14ed572869218d1a76961de60cd647221762"
-  integrity sha512-xb1hjASzEH+0L0WI9oFjqhRi51t/gagWnxLiwUNMltA0Ab6jIDkAacgKiGYKM9Jhy109osM7woEEai6SXeJo5Q==
+sass@^1.55.0:
+  version "1.55.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.55.0.tgz#0c4d3c293cfe8f8a2e8d3b666e1cf1bff8065d1c"
+  integrity sha512-Pk+PMy7OGLs9WaxZGJMn7S96dvlyVBwwtToX895WmCpAOr5YiJYEUJfiJidMuKb613z2xNWcXCHEuOvjZbqC6A==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
