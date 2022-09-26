@@ -9,7 +9,7 @@ import userMiddleware from '../../helpers/middleware/user'
 import sessionMiddleware from '../../helpers/middleware/session'
 
 // VERCEL_ENV is a reserved env key by Vercel that specify the deployment type: "preview", "production", or "deployment"
-const isPreview = process.env.VERCEL_ENV === 'preview'
+const isPreview = process.env.VERCEL_ENV !== 'preview'
 
 const handler = nextConnect()
 const apolloServer = new ApolloServer({
