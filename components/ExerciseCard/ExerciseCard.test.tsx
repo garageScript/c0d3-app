@@ -38,6 +38,8 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledTimes(0)
     expect(setMessage).toBeCalledWith(Message.ERROR)
     expect(setMessage).toBeCalledTimes(1)
+    expect(submitUserAnswer).toBeCalledWith('')
+    expect(submitUserAnswer).toBeCalledTimes(1)
   })
 
   it('Should render an error message', () => {
@@ -75,6 +77,8 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledTimes(1)
     expect(setMessage).toBeCalledWith(Message.SUCCESS)
     expect(setMessage).toBeCalledTimes(1)
+    expect(submitUserAnswer).toBeCalledWith('15')
+    expect(submitUserAnswer).toBeCalledTimes(1)
   })
 
   it('Should render a success message', () => {
@@ -106,6 +110,7 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledWith(false)
     expect(setAnswerShown).toBeCalledTimes(1)
     expect(setMessage).toBeCalledTimes(0)
+    expect(submitUserAnswer).toBeCalledTimes(0)
   })
 
   it('Should hide the answer', () => {
@@ -137,5 +142,6 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledWith(true)
     expect(setAnswerShown).toBeCalledTimes(1)
     expect(setMessage).toBeCalledTimes(0)
+    expect(submitUserAnswer).toBeCalledTimes(0)
   })
 })
