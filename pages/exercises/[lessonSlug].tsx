@@ -13,7 +13,7 @@ import ExercisePreviewCard, {
   ExercisePreviewCardProps
 } from '../../components/ExercisePreviewCard'
 import { NewButton } from '../../components/theme/Button'
-import ExerciseCard, { ExerciseCardProps } from '../../components/ExerciseCard'
+import ExerciseCard, { Message } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
 import styles from '../../scss/exercises.module.scss'
@@ -76,8 +76,8 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           exercise={exercise}
           setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}
-          showPreviousButton={exerciseIndex > 0}
-          showSkipButton={exerciseIndex < currentExercises.length - 1}
+          hasPrevious={exerciseIndex > 0}
+          hasNext={exerciseIndex < currentExercises.length - 1}
         />
       ) : (
         <ExerciseList
@@ -91,21 +91,30 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   )
 }
 
+type ExerciseData = {
+  problem: string
+  answer: string
+  explanation: string
+}
+
 type ExerciseProps = {
-  exercise: ExerciseCardProps
+  exercise: ExerciseData
   setExerciseIndex: React.Dispatch<React.SetStateAction<number>>
   lessonTitle: string
-  showPreviousButton: boolean
-  showSkipButton: boolean
+  hasPrevious: boolean
+  hasNext: boolean
 }
 
 const Exercise = ({
   exercise,
   setExerciseIndex,
   lessonTitle,
-  showPreviousButton,
-  showSkipButton
+  hasPrevious,
+  hasNext
 }: ExerciseProps) => {
+  const [answerShown, setAnswerShown] = useState(false)
+  const [message, setMessage] = useState(Message.EMPTY)
+
   return (
     <div className={`mx-auto ${styles.exercise__container}`}>
       <button
@@ -120,9 +129,13 @@ const Exercise = ({
         problem={exercise.problem}
         answer={exercise.answer}
         explanation={exercise.explanation}
+        answerShown={answerShown}
+        setAnswerShown={setAnswerShown}
+        message={message}
+        setMessage={setMessage}
       />
       <div className="d-flex justify-content-between mt-4">
-        {showPreviousButton ? (
+        {hasPrevious ? (
           <button
             onClick={() => setExerciseIndex(i => i - 1)}
             className="btn btn-outline-primary fw-bold px-4 py-2"
@@ -133,7 +146,11 @@ const Exercise = ({
         ) : (
           <div />
         )}
-        {showSkipButton ? (
+        {message === Message.SUCCESS ? (
+          <NewButton onClick={() => setExerciseIndex(i => i + 1)}>
+            NEXT QUESTION
+          </NewButton>
+        ) : hasNext ? (
           <button
             onClick={() => setExerciseIndex(i => i + 1)}
             className="btn btn-outline-primary fw-bold px-4 py-2"
