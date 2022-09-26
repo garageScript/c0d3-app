@@ -7,6 +7,10 @@ export type ExerciseCardProps = {
   problem: string
   answer: string
   explanation: string
+  answerShown: boolean
+  setAnswerShown: (answerShown: boolean) => void
+  messageKey: MessageKey
+  setMessageKey: (messageKey: MessageKey) => void
 }
 
 enum Message {
@@ -15,12 +19,18 @@ enum Message {
   SUCCESS = '🎉 Your answer is correct!'
 }
 
-type MessageKey = keyof typeof Message
+export type MessageKey = keyof typeof Message
 
-const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
+const ExerciseCard = ({
+  problem,
+  answer,
+  explanation,
+  answerShown,
+  setAnswerShown,
+  messageKey,
+  setMessageKey
+}: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
-  const [answerShown, setAnswerShown] = useState(false)
-  const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
   const message = Message[messageKey]
 
   return (
