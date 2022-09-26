@@ -9,29 +9,17 @@ import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import NavCard from '../../components/NavCard'
-import ExercisePreviewCard, {
-  ExercisePreviewCardProps
-} from '../../components/ExercisePreviewCard'
+import ExercisePreviewCard from '../../components/ExercisePreviewCard'
 import { NewButton } from '../../components/theme/Button'
 import ExerciseCard, { Message } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
 import styles from '../../scss/exercises.module.scss'
+import getExercisesData from '../../__dummy__/getExercisesData'
 
-const exampleProblem = `const a = 5
-a = a + 10
-// what is a?`
+const mockExercises = getExercisesData.exercises
 
-const mockExercisePreviews: ExercisePreviewCardProps[] = [
-  { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem },
-  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
-  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
-  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
-  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
-  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
-  { moduleName: 'Variables', state: 'NOT ANSWERED', problem: exampleProblem },
-  { moduleName: 'Variables', state: 'ANSWERED', problem: exampleProblem }
-]
+const mockUserAnswers: Record<number, string> = { 1: '15', 3: '0' }
 
 const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   queryData
@@ -39,6 +27,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   const { lessons, alerts, exercises } = queryData
   const router = useRouter()
   const [exerciseIndex, setExerciseIndex] = useState(-1)
+
   if (!router.isReady) return <LoadingSpinner />
 
   const slug = router.query.lessonSlug as string
@@ -84,6 +73,12 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           tabs={tabs}
           setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}
+          exercises={mockExercises.map(exercise => ({
+            problem: exercise.description,
+            answer: exercise.answer,
+            moduleName: exercise.module.name,
+            userAnswer: mockUserAnswers[exercise.id] ?? null
+          }))}
         />
       )}
       {alerts && <AlertsDisplay alerts={alerts} />}
@@ -170,12 +165,19 @@ type ExerciseListProps = {
   tabs: { text: string; url: string }[]
   setExerciseIndex: React.Dispatch<React.SetStateAction<number>>
   lessonTitle: string
+  exercises: {
+    moduleName: string
+    problem: string
+    answer: string
+    userAnswer: string | null
+  }[]
 }
 
 const ExerciseList = ({
   tabs,
   setExerciseIndex,
-  lessonTitle
+  lessonTitle,
+  exercises
 }: ExerciseListProps) => {
   return (
     <>
@@ -199,12 +201,12 @@ const ExerciseList = ({
         </div>
       </div>
       <div className={styles.exerciseList__container}>
-        {mockExercisePreviews.map((exercisePreview, i) => (
+        {exercises.map((exercise, i) => (
           <ExercisePreviewCard
             key={i}
-            moduleName={exercisePreview.moduleName}
-            state={exercisePreview.state}
-            problem={exercisePreview.problem}
+            moduleName={exercise.moduleName}
+            state={exercise.userAnswer === null ? 'NOT ANSWERED' : 'ANSWERED'}
+            problem={exercise.problem}
           />
         ))}
       </div>

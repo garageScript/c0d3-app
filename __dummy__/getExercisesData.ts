@@ -57,6 +57,7 @@ const getExercisesData: GetExercisesQuery = {
   alerts: [],
   exercises: [
     {
+      id: 1,
       module: {
         name: 'Numbers',
         lesson: {
@@ -68,6 +69,7 @@ const getExercisesData: GetExercisesQuery = {
       explanation: 'You can reassign variables that were created with "let".'
     },
     {
+      id: 2,
       module: {
         name: 'Numbers',
         lesson: {
@@ -79,6 +81,7 @@ const getExercisesData: GetExercisesQuery = {
       explanation: '`a += 2` is a shorter way to write `a = a + 2`'
     },
     {
+      id: 3,
       module: {
         name: 'Numbers',
         lesson: {
