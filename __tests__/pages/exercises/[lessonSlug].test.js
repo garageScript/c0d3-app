@@ -46,7 +46,7 @@ describe('Exercises page', () => {
       }
     ]
 
-    const { getByRole, queryByRole } = render(
+    const { getByRole, queryByRole, getByLabelText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Exercises />
       </MockedProvider>
@@ -64,12 +64,20 @@ describe('Exercises page', () => {
     // Previous button is not in the document on the first exercise.
     expect(queryByRole('button', { name: 'PREVIOUS' })).not.toBeInTheDocument()
 
-    let skipButton = getByRole('button', { name: 'SKIP' })
+    const skipButton = getByRole('button', { name: 'SKIP' })
     fireEvent.click(skipButton)
     expect(queryByRole('button', { name: 'PREVIOUS' })).toBeInTheDocument()
 
-    skipButton = getByRole('button', { name: 'SKIP' })
-    fireEvent.click(skipButton)
+    // Expect "NEXT QUESTION" button to appear once you answered a question correctly.
+    const inputBox = getByLabelText('User answer')
+    fireEvent.change(inputBox, {
+      target: { value: '3' }
+    })
+    const submitButton = getByRole('button', { name: 'SUBMIT' })
+    fireEvent.click(submitButton)
+    const nextQuestionButton = getByRole('button', { name: 'NEXT QUESTION' })
+    fireEvent.click(nextQuestionButton)
+
     // Skip button should not be in the document because we're on the last exercise now.
     expect(queryByRole('button', { name: 'SKIP' })).not.toBeInTheDocument()
 

@@ -7,21 +7,28 @@ export type ExerciseCardProps = {
   problem: string
   answer: string
   explanation: string
+  answerShown: boolean
+  setAnswerShown: (answerShown: boolean) => void
+  message: Message
+  setMessage: (message: Message) => void
 }
 
-enum Message {
+export enum Message {
   EMPTY = '',
   ERROR = 'Your answer is incorrect - please try again.',
   SUCCESS = '🎉 Your answer is correct!'
 }
 
-type MessageKey = keyof typeof Message
-
-const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
+const ExerciseCard = ({
+  problem,
+  answer,
+  explanation,
+  answerShown,
+  setAnswerShown,
+  message,
+  setMessage
+}: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
-  const [answerShown, setAnswerShown] = useState(false)
-  const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
-  const message = Message[messageKey]
 
   return (
     <section className="card p-5 border-0 shadow">
@@ -35,14 +42,16 @@ const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
           <input
             aria-label="User answer"
             className={`form-control mb-2 ${
-              messageKey === 'ERROR' ? styles.exerciseCard__input__error : ''
+              message === Message.ERROR ? styles.exerciseCard__input__error : ''
             }`}
             value={studentAnswer}
             onChange={e => setStudentAnswer(e.target.value)}
           />
           <div
             className={`${styles.exerciseCard__message} ${
-              messageKey === 'ERROR' ? styles.exerciseCard__message__error : ''
+              message === Message.ERROR
+                ? styles.exerciseCard__message__error
+                : ''
             } my-3`}
           >
             {message}
@@ -51,10 +60,10 @@ const ExerciseCard = ({ problem, answer, explanation }: ExerciseCardProps) => {
             <NewButton
               onClick={() => {
                 if (studentAnswer.trim() === answer.trim()) {
-                  setMessageKey('SUCCESS')
+                  setMessage(Message.SUCCESS)
                   setAnswerShown(true)
                 } else {
-                  setMessageKey('ERROR')
+                  setMessage(Message.ERROR)
                 }
               }}
             >
