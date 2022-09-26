@@ -76,8 +76,8 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           exercise={exercise}
           setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}
-          showPreviousButton={exerciseIndex > 0}
-          showSkipButton={exerciseIndex < currentExercises.length - 1}
+          hasPrevious={exerciseIndex > 0}
+          hasNext={exerciseIndex < currentExercises.length - 1}
         />
       ) : (
         <ExerciseList
@@ -95,16 +95,16 @@ type ExerciseProps = {
   exercise: ExerciseCardProps
   setExerciseIndex: React.Dispatch<React.SetStateAction<number>>
   lessonTitle: string
-  showPreviousButton: boolean
-  showSkipButton: boolean
+  hasPrevious: boolean
+  hasNext: boolean
 }
 
 const Exercise = ({
   exercise,
   setExerciseIndex,
   lessonTitle,
-  showPreviousButton,
-  showSkipButton
+  hasPrevious,
+  hasNext
 }: ExerciseProps) => {
   return (
     <div className={`mx-auto ${styles.exercise__container}`}>
@@ -122,7 +122,7 @@ const Exercise = ({
         explanation={exercise.explanation}
       />
       <div className="d-flex justify-content-between mt-4">
-        {showPreviousButton ? (
+        {hasPrevious ? (
           <button
             onClick={() => setExerciseIndex(i => i - 1)}
             className="btn btn-outline-primary fw-bold px-4 py-2"
@@ -133,7 +133,7 @@ const Exercise = ({
         ) : (
           <div />
         )}
-        {showSkipButton ? (
+        {hasNext ? (
           <button
             onClick={() => setExerciseIndex(i => i + 1)}
             className="btn btn-outline-primary fw-bold px-4 py-2"
