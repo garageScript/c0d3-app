@@ -9,17 +9,15 @@ export type ExerciseCardProps = {
   explanation: string
   answerShown: boolean
   setAnswerShown: (answerShown: boolean) => void
-  messageKey: MessageKey
-  setMessageKey: (messageKey: MessageKey) => void
+  message: Message
+  setMessage: (message: Message) => void
 }
 
-enum Message {
+export enum Message {
   EMPTY = '',
   ERROR = 'Your answer is incorrect - please try again.',
   SUCCESS = '🎉 Your answer is correct!'
 }
-
-export type MessageKey = keyof typeof Message
 
 const ExerciseCard = ({
   problem,
@@ -27,11 +25,10 @@ const ExerciseCard = ({
   explanation,
   answerShown,
   setAnswerShown,
-  messageKey,
-  setMessageKey
+  message,
+  setMessage
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
-  const message = Message[messageKey]
 
   return (
     <section className="card p-5 border-0 shadow">
@@ -45,14 +42,16 @@ const ExerciseCard = ({
           <input
             aria-label="User answer"
             className={`form-control mb-2 ${
-              messageKey === 'ERROR' ? styles.exerciseCard__input__error : ''
+              message === Message.ERROR ? styles.exerciseCard__input__error : ''
             }`}
             value={studentAnswer}
             onChange={e => setStudentAnswer(e.target.value)}
           />
           <div
             className={`${styles.exerciseCard__message} ${
-              messageKey === 'ERROR' ? styles.exerciseCard__message__error : ''
+              message === Message.ERROR
+                ? styles.exerciseCard__message__error
+                : ''
             } my-3`}
           >
             {message}
@@ -61,10 +60,10 @@ const ExerciseCard = ({
             <NewButton
               onClick={() => {
                 if (studentAnswer.trim() === answer.trim()) {
-                  setMessageKey('SUCCESS')
+                  setMessage(Message.SUCCESS)
                   setAnswerShown(true)
                 } else {
-                  setMessageKey('ERROR')
+                  setMessage(Message.ERROR)
                 }
               }}
             >

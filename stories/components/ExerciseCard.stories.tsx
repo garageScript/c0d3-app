@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ExerciseCard, { MessageKey } from '../../components/ExerciseCard'
+import ExerciseCard, { Message } from '../../components/ExerciseCard'
 
 export default {
   component: ExerciseCard,
@@ -16,7 +16,7 @@ const exampleExplanation = `You can reassign variables that are initialized with
 
 export const Basic = () => {
   const [answerShown, setAnswerShown] = useState(false)
-  const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
+  const [message, setMessage] = useState(Message.EMPTY)
 
   return (
     <ExerciseCard
@@ -25,8 +25,8 @@ export const Basic = () => {
       explanation={exampleExplanation}
       answerShown={answerShown}
       setAnswerShown={setAnswerShown}
-      messageKey={messageKey}
-      setMessageKey={setMessageKey}
+      message={message}
+      setMessage={setMessage}
     />
   )
 }

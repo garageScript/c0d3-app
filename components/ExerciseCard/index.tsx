@@ -1,5 +1,1 @@
-export {
-  default,
-  type ExerciseCardProps,
-  type MessageKey
-} from './ExerciseCard'
+export { default, type ExerciseCardProps, Message } from './ExerciseCard'

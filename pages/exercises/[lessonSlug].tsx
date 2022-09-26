@@ -13,7 +13,7 @@ import ExercisePreviewCard, {
   ExercisePreviewCardProps
 } from '../../components/ExercisePreviewCard'
 import { NewButton } from '../../components/theme/Button'
-import ExerciseCard, { MessageKey } from '../../components/ExerciseCard'
+import ExerciseCard, { Message } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
 import styles from '../../scss/exercises.module.scss'
@@ -113,7 +113,7 @@ const Exercise = ({
   hasNext
 }: ExerciseProps) => {
   const [answerShown, setAnswerShown] = useState(false)
-  const [messageKey, setMessageKey] = useState<MessageKey>('EMPTY')
+  const [message, setMessage] = useState(Message.EMPTY)
 
   return (
     <div className={`mx-auto ${styles.exercise__container}`}>
@@ -131,8 +131,8 @@ const Exercise = ({
         explanation={exercise.explanation}
         answerShown={answerShown}
         setAnswerShown={setAnswerShown}
-        messageKey={messageKey}
-        setMessageKey={setMessageKey}
+        message={message}
+        setMessage={setMessage}
       />
       <div className="d-flex justify-content-between mt-4">
         {hasPrevious ? (
@@ -146,7 +146,7 @@ const Exercise = ({
         ) : (
           <div />
         )}
-        {messageKey === 'SUCCESS' ? (
+        {message === Message.SUCCESS ? (
           <NewButton onClick={() => setExerciseIndex(i => i + 1)}>
             NEXT QUESTION
           </NewButton>
