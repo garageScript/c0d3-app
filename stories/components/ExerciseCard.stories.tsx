@@ -27,6 +27,9 @@ export const Basic = () => {
       setAnswerShown={setAnswerShown}
       message={message}
       setMessage={setMessage}
+      submitUserAnswer={userAnswer => {
+        console.log(`User answer submitted: ${userAnswer}`)
+      }}
     />
   )
 }

@@ -13,6 +13,7 @@ describe('ExerciseCard component', () => {
   it('Should render an exercise card', async () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText } = render(
       <ExerciseCard
@@ -23,6 +24,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.EMPTY}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 
@@ -36,11 +38,14 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledTimes(0)
     expect(setMessage).toBeCalledWith(Message.ERROR)
     expect(setMessage).toBeCalledTimes(1)
+    expect(submitUserAnswer).toBeCalledWith('')
+    expect(submitUserAnswer).toBeCalledTimes(1)
   })
 
   it('Should render an error message', () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText, getByLabelText } = render(
       <ExerciseCard
@@ -51,6 +56,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.ERROR}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 
@@ -71,11 +77,14 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledTimes(1)
     expect(setMessage).toBeCalledWith(Message.SUCCESS)
     expect(setMessage).toBeCalledTimes(1)
+    expect(submitUserAnswer).toBeCalledWith('15')
+    expect(submitUserAnswer).toBeCalledTimes(1)
   })
 
   it('Should render a success message', () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText } = render(
       <ExerciseCard
@@ -86,6 +95,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.SUCCESS}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 
@@ -100,11 +110,13 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledWith(false)
     expect(setAnswerShown).toBeCalledTimes(1)
     expect(setMessage).toBeCalledTimes(0)
+    expect(submitUserAnswer).toBeCalledTimes(0)
   })
 
   it('Should hide the answer', () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
 
     const { queryByText, getByRole } = render(
       <ExerciseCard
@@ -115,6 +127,7 @@ describe('ExerciseCard component', () => {
         setAnswerShown={setAnswerShown}
         message={Message.SUCCESS}
         setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
       />
     )
 
@@ -129,5 +142,6 @@ describe('ExerciseCard component', () => {
     expect(setAnswerShown).toBeCalledWith(true)
     expect(setAnswerShown).toBeCalledTimes(1)
     expect(setMessage).toBeCalledTimes(0)
+    expect(submitUserAnswer).toBeCalledTimes(0)
   })
 })

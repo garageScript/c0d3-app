@@ -15,6 +15,7 @@ const GET_EXERCISES = gql`
       urlCaption
     }
     exercises {
+      id
       module {
         name
         lesson {

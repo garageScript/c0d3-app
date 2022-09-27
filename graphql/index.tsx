@@ -830,6 +830,7 @@ export type GetExercisesQuery = {
   }>
   exercises: Array<{
     __typename?: 'Exercise'
+    id: number
     description: string
     answer: string
     explanation?: string | null
@@ -3531,6 +3532,7 @@ export const GetExercisesDocument = gql`
       urlCaption
     }
     exercises {
+      id
       module {
         name
         lesson {
