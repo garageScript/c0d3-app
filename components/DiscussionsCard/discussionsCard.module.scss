@@ -61,16 +61,7 @@
   padding-right: 20px;
   padding-bottom: 12px;
   text-align: left;
-}
-
-.expand_button {
-  font-size: 17px;
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    font-weight: 1000;
-  }
+  font-size: 14px;
 }
 
 .card_buttons {
@@ -110,14 +101,14 @@
   &:hover,
   &:focus {
     color: colors.$secondary;
-    background: red;
+    background: #cc0000;
     cursor: pointer;
   }
 }
 
 .reply_button {
   font-weight: bold;
-  padding: 5px 3px 5px 0px;
+  padding: 5px 6px 5px 6px;
   font-size: 14px;
 
   &:hover,
@@ -127,40 +118,4 @@
     border-radius: 10px;
     cursor: pointer;
   }
-}
-
-.likes_container {
-  display: flex;
-  flex-direction: row;
-  gap: 11.3px;
-}
-
-.likes_button {
-  font-weight: bold;
-  font-family: 'PT Mono';
-  font-size: 17.7778px;
-  width: 63.7px;
-  height: 25px;
-  background: colors.$secondary;
-  border-radius: 10px;
-  color: colors.$primary;
-  border: 1px solid colors.$primary;
-  display: flex;
-  flex-direction: row;
-
-  &:hover,
-  &:focus {
-    color: colors.$secondary;
-    background: colors.$primary;
-  }
-}
-
-.thumbs_up_down {
-  margin-left: 10.5px;
-  margin-right: 5px;
-  margin-top: 4px;
-}
-
-.number_shown {
-  min-width: 25px;
 }

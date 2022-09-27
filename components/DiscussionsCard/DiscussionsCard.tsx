@@ -1,45 +1,35 @@
 import React from 'react'
 import styles from './discussionsCard.module.scss'
-import {
-  ReplyIcon,
-  ThumbsupIcon,
-  ThumbsdownIcon,
-  TrashIcon,
-  PencilIcon
-} from '@primer/octicons-react'
+import { ReplyIcon, TrashIcon, PencilIcon } from '@primer/octicons-react'
 
 export type DiscussionsCardProps = {
-  discussionType: 'main' | string
+  isMain: boolean
   username: string
   userPic: string
   timeStamp: string
   content: string
   likes: number
   dislikes: number
-  expandClick: Function
-  likeClick: Function
-  dislikeClick: Function
+  replyClick: () => void
+  editClick: () => void
+  deleteClick: () => void
 }
 
 const DiscussionsCard: React.FC<DiscussionsCardProps> = ({
-  discussionType,
+  isMain,
   username,
   userPic,
   timeStamp,
   content,
-  likes,
-  dislikes,
-  expandClick,
-  likeClick,
-  dislikeClick
+  replyClick,
+  editClick,
+  deleteClick
 }) => {
-  const mainType = discussionType === 'main'
-
   return (
-    <div className={mainType ? styles.card_body_main : styles.card_body_sub}>
+    <div className={isMain ? styles.card_body_main : styles.card_body_sub}>
       <div
         className={
-          mainType ? styles.card_user_info_main : styles.card_user_info_sub
+          isMain ? styles.card_user_info_main : styles.card_user_info_sub
         }
       >
         <div>
@@ -49,29 +39,20 @@ const DiscussionsCard: React.FC<DiscussionsCardProps> = ({
           <span> - </span>
           <span>{timeStamp}</span>
         </div>
-        <div className={styles.expand_button} onClick={expandClick()}>
-          ...
-        </div>
       </div>
       <div className={styles.card_content}>{content}</div>
       <div className={styles.card_buttons}>
         <div className={styles.buttons_left}>
-          <div className={styles.reply_button}>
+          <div className={styles.reply_button} onClick={replyClick}>
             <ReplyIcon /> Reply
           </div>
           <div className={styles.edit_delete}>
-            <PencilIcon className={styles.pencil} size={28} />
-            <TrashIcon className={styles.trash} size={28} />
-          </div>
-        </div>
-        <div className={styles.likes_container}>
-          <div className={styles.likes_button} onClick={likeClick()}>
-            <ThumbsupIcon className={styles.thumbs_up_down} />{' '}
-            <span className={styles.number_shown}>{likes}</span>
-          </div>
-          <div className={styles.likes_button} onClick={dislikeClick()}>
-            <ThumbsdownIcon className={styles.thumbs_up_down} />{' '}
-            <span className={styles.number_shown}>{dislikes}</span>
+            <div onClick={editClick}>
+              <PencilIcon size={28} className={styles.pencil} />
+            </div>
+            <div onClick={deleteClick}>
+              <TrashIcon size={28} className={styles.trash} />
+            </div>
           </div>
         </div>
       </div>

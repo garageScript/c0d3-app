@@ -7,7 +7,7 @@ export default {
 }
 
 const discussionMainProps = {
-  discussionType: 'main',
+  isMain: true,
   username: 'user01',
   userPic:
     'https://ssb.wiki.gallery/images/thumb/6/61/Ryu_SSBU.png/1200px-Ryu_SSBU.png',
@@ -16,13 +16,13 @@ const discussionMainProps = {
     'dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit: dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:',
   likes: 9,
   dislikes: 2,
-  expandClick: () => {},
-  likeClick: () => {},
-  dislikeClick: () => {}
+  replyClick: () => {},
+  editClick: () => {},
+  deleteClick: () => {}
 }
 
 const discussionSubProps = {
-  discussionType: 'sub',
+  isMain: false,
   username: 'user01',
   userPic:
     'https://ssb.wiki.gallery/images/thumb/6/61/Ryu_SSBU.png/1200px-Ryu_SSBU.png',
@@ -31,9 +31,9 @@ const discussionSubProps = {
     'dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit: dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:',
   likes: 20,
   dislikes: 3,
-  expandClick: () => {},
-  likeClick: () => {},
-  dislikeClick: () => {}
+  replyClick: () => {},
+  editClick: () => {},
+  deleteClick: () => {}
 }
 
 export const DiscussionsCardMain: React.FC = () => (
