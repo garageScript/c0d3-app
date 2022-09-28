@@ -86,7 +86,7 @@
 
 .pencil {
   padding: 5px 0px 5px 0px;
-  border-radius: 10px;
+  border-radius: 5px;
   &:hover,
   &:focus {
     color: colors.$secondary;
@@ -97,7 +97,7 @@
 
 .trash {
   padding: 5px 0px 5px 0px;
-  border-radius: 10px;
+  border-radius: 5px;
   &:hover,
   &:focus {
     color: colors.$secondary;
@@ -115,7 +115,7 @@
   &:focus {
     color: colors.$secondary;
     background: colors.$primary;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
   }
 }
