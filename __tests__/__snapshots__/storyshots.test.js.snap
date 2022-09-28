@@ -4859,6 +4859,262 @@ exports[`Storyshots Components/DiffView Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/DiscussionsCard Discussions Card Main 1`] = `
+<div
+  className="card_body_main"
+>
+  <div
+    className="card_user_info_main"
+  >
+    <div>
+      <img
+        className="user_pic"
+        src="https://ssb.wiki.gallery/images/thumb/6/61/Ryu_SSBU.png/1200px-Ryu_SSBU.png"
+      />
+      <span
+        className="username"
+      >
+        user01
+      </span>
+      <span>
+         
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        September 22, 2022 @ 3:00 UTC
+      </span>
+    </div>
+  </div>
+  <div
+    className="card_content"
+  >
+    dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit: dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:
+  </div>
+  <div
+    className="card_buttons"
+  >
+    <div
+      className="buttons_left"
+    >
+      <div
+        className="reply_button"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="octicon octicon-comment"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2.75 2.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 01.75.75v2.19l2.72-2.72a.75.75 0 01.53-.22h4.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25H2.75zM1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0113.25 12H9.06l-2.573 2.573A1.457 1.457 0 014 13.543V12H2.75A1.75 1.75 0 011 10.25v-7.5z\\"></path>",
+            }
+          }
+          fill="currentColor"
+          height={16}
+          role="img"
+          style={
+            Object {
+              "display": "inline-block",
+              "overflow": "visible",
+              "userSelect": "none",
+              "verticalAlign": "text-bottom",
+            }
+          }
+          viewBox="0 0 16 16"
+          width={16}
+        />
+         Reply
+      </div>
+      <div
+        className="edit_delete"
+      >
+        <div
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M17.263 2.177a1.75 1.75 0 012.474 0l2.586 2.586a1.75 1.75 0 010 2.474L19.53 10.03l-.012.013L8.69 20.378a1.75 1.75 0 01-.699.409l-5.523 1.68a.75.75 0 01-.935-.935l1.673-5.5a1.75 1.75 0 01.466-.756L14.476 4.963l2.787-2.786zm-2.275 4.371l-10.28 9.813a.25.25 0 00-.067.108l-1.264 4.154 4.177-1.271a.25.25 0 00.1-.059l10.273-9.806-2.94-2.939zM19 8.44l2.263-2.262a.25.25 0 000-.354l-2.586-2.586a.25.25 0 00-.354 0L16.061 5.5 19 8.44z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={28}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 24 24"
+            width={28}
+          />
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="trash"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M16 1.75V3h5.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H8V1.75C8 .784 8.784 0 9.75 0h4.5C15.216 0 16 .784 16 1.75zm-6.5 0a.25.25 0 01.25-.25h4.5a.25.25 0 01.25.25V3h-5V1.75z\\"></path><path d=\\"M4.997 6.178a.75.75 0 10-1.493.144L4.916 20.92a1.75 1.75 0 001.742 1.58h10.684a1.75 1.75 0 001.742-1.581l1.413-14.597a.75.75 0 00-1.494-.144l-1.412 14.596a.25.25 0 01-.249.226H6.658a.25.25 0 01-.249-.226L4.997 6.178z\\"></path><path d=\\"M9.206 7.501a.75.75 0 01.793.705l.5 8.5A.75.75 0 119 16.794l-.5-8.5a.75.75 0 01.705-.793zm6.293.793A.75.75 0 1014 8.206l-.5 8.5a.75.75 0 001.498.088l.5-8.5z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={28}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 24 24"
+            width={28}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/DiscussionsCard Discussions Card Sub 1`] = `
+<div
+  className="card_body_sub"
+>
+  <div
+    className="card_user_info_sub"
+  >
+    <div>
+      <img
+        className="user_pic"
+        src="https://ssb.wiki.gallery/images/thumb/6/61/Ryu_SSBU.png/1200px-Ryu_SSBU.png"
+      />
+      <span
+        className="username"
+      >
+        user01
+      </span>
+      <span>
+         
+      </span>
+      <span>
+         - 
+      </span>
+      <span>
+        September 22, 2022 @ 3:00 UTC
+      </span>
+    </div>
+  </div>
+  <div
+    className="card_content"
+  >
+    dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit: dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:
+  </div>
+  <div
+    className="card_buttons"
+  >
+    <div
+      className="buttons_left"
+    >
+      <div
+        className="reply_button"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="octicon octicon-comment"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<path fill-rule=\\"evenodd\\" d=\\"M2.75 2.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 01.75.75v2.19l2.72-2.72a.75.75 0 01.53-.22h4.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25H2.75zM1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0113.25 12H9.06l-2.573 2.573A1.457 1.457 0 014 13.543V12H2.75A1.75 1.75 0 011 10.25v-7.5z\\"></path>",
+            }
+          }
+          fill="currentColor"
+          height={16}
+          role="img"
+          style={
+            Object {
+              "display": "inline-block",
+              "overflow": "visible",
+              "userSelect": "none",
+              "verticalAlign": "text-bottom",
+            }
+          }
+          viewBox="0 0 16 16"
+          width={16}
+        />
+         Reply
+      </div>
+      <div
+        className="edit_delete"
+      >
+        <div
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="pencil"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M17.263 2.177a1.75 1.75 0 012.474 0l2.586 2.586a1.75 1.75 0 010 2.474L19.53 10.03l-.012.013L8.69 20.378a1.75 1.75 0 01-.699.409l-5.523 1.68a.75.75 0 01-.935-.935l1.673-5.5a1.75 1.75 0 01.466-.756L14.476 4.963l2.787-2.786zm-2.275 4.371l-10.28 9.813a.25.25 0 00-.067.108l-1.264 4.154 4.177-1.271a.25.25 0 00.1-.059l10.273-9.806-2.94-2.939zM19 8.44l2.263-2.262a.25.25 0 000-.354l-2.586-2.586a.25.25 0 00-.354 0L16.061 5.5 19 8.44z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={28}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 24 24"
+            width={28}
+          />
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="trash"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M16 1.75V3h5.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H8V1.75C8 .784 8.784 0 9.75 0h4.5C15.216 0 16 .784 16 1.75zm-6.5 0a.25.25 0 01.25-.25h4.5a.25.25 0 01.25.25V3h-5V1.75z\\"></path><path d=\\"M4.997 6.178a.75.75 0 10-1.493.144L4.916 20.92a1.75 1.75 0 001.742 1.58h10.684a1.75 1.75 0 001.742-1.581l1.413-14.597a.75.75 0 00-1.494-.144l-1.412 14.596a.25.25 0 01-.249.226H6.658a.25.25 0 01-.249-.226L4.997 6.178z\\"></path><path d=\\"M9.206 7.501a.75.75 0 01.793.705l.5 8.5A.75.75 0 119 16.794l-.5-8.5a.75.75 0 01.705-.793zm6.293.793A.75.75 0 1014 8.206l-.5 8.5a.75.75 0 001.498.088l.5-8.5z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={28}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 24 24"
+            width={28}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
 <div
   className="dropdown"
