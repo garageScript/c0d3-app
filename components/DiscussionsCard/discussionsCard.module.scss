@@ -1,0 +1,121 @@
+@use '../../scss/colors.module';
+
+.card_body_main {
+  background: #edebff;
+  box-shadow: 13px 14px 25px rgba(0.08, 0.05, 0.09, 0.07);
+  border-radius: 10px;
+  font-family: Inter;
+  font-size: 12px;
+  padding-bottom: 15px;
+}
+
+.card_body_sub {
+  background: #ffffff;
+  box-shadow: 13px 14px 25px rgba(0.08, 0.05, 0.09, 0.07);
+  border-radius: 10px;
+  font-family: Inter;
+  font-size: 12px;
+  padding-bottom: 15px;
+}
+
+.card_user_info_main {
+  background: colors.$primary;
+  color: white;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 13px;
+  padding-left: 9px;
+  padding-top: 4px;
+  height: 33px;
+}
+
+.card_user_info_sub {
+  background: #e0e0eb;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 13px;
+  padding-left: 9px;
+  padding-top: 4px;
+  height: 33px;
+}
+
+.user_pic {
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: 700;
+  padding-left: 9px;
+}
+
+.card_content {
+  margin-top: 11px;
+  line-height: 14.52px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.card_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.buttons_left {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.edit_delete {
+  display: flex;
+  gap: 5px;
+  margin-top: 1px;
+}
+
+.pencil {
+  padding: 5px 0px 5px 0px;
+  border-radius: 5px;
+  &:hover,
+  &:focus {
+    color: colors.$secondary;
+    background: colors.$primary;
+    cursor: pointer;
+  }
+}
+
+.trash {
+  padding: 5px 0px 5px 0px;
+  border-radius: 5px;
+  &:hover,
+  &:focus {
+    color: colors.$secondary;
+    background: #cc0000;
+    cursor: pointer;
+  }
+}
+
+.reply_button {
+  font-weight: bold;
+  padding: 5px 6px 5px 6px;
+  font-size: 14px;
+
+  &:hover,
+  &:focus {
+    color: colors.$secondary;
+    background: colors.$primary;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
