@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './discussionsCard.module.scss'
-import { ReplyIcon, TrashIcon, PencilIcon } from '@primer/octicons-react'
+import { CommentIcon, TrashIcon, PencilIcon } from '@primer/octicons-react'
 
 export type DiscussionsCardProps = {
   isMain: boolean
@@ -44,7 +44,7 @@ const DiscussionsCard: React.FC<DiscussionsCardProps> = ({
       <div className={styles.card_buttons}>
         <div className={styles.buttons_left}>
           <div className={styles.reply_button} onClick={replyClick}>
-            <ReplyIcon /> Reply
+            <CommentIcon /> Reply
           </div>
           <div className={styles.edit_delete}>
             <div onClick={editClick}>
