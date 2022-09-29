@@ -1,7 +1,7 @@
 jest.mock('@sentry/nextjs')
 
 import React from 'react'
-import MentorPage from '../../../../../pages/curriculum/[lessonSlug]/mentor/index'
+import MentorPage from '../../../../../pages/curriculum/[lessonSlug]/mentor/addExercise/index.tsx'
 import userEvent from '@testing-library/user-event'
 import { render, screen, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
