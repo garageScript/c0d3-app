@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import withQueryLoader, {
   QueryDataProps
@@ -19,15 +19,25 @@ import styles from '../../scss/exercises.module.scss'
 const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   queryData
 }) => {
-  const { lessons, alerts, exercises } = queryData
+  const { lessons, alerts, exercises, exerciseSubmissions } = queryData
   const router = useRouter()
   const [exerciseIndex, setExerciseIndex] = useState(-1)
   const [userAnswers, setUserAnswers] = useState<Record<number, string>>({})
+  useEffect(() => {
+    setUserAnswers(
+      Object.fromEntries(
+        exerciseSubmissions.map(submission => [
+          submission.exercise.id,
+          submission.userAnswer
+        ])
+      )
+    )
+  }, [exerciseSubmissions])
 
   if (!router.isReady) return <LoadingSpinner />
 
   const slug = router.query.lessonSlug as string
-  if (!lessons || !alerts || !exercises)
+  if (!lessons || !alerts || !exercises || !exerciseSubmissions)
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
 
   const currentLesson = lessons.find(lesson => lesson.slug === slug)

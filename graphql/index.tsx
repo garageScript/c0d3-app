@@ -855,6 +855,11 @@ export type GetExercisesQuery = {
       lesson: { __typename?: 'Lesson'; slug: string }
     }
   }>
+  exerciseSubmissions: Array<{
+    __typename?: 'ExerciseSubmission'
+    userAnswer: string
+    exercise: { __typename?: 'Exercise'; id: number }
+  }>
 }
 
 export type GetFlaggedExercisesQueryVariables = Exact<{ [key: string]: never }>
@@ -3585,6 +3590,12 @@ export const GetExercisesDocument = gql`
       description
       answer
       explanation
+    }
+    exerciseSubmissions {
+      exercise {
+        id
+      }
+      userAnswer
     }
   }
 `
