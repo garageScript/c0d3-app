@@ -13,6 +13,7 @@ export default gql`
     submissions(lessonId: Int!): [Submission!]
     alerts: [Alert!]!
     getPreviousSubmissions(challengeId: Int!, userId: Int!): [Submission!]
+    exerciseSubmissions: [ExerciseSubmission!]!
   }
 
   type TokenResponse {
@@ -265,5 +266,12 @@ export default gql`
     flagReason: String
     flaggedBy: User
     flaggedById: Int
+  }
+
+  type ExerciseSubmission {
+    id: Int!
+    user: User!
+    exercise: Exercise!
+    userAnswer: String!
   }
 `

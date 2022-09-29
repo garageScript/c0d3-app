@@ -87,6 +87,14 @@ export type Exercise = {
   testStr?: Maybe<Scalars['String']>
 }
 
+export type ExerciseSubmission = {
+  __typename?: 'ExerciseSubmission'
+  exercise: Exercise
+  id: Scalars['Int']
+  user: User
+  userAnswer: Scalars['String']
+}
+
 export type Lesson = {
   __typename?: 'Lesson'
   challenges: Array<Challenge>
@@ -315,6 +323,7 @@ export type Query = {
   __typename?: 'Query'
   alerts: Array<Alert>
   allUsers?: Maybe<Array<Maybe<User>>>
+  exerciseSubmissions: Array<ExerciseSubmission>
   exercises: Array<Exercise>
   getLessonMentors?: Maybe<Array<Maybe<User>>>
   getPreviousSubmissions?: Maybe<Array<Submission>>
@@ -1399,6 +1408,7 @@ export type ResolversTypes = ResolversObject<{
   Challenge: ResolverTypeWrapper<Challenge>
   Comment: ResolverTypeWrapper<Comment>
   Exercise: ResolverTypeWrapper<Exercise>
+  ExerciseSubmission: ResolverTypeWrapper<ExerciseSubmission>
   Int: ResolverTypeWrapper<Scalars['Int']>
   Lesson: ResolverTypeWrapper<Lesson>
   Module: ResolverTypeWrapper<Module>
@@ -1423,6 +1433,7 @@ export type ResolversParentTypes = ResolversObject<{
   Challenge: Challenge
   Comment: Comment
   Exercise: Exercise
+  ExerciseSubmission: ExerciseSubmission
   Int: Scalars['Int']
   Lesson: Lesson
   Module: Module
@@ -1520,6 +1531,17 @@ export type ExerciseResolvers<
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
   testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
+}>
+
+export type ExerciseSubmissionResolvers<
+  ContextType = Context,
+  ParentType extends ResolversParentTypes['ExerciseSubmission'] = ResolversParentTypes['ExerciseSubmission']
+> = ResolversObject<{
+  exercise?: Resolver<ResolversTypes['Exercise'], ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  userAnswer?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
@@ -1780,6 +1802,11 @@ export type QueryResolvers<
     ParentType,
     ContextType
   >
+  exerciseSubmissions?: Resolver<
+    Array<ResolversTypes['ExerciseSubmission']>,
+    ParentType,
+    ContextType
+  >
   exercises?: Resolver<
     Array<ResolversTypes['Exercise']>,
     ParentType,
@@ -1952,6 +1979,7 @@ export type Resolvers<ContextType = Context> = ResolversObject<{
   Challenge?: ChallengeResolvers<ContextType>
   Comment?: CommentResolvers<ContextType>
   Exercise?: ExerciseResolvers<ContextType>
+  ExerciseSubmission?: ExerciseSubmissionResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
   Module?: ModuleResolvers<ContextType>
   Mutation?: MutationResolvers<ContextType>
@@ -5565,6 +5593,19 @@ export type ExerciseFieldPolicy = {
   module?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
 }
+export type ExerciseSubmissionKeySpecifier = (
+  | 'exercise'
+  | 'id'
+  | 'user'
+  | 'userAnswer'
+  | ExerciseSubmissionKeySpecifier
+)[]
+export type ExerciseSubmissionFieldPolicy = {
+  exercise?: FieldPolicy<any> | FieldReadFunction<any>
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  user?: FieldPolicy<any> | FieldReadFunction<any>
+  userAnswer?: FieldPolicy<any> | FieldReadFunction<any>
+}
 export type LessonKeySpecifier = (
   | 'challenges'
   | 'chatUrl'
@@ -5677,6 +5718,7 @@ export type MutationFieldPolicy = {
 export type QueryKeySpecifier = (
   | 'alerts'
   | 'allUsers'
+  | 'exerciseSubmissions'
   | 'exercises'
   | 'getLessonMentors'
   | 'getPreviousSubmissions'
@@ -5691,6 +5733,7 @@ export type QueryKeySpecifier = (
 export type QueryFieldPolicy = {
   alerts?: FieldPolicy<any> | FieldReadFunction<any>
   allUsers?: FieldPolicy<any> | FieldReadFunction<any>
+  exerciseSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
   exercises?: FieldPolicy<any> | FieldReadFunction<any>
   getLessonMentors?: FieldPolicy<any> | FieldReadFunction<any>
   getPreviousSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
@@ -5861,6 +5904,13 @@ export type StrictTypedTypePolicies = {
       | ExerciseKeySpecifier
       | (() => undefined | ExerciseKeySpecifier)
     fields?: ExerciseFieldPolicy
+  }
+  ExerciseSubmission?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | ExerciseSubmissionKeySpecifier
+      | (() => undefined | ExerciseSubmissionKeySpecifier)
+    fields?: ExerciseSubmissionFieldPolicy
   }
   Lesson?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
     keyFields?:

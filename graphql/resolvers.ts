@@ -39,6 +39,8 @@ import {
   flagExercise,
   removeExerciseFlag
 } from './resolvers/exerciseCrud'
+import { exerciseSubmissions } from './resolvers/exerciseSubmissionCrud'
+
 export default {
   Query: {
     submissions,
@@ -48,6 +50,7 @@ export default {
     userInfo,
     lessons,
     exercises,
+    exerciseSubmissions,
     modules,
     session,
     alerts,
