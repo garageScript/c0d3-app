@@ -128,6 +128,7 @@ export type Mutation = {
   addAlert?: Maybe<Array<Maybe<Alert>>>
   addComment?: Maybe<Comment>
   addExercise: Exercise
+  addExerciseSubmission: ExerciseSubmission
   addModule: Module
   changeAdminRights?: Maybe<SuccessResponse>
   changePw?: Maybe<AuthResponse>
@@ -180,6 +181,11 @@ export type MutationAddExerciseArgs = {
   explanation?: InputMaybe<Scalars['String']>
   moduleId: Scalars['Int']
   testStr?: InputMaybe<Scalars['String']>
+}
+
+export type MutationAddExerciseSubmissionArgs = {
+  exerciseId: Scalars['Int']
+  userAnswer: Scalars['String']
 }
 
 export type MutationAddModuleArgs = {
@@ -1619,6 +1625,15 @@ export type MutationResolvers<
     RequireFields<
       MutationAddExerciseArgs,
       'answer' | 'description' | 'moduleId'
+    >
+  >
+  addExerciseSubmission?: Resolver<
+    ResolversTypes['ExerciseSubmission'],
+    ParentType,
+    ContextType,
+    RequireFields<
+      MutationAddExerciseSubmissionArgs,
+      'exerciseId' | 'userAnswer'
     >
   >
   addModule?: Resolver<
@@ -5659,6 +5674,7 @@ export type MutationKeySpecifier = (
   | 'addAlert'
   | 'addComment'
   | 'addExercise'
+  | 'addExerciseSubmission'
   | 'addModule'
   | 'changeAdminRights'
   | 'changePw'
@@ -5690,6 +5706,7 @@ export type MutationFieldPolicy = {
   addAlert?: FieldPolicy<any> | FieldReadFunction<any>
   addComment?: FieldPolicy<any> | FieldReadFunction<any>
   addExercise?: FieldPolicy<any> | FieldReadFunction<any>
+  addExerciseSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   addModule?: FieldPolicy<any> | FieldReadFunction<any>
   changeAdminRights?: FieldPolicy<any> | FieldReadFunction<any>
   changePw?: FieldPolicy<any> | FieldReadFunction<any>

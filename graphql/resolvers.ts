@@ -39,7 +39,10 @@ import {
   flagExercise,
   removeExerciseFlag
 } from './resolvers/exerciseCrud'
-import { exerciseSubmissions } from './resolvers/exerciseSubmissionCrud'
+import {
+  exerciseSubmissions,
+  addExerciseSubmission
+} from './resolvers/exerciseSubmissionCrud'
 
 export default {
   Query: {
@@ -69,6 +72,7 @@ export default {
     addExercise,
     updateExercise,
     deleteExercise,
+    addExerciseSubmission,
     login,
     logout,
     signup,

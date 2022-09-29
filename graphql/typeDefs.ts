@@ -89,6 +89,10 @@ export default gql`
     flagExercise(id: Int!, flagReason: String!): Exercise
     removeExerciseFlag(id: Int!): Exercise!
     deleteExercise(id: Int!): Exercise!
+    addExerciseSubmission(
+      exerciseId: Int!
+      userAnswer: String!
+    ): ExerciseSubmission!
     createLesson(
       description: String!
       docUrl: String
