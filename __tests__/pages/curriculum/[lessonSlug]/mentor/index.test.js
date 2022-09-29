@@ -1,13 +1,13 @@
 import React from 'react'
 import { render, waitFor, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Exercises from '../../../../../pages/curriculum/[lessonSlug]/mentor'
+import AddExercises from '../../../../../pages/curriculum/[lessonSlug]/mentor'
 import { useRouter } from 'next/router'
 import { MockedProvider } from '@apollo/client/testing'
 import getExercisesData from '../../../../../__dummy__/getExercisesData'
 import GET_EXERCISES from '../../../../../graphql/queries/getExercises'
 
-describe('Exercises page', () => {
+describe('AddExercises page', () => {
   const { query, push } = useRouter()
   query['lessonSlug'] = 'js0'
 
@@ -23,7 +23,7 @@ describe('Exercises page', () => {
 
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Exercises />
+        <AddExercises />
       </MockedProvider>
     )
 
@@ -48,7 +48,7 @@ describe('Exercises page', () => {
 
     const { getByRole, queryByRole, getByLabelText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Exercises />
+        <AddExercises />
       </MockedProvider>
     )
 
@@ -83,7 +83,7 @@ describe('Exercises page', () => {
 
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Exercises />
+        <AddExercises />
       </MockedProvider>
     )
 
@@ -111,7 +111,7 @@ describe('Exercises page', () => {
 
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Exercises />
+        <AddExercises />
       </MockedProvider>
     )
 
@@ -133,7 +133,7 @@ describe('Exercises page', () => {
 
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Exercises />
+        <AddExercises />
       </MockedProvider>
     )
 
@@ -155,7 +155,7 @@ describe('Exercises page', () => {
 
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Exercises />
+        <AddExercises />
       </MockedProvider>
     )
 
