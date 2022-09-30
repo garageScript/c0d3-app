@@ -11,7 +11,7 @@ export const exerciseSubmissions = (
   if (!userId) return []
 
   return prisma.exerciseSubmission.findMany({
-    where: { user: { id: userId } }
+    where: { userId }
   })
 }
 
