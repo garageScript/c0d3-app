@@ -89,7 +89,7 @@ const DiffView: React.FC<{
         if (!change.isDelete) newValue.push(change.content)
       })
     })
-    const syntaxHighlight = (str: string, n: number): any => {
+    const syntaxHighlight = (str: string, n: number) => {
       const highlighted = Prism.highlight(
         str,
         Prism.languages[extension],
