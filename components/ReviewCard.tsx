@@ -60,7 +60,7 @@ const ReviewButtons: React.FC<{
   const [addComment] = useAddCommentMutation()
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
-  const reviewSubmission = (review: any) => async () => {
+  const reviewSubmission = (review: typeof accept) => async () => {
     await review({
       variables: {
         submissionId: submissionId,
