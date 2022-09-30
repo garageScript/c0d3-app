@@ -49,7 +49,11 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
       ? [{ text: 'lessons', url: currentLesson.docUrl }]
       : []),
     { text: 'challenges', url: `/curriculum/${currentLesson.slug}` },
-    { text: 'exercises', url: `/exercises/${currentLesson.slug}` }
+    { text: 'exercises', url: `/exercises/${currentLesson.slug}` },
+    {
+      text: 'mentor exercises',
+      url: `/curriculum/${currentLesson.slug}/mentor/`
+    }
   ]
 
   const currentExercises = exercises
