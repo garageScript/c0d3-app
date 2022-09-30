@@ -171,13 +171,15 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByText, queryByText } = render(
+    const { container, findByText, findAllByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByText(/@fake user/i)
+    await findAllByText(dummyLessonData[0].title)
+
     expect(container).toMatchSnapshot()
   })
 
@@ -334,7 +336,7 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByText, queryByText } = render(
+    const { container, findByText, queryByText, findAllByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
@@ -342,6 +344,7 @@ describe('user profile test', () => {
 
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByText('@fakeusername')
+    await findAllByText(dummyLessonData[0].title)
 
     expect(container).toMatchSnapshot()
   })
@@ -759,13 +762,15 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByText, queryByText } = render(
+    const { container, findByText, queryByText, findAllByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByText(/@fakeusername/i)
+    await findAllByText(dummyLessonData[0].title)
+
     expect(container).toMatchSnapshot()
   })
   test('Should render anonymous users', async () => {
@@ -807,13 +812,17 @@ describe('user profile test', () => {
         }
       }
     ]
+
     const { container, findByText, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
+
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByText(/@fakeusername/i)
+    await findByText(dummyLessonData[0].title)
+
     expect(container).toMatchSnapshot()
   })
   test('Should render nulled lessons', async () => {
@@ -895,13 +904,15 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByText, queryByText } = render(
+    const { container, findByText, queryByText, findAllByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByText(/@fakeusername/i)
+    await findAllByText(dummyLessonData[0].title)
+
     expect(container).toMatchSnapshot()
   })
   test('Should render nulled submission lessonIds', async () => {
@@ -953,13 +964,15 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByText, queryByText } = render(
+    const { container, findByText, queryByText, findAllByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByText(/@fakeusername/i)
+    await findAllByText(dummyLessonData[0].title)
+
     expect(container).toMatchSnapshot()
   })
   test('Should return error on error', async () => {
