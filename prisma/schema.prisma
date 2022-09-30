@@ -127,33 +127,34 @@ model UserLesson {
 }
 
 model User {
-  id                        Int          @id @default(autoincrement())
-  name                      String       @db.VarChar(255)
-  username                  String       @db.VarChar(255)
-  password                  String?      @db.VarChar(255)
-  email                     String       @db.VarChar(255)
+  id                        Int                  @id @default(autoincrement())
+  name                      String               @db.VarChar(255)
+  username                  String               @db.VarChar(255)
+  password                  String?              @db.VarChar(255)
+  email                     String               @db.VarChar(255)
   gsId                      Int?
   isOnline                  Boolean?
-  createdAt                 DateTime     @default(now()) @db.Timestamptz(6)
-  updatedAt                 DateTime     @updatedAt @db.Timestamptz(6)
-  isAdmin                   Boolean      @default(false)
-  forgotToken               String?      @db.VarChar(255)
-  cliToken                  String?      @db.VarChar(255)
-  emailVerificationToken    String?      @db.VarChar(255)
-  tokenExpiration           DateTime?    @db.Timestamptz(6)
-  discordRefreshToken       String?      @db.VarChar(255)
-  discordAccessToken        String?      @db.VarChar(255)
-  discordAccessTokenExpires DateTime?    @db.Timestamptz(6)
-  discordId                 String?      @db.VarChar(255)
-  cliVersion                String?      @db.VarChar(255)
+  createdAt                 DateTime             @default(now()) @db.Timestamptz(6)
+  updatedAt                 DateTime             @updatedAt @db.Timestamptz(6)
+  isAdmin                   Boolean              @default(false)
+  forgotToken               String?              @db.VarChar(255)
+  cliToken                  String?              @db.VarChar(255)
+  emailVerificationToken    String?              @db.VarChar(255)
+  tokenExpiration           DateTime?            @db.Timestamptz(6)
+  discordRefreshToken       String?              @db.VarChar(255)
+  discordAccessToken        String?              @db.VarChar(255)
+  discordAccessTokenExpires DateTime?            @db.Timestamptz(6)
+  discordId                 String?              @db.VarChar(255)
+  cliVersion                String?              @db.VarChar(255)
   comments                  Comment[]
   exercises                 Exercise[]
-  Exercise                  Exercise[]   @relation("flaggedExercises")
+  exerciseSubmissions       ExerciseSubmission[]
+  Exercise                  Exercise[]           @relation("flaggedExercises")
   modules                   Module[]
-  starsMentor               Star[]       @relation("starMentor")
-  starsGiven                Star[]       @relation("starStudent")
-  submissionsReviewed       Submission[] @relation("userReviewedSubmissions")
-  submissions               Submission[] @relation("userSubmissions")
+  starsMentor               Star[]               @relation("starMentor")
+  starsGiven                Star[]               @relation("starStudent")
+  submissionsReviewed       Submission[]         @relation("userReviewedSubmissions")
+  submissions               Submission[]         @relation("userSubmissions")
   userLessons               UserLesson[]
 
   @@map("users")
@@ -176,9 +177,9 @@ model Module {
 }
 
 model Exercise {
-  id          Int       @id @default(autoincrement())
-  createdAt   DateTime  @default(now()) @db.Timestamptz(6)
-  updatedAt   DateTime  @updatedAt @db.Timestamptz(6)
+  id          Int                  @id @default(autoincrement())
+  createdAt   DateTime             @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime             @updatedAt @db.Timestamptz(6)
   authorId    Int
   moduleId    Int
   description String
@@ -188,9 +189,21 @@ model Exercise {
   flagReason  String?
   flaggedAt   DateTime?
   flaggedById Int?
-  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  flaggedBy   User?     @relation("flaggedExercises", fields: [flaggedById], references: [id])
-  module      Module    @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  author      User                 @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  flaggedBy   User?                @relation("flaggedExercises", fields: [flaggedById], references: [id])
+  module      Module               @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  submissions ExerciseSubmission[]
 
   @@map("exercises")
+}
+
+model ExerciseSubmission {
+  id         Int      @id @default(autoincrement())
+  exerciseId Int
+  exercise   Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userAnswer String
+
+  @@map("exerciseSubmissions")
 }

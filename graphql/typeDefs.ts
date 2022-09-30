@@ -13,6 +13,7 @@ export default gql`
     submissions(lessonId: Int!): [Submission!]
     alerts: [Alert!]!
     getPreviousSubmissions(challengeId: Int!, userId: Int!): [Submission!]
+    exerciseSubmissions: [ExerciseSubmission!]!
   }
 
   type TokenResponse {
@@ -88,6 +89,10 @@ export default gql`
     flagExercise(id: Int!, flagReason: String!): Exercise
     removeExerciseFlag(id: Int!): Exercise!
     deleteExercise(id: Int!): Exercise!
+    addExerciseSubmission(
+      exerciseId: Int!
+      userAnswer: String!
+    ): ExerciseSubmission!
     createLesson(
       description: String!
       docUrl: String
@@ -265,5 +270,12 @@ export default gql`
     flagReason: String
     flaggedBy: User
     flaggedById: Int
+  }
+
+  type ExerciseSubmission {
+    id: Int!
+    userId: Int!
+    exerciseId: Int!
+    userAnswer: String!
   }
 `
