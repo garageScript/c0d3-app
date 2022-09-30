@@ -129,7 +129,7 @@
   font-size: 14px;
   border: 0px;
   padding: 5px 6px 5px 6px;
-
+  background-color: transparent;
   &:hover,
   &:focus {
     color: colors.$secondary;
@@ -144,6 +144,7 @@
   font-size: 14px;
   border: 0px;
   padding: 5px 6px 5px 6px;
+  background-color: transparent;
 
   &:hover,
   &:focus {
