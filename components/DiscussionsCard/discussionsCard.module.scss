@@ -119,3 +119,71 @@
     cursor: pointer;
   }
 }
+
+.edit_buttons {
+  margin-left: 5px;
+}
+.discard_edit {
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+  border: 0px;
+  padding: 5px 6px 5px 6px;
+
+  &:hover,
+  &:focus {
+    color: colors.$secondary;
+    background: #cc0000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.discard_save {
+  border-radius: 5px;
+  font-size: 14px;
+  border: 0px;
+  padding: 5px 6px 5px 6px;
+
+  &:hover,
+  &:focus {
+    color: colors.$secondary;
+    background: colors.$bg-green;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.cancel_reply {
+  margin-left: 3px;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+  border: 0px;
+  padding: 5px 6px 5px 6px;
+  background-color: transparent;
+  font-family: Inter;
+  &:hover,
+  &:focus {
+    color: colors.$secondary;
+    background: #cc0000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.send_reply {
+  border-radius: 5px;
+  font-size: 14px;
+  border: 0px;
+  padding: 5px 6px 5px 6px;
+  background-color: transparent;
+  font-family: Inter;
+  &:hover,
+  &:focus {
+    color: colors.$secondary;
+    background: colors.$bg-green;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

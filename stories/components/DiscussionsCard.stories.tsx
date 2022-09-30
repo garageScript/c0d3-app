@@ -16,8 +16,6 @@ const discussionMainProps = {
     'dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit: dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:',
   likes: 9,
   dislikes: 2,
-  replyClick: () => {},
-  editClick: () => {},
   deleteClick: () => {}
 }
 
@@ -31,8 +29,6 @@ const discussionSubProps = {
     'dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit: dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:. Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:Lorem ipsum, dark mode will be a good feature to implement , if i will get time from exams , i will try for sure :shipit:',
   likes: 20,
   dislikes: 3,
-  replyClick: () => {},
-  editClick: () => {},
   deleteClick: () => {}
 }
 
