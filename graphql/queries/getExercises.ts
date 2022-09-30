@@ -26,6 +26,10 @@ const GET_EXERCISES = gql`
       answer
       explanation
     }
+    exerciseSubmissions {
+      exerciseId
+      userAnswer
+    }
   }
 `
 

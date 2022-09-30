@@ -1,221 +1,132 @@
-import React, { useMemo, useState } from 'react'
-import {
-  AddExerciseMutation,
-  GetAppProps,
-  Module,
-  useAddExerciseMutation,
-  withGetApp
-} from '../../../../graphql'
 import { useRouter } from 'next/router'
-import { AdminLayout } from '../../../../components/admin/AdminLayout'
-import { DropdownMenu } from '../../../../components/DropdownMenu'
-import { FormCard, MD_INPUT } from '../../../../components/FormCard'
-import { formChange } from '../../../../helpers/formChange'
-import { exercisesValidation } from '../../../../helpers/formValidation'
-import ExercisePreview from '../../../../components/ExercisePreview'
-import styles from '../../../../scss/mentorPage.module.scss'
-import { get } from 'lodash'
-import QueryInfo from '../../../../components/QueryInfo'
-import { errorCheckAllFields } from '../../../../helpers/admin/adminHelpers'
-import * as Sentry from '@sentry/nextjs'
+import React from 'react'
+import Layout from '../../../../components/Layout'
+import withQueryLoader, {
+  QueryDataProps
+} from '../../../../containers/withQueryLoader'
+import { GetExercisesQuery } from '../../../../graphql'
+import Error, { StatusCode } from '../../../../components/Error'
+import LoadingSpinner from '../../../../components/LoadingSpinner'
+import AlertsDisplay from '../../../../components/AlertsDisplay'
+import NavCard from '../../../../..../../components/NavCard'
+import ExercisePreviewCard from '../../../../..../../components/ExercisePreviewCard'
+import { NewButton } from '../../../../..../../components/theme/Button'
+import GET_EXERCISES from '../../../../..../../graphql/queries/getExercises'
+import styles from '../../../../scss/exercises.module.scss'
 
-type DetachedModule = Omit<Module, 'lesson' | 'author'>
-
-type HeaderProps<T> = {
-  lesson?: T
-  addExerciseData?: AddExerciseMutation | null
-  loading: boolean
-  error?:
-    | {
-        message: string
-      }
-    | string
-  setModule: (v: null | DetachedModule) => void
-  setErrorMsg: (v: string) => void
-}
-const Header = <
-  T extends { title: string; modules?: DetachedModule[] | null }
->({
-  lesson,
-  addExerciseData,
-  loading,
-  error,
-  setModule,
-  setErrorMsg
-}: HeaderProps<T>) => {
-  const modules = get(lesson, 'modules') ?? []
-
-  return (
-    <header className={styles.header}>
-      <div>
-        <h1>{get(lesson, 'title')}</h1>
-      </div>
-      <div className={styles.dropdownWrapper}>
-        <span>Select a module</span>
-        <DropdownMenu
-          title="Select a module"
-          items={modules.map(m => ({
-            ...m,
-            title: m.name,
-            onClick: () => {
-              setModule({ ...m })
-              setErrorMsg('')
-            }
-          }))}
-        />
-      </div>
-      <QueryInfo
-        data={addExerciseData}
-        loading={loading}
-        error={get(error, 'message', error)}
-        texts={{
-          loading: 'Adding the exercise...',
-          data: 'Added the exercise successfully!',
-          error: typeof error === 'string' ? error : ''
-        }}
-      />
-    </header>
-  )
-}
-
-type MainProps = {
-  onClick: () => void
-  formOptions: typeof initValues
-  handleChange: (value: string, propertyIndex: number) => Promise<void>
-  exercise: {
-    description: string
-    answer: string
-    explanation: string
-  }
-}
-const Main = ({ onClick, formOptions, handleChange, exercise }: MainProps) => (
-  <main className={styles.main}>
-    <div className={styles.wrapper}>
-      <div className={styles.forms}>
-        <FormCard
-          title={''}
-          onSubmit={{
-            title: 'Save exercise',
-            onClick
-          }}
-          values={formOptions}
-          onChange={handleChange}
-          newBtn
-          noBg
-        />
-      </div>
-      <ExercisePreview
-        exercise={{ ...exercise }}
-        classes={`col-sm-8 col-md-7 col-lg-6 col-xl-5 px-md-3 border-0 rounded ${styles.exerciseCard}`}
-      />
-    </div>
-  </main>
-)
-
-const initValues = [
-  {
-    title: 'description',
-    type: MD_INPUT,
-    value: '',
-    error: ''
-  },
-  {
-    title: 'answer',
-    value: '',
-    error: ''
-  },
-  {
-    title: 'explanation',
-    type: MD_INPUT,
-    value: '',
-    error: ''
-  }
-]
-
-const MentorPage = ({ data }: GetAppProps) => {
+const AddExercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
+  queryData
+}) => {
+  const { lessons, alerts, exercises } = queryData
   const router = useRouter()
-  const { lessonSlug } = router.query
 
-  // Omitting author and lesson because data.lessons[i].modules[i] mismatching type
-  const [module, setModule] = useState<null | DetachedModule>(null)
-  const [errorMsg, setErrorMsg] = useState('')
+  if (!router.isReady) return <LoadingSpinner />
 
-  const { lessons } = data
-  const lesson = useMemo(
-    () => (lessons || []).find(lesson => lesson.slug === lessonSlug),
-    [lessons]
-  )
+  const slug = router.query.lessonSlug
+  if (!lessons || !alerts || !exercises)
+    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
 
-  const [formOptions, setFormOptions] = useState(initValues)
-  const [description, answer, explanation] = formOptions
+  const currentLesson = lessons.find(lesson => lesson.slug === slug)
+  if (!currentLesson)
+    return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
 
-  const [addExercise, { data: addExerciseData, loading, error }] =
-    useAddExerciseMutation({
-      variables: {
-        moduleId: get(module, 'id', -1),
-        description: description.value,
-        answer: answer.value,
-        explanation: explanation.value
-      }
-    })
-
-  const handleChange = async (value: string, propertyIndex: number) => {
-    await formChange(
-      value,
-      propertyIndex,
-      formOptions,
-      setFormOptions,
-      exercisesValidation
-    )
-  }
-
-  const onClick = async () => {
-    try {
-      const newProperties = [...formOptions]
-      const valid = await errorCheckAllFields(
-        newProperties,
-        exercisesValidation
-      )
-
-      if (!module) {
-        setErrorMsg('Please select a module')
-        return
-      }
-
-      if (!valid) {
-        // Update the forms so the error messages appear
-        setFormOptions(newProperties)
-        return
-      }
-
-      await addExercise()
-    } catch (err) {
-      Sentry.captureException(err)
+  const tabs = [
+    ...(currentLesson.docUrl
+      ? [{ text: 'lesson', url: currentLesson.docUrl }]
+      : []),
+    { text: 'challenges', url: `/curriculum/${currentLesson.slug}` },
+    { text: 'exercises', url: `/exercises/${currentLesson.slug}` },
+    {
+      text: 'mentor exercises',
+      url: `/curriculum/${currentLesson.slug}/mentor`
     }
-  }
+  ]
+
+  const currentExercises = exercises
+    .filter(exercise => exercise?.module.lesson.slug === slug)
+    .map(exercise => ({
+      id: exercise.id,
+      moduleName: exercise.module.name,
+      problem: exercise.description,
+      answer: exercise.answer,
+      explanation: exercise.explanation || ''
+    }))
 
   return (
-    <AdminLayout data={data}>
-      <Header
-        lesson={lesson}
-        addExerciseData={addExerciseData}
-        loading={loading}
-        error={errorMsg || error}
-        setModule={setModule}
-        setErrorMsg={setErrorMsg}
+    <Layout title={currentLesson.title}>
+      <ExerciseList
+        tabs={tabs}
+        lessonTitle={currentLesson.title}
+        exercises={currentExercises}
+        lessonSlug={currentLesson.slug}
       />
-      <Main
-        onClick={onClick}
-        formOptions={formOptions}
-        handleChange={handleChange}
-        exercise={{
-          description: description.value,
-          answer: answer.value,
-          explanation: explanation.value
-        }}
-      />
-    </AdminLayout>
+
+      {alerts && <AlertsDisplay alerts={alerts} />}
+    </Layout>
   )
 }
 
-export default withGetApp()(MentorPage)
+type ExerciseListProps = {
+  tabs: { text: string; url: string }[]
+  lessonTitle: string
+  exercises: {
+    moduleName: string
+    problem: string
+    answer: string
+  }[]
+  lessonSlug: string
+}
+
+const ExerciseList = ({
+  tabs,
+  lessonTitle,
+  exercises,
+  lessonSlug
+}: ExerciseListProps) => {
+  const router = useRouter()
+
+  return (
+    <>
+      <div className="mb-4">
+        <NavCard
+          tabSelected={tabs.findIndex(tab => tab.text === 'mentor exercises')}
+          tabs={tabs}
+        />
+      </div>
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <h1 className="my-2 my-md-5 fs-2">{lessonTitle}</h1>
+        <div
+          className={`mb-3 mb-md-0 d-flex d-md-block ${styles.exerciseList__solveExercisesButtonContainer}`}
+        >
+          <NewButton
+            className="flex-grow-1"
+            onClick={() =>
+              router.push(`/curriculum/${lessonSlug}/mentor/addExercise`)
+            }
+          >
+            ADD EXERCISE
+          </NewButton>
+        </div>
+      </div>
+      <div className={styles.exerciseList__container}>
+        {exercises.map((exercise, i) => (
+          <ExercisePreviewCard
+            key={i}
+            moduleName={exercise.moduleName}
+            state={'ANSWERED'}
+            problem={exercise.problem}
+          />
+        ))}
+        <div />
+        <div />
+      </div>
+    </>
+  )
+}
+
+export default withQueryLoader<GetExercisesQuery>(
+  {
+    query: GET_EXERCISES
+  },
+  AddExercises
+)

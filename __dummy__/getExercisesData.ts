@@ -92,7 +92,8 @@ const getExercisesData: GetExercisesQuery = {
       answer: '-1',
       explanation: null
     }
-  ]
+  ],
+  exerciseSubmissions: [{ exerciseId: 1, userAnswer: '15' }]
 }
 
 export default getExercisesData
