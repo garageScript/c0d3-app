@@ -274,8 +274,8 @@ export default gql`
 
   type ExerciseSubmission {
     id: Int!
-    user: User!
-    exercise: Exercise!
+    userId: Int!
+    exerciseId: Int!
     userAnswer: String!
   }
 `

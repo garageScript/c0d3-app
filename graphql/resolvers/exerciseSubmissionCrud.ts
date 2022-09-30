@@ -11,10 +11,6 @@ export const exerciseSubmissions = (
   if (!userId) return []
 
   return prisma.exerciseSubmission.findMany({
-    include: {
-      exercise: { include: { module: { include: { lesson: true } } } },
-      user: true
-    },
     where: { user: { id: userId } }
   })
 }
@@ -34,13 +30,11 @@ export const addExerciseSubmission = async (
   if (exerciseSubmission) {
     return prisma.exerciseSubmission.update({
       data: { exerciseId, userId, userAnswer },
-      where: { id: exerciseSubmission.id },
-      include: { exercise: true, user: true }
+      where: { id: exerciseSubmission.id }
     })
   }
 
   return prisma.exerciseSubmission.create({
-    data: { exerciseId, userId, userAnswer },
-    include: { exercise: true, user: true }
+    data: { exerciseId, userId, userAnswer }
   })
 }

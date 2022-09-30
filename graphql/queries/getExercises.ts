@@ -27,9 +27,7 @@ const GET_EXERCISES = gql`
       explanation
     }
     exerciseSubmissions {
-      exercise {
-        id
-      }
+      exerciseId
       userAnswer
     }
   }

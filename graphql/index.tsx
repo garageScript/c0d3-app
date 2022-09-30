@@ -89,10 +89,10 @@ export type Exercise = {
 
 export type ExerciseSubmission = {
   __typename?: 'ExerciseSubmission'
-  exercise: Exercise
+  exerciseId: Scalars['Int']
   id: Scalars['Int']
-  user: User
   userAnswer: Scalars['String']
+  userId: Scalars['Int']
 }
 
 export type Lesson = {
@@ -857,8 +857,8 @@ export type GetExercisesQuery = {
   }>
   exerciseSubmissions: Array<{
     __typename?: 'ExerciseSubmission'
+    exerciseId: number
     userAnswer: string
-    exercise: { __typename?: 'Exercise'; id: number }
   }>
 }
 
@@ -1549,10 +1549,10 @@ export type ExerciseSubmissionResolvers<
   ContextType = Context,
   ParentType extends ResolversParentTypes['ExerciseSubmission'] = ResolversParentTypes['ExerciseSubmission']
 > = ResolversObject<{
-  exercise?: Resolver<ResolversTypes['Exercise'], ParentType, ContextType>
+  exerciseId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   userAnswer?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  userId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
@@ -3592,9 +3592,7 @@ export const GetExercisesDocument = gql`
       explanation
     }
     exerciseSubmissions {
-      exercise {
-        id
-      }
+      exerciseId
       userAnswer
     }
   }
@@ -5620,17 +5618,17 @@ export type ExerciseFieldPolicy = {
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type ExerciseSubmissionKeySpecifier = (
-  | 'exercise'
+  | 'exerciseId'
   | 'id'
-  | 'user'
   | 'userAnswer'
+  | 'userId'
   | ExerciseSubmissionKeySpecifier
 )[]
 export type ExerciseSubmissionFieldPolicy = {
-  exercise?: FieldPolicy<any> | FieldReadFunction<any>
+  exerciseId?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
-  user?: FieldPolicy<any> | FieldReadFunction<any>
   userAnswer?: FieldPolicy<any> | FieldReadFunction<any>
+  userId?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type LessonKeySpecifier = (
   | 'challenges'

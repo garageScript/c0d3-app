@@ -27,7 +27,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
     setUserAnswers(
       Object.fromEntries(
         exerciseSubmissions.map(submission => [
-          submission.exercise.id,
+          submission.exerciseId,
           submission.userAnswer
         ])
       )
