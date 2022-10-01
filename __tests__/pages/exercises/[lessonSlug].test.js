@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, waitFor, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Exercises from '../../../pages/exercises/[lessonSlug]'
 import { useRouter } from 'next/router'
@@ -28,9 +28,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() =>
-      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
-    )
+    await screen.findByRole('heading', { name: /Foundations of JavaScript/i })
 
     screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
@@ -66,15 +64,13 @@ describe('Exercises page', () => {
       }
     ]
 
-    const { getByRole, queryByRole, getByLabelText } = render(
+    const { getByRole, findByRole, queryByRole, getByLabelText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Exercises />
       </MockedProvider>
     )
 
-    await waitFor(() =>
-      getByRole('heading', { name: /Foundations of JavaScript/i })
-    )
+    await findByRole('heading', { name: /Foundations of JavaScript/i })
 
     const solveExercisesButton = getByRole('button', {
       name: 'SOLVE EXERCISES'
@@ -242,9 +238,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() =>
-      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
-    )
+    await screen.findByRole('heading', { name: /Foundations of JavaScript/i })
 
     screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
@@ -270,7 +264,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => screen.getByRole('heading', { name: /500 Error/i }))
+    await screen.findByRole('heading', { name: /500 Error/i })
   })
 
   test('Should render a 404 error page if the lesson is not found', async () => {
@@ -292,7 +286,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => screen.getByRole('heading', { name: /404 Error/i }))
+    await screen.findByRole('heading', { name: /404 Error/i })
   })
 
   test('Should render a loading spinner if useRouter is not ready', async () => {
@@ -314,6 +308,6 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => screen.getByText('Loading...'))
+    await screen.findByText('Loading...')
   })
 })
