@@ -262,7 +262,7 @@ const ExerciseList = ({
               checked={hideAnswered}
               onChange={() => setHideAnswered(!hideAnswered)}
             />
-            <span>Show unanswered exercises only</span>
+            <span>Show incomplete exercises only</span>
           </label>
         </div>
         <div
@@ -278,7 +278,11 @@ const ExerciseList = ({
           <ExercisePreviewCard
             key={i}
             moduleName={exercise.moduleName}
-            state={exercise.userAnswer ? 'ANSWERED' : 'NOT ANSWERED'}
+            state={(() => {
+              if (exercise.userAnswer === exercise.answer) return 'ANSWERED'
+              if (exercise.userAnswer) return 'INCORRECT'
+              return 'NOT ANSWERED'
+            })()}
             problem={exercise.problem}
           />
         ))}
