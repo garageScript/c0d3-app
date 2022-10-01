@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { MockedProvider } from '@apollo/client/testing'
 import getExercisesData from '../../../__dummy__/getExercisesData'
 import GET_EXERCISES from '../../../graphql/queries/getExercises'
+import ADD_EXERCISE_SUBMISSION from '../../../graphql/queries/addExerciseSubmission'
 
 describe('Exercises page', () => {
   const { query } = useRouter()
@@ -42,6 +43,25 @@ describe('Exercises page', () => {
         request: { query: GET_EXERCISES },
         result: {
           data: getExercisesData
+        }
+      },
+      {
+        request: {
+          query: ADD_EXERCISE_SUBMISSION,
+          variables: {
+            exerciseId: 2,
+            userAnswer: '3'
+          }
+        },
+        result: {
+          data: {
+            addExerciseSubmissions: {
+              id: 1,
+              exerciseId: 2,
+              userId: 3,
+              userAnswer: '3'
+            }
+          }
         }
       }
     ]
