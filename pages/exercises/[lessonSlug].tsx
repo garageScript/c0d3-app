@@ -24,6 +24,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
 }) => {
   const { lessons, alerts, exercises, exerciseSubmissions } = queryData
   const router = useRouter()
+  const [hideAnswered, setHideAnswered] = useState(false)
   const [exerciseIndex, setExerciseIndex] = useState(-1)
   const [addExerciseSubmission] = useAddExerciseSubmissionMutation()
   const [userAnswers, setUserAnswers] = useState<Record<number, string>>({})
@@ -70,6 +71,9 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
       explanation: exercise.explanation || '',
       userAnswer: userAnswers[exercise.id] ?? null
     }))
+    .filter(
+      exercise => !hideAnswered || exercise.userAnswer !== exercise.answer
+    )
 
   const exercise = currentExercises[exerciseIndex]
 
@@ -95,6 +99,8 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           tabs={tabs}
           setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}
+          hideAnswered={hideAnswered}
+          setHideAnswered={setHideAnswered}
           exercises={currentExercises}
         />
       )}
@@ -185,6 +191,8 @@ type ExerciseListProps = {
   tabs: { text: string; url: string }[]
   setExerciseIndex: React.Dispatch<React.SetStateAction<number>>
   lessonTitle: string
+  hideAnswered: boolean
+  setHideAnswered: (hideAnswered: boolean) => void
   exercises: {
     moduleName: string
     problem: string
@@ -197,6 +205,8 @@ const ExerciseList = ({
   tabs,
   setExerciseIndex,
   lessonTitle,
+  hideAnswered,
+  setHideAnswered,
   exercises
 }: ExerciseListProps) => {
   return (
@@ -208,7 +218,19 @@ const ExerciseList = ({
         />
       </div>
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <h1 className="my-2 my-md-5 fs-2">{lessonTitle}</h1>
+        <div className="my-2 my-md-5">
+          <h1 className="fs-2">{lessonTitle}</h1>
+          <label className="d-inline-flex align-items-center">
+            <input
+              className="form-check-input m-0 me-3"
+              type="checkbox"
+              style={{ width: 30, height: 30 }}
+              checked={hideAnswered}
+              onChange={() => setHideAnswered(!hideAnswered)}
+            />
+            <span>Show unanswered exercises only</span>
+          </label>
+        </div>
         <div
           className={`mb-3 mb-md-0 d-flex d-md-block ${styles.exerciseList__solveExercisesButtonContainer}`}
         >
@@ -225,7 +247,7 @@ const ExerciseList = ({
           <ExercisePreviewCard
             key={i}
             moduleName={exercise.moduleName}
-            state={exercise.userAnswer === null ? 'NOT ANSWERED' : 'ANSWERED'}
+            state={exercise.userAnswer ? 'ANSWERED' : 'NOT ANSWERED'}
             problem={exercise.problem}
           />
         ))}
