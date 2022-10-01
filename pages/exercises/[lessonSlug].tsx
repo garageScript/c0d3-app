@@ -95,11 +95,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
       ) : (
         <ExerciseList
           tabs={tabs}
-          onClickSolveExercises={() => {
-            if (currentExercises.length > 0) {
-              setSolvingExercise(true)
-            }
-          }}
+          onClickSolveExercises={() => setSolvingExercise(true)}
           lessonTitle={currentLesson.title}
           hideAnswered={hideAnswered}
           setHideAnswered={setHideAnswered}
