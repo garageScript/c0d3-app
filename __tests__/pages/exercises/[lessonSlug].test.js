@@ -168,16 +168,16 @@ describe('Exercises page', () => {
     let checkbox = await findByLabelText('Show incomplete exercises only')
 
     let exercisePreviews = await findAllByText('Problem')
-    expect(exercisePreviews.length).toBe(3)
+    expect(exercisePreviews).toHaveLength(3)
     let notAnsweredExercisePreviews = await findAllByText('NOT ANSWERED')
-    expect(notAnsweredExercisePreviews.length).toBe(2)
+    expect(notAnsweredExercisePreviews).toHaveLength(2)
 
     fireEvent.click(checkbox)
 
     exercisePreviews = await findAllByText('Problem')
-    expect(exercisePreviews.length).toBe(2)
+    expect(exercisePreviews).toHaveLength(2)
     notAnsweredExercisePreviews = await findAllByText('NOT ANSWERED')
-    expect(notAnsweredExercisePreviews.length).toBe(2)
+    expect(notAnsweredExercisePreviews).toHaveLength(2)
 
     const solveExercisesButton = await findByRole('button', {
       name: 'SOLVE EXERCISES'
@@ -207,17 +207,17 @@ describe('Exercises page', () => {
     fireEvent.click(nextQuestionButton)
 
     exercisePreviews = await findAllByText('Problem')
-    expect(exercisePreviews.length).toBe(1)
+    expect(exercisePreviews).toHaveLength(1)
     let incorrectExercisePreviews = await findAllByText('INCORRECT')
-    expect(incorrectExercisePreviews.length).toBe(1)
+    expect(incorrectExercisePreviews).toHaveLength(1)
 
     checkbox = await findByLabelText('Show incomplete exercises only')
     fireEvent.click(checkbox)
 
     exercisePreviews = await findAllByText('Problem')
-    expect(exercisePreviews.length).toBe(3)
+    expect(exercisePreviews).toHaveLength(3)
     incorrectExercisePreviews = await findAllByText('INCORRECT')
-    expect(incorrectExercisePreviews.length).toBe(1)
+    expect(incorrectExercisePreviews).toHaveLength(1)
   })
 
   test('Should not render lessons nav card tab if lesson docUrl is null', async () => {
