@@ -12,7 +12,9 @@ import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import NavCard from '../../components/NavCard'
-import ExercisePreviewCard from '../../components/ExercisePreviewCard'
+import ExercisePreviewCard, {
+  ExercisePreviewCardProps
+} from '../../components/ExercisePreviewCard'
 import { NewButton } from '../../components/theme/Button'
 import ExerciseCard, { Message } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
@@ -63,14 +65,22 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
 
   const currentExercises = exercises
     .filter(exercise => exercise?.module.lesson.slug === slug)
-    .map(exercise => ({
-      id: exercise.id,
-      moduleName: exercise.module.name,
-      problem: exercise.description,
-      answer: exercise.answer,
-      explanation: exercise.explanation || '',
-      userAnswer: userAnswers[exercise.id] ?? null
-    }))
+    .map(exercise => {
+      const userAnswer = userAnswers[exercise.id] ?? null
+      return {
+        id: exercise.id,
+        moduleName: exercise.module.name,
+        problem: exercise.description,
+        answer: exercise.answer,
+        explanation: exercise.explanation || '',
+        userAnswer,
+        state: ((): ExercisePreviewCardProps['state'] => {
+          if (userAnswer === exercise.answer) return 'ANSWERED'
+          if (userAnswer) return 'INCORRECT'
+          return 'NOT ANSWERED'
+        })()
+      }
+    })
     .filter(
       exercise => !hideAnswered || exercise.userAnswer !== exercise.answer
     )
@@ -220,6 +230,7 @@ type ExerciseItem = {
   problem: string
   answer: string
   userAnswer: string | null
+  state: ExercisePreviewCardProps['state']
 }
 
 type ExerciseListProps = {
@@ -276,11 +287,7 @@ const ExerciseList = ({
           <ExercisePreviewCard
             key={i}
             moduleName={exercise.moduleName}
-            state={(() => {
-              if (exercise.userAnswer === exercise.answer) return 'ANSWERED'
-              if (exercise.userAnswer) return 'INCORRECT'
-              return 'NOT ANSWERED'
-            })()}
+            state={exercise.state}
             problem={exercise.problem}
           />
         ))}
