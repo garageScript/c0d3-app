@@ -261,13 +261,15 @@ const ExerciseList = ({
             <span>Show incomplete exercises only</span>
           </label>
         </div>
-        <div
-          className={`mb-3 mb-md-0 d-flex d-md-block ${styles.exerciseList__solveExercisesButtonContainer}`}
-        >
-          <NewButton className="flex-grow-1" onClick={onClickSolveExercises}>
-            SOLVE EXERCISES
-          </NewButton>
-        </div>
+        {exercises.length > 0 && (
+          <div
+            className={`mb-3 mb-md-0 d-flex d-md-block ${styles.exerciseList__solveExercisesButtonContainer}`}
+          >
+            <NewButton className="flex-grow-1" onClick={onClickSolveExercises}>
+              SOLVE EXERCISES
+            </NewButton>
+          </div>
+        )}
       </div>
       <div className={styles.exerciseList__container}>
         {exercises.map((exercise, i) => (
