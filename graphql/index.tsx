@@ -508,6 +508,22 @@ export type AddExerciseMutation = {
   }
 }
 
+export type AddExerciseSubmissionMutationVariables = Exact<{
+  exerciseId: Scalars['Int']
+  userAnswer: Scalars['String']
+}>
+
+export type AddExerciseSubmissionMutation = {
+  __typename?: 'Mutation'
+  addExerciseSubmission: {
+    __typename?: 'ExerciseSubmission'
+    id: number
+    exerciseId: number
+    userId: number
+    userAnswer: string
+  }
+}
+
 export type AddModuleMutationVariables = Exact<{
   content: Scalars['String']
   lessonId: Scalars['Int']
@@ -2445,6 +2461,91 @@ export type AddExerciseMutationResult =
 export type AddExerciseMutationOptions = Apollo.BaseMutationOptions<
   AddExerciseMutation,
   AddExerciseMutationVariables
+>
+export const AddExerciseSubmissionDocument = gql`
+  mutation AddExerciseSubmission($exerciseId: Int!, $userAnswer: String!) {
+    addExerciseSubmission(exerciseId: $exerciseId, userAnswer: $userAnswer) {
+      id
+      exerciseId
+      userId
+      userAnswer
+    }
+  }
+`
+export type AddExerciseSubmissionMutationFn = Apollo.MutationFunction<
+  AddExerciseSubmissionMutation,
+  AddExerciseSubmissionMutationVariables
+>
+export type AddExerciseSubmissionProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    AddExerciseSubmissionMutation,
+    AddExerciseSubmissionMutationVariables
+  >
+} & TChildProps
+export function withAddExerciseSubmission<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    AddExerciseSubmissionMutation,
+    AddExerciseSubmissionMutationVariables,
+    AddExerciseSubmissionProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    AddExerciseSubmissionMutation,
+    AddExerciseSubmissionMutationVariables,
+    AddExerciseSubmissionProps<TChildProps, TDataName>
+  >(AddExerciseSubmissionDocument, {
+    alias: 'addExerciseSubmission',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useAddExerciseSubmissionMutation__
+ *
+ * To run a mutation, you first call `useAddExerciseSubmissionMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddExerciseSubmissionMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addExerciseSubmissionMutation, { data, loading, error }] = useAddExerciseSubmissionMutation({
+ *   variables: {
+ *      exerciseId: // value for 'exerciseId'
+ *      userAnswer: // value for 'userAnswer'
+ *   },
+ * });
+ */
+export function useAddExerciseSubmissionMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    AddExerciseSubmissionMutation,
+    AddExerciseSubmissionMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    AddExerciseSubmissionMutation,
+    AddExerciseSubmissionMutationVariables
+  >(AddExerciseSubmissionDocument, options)
+}
+export type AddExerciseSubmissionMutationHookResult = ReturnType<
+  typeof useAddExerciseSubmissionMutation
+>
+export type AddExerciseSubmissionMutationResult =
+  Apollo.MutationResult<AddExerciseSubmissionMutation>
+export type AddExerciseSubmissionMutationOptions = Apollo.BaseMutationOptions<
+  AddExerciseSubmissionMutation,
+  AddExerciseSubmissionMutationVariables
 >
 export const AddModuleDocument = gql`
   mutation addModule(

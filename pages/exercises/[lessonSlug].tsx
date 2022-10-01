@@ -4,7 +4,10 @@ import Layout from '../../components/Layout'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
-import { GetExercisesQuery } from '../../graphql'
+import {
+  GetExercisesQuery,
+  useAddExerciseSubmissionMutation
+} from '../../graphql'
 import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
@@ -22,6 +25,7 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   const { lessons, alerts, exercises, exerciseSubmissions } = queryData
   const router = useRouter()
   const [exerciseIndex, setExerciseIndex] = useState(-1)
+  const [addExerciseSubmission] = useAddExerciseSubmissionMutation()
   const [userAnswers, setUserAnswers] = useState<Record<number, string>>({})
   useEffect(() => {
     setUserAnswers(
@@ -79,9 +83,12 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           lessonTitle={currentLesson.title}
           hasPrevious={exerciseIndex > 0}
           hasNext={exerciseIndex < currentExercises.length - 1}
-          submitUserAnswer={(userAnswer: string) =>
+          submitUserAnswer={(userAnswer: string) => {
             setUserAnswers({ ...userAnswers, [exercise.id]: userAnswer })
-          }
+            addExerciseSubmission({
+              variables: { exerciseId: exercise.id, userAnswer }
+            })
+          }}
         />
       ) : (
         <ExerciseList
