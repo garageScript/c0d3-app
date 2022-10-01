@@ -12,7 +12,9 @@ import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import NavCard from '../../components/NavCard'
-import ExercisePreviewCard from '../../components/ExercisePreviewCard'
+import ExercisePreviewCard, {
+  ExercisePreviewCardProps
+} from '../../components/ExercisePreviewCard'
 import { NewButton } from '../../components/theme/Button'
 import ExerciseCard, { Message } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
@@ -24,7 +26,8 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
 }) => {
   const { lessons, alerts, exercises, exerciseSubmissions } = queryData
   const router = useRouter()
-  const [exerciseIndex, setExerciseIndex] = useState(-1)
+  const [solvingExercise, setSolvingExercise] = useState(false)
+  const [hideAnswered, setHideAnswered] = useState(false)
   const [addExerciseSubmission] = useAddExerciseSubmissionMutation()
   const [userAnswers, setUserAnswers] = useState<Record<number, string>>({})
   useEffect(() => {
@@ -62,39 +65,50 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
 
   const currentExercises = exercises
     .filter(exercise => exercise?.module.lesson.slug === slug)
-    .map(exercise => ({
-      id: exercise.id,
-      moduleName: exercise.module.name,
-      problem: exercise.description,
-      answer: exercise.answer,
-      explanation: exercise.explanation || '',
-      userAnswer: userAnswers[exercise.id] ?? null
-    }))
-
-  const exercise = currentExercises[exerciseIndex]
+    .map(exercise => {
+      const userAnswer = userAnswers[exercise.id] ?? null
+      return {
+        id: exercise.id,
+        moduleName: exercise.module.name,
+        problem: exercise.description,
+        answer: exercise.answer,
+        explanation: exercise.explanation || '',
+        userAnswer,
+        state: ((): ExercisePreviewCardProps['state'] => {
+          if (userAnswer === exercise.answer) return 'ANSWERED'
+          if (userAnswer) return 'INCORRECT'
+          return 'NOT ANSWERED'
+        })()
+      }
+    })
+    .filter(
+      exercise => !hideAnswered || exercise.userAnswer !== exercise.answer
+    )
 
   return (
     <Layout title={currentLesson.title}>
-      {exercise ? (
+      {solvingExercise ? (
         <Exercise
-          key={exerciseIndex}
-          exercise={exercise}
-          setExerciseIndex={setExerciseIndex}
           lessonTitle={currentLesson.title}
-          hasPrevious={exerciseIndex > 0}
-          hasNext={exerciseIndex < currentExercises.length - 1}
-          submitUserAnswer={(userAnswer: string) => {
-            setUserAnswers({ ...userAnswers, [exercise.id]: userAnswer })
+          exercises={currentExercises}
+          userAnswers={userAnswers}
+          onExit={localUserAnswers => {
+            setUserAnswers({ ...userAnswers, ...localUserAnswers })
+            setSolvingExercise(false)
+          }}
+          submitUserAnswer={(exerciseId, userAnswer) => {
             addExerciseSubmission({
-              variables: { exerciseId: exercise.id, userAnswer }
+              variables: { exerciseId, userAnswer }
             })
           }}
         />
       ) : (
         <ExerciseList
           tabs={tabs}
-          setExerciseIndex={setExerciseIndex}
+          onClickSolveExercises={() => setSolvingExercise(true)}
           lessonTitle={currentLesson.title}
+          hideAnswered={hideAnswered}
+          setHideAnswered={setHideAnswered}
           exercises={currentExercises}
         />
       )}
@@ -104,42 +118,48 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
 }
 
 type ExerciseData = {
+  id: number
   problem: string
   answer: string
   explanation: string
 }
 
 type ExerciseProps = {
-  exercise: ExerciseData
-  setExerciseIndex: React.Dispatch<React.SetStateAction<number>>
   lessonTitle: string
-  hasPrevious: boolean
-  hasNext: boolean
-  submitUserAnswer: (userAnswer: string) => void
+  exercises: ExerciseData[]
+  userAnswers: Record<number, string>
+  submitUserAnswer: (exerciseId: number, userAnswer: string) => void
+  onExit: (userAnswers: Record<number, string>) => void
 }
 
 const Exercise = ({
-  exercise,
-  setExerciseIndex,
   lessonTitle,
-  hasPrevious,
-  hasNext,
-  submitUserAnswer
+  exercises,
+  userAnswers,
+  submitUserAnswer,
+  onExit
 }: ExerciseProps) => {
   const [answerShown, setAnswerShown] = useState(false)
   const [message, setMessage] = useState(Message.EMPTY)
+  const [exerciseIndex, setExerciseIndex] = useState(0)
+  const [localUserAnswers, setLocalUserAnswers] = useState(userAnswers)
+  const exercise = exercises[exerciseIndex]
+
+  const hasPrevious = exerciseIndex > 0
+  const hasNext = exerciseIndex < exercises.length - 1
 
   return (
     <div className={`mx-auto ${styles.exercise__container}`}>
       <button
         className="btn ps-0 d-flex align-items-center"
-        onClick={() => setExerciseIndex(-1)}
+        onClick={() => onExit(localUserAnswers)}
       >
         <ArrowLeftIcon size="medium" aria-label="Exit" />
       </button>
 
       <h1 className="mb-4 fs-2">{lessonTitle}</h1>
       <ExerciseCard
+        key={exercise.id}
         problem={exercise.problem}
         answer={exercise.answer}
         explanation={exercise.explanation}
@@ -147,12 +167,22 @@ const Exercise = ({
         setAnswerShown={setAnswerShown}
         message={message}
         setMessage={setMessage}
-        submitUserAnswer={submitUserAnswer}
+        submitUserAnswer={userAnswer => {
+          setLocalUserAnswers({
+            ...localUserAnswers,
+            [exercise.id]: userAnswer
+          })
+          submitUserAnswer(exercise.id, userAnswer)
+        }}
       />
       <div className="d-flex justify-content-between mt-4">
         {hasPrevious ? (
           <button
-            onClick={() => setExerciseIndex(i => i - 1)}
+            onClick={() => {
+              setExerciseIndex(i => i - 1)
+              setAnswerShown(false)
+              setMessage(Message.EMPTY)
+            }}
             className="btn btn-outline-primary fw-bold px-4 py-2"
             style={{ fontFamily: 'PT Mono', fontSize: 14 }}
           >
@@ -162,12 +192,26 @@ const Exercise = ({
           <div />
         )}
         {message === Message.SUCCESS ? (
-          <NewButton onClick={() => setExerciseIndex(i => i + 1)}>
+          <NewButton
+            onClick={() => {
+              if (exerciseIndex === exercises.length - 1) {
+                onExit(localUserAnswers)
+              } else {
+                setExerciseIndex(i => i + 1)
+              }
+              setAnswerShown(false)
+              setMessage(Message.EMPTY)
+            }}
+          >
             NEXT QUESTION
           </NewButton>
         ) : hasNext ? (
           <button
-            onClick={() => setExerciseIndex(i => i + 1)}
+            onClick={() => {
+              setExerciseIndex(i => i + 1)
+              setAnswerShown(false)
+              setMessage(Message.EMPTY)
+            }}
             className="btn btn-outline-primary fw-bold px-4 py-2"
             style={{ fontFamily: 'PT Mono', fontSize: 14 }}
           >
@@ -181,22 +225,29 @@ const Exercise = ({
   )
 }
 
+type ExerciseItem = {
+  moduleName: string
+  problem: string
+  answer: string
+  userAnswer: string | null
+  state: ExercisePreviewCardProps['state']
+}
+
 type ExerciseListProps = {
   tabs: { text: string; url: string }[]
-  setExerciseIndex: React.Dispatch<React.SetStateAction<number>>
+  onClickSolveExercises: () => void
   lessonTitle: string
-  exercises: {
-    moduleName: string
-    problem: string
-    answer: string
-    userAnswer: string | null
-  }[]
+  hideAnswered: boolean
+  setHideAnswered: (hideAnswered: boolean) => void
+  exercises: ExerciseItem[]
 }
 
 const ExerciseList = ({
   tabs,
-  setExerciseIndex,
+  onClickSolveExercises,
   lessonTitle,
+  hideAnswered,
+  setHideAnswered,
   exercises
 }: ExerciseListProps) => {
   return (
@@ -208,24 +259,35 @@ const ExerciseList = ({
         />
       </div>
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <h1 className="my-2 my-md-5 fs-2">{lessonTitle}</h1>
-        <div
-          className={`mb-3 mb-md-0 d-flex d-md-block ${styles.exerciseList__solveExercisesButtonContainer}`}
-        >
-          <NewButton
-            className="flex-grow-1"
-            onClick={() => setExerciseIndex(0)}
-          >
-            SOLVE EXERCISES
-          </NewButton>
+        <div className="my-2 my-md-5">
+          <h1 className="fs-2">{lessonTitle}</h1>
+          <label className="d-inline-flex align-items-center">
+            <input
+              className="form-check-input m-0 me-3"
+              type="checkbox"
+              style={{ width: 30, height: 30 }}
+              checked={hideAnswered}
+              onChange={() => setHideAnswered(!hideAnswered)}
+            />
+            <span>Show incomplete exercises only</span>
+          </label>
         </div>
+        {exercises.length > 0 && (
+          <div
+            className={`mb-3 mb-md-0 d-flex d-md-block ${styles.exerciseList__solveExercisesButtonContainer}`}
+          >
+            <NewButton className="flex-grow-1" onClick={onClickSolveExercises}>
+              SOLVE EXERCISES
+            </NewButton>
+          </div>
+        )}
       </div>
       <div className={styles.exerciseList__container}>
         {exercises.map((exercise, i) => (
           <ExercisePreviewCard
             key={i}
             moduleName={exercise.moduleName}
-            state={exercise.userAnswer === null ? 'NOT ANSWERED' : 'ANSWERED'}
+            state={exercise.state}
             problem={exercise.problem}
           />
         ))}
