@@ -4,7 +4,7 @@ import Layout from '../../../../components/Layout'
 import withQueryLoader, {
   QueryDataProps
 } from '../../../../containers/withQueryLoader'
-import { GetExercisesQuery } from '../../../../graphql'
+import { GetExercisesQuery, useGetSessionQuery } from '../../../../graphql'
 import Error, { StatusCode } from '../../../../components/Error'
 import LoadingSpinner from '../../../../components/LoadingSpinner'
 import AlertsDisplay from '../../../../components/AlertsDisplay'
@@ -14,9 +14,12 @@ import { NewButton } from '../../../../..../../components/theme/Button'
 import GET_EXERCISES from '../../../../..../../graphql/queries/getExercises'
 import styles from '../../../../scss/exercises.module.scss'
 
-const AddExercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
+const MentorPage: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   queryData
 }) => {
+  const { data } = useGetSessionQuery()
+  const sessionUser = data?.session.user
+
   const { lessons, alerts, exercises } = queryData
   const router = useRouter()
 
@@ -43,7 +46,11 @@ const AddExercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   ]
 
   const currentExercises = exercises
-    .filter(exercise => exercise?.module.lesson.slug === slug)
+    .filter(
+      exercise =>
+        exercise.module.lesson.slug === slug &&
+        exercise.author.id === sessionUser?.id
+    )
     .map(exercise => ({
       id: exercise.id,
       moduleName: exercise.module.name,
@@ -128,5 +135,5 @@ export default withQueryLoader<GetExercisesQuery>(
   {
     query: GET_EXERCISES
   },
-  AddExercises
+  MentorPage
 )
