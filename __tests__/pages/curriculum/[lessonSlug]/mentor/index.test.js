@@ -41,8 +41,6 @@ describe('Mentor page', () => {
       </MockedProvider>
     )
 
-    await new Promise(res => setTimeout(res, 0))
-
     await waitFor(() =>
       screen.getByRole('heading', { name: /Foundations of JavaScript/i })
     )
@@ -84,8 +82,6 @@ describe('Mentor page', () => {
     await waitFor(() =>
       screen.getByRole('heading', { name: /Foundations of JavaScript/i })
     )
-
-    await new Promise(res => setTimeout(res, 0))
 
     expect(screen.queryByText('Numbers')).not.toBeInTheDocument()
     expect(
