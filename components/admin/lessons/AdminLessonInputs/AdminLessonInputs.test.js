@@ -106,8 +106,12 @@ const errorMocks = [errorMock, { ...errorMock }]
 const loadingMocks = [loadingMock]
 
 describe('AdminLessonInputs component', () => {
-  it('Should add module', async () => {
+  it('Should add item', async () => {
     expect.assertions(1)
+
+    const mutation = jest.fn().mockResolvedValue({
+      ...modules.basic
+    })
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
@@ -115,6 +119,8 @@ describe('AdminLessonInputs component', () => {
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}
+          action={mutation}
+          loading={false}
         />
       </MockedProvider>
     )
@@ -129,7 +135,7 @@ describe('AdminLessonInputs component', () => {
       delay: 1
     })
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     await waitFor(() =>
@@ -139,8 +145,12 @@ describe('AdminLessonInputs component', () => {
     )
   })
 
-  it('Should update module', async () => {
+  it('Should update item', async () => {
     expect.assertions(1)
+
+    const mutation = jest.fn().mockResolvedValue({
+      ...modules.basic
+    })
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={updateModuleMocks}>
@@ -148,7 +158,8 @@ describe('AdminLessonInputs component', () => {
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}
-          module={modules.withId}
+          action={mutation}
+          item={modules.basic}
         />
       </MockedProvider>
     )
@@ -176,21 +187,29 @@ describe('AdminLessonInputs component', () => {
   it('Should display error message if inputs are empty', async () => {
     expect.assertions(1)
 
+    const mutation = jest.fn().mockResolvedValue({
+      ...modules.basic
+    })
+
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          action={mutation}
+        />
       </MockedProvider>
     )
 
     await userEvent.clear(getByTestId('input0'))
     await userEvent.clear(getByTestId('textbox'))
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     await waitFor(() =>
       expect(
-        getByText('An error occurred. Please try again.')
+        getByText('missing item name, description, or order')
       ).toBeInTheDocument()
     )
   })
@@ -198,9 +217,17 @@ describe('AdminLessonInputs component', () => {
   it('Should display error message if network or GraphQL error', async () => {
     expect.assertions(1)
 
+    const mutation = jest.fn().mockRejectedValue({
+      message: 'An error occurred. Please try again.'
+    })
+
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={errorMocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          action={mutation}
+        />
       </MockedProvider>
     )
 
@@ -211,7 +238,7 @@ describe('AdminLessonInputs component', () => {
       delay: 1
     })
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     await waitFor(() =>
@@ -230,6 +257,8 @@ describe('AdminLessonInputs component', () => {
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}
+          loading={true}
+          mutation={() => {}}
         />
       </MockedProvider>
     )
@@ -244,7 +273,7 @@ describe('AdminLessonInputs component', () => {
       delay: 1
     })
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     expect(container.querySelector('.spinner-grow')).toBeInTheDocument()
@@ -261,24 +290,30 @@ describe('AdminLessonInputs component', () => {
 
     await userEvent.clear(getByTestId('input0'))
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     expect(getByText('Untitled')).toBeInTheDocument()
   })
 
-  it('Should call onAddModule when a module is added', async () => {
+  it('Should call onActionFinish when an item is added', async () => {
     expect.hasAssertions()
 
-    const onAddModule = jest.fn()
+    const onActionFinish = jest.fn()
+
+    const mutation = jest.fn().mockResolvedValue({
+      ...basicMock.result.data.addModule,
+      lesson: { id: lesson.id }
+    })
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={mocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
-          onAddModule={onAddModule}
+          onActionFinish={onActionFinish}
           refetch={() => {}}
+          action={mutation}
         />
       </MockedProvider>
     )
@@ -293,30 +328,36 @@ describe('AdminLessonInputs component', () => {
       delay: 1
     })
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(onAddModule).toBeCalledWith(
+      expect(onActionFinish).toBeCalledWith(
         { ...basicMock.result.data.addModule, lesson: { id: lesson.id } },
         null
       )
     )
   })
 
-  it('Should call onAddModule when a module is updated', async () => {
+  it('Should call onActionFinish when an item is updated', async () => {
     expect.hasAssertions()
 
-    const onAddModule = jest.fn()
+    const onActionFinish = jest.fn()
+
+    const mutation = jest.fn().mockResolvedValue({
+      ...basicUpdateModuleMock.result.data.updateModule,
+      lesson: { id: lesson.id }
+    })
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={updateModuleMocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
-          onAddModule={onAddModule}
+          onActionFinish={onActionFinish}
           refetch={() => {}}
-          module={modules.withId}
+          action={mutation}
+          item={modules.withId}
         />
       </MockedProvider>
     )
@@ -335,7 +376,7 @@ describe('AdminLessonInputs component', () => {
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(onAddModule).toBeCalledWith(
+      expect(onActionFinish).toBeCalledWith(
         {
           ...basicUpdateModuleMock.result.data.updateModule,
           lesson: { id: lesson.id }
@@ -345,10 +386,12 @@ describe('AdminLessonInputs component', () => {
     )
   })
 
-  it('Should call onAddModule with null when a module is added', async () => {
+  it('Should call onActionFinish with null when an item is added', async () => {
     expect.hasAssertions()
 
-    const onAddModule = jest.fn()
+    const onActionFinish = jest.fn()
+
+    const mutation = jest.fn().mockResolvedValue(null)
 
     const { getByText, getByTestId } = render(
       <MockedProvider
@@ -365,8 +408,9 @@ describe('AdminLessonInputs component', () => {
         <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
-          onAddModule={onAddModule}
+          onActionFinish={onActionFinish}
           refetch={() => {}}
+          action={mutation}
         />
       </MockedProvider>
     )
@@ -381,24 +425,28 @@ describe('AdminLessonInputs component', () => {
       delay: 1
     })
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
-    await waitFor(() => expect(onAddModule).toBeCalledWith(null, null))
+    await waitFor(() => expect(onActionFinish).toBeCalledWith(null, null))
   })
 
-  it('Should call onAddModule when there is error', async () => {
+  it('Should call onActionFinish when there is error', async () => {
     expect.hasAssertions()
 
-    const onAddModule = jest.fn()
+    const onActionFinish = jest.fn()
+    const mutation = jest.fn().mockRejectedValue({
+      message: 'error'
+    })
 
     const { getByText, getByTestId } = render(
       <MockedProvider mocks={errorMocks}>
         <AdminLessonInputs
           lessonId={lesson.id}
           title={lesson.title}
-          onAddModule={onAddModule}
+          onActionFinish={onActionFinish}
           refetch={() => {}}
+          action={mutation}
         />
       </MockedProvider>
     )
@@ -412,62 +460,20 @@ describe('AdminLessonInputs component', () => {
     await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
       delay: 1
     })
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     await waitFor(() =>
-      expect(onAddModule).toBeCalledWith(null, { ...modules.basic })
-    )
-  })
-
-  it('Should handle false module update/add query response name', async () => {
-    expect.assertions(1)
-
-    const { getByText, getByTestId } = render(
-      <MockedProvider
-        mocks={[
-          {
-            ...updateModuleMocks[0],
-            result: {
-              data: {
-                updateModule: {
-                  ...updateModuleMocks[0].result.data.updateModule,
-                  name: undefined
-                }
-              }
-            }
-          }
-        ]}
-      >
-        <AdminLessonInputs
-          lessonId={lesson.id}
-          title={lesson.title}
-          refetch={() => {}}
-          module={modules.withId}
-        />
-      </MockedProvider>
-    )
-
-    await userEvent.type(getByTestId('input0'), 'Functions', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('input2'), '1', {
-      delay: 1
-    })
-    await userEvent.type(getByTestId('textbox'), 'Functions are cool', {
-      delay: 1
-    })
-
-    const submit = getByText('SAVE CHANGES')
-    await userEvent.click(submit)
-
-    await waitFor(() =>
-      expect(getByText('Updated the item successfully!')).toBeInTheDocument()
+      expect(onActionFinish).toBeCalledWith(null, { ...modules.basic })
     )
   })
 
   it('Should dismiss success message', async () => {
     expect.assertions(1)
+
+    const mutation = jest.fn().mockResolvedValue({
+      ...modules.basic
+    })
 
     const { getByText, getByTestId, queryByText, getByLabelText } = render(
       <MockedProvider mocks={mocks}>
@@ -475,6 +481,7 @@ describe('AdminLessonInputs component', () => {
           lessonId={lesson.id}
           title={lesson.title}
           refetch={() => {}}
+          action={mutation}
         />
       </MockedProvider>
     )
@@ -489,7 +496,7 @@ describe('AdminLessonInputs component', () => {
       delay: 1
     })
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     await userEvent.click(getByLabelText('Close alert'))
@@ -504,16 +511,24 @@ describe('AdminLessonInputs component', () => {
   it('Should dismiss error message', async () => {
     expect.assertions(1)
 
+    const mutation = jest.fn().mockResolvedValue({
+      ...modules.basic
+    })
+
     const { getByText, getByTestId, queryByText, getByLabelText } = render(
       <MockedProvider mocks={mocks}>
-        <AdminLessonInputs lessonId={lesson.id} title={lesson.title} />
+        <AdminLessonInputs
+          lessonId={lesson.id}
+          title={lesson.title}
+          action={mutation}
+        />
       </MockedProvider>
     )
 
     await userEvent.clear(getByTestId('input0'))
     await userEvent.clear(getByTestId('textbox'))
 
-    const submit = getByText('ADD MODULE')
+    const submit = getByText('ADD ITEM')
     await userEvent.click(submit)
 
     await userEvent.click(getByLabelText('Close alert'))
