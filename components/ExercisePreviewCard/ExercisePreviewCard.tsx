@@ -3,7 +3,7 @@ import styles from './exercisePreviewCard.module.scss'
 
 export type ExercisePreviewCardProps = {
   moduleName: string
-  state: 'NOT ANSWERED' | 'ANSWERED'
+  state: 'NOT ANSWERED' | 'INCORRECT' | 'ANSWERED'
   problem: string
   className?: string
 }
