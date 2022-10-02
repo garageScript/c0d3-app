@@ -16,6 +16,7 @@ import UPDATE_LESSON from '../../../../../../graphql/queries/updateLesson'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
+import { AddModuleDocument } from '../../../../../../graphql'
 
 const MODULES = gql`
   query {
@@ -125,11 +126,42 @@ const updateLessonMutationMockWithError = {
   error: new Error('Error')
 }
 
-const mocks = [getAppQueryMock, modulesQueryMock, updateLessonMutationMock]
+const addModuleMock = {
+  request: {
+    query: AddModuleDocument,
+    variables: {
+      name: 'Functions',
+      content: 'Functions are cool',
+      order: 1,
+      lessonId: 2
+    }
+  },
+  result: {
+    data: {
+      addModule: {
+        id: 1,
+        name: 'Functions',
+        content: 'Functions are cool',
+        order: 1,
+        lesson: {
+          title: 'Foundations of JavaScript'
+        }
+      }
+    }
+  }
+}
+
+const mocks = [
+  getAppQueryMock,
+  modulesQueryMock,
+  updateLessonMutationMock,
+  addModuleMock
+]
 const mocksWithError = [
   getAppQueryMock,
   modulesQueryMock,
-  updateLessonMutationMockWithError
+  updateLessonMutationMockWithError,
+  addModuleMock
 ]
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
@@ -163,6 +195,39 @@ describe('modules', () => {
     // The default input values are set as module3 name and content.
     expect(screen.getByText(module2)).toBeInTheDocument()
     expect(screen.getByText(module3)).toBeInTheDocument()
+  })
+
+  it('Should add a module', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    await userEvent.click(screen.getByText('ADD NEW MODULE'))
+
+    await userEvent.type(screen.getByTestId('input0'), 'Functions', {
+      delay: 1
+    })
+    await userEvent.type(screen.getByTestId('input2'), '1', {
+      delay: 1
+    })
+    await userEvent.type(screen.getByTestId('textbox'), 'Functions are cool', {
+      delay: 1
+    })
+
+    const submit = screen.getByText('ADD ITEM')
+
+    await userEvent.click(submit)
+
+    expect(
+      await screen.findByText('Added the item Functions successfully!')
+    ).toBeInTheDocument()
   })
 
   it('Should set "add module" mode', async () => {

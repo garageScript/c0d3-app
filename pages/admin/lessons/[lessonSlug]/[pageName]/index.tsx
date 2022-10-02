@@ -4,12 +4,17 @@ import { gql, useQuery } from '@apollo/client'
 import {
   GetAppProps,
   Lesson,
+  useAddModuleMutation,
   useUpdateLessonMutation,
+  useUpdateModuleMutation,
   withGetApp
 } from '../../../../../graphql'
 import AdminLessonSideNav from '../../../../../components/admin/lessons/AdminLessonSideNav'
 import AdminLessonInputs from '../../../../../components/admin/lessons/AdminLessonInputs'
-import { Props } from '../../../../../components/admin/lessons/AdminLessonInputs/AdminLessonInputs'
+import {
+  Item,
+  Props
+} from '../../../../../components/admin/lessons/AdminLessonInputs/AdminLessonInputs'
 import Breadcrumbs from '../../../../../components/Breadcrumbs'
 import styles from '../../../../../scss/modules.module.scss'
 import { AdminLayout } from '../../../../../components/admin/AdminLayout'
@@ -43,7 +48,7 @@ const MODULES = gql`
   }
 `
 
-type Module = {
+type Module = Item & {
   id: number
   name: string
   content: string
@@ -122,12 +127,24 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
 type ModulesPageProps = {
   modules: Modules
   lessonId: number
-  refetch: Props['refetch']
+  refetch: Props<Module>['refetch']
 }
 const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const onAddItem = () => setSelectedIndex(-1)
   const onSelect = (item: Omit<Module, 'order'>) => setSelectedIndex(item.id)
+  const selectedModule = modules.find(module => module.id === selectedIndex)
+
+  const [mutation, { loading }] =
+    selectedIndex === -1 ? useAddModuleMutation() : useUpdateModuleMutation()
+
+  const action = async (options: { variables: Item }) => {
+    const { data } = await mutation({
+      variables: { ...options.variables, lessonId, id: options.variables.id! }
+    })
+
+    return _get(data, 'updateModule') || _get(data, 'addModule')
+  }
 
   return (
     <div className={styles.container__modulesPanel}>
@@ -142,7 +159,9 @@ const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
         <AdminLessonInputs
           lessonId={lessonId}
           refetch={refetch}
-          module={modules.find(module => module.id === selectedIndex)}
+          item={selectedModule}
+          action={action}
+          loading={loading}
         />
       </div>
     </div>
@@ -153,7 +172,7 @@ type ContentProps = {
   pageName?: string | string[]
   modules: Modules
   lessonId: number
-  refetch: Props['refetch']
+  refetch: Props<Module>['refetch']
   lesson: Lesson
 }
 const Content = ({
