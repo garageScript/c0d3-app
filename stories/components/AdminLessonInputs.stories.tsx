@@ -57,7 +57,7 @@ export const Basic = () => {
     error: false
   })
 
-  const { data, loading } = someFn(null)
+  const { loading } = someFn(null)
 
   const mutationFn = async (options: { variables: Item }) => {
     const { data } = await someFn({
