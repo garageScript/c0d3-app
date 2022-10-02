@@ -865,6 +865,7 @@ export type GetExercisesQuery = {
     description: string
     answer: string
     explanation?: string | null
+    author: { __typename?: 'User'; id: number }
     module: {
       __typename?: 'Module'
       name: string
@@ -3682,6 +3683,9 @@ export const GetExercisesDocument = gql`
     }
     exercises {
       id
+      author {
+        id
+      }
       module {
         name
         lesson {
