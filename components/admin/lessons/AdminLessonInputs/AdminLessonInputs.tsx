@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { formChange } from '../../../../helpers/formChange'
 import { FormCard, MD_INPUT, Option, TextField } from '../../../FormCard'
 import styles from './adminLessonInputs.module.scss'
-import { get, isEqual } from 'lodash'
+import { isEqual } from 'lodash'
 import {
   ApolloError,
   OperationVariables,
@@ -11,12 +11,11 @@ import {
 import QueryInfo from '../../../QueryInfo'
 
 export type Item = {
-  __typename?: string | undefined
   id?: number
   name: string
   content: string
   order: number
-  lesson?: { __typename?: string | undefined; id?: number }
+  lesson?: { __typename?: string; id?: number }
 }
 
 export type Props<MainItem extends Item> = {
@@ -30,18 +29,10 @@ export type Props<MainItem extends Item> = {
     }>
   >
   onActionFinish?: (
-    m:
-      | (Item & { lesson: { id: number } })
-      | (Item & { lesson: { id: number } })
-      | null,
+    m: (Item & { lesson: { id: number } }) | null,
     e: { name: string; content: string; order: number } | null
   ) => void
-  action: (options: { variables: Item }) => Promise<
-    | {
-        [Key in keyof Item]: Item[Key]
-      }
-    | undefined
-  >
+  action: (options: { variables: Item }) => Promise<Item | undefined>
 }
 
 enum Error {
@@ -83,10 +74,7 @@ const AdminLessonInputs = <MainItem extends Item>({
   const [data, setData] = useState<null | undefined | typeof item>(null)
 
   useEffect(
-    () =>
-      setFormOptions(
-        initValues(get(item, 'name'), get(item, 'content'), get(item, 'order'))
-      ),
+    () => setFormOptions(initValues(item?.name, item?.content, item?.order)),
     [item]
   )
 
@@ -94,7 +82,7 @@ const AdminLessonInputs = <MainItem extends Item>({
     content: content.value as string,
     lessonId,
     name: name.value as string,
-    order: +order.value as number
+    order: Number(order.value)
   }
 
   const [dataDiff, setDataDiff] = useState<undefined | typeof data>(data)
