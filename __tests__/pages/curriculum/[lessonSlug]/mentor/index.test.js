@@ -6,8 +6,12 @@ import { useRouter } from 'next/router'
 import { MockedProvider } from '@apollo/client/testing'
 import getExercisesData from '../../../../../__dummy__/getExercisesData'
 import GET_EXERCISES from '../../../../../graphql/queries/getExercises'
+import GET_SESSION from '../../../../../graphql/queries/getSession'
+import dummySessionData from '../../../../../__dummy__/sessionData'
 
-describe('AddExercises page', () => {
+import '@testing-library/jest-dom'
+
+describe('Mentor page', () => {
   const { query, push } = useRouter()
   query['lessonSlug'] = 'js0'
 
@@ -17,6 +21,16 @@ describe('AddExercises page', () => {
         request: { query: GET_EXERCISES },
         result: {
           data: getExercisesData
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
         }
       }
     ]
@@ -36,12 +50,61 @@ describe('AddExercises page', () => {
     screen.getByRole('link', { name: 'LESSON' })
   })
 
+  test('Should not render exercises if the user id mismatch exercise author.id', async () => {
+    const mocks = [
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: getExercisesData
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData,
+              user: {
+                id: 4
+              }
+            }
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <AddExercises />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
+    )
+
+    expect(screen.queryByText('Numbers')).not.toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
+    ).toBeInTheDocument()
+  })
+
   test('Should push to addExercise page', async () => {
     const mocks = [
       {
         request: { query: GET_EXERCISES },
         result: {
           data: getExercisesData
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
         }
       }
     ]
@@ -78,6 +141,16 @@ describe('AddExercises page', () => {
             }))
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
 
@@ -106,6 +179,16 @@ describe('AddExercises page', () => {
             lessons: null
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
 
@@ -126,6 +209,16 @@ describe('AddExercises page', () => {
           data: {
             ...getExercisesData,
             lessons: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }
@@ -149,6 +242,16 @@ describe('AddExercises page', () => {
         request: { query: GET_EXERCISES },
         result: {
           data: getExercisesData
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
         }
       }
     ]
