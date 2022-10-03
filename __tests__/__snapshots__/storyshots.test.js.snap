@@ -513,9 +513,9 @@ Array [
           >
             <span
               className="optionInfo__span"
-              data-testid="spanModule Name0"
+              data-testid="spanItem Name0"
             >
-              Module name
+              Item name
             </span>
             <input
               className="form-control optionInfo__input"
