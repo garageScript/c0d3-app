@@ -216,6 +216,40 @@ describe('Exercises page', () => {
     expect(incorrectExercisePreviews).toHaveLength(1)
   })
 
+  test('Renders a finished all exercises message when the user finished all the exercises', async () => {
+    const mocks = [
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: {
+            ...getExercisesData,
+            // Make it so the user answered all of the exercises correctly
+            exerciseSubmissions: getExercisesData.exercises.map(exercise => ({
+              exerciseId: exercise.id,
+              userAnswer: exercise.answer
+            }))
+          }
+        }
+      }
+    ]
+
+    const { findByLabelText, findAllByText, findByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Exercises />
+      </MockedProvider>
+    )
+
+    const exercisePreviews = await findAllByText('Problem')
+    expect(exercisePreviews).toHaveLength(3)
+
+    const checkbox = await findByLabelText('Show incomplete exercises only')
+    fireEvent.click(checkbox)
+
+    await findByText(
+      '🎉 Congratulations! You finished all the exercises for this lesson! 🥳'
+    )
+  })
+
   test('Should not render lessons nav card tab if lesson docUrl is null', async () => {
     const mocks = [
       {
