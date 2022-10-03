@@ -37,6 +37,7 @@ $light_primary: color.adjust(variables.$primary, $lightness: 28%);
   font-weight: bold;
   text-decoration: none;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .navCard__tabsNav__nav__item:hover {
@@ -53,6 +54,7 @@ $light_primary: color.adjust(variables.$primary, $lightness: 28%);
   text-decoration: none;
   transition: background-color 0.1s ease-in;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .navCard__tabsNav__nav__item--inactive:hover {
