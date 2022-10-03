@@ -221,7 +221,7 @@ describe('modules', () => {
       delay: 1
     })
 
-    const submit = screen.getByText('ADD ITEM')
+    const submit = screen.getByText('ADD MODULE')
 
     await userEvent.click(submit)
 

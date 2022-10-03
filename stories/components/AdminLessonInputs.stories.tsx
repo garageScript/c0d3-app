@@ -113,6 +113,7 @@ export const Basic = () => {
           refetch={(() => {}) as any}
           action={mutationFn}
           loading={loading}
+          itemName="module"
         />
       </MockedProvider>
     </>

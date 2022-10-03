@@ -162,6 +162,7 @@ const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
           item={selectedModule}
           action={action}
           loading={loading}
+          itemName="module"
         />
       </div>
     </div>

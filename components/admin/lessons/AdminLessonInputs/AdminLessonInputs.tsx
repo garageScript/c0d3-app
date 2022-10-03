@@ -22,6 +22,7 @@ export type Props<MainItem extends Item> = {
   lessonId: number
   title?: string
   item?: Item
+  itemName?: string
   loading: boolean
   refetch: (variables?: Partial<OperationVariables>) => Promise<
     ApolloQueryResult<{
@@ -35,17 +36,18 @@ export type Props<MainItem extends Item> = {
   action: (options: { variables: Item }) => Promise<Item | undefined>
 }
 
-enum Error {
-  InvalidData = 'missing item name, description, or order'
-}
-
 const initValues = (
   nameValue?: string,
   descValue?: string,
-  orderValue?: number
+  orderValue?: number,
+  itemName?: string
 ): [TextField, TextField, Option] => [
   {
-    title: 'Item Name',
+    title: `${
+      itemName
+        ? itemName[0].toUpperCase() + itemName.slice(1).toLowerCase()
+        : 'Item'
+    } Name`,
     value: nameValue || ''
   },
   {
@@ -63,6 +65,7 @@ const AdminLessonInputs = <MainItem extends Item>({
   title,
   lessonId,
   item,
+  itemName,
   loading,
   refetch,
   onActionFinish,
@@ -74,7 +77,10 @@ const AdminLessonInputs = <MainItem extends Item>({
   const [data, setData] = useState<null | undefined | typeof item>(null)
 
   useEffect(
-    () => setFormOptions(initValues(item?.name, item?.content, item?.order)),
+    () =>
+      setFormOptions(
+        initValues(item?.name, item?.content, item?.order, itemName)
+      ),
     [item]
   )
 
@@ -106,7 +112,9 @@ const AdminLessonInputs = <MainItem extends Item>({
         order.value === '' ||
         order.value < 0
       ) {
-        return setErrorMsg(Error.InvalidData)
+        return setErrorMsg(
+          `missing ${itemName || 'item'} name, description, or order`
+        )
       }
 
       setErrorMsg('')
@@ -156,7 +164,7 @@ const AdminLessonInputs = <MainItem extends Item>({
         loading={loading}
         error={errorMsg}
         texts={{
-          loading: 'Adding the item...',
+          loading: `Adding the ${itemName || 'item'}...`,
           data: dataText(),
           error: errorMsg
         }}
@@ -172,7 +180,9 @@ const AdminLessonInputs = <MainItem extends Item>({
         title={name.value || title || 'Untitled'}
         values={formOptions}
         onSubmit={{
-          title: item ? 'SAVE CHANGES' : 'ADD ITEM',
+          title: item
+            ? 'SAVE CHANGES'
+            : `ADD ${itemName?.toUpperCase() || 'ITEM'}`,
           onClick: onSubmit
         }}
         onChange={handleChange}
