@@ -120,7 +120,6 @@ const ExerciseList = ({
           <ExercisePreviewCard
             key={i}
             moduleName={exercise.moduleName}
-            state={'ANSWERED'}
             problem={exercise.problem}
           />
         ))}
