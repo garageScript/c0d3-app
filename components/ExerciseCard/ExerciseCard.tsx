@@ -1,3 +1,4 @@
+import Markdown from 'markdown-to-jsx'
 import React, { useState } from 'react'
 import { NewButton } from '../theme/Button'
 import { Text } from '../theme/Text'
@@ -37,7 +38,7 @@ const ExerciseCard = ({
       <div className="d-flex flex-column flex-md-row mb-2">
         <div className={`mb-0 me-md-3 ${styles.exerciseCard__section}`}>
           <div className="fw-bold mb-2">Problem</div>
-          <pre className="bg-light py-3 px-4">{problem}</pre>
+          <Markdown className="d-block bg-light py-3 px-4">{problem}</Markdown>
         </div>
         <div className={`ms-md-3 ${styles.exerciseCard__section}`}>
           <div className="fw-bold mt-2 mt-md-0 mb-2">Your Answer</div>
@@ -88,14 +89,16 @@ const ExerciseCard = ({
           <hr />
           <div className="fw-bold mb-2">Answer</div>
           <div className="d-flex flex-column flex-md-row mb-2">
-            <pre
-              className={`bg-light py-3 px-4 mb-2 mb-md-0 me-md-3 ${styles.exerciseCard__section}`}
+            <Markdown
+              className={`d-block bg-light py-3 px-4 mb-2 mb-md-0 me-md-3 ${styles.exerciseCard__section}`}
             >
               {answer}
-            </pre>
-            <div className={`ms-md-3 ${styles.exerciseCard__section}`}>
+            </Markdown>
+            <Markdown
+              className={`d-block ms-md-3 ${styles.exerciseCard__section}`}
+            >
               {explanation}
-            </div>
+            </Markdown>
           </div>
         </>
       )}

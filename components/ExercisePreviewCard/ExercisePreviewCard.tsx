@@ -1,3 +1,4 @@
+import Markdown from 'markdown-to-jsx'
 import React from 'react'
 import styles from './exercisePreviewCard.module.scss'
 
@@ -35,7 +36,7 @@ const ExercisePreviewCard = ({
         {state && <div className={`badge ${topMessageStyle}`}>{state}</div>}
       </div>
       <div className="mb-2">Problem</div>
-      <pre className="bg-light py-2 px-3">{problem}</pre>
+      <Markdown className="d-block bg-light py-2 px-3">{problem}</Markdown>
     </section>
   )
 }
