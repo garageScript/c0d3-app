@@ -16,6 +16,9 @@ const GET_EXERCISES = gql`
     }
     exercises {
       id
+      author {
+        id
+      }
       module {
         name
         lesson {
