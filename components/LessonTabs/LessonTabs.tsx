@@ -1,4 +1,5 @@
 import React from 'react'
+import { CURRICULUM_URL } from '../../constants'
 import NavCard from '../NavCard'
 
 type Lesson = {
@@ -20,7 +21,7 @@ const LessonTabs = ({
     { text: 'exercises', url: `/exercises/${lesson.slug}` },
     {
       text: 'mentor exercises',
-      url: `/curriculum/${lesson.slug}/mentor`
+      url: `${CURRICULUM_URL}/${lesson.slug}/mentor`
     }
   ]
 
