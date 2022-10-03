@@ -157,20 +157,6 @@ describe('AddExercise page', () => {
     expect(screen.queryAllByText('Select a module')[0]).toBeInTheDocument()
   })
 
-  it('should go back to mentor page', async () => {
-    render(
-      <MockedProvider mocks={mocks}>
-        <AddExercisePage />
-      </MockedProvider>
-    )
-
-    // Helps the data to resolve
-    await act(() => new Promise(res => setTimeout(res, 0)))
-
-    await userEvent.click(screen.getByLabelText('Exit'))
-
-    expect(useRouterObj.push).toBeCalledWith('/curriculum/js1/mentor')
-  })
   it('should fill out the inputs', async () => {
     render(
       <MockedProvider mocks={mocks}>

@@ -18,6 +18,7 @@ import { get } from 'lodash'
 import QueryInfo from '../../../../../components/QueryInfo'
 import { errorCheckAllFields } from '../../../../../helpers/admin/adminHelpers'
 import { ArrowLeftIcon } from '@primer/octicons-react'
+import Link from 'next/link'
 import * as Sentry from '@sentry/nextjs'
 
 type DetachedModule = Omit<Module, 'lesson' | 'author'>
@@ -44,19 +45,18 @@ const Header = <
   setModule,
   setErrorMsg
 }: HeaderProps<T>) => {
-  const { query, push } = useRouter()
+  const { query } = useRouter()
   const { lessonSlug } = query
 
   const modules = get(lesson, 'modules') ?? []
 
   return (
     <header className={styles.header}>
-      <button
-        className="btn ps-0 d-flex align-items-center mb-3"
-        onClick={() => push(`/curriculum/${lessonSlug}/mentor`)}
-      >
-        <ArrowLeftIcon size="medium" aria-label="Exit" />
-      </button>
+      <Link href={`/curriculum/${lessonSlug}/mentor`}>
+        <a className="btn ps-0 d-flex align-items-center mb-3">
+          <ArrowLeftIcon size="medium" aria-label="Exit" />
+        </a>
+      </Link>
       <div>
         <h1>{get(lesson, 'title')}</h1>
       </div>
