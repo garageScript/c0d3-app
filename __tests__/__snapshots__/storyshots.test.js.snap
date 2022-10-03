@@ -5528,13 +5528,13 @@ exports[`Storyshots Components/ExerciseCard Basic 1`] = `
       >
         Problem
       </div>
-      <pre
+      <p
         className="bg-light py-3 px-4"
       >
         let a = 5
 a = a + 10
 // what is a?
-      </pre>
+      </p>
     </div>
     <div
       className="ms-md-3 exerciseCard__section"
@@ -5692,13 +5692,13 @@ exports[`Storyshots Components/ExercisePreviewCard Answered 1`] = `
   >
     Problem
   </div>
-  <pre
+  <p
     className="bg-light py-2 px-3"
   >
     const a = 5
 a = a + 10
 // what is a?
-  </pre>
+  </p>
 </section>
 `;
 
@@ -5728,13 +5728,13 @@ exports[`Storyshots Components/ExercisePreviewCard Not Answered 1`] = `
   >
     Problem
   </div>
-  <pre
+  <p
     className="bg-light py-2 px-3"
   >
     const a = 5
 a = a + 10
 // what is a?
-  </pre>
+  </p>
 </section>
 `;
 
