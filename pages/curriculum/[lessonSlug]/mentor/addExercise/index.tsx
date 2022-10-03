@@ -17,6 +17,8 @@ import styles from '../../../../../scss/mentorPage.module.scss'
 import { get } from 'lodash'
 import QueryInfo from '../../../../../components/QueryInfo'
 import { errorCheckAllFields } from '../../../../../helpers/admin/adminHelpers'
+import { ArrowLeftIcon } from '@primer/octicons-react'
+import Link from 'next/link'
 import * as Sentry from '@sentry/nextjs'
 
 type DetachedModule = Omit<Module, 'lesson' | 'author'>
@@ -43,10 +45,18 @@ const Header = <
   setModule,
   setErrorMsg
 }: HeaderProps<T>) => {
+  const { query } = useRouter()
+  const { lessonSlug } = query
+
   const modules = get(lesson, 'modules') ?? []
 
   return (
     <header className={styles.header}>
+      <Link href={`/curriculum/${lessonSlug}/mentor`}>
+        <a className="btn ps-0 d-flex align-items-center mb-3">
+          <ArrowLeftIcon size="medium" aria-label="Exit" />
+        </a>
+      </Link>
       <div>
         <h1>{get(lesson, 'title')}</h1>
       </div>
@@ -133,8 +143,8 @@ const initValues = [
 ]
 
 const AddExercisePage = ({ data }: GetAppProps) => {
-  const router = useRouter()
-  const { lessonSlug } = router.query
+  const { query } = useRouter()
+  const { lessonSlug } = query
 
   // Omitting author and lesson because data.lessons[i].modules[i] mismatching type
   const [module, setModule] = useState<null | DetachedModule>(null)
