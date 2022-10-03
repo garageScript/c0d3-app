@@ -36,7 +36,7 @@ const ExercisePreviewCard = ({
         {state && <div className={`badge ${topMessageStyle}`}>{state}</div>}
       </div>
       <div className="mb-2">Problem</div>
-      <Markdown className="bg-light py-2 px-3">{problem}</Markdown>
+      <Markdown className="d-block bg-light py-2 px-3">{problem}</Markdown>
     </section>
   )
 }

@@ -38,7 +38,7 @@ const ExerciseCard = ({
       <div className="d-flex flex-column flex-md-row mb-2">
         <div className={`mb-0 me-md-3 ${styles.exerciseCard__section}`}>
           <div className="fw-bold mb-2">Problem</div>
-          <Markdown className="bg-light py-3 px-4">{problem}</Markdown>
+          <Markdown className="d-block bg-light py-3 px-4">{problem}</Markdown>
         </div>
         <div className={`ms-md-3 ${styles.exerciseCard__section}`}>
           <div className="fw-bold mt-2 mt-md-0 mb-2">Your Answer</div>
@@ -90,7 +90,7 @@ const ExerciseCard = ({
           <div className="fw-bold mb-2">Answer</div>
           <div className="d-flex flex-column flex-md-row mb-2">
             <Markdown
-              className={`bg-light py-3 px-4 mb-2 mb-md-0 me-md-3 ${styles.exerciseCard__section}`}
+              className={`d-block bg-light py-3 px-4 mb-2 mb-md-0 me-md-3 ${styles.exerciseCard__section}`}
             >
               {answer}
             </Markdown>
