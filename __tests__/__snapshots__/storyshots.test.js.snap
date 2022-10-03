@@ -11123,7 +11123,7 @@ exports[`Storyshots Components/LessonTabs Lesson Tabs 1`] = `
     </a>
     <a
       className="navCard__tabsNav__nav__item--inactive nav-pills"
-      href="/curriculum/js0/mentor"
+      href="http://localhost:3000/curriculum/js0/mentor"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onTouchStart={[Function]}
