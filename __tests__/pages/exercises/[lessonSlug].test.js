@@ -32,7 +32,7 @@ describe('Exercises page', () => {
 
     screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
-    screen.getByRole('link', { name: 'LESSONS' })
+    screen.getByRole('link', { name: 'LESSON' })
   })
 
   test('Renders exercise card with the skip, previous, and exit buttons', async () => {

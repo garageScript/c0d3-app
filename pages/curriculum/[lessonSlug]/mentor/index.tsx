@@ -8,11 +8,17 @@ import { GetExercisesQuery, useGetSessionQuery } from '../../../../graphql'
 import Error, { StatusCode } from '../../../../components/Error'
 import LoadingSpinner from '../../../../components/LoadingSpinner'
 import AlertsDisplay from '../../../../components/AlertsDisplay'
-import NavCard from '../../../../..../../components/NavCard'
 import ExercisePreviewCard from '../../../../..../../components/ExercisePreviewCard'
 import { NewButton } from '../../../../..../../components/theme/Button'
 import GET_EXERCISES from '../../../../..../../graphql/queries/getExercises'
 import styles from '../../../../scss/exercises.module.scss'
+import LessonTabs from '../../../../components/LessonTabs'
+
+type ExerciseLesson = {
+  title: string
+  docUrl?: string | null
+  slug: string
+}
 
 const MentorPage: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   queryData
@@ -65,7 +71,7 @@ const MentorPage: React.FC<QueryDataProps<GetExercisesQuery>> = ({
         tabs={tabs}
         lessonTitle={currentLesson.title}
         exercises={currentExercises}
-        lessonSlug={currentLesson.slug}
+        lesson={currentLesson}
       />
 
       {alerts && <AlertsDisplay alerts={alerts} />}
@@ -81,24 +87,20 @@ type ExerciseListProps = {
     problem: string
     answer: string
   }[]
-  lessonSlug: string
+  lesson: ExerciseLesson
 }
 
 const ExerciseList = ({
-  tabs,
   lessonTitle,
   exercises,
-  lessonSlug
+  lesson
 }: ExerciseListProps) => {
   const router = useRouter()
 
   return (
     <>
       <div className="mb-4">
-        <NavCard
-          tabSelected={tabs.findIndex(tab => tab.text === 'mentor exercises')}
-          tabs={tabs}
-        />
+        <LessonTabs lesson={lesson} activeTab="mentor exercises" />
       </div>
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
         <h1 className="my-2 my-md-5 fs-2">{lessonTitle}</h1>
@@ -108,7 +110,7 @@ const ExerciseList = ({
           <NewButton
             className="flex-grow-1"
             onClick={() =>
-              router.push(`/curriculum/${lessonSlug}/mentor/addExercise`)
+              router.push(`/curriculum/${lesson.slug}/mentor/addExercise`)
             }
           >
             ADD EXERCISE
