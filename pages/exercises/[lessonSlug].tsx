@@ -91,7 +91,6 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
         <Exercise
           lessonTitle={currentLesson.title}
           exercises={currentExercises}
-          userAnswers={userAnswers}
           onExit={localUserAnswers => {
             setUserAnswers({ ...userAnswers, ...localUserAnswers })
             setSolvingExercise(false)
@@ -127,22 +126,22 @@ type ExerciseData = {
 type ExerciseProps = {
   lessonTitle: string
   exercises: ExerciseData[]
-  userAnswers: Record<number, string>
   submitUserAnswer: (exerciseId: number, userAnswer: string) => void
-  onExit: (userAnswers: Record<number, string>) => void
+  onExit: (newUserAnswers: Record<number, string>) => void
 }
 
 const Exercise = ({
   lessonTitle,
   exercises,
-  userAnswers,
   submitUserAnswer,
   onExit
 }: ExerciseProps) => {
   const [answerShown, setAnswerShown] = useState(false)
   const [message, setMessage] = useState(Message.EMPTY)
   const [exerciseIndex, setExerciseIndex] = useState(0)
-  const [localUserAnswers, setLocalUserAnswers] = useState(userAnswers)
+  const [newUserAnswers, setNewUserAnswers] = useState<Record<number, string>>(
+    {}
+  )
   const exercise = exercises[exerciseIndex]
 
   const hasPrevious = exerciseIndex > 0
@@ -152,7 +151,7 @@ const Exercise = ({
     <div className={`mx-auto ${styles.exercise__container}`}>
       <button
         className="btn ps-0 d-flex align-items-center"
-        onClick={() => onExit(localUserAnswers)}
+        onClick={() => onExit(newUserAnswers)}
       >
         <ArrowLeftIcon size="medium" aria-label="Exit" />
       </button>
@@ -168,8 +167,8 @@ const Exercise = ({
         message={message}
         setMessage={setMessage}
         submitUserAnswer={userAnswer => {
-          setLocalUserAnswers({
-            ...localUserAnswers,
+          setNewUserAnswers({
+            ...newUserAnswers,
             [exercise.id]: userAnswer
           })
           submitUserAnswer(exercise.id, userAnswer)
@@ -195,7 +194,7 @@ const Exercise = ({
           <NewButton
             onClick={() => {
               if (exerciseIndex === exercises.length - 1) {
-                onExit(localUserAnswers)
+                onExit(newUserAnswers)
               } else {
                 setExerciseIndex(i => i + 1)
               }
@@ -225,7 +224,7 @@ const Exercise = ({
   )
 }
 
-type ExerciseItem = {
+type ExerciseListItem = {
   moduleName: string
   problem: string
   answer: string
@@ -239,7 +238,7 @@ type ExerciseListProps = {
   lessonTitle: string
   hideAnswered: boolean
   setHideAnswered: (hideAnswered: boolean) => void
-  exercises: ExerciseItem[]
+  exercises: ExerciseListItem[]
 }
 
 const ExerciseList = ({
