@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, waitFor, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Exercises from '../../../pages/exercises/[lessonSlug]'
 import { useRouter } from 'next/router'
@@ -28,9 +28,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() =>
-      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
-    )
+    await screen.findByRole('heading', { name: /Foundations of JavaScript/i })
 
     screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
@@ -66,15 +64,13 @@ describe('Exercises page', () => {
       }
     ]
 
-    const { getByRole, queryByRole, getByLabelText } = render(
+    const { getByRole, findByRole, queryByRole, getByLabelText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Exercises />
       </MockedProvider>
     )
 
-    await waitFor(() =>
-      getByRole('heading', { name: /Foundations of JavaScript/i })
-    )
+    await findByRole('heading', { name: /Foundations of JavaScript/i })
 
     const solveExercisesButton = getByRole('button', {
       name: 'SOLVE EXERCISES'
@@ -111,6 +107,115 @@ describe('Exercises page', () => {
     expect(queryByRole('button', { name: 'SKIP' })).not.toBeInTheDocument()
   })
 
+  test('Renders different exercises depending on whether the show-only-incompleted checkbox is checked', async () => {
+    const mocks = [
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: getExercisesData
+        }
+      },
+      {
+        request: {
+          query: ADD_EXERCISE_SUBMISSION,
+          variables: {
+            exerciseId: 2,
+            userAnswer: 'blah blah'
+          }
+        },
+        result: {
+          data: {
+            addExerciseSubmissions: {
+              id: 1,
+              exerciseId: 2,
+              userId: 4,
+              userAnswer: 'blah blah'
+            }
+          }
+        }
+      },
+      {
+        request: {
+          query: ADD_EXERCISE_SUBMISSION,
+          variables: {
+            exerciseId: 3,
+            userAnswer: '-1'
+          }
+        },
+        result: {
+          data: {
+            addExerciseSubmissions: {
+              id: 1,
+              exerciseId: 3,
+              userId: 4,
+              userAnswer: '-1'
+            }
+          }
+        }
+      }
+    ]
+
+    const { findByLabelText, findAllByText, findByRole } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Exercises />
+      </MockedProvider>
+    )
+
+    let checkbox = await findByLabelText('Show incomplete exercises only')
+
+    let exercisePreviews = await findAllByText('Problem')
+    expect(exercisePreviews).toHaveLength(3)
+    let notAnsweredExercisePreviews = await findAllByText('NOT ANSWERED')
+    expect(notAnsweredExercisePreviews).toHaveLength(2)
+
+    fireEvent.click(checkbox)
+
+    exercisePreviews = await findAllByText('Problem')
+    expect(exercisePreviews).toHaveLength(2)
+    notAnsweredExercisePreviews = await findAllByText('NOT ANSWERED')
+    expect(notAnsweredExercisePreviews).toHaveLength(2)
+
+    const solveExercisesButton = await findByRole('button', {
+      name: 'SOLVE EXERCISES'
+    })
+    fireEvent.click(solveExercisesButton)
+
+    let inputBox = await findByLabelText('User answer')
+    fireEvent.change(inputBox, {
+      target: { value: 'blah blah' }
+    })
+    let submitButton = await findByRole('button', { name: 'SUBMIT' })
+    fireEvent.click(submitButton)
+
+    const skipButton = await findByRole('button', { name: 'SKIP' })
+    fireEvent.click(skipButton)
+
+    inputBox = await findByLabelText('User answer')
+    fireEvent.change(inputBox, {
+      target: { value: '-1' }
+    })
+    submitButton = await findByRole('button', { name: 'SUBMIT' })
+    fireEvent.click(submitButton)
+
+    const nextQuestionButton = await findByRole('button', {
+      name: 'NEXT QUESTION'
+    })
+    fireEvent.click(nextQuestionButton)
+
+    exercisePreviews = await findAllByText('Problem')
+    expect(exercisePreviews).toHaveLength(1)
+    let incorrectExercisePreviews = await findAllByText('INCORRECT')
+    expect(incorrectExercisePreviews).toHaveLength(1)
+
+    checkbox = await findByLabelText('Show incomplete exercises only')
+    fireEvent.click(checkbox)
+
+    exercisePreviews = await findAllByText('Problem')
+    expect(exercisePreviews).toHaveLength(3)
+    incorrectExercisePreviews = await findAllByText('INCORRECT')
+    expect(incorrectExercisePreviews).toHaveLength(1)
+  })
+
   test('Should not render lessons nav card tab if lesson docUrl is null', async () => {
     const mocks = [
       {
@@ -133,9 +238,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() =>
-      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
-    )
+    await screen.findByRole('heading', { name: /Foundations of JavaScript/i })
 
     screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
@@ -161,7 +264,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => screen.getByRole('heading', { name: /500 Error/i }))
+    await screen.findByRole('heading', { name: /500 Error/i })
   })
 
   test('Should render a 404 error page if the lesson is not found', async () => {
@@ -183,7 +286,7 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => screen.getByRole('heading', { name: /404 Error/i }))
+    await screen.findByRole('heading', { name: /404 Error/i })
   })
 
   test('Should render a loading spinner if useRouter is not ready', async () => {
@@ -205,6 +308,6 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => screen.getByText('Loading...'))
+    await screen.findByText('Loading...')
   })
 })

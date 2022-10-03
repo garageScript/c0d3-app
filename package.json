@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
-    "@primer/octicons-react": "^17.5.0",
+    "@primer/octicons-react": "^17.6.0",
     "@prisma/client": "4",
     "@quixo3/prisma-session-store": "^3.1.10",
     "@sentry/nextjs": "^7.14.0",
@@ -103,7 +103,7 @@
     "@types/react-dom": "^18.0.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "babel-jest": "^29.1.0",
+    "babel-jest": "^29.1.2",
     "babel-plugin-prismjs": "^2.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
