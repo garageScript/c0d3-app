@@ -281,18 +281,24 @@ const ExerciseList = ({
           </div>
         )}
       </div>
-      <div className={styles.exerciseList__container}>
-        {exercises.map((exercise, i) => (
-          <ExercisePreviewCard
-            key={i}
-            moduleName={exercise.moduleName}
-            state={exercise.state}
-            problem={exercise.problem}
-          />
-        ))}
-        <div />
-        <div />
-      </div>
+      {exercises.length > 0 ? (
+        <div className={styles.exerciseList__container}>
+          {exercises.map((exercise, i) => (
+            <ExercisePreviewCard
+              key={i}
+              moduleName={exercise.moduleName}
+              state={exercise.state}
+              problem={exercise.problem}
+            />
+          ))}
+          <div />
+          <div />
+        </div>
+      ) : (
+        <p className="fs-5 text-center">
+          🎉 Congratulations! You finished all the exercises for this lesson! 🥳
+        </p>
+      )}
     </>
   )
 }
