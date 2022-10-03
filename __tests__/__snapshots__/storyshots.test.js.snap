@@ -11096,6 +11096,44 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/LessonTabs Lesson Tabs 1`] = `
+<div
+  className="navCard__tabsNav"
+>
+  <div
+    className="navCard__tabsNav__nav"
+  >
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/curriculum/js0"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      CHALLENGES
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item nav-pills"
+      href="/exercises/js0"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      EXERCISES
+    </a>
+    <a
+      className="navCard__tabsNav__nav__item--inactive nav-pills"
+      href="/curriculum/js0/mentor"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      MENTOR EXERCISES
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
 <div
   className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
