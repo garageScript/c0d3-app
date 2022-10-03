@@ -3,7 +3,7 @@ import styles from './exercisePreviewCard.module.scss'
 
 export type ExercisePreviewCardProps = {
   moduleName: string
-  state: 'NOT ANSWERED' | 'INCORRECT' | 'ANSWERED'
+  state?: 'NOT ANSWERED' | 'INCORRECT' | 'ANSWERED'
   problem: string
   className?: string
 }
@@ -29,10 +29,10 @@ const ExercisePreviewCard = ({
     <section
       className={`card p-3 d-inline-block border-0 shadow position-relative overflow-hidden ${className}`}
     >
-      <div className={topBorderStyle} />
+      {state && <div className={topBorderStyle} />}
       <div className="d-flex align-items-center mb-3">
         <h2 className="fw-bold fs-6 my-2 me-4">{moduleName.toUpperCase()}</h2>
-        <div className={`badge ${topMessageStyle}`}>{state}</div>
+        {state && <div className={`badge ${topMessageStyle}`}>{state}</div>}
       </div>
       <div className="mb-2">Problem</div>
       <pre className="bg-light py-2 px-3">{problem}</pre>

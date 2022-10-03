@@ -132,7 +132,7 @@ const initValues = [
   }
 ]
 
-const MentorPage = ({ data }: GetAppProps) => {
+const AddExercisePage = ({ data }: GetAppProps) => {
   const router = useRouter()
   const { lessonSlug } = router.query
 
@@ -218,4 +218,4 @@ const MentorPage = ({ data }: GetAppProps) => {
   )
 }
 
-export default withGetApp()(MentorPage)
+export default withGetApp()(AddExercisePage)
