@@ -5529,7 +5529,7 @@ exports[`Storyshots Components/ExerciseCard Basic 1`] = `
         Problem
       </div>
       <p
-        className="bg-light py-3 px-4"
+        className="d-block bg-light py-3 px-4"
       >
         let a = 5
 a = a + 10
@@ -5693,7 +5693,7 @@ exports[`Storyshots Components/ExercisePreviewCard Answered 1`] = `
     Problem
   </div>
   <p
-    className="bg-light py-2 px-3"
+    className="d-block bg-light py-2 px-3"
   >
     const a = 5
 a = a + 10
@@ -5729,7 +5729,7 @@ exports[`Storyshots Components/ExercisePreviewCard Not Answered 1`] = `
     Problem
   </div>
   <p
-    className="bg-light py-2 px-3"
+    className="d-block bg-light py-2 px-3"
   >
     const a = 5
 a = a + 10

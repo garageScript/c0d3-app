@@ -94,9 +94,11 @@ const ExerciseCard = ({
             >
               {answer}
             </Markdown>
-            <div className={`ms-md-3 ${styles.exerciseCard__section}`}>
+            <Markdown
+              className={`d-block ms-md-3 ${styles.exerciseCard__section}`}
+            >
               {explanation}
-            </div>
+            </Markdown>
           </div>
         </>
       )}
