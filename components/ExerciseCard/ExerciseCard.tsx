@@ -33,6 +33,16 @@ const ExerciseCard = ({
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
 
+  const submitAnswer = () => {
+    if (studentAnswer.trim() === answer.trim()) {
+      setMessage(Message.SUCCESS)
+      setAnswerShown(true)
+    } else {
+      setMessage(Message.ERROR)
+    }
+    submitUserAnswer(studentAnswer.trim())
+  }
+
   return (
     <section className="card p-5 border-0 shadow">
       <div className="d-flex flex-column flex-md-row mb-2">
@@ -48,6 +58,11 @@ const ExerciseCard = ({
               message === Message.ERROR ? styles.exerciseCard__input__error : ''
             }`}
             value={studentAnswer}
+            onKeyDown={e => {
+              if (e.key === 'Enter') {
+                submitAnswer()
+              }
+            }}
             onChange={e => setStudentAnswer(e.target.value)}
           />
           <div
@@ -60,19 +75,7 @@ const ExerciseCard = ({
             {message}
           </div>
           <div className="d-flex flex-column flex-md-row">
-            <NewButton
-              onClick={() => {
-                if (studentAnswer.trim() === answer.trim()) {
-                  setMessage(Message.SUCCESS)
-                  setAnswerShown(true)
-                } else {
-                  setMessage(Message.ERROR)
-                }
-                submitUserAnswer(studentAnswer.trim())
-              }}
-            >
-              SUBMIT
-            </NewButton>
+            <NewButton onClick={submitAnswer}>SUBMIT</NewButton>
             <button
               className="bg-transparent mt-2 mt-md-0 ms-md-3 border-0 fw-normal"
               onClick={() => setAnswerShown(!answerShown)}

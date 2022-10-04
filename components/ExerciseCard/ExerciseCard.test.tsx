@@ -81,6 +81,47 @@ describe('ExerciseCard component', () => {
     expect(submitUserAnswer).toBeCalledTimes(1)
   })
 
+  it('Should allow users to submit a message by hitting the enter key in the input', () => {
+    const setAnswerShown = jest.fn()
+    const setMessage = jest.fn()
+    const submitUserAnswer = jest.fn()
+
+    const { queryByText, getByLabelText } = render(
+      <ExerciseCard
+        problem={exampleProblem}
+        answer={exampleAnswer}
+        explanation={exampleExplanation}
+        answerShown={false}
+        setAnswerShown={setAnswerShown}
+        message={Message.ERROR}
+        setMessage={setMessage}
+        submitUserAnswer={submitUserAnswer}
+      />
+    )
+
+    expect(queryByText(Message.ERROR)).toBeInTheDocument()
+    expect(queryByText(Message.SUCCESS)).not.toBeInTheDocument()
+
+    const inputBox = getByLabelText('User answer')
+    fireEvent.change(inputBox, {
+      target: { value: '15' }
+    })
+
+    // Test that hitting the enter key submits answer and shows the success message and the answer explanation
+    fireEvent.keyDown(inputBox, { key: 'Enter', code: 'Enter', charCode: 13 })
+
+    expect(setAnswerShown).toBeCalledWith(true)
+    expect(setAnswerShown).toBeCalledTimes(1)
+    expect(setMessage).toBeCalledWith(Message.SUCCESS)
+    expect(setMessage).toBeCalledTimes(1)
+    expect(submitUserAnswer).toBeCalledWith('15')
+    expect(submitUserAnswer).toBeCalledTimes(1)
+
+    // Test that hitting non-enter keys does not submit answer
+    fireEvent.keyDown(inputBox, { key: 'a' })
+    expect(submitUserAnswer).toBeCalledTimes(1)
+  })
+
   it('Should render a success message', () => {
     const setAnswerShown = jest.fn()
     const setMessage = jest.fn()
