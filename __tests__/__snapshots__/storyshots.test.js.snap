@@ -5548,6 +5548,7 @@ a = a + 10
         aria-label="User answer"
         className="form-control mb-2 "
         onChange={[Function]}
+        onKeyDown={[Function]}
         value=""
       />
       <div
