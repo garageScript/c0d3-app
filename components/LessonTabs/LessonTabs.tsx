@@ -8,9 +8,16 @@ type Lesson = {
   slug: string
 }
 
+export enum LessonTab {
+  LESSON = 'lesson',
+  CHALLENGES = 'challenges',
+  EXERCISES = 'exercises',
+  MENTOR_EXERCISES = 'mentor exercises'
+}
+
 type Props = {
   lesson: Lesson
-  activeTab: 'lesson' | 'challenges' | 'exercises' | 'mentor exercises'
+  activeTab: LessonTab
 }
 
 const LessonTabs = ({ lesson, activeTab }: Props) => {
