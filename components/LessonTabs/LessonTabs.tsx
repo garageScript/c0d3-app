@@ -8,13 +8,12 @@ type Lesson = {
   slug: string
 }
 
-const LessonTabs = ({
-  lesson,
-  activeTab
-}: {
+type Props = {
   lesson: Lesson
-  activeTab: string
-}) => {
+  activeTab: 'lesson' | 'challenges' | 'exercises' | 'mentor exercises'
+}
+
+const LessonTabs = ({ lesson, activeTab }: Props) => {
   const tabs = [
     ...(lesson.docUrl ? [{ text: 'lesson', url: lesson.docUrl }] : []),
     { text: 'challenges', url: `${CURRICULUM_PATH}/${lesson.slug}` },
