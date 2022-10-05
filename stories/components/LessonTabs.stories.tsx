@@ -1,5 +1,6 @@
 import React from 'react'
 import LessonTabs from '../../components/LessonTabs'
+import { LessonTab } from '../../components/LessonTabs/LessonTabs'
 
 export default {
   components: LessonTabs,
@@ -13,6 +14,6 @@ export const _LessonTabs: React.FC = () => (
       docUrl: '',
       slug: 'js0'
     }}
-    activeTab={'exercises'}
+    activeTab={LessonTab.EXERCISES}
   />
 )

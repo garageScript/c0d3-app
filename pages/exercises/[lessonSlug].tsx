@@ -20,6 +20,7 @@ import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
 import styles from '../../scss/exercises.module.scss'
 import LessonTabs from '../../components/LessonTabs'
+import { LessonTab } from '../../components/LessonTabs/LessonTabs'
 
 type ExerciseLesson = {
   title: string
@@ -246,7 +247,7 @@ const ExerciseList = ({
   return (
     <>
       <div className="mb-4">
-        <LessonTabs lesson={lesson} activeTab={'exercises'} />
+        <LessonTabs lesson={lesson} activeTab={LessonTab.EXERCISES} />
       </div>
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div className="my-2 my-md-5">

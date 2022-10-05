@@ -13,6 +13,7 @@ import { NewButton } from '../../../../..../../components/theme/Button'
 import GET_EXERCISES from '../../../../..../../graphql/queries/getExercises'
 import styles from '../../../../scss/exercises.module.scss'
 import LessonTabs from '../../../../components/LessonTabs'
+import { LessonTab } from '../../../../components/LessonTabs/LessonTabs'
 
 type ExerciseLesson = {
   title: string
@@ -100,7 +101,7 @@ const ExerciseList = ({
   return (
     <>
       <div className="mb-4">
-        <LessonTabs lesson={lesson} activeTab="mentor exercises" />
+        <LessonTabs lesson={lesson} activeTab={LessonTab.MENTOR_EXERCISES} />
       </div>
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
         <h1 className="my-2 my-md-5 fs-2">{lessonTitle}</h1>
