@@ -11,7 +11,6 @@ import {
 import Error, { StatusCode } from '../../components/Error'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
-import NavCard from '../../components/NavCard'
 import ExercisePreviewCard, {
   ExercisePreviewCardProps
 } from '../../components/ExercisePreviewCard'
@@ -20,6 +19,14 @@ import ExerciseCard, { Message } from '../../components/ExerciseCard'
 import { ArrowLeftIcon } from '@primer/octicons-react'
 import GET_EXERCISES from '../../graphql/queries/getExercises'
 import styles from '../../scss/exercises.module.scss'
+import LessonTabs from '../../components/LessonTabs'
+import { LessonTab } from '../../components/LessonTabs/LessonTabs'
+
+type ExerciseLesson = {
+  title: string
+  docUrl?: string | null
+  slug: string
+}
 
 const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   queryData
@@ -50,18 +57,6 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
   const currentLesson = lessons.find(lesson => lesson.slug === slug)
   if (!currentLesson)
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
-
-  const tabs = [
-    ...(currentLesson.docUrl
-      ? [{ text: 'lessons', url: currentLesson.docUrl }]
-      : []),
-    { text: 'challenges', url: `/curriculum/${currentLesson.slug}` },
-    { text: 'exercises', url: `/exercises/${currentLesson.slug}` },
-    {
-      text: 'mentor exercises',
-      url: `/curriculum/${currentLesson.slug}/mentor/`
-    }
-  ]
 
   const currentExercises = exercises
     .filter(exercise => exercise?.module.lesson.slug === slug)
@@ -103,12 +98,12 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
         />
       ) : (
         <ExerciseList
-          tabs={tabs}
           onClickSolveExercises={() => setSolvingExercise(true)}
           lessonTitle={currentLesson.title}
           hideAnswered={hideAnswered}
           setHideAnswered={setHideAnswered}
           exercises={currentExercises}
+          lesson={currentLesson}
         />
       )}
       {alerts && <AlertsDisplay alerts={alerts} />}
@@ -233,29 +228,26 @@ type ExerciseListItem = {
 }
 
 type ExerciseListProps = {
-  tabs: { text: string; url: string }[]
   onClickSolveExercises: () => void
   lessonTitle: string
   hideAnswered: boolean
   setHideAnswered: (hideAnswered: boolean) => void
   exercises: ExerciseListItem[]
+  lesson: ExerciseLesson
 }
 
 const ExerciseList = ({
-  tabs,
   onClickSolveExercises,
   lessonTitle,
   hideAnswered,
   setHideAnswered,
-  exercises
+  exercises,
+  lesson
 }: ExerciseListProps) => {
   return (
     <>
       <div className="mb-4">
-        <NavCard
-          tabSelected={tabs.findIndex(tab => tab.text === 'exercises')}
-          tabs={tabs}
-        />
+        <LessonTabs lesson={lesson} activeTab={LessonTab.EXERCISES} />
       </div>
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div className="my-2 my-md-5">
