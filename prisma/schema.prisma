@@ -156,6 +156,7 @@ model User {
   submissionsReviewed       Submission[]         @relation("userReviewedSubmissions")
   submissions               Submission[]         @relation("userSubmissions")
   userLessons               UserLesson[]
+  discussions               Discussion[]
 
   @@map("users")
 }
@@ -193,6 +194,7 @@ model Exercise {
   flaggedBy   User?                @relation("flaggedExercises", fields: [flaggedById], references: [id])
   module      Module               @relation(fields: [moduleId], references: [id], onDelete: Cascade)
   submissions ExerciseSubmission[]
+  discussions Discussion[]
 
   @@map("exercises")
 }
@@ -206,4 +208,20 @@ model ExerciseSubmission {
   userAnswer String
 
   @@map("exerciseSubmissions")
+}
+
+model Discussion {
+  id         Int          @id @default(autoincrement())
+  createdAt  DateTime     @default(now()) @db.Timestamptz(6)
+  updatedAt  DateTime     @updatedAt @db.Timestamptz(6)
+  authorId   Int
+  exerciseId Int
+  userPic    String?
+  content    String
+  parentId   Int?
+  exercise   Exercise     @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  author     User         @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  parent     Discussion?  @relation("DiscussionReplies", fields: [parentId], references: [id])
+  replies    Discussion[] @relation("DiscussionReplies")
+
 }
