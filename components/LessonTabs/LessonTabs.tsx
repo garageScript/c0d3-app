@@ -1,5 +1,5 @@
 import React from 'react'
-import { CURRICULUM_PATH } from '../../constants'
+import { CURRICULUM_PATH, EXERCISES_PATH } from '../../constants'
 import NavCard from '../NavCard'
 
 type Lesson = {
@@ -24,7 +24,7 @@ const LessonTabs = ({ lesson, activeTab }: Props) => {
   const tabs = [
     ...(lesson.docUrl ? [{ text: 'lesson', url: lesson.docUrl }] : []),
     { text: 'challenges', url: `${CURRICULUM_PATH}/${lesson.slug}` },
-    { text: 'exercises', url: `/exercises/${lesson.slug}` },
+    { text: 'exercises', url: `${EXERCISES_PATH}/${lesson.slug}` },
     {
       text: 'mentor exercises',
       url: `${CURRICULUM_PATH}/${lesson.slug}/mentor`
