@@ -9,6 +9,7 @@ export const DOCS_PATH = '/docs'
 export const DISCORD_PATH = 'https://discord.gg/c0d3'
 export const LOGIN_PATH = '/login'
 export const SIGNUP_PATH = '/signup'
+export const EXERCISES_PATH = '/exercises'
 
 // Color
 export const PRIMARY_COLOR_HEX = '#5440d8'
