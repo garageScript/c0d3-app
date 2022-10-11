@@ -2,15 +2,23 @@ import { get, toUpper } from 'lodash'
 import React, { useState } from 'react'
 import { Collapse, Spinner } from 'react-bootstrap'
 import {
-  Exercise,
   useDeleteExerciseMutation,
-  User,
-  useRemoveExerciseFlagMutation
+  useRemoveExerciseFlagMutation,
+  Exercise,
+  User
 } from '../../../graphql'
 import styles from '../../../scss/adminLessonExerciseCard.module.scss'
 import CopyButton from '../../CopyButton'
 
-type HeaderProps = { user: User; exercise: Exercise }
+type NarrowedUser = Pick<User, 'discordUsername' | 'email' | 'username'>
+type NarrowedExercise = Omit<Exercise, 'author' | 'module'> & {
+  author: NarrowedUser
+  module: {
+    name: string
+  }
+}
+
+type HeaderProps = { user: NarrowedUser; exercise: NarrowedExercise }
 const Header = ({ user, exercise }: HeaderProps) => {
   return (
     <div className={styles.card__header}>
@@ -78,7 +86,7 @@ const Section = ({ header, paragraph, explanation }: SectionProps) => {
 }
 
 type FooterProps = {
-  exercise: Exercise
+  exercise: NarrowedExercise
   onRemove?: (id: number) => void
   onUnflag?: (id: number) => void
 }
@@ -143,8 +151,8 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
 }
 
 type Props = {
-  user: User
-  exercise: Exercise
+  user: NarrowedUser
+  exercise: NarrowedExercise
   onRemove?: (id: number) => void
   onUnflag?: (id: number) => void
 }
