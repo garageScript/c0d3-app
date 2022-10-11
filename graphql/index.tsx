@@ -865,7 +865,13 @@ export type GetExercisesQuery = {
     description: string
     answer: string
     explanation?: string | null
-    author: { __typename?: 'User'; id: number }
+    author: {
+      __typename?: 'User'
+      id: number
+      username: string
+      email: string
+      discordUsername: string
+    }
     module: {
       __typename?: 'Module'
       name: string
@@ -3685,6 +3691,9 @@ export const GetExercisesDocument = gql`
       id
       author {
         id
+        username
+        email
+        discordUsername
       }
       module {
         name
