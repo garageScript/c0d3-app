@@ -18,6 +18,9 @@ const GET_EXERCISES = gql`
       id
       author {
         id
+        username
+        email
+        discordUsername
       }
       module {
         name
