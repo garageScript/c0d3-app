@@ -65,7 +65,10 @@ const getExercisesData: GetExercisesQuery = {
         }
       },
       author: {
-        id: 1
+        id: 1,
+        username: 'noob',
+        email: 'noob@c0d3.com',
+        discordUsername: 'noobOnDiscord'
       },
       description: '```\nlet a = 5\na = a + 10\n// what is a?\n```',
       answer: '15',
@@ -80,7 +83,10 @@ const getExercisesData: GetExercisesQuery = {
         }
       },
       author: {
-        id: 1
+        id: 1,
+        username: 'noob',
+        email: 'noob@c0d3.com',
+        discordUsername: 'noobOnDiscord'
       },
       description: '```\nlet a = 1\na += 2\n// what is a?\n```',
       answer: '3',
@@ -95,7 +101,10 @@ const getExercisesData: GetExercisesQuery = {
         }
       },
       author: {
-        id: 1
+        id: 1,
+        username: 'noob',
+        email: 'noob@c0d3.com',
+        discordUsername: 'noobOnDiscord'
       },
       description: '```\nlet a = 1\na -= 2\n// what is a?\n```',
       answer: '-1',
