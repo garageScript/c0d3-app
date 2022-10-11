@@ -87,7 +87,6 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
 
       await updateLesson(makeGraphqlVariable(formOptions))
     } catch (err) {
-      // TODO: Display error with QueryStateMessage #2181
       Sentry.captureException(err)
     }
   }
