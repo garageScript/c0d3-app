@@ -35,7 +35,7 @@ const CodePen: React.FC<Props> = ({
       src={`https://codepen.io/c0d3codepen/embed/${id}?theme-id=${theme}&default-tab=${tabString}`}
       frameBorder="no"
       loading="lazy"
-      allowFullScreen={true}
+      allow="fullscreen"
     />
   )
 }
