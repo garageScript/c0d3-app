@@ -3,7 +3,7 @@
 exports[`CodePen component should match screenshot 1`] = `
 <div>
   <iframe
-    allowfullscreen=""
+    allow="fullscreen"
     frameborder="no"
     height="3001"
     loading="lazy"
