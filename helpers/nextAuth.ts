@@ -78,7 +78,6 @@ export const signIn = (
   res: NextApiResponse & Response
 ) => {
   const signIn: CallbacksOptions['signIn'] = async ({ account, user }) => {
-    // account = null
     if (!account) return false
     if ('email' in user && !('id' in user)) return false
 
