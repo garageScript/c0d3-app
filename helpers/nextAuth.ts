@@ -1,5 +1,5 @@
 import { updateRefreshandAccessTokens } from './discordAuth'
-import { Account, DefaultSession, Session, User } from 'next-auth'
+import { CallbacksOptions, DefaultSession } from 'next-auth'
 import { LoggedRequest } from '../@types/helpers'
 import { Request, Response } from 'express'
 import { NextApiResponse } from 'next'
@@ -7,17 +7,16 @@ import { getUserSession } from './getUserSession'
 import { get } from 'lodash'
 import { login, signup } from '../graphql/resolvers/authController'
 import prisma from '../prisma'
-import { JWT } from 'next-auth/jwt'
 import DiscordProvider from 'next-auth/providers/discord'
-import CredentialsProvider from 'next-auth/providers/credentials'
+import CredentialsProvider, {
+  CredentialsConfig
+} from 'next-auth/providers/credentials'
 
-type Credentials =
-  | Record<'username' | 'password' | 'email' | 'firstName' | 'lastName', string>
-  | undefined
-
-export const authorize =
-  (req: LoggedRequest & Request, res: NextApiResponse & Response) =>
-  async (credentials: Credentials) => {
+export const authorize = (
+  req: LoggedRequest & Request,
+  res: NextApiResponse & Response
+) => {
+  const authorize: CredentialsConfig['authorize'] = async credentials => {
     const context = { req, res }
 
     const username = get(credentials, 'username')
@@ -50,6 +49,9 @@ export const authorize =
     })
   }
 
+  return authorize
+}
+
 export const providers = (
   req: LoggedRequest & Request,
   res: NextApiResponse & Response
@@ -71,13 +73,20 @@ export const providers = (
   })
 ]
 
-export const signIn =
-  (req: LoggedRequest & Request, res: NextApiResponse & Response) =>
-  async ({ account, user }: { account: Account; user: User }) => {
+export const signIn = (
+  req: LoggedRequest & Request,
+  res: NextApiResponse & Response
+) => {
+  const signIn: CallbacksOptions['signIn'] = async ({ account, user }) => {
+    // account = null
+    if (!account) return false
+    if ('email' in user && !('id' in user)) return false
+
     const { provider } = account
 
     if (provider === 'discord') {
       const c0d3User = await getUserSession(req, res)
+
       const { access_token, expires_at, refresh_token } = account
 
       // Connect to discord
@@ -114,18 +123,18 @@ export const signIn =
     return true
   }
 
+  return signIn
+}
+
 // jwt callback is first called then session callback
-export const jwt = ({ token, user }: { token: JWT; user?: User }) => {
+export const jwt: CallbacksOptions['jwt'] = ({ token, user }) => {
   if (user) token.user = user
   return token
 }
 
-export const session = async ({
+export const session: CallbacksOptions['session'] = async ({
   session,
   token
-}: {
-  session: Session
-  token: JWT
 }) => {
   session.user = token.user as DefaultSession['user']
   return session
