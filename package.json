@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
-    "@primer/octicons-react": "^17.6.0",
+    "@primer/octicons-react": "17.7.0",
     "@prisma/client": "4",
     "@quixo3/prisma-session-store": "^3.1.10",
     "@sentry/nextjs": "^7.15.0",
@@ -74,12 +74,12 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.13.5",
+    "@graphql-codegen/cli": "^2.13.7",
     "@graphql-codegen/typescript": "^2.7.2",
-    "@graphql-codegen/typescript-apollo-client-helpers": "^2.2.3",
+    "@graphql-codegen/typescript-apollo-client-helpers": "^2.2.4",
     "@graphql-codegen/typescript-operations": "^2.5.4",
     "@graphql-codegen/typescript-react-apollo": "^3.3.4",
-    "@graphql-codegen/typescript-resolvers": "^2.7.3",
+    "@graphql-codegen/typescript-resolvers": "^2.7.4",
     "@jest/types": "^29.1.2",
     "@next/eslint-plugin-next": "^12.3.1",
     "@storybook/addon-actions": "^6.5.9",
@@ -112,7 +112,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-mdx": "^1.17.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react": "^7.31.10",
     "fetch-mock": "^9.11.0",
     "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
