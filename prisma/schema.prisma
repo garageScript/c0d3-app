@@ -156,7 +156,7 @@ model User {
   submissionsReviewed       Submission[]         @relation("userReviewedSubmissions")
   submissions               Submission[]         @relation("userSubmissions")
   userLessons               UserLesson[]
-  exerciseComments          ExerciseComments[]
+  exerciseComments          ExerciseComment[]
 
   @@map("users")
 }
@@ -194,7 +194,7 @@ model Exercise {
   flaggedBy        User?                @relation("flaggedExercises", fields: [flaggedById], references: [id])
   module           Module               @relation(fields: [moduleId], references: [id], onDelete: Cascade)
   submissions      ExerciseSubmission[]
-  exerciseComments ExerciseComments[]
+  exerciseComments ExerciseComment[]
 
   @@map("exercises")
 }
@@ -210,18 +210,18 @@ model ExerciseSubmission {
   @@map("exerciseSubmissions")
 }
 
-model ExerciseComments {
-  id         Int                @id @default(autoincrement())
-  createdAt  DateTime           @default(now()) @db.Timestamptz(6)
-  updatedAt  DateTime           @updatedAt @db.Timestamptz(6)
+model ExerciseComment {
+  id         Int               @id @default(autoincrement())
+  createdAt  DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt  DateTime          @updatedAt @db.Timestamptz(6)
   authorId   Int
   exerciseId Int
   userPic    String?
   content    String
   parentId   Int?
-  exercise   Exercise           @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
-  author     User               @relation(fields: [authorId], references: [id], onDelete: SetNull)
-  parent     ExerciseComments?  @relation("ExerciseCommentReplies", fields: [parentId], references: [id])
-  replies    ExerciseComments[] @relation("ExerciseCommentReplies")
+  exercise   Exercise          @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  author     User              @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  parent     ExerciseComment?  @relation("ExerciseCommentReplies", fields: [parentId], references: [id])
+  replies    ExerciseComment[] @relation("ExerciseCommentReplies")
 
 }
