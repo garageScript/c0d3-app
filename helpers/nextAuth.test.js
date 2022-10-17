@@ -64,6 +64,45 @@ describe('Signin callback', () => {
     expect(value).toBe(true)
   })
 
+  it('Should return false if account does not exist', async () => {
+    expect.assertions(1)
+
+    userMiddleware.mockImplementation((req, _res, next) => {
+      req.user = {
+        id: 123,
+        username: 'fakeUser'
+      }
+      next()
+    })
+
+    const signInCallback = signIn(req, res)
+
+    const value = await signInCallback({
+      account: null,
+      user: {
+        id: 123
+      }
+    })
+
+    expect(value).toBe(false)
+  })
+
+  it('Should return false if user object has email and no id', async () => {
+    expect.assertions(1)
+    const signInCallback = signIn(req, res)
+
+    const value = await signInCallback({
+      account: {
+        provider: 'credentials'
+      },
+      user: {
+        email: 'noob@c0d3.com'
+      }
+    })
+
+    expect(value).toBe(false)
+  })
+
   describe('Connect to discord', () => {
     it('Should connect-to-discord when the provider is discord and there is previous session', async () => {
       expect.assertions(2)
