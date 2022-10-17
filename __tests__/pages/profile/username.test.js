@@ -7,6 +7,7 @@ import {
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../graphql/queries/getApp'
+import GET_SESSION from '../../../graphql/queries/getSession'
 import USER_INFO from '../../../graphql/queries/userInfo'
 import UserProfile from '../../../pages/profile/[username]'
 import { MockedProvider } from '@apollo/client/testing'
@@ -154,6 +155,16 @@ describe('user profile test', () => {
             session,
             lessons: dummyLessonData,
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       },
@@ -887,6 +898,16 @@ describe('user profile test', () => {
             session: dummySessionData,
             lessons,
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       },

@@ -4,6 +4,7 @@ import { render, waitFor, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
+import GET_SESSION from '../../graphql/queries/getSession'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 
@@ -49,6 +50,16 @@ describe('Curriculum Page', () => {
             lessons: dummyLessonData,
             session: dummySessionData,
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }
@@ -98,6 +109,16 @@ describe('Curriculum Page', () => {
             session,
             lessons: dummyLessonData,
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...session
+            }
           }
         }
       }
@@ -192,6 +213,16 @@ describe('Curriculum Page', () => {
               user: { ...dummySessionData.user, isConnectedToDiscord: false }
             },
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }

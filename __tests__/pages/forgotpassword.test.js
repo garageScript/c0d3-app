@@ -3,6 +3,7 @@ import { GraphQLError } from 'graphql'
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
+import GET_SESSION from '../../graphql/queries/getSession'
 import RESET_PASSWORD from '../../graphql/queries/resetPassword'
 import dummySessionData from '../../__dummy__/sessionData'
 import ForgotPassword from '../../pages/forgotpassword'
@@ -19,6 +20,16 @@ describe('ForgotPassword Page', () => {
             session: dummySessionData,
             lessons: [],
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       },
@@ -75,6 +86,16 @@ describe('ForgotPassword Page', () => {
             session: dummySessionData,
             lessons: [],
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       },
