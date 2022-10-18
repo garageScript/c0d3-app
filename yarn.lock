@@ -2524,7 +2524,7 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@jest/types@^29.1.2", "@jest/types@^29.2.0":
+"@jest/types@^29.2.0":
   version "29.2.0"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-29.2.0.tgz#c0d1ef8bc1e4f4b358e7877e34157371e7881b0b"
   integrity sha512-mfgpQz4Z2xGo37m6KD8xEpKelaVzvYVRijmLPePn9pxgaPEtX+SqIyPNzzoeCPXKYbB4L/wYSgXDL8o3Gop78Q==
@@ -14349,10 +14349,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.32.4:
-  version "1.32.4"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.32.4.tgz#77c997f381519b076f89da91bf663cac97e71068"
-  integrity sha512-92ZAF62HsA5wEPJoD3T6A4GSqPg4mxD0571Gq7xLPos8bAIkB4BGFnuP3TcjobJG8elLAPNXOuW8u9dz3DoPEA==
+posthog-js@^1.33.0:
+  version "1.33.0"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.33.0.tgz#73886f893d1fef6e615022ea12674b8e7d077769"
+  integrity sha512-6tCkz7PXfOT8sGoioje29CxyeQmu9SL8JVnjq21rCwU+zRa6Cn48pgcyqSX0Q32WOibdIOT7VoR7ilPv6D/KXg==
   dependencies:
     "@sentry/types" "^7.2.0"
     fflate "^0.4.1"
