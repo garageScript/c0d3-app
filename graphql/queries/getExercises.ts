@@ -20,7 +20,7 @@ const GET_EXERCISES = gql`
         id
         username
         email
-        discordUsername
+        discordId
       }
       module {
         name
@@ -31,6 +31,8 @@ const GET_EXERCISES = gql`
       description
       answer
       explanation
+      flaggedAt
+      flagReason
     }
     exerciseSubmissions {
       exerciseId
