@@ -10,7 +10,7 @@ import {
 import styles from '../../../scss/adminLessonExerciseCard.module.scss'
 import CopyButton from '../../CopyButton'
 
-type NarrowedUser = Pick<User, 'discordUsername' | 'email' | 'username'>
+type NarrowedUser = Pick<User, 'discordId' | 'email' | 'username'>
 type NarrowedExercise = Omit<Exercise, 'author' | 'module'> & {
   author: NarrowedUser
   module: {
@@ -44,7 +44,7 @@ const Header = ({ user, exercise }: HeaderProps) => {
         </div>
         <div className={styles.card__header__contact}>
           <span>Discord</span>
-          <CopyButton value={`<@${user.discordUsername}>`} color={'primary'} />
+          <CopyButton value={`<@${user.discordId}>`} color={'primary'} />
         </div>
       </div>
     </div>

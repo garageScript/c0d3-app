@@ -9,7 +9,7 @@ export default {
 
 const user = {
   username: 'noob',
-  discordUsername: 'noob#123',
+  discordId: '123',
   email: 'noob@c0d3.com'
 }
 
