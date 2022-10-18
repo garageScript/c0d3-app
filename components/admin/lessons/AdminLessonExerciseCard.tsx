@@ -39,12 +39,12 @@ const Header = ({ user, exercise }: HeaderProps) => {
       <p className={styles.card__header__username}>{user.username}</p>
       <div className={styles.card__header__contact__container}>
         <div className={styles.card__header__contact}>
-          <span>{user.email}</span>
+          <span>Email</span>
           <CopyButton value={user.email} color={'primary'} />
         </div>
         <div className={styles.card__header__contact}>
-          <span>{user.discordUsername}</span>
-          <CopyButton value={user.discordUsername} color={'primary'} />
+          <span>Discord</span>
+          <CopyButton value={`<@${user.discordUsername}>`} color={'primary'} />
         </div>
       </div>
     </div>
