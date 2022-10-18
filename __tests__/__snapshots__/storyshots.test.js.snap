@@ -301,7 +301,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
         className="card__header__contact"
       >
         <span>
-          noob@c0d3.com
+          Email
         </span>
         <button
           className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
@@ -345,7 +345,7 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
         className="card__header__contact"
       >
         <span>
-          noob#123
+          Discord
         </span>
         <button
           className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
@@ -463,6 +463,803 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
         UNFLAG EXERCISE
       </span>
     </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`] = `
+<div
+  style={
+    Object {
+      "display": "grid",
+      "gap": 20,
+      "gridTemplateColumns": "repeat(auto-fit, minmax(400px, 1fr))",
+    }
+  }
+>
+  <div
+    className="card"
+  >
+    <div
+      className="card__header"
+    >
+      <div
+        className="card__badges"
+      >
+        <span
+          className="card__header__badge card__header__badge__flagged"
+        >
+          FLAGGED
+        </span>
+        <span
+          className="card__header__badge card__header__badge__module"
+        >
+          VARIABLES
+        </span>
+      </div>
+      <p
+        className="card__header__username"
+      >
+        noob
+      </p>
+      <div
+        className="card__header__contact__container"
+      >
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Email
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Discord
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Description
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        Potato in the oven
+      </p>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Answer
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        20
+      </p>
+      <button
+        className="card__section--explanation"
+        onClick={[Function]}
+      >
+        Show
+         explanation
+      </button>
+      <div
+        aria-expanded={null}
+        className="card__section__explanation collapse"
+        id="explanation-collapse-text"
+      >
+        hard to know
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Reason for flag
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        setTimeout takes a callback function and not a number
+      </p>
+    </div>
+    <div
+      className="card__footer"
+    >
+      <button
+        className="card__footer__btn"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <span>
+          REMOVE EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    className="card"
+  >
+    <div
+      className="card__header"
+    >
+      <div
+        className="card__badges"
+      >
+        <span
+          className="card__header__badge card__header__badge__flagged"
+        >
+          FLAGGED
+        </span>
+        <span
+          className="card__header__badge card__header__badge__module"
+        >
+          VARIABLES
+        </span>
+      </div>
+      <p
+        className="card__header__username"
+      >
+        noob
+      </p>
+      <div
+        className="card__header__contact__container"
+      >
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Email
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Discord
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Description
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        It’s all about context. The reason you get the above error is because, when you invoke setTimeout(), you are actually invoking window.setTimeout(). As a result, the anonymous function being passed to setTimeout()
+      </p>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Answer
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        The right answer is setTimeout
+      </p>
+      <button
+        className="card__section--explanation"
+        onClick={[Function]}
+      >
+        Show
+         explanation
+      </button>
+      <div
+        aria-expanded={null}
+        className="card__section__explanation collapse"
+        id="explanation-collapse-text"
+      >
+        It's setTimeout because it's an async function and not sync
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Reason for flag
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        setTimeout takes a callback function and not a number
+      </p>
+    </div>
+    <div
+      className="card__footer"
+    >
+      <button
+        className="card__footer__btn"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <span>
+          REMOVE EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    className="card"
+  >
+    <div
+      className="card__header"
+    >
+      <div
+        className="card__badges"
+      >
+        <span
+          className="card__header__badge card__header__badge__flagged"
+        >
+          FLAGGED
+        </span>
+        <span
+          className="card__header__badge card__header__badge__module"
+        >
+          VARIABLES
+        </span>
+      </div>
+      <p
+        className="card__header__username"
+      >
+        noob
+      </p>
+      <div
+        className="card__header__contact__container"
+      >
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Email
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Discord
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Description
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        Potato in the oven
+      </p>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Answer
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        20
+      </p>
+      <button
+        className="card__section--explanation"
+        onClick={[Function]}
+      >
+        Show
+         explanation
+      </button>
+      <div
+        aria-expanded={null}
+        className="card__section__explanation collapse"
+        id="explanation-collapse-text"
+      >
+        hard to know
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Reason for flag
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        setTimeout takes a callback function and not a number
+      </p>
+    </div>
+    <div
+      className="card__footer"
+    >
+      <button
+        className="card__footer__btn"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <span>
+          REMOVE EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    className="card"
+  >
+    <div
+      className="card__header"
+    >
+      <div
+        className="card__badges"
+      >
+        <span
+          className="card__header__badge card__header__badge__flagged"
+        >
+          FLAGGED
+        </span>
+        <span
+          className="card__header__badge card__header__badge__module"
+        >
+          VARIABLES
+        </span>
+      </div>
+      <p
+        className="card__header__username"
+      >
+        noob
+      </p>
+      <div
+        className="card__header__contact__container"
+      >
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Email
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="card__header__contact"
+        >
+          <span>
+            Discord
+          </span>
+          <button
+            className="btn borderless btn-outline-primary onFocusBgFix btnOutlineInfoBgFix-primary btn-outline-bg-primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "primary",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-copy"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+                fillRule="evenodd"
+              />
+              <path
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Description
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        It’s all about context. The reason you get the above error is because, when you invoke setTimeout(), you are actually invoking window.setTimeout(). As a result, the anonymous function being passed to setTimeout()
+      </p>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Answer
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        The right answer is setTimeout
+      </p>
+      <button
+        className="card__section--explanation"
+        onClick={[Function]}
+      >
+        Show
+         explanation
+      </button>
+      <div
+        aria-expanded={null}
+        className="card__section__explanation collapse"
+        id="explanation-collapse-text"
+      >
+        It's setTimeout because it's an async function and not sync
+      </div>
+    </div>
+    <div
+      className="card__section"
+    >
+      <h3
+        className="card__section__header"
+      >
+        Reason for flag
+      </h3>
+      <p
+        className="card__section__desc"
+      >
+        setTimeout takes a callback function and not a number
+      </p>
+    </div>
+    <div
+      className="card__footer"
+    >
+      <button
+        className="card__footer__btn"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <span>
+          REMOVE EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+    </div>
   </div>
 </div>
 `;
