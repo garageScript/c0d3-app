@@ -189,6 +189,7 @@ export default gql`
     isAdmin: Boolean!
     isConnectedToDiscord: Boolean!
     cliToken: String
+    discordId: String
     discordUserId: String!
     discordUsername: String!
     discordAvatarUrl: String!
