@@ -31,3 +31,42 @@ export const Basic = () => (
     <ExerciseCard user={user as any} exercise={exercise as any} />
   </MockedProvider>
 )
+
+export const BasicWithManyItems = () => (
+  <MockedProvider>
+    <MockedProvider>
+      <div
+        style={{
+          display: 'grid',
+          gap: 20,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))'
+        }}
+      >
+        <ExerciseCard
+          user={user as any}
+          exercise={
+            {
+              ...exercise,
+              description: 'Potato in the oven',
+              answer: '20',
+              explanation: 'hard to know'
+            } as any
+          }
+        />
+        <ExerciseCard user={user as any} exercise={exercise as any} />
+        <ExerciseCard
+          user={user as any}
+          exercise={
+            {
+              ...exercise,
+              description: 'Potato in the oven',
+              answer: '20',
+              explanation: 'hard to know'
+            } as any
+          }
+        />
+        <ExerciseCard user={user as any} exercise={exercise as any} />
+      </div>
+    </MockedProvider>
+  </MockedProvider>
+)
