@@ -9,6 +9,9 @@ const GET_SESSION = gql`
         name
         isAdmin
         isConnectedToDiscord
+        discordUserId
+        discordUsername
+        discordAvatarUrl
       }
       submissions {
         id
