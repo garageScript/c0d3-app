@@ -421,6 +421,7 @@ export type User = {
   __typename?: 'User'
   cliToken?: Maybe<Scalars['String']>
   discordAvatarUrl: Scalars['String']
+  discordId?: Maybe<Scalars['String']>
   discordUserId: Scalars['String']
   discordUsername: Scalars['String']
   email: Scalars['String']
@@ -865,12 +866,14 @@ export type GetExercisesQuery = {
     description: string
     answer: string
     explanation?: string | null
+    flaggedAt?: string | null
+    flagReason?: string | null
     author: {
       __typename?: 'User'
       id: number
       username: string
       email: string
-      discordUsername: string
+      discordId?: string | null
     }
     module: {
       __typename?: 'Module'
@@ -1979,6 +1982,7 @@ export type UserResolvers<
 > = ResolversObject<{
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   discordAvatarUrl?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  discordId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   discordUserId?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   discordUsername?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>
@@ -3693,7 +3697,7 @@ export const GetExercisesDocument = gql`
         id
         username
         email
-        discordUsername
+        discordId
       }
       module {
         name
@@ -3704,6 +3708,8 @@ export const GetExercisesDocument = gql`
       description
       answer
       explanation
+      flaggedAt
+      flagReason
     }
     exerciseSubmissions {
       exerciseId
@@ -5968,6 +5974,7 @@ export type TokenResponseFieldPolicy = {
 export type UserKeySpecifier = (
   | 'cliToken'
   | 'discordAvatarUrl'
+  | 'discordId'
   | 'discordUserId'
   | 'discordUsername'
   | 'email'
@@ -5982,6 +5989,7 @@ export type UserKeySpecifier = (
 export type UserFieldPolicy = {
   cliToken?: FieldPolicy<any> | FieldReadFunction<any>
   discordAvatarUrl?: FieldPolicy<any> | FieldReadFunction<any>
+  discordId?: FieldPolicy<any> | FieldReadFunction<any>
   discordUserId?: FieldPolicy<any> | FieldReadFunction<any>
   discordUsername?: FieldPolicy<any> | FieldReadFunction<any>
   email?: FieldPolicy<any> | FieldReadFunction<any>
