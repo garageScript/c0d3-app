@@ -994,6 +994,9 @@ export type GetSessionQuery = {
       name: string
       isAdmin: boolean
       isConnectedToDiscord: boolean
+      discordUserId: string
+      discordUsername: string
+      discordAvatarUrl: string
     } | null
     submissions?: Array<{
       __typename?: 'Submission'
@@ -4170,6 +4173,9 @@ export const GetSessionDocument = gql`
         name
         isAdmin
         isConnectedToDiscord
+        discordUserId
+        discordUsername
+        discordAvatarUrl
       }
       submissions {
         id
