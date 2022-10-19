@@ -12,3 +12,9 @@
 .container__modulesPanel__inputs {
   flex: 1;
 }
+
+.container__exercisesPanel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
