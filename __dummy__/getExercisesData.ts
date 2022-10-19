@@ -68,11 +68,13 @@ const getExercisesData: GetExercisesQuery = {
         id: 1,
         username: 'noob',
         email: 'noob@c0d3.com',
-        discordUsername: 'noobOnDiscord'
+        discordId: '8321'
       },
       description: '```\nlet a = 5\na = a + 10\n// what is a?\n```',
       answer: '15',
-      explanation: 'You can reassign variables that were created with "let".'
+      explanation: 'You can reassign variables that were created with "let".',
+      flaggedAt: null,
+      flagReason: null
     },
     {
       id: 2,
@@ -86,11 +88,13 @@ const getExercisesData: GetExercisesQuery = {
         id: 1,
         username: 'noob',
         email: 'noob@c0d3.com',
-        discordUsername: 'noobOnDiscord'
+        discordId: '8321'
       },
       description: '```\nlet a = 1\na += 2\n// what is a?\n```',
       answer: '3',
-      explanation: '`a += 2` is a shorter way to write `a = a + 2`'
+      explanation: '`a += 2` is a shorter way to write `a = a + 2`',
+      flaggedAt: null,
+      flagReason: null
     },
     {
       id: 3,
@@ -104,11 +108,13 @@ const getExercisesData: GetExercisesQuery = {
         id: 1,
         username: 'noob',
         email: 'noob@c0d3.com',
-        discordUsername: 'noobOnDiscord'
+        discordId: '8321'
       },
       description: '```\nlet a = 1\na -= 2\n// what is a?\n```',
       answer: '-1',
-      explanation: null
+      explanation: null,
+      flaggedAt: null,
+      flagReason: null
     }
   ],
   exerciseSubmissions: [{ exerciseId: 1, userAnswer: '15' }]
