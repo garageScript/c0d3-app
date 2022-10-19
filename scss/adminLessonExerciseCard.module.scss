@@ -10,7 +10,6 @@
   background: colors.$bg-white;
   box-shadow: 0px 4px 25px hsla(0, 0%, 0%, 0.1);
   border-radius: 10px;
-  height: fit-content;
 }
 
 .card__header {
@@ -94,6 +93,7 @@
 .card__footer {
   display: flex;
   column-gap: 26px;
+  margin-top: auto;
 
   .card__footer__btn {
     display: flex;
