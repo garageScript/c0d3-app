@@ -5,6 +5,7 @@ import {
   GetAppProps,
   Lesson,
   useAddModuleMutation,
+  useGetExercisesQuery,
   useUpdateLessonMutation,
   useUpdateModuleMutation,
   withGetApp
@@ -31,8 +32,20 @@ import {
   makeGraphqlVariable
 } from '../../../../../helpers/admin/adminHelpers'
 import QueryInfo from '../../../../../components/QueryInfo'
+import LoadingSpinner from '../../../../../components/LoadingSpinner'
+import AdminLessonExerciseCard from '../../../../../components/admin/lessons/AdminLessonExerciseCard'
+import Card from '../../../../../components/Card'
+import { Text } from '../../../../../components/theme/Text'
+import Link from 'next/link'
+import { CURRICULUM_PATH } from '../../../../../constants'
 
 const MAIN_PATH = '/admin/lessons'
+
+enum Pages {
+  INTRODUCTION = 'introduction',
+  MODULES = 'modules',
+  EXERCISE_QUESTION = 'exercises'
+}
 
 const MODULES = gql`
   query {
@@ -168,6 +181,61 @@ const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
   )
 }
 
+type ExercisesProps = { lessonSlug: string }
+const ExercisesPage = ({ lessonSlug }: ExercisesProps) => {
+  const router = useRouter()
+
+  const { data, loading, refetch } = useGetExercisesQuery()
+
+  if (loading || !router.isReady) return <LoadingSpinner />
+
+  const mapExercisesToExerciseCard = data?.exercises
+    .filter(
+      exercise =>
+        exercise.flaggedAt && exercise.module.lesson.slug === lessonSlug
+    )
+    .map(exercise => {
+      return (
+        <AdminLessonExerciseCard
+          user={{ ...exercise.author }}
+          exercise={{
+            ...exercise,
+            author: { ...exercise.author }
+          }}
+          key={exercise.id}
+          onRemove={() => refetch()}
+          onUnflag={() => refetch()}
+        />
+      )
+    })
+
+  if (!mapExercisesToExerciseCard || !mapExercisesToExerciseCard.length) {
+    return (
+      <Card title="No exercises found">
+        <Text component="p">
+          Exercises can be added from{' '}
+          <Link href={`${CURRICULUM_PATH}/${lessonSlug}/mentor/addExercise`}>
+            <a
+              data-testid="addExercise-link"
+              style={{ textDecoration: 'none' }}
+            >
+              <Text color="primary" component="span">
+                addExercise page
+              </Text>
+            </a>
+          </Link>
+        </Text>
+      </Card>
+    )
+  }
+
+  return (
+    <div className={styles.container__exercisesPanel}>
+      {mapExercisesToExerciseCard}
+    </div>
+  )
+}
+
 type ContentProps = {
   pageName?: string | string[]
   modules: Modules
@@ -182,10 +250,14 @@ const Content = ({
   refetch,
   lesson
 }: ContentProps) => {
-  if (pageName === 'modules') {
+  if (pageName === Pages.MODULES) {
     return (
       <ModulesPage lessonId={lessonId} refetch={refetch} modules={modules} />
     )
+  }
+
+  if (pageName === Pages.EXERCISE_QUESTION) {
+    return <ExercisesPage lessonSlug={lesson.slug} />
   }
 
   // The "key" prop is passed so the component update its states (re-render and reset states)
@@ -228,11 +300,15 @@ const Lessons = ({ data }: GetAppProps) => {
   const tabs = [
     {
       text: 'introduction',
-      url: `${MAIN_PATH}/${lessonSlug}/introduction`
+      url: `${MAIN_PATH}/${lessonSlug}/${Pages.INTRODUCTION}`
     },
     {
       text: 'modules',
-      url: `${MAIN_PATH}/${lessonSlug}/modules`
+      url: `${MAIN_PATH}/${lessonSlug}/${Pages.MODULES}`
+    },
+    {
+      text: 'exercises',
+      url: `${MAIN_PATH}/${lessonSlug}/${Pages.EXERCISE_QUESTION}`
     }
   ]
   const tabSelected = tabs.findIndex(tab => tab.text === pageName)
