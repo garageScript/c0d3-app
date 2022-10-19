@@ -156,6 +156,7 @@ model User {
   submissionsReviewed       Submission[]         @relation("userReviewedSubmissions")
   submissions               Submission[]         @relation("userSubmissions")
   userLessons               UserLesson[]
+  exerciseComments          ExerciseComment[]
 
   @@map("users")
 }
@@ -177,22 +178,23 @@ model Module {
 }
 
 model Exercise {
-  id          Int                  @id @default(autoincrement())
-  createdAt   DateTime             @default(now()) @db.Timestamptz(6)
-  updatedAt   DateTime             @updatedAt @db.Timestamptz(6)
-  authorId    Int
-  moduleId    Int
-  description String
-  answer      String
-  testStr     String?
-  explanation String?
-  flagReason  String?
-  flaggedAt   DateTime?
-  flaggedById Int?
-  author      User                 @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  flaggedBy   User?                @relation("flaggedExercises", fields: [flaggedById], references: [id])
-  module      Module               @relation(fields: [moduleId], references: [id], onDelete: Cascade)
-  submissions ExerciseSubmission[]
+  id               Int                  @id @default(autoincrement())
+  createdAt        DateTime             @default(now()) @db.Timestamptz(6)
+  updatedAt        DateTime             @updatedAt @db.Timestamptz(6)
+  authorId         Int
+  moduleId         Int
+  description      String
+  answer           String
+  testStr          String?
+  explanation      String?
+  flagReason       String?
+  flaggedAt        DateTime?
+  flaggedById      Int?
+  author           User                 @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  flaggedBy        User?                @relation("flaggedExercises", fields: [flaggedById], references: [id])
+  module           Module               @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  submissions      ExerciseSubmission[]
+  exerciseComments ExerciseComment[]
 
   @@map("exercises")
 }
@@ -206,4 +208,20 @@ model ExerciseSubmission {
   userAnswer String
 
   @@map("exerciseSubmissions")
+}
+
+model ExerciseComment {
+  id         Int               @id @default(autoincrement())
+  createdAt  DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt  DateTime          @updatedAt @db.Timestamptz(6)
+  authorId   Int
+  exerciseId Int
+  userPic    String?
+  content    String
+  parentId   Int?
+  exercise   Exercise          @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  author     User              @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  parent     ExerciseComment?  @relation("ExerciseCommentReplies", fields: [parentId], references: [id])
+  replies    ExerciseComment[] @relation("ExerciseCommentReplies")
+
 }
