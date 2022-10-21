@@ -160,9 +160,7 @@ describe('Curriculum Page', () => {
         request: { query: GET_SESSION },
         result: {
           data: {
-            session: {
-              ...dummySessionData
-            }
+            session: null
           }
         }
       }

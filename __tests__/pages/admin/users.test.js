@@ -9,6 +9,7 @@ import {
 import { MockedProvider } from '@apollo/client/testing'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../graphql/queries/getApp'
+import GET_SESSION from '../../../graphql/queries/getSession'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
@@ -50,6 +51,16 @@ const mocks = [
         session: dummySessionData,
         lessons: dummyLessonData,
         alerts: dummyAlertData
+      }
+    }
+  },
+  {
+    request: { query: GET_SESSION },
+    result: {
+      data: {
+        session: {
+          ...dummySessionData
+        }
       }
     }
   }

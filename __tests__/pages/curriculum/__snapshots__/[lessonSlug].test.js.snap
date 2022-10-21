@@ -985,7 +985,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               class="challenge-display_challenges col-md-4"
             >
               <div
-                class="card mb-2 challenge-title-card challenge-title-card--done"
+                class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
                 data-testid="challenge-title"
               >
                 <div
@@ -994,15 +994,10 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                   <div>
                     1. Incremental Closure
                   </div>
-                  <img
-                    height="25px"
-                    src="/assets/curriculum/icons/checkmark.svg"
-                    width="25px"
-                  />
                 </div>
               </div>
               <div
-                class="card mb-2 challenge-title-card challenge-title-card--done"
+                class="card mb-2 challenge-title-card shadow-sm border-0"
                 data-testid="challenge-title"
               >
                 <div
@@ -1011,15 +1006,10 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                   <div>
                     2. Closure x times
                   </div>
-                  <img
-                    height="25px"
-                    src="/assets/curriculum/icons/checkmark.svg"
-                    width="25px"
-                  />
                 </div>
               </div>
               <div
-                class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+                class="card mb-2 challenge-title-card shadow-sm border-0"
                 data-testid="challenge-title"
               >
                 <div
@@ -1152,7 +1142,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                     class="card-title"
                     data-testid="challenge-question-title"
                   >
-                    Repeated String
+                    Incremental Closure
                   </h1>
                   <div
                     class="bg-light p-3 mt-3"
@@ -1160,30 +1150,25 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                   >
                     <div>
                       <p>
-                        Write a function called solution that takes in 2 parameters, a number and string and returns the string repeated input parameter number of times
+                        Write a function called solution that takes in a number and returns a function.
+                      </p>
+                      <p>
+                        whenever the returned function is called, the next incremental number will be returned
+                      </p>
+                      <p>
+                        Example:
                       </p>
                       <pre>
                         <code>
-                          result = solution(3, "abc") // "abcabcabc"
-result = solution(0, "hello") // ""
+                          let resf = solution(5)
+result = resf() // 6
+result = resf() // 7
+
+resf = solution(-5)
+result = resf() // -4
+result = resf() // -3
                         </code>
                       </pre>
-                      <p>
-                        Reminder for students with prior experience: you are not allowed to use 
-                        <code>
-                          for
-                        </code>
-                         and 
-                        <code>
-                          while
-                        </code>
-                         loops. 
-                        <a
-                          href="https://www.notion.so/garagescript/Recursion-973993e8ed144d8a87cb5695fd1ea8b1"
-                        >
-                          Reason
-                        </a>
-                      </p>
                     </div>
                   </div>
                 </div>

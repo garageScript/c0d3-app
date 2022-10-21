@@ -9,7 +9,8 @@ import {
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
-import GET_SUBMISSONS from '../../../graphql/queries/getSubmissions'
+import GET_SESSION from '../../../graphql/queries/getSession'
+import GET_SUBMISSIONS from '../../../graphql/queries/getSubmissions'
 import Review from '../../../pages/review/[lesson]'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
@@ -39,7 +40,7 @@ const getAppMock = {
   }
 }
 const getSubmissionsMock = {
-  request: { query: GET_SUBMISSONS, variables: { lessonId: 2 } },
+  request: { query: GET_SUBMISSIONS, variables: { lessonId: 2 } },
   result: {
     data: {
       submissions: [
@@ -101,7 +102,30 @@ const getPreviousSubmissionsMock = {
   }
 }
 
-const mocks = [getAppMock, getSubmissionsMock, getPreviousSubmissionsMock]
+const getSessionMock = {
+  request: { query: GET_SESSION },
+  result: {
+    data: {
+      session: {
+        ...dummySessionData,
+        lessonStatus: [
+          {
+            lessonId: 2,
+            passedAt: new Date(1614694120099),
+            starGiven: null
+          }
+        ]
+      }
+    }
+  }
+}
+
+const mocks = [
+  getAppMock,
+  getSubmissionsMock,
+  getPreviousSubmissionsMock,
+  getSessionMock
+]
 describe('Lesson Page', () => {
   const { query, push, asPath } = useRouter()
   query['lesson'] = 'js1'
@@ -174,7 +198,7 @@ describe('Lesson Page', () => {
     const noSubmissionMock = { ...getSubmissionsMock, result: null }
     const { container } = render(
       <MockedProvider
-        mocks={[getAppMock, noSubmissionMock]}
+        mocks={[getAppMock, noSubmissionMock, getSessionMock]}
         addTypename={false}
       >
         <Review />

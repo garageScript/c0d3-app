@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent, waitFor, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import GET_APP from '../../graphql/queries/getApp'
+import GET_SESSION from '../../graphql/queries/getSession'
 import LOGOUT_USER from '../../graphql/queries/logoutUser'
 import LOGIN_USER from '../../graphql/queries/loginUser'
 import dummySessionData from '../../__dummy__/sessionData'
@@ -13,12 +13,12 @@ describe('AppNav Component', () => {
     expect.assertions(1)
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_SESSION },
         result: {
           data: {
-            session: dummySessionData,
-            lessons: [],
-            alerts: []
+            session: {
+              ...dummySessionData
+            }
           }
         }
       },
@@ -60,12 +60,12 @@ describe('AppNav Component', () => {
     expect.assertions(1)
     const mocks = [
       {
-        request: { query: GET_APP },
+        request: { query: GET_SESSION },
         result: {
           data: {
-            session: dummySessionData,
-            lessons: [],
-            alerts: []
+            session: {
+              ...dummySessionData
+            }
           }
         }
       },
