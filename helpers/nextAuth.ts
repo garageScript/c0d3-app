@@ -1,5 +1,5 @@
 import { updateRefreshandAccessTokens } from './discordAuth'
-import { CallbacksOptions, DefaultSession } from 'next-auth'
+import { Awaitable, CallbacksOptions, DefaultSession, User } from 'next-auth'
 import { LoggedRequest } from '../@types/helpers'
 import { Request, Response } from 'express'
 import { NextApiResponse } from 'next'
@@ -46,7 +46,7 @@ export const authorize = (
     // What we return here is passed to jwt and session callbacks
     return prisma.user.findFirst({
       where: { id: user.id }
-    })
+    }) as Awaitable<User | null>
   }
 
   return authorize

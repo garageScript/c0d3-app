@@ -29,6 +29,16 @@ describe('Curriculum Page', () => {
             alerts: []
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
 
@@ -145,9 +155,19 @@ describe('Curriculum Page', () => {
             alerts: []
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
-    const { container } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
@@ -173,6 +193,16 @@ describe('Curriculum Page', () => {
             lessons: dummyLessonData,
             session: dummySessionData,
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }
@@ -256,6 +286,16 @@ describe('Curriculum Page', () => {
               user: { ...dummySessionData.user, isConnectedToDiscord: true }
             },
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }
