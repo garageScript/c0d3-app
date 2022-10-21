@@ -289,11 +289,16 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
         VARIABLES
       </span>
     </div>
-    <p
+    <a
       className="card__header__username"
+      href="/profile/noob"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
+      @
       noob
-    </p>
+    </a>
     <div
       className="card__header__contact__container"
     >
@@ -497,11 +502,16 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
           VARIABLES
         </span>
       </div>
-      <p
+      <a
         className="card__header__username"
+        href="/profile/noob"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
+        @
         noob
-      </p>
+      </a>
       <div
         className="card__header__contact__container"
       >
@@ -693,11 +703,16 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
           VARIABLES
         </span>
       </div>
-      <p
+      <a
         className="card__header__username"
+        href="/profile/noob"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
+        @
         noob
-      </p>
+      </a>
       <div
         className="card__header__contact__container"
       >
@@ -889,11 +904,16 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
           VARIABLES
         </span>
       </div>
-      <p
+      <a
         className="card__header__username"
+        href="/profile/noob"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
+        @
         noob
-      </p>
+      </a>
       <div
         className="card__header__contact__container"
       >
@@ -1085,11 +1105,16 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
           VARIABLES
         </span>
       </div>
-      <p
+      <a
         className="card__header__username"
+        href="/profile/noob"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
+        @
         noob
-      </p>
+      </a>
       <div
         className="card__header__contact__container"
       >
