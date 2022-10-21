@@ -15,6 +15,7 @@ import {
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../../graphql/queries/getApp'
+import GET_SESSION from '../../../../graphql/queries/getSession'
 
 const mocks = [
   {
@@ -34,6 +35,16 @@ const mocks = [
         session: dummySessionData,
         lessons: dummyLessonData,
         alerts: dummyAlertData
+      }
+    }
+  },
+  {
+    request: { query: GET_SESSION },
+    result: {
+      data: {
+        session: {
+          ...dummySessionData
+        }
       }
     }
   }

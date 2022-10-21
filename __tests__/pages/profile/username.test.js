@@ -345,6 +345,16 @@ describe('user profile test', () => {
             userInfo: session
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...session
+            }
+          }
+        }
       }
     ]
     const { container, findByText, queryByText, findAllByText } = render(
@@ -771,6 +781,16 @@ describe('user profile test', () => {
             userInfo: session
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...session
+            }
+          }
+        }
       }
     ]
     const { container, findByText, queryByText, findAllByText } = render(
@@ -819,6 +839,16 @@ describe('user profile test', () => {
         result: {
           data: {
             userInfo: anonymous
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...anonymous
+            }
           }
         }
       }
@@ -981,6 +1011,16 @@ describe('user profile test', () => {
         result: {
           data: {
             userInfo: session
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...session
+            }
           }
         }
       }

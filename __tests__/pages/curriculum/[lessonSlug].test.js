@@ -10,6 +10,7 @@ import {
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
+import GET_SESSION from '../../../graphql/queries/getSession'
 import Lesson from '../../../pages/curriculum/[lessonSlug]'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
@@ -90,6 +91,16 @@ describe('Lesson Page', () => {
             alerts: dummyAlertData
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
 
@@ -121,6 +132,16 @@ describe('Lesson Page', () => {
             alerts: dummyAlertData
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
     const { container, getByText } = render(
@@ -148,6 +169,16 @@ describe('Lesson Page', () => {
             alerts: dummyAlertData
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
 
@@ -173,6 +204,16 @@ describe('Lesson Page', () => {
             session,
             lessons: null,
             alerts: dummyAlertData
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }
