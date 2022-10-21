@@ -77,7 +77,7 @@
     "@graphql-codegen/cli": "^2.13.7",
     "@graphql-codegen/typescript": "^2.7.2",
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.2.5",
-    "@graphql-codegen/typescript-operations": "^2.5.4",
+    "@graphql-codegen/typescript-operations": "^2.5.5",
     "@graphql-codegen/typescript-react-apollo": "^3.3.4",
     "@graphql-codegen/typescript-resolvers": "^2.7.5",
     "@jest/types": "^29.2.1",
