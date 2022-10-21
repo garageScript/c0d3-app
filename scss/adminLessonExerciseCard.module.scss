@@ -16,8 +16,17 @@
   font-family: 'Inter';
 
   .card__header__username {
+    display: inline-block;
     font-size: 18px;
     font-weight: 700;
+    color: colors.$primary;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 14px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .card__header__contact__container {
@@ -33,7 +42,7 @@
       align-items: center;
       border: 1px solid colors.$primary;
       font-weight: 700;
-      column-gap: 15px;
+      column-gap: 10px;
     }
   }
 

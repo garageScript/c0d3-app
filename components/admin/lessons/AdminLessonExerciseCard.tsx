@@ -1,6 +1,8 @@
 import { get, toUpper } from 'lodash'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { Collapse, Spinner } from 'react-bootstrap'
+import { PROFILE_PATH } from '../../../constants'
 import {
   useDeleteExerciseMutation,
   useRemoveExerciseFlagMutation,
@@ -36,7 +38,9 @@ const Header = ({ user, exercise }: HeaderProps) => {
           {toUpper(exercise.module.name)}
         </span>
       </div>
-      <p className={styles.card__header__username}>{user.username}</p>
+      <Link href={`${PROFILE_PATH}/${user.username}`}>
+        <a className={styles.card__header__username}>@{user.username}</a>
+      </Link>
       <div className={styles.card__header__contact__container}>
         <div className={styles.card__header__contact}>
           <span>Email</span>
