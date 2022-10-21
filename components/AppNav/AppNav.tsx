@@ -81,6 +81,7 @@ const AppNav: React.FC<{}> = () => {
   const [session, setSession] = useState<GetSessionQuery['session']>()
   const isAdmin = _.get(session, 'user.isAdmin', false)
 
+  // Keep the fetch policy cache-first #2345
   const { data, loading } = useGetSessionQuery()
 
   useEffect(() => {
