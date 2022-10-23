@@ -11,11 +11,6 @@ export const session = async (_parent: void, _args: void, context: Context) => {
   const user = context?.req?.user
   if (!user) return { lessonStatus: [] }
 
-  const userWithDiscordStatus = {
-    ...user,
-    isConnectedToDiscord: !!user.discordRefreshToken // using this to avoid a second fetch to get Discord username
-  }
-
   // FYI: The reason we are querying with parallelized promises:
   // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
   const [session, starsGiven] = await Promise.all([
@@ -39,7 +34,19 @@ export const session = async (_parent: void, _args: void, context: Context) => {
     })
   ])
 
-  const { submissions, lessonStatus: userLessons } = session
+  const {
+    submissions,
+    lessonStatus: userLessons,
+    user: { discordUserId, discordAvatarUrl, discordUsername }
+  } = session
+
+  const userWithDiscordStatus = {
+    ...user,
+    discordUserId,
+    discordAvatarUrl,
+    discordUsername,
+    isConnectedToDiscord: !!user.discordRefreshToken // using this to avoid a second fetch to get Discord username
+  }
 
   const lessonMentorMap = starsGiven.reduce((map, { lessonId, mentor }) => {
     map[lessonId] = mentor.username

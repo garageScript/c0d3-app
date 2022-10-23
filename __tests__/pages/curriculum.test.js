@@ -4,6 +4,7 @@ import { render, waitFor, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
+import GET_SESSION from '../../graphql/queries/getSession'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 
@@ -28,6 +29,16 @@ describe('Curriculum Page', () => {
             alerts: []
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
 
@@ -49,6 +60,16 @@ describe('Curriculum Page', () => {
             lessons: dummyLessonData,
             session: dummySessionData,
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }
@@ -100,6 +121,16 @@ describe('Curriculum Page', () => {
             alerts: []
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...session
+            }
+          }
+        }
       }
     ]
 
@@ -124,9 +155,17 @@ describe('Curriculum Page', () => {
             alerts: []
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: null
+          }
+        }
       }
     ]
-    const { container } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
@@ -152,6 +191,16 @@ describe('Curriculum Page', () => {
             lessons: dummyLessonData,
             session: dummySessionData,
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }
@@ -194,6 +243,16 @@ describe('Curriculum Page', () => {
             alerts: []
           }
         }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
       }
     ]
 
@@ -225,6 +284,16 @@ describe('Curriculum Page', () => {
               user: { ...dummySessionData.user, isConnectedToDiscord: true }
             },
             alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
           }
         }
       }

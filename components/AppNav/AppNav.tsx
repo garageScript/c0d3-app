@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NavLink, { NavLinkProps } from '../NavLink'
 import { useRouter } from 'next/router'
-import { useGetAppQuery, GetAppQuery } from '../../graphql'
+import { useGetSessionQuery, GetSessionQuery } from '../../graphql'
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav } from 'react-bootstrap'
 import ProfileDropdownMenu from '../ProfileDropdownMenu'
@@ -78,13 +78,11 @@ const NotLoggedInAuthNav = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
-  const [session, setSession] = useState<GetAppQuery['session']>()
+  const [session, setSession] = useState<GetSessionQuery['session']>()
   const isAdmin = _.get(session, 'user.isAdmin', false)
 
-  const { data, loading } = useGetAppQuery({
-    fetchPolicy: 'network-only',
-    nextFetchPolicy: 'cache-and-network'
-  })
+  // Keep the fetch policy cache-first #2345
+  const { data, loading } = useGetSessionQuery()
 
   useEffect(() => {
     if (data && data.session) {
