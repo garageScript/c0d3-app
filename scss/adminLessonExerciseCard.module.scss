@@ -1,4 +1,31 @@
 @use 'colors.module';
+$red: hsl(346, 66%, 38%);
+
+@mixin footer-button($color) {
+  display: flex;
+  padding-block: 15px;
+  background: transparent;
+  border-radius: 4px;
+  color: $color;
+  border: 0;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  transition: background-color 0.1s ease-in;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    outline: 3px solid rgba($color, 0.5);
+  }
+
+  &:hover {
+    transition: background-color 0.3s ease-out;
+    background-color: rgba($color, 0.1);
+  }
+}
 
 .card {
   display: flex;
@@ -61,7 +88,6 @@
   }
 
   .card__header__badge__flagged {
-    $red: hsl(346, 66%, 38%);
     border: 1px solid $red;
     color: $red;
   }
@@ -104,31 +130,12 @@
   column-gap: 26px;
   margin-top: auto;
 
-  .card__footer__btn {
-    display: flex;
-    padding-block: 15px;
-    background: transparent;
-    border-radius: 4px;
-    border: 0;
-    color: colors.$primary;
-    align-items: center;
-    flex: 1;
-    justify-content: center;
+  .card__footer__btn__remove {
+    @include footer-button($red);
+  }
 
-    transition: background-color 0.1s ease-in;
-
-    &:active {
-      transform: scale(0.98);
-    }
-
-    &:focus {
-      outline: 3px solid rgba(colors.$bg-purple, 0.5);
-    }
-
-    &:hover {
-      transition: background-color 0.3s ease-out;
-      background-color: rgba(colors.$primary, 0.1);
-    }
+  .card__footer__btn__unflag {
+    @include footer-button(colors.$warning);
   }
 }
 

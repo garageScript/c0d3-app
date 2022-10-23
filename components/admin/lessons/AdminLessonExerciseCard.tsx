@@ -133,7 +133,17 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
   return (
     <div className={styles.card__footer}>
       <button
-        className={styles.card__footer__btn}
+        className={`${styles.card__footer__btn} ${styles.card__footer__btn__unflag}`}
+        onClick={handleUnflag}
+      >
+        {unflagLoading ? (
+          <Spinner size="sm" animation="border" />
+        ) : (
+          <span>UNFLAG EXERCISE</span>
+        )}
+      </button>
+      <button
+        className={`${styles.card__footer__btn} ${styles.card__footer__btn__remove}`}
         disabled={deleteLoading}
         onClick={handleRemove}
       >
@@ -141,13 +151,6 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
           <Spinner size="sm" animation="border" />
         ) : (
           <span>REMOVE EXERCISE</span>
-        )}
-      </button>
-      <button className={styles.card__footer__btn} onClick={handleUnflag}>
-        {unflagLoading ? (
-          <Spinner size="sm" animation="border" />
-        ) : (
-          <span>UNFLAG EXERCISE</span>
         )}
       </button>
     </div>
