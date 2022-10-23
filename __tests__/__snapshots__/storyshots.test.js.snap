@@ -452,20 +452,20 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic 1`] = `
     className="card__footer"
   >
     <button
-      className="card__footer__btn"
+      className="card__footer__btn card__footer__btn__unflag"
+      onClick={[Function]}
+    >
+      <span>
+        UNFLAG EXERCISE
+      </span>
+    </button>
+    <button
+      className="card__footer__btn card__footer__btn__remove"
       disabled={false}
       onClick={[Function]}
     >
       <span>
         REMOVE EXERCISE
-      </span>
-    </button>
-    <button
-      className="card__footer__btn"
-      onClick={[Function]}
-    >
-      <span>
-        UNFLAG EXERCISE
       </span>
     </button>
   </div>
@@ -665,20 +665,20 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
       className="card__footer"
     >
       <button
-        className="card__footer__btn"
+        className="card__footer__btn card__footer__btn__unflag"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn card__footer__btn__remove"
         disabled={false}
         onClick={[Function]}
       >
         <span>
           REMOVE EXERCISE
-        </span>
-      </button>
-      <button
-        className="card__footer__btn"
-        onClick={[Function]}
-      >
-        <span>
-          UNFLAG EXERCISE
         </span>
       </button>
     </div>
@@ -866,20 +866,20 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
       className="card__footer"
     >
       <button
-        className="card__footer__btn"
+        className="card__footer__btn card__footer__btn__unflag"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn card__footer__btn__remove"
         disabled={false}
         onClick={[Function]}
       >
         <span>
           REMOVE EXERCISE
-        </span>
-      </button>
-      <button
-        className="card__footer__btn"
-        onClick={[Function]}
-      >
-        <span>
-          UNFLAG EXERCISE
         </span>
       </button>
     </div>
@@ -1067,20 +1067,20 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
       className="card__footer"
     >
       <button
-        className="card__footer__btn"
+        className="card__footer__btn card__footer__btn__unflag"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn card__footer__btn__remove"
         disabled={false}
         onClick={[Function]}
       >
         <span>
           REMOVE EXERCISE
-        </span>
-      </button>
-      <button
-        className="card__footer__btn"
-        onClick={[Function]}
-      >
-        <span>
-          UNFLAG EXERCISE
         </span>
       </button>
     </div>
@@ -1268,20 +1268,20 @@ exports[`Storyshots Components/AdminLessonExerciseCard Basic With Many Items 1`]
       className="card__footer"
     >
       <button
-        className="card__footer__btn"
+        className="card__footer__btn card__footer__btn__unflag"
+        onClick={[Function]}
+      >
+        <span>
+          UNFLAG EXERCISE
+        </span>
+      </button>
+      <button
+        className="card__footer__btn card__footer__btn__remove"
         disabled={false}
         onClick={[Function]}
       >
         <span>
           REMOVE EXERCISE
-        </span>
-      </button>
-      <button
-        className="card__footer__btn"
-        onClick={[Function]}
-      >
-        <span>
-          UNFLAG EXERCISE
         </span>
       </button>
     </div>
