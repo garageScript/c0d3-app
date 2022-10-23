@@ -1,24 +1,59 @@
 @use 'colors.module';
+$red: hsl(346, 66%, 38%);
+
+@mixin footer-button($color) {
+  display: flex;
+  padding-block: 15px;
+  background: transparent;
+  border-radius: 4px;
+  color: $color;
+  border: 0;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  transition: background-color 0.1s ease-in;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    outline: 3px solid rgba($color, 0.5);
+  }
+
+  &:hover {
+    transition: background-color 0.3s ease-out;
+    background-color: rgba($color, 0.1);
+  }
+}
 
 .card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   padding: 28px 20px;
   max-width: 592px;
   width: 100%;
-  height: 768px;
   row-gap: 26px;
   background: colors.$bg-white;
   box-shadow: 0px 4px 25px hsla(0, 0%, 0%, 0.1);
   border-radius: 10px;
-  align-items: center;
 }
 
 .card__header {
   font-family: 'Inter';
 
   .card__header__username {
-    font-size: 14px;
+    display: inline-block;
+    font-size: 18px;
     font-weight: 700;
+    color: colors.$primary;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 14px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .card__header__contact__container {
@@ -34,7 +69,7 @@
       align-items: center;
       border: 1px solid colors.$primary;
       font-weight: 700;
-      column-gap: 15px;
+      column-gap: 10px;
     }
   }
 
@@ -53,7 +88,6 @@
   }
 
   .card__header__badge__flagged {
-    $red: hsl(346, 66%, 38%);
     border: 1px solid $red;
     color: $red;
   }
@@ -94,31 +128,34 @@
 .card__footer {
   display: flex;
   column-gap: 26px;
+  margin-top: auto;
 
-  .card__footer__btn {
-    display: flex;
-    padding: 15px 48px;
-    background: transparent;
-    border-radius: 4px;
-    border: 0;
-    color: colors.$primary;
-    align-items: center;
-    flex: 1;
-    justify-content: center;
+  .card__footer__btn__remove {
+    @include footer-button($red);
+  }
 
-    transition: background-color 0.1s ease-in;
+  .card__footer__btn__unflag {
+    @include footer-button(colors.$warning);
+  }
+}
 
-    &:active {
-      transform: scale(0.98);
+@media only screen and (max-width: 460px) {
+  .card__footer {
+    flex-direction: column;
+  }
+
+  .card__header__contact__container {
+    flex-direction: column;
+
+    .card__header__contact {
+      width: fit-content;
     }
+  }
+}
 
-    &:focus {
-      outline: 3px solid rgba(colors.$bg-purple, 0.5);
-    }
-
-    &:hover {
-      transition: background-color 0.3s ease-out;
-      background-color: rgba(colors.$primary, 0.1);
-    }
+@media only screen and (max-width: 335px) {
+  .card__badges {
+    flex-direction: column;
+    max-width: fit-content;
   }
 }

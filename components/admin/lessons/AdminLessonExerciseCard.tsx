@@ -1,6 +1,8 @@
 import { get, toUpper } from 'lodash'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { Collapse, Spinner } from 'react-bootstrap'
+import { PROFILE_PATH } from '../../../constants'
 import {
   useDeleteExerciseMutation,
   useRemoveExerciseFlagMutation,
@@ -10,7 +12,7 @@ import {
 import styles from '../../../scss/adminLessonExerciseCard.module.scss'
 import CopyButton from '../../CopyButton'
 
-type NarrowedUser = Pick<User, 'discordUsername' | 'email' | 'username'>
+type NarrowedUser = Pick<User, 'discordId' | 'email' | 'username'>
 type NarrowedExercise = Omit<Exercise, 'author' | 'module'> & {
   author: NarrowedUser
   module: {
@@ -36,15 +38,17 @@ const Header = ({ user, exercise }: HeaderProps) => {
           {toUpper(exercise.module.name)}
         </span>
       </div>
-      <p className={styles.card__header__username}>{user.username}</p>
+      <Link href={`${PROFILE_PATH}/${user.username}`}>
+        <a className={styles.card__header__username}>@{user.username}</a>
+      </Link>
       <div className={styles.card__header__contact__container}>
         <div className={styles.card__header__contact}>
-          <span>{user.email}</span>
+          <span>Email</span>
           <CopyButton value={user.email} color={'primary'} />
         </div>
         <div className={styles.card__header__contact}>
-          <span>{user.discordUsername}</span>
-          <CopyButton value={user.discordUsername} color={'primary'} />
+          <span>Discord</span>
+          <CopyButton value={`<@${user.discordId}>`} color={'primary'} />
         </div>
       </div>
     </div>
@@ -129,7 +133,17 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
   return (
     <div className={styles.card__footer}>
       <button
-        className={styles.card__footer__btn}
+        className={`${styles.card__footer__btn} ${styles.card__footer__btn__unflag}`}
+        onClick={handleUnflag}
+      >
+        {unflagLoading ? (
+          <Spinner size="sm" animation="border" />
+        ) : (
+          <span>UNFLAG EXERCISE</span>
+        )}
+      </button>
+      <button
+        className={`${styles.card__footer__btn} ${styles.card__footer__btn__remove}`}
         disabled={deleteLoading}
         onClick={handleRemove}
       >
@@ -137,13 +151,6 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
           <Spinner size="sm" animation="border" />
         ) : (
           <span>REMOVE EXERCISE</span>
-        )}
-      </button>
-      <button className={styles.card__footer__btn} onClick={handleUnflag}>
-        {unflagLoading ? (
-          <Spinner size="sm" animation="border" />
-        ) : (
-          <span>UNFLAG EXERCISE</span>
         )}
       </button>
     </div>

@@ -7,8 +7,12 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import dummyLessonData from '../../../../../../__dummy__/lessonData'
 import dummySessionData from '../../../../../../__dummy__/sessionData'
 import dummyAlertData from '../../../../../../__dummy__/alertData'
+import getExercisesData from '../../../../../../__dummy__/getExercisesData'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../../../../graphql/queries/getApp'
+import GET_EXERCISES from '../../../../../../graphql/queries/getExercises'
+import REMOVE_EXERCISE_FLAG from '../../../../../../graphql/queries/removeExerciseFlag'
+import DELETE_EXERCISE from '../../../../../../graphql/queries/deleteExercise'
 import { MockedProvider } from '@apollo/client/testing'
 import { gql } from '@apollo/client'
 import userEvent from '@testing-library/user-event'
@@ -151,17 +155,112 @@ const addModuleMock = {
   }
 }
 
+const getExercisesMock = {
+  request: {
+    query: GET_EXERCISES
+  },
+  result: {
+    data: {
+      ...getExercisesData,
+      exercises: [...getExercisesData.exercises].map(e => ({
+        ...e,
+        flaggedAt: '2020-01-10',
+        flagReason: 'Bad exercise'
+      }))
+    }
+  }
+}
+
+let getExercisesWithRefetchCalled = false
+const getExerciseWithRefetchMock = {
+  request: {
+    query: GET_EXERCISES
+  },
+  newData: () => {
+    if (getExercisesWithRefetchCalled) {
+      return {
+        data: {
+          ...getExercisesData,
+          exercises: [
+            [...getExercisesData.exercises].map(e => ({
+              ...e,
+              flaggedAt: '2020-01-10',
+              flagReason: 'Bad exercise'
+            }))[0]
+          ]
+        }
+      }
+    } else {
+      getExercisesWithRefetchCalled = true
+      return {
+        data: {
+          ...getExercisesData,
+          exercises: [...getExercisesData.exercises].map(e => ({
+            ...e,
+            flaggedAt: '2020-01-10',
+            flagReason: 'Bad exercise'
+          }))
+        }
+      }
+    }
+  }
+}
+
+const deleteExerciseMock = {
+  request: {
+    query: DELETE_EXERCISE,
+    variables: { id: 1 }
+  },
+  result: {
+    data: {
+      deleteExercise: {
+        id: 1
+      }
+    }
+  }
+}
+
+const unflagExerciseMock = {
+  request: {
+    query: REMOVE_EXERCISE_FLAG,
+    variables: {
+      id: 1
+    }
+  },
+  result: {
+    data: {
+      removeExerciseFlag: {
+        id: 1
+      }
+    }
+  }
+}
+
 const mocks = [
+  getAppQueryMock,
+  getAppQueryMock,
   getAppQueryMock,
   modulesQueryMock,
   updateLessonMutationMock,
-  addModuleMock
+  addModuleMock,
+  getExercisesMock
 ]
+
 const mocksWithError = [
   getAppQueryMock,
   modulesQueryMock,
   updateLessonMutationMockWithError,
-  addModuleMock
+  addModuleMock,
+  getExercisesMock
+]
+
+const mocksWithRefetchExercises = [
+  getAppQueryMock,
+  getAppQueryMock,
+  getAppQueryMock,
+  getExerciseWithRefetchMock,
+  deleteExerciseMock,
+  unflagExerciseMock
 ]
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
@@ -171,7 +270,8 @@ const useRouterObj = {
     pageName: 'modules',
     lessonSlug: 'js1'
   },
-  push: jest.fn()
+  push: jest.fn(),
+  isReady: true
 }
 
 describe('modules', () => {
@@ -419,7 +519,7 @@ describe('introduction', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     await waitFor(() => {
-      expect(mocks[2].result).toBeCalled()
+      expect(updateLessonMutationMock.result).toBeCalled()
     })
   })
 
@@ -511,5 +611,99 @@ describe('introduction', () => {
     await userEvent.click(await screen.findByLabelText('Close alert'))
 
     expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+  })
+})
+
+describe('exercises', () => {
+  const useRouterExercises = {
+    ...useRouterObj,
+    asPath: 'c0d3.com/admin/lessons/js0/exercises',
+    query: {
+      ...useRouterObj.query,
+      lessonSlug: 'js0',
+      pageName: 'exercises'
+    }
+  }
+
+  beforeAll(() => useRouter.mockImplementation(() => useRouterExercises))
+
+  it('Should render exercises page', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    expect((await screen.findAllByText('Email')).length).toBe(3)
+  })
+
+  it('Should not render exercises if they are none', async () => {
+    expect.assertions(1)
+
+    const mocksOfMocks = mocks.slice(0, -1)
+    mocksOfMocks.push({
+      ...getExercisesMock,
+      result: {
+        data: {
+          ...getExercisesData,
+          exercises: [...getExercisesData.exercises].map(e => ({
+            ...e,
+            flaggedAt: '2020-01-10',
+            flagReason: 'Bad exercise',
+            module: {
+              ...e.module,
+              lesson: {
+                ...e.module.lesson,
+                slug: 'js3'
+              }
+            }
+          }))
+        }
+      }
+    })
+
+    render(
+      <MockedProvider mocks={mocksOfMocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    expect(screen.getByText('addExercise page')).toBeInTheDocument()
+  })
+
+  it('Should refresh the exercises upon removing one', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocksWithRefetchExercises}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    const [removeExerciseBtn] = await screen.findAllByText('REMOVE EXERCISE')
+    await userEvent.click(removeExerciseBtn)
+
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    expect((await screen.findAllByText('Email')).length).toBe(1)
+  })
+
+  it('Should refresh the exercises upon unflagging one', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocksWithRefetchExercises}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    const [removeExerciseBtn] = await screen.findAllByText('UNFLAG EXERCISE')
+    await userEvent.click(removeExerciseBtn)
+
+    expect((await screen.findAllByText('Email')).length).toBe(1)
   })
 })
