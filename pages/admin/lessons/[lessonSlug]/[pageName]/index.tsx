@@ -197,11 +197,8 @@ const ExercisesPage = ({ lessonSlug }: ExercisesProps) => {
     .map(exercise => {
       return (
         <AdminLessonExerciseCard
-          user={{ ...exercise.author }}
-          exercise={{
-            ...exercise,
-            author: { ...exercise.author }
-          }}
+          user={exercise.author}
+          exercise={exercise}
           key={exercise.id}
           onRemove={() => refetch()}
           onUnflag={() => refetch()}
