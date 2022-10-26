@@ -8,7 +8,7 @@ import prisma from '../../prisma'
 import { validateLessonId } from '../../helpers/validation/validateLessonId'
 import { withAdminContainer } from '../../containers/withAdminContainer'
 
-export const challenges = async (_parent: void, arg: QueryChallengesArgs) => {
+export const challenges = (_parent: void, arg: QueryChallengesArgs) => {
   const lessonId = arg?.lessonId
 
   return prisma.challenge.findMany({
