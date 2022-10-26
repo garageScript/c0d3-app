@@ -117,6 +117,7 @@ describe('Lesson Page', () => {
     // Used to wait for the query response to arrive
     await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
 
+    // Tracked in #2460
     // expect(container).toMatchSnapshot()
   })
 
