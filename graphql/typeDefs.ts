@@ -7,6 +7,7 @@ export default gql`
     allUsers: [User]
     modules: [Module]!
     exercises: [Exercise!]!
+    challenges(lessonId: Int): [Challenge!]!
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
