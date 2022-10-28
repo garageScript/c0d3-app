@@ -8,7 +8,11 @@ import { lessons } from './lessons'
 import lessonData from '../../__dummy__/lessonData'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { validateLessonId } from '../../helpers/validation/validateLessonId'
-import { createChallenge, updateChallenge } from './challengesController'
+import {
+  createChallenge,
+  updateChallenge,
+  challenges
+} from './challengesController'
 
 lessons.mockReturnValue(lessonData)
 
@@ -30,6 +34,36 @@ describe('Challenges controller tests', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     validateLessonId.mockResolvedValue(true)
+  })
+
+  test('Should return all challenges', async () => {
+    expect.assertions(2)
+
+    prismaMock.challenge.findMany.mockResolvedValueOnce(lessonData)
+
+    await expect(challenges(null, { lessonId: null }, ctx)).resolves.toEqual(
+      lessonData
+    )
+    expect(prismaMock.challenge.findMany).toBeCalledWith({})
+  })
+
+  test('Should return specific lesson challenges', async () => {
+    expect.assertions(2)
+
+    prismaMock.challenge.findMany.mockResolvedValueOnce(
+      lessonData.filter(lesson => lesson.id === 1)
+    )
+
+    await expect(challenges(null, { lessonId: 1 }, ctx)).resolves.toEqual(
+      lessonData.filter(lesson => lesson.id === 1)
+    )
+    expect(prismaMock.challenge.findMany).toBeCalledWith({
+      where: {
+        lesson: {
+          id: 1
+        }
+      }
+    })
   })
 
   test('Should create new challenge', async () => {

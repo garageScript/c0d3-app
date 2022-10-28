@@ -329,6 +329,7 @@ export type Query = {
   __typename?: 'Query'
   alerts: Array<Alert>
   allUsers?: Maybe<Array<Maybe<User>>>
+  challenges: Array<Challenge>
   exerciseSubmissions: Array<ExerciseSubmission>
   exercises: Array<Exercise>
   getLessonMentors?: Maybe<Array<Maybe<User>>>
@@ -339,6 +340,10 @@ export type Query = {
   session: Session
   submissions?: Maybe<Array<Submission>>
   userInfo?: Maybe<Session>
+}
+
+export type QueryChallengesArgs = {
+  lessonId?: InputMaybe<Scalars['Int']>
 }
 
 export type QueryGetLessonMentorsArgs = {
@@ -557,6 +562,22 @@ export type UsersQuery = {
     email: string
     cliToken?: string | null
   } | null> | null
+}
+
+export type ChallengesQueryVariables = Exact<{
+  lessonId?: InputMaybe<Scalars['Int']>
+}>
+
+export type ChallengesQuery = {
+  __typename?: 'Query'
+  challenges: Array<{
+    __typename?: 'Challenge'
+    id: number
+    description: string
+    lessonId: number
+    title: string
+    order: number
+  }>
 }
 
 export type ChangeAdminRightsMutationVariables = Exact<{
@@ -1851,6 +1872,12 @@ export type QueryResolvers<
     ParentType,
     ContextType
   >
+  challenges?: Resolver<
+    Array<ResolversTypes['Challenge']>,
+    ParentType,
+    ContextType,
+    Partial<QueryChallengesArgs>
+  >
   exerciseSubmissions?: Resolver<
     Array<ResolversTypes['ExerciseSubmission']>,
     ParentType,
@@ -2736,6 +2763,97 @@ export type UsersLazyQueryHookResult = ReturnType<typeof useUsersLazyQuery>
 export type UsersQueryResult = Apollo.QueryResult<
   UsersQuery,
   UsersQueryVariables
+>
+export const ChallengesDocument = gql`
+  query challenges($lessonId: Int) {
+    challenges(lessonId: $lessonId) {
+      id
+      description
+      lessonId
+      title
+      order
+    }
+  }
+`
+export type ChallengesProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    ChallengesQuery,
+    ChallengesQueryVariables
+  >
+} & TChildProps
+export function withChallenges<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    ChallengesQuery,
+    ChallengesQueryVariables,
+    ChallengesProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    ChallengesQuery,
+    ChallengesQueryVariables,
+    ChallengesProps<TChildProps, TDataName>
+  >(ChallengesDocument, {
+    alias: 'challenges',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useChallengesQuery__
+ *
+ * To run a query within a React component, call `useChallengesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useChallengesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useChallengesQuery({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *   },
+ * });
+ */
+export function useChallengesQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    ChallengesQuery,
+    ChallengesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ChallengesQuery, ChallengesQueryVariables>(
+    ChallengesDocument,
+    options
+  )
+}
+export function useChallengesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    ChallengesQuery,
+    ChallengesQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ChallengesQuery, ChallengesQueryVariables>(
+    ChallengesDocument,
+    options
+  )
+}
+export type ChallengesQueryHookResult = ReturnType<typeof useChallengesQuery>
+export type ChallengesLazyQueryHookResult = ReturnType<
+  typeof useChallengesLazyQuery
+>
+export type ChallengesQueryResult = Apollo.QueryResult<
+  ChallengesQuery,
+  ChallengesQueryVariables
 >
 export const ChangeAdminRightsDocument = gql`
   mutation changeAdminRights($id: Int!, $status: Boolean!) {
@@ -5870,6 +5988,7 @@ export type MutationFieldPolicy = {
 export type QueryKeySpecifier = (
   | 'alerts'
   | 'allUsers'
+  | 'challenges'
   | 'exerciseSubmissions'
   | 'exercises'
   | 'getLessonMentors'
@@ -5885,6 +6004,7 @@ export type QueryKeySpecifier = (
 export type QueryFieldPolicy = {
   alerts?: FieldPolicy<any> | FieldReadFunction<any>
   allUsers?: FieldPolicy<any> | FieldReadFunction<any>
+  challenges?: FieldPolicy<any> | FieldReadFunction<any>
   exerciseSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
   exercises?: FieldPolicy<any> | FieldReadFunction<any>
   getLessonMentors?: FieldPolicy<any> | FieldReadFunction<any>
