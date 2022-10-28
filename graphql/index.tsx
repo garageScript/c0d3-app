@@ -87,6 +87,22 @@ export type Exercise = {
   testStr?: Maybe<Scalars['String']>
 }
 
+export type ExerciseComment = {
+  __typename?: 'ExerciseComment'
+  author: User
+  authorId: Scalars['Int']
+  content: Scalars['String']
+  createdAt: Scalars['String']
+  exercise: Exercise
+  exerciseId: Scalars['Int']
+  id: Scalars['Int']
+  parent?: Maybe<ExerciseComment>
+  parentId?: Maybe<Scalars['Int']>
+  replies?: Maybe<Array<Maybe<ExerciseComment>>>
+  updatedAt?: Maybe<Scalars['String']>
+  userPic?: Maybe<Scalars['String']>
+}
+
 export type ExerciseSubmission = {
   __typename?: 'ExerciseSubmission'
   exerciseId: Scalars['Int']
@@ -128,6 +144,7 @@ export type Mutation = {
   addAlert?: Maybe<Array<Maybe<Alert>>>
   addComment?: Maybe<Comment>
   addExercise: Exercise
+  addExerciseComment: ExerciseComment
   addExerciseSubmission: ExerciseSubmission
   addModule: Module
   changeAdminRights?: Maybe<SuccessResponse>
@@ -181,6 +198,13 @@ export type MutationAddExerciseArgs = {
   explanation?: InputMaybe<Scalars['String']>
   moduleId: Scalars['Int']
   testStr?: InputMaybe<Scalars['String']>
+}
+
+export type MutationAddExerciseCommentArgs = {
+  content: Scalars['String']
+  exerciseId: Scalars['Int']
+  parentId?: InputMaybe<Scalars['Int']>
+  userPic?: InputMaybe<Scalars['String']>
 }
 
 export type MutationAddExerciseSubmissionArgs = {
@@ -446,6 +470,57 @@ export type UserLesson = {
   starGiven?: Maybe<Scalars['String']>
   starsReceived?: Maybe<Array<Maybe<Star>>>
   userId?: Maybe<Scalars['String']>
+}
+
+export type LessonAndChallengeInfoFragment = {
+  __typename?: 'Lesson'
+  id: number
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
+  chatUrl?: string | null
+  order: number
+  description: string
+  title: string
+  challenges: Array<{
+    __typename?: 'Challenge'
+    id: number
+    description: string
+    lessonId: number
+    title: string
+    order: number
+  }>
+}
+
+export type SubmissionsInfoFragment = {
+  __typename?: 'Submission'
+  id: number
+  status: SubmissionStatus
+  diff?: string | null
+  comment?: string | null
+  challengeId: number
+  lessonId: number
+  createdAt?: string | null
+  updatedAt: string
+  challenge: { __typename?: 'Challenge'; title: string; description: string }
+  user: { __typename?: 'User'; id: number; username: string }
+  reviewer?: {
+    __typename?: 'User'
+    id: number
+    username: string
+    name: string
+  } | null
+  comments?: Array<{
+    __typename?: 'Comment'
+    id: number
+    content: string
+    submissionId: number
+    createdAt: string
+    authorId: number
+    line?: number | null
+    fileName?: string | null
+    author?: { __typename?: 'User'; username: string; name: string } | null
+  }> | null
 }
 
 export type AcceptSubmissionMutationVariables = Exact<{
@@ -726,57 +801,6 @@ export type FlagExerciseMutationVariables = Exact<{
 export type FlagExerciseMutation = {
   __typename?: 'Mutation'
   flagExercise?: { __typename?: 'Exercise'; id: number } | null
-}
-
-export type LessonAndChallengeInfoFragment = {
-  __typename?: 'Lesson'
-  id: number
-  docUrl?: string | null
-  githubUrl?: string | null
-  videoUrl?: string | null
-  chatUrl?: string | null
-  order: number
-  description: string
-  title: string
-  challenges: Array<{
-    __typename?: 'Challenge'
-    id: number
-    description: string
-    lessonId: number
-    title: string
-    order: number
-  }>
-}
-
-export type SubmissionsInfoFragment = {
-  __typename?: 'Submission'
-  id: number
-  status: SubmissionStatus
-  diff?: string | null
-  comment?: string | null
-  challengeId: number
-  lessonId: number
-  createdAt?: string | null
-  updatedAt: string
-  challenge: { __typename?: 'Challenge'; title: string; description: string }
-  user: { __typename?: 'User'; id: number; username: string }
-  reviewer?: {
-    __typename?: 'User'
-    id: number
-    username: string
-    name: string
-  } | null
-  comments?: Array<{
-    __typename?: 'Comment'
-    id: number
-    content: string
-    submissionId: number
-    createdAt: string
-    authorId: number
-    line?: number | null
-    fileName?: string | null
-    author?: { __typename?: 'User'; username: string; name: string } | null
-  }> | null
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
@@ -1353,6 +1377,27 @@ export type UserInfoQuery = {
   } | null
 }
 
+export type AddExerciseCommentMutationVariables = Exact<{
+  exerciseId: Scalars['Int']
+  content: Scalars['String']
+  parentId?: InputMaybe<Scalars['Int']>
+  userPic?: InputMaybe<Scalars['String']>
+}>
+
+export type AddExerciseCommentMutation = {
+  __typename?: 'Mutation'
+  addExerciseComment: {
+    __typename?: 'ExerciseComment'
+    id: number
+    exerciseId: number
+    authorId: number
+    content: string
+    userPic?: string | null
+    createdAt: string
+    parentId?: number | null
+  }
+}
+
 export type WithIndex<TObject> = TObject & Record<string, any>
 export type ResolversObject<TObject> = WithIndex<TObject>
 
@@ -1469,6 +1514,7 @@ export type ResolversTypes = ResolversObject<{
   Challenge: ResolverTypeWrapper<Challenge>
   Comment: ResolverTypeWrapper<Comment>
   Exercise: ResolverTypeWrapper<Exercise>
+  ExerciseComment: ResolverTypeWrapper<ExerciseComment>
   ExerciseSubmission: ResolverTypeWrapper<ExerciseSubmission>
   Int: ResolverTypeWrapper<Scalars['Int']>
   Lesson: ResolverTypeWrapper<Lesson>
@@ -1494,6 +1540,7 @@ export type ResolversParentTypes = ResolversObject<{
   Challenge: Challenge
   Comment: Comment
   Exercise: Exercise
+  ExerciseComment: ExerciseComment
   ExerciseSubmission: ExerciseSubmission
   Int: Scalars['Int']
   Lesson: Lesson
@@ -1595,6 +1642,33 @@ export type ExerciseResolvers<
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
+export type ExerciseCommentResolvers<
+  ContextType = Context,
+  ParentType extends ResolversParentTypes['ExerciseComment'] = ResolversParentTypes['ExerciseComment']
+> = ResolversObject<{
+  author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  exercise?: Resolver<ResolversTypes['Exercise'], ParentType, ContextType>
+  exerciseId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  parent?: Resolver<
+    Maybe<ResolversTypes['ExerciseComment']>,
+    ParentType,
+    ContextType
+  >
+  parentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  replies?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['ExerciseComment']>>>,
+    ParentType,
+    ContextType
+  >
+  updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  userPic?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
+}>
+
 export type ExerciseSubmissionResolvers<
   ContextType = Context,
   ParentType extends ResolversParentTypes['ExerciseSubmission'] = ResolversParentTypes['ExerciseSubmission']
@@ -1681,6 +1755,12 @@ export type MutationResolvers<
       MutationAddExerciseArgs,
       'answer' | 'description' | 'moduleId'
     >
+  >
+  addExerciseComment?: Resolver<
+    ResolversTypes['ExerciseComment'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationAddExerciseCommentArgs, 'content' | 'exerciseId'>
   >
   addExerciseSubmission?: Resolver<
     ResolversTypes['ExerciseSubmission'],
@@ -2056,6 +2136,7 @@ export type Resolvers<ContextType = Context> = ResolversObject<{
   Challenge?: ChallengeResolvers<ContextType>
   Comment?: CommentResolvers<ContextType>
   Exercise?: ExerciseResolvers<ContextType>
+  ExerciseComment?: ExerciseCommentResolvers<ContextType>
   ExerciseSubmission?: ExerciseSubmissionResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
   Module?: ModuleResolvers<ContextType>
@@ -5768,6 +5849,106 @@ export type UserInfoQueryResult = Apollo.QueryResult<
   UserInfoQuery,
   UserInfoQueryVariables
 >
+export const AddExerciseCommentDocument = gql`
+  mutation AddExerciseComment(
+    $exerciseId: Int!
+    $content: String!
+    $parentId: Int
+    $userPic: String
+  ) {
+    addExerciseComment(
+      exerciseId: $exerciseId
+      content: $content
+      parentId: $parentId
+      userPic: $userPic
+    ) {
+      id
+      exerciseId
+      authorId
+      content
+      userPic
+      createdAt
+      parentId
+    }
+  }
+`
+export type AddExerciseCommentMutationFn = Apollo.MutationFunction<
+  AddExerciseCommentMutation,
+  AddExerciseCommentMutationVariables
+>
+export type AddExerciseCommentProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    AddExerciseCommentMutation,
+    AddExerciseCommentMutationVariables
+  >
+} & TChildProps
+export function withAddExerciseComment<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    AddExerciseCommentMutation,
+    AddExerciseCommentMutationVariables,
+    AddExerciseCommentProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    AddExerciseCommentMutation,
+    AddExerciseCommentMutationVariables,
+    AddExerciseCommentProps<TChildProps, TDataName>
+  >(AddExerciseCommentDocument, {
+    alias: 'addExerciseComment',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useAddExerciseCommentMutation__
+ *
+ * To run a mutation, you first call `useAddExerciseCommentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddExerciseCommentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addExerciseCommentMutation, { data, loading, error }] = useAddExerciseCommentMutation({
+ *   variables: {
+ *      exerciseId: // value for 'exerciseId'
+ *      content: // value for 'content'
+ *      parentId: // value for 'parentId'
+ *      userPic: // value for 'userPic'
+ *   },
+ * });
+ */
+export function useAddExerciseCommentMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    AddExerciseCommentMutation,
+    AddExerciseCommentMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    AddExerciseCommentMutation,
+    AddExerciseCommentMutationVariables
+  >(AddExerciseCommentDocument, options)
+}
+export type AddExerciseCommentMutationHookResult = ReturnType<
+  typeof useAddExerciseCommentMutation
+>
+export type AddExerciseCommentMutationResult =
+  Apollo.MutationResult<AddExerciseCommentMutation>
+export type AddExerciseCommentMutationOptions = Apollo.BaseMutationOptions<
+  AddExerciseCommentMutation,
+  AddExerciseCommentMutationVariables
+>
 export type AlertKeySpecifier = (
   | 'id'
   | 'text'
@@ -5861,6 +6042,35 @@ export type ExerciseFieldPolicy = {
   module?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
 }
+export type ExerciseCommentKeySpecifier = (
+  | 'author'
+  | 'authorId'
+  | 'content'
+  | 'createdAt'
+  | 'exercise'
+  | 'exerciseId'
+  | 'id'
+  | 'parent'
+  | 'parentId'
+  | 'replies'
+  | 'updatedAt'
+  | 'userPic'
+  | ExerciseCommentKeySpecifier
+)[]
+export type ExerciseCommentFieldPolicy = {
+  author?: FieldPolicy<any> | FieldReadFunction<any>
+  authorId?: FieldPolicy<any> | FieldReadFunction<any>
+  content?: FieldPolicy<any> | FieldReadFunction<any>
+  createdAt?: FieldPolicy<any> | FieldReadFunction<any>
+  exercise?: FieldPolicy<any> | FieldReadFunction<any>
+  exerciseId?: FieldPolicy<any> | FieldReadFunction<any>
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  parent?: FieldPolicy<any> | FieldReadFunction<any>
+  parentId?: FieldPolicy<any> | FieldReadFunction<any>
+  replies?: FieldPolicy<any> | FieldReadFunction<any>
+  updatedAt?: FieldPolicy<any> | FieldReadFunction<any>
+  userPic?: FieldPolicy<any> | FieldReadFunction<any>
+}
 export type ExerciseSubmissionKeySpecifier = (
   | 'exerciseId'
   | 'id'
@@ -5927,6 +6137,7 @@ export type MutationKeySpecifier = (
   | 'addAlert'
   | 'addComment'
   | 'addExercise'
+  | 'addExerciseComment'
   | 'addExerciseSubmission'
   | 'addModule'
   | 'changeAdminRights'
@@ -5959,6 +6170,7 @@ export type MutationFieldPolicy = {
   addAlert?: FieldPolicy<any> | FieldReadFunction<any>
   addComment?: FieldPolicy<any> | FieldReadFunction<any>
   addExercise?: FieldPolicy<any> | FieldReadFunction<any>
+  addExerciseComment?: FieldPolicy<any> | FieldReadFunction<any>
   addExerciseSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   addModule?: FieldPolicy<any> | FieldReadFunction<any>
   changeAdminRights?: FieldPolicy<any> | FieldReadFunction<any>
@@ -6178,6 +6390,13 @@ export type StrictTypedTypePolicies = {
       | ExerciseKeySpecifier
       | (() => undefined | ExerciseKeySpecifier)
     fields?: ExerciseFieldPolicy
+  }
+  ExerciseComment?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | ExerciseCommentKeySpecifier
+      | (() => undefined | ExerciseCommentKeySpecifier)
+    fields?: ExerciseCommentFieldPolicy
   }
   ExerciseSubmission?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
     keyFields?:

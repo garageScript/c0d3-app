@@ -44,6 +44,7 @@ import {
   exerciseSubmissions,
   addExerciseSubmission
 } from './resolvers/exerciseSubmissionCrud'
+import { addExerciseComment } from './resolvers/exerciseCommentCrud'
 
 export default {
   Query: {
@@ -91,6 +92,7 @@ export default {
     deleteComment,
     flagExercise,
     removeExerciseFlag,
-    unlinkDiscord
+    unlinkDiscord,
+    addExerciseComment
   }
 }
