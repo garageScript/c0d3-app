@@ -1,7 +1,8 @@
 import { login, logout, signup, isTokenValid } from './resolvers/authController'
 import {
   createChallenge,
-  updateChallenge
+  updateChallenge,
+  challenges
 } from './resolvers/challengesController'
 import { userInfo } from './resolvers/userInfoController'
 import { addAlert, removeAlert } from './resolvers/alertController'
@@ -57,7 +58,8 @@ export default {
     modules,
     session,
     alerts,
-    getPreviousSubmissions
+    getPreviousSubmissions,
+    challenges
   },
 
   Mutation: {
