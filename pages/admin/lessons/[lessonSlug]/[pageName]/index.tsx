@@ -139,7 +139,7 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
 type ModulesPageProps = {
   modules: Modules
   lessonId: number
-  refetch: Props<Module>['refetch']
+  refetch: Props['refetch']
 }
 const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
@@ -237,7 +237,7 @@ type ContentProps = {
   pageName?: string | string[]
   modules: Modules
   lessonId: number
-  refetch: Props<Module>['refetch']
+  refetch: Props['refetch']
   lesson: Lesson
 }
 const Content = ({
