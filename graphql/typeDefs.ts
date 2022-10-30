@@ -94,6 +94,12 @@ export default gql`
       exerciseId: Int!
       userAnswer: String!
     ): ExerciseSubmission!
+    addExerciseComment(
+      exerciseId: Int!
+      content: String!
+      parentId: Int
+      userPic: String
+    ): ExerciseComment!
     createLesson(
       description: String!
       docUrl: String
@@ -279,5 +285,20 @@ export default gql`
     userId: Int!
     exerciseId: Int!
     userAnswer: String!
+  }
+
+  type ExerciseComment {
+    id: Int!
+    createdAt: String!
+    updatedAt: String
+    authorId: Int!
+    exerciseId: Int!
+    userPic: String
+    content: String!
+    parentId: Int
+    exercise: Exercise!
+    author: User!
+    parent: ExerciseComment
+    replies: [ExerciseComment]
   }
 `
