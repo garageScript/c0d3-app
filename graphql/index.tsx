@@ -1133,6 +1133,20 @@ export type LogoutMutation = {
   } | null
 }
 
+export type ModulesQueryVariables = Exact<{ [key: string]: never }>
+
+export type ModulesQuery = {
+  __typename?: 'Query'
+  modules: Array<{
+    __typename?: 'Module'
+    id: number
+    name: string
+    content: string
+    order: number
+    lesson: { __typename?: 'Lesson'; id: number }
+  } | null>
+}
+
 export type RejectSubmissionMutationVariables = Exact<{
   submissionId: Scalars['Int']
   comment: Scalars['String']
@@ -4728,6 +4742,90 @@ export type LogoutMutationResult = Apollo.MutationResult<LogoutMutation>
 export type LogoutMutationOptions = Apollo.BaseMutationOptions<
   LogoutMutation,
   LogoutMutationVariables
+>
+export const ModulesDocument = gql`
+  query modules {
+    modules {
+      id
+      name
+      content
+      lesson {
+        id
+      }
+      order
+    }
+  }
+`
+export type ModulesProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    ModulesQuery,
+    ModulesQueryVariables
+  >
+} & TChildProps
+export function withModules<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    ModulesQuery,
+    ModulesQueryVariables,
+    ModulesProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    ModulesQuery,
+    ModulesQueryVariables,
+    ModulesProps<TChildProps, TDataName>
+  >(ModulesDocument, {
+    alias: 'modules',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useModulesQuery__
+ *
+ * To run a query within a React component, call `useModulesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useModulesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useModulesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useModulesQuery(
+  baseOptions?: Apollo.QueryHookOptions<ModulesQuery, ModulesQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ModulesQuery, ModulesQueryVariables>(
+    ModulesDocument,
+    options
+  )
+}
+export function useModulesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<ModulesQuery, ModulesQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ModulesQuery, ModulesQueryVariables>(
+    ModulesDocument,
+    options
+  )
+}
+export type ModulesQueryHookResult = ReturnType<typeof useModulesQuery>
+export type ModulesLazyQueryHookResult = ReturnType<typeof useModulesLazyQuery>
+export type ModulesQueryResult = Apollo.QueryResult<
+  ModulesQuery,
+  ModulesQueryVariables
 >
 export const RejectSubmissionDocument = gql`
   mutation rejectSubmission(
