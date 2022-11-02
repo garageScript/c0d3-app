@@ -29,7 +29,7 @@ describe('Graphql Api', () => {
   let apolloServerInput
 
   beforeEach(() => {
-    process.env = { ...OLD_ENV, VERCEL_ENV: 'preview' }
+    process.env = { ...OLD_ENV }
 
     nextConnect.mockImplementation(() => {
       return {
@@ -51,15 +51,53 @@ describe('Graphql Api', () => {
   })
 
   test('Should have correct config object', async () => {
-    const { config } = require('../../../pages/api/graphql.ts')
-    expect(config).toEqual({
-      api: {
-        bodyParser: false
-      }
+    jest.isolateModules(() => {
+      expect(require('../../../pages/api/graphql.ts').config).toEqual({
+        api: {
+          bodyParser: false
+        }
+      })
     })
   })
 
-  test('Should have correct config object when deployed as a preview deployment', async () => {
+  test('Should have correct config object when deployed as a preview', async () => {
+    jest.isolateModules(() => {
+      process.env = {
+        ...OLD_ENV,
+        VERCEL_ENV: 'preview',
+        NODE_ENV: 'production'
+      }
+
+      require('../../../pages/api/graphql.ts')
+
+      expect(
+        apolloServerInput.playground && apolloServerInput.introspection
+      ).toBeTruthy()
+    })
+  })
+
+  test('Should not have correct config object when deployed as a preview', async () => {
+    jest.isolateModules(() => {
+      process.env = {
+        ...OLD_ENV,
+        VERCEL_ENV: '',
+        NODE_ENV: ''
+      }
+
+      require('../../../pages/api/graphql.ts')
+      expect(
+        apolloServerInput.playground && apolloServerInput.introspection
+      ).toBeFalsy()
+    })
+  })
+
+  test('Should have correct config object when deployed as a dev deployment', async () => {
+    process.env = {
+      ...OLD_ENV,
+      VERCEL_ENV: 'production',
+      NODE_ENV: 'development'
+    }
+
     require('../../../pages/api/graphql.ts')
     expect(
       apolloServerInput.playground && apolloServerInput.introspection
