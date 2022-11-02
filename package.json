@@ -79,7 +79,7 @@
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.2.6",
     "@graphql-codegen/typescript-operations": "^2.5.5",
     "@graphql-codegen/typescript-react-apollo": "^3.3.6",
-    "@graphql-codegen/typescript-resolvers": "^2.7.5",
+    "@graphql-codegen/typescript-resolvers": "^2.7.6",
     "@jest/types": "^29.2.1",
     "@next/eslint-plugin-next": "^13.0.0",
     "@storybook/addon-actions": "^6.5.9",
