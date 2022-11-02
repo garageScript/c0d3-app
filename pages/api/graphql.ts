@@ -9,7 +9,8 @@ import userMiddleware from '../../helpers/middleware/user'
 import sessionMiddleware from '../../helpers/middleware/session'
 
 // VERCEL_ENV is a reserved env key by Vercel that specify the deployment type: "preview", "production", or "deployment"
-const isPreview = process.env.VERCEL_ENV === 'preview'
+const isDevEnv =
+  process.env.VERCEL_ENV === 'preview' || process.env.NODE_ENV === 'development'
 
 const handler = nextConnect()
 const apolloServer = new ApolloServer({
@@ -20,9 +21,13 @@ const apolloServer = new ApolloServer({
   By default apolloServer accepts uploads, while schema-generated server does not.*/
   uploads: false,
   plugins: [apolloLogPlugin],
-  ...(isPreview && {
-    playground: isPreview,
-    introspection: isPreview
+  ...(isDevEnv && {
+    playground: {
+      settings: {
+        'request.credentials': 'include'
+      }
+    },
+    introspection: isDevEnv
   })
 })
 
