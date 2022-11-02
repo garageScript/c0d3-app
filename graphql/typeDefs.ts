@@ -15,6 +15,8 @@ export default gql`
     alerts: [Alert!]!
     getPreviousSubmissions(challengeId: Int!, userId: Int!): [Submission!]
     exerciseSubmissions: [ExerciseSubmission!]!
+    getExerciseComments(exerciseId: Int!): [ExerciseComment!]!
+    getChildComments(parentId: Int!): [ExerciseComment!]!
   }
 
   type TokenResponse {

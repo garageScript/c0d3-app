@@ -44,7 +44,11 @@ import {
   exerciseSubmissions,
   addExerciseSubmission
 } from './resolvers/exerciseSubmissionCrud'
-import { addExerciseComment } from './resolvers/exerciseCommentCrud'
+import {
+  getExerciseComments,
+  addExerciseComment,
+  getChildComments
+} from './resolvers/exerciseCommentCrud'
 
 export default {
   Query: {
@@ -60,7 +64,9 @@ export default {
     session,
     alerts,
     getPreviousSubmissions,
-    challenges
+    challenges,
+    getExerciseComments,
+    getChildComments
   },
 
   Mutation: {
