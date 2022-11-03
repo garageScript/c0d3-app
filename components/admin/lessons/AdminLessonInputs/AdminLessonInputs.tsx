@@ -3,12 +3,9 @@ import { formChange } from '../../../../helpers/formChange'
 import { FormCard, MD_INPUT, Option, TextField } from '../../../FormCard'
 import styles from './adminLessonInputs.module.scss'
 import { isEqual } from 'lodash'
-import {
-  ApolloError,
-  OperationVariables,
-  ApolloQueryResult
-} from '@apollo/client'
+import { ApolloError, ApolloQueryResult } from '@apollo/client'
 import QueryInfo from '../../../QueryInfo'
+import { Exact } from '../../../../graphql'
 
 export type Item = {
   id?: number
@@ -18,17 +15,15 @@ export type Item = {
   lesson?: { __typename?: string; id?: number }
 }
 
-export type Props<MainItem extends Item> = {
+export type Props = {
   lessonId: number
   title?: string
   item?: Item
   itemName?: string
   loading: boolean
-  refetch: (variables?: Partial<OperationVariables>) => Promise<
-    ApolloQueryResult<{
-      [key: string]: MainItem[]
-    }>
-  >
+  refetch: (
+    variables?: Partial<Exact<{ [key: string]: never }>> | undefined
+  ) => Promise<ApolloQueryResult<any>>
   onActionFinish?: (
     m: (Item & { lesson: { id: number } }) | null,
     e: { name: string; content: string; order: number } | null
@@ -61,7 +56,7 @@ const initValues = (
   }
 ]
 
-const AdminLessonInputs = <MainItem extends Item>({
+const AdminLessonInputs = ({
   title,
   lessonId,
   item,
@@ -70,7 +65,7 @@ const AdminLessonInputs = <MainItem extends Item>({
   refetch,
   onActionFinish,
   action
-}: Props<MainItem>) => {
+}: Props) => {
   const [formOptions, setFormOptions] = useState<any>(initValues())
   const [name, content, order] = formOptions
 
