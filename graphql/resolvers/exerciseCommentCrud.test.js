@@ -82,7 +82,8 @@ describe('getExerciseComment resolver test', () => {
     expect(prismaMock.exerciseComment.findMany).toBeCalledWith({
       where: { parentId: null, exerciseId: 1 },
       include: {
-        replies: true
+        replies: true,
+        author: true
       }
     })
   })
@@ -119,7 +120,8 @@ describe('getChildComments resolver tests', () => {
     expect(prismaMock.exerciseComment.findMany).toBeCalledWith({
       where: { parentId: 1 },
       include: {
-        replies: true
+        replies: true,
+        author: true
       }
     })
   })

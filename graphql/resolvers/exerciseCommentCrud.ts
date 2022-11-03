@@ -1,29 +1,33 @@
-import { MutationAddExerciseCommentArgs } from '..'
+import {
+  MutationAddExerciseCommentArgs,
+  QueryGetExerciseCommentsArgs,
+  QueryGetChildCommentsArgs
+} from '..'
 import { Context } from '../../@types/helpers'
 import prisma from '../../prisma'
 
 export const getExerciseComments = async (
   _parent: void,
-  _args: { exerciseId: number }
+  { exerciseId }: QueryGetExerciseCommentsArgs
 ) => {
-  const exerciseId = _args.exerciseId
   return prisma.exerciseComment.findMany({
     where: { parentId: null, exerciseId },
     include: {
-      replies: true
+      replies: true,
+      author: true
     }
   })
 }
 
 export const getChildComments = async (
   _parent: void,
-  _args: { parentId: number }
+  { parentId }: QueryGetChildCommentsArgs
 ) => {
-  const parentId = _args.parentId
   return prisma.exerciseComment.findMany({
     where: { parentId },
     include: {
-      replies: true
+      replies: true,
+      author: true
     }
   })
 }
