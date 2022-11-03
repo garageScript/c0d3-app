@@ -1,5 +1,9 @@
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { addExerciseComment } from './exerciseCommentCrud'
+import {
+  addExerciseComment,
+  getExerciseComments,
+  getChildComments
+} from './exerciseCommentCrud'
 
 describe('addExerciseComment resolver tests', () => {
   test('Should throw error if user is invalid or not loggedin', async () => {
@@ -44,6 +48,78 @@ describe('addExerciseComment resolver tests', () => {
         exerciseId: 1,
         parentId: null,
         userPic: null
+      }
+    })
+  })
+})
+
+describe('getExerciseComment resolver test', () => {
+  test('should return exerciseComment with id 1', async () => {
+    const mockContext = { req: { user: { id: 1 } } }
+    const mockArgs = { exerciseId: 1 }
+    const mockExerciseComments = [
+      {
+        id: 1,
+        exerciseId: 1,
+        authorId: 1,
+        content: 'there is user',
+        userPic: null
+      },
+      {
+        id: 2,
+        exerciseId: 1,
+        authorId: 2,
+        content: 'there is user 2',
+        userPic: null
+      }
+    ]
+
+    prismaMock.exerciseComment.findMany.mockResolvedValue(mockExerciseComments)
+    await expect(
+      getExerciseComments(undefined, mockArgs, mockContext)
+    ).resolves.toEqual(mockExerciseComments)
+
+    expect(prismaMock.exerciseComment.findMany).toBeCalledWith({
+      where: { parentId: null, exerciseId: 1 },
+      include: {
+        replies: true
+      }
+    })
+  })
+})
+
+describe('getChildComments resolver tests', () => {
+  test('should return all comments with parent id 1', async () => {
+    const mockContext = { req: { user: { id: 1 } } }
+    const mockArgs = { parentId: 1 }
+    const mockExerciseComments = [
+      {
+        id: 2,
+        exerciseId: 1,
+        authorId: 1,
+        parentId: 1,
+        content: 'there is user',
+        userPic: null
+      },
+      {
+        id: 3,
+        exerciseId: 1,
+        authorId: 2,
+        parentId: 1,
+        content: 'there is user 2',
+        userPic: null
+      }
+    ]
+
+    prismaMock.exerciseComment.findMany.mockResolvedValue(mockExerciseComments)
+    await expect(
+      getChildComments(undefined, mockArgs, mockContext)
+    ).resolves.toEqual(mockExerciseComments)
+
+    expect(prismaMock.exerciseComment.findMany).toBeCalledWith({
+      where: { parentId: 1 },
+      include: {
+        replies: true
       }
     })
   })
