@@ -39,7 +39,7 @@ const UserProfile: React.FC = () => {
   const { lessons } = data || {}
   const lessonsList = lessons || []
 
-  const fullname = _.get(data, 'userInfo.user.name', '')
+  const fullname = data?.userInfo?.user?.name || ''
   const userInfo: UserInfo = {
     // 'A' stands for Anonymous, in case user did not put in full name
     username,
@@ -92,7 +92,9 @@ const UserProfile: React.FC = () => {
         challengeStatus: challengeSubmission?.status
       }
     })
-    const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
+
+    // TODO: Update the userInfo query to return the correct type
+    const lessonStatus = (data?.userInfo?.lessonStatus || []) as UserLesson[]
     const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
       (map: LessonStatusMap, lesson: UserLesson) => {
         //https://stackoverflow.com/questions/46043087/type-null-cannot-be-used-as-an-index-type
@@ -114,7 +116,8 @@ const UserProfile: React.FC = () => {
     } as LessonChallenge
   })
 
-  const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
+  // TODO: Update the userInfo query to return the correct type
+  const lessonStatus = (data?.userInfo?.lessonStatus || []) as UserLesson[]
   const validProfiles = lessonStatus.filter(
     ({ starsReceived }) => (starsReceived || []).length !== 0
   )
