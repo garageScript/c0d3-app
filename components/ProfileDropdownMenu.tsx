@@ -26,24 +26,24 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   })
   const router = useRouter()
   const location = router.asPath
-  const userProfilePath = PROFILE_PATH + '/' + username
+  const userProfilePath = `${PROFILE_PATH}/${username}`
 
-  const fullname = _.get(data, 'userInfo.user.name', '')
+  const fullName = data?.userInfo?.user?.name || ''
 
   const userInfo: UserInfo = {
     // 'A' stands for Anonymous, in case user did not put in full name
     username,
-    firstName: fullname.split(' ')[0] || 'A',
-    lastName: fullname.split(' ')[1] || ' ',
-    discordUserId: _.get(data, 'userInfo.user.discordUserId', ''),
-    discordUsername: _.get(data, 'userInfo.user.discordUsername', ''),
-    discordAvatarUrl: _.get(data, 'userInfo.user.discordAvatarUrl', '')
+    firstName: fullName.split(' ')[0] || 'A',
+    lastName: fullName.split(' ')[1] || ' ',
+    discordUserId: data?.userInfo?.user?.discordUserId || '',
+    discordUsername: data?.userInfo?.user?.discordUsername || '',
+    discordAvatarUrl: data?.userInfo?.user?.discordAvatarUrl || ''
   }
 
   const dropdownAdminMenuItems = [
-    { title: 'Lessons', path: ADMIN_PATH + '/lessons' },
-    { title: 'Users', path: ADMIN_PATH + '/users' },
-    { title: 'Alerts', path: ADMIN_PATH + '/alerts' }
+    { title: 'Lessons', path: `${ADMIN_PATH}/lessons` },
+    { title: 'Users', path: `${ADMIN_PATH}/users` },
+    { title: 'Alerts', path: `${ADMIN_PATH}/alerts` }
   ]
 
   const isActive = (path: string) => {
@@ -65,7 +65,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
   const buttonMenuToggle = React.forwardRef<
     HTMLButtonElement,
     React.ComponentPropsWithoutRef<'button'>
-  >((props, ref) => <button ref={ref} {...props}></button>)
+  >((props, ref) => <button ref={ref} {...props} />)
 
   return (
     <Dropdown role="menu">
