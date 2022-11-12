@@ -14117,6 +14117,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14198,6 +14199,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14285,6 +14287,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14369,6 +14372,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14450,6 +14454,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14522,6 +14527,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14609,6 +14615,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14684,6 +14691,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14768,6 +14776,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
