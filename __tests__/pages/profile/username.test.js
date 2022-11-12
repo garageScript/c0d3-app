@@ -20,6 +20,8 @@ import userEvent from '@testing-library/user-event'
 import { UNLINK_DISCORD } from '../../../graphql/queries/unlinkDiscord'
 import { signIn } from 'next-auth/react'
 
+import '@testing-library/dom'
+
 jest.mock('@sentry/nextjs')
 
 describe('user profile test', () => {
@@ -182,7 +184,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByText, findAllByText, queryByText } = render(
+    const {
+      container,
+      findByText,
+      findAllByText,
+      queryByText,
+      queryAllByTestId
+    } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
@@ -191,7 +199,174 @@ describe('user profile test', () => {
     await findByText(/@fake user/i)
     await findAllByText(dummyLessonData[0].title)
 
+    expect(queryAllByTestId('star-badge')[0]).toBeInTheDocument()
     expect(container).toMatchSnapshot()
+  })
+
+  test('Should not render lesson stars badge', async () => {
+    const session = {
+      ...dummySessionData,
+      submissions: [
+        {
+          id: 1,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 146,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        },
+        {
+          id: 2,
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: 145,
+          lessonId: 2,
+          reviewer: {
+            id: 1,
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123',
+          comments: null,
+          user: {
+            id: 1
+          }
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: 5,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 5,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Foundations of JavaScript',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 2,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
+        },
+        {
+          lessonId: 1,
+          passedAt: new Date(),
+          starGiven: null,
+          starsReceived: [
+            {
+              id: 17,
+              mentorId: 1,
+              studentId: 6,
+              lessonId: 2,
+              student: {
+                username: 'anonymous',
+                name: ''
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: ''
+            }
+          ]
+        }
+      ]
+    }
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: []
+          }
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
+      },
+      {
+        request: {
+          query: USER_INFO,
+          variables: {
+            username: 'fake user'
+          }
+        },
+        result: {
+          data: {
+            userInfo: { ...session, lessonStatus: null }
+          }
+        }
+      }
+    ]
+
+    const { findByText, findAllByText, queryByText, queryAllByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <UserProfile />
+      </MockedProvider>
+    )
+
+    await waitForElementToBeRemoved(() => queryByText('Loading...'))
+
+    await findByText(/@fake user/i)
+    await findAllByText(dummyLessonData[0].title)
+
+    expect(queryAllByTestId('star-badge')[0]).toBeFalsy()
   })
 
   test('should render discord avatar and username if user connected to discord', async () => {

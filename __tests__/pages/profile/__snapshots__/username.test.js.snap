@@ -4036,6 +4036,7 @@ exports[`user profile test Should render profile 1`] = `
                     1
                     <span
                       class="ms-1"
+                      data-testid="star-badge"
                     >
                       <svg
                         fill="yellow"
@@ -4117,6 +4118,7 @@ exports[`user profile test Should render profile 1`] = `
                     1
                     <span
                       class="ms-1"
+                      data-testid="star-badge"
                     >
                       <svg
                         fill="yellow"
@@ -4204,6 +4206,7 @@ exports[`user profile test Should render profile 1`] = `
                     1
                     <span
                       class="ms-1"
+                      data-testid="star-badge"
                     >
                       <svg
                         fill="yellow"
@@ -5192,6 +5195,7 @@ exports[`user profile test should render discord avatar and username if user con
                     1
                     <span
                       class="ms-1"
+                      data-testid="star-badge"
                     >
                       <svg
                         fill="yellow"
@@ -5273,6 +5277,7 @@ exports[`user profile test should render discord avatar and username if user con
                     1
                     <span
                       class="ms-1"
+                      data-testid="star-badge"
                     >
                       <svg
                         fill="yellow"
@@ -5360,6 +5365,7 @@ exports[`user profile test should render discord avatar and username if user con
                     1
                     <span
                       class="ms-1"
+                      data-testid="star-badge"
                     >
                       <svg
                         fill="yellow"
