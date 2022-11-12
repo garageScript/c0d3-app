@@ -176,8 +176,8 @@ const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
       throw err
     } catch (error) {
       const graphQLErrors = _.get(error, 'graphQLErrors', [error])
-      const errorMessages = graphQLErrors.reduce(
-        (messages: any, error: any) => {
+      const errorMessages = graphQLErrors!.reduce(
+        (messages: string[], error: any) => {
           return [...messages, error.message]
         },
         []
