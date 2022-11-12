@@ -15,6 +15,7 @@ import withQueryLoader, {
 import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 import { GlobalContext } from '../../helpers/globalContext'
+import Alert from '../../components/Alert'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
@@ -85,9 +86,20 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
             lessonSlug={slug}
             isPassed={true}
           />
-          {currentLesson && (
-            <SubmissionDisplay submissions={lessonSubmissions} />
-          )}
+          {currentLesson &&
+            (lessonSubmissions.length ? (
+              <SubmissionDisplay submissions={lessonSubmissions} />
+            ) : (
+              <div className="p-0 mt-4">
+                <Alert
+                  alert={{
+                    id: 0,
+                    text: 'All the submissions were reviewed. Come and check later!',
+                    type: 'info'
+                  }}
+                />
+              </div>
+            ))}
         </div>
       </Layout>
     </div>

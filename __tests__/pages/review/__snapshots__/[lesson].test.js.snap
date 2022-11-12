@@ -439,8 +439,28 @@ exports[`Lesson Page Should render empty submissions 1`] = `
           </div>
         </div>
         <div
-          class="submissions-container container p-0"
-        />
+          class="p-0 mt-4"
+        >
+          <div
+            class="fade alert alert-primary show"
+            role="alert"
+          >
+            <div
+              class="d-flex align-items-center gap-3"
+            >
+              <div
+                class="info_image"
+              >
+                <img
+                  height="24"
+                  src="/assets/curriculum/icons/icon-tip.svg"
+                  width="24"
+                />
+              </div>
+              All the submissions were reviewed. Come and check later! 
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <footer
