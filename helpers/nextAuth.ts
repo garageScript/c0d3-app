@@ -39,7 +39,11 @@ export const authorize = (
           },
           context
         )
-      : isLoginFlow && (await login(undefined, { username, password }, context))
+      : isLoginFlow && (await login(undefined, { username, password }))
+
+    // Workaround. Anything other than null won't throw an error in the client side
+    // If it's a signup flow, we want to return an empty user so it doesn't set the session
+    if (isSignUpFlow) return {} as Awaitable<User>
 
     if (!user) return null
 
