@@ -523,7 +523,7 @@ describe('challenges', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     // Will be changed to ADD NEW CHALLENGE in a subsequent PR
-    await userEvent.click(screen.getByText('ADD NEW MODULE'))
+    await userEvent.click(screen.getByText('ADD NEW CHALLENGE'))
 
     // Challenge name
     await userEvent.type(screen.getByTestId('input0'), 'Asset deletion', {
@@ -566,7 +566,7 @@ describe('challenges', () => {
     await act(() => new Promise(res => setTimeout(res, 0)))
 
     // Will be changed to ADD NEW CHALLENGE in a subsequent PR
-    await userEvent.click(screen.getByText('ADD NEW MODULE'))
+    await userEvent.click(screen.getByText('ADD NEW CHALLENGE'))
 
     expect(screen.getByTestId('input0').value).toBe('')
     expect(screen.getByTestId('input2').value).toBe('')

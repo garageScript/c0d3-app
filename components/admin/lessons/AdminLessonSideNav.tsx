@@ -15,26 +15,26 @@ type Items = Item[]
 
 type Props = {
   items: Items
-  title: string
   onAddItem: (m?: Item) => void
   selectedIndex?: number
   onSelect: (item: Item) => void
+  itemName?: string
 }
 
 const AdminLessonSideNav = ({
   items,
   onAddItem,
   selectedIndex,
-  title,
-  onSelect
+  onSelect,
+  itemName = 'item'
 }: Props) => {
   const itemsList = items.map(item => {
     const isActive = selectedIndex === item.id
     const className =
       styles[
         isActive
-          ? 'container__modulesList__module--active'
-          : 'container__modulesList__module'
+          ? 'container__itemsList__item--active'
+          : 'container__itemsList__item'
       ]
     const withChevron = !isActive && <ChevronRightIcon size={16} />
 
@@ -47,29 +47,29 @@ const AdminLessonSideNav = ({
   })
 
   // Used isNumber to treat zeros as truthy values
-  const onAddNewModuleClick = () =>
+  const onAddNewItemClick = () =>
     isNumber(selectedIndex) && onAddItem(get(items, selectedIndex))
 
   return (
     <div className={styles.container}>
-      <span className={styles.container__heading}>Existing {title}</span>
-      <ol className={styles.container__modulesList}>
+      <span className={styles.container__heading}>Existing {itemName}s</span>
+      <ol className={styles.container__itemsList}>
         {itemsList.length ? (
           itemsList
         ) : (
           <div className={styles.container__error}>
             <AlertFillIcon />
             <span className={styles.container__heading}>
-              No modules in this lesson
+              No {itemName}s in this lesson
             </span>
           </div>
         )}
       </ol>
       <button
-        onClick={onAddNewModuleClick}
+        onClick={onAddNewItemClick}
         className={styles['container--button']}
       >
-        ADD NEW MODULE
+        ADD NEW {itemName.toUpperCase()}
       </button>
     </div>
   )

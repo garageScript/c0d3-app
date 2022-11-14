@@ -160,7 +160,6 @@ const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
   return (
     <div className={styles.container__modulesPanel}>
       <AdminLessonSideNav
-        title="Modules"
         items={modules.map(module => ({
           id: module.id!,
           content: module.content,
@@ -170,6 +169,7 @@ const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
         onAddItem={onAddItem}
         onSelect={onSelect}
         selectedIndex={selectedIndex}
+        itemName="module"
       />
       <div className={styles.container__modulesPanel__inputs}>
         <AdminLessonInputs
@@ -276,7 +276,7 @@ const ChallengesPage = ({
   return (
     <div className={styles.container__modulesPanel}>
       <AdminLessonSideNav
-        title="Challenges"
+        itemName="challenge"
         items={challenges.map(challenge => ({
           id: challenge.id,
           name: challenge.title,
