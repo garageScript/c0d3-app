@@ -37,7 +37,7 @@ describe('AdminLessonSideNav component', () => {
   it('Should display the items', () => {
     expect.assertions(1)
 
-    render(<AdminLessonSideNav title="modules" items={items} />)
+    render(<AdminLessonSideNav items={items} />)
 
     expect(screen.getByText('First module')).toBeInTheDocument()
   })
@@ -45,23 +45,17 @@ describe('AdminLessonSideNav component', () => {
   it('Should display the items with one active item', () => {
     expect.assertions(1)
 
-    render(
-      <AdminLessonSideNav
-        title="modules"
-        items={filteredItems}
-        selectedIndex={0}
-      />
-    )
+    render(<AdminLessonSideNav items={filteredItems} selectedIndex={0} />)
 
     expect(screen.getByText('First module')).toBeInTheDocument()
   })
 
-  it('Should display a message if there is no modules', () => {
+  it('Should display a message if there is no items', () => {
     expect.assertions(1)
 
-    render(<AdminLessonSideNav title="modules" items={[]} />)
+    render(<AdminLessonSideNav items={[]} />)
 
-    expect(screen.getByText('No modules in this lesson')).toBeInTheDocument()
+    expect(screen.getByText('No items in this lesson')).toBeInTheDocument()
   })
 
   it('Should set active item', async () => {
@@ -72,7 +66,6 @@ describe('AdminLessonSideNav component', () => {
 
     render(
       <AdminLessonSideNav
-        title="modules"
         items={filteredItems}
         selectedIndex={active}
         onSelect={item => setActive(item.id)}
@@ -84,21 +77,20 @@ describe('AdminLessonSideNav component', () => {
     expect(active).toBe(0)
   })
 
-  it('Should call onAddItem on ADD NEW MODULE button click', async () => {
+  it('Should call onAddItem on ADD NEW ITEM button click', async () => {
     expect.assertions(1)
 
     const onAddItem = jest.fn()
 
     render(
       <AdminLessonSideNav
-        title="modules"
         items={filteredItems}
         onAddItem={onAddItem}
         selectedIndex={0}
       />
     )
 
-    await userEvent.click(screen.getByText('ADD NEW MODULE'))
+    await userEvent.click(screen.getByText('ADD NEW ITEM'))
 
     expect(onAddItem).toBeCalled()
   })
