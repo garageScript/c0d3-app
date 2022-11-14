@@ -14472,10 +14472,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.34.0:
-  version "1.34.0"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.34.0.tgz#e9029346a8359a9ea7d54d450ae829fbaa9b096f"
-  integrity sha512-HkRwwzdz31N5ykQIO3SIkSS8nwhdqqnuDZ/qltitX4FhxrV9/tSRavEXz0YLvioOXeNVmQWtsN3krKajErwkwg==
+posthog-js@^1.34.1:
+  version "1.34.1"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.34.1.tgz#f6bab563aa91ccea3e5ac1c3599f7a2741afbc9f"
+  integrity sha512-8yUYAcFYOWNLl4sfJ7J/vlmTduzgRaBJmyae3AmgloyE84q2rR7G4EbdOE3UXDZETpQfpdXZ86+khktR6lRvqg==
   dependencies:
     "@sentry/types" "^7.2.0"
     fflate "^0.4.1"
