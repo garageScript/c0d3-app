@@ -356,6 +356,8 @@ export type Query = {
   challenges: Array<Challenge>
   exerciseSubmissions: Array<ExerciseSubmission>
   exercises: Array<Exercise>
+  getChildComments: Array<ExerciseComment>
+  getExerciseComments: Array<ExerciseComment>
   getLessonMentors?: Maybe<Array<Maybe<User>>>
   getPreviousSubmissions?: Maybe<Array<Submission>>
   isTokenValid: Scalars['Boolean']
@@ -368,6 +370,14 @@ export type Query = {
 
 export type QueryChallengesArgs = {
   lessonId?: InputMaybe<Scalars['Int']>
+}
+
+export type QueryGetChildCommentsArgs = {
+  parentId: Scalars['Int']
+}
+
+export type QueryGetExerciseCommentsArgs = {
+  exerciseId: Scalars['Int']
 }
 
 export type QueryGetLessonMentorsArgs = {
@@ -1412,6 +1422,66 @@ export type AddExerciseCommentMutation = {
   }
 }
 
+export type ChildCommentsQueryVariables = Exact<{
+  parentId: Scalars['Int']
+}>
+
+export type ChildCommentsQuery = {
+  __typename?: 'Query'
+  getChildComments: Array<{
+    __typename?: 'ExerciseComment'
+    id: number
+    exerciseId: number
+    authorId: number
+    content: string
+    userPic?: string | null
+    createdAt: string
+    updatedAt?: string | null
+    author: { __typename?: 'User'; username: string }
+    replies?: Array<{
+      __typename?: 'ExerciseComment'
+      id: number
+      exerciseId: number
+      authorId: number
+      content: string
+      userPic?: string | null
+      createdAt: string
+      updatedAt?: string | null
+      author: { __typename?: 'User'; username: string }
+    } | null> | null
+  }>
+}
+
+export type ExerciseCommentsQueryVariables = Exact<{
+  exerciseId: Scalars['Int']
+}>
+
+export type ExerciseCommentsQuery = {
+  __typename?: 'Query'
+  getExerciseComments: Array<{
+    __typename?: 'ExerciseComment'
+    id: number
+    exerciseId: number
+    authorId: number
+    content: string
+    userPic?: string | null
+    createdAt: string
+    updatedAt?: string | null
+    author: { __typename?: 'User'; username: string }
+    replies?: Array<{
+      __typename?: 'ExerciseComment'
+      id: number
+      exerciseId: number
+      authorId: number
+      content: string
+      userPic?: string | null
+      createdAt: string
+      updatedAt?: string | null
+      author: { __typename?: 'User'; username: string }
+    } | null> | null
+  }>
+}
+
 export type WithIndex<TObject> = TObject & Record<string, any>
 export type ResolversObject<TObject> = WithIndex<TObject>
 
@@ -1981,6 +2051,18 @@ export type QueryResolvers<
     Array<ResolversTypes['Exercise']>,
     ParentType,
     ContextType
+  >
+  getChildComments?: Resolver<
+    Array<ResolversTypes['ExerciseComment']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryGetChildCommentsArgs, 'parentId'>
+  >
+  getExerciseComments?: Resolver<
+    Array<ResolversTypes['ExerciseComment']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryGetExerciseCommentsArgs, 'exerciseId'>
   >
   getLessonMentors?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['User']>>>,
@@ -6047,6 +6129,226 @@ export type AddExerciseCommentMutationOptions = Apollo.BaseMutationOptions<
   AddExerciseCommentMutation,
   AddExerciseCommentMutationVariables
 >
+export const ChildCommentsDocument = gql`
+  query childComments($parentId: Int!) {
+    getChildComments(parentId: $parentId) {
+      id
+      exerciseId
+      authorId
+      content
+      userPic
+      createdAt
+      updatedAt
+      author {
+        username
+      }
+      replies {
+        id
+        exerciseId
+        authorId
+        content
+        userPic
+        createdAt
+        updatedAt
+        author {
+          username
+        }
+      }
+    }
+  }
+`
+export type ChildCommentsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    ChildCommentsQuery,
+    ChildCommentsQueryVariables
+  >
+} & TChildProps
+export function withChildComments<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    ChildCommentsQuery,
+    ChildCommentsQueryVariables,
+    ChildCommentsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    ChildCommentsQuery,
+    ChildCommentsQueryVariables,
+    ChildCommentsProps<TChildProps, TDataName>
+  >(ChildCommentsDocument, {
+    alias: 'childComments',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useChildCommentsQuery__
+ *
+ * To run a query within a React component, call `useChildCommentsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useChildCommentsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useChildCommentsQuery({
+ *   variables: {
+ *      parentId: // value for 'parentId'
+ *   },
+ * });
+ */
+export function useChildCommentsQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    ChildCommentsQuery,
+    ChildCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ChildCommentsQuery, ChildCommentsQueryVariables>(
+    ChildCommentsDocument,
+    options
+  )
+}
+export function useChildCommentsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    ChildCommentsQuery,
+    ChildCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ChildCommentsQuery, ChildCommentsQueryVariables>(
+    ChildCommentsDocument,
+    options
+  )
+}
+export type ChildCommentsQueryHookResult = ReturnType<
+  typeof useChildCommentsQuery
+>
+export type ChildCommentsLazyQueryHookResult = ReturnType<
+  typeof useChildCommentsLazyQuery
+>
+export type ChildCommentsQueryResult = Apollo.QueryResult<
+  ChildCommentsQuery,
+  ChildCommentsQueryVariables
+>
+export const ExerciseCommentsDocument = gql`
+  query exerciseComments($exerciseId: Int!) {
+    getExerciseComments(exerciseId: $exerciseId) {
+      id
+      exerciseId
+      authorId
+      content
+      userPic
+      createdAt
+      updatedAt
+      author {
+        username
+      }
+      replies {
+        id
+        exerciseId
+        authorId
+        content
+        userPic
+        createdAt
+        updatedAt
+        author {
+          username
+        }
+      }
+    }
+  }
+`
+export type ExerciseCommentsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    ExerciseCommentsQuery,
+    ExerciseCommentsQueryVariables
+  >
+} & TChildProps
+export function withExerciseComments<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    ExerciseCommentsQuery,
+    ExerciseCommentsQueryVariables,
+    ExerciseCommentsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    ExerciseCommentsQuery,
+    ExerciseCommentsQueryVariables,
+    ExerciseCommentsProps<TChildProps, TDataName>
+  >(ExerciseCommentsDocument, {
+    alias: 'exerciseComments',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useExerciseCommentsQuery__
+ *
+ * To run a query within a React component, call `useExerciseCommentsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useExerciseCommentsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useExerciseCommentsQuery({
+ *   variables: {
+ *      exerciseId: // value for 'exerciseId'
+ *   },
+ * });
+ */
+export function useExerciseCommentsQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    ExerciseCommentsQuery,
+    ExerciseCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ExerciseCommentsQuery, ExerciseCommentsQueryVariables>(
+    ExerciseCommentsDocument,
+    options
+  )
+}
+export function useExerciseCommentsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    ExerciseCommentsQuery,
+    ExerciseCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<
+    ExerciseCommentsQuery,
+    ExerciseCommentsQueryVariables
+  >(ExerciseCommentsDocument, options)
+}
+export type ExerciseCommentsQueryHookResult = ReturnType<
+  typeof useExerciseCommentsQuery
+>
+export type ExerciseCommentsLazyQueryHookResult = ReturnType<
+  typeof useExerciseCommentsLazyQuery
+>
+export type ExerciseCommentsQueryResult = Apollo.QueryResult<
+  ExerciseCommentsQuery,
+  ExerciseCommentsQueryVariables
+>
 export type AlertKeySpecifier = (
   | 'id'
   | 'text'
@@ -6301,6 +6603,8 @@ export type QueryKeySpecifier = (
   | 'challenges'
   | 'exerciseSubmissions'
   | 'exercises'
+  | 'getChildComments'
+  | 'getExerciseComments'
   | 'getLessonMentors'
   | 'getPreviousSubmissions'
   | 'isTokenValid'
@@ -6317,6 +6621,8 @@ export type QueryFieldPolicy = {
   challenges?: FieldPolicy<any> | FieldReadFunction<any>
   exerciseSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
   exercises?: FieldPolicy<any> | FieldReadFunction<any>
+  getChildComments?: FieldPolicy<any> | FieldReadFunction<any>
+  getExerciseComments?: FieldPolicy<any> | FieldReadFunction<any>
   getLessonMentors?: FieldPolicy<any> | FieldReadFunction<any>
   getPreviousSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
   isTokenValid?: FieldPolicy<any> | FieldReadFunction<any>

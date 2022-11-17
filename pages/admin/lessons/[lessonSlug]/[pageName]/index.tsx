@@ -1,11 +1,15 @@
 import React, { useMemo, useState } from 'react'
 import * as Sentry from '@sentry/react'
-import { gql, useQuery } from '@apollo/client'
 import {
   GetAppProps,
+  GetAppQuery,
   Lesson,
   useAddModuleMutation,
+  useChallengesQuery,
+  useCreateChallengeMutation,
   useGetExercisesQuery,
+  useModulesQuery,
+  useUpdateChallengeMutation,
   useUpdateLessonMutation,
   useUpdateModuleMutation,
   withGetApp
@@ -44,31 +48,26 @@ const MAIN_PATH = '/admin/lessons'
 enum Pages {
   INTRODUCTION = 'introduction',
   MODULES = 'modules',
-  EXERCISE_QUESTION = 'exercises'
+  EXERCISE_QUESTION = 'exercises',
+  CHALLENGES = 'challenges'
 }
 
-const MODULES = gql`
-  query {
-    modules {
-      id
-      name
-      content
-      lesson {
-        id
-      }
-      order
-    }
-  }
-`
-
-type Module = Item & {
+type InputItem = Item & {
   id: number
   name: string
   content: string
   lesson: { id?: number }
   order: number
 }
-type Modules = Module[]
+type Modules = Item[]
+
+type Challenge = {
+  id: number
+  description: string
+  lessonId: number
+  title: string
+  order: number
+}
 
 const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
   const [updateLesson, { data, error, loading }] = useUpdateLessonMutation()
@@ -139,12 +138,12 @@ const IntroductionPage = ({ lesson }: { lesson: Lesson }) => {
 type ModulesPageProps = {
   modules: Modules
   lessonId: number
-  refetch: Props<Module>['refetch']
+  refetch: Props['refetch']
 }
 const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const onAddItem = () => setSelectedIndex(-1)
-  const onSelect = (item: Omit<Module, 'order'>) => setSelectedIndex(item.id)
+  const onSelect = (item: Omit<InputItem, 'order'>) => setSelectedIndex(item.id)
   const selectedModule = modules.find(module => module.id === selectedIndex)
 
   const [mutation, { loading }] =
@@ -161,11 +160,16 @@ const ModulesPage = ({ modules, lessonId, refetch }: ModulesPageProps) => {
   return (
     <div className={styles.container__modulesPanel}>
       <AdminLessonSideNav
-        title="Modules"
-        items={modules}
+        items={modules.map(module => ({
+          id: module.id!,
+          content: module.content,
+          lesson: { id: module.lesson?.id },
+          name: module.name
+        }))}
         onAddItem={onAddItem}
         onSelect={onSelect}
         selectedIndex={selectedIndex}
+        itemName="module"
       />
       <div className={styles.container__modulesPanel__inputs}>
         <AdminLessonInputs
@@ -233,28 +237,118 @@ const ExercisesPage = ({ lessonSlug }: ExercisesProps) => {
   )
 }
 
+type ChallengesPageProps = {
+  lessonId: number
+  challenges: GetAppQuery['lessons'][0]['challenges']
+  refetch: Props['refetch']
+}
+const ChallengesPage = ({
+  lessonId,
+  challenges,
+  refetch
+}: ChallengesPageProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(-1)
+  const onAddItem = () => setSelectedIndex(-1)
+  const onSelect = (item: Omit<InputItem, 'order'>) => setSelectedIndex(item.id)
+  const selectedChallenge = challenges.find(
+    challenge => challenge.id === selectedIndex
+  )
+
+  const [mutation, { loading }] =
+    selectedIndex === -1
+      ? useCreateChallengeMutation()
+      : useUpdateChallengeMutation()
+
+  const action = async (options: { variables: Item }) => {
+    const { data } = await mutation({
+      variables: {
+        ...options.variables,
+        lessonId,
+        id: options.variables.id!,
+        description: options.variables.content,
+        title: options.variables.name
+      }
+    })
+
+    return _get(data, 'updateChallenge') || _get(data, 'createChallenge')
+  }
+
+  return (
+    <div className={styles.container__modulesPanel}>
+      <AdminLessonSideNav
+        itemName="challenge"
+        items={challenges.map(challenge => ({
+          id: challenge.id,
+          name: challenge.title,
+          content: challenge.description,
+          lesson: { id: lessonId }
+        }))}
+        onAddItem={onAddItem}
+        onSelect={onSelect}
+        selectedIndex={selectedIndex}
+      />
+      <div className={styles.container__modulesPanel__inputs}>
+        <AdminLessonInputs
+          lessonId={lessonId}
+          refetch={refetch}
+          item={
+            selectedChallenge && {
+              id: selectedChallenge.id,
+              name: selectedChallenge.title,
+              content: selectedChallenge.description,
+              lesson: { id: lessonId },
+              order: selectedChallenge.order
+            }
+          }
+          action={action}
+          loading={loading}
+          itemName="challenge"
+        />
+      </div>
+    </div>
+  )
+}
+
 type ContentProps = {
   pageName?: string | string[]
   modules: Modules
+  challenges: Challenge[]
   lessonId: number
-  refetch: Props<Module>['refetch']
+  refetchModules: Props['refetch']
+  refetchChallenges: Props['refetch']
   lesson: Lesson
 }
 const Content = ({
   pageName,
   modules,
+  challenges,
   lessonId,
-  refetch,
+  refetchModules,
+  refetchChallenges,
   lesson
 }: ContentProps) => {
   if (pageName === Pages.MODULES) {
     return (
-      <ModulesPage lessonId={lessonId} refetch={refetch} modules={modules} />
+      <ModulesPage
+        lessonId={lessonId}
+        refetch={refetchModules}
+        modules={modules}
+      />
     )
   }
 
   if (pageName === Pages.EXERCISE_QUESTION) {
     return <ExercisesPage lessonSlug={lesson.slug} />
+  }
+
+  if (pageName === Pages.CHALLENGES) {
+    return (
+      <ChallengesPage
+        lessonId={lessonId}
+        refetch={refetchChallenges}
+        challenges={challenges}
+      />
+    )
   }
 
   // The "key" prop is passed so the component update its states (re-render and reset states)
@@ -266,10 +360,14 @@ const Lessons = ({ data }: GetAppProps) => {
   const { pageName, lessonSlug } = router.query
 
   const { lessons } = data
-  const { data: modulesData, refetch } = useQuery<{ modules: Modules }>(
-    MODULES,
-    { fetchPolicy: 'no-cache' }
-  )
+  const { data: challengesData, refetch: refetchChallenges } =
+    useChallengesQuery({
+      fetchPolicy: 'no-cache'
+    })
+
+  const { data: modulesData, refetch: refetchModules } = useModulesQuery({
+    fetchPolicy: 'no-cache'
+  })
 
   const lesson = useMemo(() => {
     if (lessons) {
@@ -281,18 +379,30 @@ const Lessons = ({ data }: GetAppProps) => {
         }
     }
 
-    return { title: '', slug: '', id: -1 }
+    return { title: '', slug: '', id: -1, challenges: [] }
   }, [lessons, lessonSlug])
 
   const filteredModules = useMemo(() => {
     const sortModules = compose(
       sortBy('order'),
-      filter((module: Module) => module.lesson.id === lesson.id),
+      filter((module: InputItem) => module.lesson.id === lesson.id),
       get('modules')
     )
 
     return sortModules(modulesData)
   }, [lesson.id, get('modules', modulesData)])
+
+  const filteredChallenges = useMemo(() => {
+    const sortChallenges = compose(
+      sortBy('order'),
+      filter((challenge: Challenge) => {
+        return challenge.lessonId === lesson.id
+      }),
+      get('challenges')
+    )
+
+    return sortChallenges(challengesData)
+  }, [lesson.id, get('challenges', challengesData)])
 
   const tabs = [
     {
@@ -306,6 +416,10 @@ const Lessons = ({ data }: GetAppProps) => {
     {
       text: 'exercises',
       url: `${MAIN_PATH}/${lessonSlug}/${Pages.EXERCISE_QUESTION}`
+    },
+    {
+      text: 'challenges',
+      url: `${MAIN_PATH}/${lessonSlug}/${Pages.CHALLENGES}`
     }
   ]
   const tabSelected = tabs.findIndex(tab => tab.text === pageName)
@@ -333,8 +447,10 @@ const Lessons = ({ data }: GetAppProps) => {
           <Content
             pageName={pageName}
             modules={filteredModules}
+            challenges={filteredChallenges}
             lessonId={lesson.id}
-            refetch={refetch}
+            refetchModules={refetchModules}
+            refetchChallenges={refetchChallenges}
             lesson={lesson as Lesson}
           />
         </section>

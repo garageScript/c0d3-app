@@ -79,13 +79,13 @@ const NotLoggedInAuthNav = () => (
 
 const AppNav: React.FC<{}> = () => {
   const [session, setSession] = useState<GetSessionQuery['session']>()
-  const isAdmin = _.get(session, 'user.isAdmin', false)
+  const isAdmin = session?.user?.isAdmin || false
 
   // Keep the fetch policy cache-first #2345
   const { data, loading } = useGetSessionQuery()
 
   useEffect(() => {
-    if (data && data.session) {
+    if (data?.session) {
       setSession(data.session)
     }
   }, [data])
@@ -97,10 +97,9 @@ const AppNav: React.FC<{}> = () => {
       return <NotLoggedInAuthNav />
     }
 
-    // TODO: replace with typing
-    const username = _.get(session, 'user.username', '')
+    const username = session?.user?.username
 
-    return <ProfileDropdownMenu username={username} isAdmin={isAdmin} />
+    return <ProfileDropdownMenu username={username || ''} isAdmin={isAdmin} />
   }
 
   return (

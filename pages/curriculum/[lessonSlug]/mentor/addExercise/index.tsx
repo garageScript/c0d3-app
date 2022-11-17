@@ -50,6 +50,8 @@ const Header = <
 
   const modules = get(lesson, 'modules') ?? []
 
+  const errorMsg = typeof error === 'string' ? error : error?.message
+
   return (
     <header className={styles.header}>
       <Link href={`/curriculum/${lessonSlug}/mentor`}>
@@ -77,7 +79,7 @@ const Header = <
       <QueryInfo
         data={addExerciseData}
         loading={loading}
-        error={get(error, 'message', error)}
+        error={errorMsg || ''}
         texts={{
           loading: 'Adding the exercise...',
           data: 'Added the exercise successfully!',

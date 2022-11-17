@@ -41,10 +41,10 @@ export const Basic = () => {
   return (
     <AdminLessonSideNav
       items={items}
-      title={'modules'}
       onAddItem={() => {}}
       selectedIndex={selectedIndex}
       onSelect={onSelect}
+      itemName="module"
     />
   )
 }

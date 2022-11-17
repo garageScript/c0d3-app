@@ -1737,13 +1737,14 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
     className="container__heading"
   >
     Existing 
-    modules
+    module
+    s
   </span>
   <ol
-    className="container__modulesList"
+    className="container__itemsList"
   >
     <li
-      className="container__modulesList__module--active"
+      className="container__itemsList__item--active"
       onClick={[Function]}
     >
       <span>
@@ -1751,7 +1752,7 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
       </span>
     </li>
     <li
-      className="container__modulesList__module"
+      className="container__itemsList__item"
       onClick={[Function]}
     >
       <span>
@@ -1782,7 +1783,7 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
       </svg>
     </li>
     <li
-      className="container__modulesList__module"
+      className="container__itemsList__item"
       onClick={[Function]}
     >
       <span>
@@ -1813,7 +1814,7 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
       </svg>
     </li>
     <li
-      className="container__modulesList__module"
+      className="container__itemsList__item"
       onClick={[Function]}
     >
       <span>
@@ -1848,7 +1849,8 @@ exports[`Storyshots Components/AdminLessonSideNav Basic 1`] = `
     className="container--button"
     onClick={[Function]}
   >
-    ADD NEW MODULE
+    ADD NEW 
+    MODULE
   </button>
 </div>
 `;
@@ -14117,6 +14119,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14198,6 +14201,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14285,6 +14289,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14369,6 +14374,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14450,6 +14456,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14522,6 +14529,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14609,6 +14617,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14684,6 +14693,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"
@@ -14768,6 +14778,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             2
             <span
               className="ms-1"
+              data-testid="star-badge"
             >
               <svg
                 fill="yellow"

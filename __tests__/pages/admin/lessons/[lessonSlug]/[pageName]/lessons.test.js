@@ -10,31 +10,19 @@ import dummyAlertData from '../../../../../../__dummy__/alertData'
 import getExercisesData from '../../../../../../__dummy__/getExercisesData'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../../../../graphql/queries/getApp'
+import { MODULES } from '../../../../../../graphql/queries/modules'
+import { CHALLENGES } from '../../../../../../graphql/queries/challenges'
+import ADD_CHALLENGE from '../../../../../../graphql/queries/createChallenge'
 import GET_EXERCISES from '../../../../../../graphql/queries/getExercises'
 import REMOVE_EXERCISE_FLAG from '../../../../../../graphql/queries/removeExerciseFlag'
 import DELETE_EXERCISE from '../../../../../../graphql/queries/deleteExercise'
 import { MockedProvider } from '@apollo/client/testing'
-import { gql } from '@apollo/client'
 import userEvent from '@testing-library/user-event'
 import UPDATE_LESSON from '../../../../../../graphql/queries/updateLesson'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
 import { AddModuleDocument } from '../../../../../../graphql'
-
-const MODULES = gql`
-  query {
-    modules {
-      id
-      name
-      content
-      lesson {
-        id
-      }
-      order
-    }
-  }
-`
 
 const modules = [
   {
@@ -236,6 +224,35 @@ const unflagExerciseMock = {
   }
 }
 
+const challenges = dummyLessonData.find(e => e.slug === 'js1').challenges
+const challengesQueryMock = {
+  request: { query: CHALLENGES, variables: {} },
+  result: {
+    data: {
+      challenges
+    }
+  }
+}
+
+const addChallengeQueryMock = {
+  request: {
+    query: ADD_CHALLENGE,
+    variables: {
+      content: 'Write an app that delete assets',
+      lessonId: 2,
+      name: 'Asset deletion',
+      order: 1,
+      description: 'Write an app that delete assets',
+      title: 'Asset deletion'
+    }
+  },
+  result: {
+    data: {
+      createChallenge: dummyLessonData[0]
+    }
+  }
+}
+
 const mocks = [
   getAppQueryMock,
   getAppQueryMock,
@@ -243,6 +260,8 @@ const mocks = [
   modulesQueryMock,
   updateLessonMutationMock,
   addModuleMock,
+  challengesQueryMock,
+  addChallengeQueryMock,
   getExercisesMock
 ]
 
@@ -251,6 +270,8 @@ const mocksWithError = [
   modulesQueryMock,
   updateLessonMutationMockWithError,
   addModuleMock,
+  challengesQueryMock,
+  addChallengeQueryMock,
   getExercisesMock
 ]
 
@@ -260,7 +281,9 @@ const mocksWithRefetchExercises = [
   getAppQueryMock,
   getExerciseWithRefetchMock,
   deleteExerciseMock,
-  unflagExerciseMock
+  unflagExerciseMock,
+  challengesQueryMock,
+  addChallengeQueryMock
 ]
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
@@ -460,6 +483,119 @@ describe('modules', () => {
   })
 })
 
+describe('challenges', () => {
+  const useRouterChallenges = {
+    ...useRouterObj,
+    asPath: 'c0d3.com/admin/lessons/js1/challenges',
+    query: {
+      ...useRouterObj.query,
+      pageName: 'challenges'
+    }
+  }
+
+  beforeAll(() => useRouter.mockImplementation(() => useRouterChallenges))
+
+  it('Should render challenges page', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    expect(screen.getByText('Incremental Closure')).toBeInTheDocument()
+  })
+
+  it('Should add a challenge', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    // Will be changed to ADD NEW CHALLENGE in a subsequent PR
+    await userEvent.click(screen.getByText('ADD NEW CHALLENGE'))
+
+    // Challenge name
+    await userEvent.type(screen.getByTestId('input0'), 'Asset deletion', {
+      delay: 1
+    })
+
+    // Challenge description
+    await userEvent.type(
+      screen.getByTestId('textbox'),
+      'Write an app that delete assets',
+      {
+        delay: 1
+      }
+    )
+
+    // Challenge order
+    await userEvent.type(screen.getByTestId('input2'), '1', {
+      delay: 1
+    })
+
+    const submit = screen.getByText('ADD CHALLENGE')
+
+    await userEvent.click(submit)
+
+    expect(
+      await screen.findByText('Added the item successfully!')
+    ).toBeInTheDocument()
+  })
+
+  it('Should set "add challenge" mode', async () => {
+    expect.assertions(3)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    // Will be changed to ADD NEW CHALLENGE in a subsequent PR
+    await userEvent.click(screen.getByText('ADD NEW CHALLENGE'))
+
+    expect(screen.getByTestId('input0').value).toBe('')
+    expect(screen.getByTestId('input2').value).toBe('')
+    expect(screen.getByTestId('textbox').value).toBe('')
+  })
+
+  it('Should switch to another challenge', async () => {
+    expect.assertions(2)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <LessonPage />
+      </MockedProvider>
+    )
+
+    // Used to make the queries resolve
+    await act(() => new Promise(res => setTimeout(res, 0)))
+
+    const selectedChallenge = challenges[0]
+
+    await userEvent.click(screen.getByText(selectedChallenge.title))
+
+    expect(screen.getByTestId('input0').value).toBe(selectedChallenge.title)
+    expect(screen.getByTestId('textbox').value).toBe(
+      selectedChallenge.description
+    )
+  })
+})
+
 describe('introduction', () => {
   const useRouterIntroduction = {
     ...useRouterObj,
@@ -639,7 +775,7 @@ describe('exercises', () => {
     expect((await screen.findAllByText('Email')).length).toBe(3)
   })
 
-  it('Should not render exercises if they are none', async () => {
+  it('Should not render exercises if they are none flagged', async () => {
     expect.assertions(1)
 
     const mocksOfMocks = mocks.slice(0, -1)

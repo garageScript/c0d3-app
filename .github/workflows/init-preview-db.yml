@@ -1,0 +1,21 @@
+name: init-preview-db
+on:
+  pull_request:
+    types:
+      - closed
+    paths:
+      - '**.prisma'
+jobs:
+  ssh-and-update-preview-db:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PREVIEW_DB_HOST }}
+          username: ${{ secrets.PREVIEW_DB_USERNAME }}
+          password: ${{ secrets.PREVIEW_DB_PW }}
+          script: |
+            cd c0d3-app
+            git pull origin master
+            yarn --ignore-engines
+            yarn db:init --force
