@@ -3,7 +3,7 @@
 // Not available in the design spec colors
 $light-border: hsla(0, 0%, 85%);
 
-@mixin module {
+@mixin item {
   padding: 20px 16px;
   border-radius: 10px;
   cursor: pointer;
@@ -39,7 +39,7 @@ $light-border: hsla(0, 0%, 85%);
   margin-bottom: 15px;
 }
 
-.container__modulesList {
+.container__itemsList {
   padding: 0px;
   flex: 1;
   list-style: none;
@@ -53,19 +53,19 @@ $light-border: hsla(0, 0%, 85%);
   font-size: 14px;
 }
 
-.container__modulesList--loading {
+.container__itemsList--loading {
   align-items: center;
   justify-content: center;
 }
 
-.container__modulesList__module--active {
-  @include module;
+.container__itemsList__item--active {
+  @include item;
   background-color: colors.$bg-white;
   border: 1px solid $light-border;
 }
 
-.container__modulesList__module {
-  @include module;
+.container__itemsList__item {
+  @include item;
   display: flex;
   justify-content: space-between;
   background-color: transparent;

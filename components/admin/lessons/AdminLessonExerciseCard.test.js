@@ -110,6 +110,39 @@ describe('AdminLessonExerciseCard component', () => {
     expect(onRemoveMock).toBeCalled()
   })
 
+  it('Should not call onRemove if deleted exercise Id is null', async () => {
+    expect.assertions(1)
+
+    const onRemoveMock = jest.fn()
+
+    render(
+      <MockedProvider
+        mocks={[
+          {
+            request: {
+              query: DELETE_EXERCISE,
+              variables: { id: 1 }
+            },
+            result: {
+              data: {
+                deleteExercise: {
+                  id: null
+                }
+              }
+            }
+          }
+        ]}
+      >
+        <Component user={user} exercise={exercise} onRemove={onRemoveMock} />
+      </MockedProvider>
+    )
+
+    const btn = screen.getByText('REMOVE EXERCISE')
+    await userEvent.click(btn)
+
+    expect(onRemoveMock).not.toBeCalled()
+  })
+
   it('Should not call onRemove if not passed', async () => {
     expect.assertions(1)
 
@@ -142,6 +175,41 @@ describe('AdminLessonExerciseCard component', () => {
     await userEvent.click(btn)
 
     expect(onUnflag).toBeCalled()
+  })
+
+  it('Should not call onUnflag if exercise Id is null', async () => {
+    expect.assertions(1)
+
+    const onUnflag = jest.fn()
+
+    render(
+      <MockedProvider
+        mocks={[
+          {
+            request: {
+              query: REMOVE_EXERCISE_FLAG,
+              variables: {
+                id: 1
+              }
+            },
+            result: {
+              data: {
+                removeExerciseFlag: {
+                  id: null
+                }
+              }
+            }
+          }
+        ]}
+      >
+        <Component user={user} exercise={exercise} onUnflag={onUnflag} />
+      </MockedProvider>
+    )
+
+    const btn = screen.getByText('UNFLAG EXERCISE')
+    await userEvent.click(btn)
+
+    expect(onUnflag).not.toBeCalled()
   })
 
   it('Should not call unflag if not passed', async () => {

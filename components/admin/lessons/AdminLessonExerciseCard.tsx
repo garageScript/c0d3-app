@@ -1,4 +1,4 @@
-import { get, toUpper } from 'lodash'
+import { toUpper } from 'lodash'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { Collapse, Spinner } from 'react-bootstrap'
@@ -108,8 +108,11 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
     })
 
     if (onRemove) {
-      const deletedExerciseData = get(deletedExercise, 'data.deletedExercise')
-      onRemove(deletedExerciseData)
+      const deletedExerciseId = deletedExercise.data?.deleteExercise.id
+
+      if (deletedExerciseId) {
+        onRemove(deletedExerciseId)
+      }
     }
   }
 
@@ -121,12 +124,11 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
     })
 
     if (onUnflag) {
-      const unFlaggedExerciseData = get(
-        unflaggedExercise,
-        'data.removeExerciseFlag'
-      )
+      const unFlaggedExerciseId = unflaggedExercise.data?.removeExerciseFlag.id
 
-      onUnflag(unFlaggedExerciseData)
+      if (unFlaggedExerciseId) {
+        onUnflag(unFlaggedExerciseId)
+      }
     }
   }
 
