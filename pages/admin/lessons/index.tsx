@@ -1,29 +1,67 @@
-import React, { useState } from 'react'
-import { AdminLessonInfo } from '../../../components/admin/lessons/AdminLessonInfo'
-import { AdminLessonsSideBar } from '../../../components/admin/lessons/AdminLessonsSideBar'
-import { withGetApp, GetAppProps } from '../../../graphql'
-import { Lesson } from '../../../graphql/index'
+import React from 'react'
+import _ from 'lodash'
+import {
+  AdminLessonCard,
+  LessonType
+} from '../../../components/admin/lessons/AdminLessonCard'
+import {
+  withGetApp,
+  GetAppProps,
+  useGetFlaggedExercisesQuery
+} from '../../../graphql'
 import { AdminLayout } from '../../../components/admin/AdminLayout'
+import Link from 'next/link'
+import styles from '../../../scss/adminLessonPage.module.scss'
+
+type LoadedLessonCardsProps = {
+  lessonsData?: LessonType[]
+}
+
+const LoadedLessonCards = ({ lessonsData }: LoadedLessonCardsProps) => {
+  const { data: exercisesData } = useGetFlaggedExercisesQuery()
+  const exerciseMapping: { [key: string]: number } = {}
+  const exercises = _.get(exercisesData, 'exercises', [])
+
+  exercises.forEach(e => {
+    const curTitle = _.get(e, 'module.lesson.title', undefined)
+    if (_.get(e, 'flaggedAt') && curTitle)
+      exerciseMapping[curTitle] = (exerciseMapping[curTitle] || 0) + 1
+  })
+
+  const lessonCardComponents =
+    lessonsData &&
+    lessonsData.map((e, i) => {
+      return (
+        <div key={i} className={styles.lessonCard}>
+          <AdminLessonCard
+            lesson={e}
+            pendingFlaggedQuestions={_.get(exerciseMapping, `${e.title}`) || 0}
+          />
+        </div>
+      )
+    })
+
+  return (
+    <div className={styles.container__lessonCard}>{lessonCardComponents}</div>
+  )
+}
 
 const Lessons: React.FC<GetAppProps> = ({ data }) => {
-  const [selectedLesson, setSelectedLesson] = useState(0)
-  const [lessonsList, setLessons] = useState<null | Lesson[]>(null)
   const { lessons } = data
+
   return (
-    <AdminLayout data={data} title="Admin lessons">
-      <div className="row mt-4">
-        <AdminLessonsSideBar
-          setLessons={setLessons}
-          selectedLesson={selectedLesson}
-          lessons={lessonsList! || lessons}
-          setSelectedLesson={setSelectedLesson}
-        />
-        <AdminLessonInfo
-          setLessons={setLessons}
-          lessons={lessonsList! || lessons}
-          selectedLesson={selectedLesson}
-        />
+    <AdminLayout data={data}>
+      <div className={styles.heading}>
+        <span className={styles.lessonText}>Lessons</span>
+        <span>
+          <Link href="../../admin/lessons/new">
+            <button className={`btn btn-primary ${styles.button}`}>
+              Add New Lesson
+            </button>
+          </Link>
+        </span>
       </div>
+      <LoadedLessonCards lessonsData={lessons} />
     </AdminLayout>
   )
 }
