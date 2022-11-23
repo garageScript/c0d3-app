@@ -119,6 +119,34 @@ describe('Signin callback', () => {
       expect(updateRefreshandAccessTokens).toBeCalled()
       expect(value).toBe(true)
     })
+
+    it('Should redirect to /discord/success if a different user is already connected to the same discord account', async () => {
+      expect.assertions(1)
+      userMiddleware.mockImplementation((req, _res, next) => {
+        req.user = {
+          id: 123,
+          username: 'fakeUser'
+        }
+        next()
+      })
+
+      prismaMock.user.findFirst.mockResolvedValue({
+        id: 124
+      })
+
+      const signInCallback = signIn(req, res)
+
+      const value = await signInCallback({
+        account: {
+          provider: 'discord'
+        },
+        user: {
+          id: 123
+        }
+      })
+
+      expect(value).toBe('/discord/success?error=connected')
+    })
   })
 
   describe('Login with discord', () => {

@@ -156,7 +156,7 @@ export const signIn = (
           }
         })
 
-        if (differentAccountConnected) return '/discord/success&error=connected'
+        if (differentAccountConnected) return '/discord/success?error=connected'
 
         await updateRefreshandAccessTokens(
           c0d3User.id,

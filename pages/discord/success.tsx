@@ -4,9 +4,7 @@ import { getLayout } from '../../components/Layout'
 import Title from '../../components/Title'
 import Card from '../../components/Card'
 import NavLink from '../../components/NavLink'
-import { GetServerSidePropsContext, NextApiResponse } from 'next'
-import { Request, Response } from 'express'
-import { LoggedRequest } from '../../@types/helpers'
+import { GetServerSidePropsContext } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { DiscordUserInfo, getDiscordUserInfo } from '../../helpers/discordAuth'
@@ -34,7 +32,7 @@ type Error = {
 export enum ErrorCode {
   USER_NOT_LOGGED_IN = 1,
   DISCORD_ERROR = 2,
-  DIFFERENT_ACCOUNT_IS_CONNECTED = 2
+  DIFFERENT_ACCOUNT_IS_CONNECTED = 3
 }
 
 const DISCORD_BUGS_FEEDBACK_URL =
@@ -104,6 +102,17 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
 
 export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   WithLayout = ({ errorCode, username, userInfo, error }) => {
+  if (errorCode === ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED) {
+    return (
+      <DiscordErrorPage
+        username={username}
+        error={error}
+        navPath="/curriculum"
+        navText="Curriculum"
+      />
+    )
+  }
+
   if (errorCode === ErrorCode.DISCORD_ERROR)
     return (
       <DiscordErrorPage
@@ -123,19 +132,6 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
       />
     )
 
-  if (errorCode === ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED) {
-    return (
-      <DiscordErrorPage
-        username={username}
-        error={{
-          message:
-            "The account you're trying to connect with is already connected with one of c0d3 accounts."
-        }}
-        navPath="/curriculum"
-        navText="Already connected"
-      />
-    )
-  }
   return (
     <>
       <Title title="Success!" />
@@ -178,9 +174,10 @@ export const getServerSideProps = async ({
   req,
   query
 }: GetServerSidePropsContext) => {
-  if (query.error === 'connected') {
+  if (query?.error === 'connected') {
     return { props: { errorCode: ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED } }
   }
+
   const { user: sessionUser } = ((await getSession({ req })) as Session) || {}
 
   if (!sessionUser)
