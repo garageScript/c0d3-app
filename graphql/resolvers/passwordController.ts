@@ -60,14 +60,8 @@ export const changePw = async (
   args: {
     token: string
     password: string
-  },
-  ctx: Context
-) => {
-  const { req } = ctx
-  if (!req.session) {
-    throw new Error('Session does not exist')
   }
-
+) => {
   const { password, token } = args
   const { userId } = decode(token)
 
@@ -98,7 +92,6 @@ export const changePw = async (
     }
   })
 
-  req.session.userId = user.id
   return {
     success: true
   }
