@@ -8,14 +8,15 @@ import { render, screen, waitFor } from '@testing-library/react'
 import loggingMiddleware from '../../../helpers/middleware/logger'
 import sessionMiddleware from '../../../helpers/middleware/session'
 import userMiddleware from '../../../helpers/middleware/user'
-
 import { getDiscordUserInfo } from '../../../helpers/discordAuth'
+import prismaMock from '../../../__tests__/utils/prismaMock'
 
 import {
   ErrorCode,
   ConnectToDiscordSuccess,
   getServerSideProps
 } from '../../../pages/discord/success'
+import { getSession } from 'next-auth/react'
 
 const defaultMiddleware = (_req, _res, next) => next()
 
@@ -45,13 +46,17 @@ const discordErrorProps = {
 const successfulAuthFlowProps = {
   props: {
     userInfo: mockDiscordUserInfo,
-    username: 'fakeUser'
+    username: mockDiscordUserInfo.username
   }
 }
 
+getSession.mockResolvedValue({ user: { ...mockDiscordUserInfo } })
+
 describe('getServerSideProps function', () => {
   it('should return error if user not logged in', async () => {
-    userMiddleware.mockImplementation(defaultMiddleware)
+    prismaMock.user.findFirst.mockResolvedValue(null)
+
+    getSession.mockResolvedValueOnce(null)
     const response = await getServerSideProps({
       req: {}
     })
@@ -59,6 +64,8 @@ describe('getServerSideProps function', () => {
   })
 
   it('should return error if userInfo could not be retrieved from Discord', async () => {
+    prismaMock.user.findFirst.mockResolvedValue({ id: 123 })
+
     userMiddleware.mockImplementation((req, _res, next) => {
       req.user = {
         id: 123,
@@ -73,7 +80,9 @@ describe('getServerSideProps function', () => {
     expect(response).toEqual(discordErrorProps)
   })
 
-  it('should return error if auth code is empty or invalid', async () => {
+  it('should return error if user could not be retrieved from database', async () => {
+    prismaMock.user.findFirst.mockResolvedValue(null)
+
     userMiddleware.mockImplementation((req, _res, next) => {
       req.user = {
         id: 123,
@@ -81,14 +90,16 @@ describe('getServerSideProps function', () => {
       }
       next()
     })
+    getDiscordUserInfo.mockResolvedValue({})
     const response = await getServerSideProps({
-      req: {},
-      query: { code: '' }
+      req: {}
     })
-    expect(response).toEqual(discordErrorProps)
+    expect(response).toEqual(userNotLoggedInErrorProps)
   })
 
-  it('should return username and userInfo if auth code is valid and userInfo is successfully retrieved', async () => {
+  it('should return username and userInfo if userInfo is successfully retrieved', async () => {
+    prismaMock.user.findFirst.mockResolvedValue(mockDiscordUserInfo)
+
     userMiddleware.mockImplementation((req, _res, next) => {
       req.user = {
         id: 123,
