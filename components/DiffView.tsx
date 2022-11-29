@@ -82,8 +82,11 @@ const DiffView: React.FC<{
   const renderFile = ({ hunks, newPath }: File, fileIdx: number) => {
     const newValue: string[] = []
     if (!hunks.length || !newPath) return
-    let extension = newPath.split('.').pop()!
-    if (!prismLanguages.includes(extension)) extension = 'javascript'
+    const extension = newPath.split('.').pop()!
+
+    let language = extension === 'html' ? 'jsx' : extension
+
+    if (!prismLanguages.includes(language)) language = 'javascript'
     hunks.forEach(hunk => {
       hunk.changes.forEach(change => {
         if (!change.isDelete) newValue.push(change.content)
@@ -92,8 +95,8 @@ const DiffView: React.FC<{
     const syntaxHighlight = (str: string, n: number) => {
       const highlighted = Prism.highlight(
         str,
-        Prism.languages[extension],
-        extension
+        Prism.languages[language],
+        language
       )
       return (
         <>
