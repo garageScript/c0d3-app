@@ -38,7 +38,7 @@
     "@primer/octicons-react": "17.9.0",
     "@prisma/client": "4",
     "@quixo3/prisma-session-store": "^3.1.10",
-    "@sentry/nextjs": "^7.21.1",
+    "@sentry/nextjs": "^7.22.0",
     "apollo-server-micro": "^2.26.1",
     "apollo3-cache-persist": "^0.14.1",
     "bcrypt": "5.0.0",
@@ -74,7 +74,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.14.1",
+    "@graphql-codegen/cli": "^2.15.0",
     "@graphql-codegen/typescript": "^2.8.0",
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.2.6",
     "@graphql-codegen/typescript-operations": "^2.5.7",
@@ -94,7 +94,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/bcrypt": "^5.0.0",
     "@types/express-session": "^1.17.5",
-    "@types/lodash": "^4.14.190",
+    "@types/lodash": "^4.14.191",
     "@types/mdx-js__react": "^1.5.5",
     "@types/node": "^16.7.5",
     "@types/nodemailer": "^6.4.6",
