@@ -1,3 +1,4 @@
+import { KebabHorizontalIcon } from '@primer/octicons-react'
 import React from 'react'
 import { DropdownMenu } from '../../components/DropdownMenu'
 
@@ -30,4 +31,13 @@ export const Basic: React.FC = () => (
 
 export const _WithSeparators: React.FC = () => (
   <DropdownMenu title="Admin" items={separatedMenu} />
+)
+
+export const _WithCustomToggle: React.FC = () => (
+  <DropdownMenu
+    customToggle={{
+      Component: () => <KebabHorizontalIcon size={24} />
+    }}
+    items={separatedMenu}
+  />
 )
