@@ -20,8 +20,8 @@ type DropDownMenuProps = {
   //https://react-bootstrap.github.io/components/dropdowns/#api
   bsPrefix?: string
   customToggle?: {
-    Component: () => JSX.Element
-    style: string
+    Component?: () => JSX.Element
+    style?: string
   }
 }
 
