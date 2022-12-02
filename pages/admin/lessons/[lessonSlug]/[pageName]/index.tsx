@@ -459,4 +459,9 @@ const Lessons = ({ data }: GetAppProps) => {
   )
 }
 
-export default withGetApp()(Lessons)
+export default withGetApp({
+  options: {
+    // To get newly created lessons when created from /admin/lessons/new page
+    fetchPolicy: 'cache-and-network'
+  }
+})(Lessons)
