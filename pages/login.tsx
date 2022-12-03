@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
@@ -14,7 +14,7 @@ import { Spinner } from 'react-bootstrap'
 import styles from '../scss/login.module.scss'
 import { signIn, SignInResponse } from 'next-auth/react'
 import Image from 'next/image'
-import { withGetApp, GetAppProps } from '../graphql'
+import { withGetApp, GetAppProps, useGetSessionLazyQuery } from '../graphql'
 import AlreadyLoggedIn from '../components/AlreadyLoggedIn'
 
 type Values = {
@@ -132,6 +132,11 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
   const [loginErrors, setLoginErrors] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
+  // Used to cache the session after successful login
+  const [getSession, { data }] = useGetSessionLazyQuery({
+    fetchPolicy: 'network-only'
+  })
+
   const handleSubmit = async (values: Values) => {
     setIsLoading(true)
 
@@ -142,6 +147,7 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
 
     if (error) {
       setLoginErrors([error])
+      setIsLoading(false)
     }
 
     // 401 is an internal error by Next-Auth
@@ -149,16 +155,22 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
       setLoginErrors([
         'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
       ])
+      setIsLoading(false)
     }
 
     if (ok && !error) {
+      getSession()
+    }
+  }
+
+  useEffect(() => {
+    if (data?.session?.user) {
       window.localStorage.setItem('loggedIn', 'true')
       const { next } = router.query
       router.push(next ? (next as string) : '/curriculum')
+      setIsLoading(true)
     }
-
-    setIsLoading(false)
-  }
+  }, [data])
 
   //checks if user is already logged in
   const session = _.get(sessionData, 'session.user')
