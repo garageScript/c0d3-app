@@ -1,4 +1,4 @@
-import { Lesson } from '../graphql'
+import { Lesson, Module } from '../graphql'
 
 const moduleAuthor = {
   id: 1,
@@ -12,7 +12,7 @@ const moduleAuthor = {
   discordAvatarUrl: ''
 }
 
-const modules = [
+export const modules: Module[] = [
   {
     id: 1,
     name: 'module1',
