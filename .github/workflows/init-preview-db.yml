@@ -13,7 +13,7 @@ jobs:
         with:
           host: ${{ secrets.PREVIEW_DB_HOST }}
           username: ${{ secrets.PREVIEW_DB_USERNAME }}
-          password: ${{ secrets.PREVIEW_DB_PW }}
+          key: ${{ secrets.PREVIEW_DB_KEY }}
           script: |
             cd c0d3-app
             git pull origin master
