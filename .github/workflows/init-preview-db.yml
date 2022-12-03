@@ -1,10 +1,10 @@
 name: init-preview-db
-# on:
-#   pull_request:
-#     types:
-#       - closed
-#     paths:
-#       - '**.prisma'
+on: push
+  # pull_request:
+  #   types:
+  #     - closed
+  #   paths:
+  #     - '**.prisma'
 jobs:
   ssh-and-update-preview-db:
     runs-on: ubuntu-latest
