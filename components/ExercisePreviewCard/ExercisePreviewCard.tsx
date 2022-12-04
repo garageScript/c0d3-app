@@ -59,32 +59,34 @@ const ExercisePreviewCard = ({
             </h2>
             {state && <div className={`badge ${topMessageStyle}`}>{state}</div>}
           </div>
-          <DropdownMenu
-            items={[
-              {
-                title: 'Delete',
-                onClick: async () => {
-                  await deleteExercise({
-                    variables: {
-                      id
-                    }
-                  })
+          {!state && (
+            <DropdownMenu
+              items={[
+                {
+                  title: 'Delete',
+                  onClick: async () => {
+                    await deleteExercise({
+                      variables: {
+                        id
+                      }
+                    })
 
-                  onDelete?.()
+                    onDelete?.()
+                  }
                 }
-              }
-            ]}
-            customToggle={{
-              style: styles.dropdown,
-              Component: () => {
-                return (
-                  <div>
-                    <KebabHorizontalIcon size={24} />
-                  </div>
-                )
-              }
-            }}
-          />
+              ]}
+              customToggle={{
+                style: styles.dropdown,
+                Component: () => {
+                  return (
+                    <div>
+                      <KebabHorizontalIcon size={24} />
+                    </div>
+                  )
+                }
+              }}
+            />
+          )}
         </div>
       </div>
       <div className="mb-2">Problem</div>

@@ -225,6 +225,7 @@ type ExerciseListItem = {
   answer: string
   userAnswer: string | null
   state: ExercisePreviewCardProps['state']
+  id: number
 }
 
 type ExerciseListProps = {
@@ -281,6 +282,7 @@ const ExerciseList = ({
               moduleName={exercise.moduleName}
               state={exercise.state}
               problem={exercise.problem}
+              id={exercise.id}
             />
           ))}
           <div />
