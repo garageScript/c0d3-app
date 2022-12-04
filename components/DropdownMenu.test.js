@@ -14,7 +14,31 @@ const dropdownMenuItems = [
 
 let testBtnOnClick = ''
 
-describe('MdInput Component', () => {
+describe('DropdownMenu Component', () => {
+  test('Should render custom toggle', () => {
+    const textToTest = 'custom toggle'
+
+    const { queryByText } = render(
+      <DropdownMenu
+        items={dropdownMenuItems}
+        customToggle={{ Component: () => <span>{textToTest}</span> }}
+      />
+    )
+
+    expect(queryByText(textToTest)).toBeInTheDocument()
+  })
+
+  test('Should render custom toggle styles', () => {
+    const { queryByText } = render(
+      <DropdownMenu
+        items={dropdownMenuItems}
+        customToggle={{ style: 'customClass' }}
+      />
+    )
+
+    expect(queryByText('None').classList.contains('customClass')).toBeTruthy()
+  })
+
   test('Should render divider when an item is null', () => {
     const { container, queryByRole } = render(
       <DropdownMenu title="Admin" items={dropdownMenuItems} />

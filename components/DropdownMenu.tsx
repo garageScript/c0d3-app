@@ -19,6 +19,10 @@ type DropDownMenuProps = {
   //changes the underlying component CSS base class name
   //https://react-bootstrap.github.io/components/dropdowns/#api
   bsPrefix?: string
+  customToggle?: {
+    Component?: () => JSX.Element
+    style?: string
+  }
 }
 
 const ChevronRight = () => <ChevronRightIcon size={17} />
@@ -26,6 +30,7 @@ const ChevronRight = () => <ChevronRightIcon size={17} />
 export const DropdownMenu: React.FC<DropDownMenuProps> = ({
   items,
   title,
+  customToggle,
   bsPrefix = ''
 }) => {
   const [activeItem, setActiveItem] = useState({ title })
@@ -33,12 +38,18 @@ export const DropdownMenu: React.FC<DropDownMenuProps> = ({
   return (
     <Dropdown bsPrefix={bsPrefix}>
       <Dropdown.Toggle
-        bsPrefix={styles.dropdown}
+        bsPrefix={customToggle?.style ? customToggle.style : styles.dropdown}
         id="dropdown-lesson"
         data-testid="dropdown-lesson"
       >
-        {activeItem.title || 'None'}
-        <ChevronRight />
+        {customToggle?.Component ? (
+          <customToggle.Component />
+        ) : (
+          <>
+            {activeItem.title || 'None'}
+            <ChevronRight />
+          </>
+        )}
       </Dropdown.Toggle>
 
       <Dropdown.Menu className={styles.dropdown__menu}>
