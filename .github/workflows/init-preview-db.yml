@@ -5,6 +5,7 @@ on:
       - closed
     paths:
       - 'prisma/**'
+
 jobs:
   ssh-and-update-preview-db:
     runs-on: ubuntu-latest
