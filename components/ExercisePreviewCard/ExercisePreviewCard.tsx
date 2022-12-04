@@ -1,5 +1,9 @@
+import { KebabHorizontalIcon } from '@primer/octicons-react'
 import Markdown from 'markdown-to-jsx'
 import React from 'react'
+import { useDeleteExerciseMutation } from '../../graphql'
+import { DropdownMenu } from '../DropdownMenu'
+import QueryInfo from '../QueryInfo'
 import styles from './exercisePreviewCard.module.scss'
 
 export type ExercisePreviewCardProps = {
@@ -7,14 +11,20 @@ export type ExercisePreviewCardProps = {
   state?: 'NOT ANSWERED' | 'INCORRECT' | 'ANSWERED'
   problem: string
   className?: string
+  id: number
+  onDelete?: () => void
 }
 
 const ExercisePreviewCard = ({
   moduleName,
   state,
   problem,
+  id,
+  onDelete,
   className = ''
 }: ExercisePreviewCardProps) => {
+  const [deleteExercise, { data, loading, error }] = useDeleteExerciseMutation()
+
   const [topBorderStyle, topMessageStyle] =
     state === 'ANSWERED'
       ? [
@@ -31,9 +41,51 @@ const ExercisePreviewCard = ({
       className={`card p-3 d-inline-block border-0 shadow position-relative overflow-hidden ${className}`}
     >
       {state && <div className={topBorderStyle} />}
-      <div className="d-flex align-items-center mb-3">
-        <h2 className="fw-bold fs-6 my-2 me-4">{moduleName.toUpperCase()}</h2>
-        {state && <div className={`badge ${topMessageStyle}`}>{state}</div>}
+      <div className={styles.header__container}>
+        <QueryInfo
+          data={data}
+          loading={loading}
+          error={error?.message || ''}
+          texts={{
+            loading: 'Deleting the exercise...',
+            data: 'Deleted the exercise successfully!',
+            error: 'Oops, failed to delete the exercise. Please try again!'
+          }}
+        />
+        <div className={styles.header__container__module__state}>
+          <div className="d-flex align-items-center mb-3">
+            <h2 className="fw-bold fs-6 my-2 me-4">
+              {moduleName.toUpperCase()}
+            </h2>
+            {state && <div className={`badge ${topMessageStyle}`}>{state}</div>}
+          </div>
+          <DropdownMenu
+            items={[
+              {
+                title: 'Delete',
+                onClick: async () => {
+                  await deleteExercise({
+                    variables: {
+                      id
+                    }
+                  })
+
+                  onDelete?.()
+                }
+              }
+            ]}
+            customToggle={{
+              style: styles.dropdown,
+              Component: () => {
+                return (
+                  <div>
+                    <KebabHorizontalIcon size={24} />
+                  </div>
+                )
+              }
+            }}
+          />
+        </div>
       </div>
       <div className="mb-2">Problem</div>
       <Markdown className="d-block bg-light py-2 px-3">{problem}</Markdown>
