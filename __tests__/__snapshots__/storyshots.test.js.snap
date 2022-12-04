@@ -6599,45 +6599,6 @@ exports[`Storyshots Components/ExercisePreviewCard Answered 1`] = `
           ANSWERED
         </div>
       </div>
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown btn btn-primary"
-          data-testid="dropdown-lesson"
-          disabled={false}
-          id="dropdown-lesson"
-          onClick={[Function]}
-          type="button"
-        >
-          <div>
-            <svg
-              aria-hidden="true"
-              className="octicon octicon-kebab-horizontal"
-              fill="currentColor"
-              focusable="false"
-              height={24}
-              role="img"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "overflow": "visible",
-                  "userSelect": "none",
-                  "verticalAlign": "text-bottom",
-                }
-              }
-              viewBox="0 0 24 24"
-              width={24}
-            >
-              <path
-                d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </button>
-      </div>
     </div>
   </div>
   <div
@@ -6681,45 +6642,6 @@ exports[`Storyshots Components/ExercisePreviewCard Not Answered 1`] = `
         >
           NOT ANSWERED
         </div>
-      </div>
-      <div
-        className="dropdown"
-      >
-        <button
-          aria-expanded={false}
-          className="dropdown btn btn-primary"
-          data-testid="dropdown-lesson"
-          disabled={false}
-          id="dropdown-lesson"
-          onClick={[Function]}
-          type="button"
-        >
-          <div>
-            <svg
-              aria-hidden="true"
-              className="octicon octicon-kebab-horizontal"
-              fill="currentColor"
-              focusable="false"
-              height={24}
-              role="img"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "overflow": "visible",
-                  "userSelect": "none",
-                  "verticalAlign": "text-bottom",
-                }
-              }
-              viewBox="0 0 24 24"
-              width={24}
-            >
-              <path
-                d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </button>
       </div>
     </div>
   </div>
