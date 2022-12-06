@@ -12,14 +12,9 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
         class="mb-3"
       >
         <div
-          class="fade alert alert-primary alert-dismissible show"
+          class="fade alert alert-primary show"
           role="alert"
         >
-          <button
-            aria-label="Close alert"
-            class="btn-close"
-            type="button"
-          />
           <div
             class="d-flex align-items-center gap-3"
           >
@@ -173,14 +168,9 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
         class="mb-3"
       >
         <div
-          class="fade alert alert-primary alert-dismissible show"
+          class="fade alert alert-primary show"
           role="alert"
         >
-          <button
-            aria-label="Close alert"
-            class="btn-close"
-            type="button"
-          />
           <div
             class="d-flex align-items-center gap-3"
           >

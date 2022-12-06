@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] = `
+exports[`DropdownMenu Component Should change value of testBtnOnClick upon click 1`] = `
 <div>
   <div
     class="dropdown"
@@ -71,7 +71,7 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
 </div>
 `;
 
-exports[`MdInput Component Should render divider when an item is null 1`] = `
+exports[`DropdownMenu Component Should render divider when an item is null 1`] = `
 <div>
   <div
     class="dropdown"

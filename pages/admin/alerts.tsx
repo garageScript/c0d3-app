@@ -6,7 +6,6 @@ import { AdminLayout } from '../../components/admin/AdminLayout'
 import { Button } from '../../components/theme/Button'
 import REMOVE_ALERT from '../../graphql/queries/removeAlert'
 import { withGetApp, GetAppProps, Alert as AlertType } from '../../graphql'
-import noop from '../../helpers/noop'
 import Card from '../../components/Card'
 import { NewAlert } from '../../components/admin/alerts/AdminNewAlert'
 
@@ -32,7 +31,7 @@ const AlertRow: React.FC<AlertRowProps> = ({ alerts, alert, setAlerts }) => {
   return (
     <div className="row">
       <div className="d-flex flex-column col-10">
-        <Alert alert={alert} onDismiss={noop} />
+        <Alert alert={alert} />
       </div>
       <div className="d-flex flex-column col-2 mt-3 justify-content-center">
         <Button
