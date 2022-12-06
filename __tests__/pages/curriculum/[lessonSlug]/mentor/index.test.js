@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { MockedProvider } from '@apollo/client/testing'
 import getExercisesData from '../../../../../__dummy__/getExercisesData'
 import GET_EXERCISES from '../../../../../graphql/queries/getExercises'
+import DELETE_EXERCISE from '../../../../../graphql/queries/deleteExercise'
 import GET_SESSION from '../../../../../graphql/queries/getSession'
 import dummySessionData from '../../../../../__dummy__/sessionData'
 
@@ -48,6 +49,95 @@ describe('Mentor page', () => {
     screen.getByRole('link', { name: 'CHALLENGES' })
     screen.getByRole('link', { name: 'EXERCISES' })
     screen.getByRole('link', { name: 'LESSON' })
+  })
+
+  test('Should handle when exercises are null', async () => {
+    const mocks = [
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: null
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <AddExercises />
+      </MockedProvider>
+    )
+
+    expect(await screen.findByText('500 Error!')).toBeInTheDocument()
+  })
+
+  test('Should delete exercise', async () => {
+    const mocks = [
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: getExercisesData
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
+      },
+      {
+        request: {
+          query: DELETE_EXERCISE,
+          variables: {
+            id: 1
+          }
+        },
+        result: {
+          data: {
+            deleteExercise: {
+              id: 1
+            }
+          }
+        },
+        newData: jest.fn(() => ({
+          data: {
+            deleteExercise: {
+              id: 1
+            }
+          }
+        }))
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <AddExercises />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
+    )
+
+    // dropdown toggle
+    fireEvent.click(screen.getAllByTestId('dropdown-lesson')[0])
+    // first item in the dropdown options
+    fireEvent.click(screen.getByText('Delete'))
+
+    expect(mocks.at(-1).newData).toBeCalled()
   })
 
   test('Should not render exercises if the user id mismatch exercise author.id', async () => {

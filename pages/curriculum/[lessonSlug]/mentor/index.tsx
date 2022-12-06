@@ -1,19 +1,20 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import Layout from '../../../../components/Layout'
-import withQueryLoader, {
-  QueryDataProps
-} from '../../../../containers/withQueryLoader'
-import { GetExercisesQuery, useGetSessionQuery } from '../../../../graphql'
+import {
+  GetExercisesQuery,
+  useGetExercisesQuery,
+  useGetSessionQuery
+} from '../../../../graphql'
 import Error, { StatusCode } from '../../../../components/Error'
 import LoadingSpinner from '../../../../components/LoadingSpinner'
 import AlertsDisplay from '../../../../components/AlertsDisplay'
 import ExercisePreviewCard from '../../../../..../../components/ExercisePreviewCard'
 import { NewButton } from '../../../../..../../components/theme/Button'
-import GET_EXERCISES from '../../../../..../../graphql/queries/getExercises'
 import styles from '../../../../scss/exercises.module.scss'
 import LessonTabs from '../../../../components/LessonTabs'
 import { LessonTab } from '../../../../components/LessonTabs/LessonTabs'
+import { ApolloQueryResult } from '@apollo/client'
 
 type ExerciseLesson = {
   title: string
@@ -21,13 +22,23 @@ type ExerciseLesson = {
   slug: string
 }
 
-const MentorPage: React.FC<QueryDataProps<GetExercisesQuery>> = ({
-  queryData
-}) => {
+const MentorPage = () => {
   const { data } = useGetSessionQuery()
+  const {
+    data: exercisesData,
+    loading,
+    refetch
+  } = useGetExercisesQuery({
+    fetchPolicy: 'cache-and-network'
+  })
+
+  if (loading && !exercisesData) {
+    return <LoadingSpinner />
+  }
+
   const sessionUser = data?.session.user
 
-  const { lessons, alerts, exercises } = queryData
+  const { lessons, alerts, exercises } = exercisesData || {}
   const router = useRouter()
 
   if (!router.isReady) return <LoadingSpinner />
@@ -73,6 +84,7 @@ const MentorPage: React.FC<QueryDataProps<GetExercisesQuery>> = ({
         lessonTitle={currentLesson.title}
         exercises={currentExercises}
         lesson={currentLesson}
+        refetchExercises={refetch}
       />
 
       {alerts && <AlertsDisplay alerts={alerts} />}
@@ -87,14 +99,17 @@ type ExerciseListProps = {
     moduleName: string
     problem: string
     answer: string
+    id: number
   }[]
   lesson: ExerciseLesson
+  refetchExercises: () => Promise<ApolloQueryResult<GetExercisesQuery>>
 }
 
 const ExerciseList = ({
   lessonTitle,
   exercises,
-  lesson
+  lesson,
+  refetchExercises
 }: ExerciseListProps) => {
   const router = useRouter()
 
@@ -124,6 +139,8 @@ const ExerciseList = ({
             key={i}
             moduleName={exercise.moduleName}
             problem={exercise.problem}
+            id={exercise.id}
+            onDelete={async () => await refetchExercises()}
           />
         ))}
         <div />
@@ -133,9 +150,4 @@ const ExerciseList = ({
   )
 }
 
-export default withQueryLoader<GetExercisesQuery>(
-  {
-    query: GET_EXERCISES
-  },
-  MentorPage
-)
+export default MentorPage

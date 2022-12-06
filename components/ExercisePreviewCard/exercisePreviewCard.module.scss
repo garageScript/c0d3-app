@@ -33,3 +33,39 @@
   color: variables.$danger;
   border: 1px solid variables.$danger;
 }
+
+.dropdown {
+  display: flex;
+  column-gap: 13px;
+  padding: 8px 16px;
+  background: transparent;
+  align-items: center;
+  color: variables.$dark;
+  border: 0;
+
+  &:hover {
+    background-color: #f4f4f4;
+    border: 0;
+    color: variables.$dark;
+  }
+
+  &:active,
+  &:focus,
+  &:focus:active {
+    background-color: #f4f4f4;
+    box-shadow: none;
+    border: 0;
+    color: variables.$dark;
+  }
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.header__container__module__state {
+  display: flex;
+  justify-content: space-between;
+}
