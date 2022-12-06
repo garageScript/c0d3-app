@@ -10,26 +10,12 @@ import { getLayout } from '../../components/Layout'
 import { cloneDeep } from 'lodash'
 import { signIn } from 'next-auth/react'
 import dummySessionData from '../../__dummy__/sessionData'
-import GET_SESSION from '../../graphql/queries/getSession'
 
 signIn.mockResolvedValue({
   status: null,
   error: null,
   ok: true
 })
-
-const mocks = [
-  {
-    request: { query: GET_SESSION },
-    result: {
-      data: {
-        session: {
-          ...dummySessionData
-        }
-      }
-    }
-  }
-]
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -90,8 +76,7 @@ describe('Login Page', () => {
           }
         }
       }
-    },
-    ...mocks
+    }
   ]
 
   test('Should redirect to /curriculum on success', async () => {
