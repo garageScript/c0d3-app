@@ -37,7 +37,7 @@ export const ResetPassword = ({
   onServerError: () => void
 }) => {
   const router = useRouter()
-  const [confirmToken, setConfirmToken] = useState({} as SignInResponse)
+  const [confirmToken, setConfirmToken] = useState<SignInResponse>()
   const handleSubmit = async ({ password }: typeof initialValues) => {
     try {
       const confirmTokenResponse: SignInResponse = (await signIn(
@@ -53,15 +53,15 @@ export const ResetPassword = ({
     } catch {} // catch error thrown by default from apollo mutations
   }
 
-  if (confirmToken.ok) {
+  if (confirmToken?.ok) {
     return <ConfirmSuccess />
   }
 
-  if (confirmToken.status === 401 && !confirmToken.error) {
+  if (confirmToken?.status === 401 && !confirmToken.error) {
     onServerError()
     return <></>
   }
-  if (confirmToken.error) return <ExpiredToken />
+  if (confirmToken?.error) return <ExpiredToken />
 
   return (
     <Card title="Enter new password">
