@@ -5,7 +5,6 @@ import Alert from '../../Alert'
 import { FormCard } from '../../../components/FormCard'
 import ADD_ALERT from '../../../graphql/queries/addAlert'
 import { Alert as AlertType } from '../../../graphql'
-import noop from '../../../helpers/noop'
 import { alertValidation } from '../../../helpers/formValidation'
 import { formChange } from '../../../helpers/formChange'
 import {
@@ -80,7 +79,6 @@ export const NewAlert: React.FC<NewAlertProps> = ({ setAlerts }) => {
               id: '-1',
               ...makeGraphqlVariable(alertProperties).variables
             }}
-            onDismiss={noop}
           />
         </div>
         <div className="text-start">
