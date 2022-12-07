@@ -118,7 +118,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-mock-extended": "^3.0.1",
-    "lint-staged": "^13.0.4",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.0",
     "prisma": "4",
     "react-test-renderer": "^17.0.1",
