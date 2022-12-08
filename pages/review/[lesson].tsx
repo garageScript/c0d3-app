@@ -109,7 +109,8 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
 export default withQueryLoader<GetAppQuery>(
   {
     query: GET_APP,
-    getParams: () => ({ ssr: false })
+    // prevents outdated session data that's read from the cache
+    getParams: () => ({ ssr: false, fetchPolicy: 'network-only' })
   },
   Review
 )

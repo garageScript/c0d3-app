@@ -16,7 +16,7 @@ describe('Session resolver', () => {
 
   test('should return user including submissions and lessonStatus', async () => {
     const userInfoData = {
-      user: { id: 815, username: 'test', discordRefreshToken: 'valid' },
+      user: { id: 815, username: 'test', discordId: 'valid' },
       submissions: [{ id: 1 }],
       lessonStatus: [
         { id: 1, lessonId: 4 },
@@ -28,7 +28,7 @@ describe('Session resolver', () => {
       user: {
         id: 815,
         username: 'test',
-        discordRefreshToken: 'valid',
+        discordId: 'valid',
         isConnectedToDiscord: true
       },
       lessonStatus: [

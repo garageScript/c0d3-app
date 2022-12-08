@@ -1,5 +1,4 @@
-import { useMutation } from '@apollo/client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
@@ -7,15 +6,13 @@ import { getLayout } from '../components/Layout'
 import Card from '../components/Card'
 import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
-import LOGIN_USER from '../graphql/queries/loginUser'
 import _ from 'lodash'
 import { useRouter } from 'next/router'
-import GET_APP from '../graphql/queries/getApp'
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
 import { Spinner } from 'react-bootstrap'
 import styles from '../scss/login.module.scss'
-import { signIn } from 'next-auth/react'
+import { signIn, SignInResponse } from 'next-auth/react'
 import Image from 'next/image'
 import { withGetApp, GetAppProps } from '../graphql'
 import AlreadyLoggedIn from '../components/AlreadyLoggedIn'
@@ -133,35 +130,34 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
 }) => {
   const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
-  const [loginUser, { data, error, loading }] = useMutation(LOGIN_USER, {
-    refetchQueries: [{ query: GET_APP }],
-    //prevents additional render with unauthorized state on redirect
-    awaitRefetchQueries: true
-  })
-  // TODO: Error Handling for login / signup. Blocked by backend implementation.
+  const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
-    const { success } = _.get(data, 'login', false)
-    if (success) {
+  const handleSubmit = async (values: Values) => {
+    setIsLoading(true)
+
+    const { error, status, ok }: SignInResponse = (await signIn('credentials', {
+      ...values,
+      redirect: false
+    }))!
+
+    if (error) {
+      setLoginErrors([error])
+    }
+
+    // 401 is an internal error by Next-Auth
+    if (status === 401 && !error) {
+      setLoginErrors([
+        'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+      ])
+    }
+
+    if (ok && !error) {
       window.localStorage.setItem('loggedIn', 'true')
       const { next } = router.query
       router.push(next ? (next as string) : '/curriculum')
     }
-    if (error) {
-      const graphQLErrors: any = _.get(error, 'graphQLErrors', [])
-      const errorMessages = graphQLErrors.reduce(
-        (messages: any, error: any) => {
-          return [...messages, error.message]
-        },
-        []
-      )
-      setLoginErrors([...errorMessages])
-    }
-  }, [data, error])
-  const handleSubmit = async (values: Values) => {
-    try {
-      await loginUser({ variables: values })
-    } catch {} // catch error that's thrown by default from mutation
+
+    setIsLoading(false)
   }
 
   //checks if user is already logged in
@@ -174,7 +170,7 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
       <Login
         handleSubmit={handleSubmit}
         loginErrors={loginErrors}
-        isLoading={loading}
+        isLoading={isLoading}
       />
     </>
   )

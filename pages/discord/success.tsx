@@ -4,17 +4,12 @@ import { getLayout } from '../../components/Layout'
 import Title from '../../components/Title'
 import Card from '../../components/Card'
 import NavLink from '../../components/NavLink'
-import { NextApiResponse } from 'next'
-import { Request, Response } from 'express'
-import { LoggedRequest } from '../../@types/helpers'
+import { GetServerSidePropsContext } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { DiscordUserInfo, getDiscordUserInfo } from '../../helpers/discordAuth'
-import { User } from '@prisma/client'
-import loggingMiddleware from '../../helpers/middleware/logger'
-import sessionMiddleware from '../../helpers/middleware/session'
-import userMiddleware from '../../helpers/middleware/user'
-import runMiddlewares from '../../helpers/runMiddlewares'
+import { getSession } from 'next-auth/react'
+import { Session } from '../../@types/auth'
 
 type ConnectToDiscordSuccessProps = {
   errorCode: number
@@ -36,7 +31,8 @@ type Error = {
 
 export enum ErrorCode {
   USER_NOT_LOGGED_IN = 1,
-  DISCORD_ERROR = 2
+  DISCORD_ERROR = 2,
+  DIFFERENT_ACCOUNT_IS_CONNECTED = 3
 }
 
 const DISCORD_BUGS_FEEDBACK_URL =
@@ -106,6 +102,17 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
 
 export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   WithLayout = ({ errorCode, username, userInfo, error }) => {
+  if (errorCode === ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED) {
+    return (
+      <DiscordErrorPage
+        username={username}
+        error={error}
+        navPath="/curriculum"
+        navText="Curriculum"
+      />
+    )
+  }
+
   if (errorCode === ErrorCode.DISCORD_ERROR)
     return (
       <DiscordErrorPage
@@ -124,6 +131,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
         navText="Log In Here"
       />
     )
+
   return (
     <>
       <Title title="Success!" />
@@ -164,30 +172,30 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
 
 export const getServerSideProps = async ({
   req,
-  res
-}: {
-  // NextJS request and response types are extended with Express request and response types
-  // request type is initially NextApiRequest until it goes through all the middlewares
-  req: LoggedRequest & Request
-  res: NextApiResponse & Response
-}) => {
-  const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
-  const session = await new Promise<User | null>(resolve => {
-    runMiddlewares(middlewares, req, res, async () => {
-      if (req.user) {
-        return resolve(req.user)
-      }
-      return resolve(null)
-    })
+  query
+}: GetServerSidePropsContext) => {
+  if (query?.error === 'connected') {
+    return { props: { errorCode: ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED } }
+  }
+
+  const { user: sessionUser } = ((await getSession({ req })) as Session) || {}
+
+  if (!sessionUser)
+    return { props: { errorCode: ErrorCode.USER_NOT_LOGGED_IN } }
+
+  const prisma = await import('../../prisma')
+  const user = await prisma.default.user.findFirst({
+    where: {
+      id: sessionUser.id
+    }
   })
+  if (!user) return { props: { errorCode: ErrorCode.USER_NOT_LOGGED_IN } }
 
-  if (!session) return { props: { errorCode: ErrorCode.USER_NOT_LOGGED_IN } }
-
-  const userInfo = await getDiscordUserInfo(session)
+  const userInfo = await getDiscordUserInfo(user)
 
   if (!userInfo.userId) return { props: { errorCode: ErrorCode.DISCORD_ERROR } }
 
-  return { props: { userInfo, username: session.username } }
+  return { props: { userInfo, username: user.username } }
 }
 
 ConnectToDiscordSuccess.getLayout = getLayout
