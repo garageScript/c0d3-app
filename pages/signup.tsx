@@ -1,4 +1,3 @@
-import { useMutation } from '@apollo/client'
 //import libraries
 import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
@@ -15,13 +14,13 @@ import AlreadyLoggedIn from '../components/AlreadyLoggedIn'
 import { signupValidation } from '../helpers/formValidation'
 
 //import queries
-import SIGNUP_USER from '../graphql/queries/signupUser'
 import { withGetApp, GetAppProps } from '../graphql'
 
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
 import { Spinner } from 'react-bootstrap'
 import Alert from '../components/Alert'
+import { signIn, SignInResponse } from 'next-auth/react'
 
 type Values = {
   email: string
@@ -42,10 +41,6 @@ type ErrorDisplayProps = {
   signupErrors?: string[]
 }
 
-type SignupSuccessProps = {
-  forgotToken?: string
-}
-
 const initialValues: Values = {
   email: '',
   username: '',
@@ -61,12 +56,8 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
   return <>{errorMessages}</>
 }
 
-const SignupSuccess: React.FC<SignupSuccessProps> = () => (
-  <Card
-    type="success"
-    data-testid="signup-success"
-    title="Please verify your email!"
-  >
+const SignupSuccess = () => (
+  <Card type="success" title="Please verify your email!">
     <p>
       An email verification has been sent to your inbox. Please verify it in
       order to continue.
@@ -155,36 +146,32 @@ const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
   data: sessionData
 }) => {
   const [signupSuccess, setSignupSuccess] = useState(false)
-  const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [signupErrors, setSignupErrors] = useState<string[]>([])
-  const [signupUser] = useMutation(SIGNUP_USER)
 
   const handleSubmit = async (values: Values) => {
     setIsSubmitting(true)
-    try {
-      const { data } = await signupUser({ variables: values })
-      if (data.signup.success) {
-        setForgotToken(data.signup.cliToken)
-        return setSignupSuccess(true)
-      }
 
-      const err = new Error(
-        'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
-      )
+    const { error, status, ok }: SignInResponse = (await signIn('credentials', {
+      ...values,
+      redirect: false
+    }))!
 
-      throw err
-    } catch (error) {
-      const graphQLErrors = _.get(error, 'graphQLErrors', [error])
-      const errorMessages = graphQLErrors!.reduce(
-        (messages: string[], error: any) => {
-          return [...messages, error.message]
-        },
-        []
-      )
-
-      setSignupErrors([...errorMessages])
+    if (error) {
+      setSignupErrors([error])
     }
+
+    // 401 is an internal error by Next-Auth
+    if (status === 401 && !error) {
+      setSignupErrors([
+        'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+      ])
+    }
+
+    if (ok && !error) {
+      return setSignupSuccess(true)
+    }
+
     setIsSubmitting(false)
   }
 
@@ -199,7 +186,6 @@ const SignUpPage: React.FC<GetAppProps> & WithLayout = ({
         handleSubmit={handleSubmit}
         isLoading={isSubmitting}
         isSuccess={signupSuccess}
-        forgotToken={forgotToken}
         signupErrors={signupErrors}
       />
     </>
@@ -210,13 +196,12 @@ export const Signup: React.FC<SignupFormProps> = ({
   handleSubmit,
   isSuccess,
   signupErrors,
-  isLoading,
-  forgotToken
+  isLoading
 }) => {
   return (
     <>
       {isSuccess ? (
-        <SignupSuccess forgotToken={forgotToken} />
+        <SignupSuccess />
       ) : (
         <SignupForm
           handleSubmit={handleSubmit}

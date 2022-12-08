@@ -13,18 +13,8 @@ import { sendSignupEmail } from '../../helpers/mail'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
-export const login = async (
-  _parent: void,
-  arg: LoginMutationVariables,
-  ctx: Context
-) => {
-  const { req } = ctx
-  const { session } = req
+export const login = async (_parent: void, arg: LoginMutationVariables) => {
   const { username, password } = arg
-
-  if (!session) {
-    throw new Error('Session Error')
-  }
 
   let user = await prisma.user.findFirst({ where: { username } })
   // TODO change username column to be unique
@@ -51,7 +41,6 @@ export const login = async (
 
   const cliToken = { id: user.id, cliToken: user.cliToken }
 
-  session.userId = user.id
   return {
     success: true,
     username: user.username,
@@ -92,12 +81,7 @@ export const signup = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  const { session } = req
   const { firstName, lastName, username, email } = arg
-
-  if (!session) {
-    throw new Error('Session Error')
-  }
 
   const validEntry = await signupValidation.isValid({
     firstName,

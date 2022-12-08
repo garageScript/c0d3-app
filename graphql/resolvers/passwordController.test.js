@@ -98,18 +98,6 @@ describe('Change Password', () => {
   })
   const ctx = { req: { error: jest.fn(), session: {} } }
 
-  test('It throws an error when session does not exist', () => {
-    const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
-    prismaMock.user.findUnique.mockResolvedValue(null)
-    return expect(
-      changePw(
-        () => {},
-        { password: 'newpassword', token: sampleToken },
-        { req: { error: jest.fn() } }
-      )
-    ).rejects.toThrowError('Session does not exist')
-  })
-
   test('It throws an error if user is not found from token', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
     prismaMock.user.findUnique.mockResolvedValue(null)
