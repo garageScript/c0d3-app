@@ -6660,6 +6660,24 @@ a = a + 10
 </section>
 `;
 
+exports[`Storyshots Components/ExerciseReportCard Basic 1`] = `
+<div>
+  <p>
+    Leave the description empty and try to submit to display success message
+  </p>
+  <div
+    className=""
+  >
+    <button
+      className="container__reportBtn"
+      onClick={[Function]}
+    >
+      Report a problem
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
 <div
   className="d-flex flex-row"
