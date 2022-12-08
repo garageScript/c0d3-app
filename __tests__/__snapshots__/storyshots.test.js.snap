@@ -6669,11 +6669,11 @@ exports[`Storyshots Components/ExerciseReportCard Basic 1`] = `
     className=""
   >
     <button
-      className="btn container__reportBtn borderless"
+      className="btn newButton container__reportBtn borderless"
       onClick={[Function]}
       style={
         Object {
-          "color": "#292929",
+          "color": "mute",
         }
       }
     >
