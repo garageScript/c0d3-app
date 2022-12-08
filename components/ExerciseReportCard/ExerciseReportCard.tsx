@@ -7,6 +7,7 @@ import { MdInput } from '../MdInput'
 import NavLink from '../NavLink'
 import QueryInfo from '../QueryInfo'
 import { Button } from '../theme/Button'
+import btnStyles from '../../scss/button.module.scss'
 
 type BodyProps = {
   description: string
@@ -125,9 +126,10 @@ const ExerciseReportCard = ({ exerciseId, answerShown }: Props) => {
         />
       ) : (
         <Button
-          className={styles.container__reportBtn}
+          className={`${btnStyles.newButton} ${styles.container__reportBtn}`}
           onClick={() => setReportMode(true)}
           outline
+          color="mute"
         >
           Report a problem
         </Button>

@@ -9,16 +9,14 @@
 }
 
 .container__reportBtn {
-  font-family: 'PT Mono';
   font-size: 12px;
-  color: hsl(248, 13%, 56%);
-  text-transform: uppercase;
-  text-decoration: underline;
   background-color: transparent;
-  border: 0;
+  padding: 0;
 
   &:hover {
     color: colors.$bg-green;
+    background-color: transparent;
+    box-shadow: unset;
   }
 }
 
