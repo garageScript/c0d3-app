@@ -2,10 +2,26 @@ import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
-import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
 import userEvent from '@testing-library/user-event'
 import { getLayout } from '../../components/Layout'
+import { signIn } from 'next-auth/react'
+
+// Imported to be able to use expect(...).toBeInTheDocument()
+import '@testing-library/jest-dom'
+
+const mocks = [
+  {
+    request: { query: GET_APP },
+    result: {
+      data: {
+        session: null,
+        lessons: [],
+        alerts: []
+      }
+    }
+  }
+]
 
 import dummySessionData from '../../__dummy__/sessionData'
 
@@ -32,38 +48,11 @@ describe('Signup Page', () => {
     expect(SignupPage.getLayout === getLayout).toBe(true)
   })
   test('Should render success component on success', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: null,
-            lessons: [],
-            alerts: []
-          }
-        }
-      },
-      {
-        request: {
-          query: SIGNUP_USER,
-          variables: {
-            firstName: fakeFirstName,
-            lastName: fakeLastName,
-            email: fakeEmail,
-            username: fakeUsername
-          }
-        },
-        result: {
-          data: {
-            signup: {
-              success: true,
-              username: fakeUsername,
-              error: null
-            }
-          }
-        }
-      }
-    ]
+    signIn.mockReturnValue({
+      status: 200,
+      error: '',
+      ok: true
+    })
 
     const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -77,44 +66,16 @@ describe('Signup Page', () => {
     fireEvent.click(submitButton)
 
     await waitFor(() => {
-      expect(getByText('Please verify your email!')).toBeTruthy()
+      expect(getByText('Please verify your email!')).toBeInTheDocument()
       expect(container).toMatchSnapshot()
     })
   })
 
-  test('Should render errors on fail', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: null,
-            lessons: [],
-            alerts: []
-          }
-        }
-      },
-      {
-        request: {
-          query: SIGNUP_USER,
-          variables: {
-            firstName: fakeFirstName,
-            lastName: fakeLastName,
-            email: fakeEmail,
-            username: fakeUsername
-          }
-        },
-        result: {
-          data: {
-            signup: {
-              success: false,
-              username: null,
-              error: null
-            }
-          }
-        }
-      }
-    ]
+  test('Should render error message on signup fail', async () => {
+    signIn.mockReturnValue({
+      error: '',
+      status: 401
+    })
 
     const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -133,6 +94,30 @@ describe('Signup Page', () => {
           'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
         )
       ).toBeTruthy()
+
+      expect(container).toMatchSnapshot()
+    })
+  })
+
+  test('Should render network error on fail', async () => {
+    signIn.mockReturnValue({
+      error: 'Server side error found',
+      status: null
+    })
+
+    const { container, getByTestId, getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <SignupPage />
+      </MockedProvider>
+    )
+
+    const submitButton = getByTestId('submit')
+
+    await fillOutSignupForm(getByTestId)
+    fireEvent.click(submitButton)
+
+    await waitFor(() => {
+      expect(getByText('Server side error found')).toBeTruthy()
       expect(container).toMatchSnapshot()
     })
   })

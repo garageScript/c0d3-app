@@ -1,7 +1,6 @@
 import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { GraphQLError } from 'graphql'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import LOGIN_USER from '../../graphql/queries/loginUser'
@@ -10,8 +9,13 @@ import { useRouter } from 'next/router'
 import { getLayout } from '../../components/Layout'
 import { cloneDeep } from 'lodash'
 import { signIn } from 'next-auth/react'
-
 import dummySessionData from '../../__dummy__/sessionData'
+
+signIn.mockResolvedValue({
+  status: null,
+  error: null,
+  ok: true
+})
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -76,6 +80,8 @@ describe('Login Page', () => {
   ]
 
   test('Should redirect to /curriculum on success', async () => {
+    query.next = null
+
     const { getByTestId } = render(
       <MockedProvider
         mocks={cloneDeep(successfulLoginMocks)}
@@ -91,6 +97,45 @@ describe('Login Page', () => {
     fireEvent.click(submitButton)
 
     await waitFor(() => expect(push).toBeCalledWith('/curriculum'))
+  })
+
+  test('Should render errors on login fail', async () => {
+    signIn.mockReturnValueOnce({
+      error: null,
+      status: 401
+    })
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: [],
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    const { getByTestId, getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <LoginPage />
+      </MockedProvider>
+    )
+
+    const submitButton = getByTestId('submit')
+
+    await fillOutLoginForm(getByTestId)
+    fireEvent.click(submitButton)
+
+    await waitFor(() => {
+      expect(
+        getByText(
+          'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+        )
+      ).toBeTruthy()
+    })
   })
 
   test('Should redirect to the path in `next` on success', async () => {
@@ -114,6 +159,14 @@ describe('Login Page', () => {
   })
 
   test('Should set alert visible on invalid credentials', async () => {
+    const errMsg = 'User does not exist!'
+
+    signIn.mockResolvedValueOnce({
+      status: null,
+      error: errMsg,
+      ok: false
+    })
+
     const mocks = [
       {
         request: { query: GET_APP },
@@ -123,18 +176,6 @@ describe('Login Page', () => {
             lessons: [],
             alerts: []
           }
-        }
-      },
-      {
-        request: {
-          query: LOGIN_USER,
-          variables: {
-            username: fakeUsername,
-            password: fakePassword
-          }
-        },
-        result: {
-          errors: [new GraphQLError('User does not exist!')]
         }
       }
     ]
@@ -150,7 +191,7 @@ describe('Login Page', () => {
     await fillOutLoginForm(getByTestId)
     await userEvent.click(submitButton)
 
-    await findByText(mocks[1].result.errors[0].message)
+    await findByText(errMsg)
     expect(container).toMatchSnapshot()
     expect(push).not.toBeCalled()
   })

@@ -45,7 +45,7 @@ export const session = async (_parent: void, _args: void, context: Context) => {
     discordUserId,
     discordAvatarUrl,
     discordUsername,
-    isConnectedToDiscord: !!user.discordRefreshToken // using this to avoid a second fetch to get Discord username
+    isConnectedToDiscord: !!user.discordId // using this to avoid a second fetch to get Discord username
   }
 
   const lessonMentorMap = starsGiven.reduce((map, { lessonId, mentor }) => {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signup Page Should render errors on fail 1`] = `
+exports[`Signup Page Should render error message on signup fail 1`] = `
 <div>
   <div
     class="row mt-5"
@@ -36,6 +36,107 @@ exports[`Signup Page Should render errors on fail 1`] = `
               />
             </div>
             Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com 
+          </div>
+        </div>
+        <form
+          action="#"
+          data-testid="form"
+        >
+          <div
+            class="form-group d-grid mt-3"
+          >
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="email"
+              name="email"
+              placeholder="Email address"
+              type="email"
+              value="fake@email.com"
+            />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="username"
+              name="username"
+              placeholder="Username"
+              value="fakeusername"
+            />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="firstName"
+              name="firstName"
+              placeholder="First name"
+              value="fakefirstname"
+            />
+            <input
+              class="form-control form-control-lg fw-light mb-3 "
+              data-testid="lastName"
+              name="lastName"
+              placeholder="Last name"
+              value="fakelastname"
+            />
+            <button
+              class="btn btn-primary btn-lg btn mb-3"
+              data-testid="submit"
+              type="submit"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+        <p
+          class="text-black-50"
+        >
+          Already have an account?
+           
+          <a
+            class="text-primary link"
+            href="/login"
+          >
+            Login
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Signup Page Should render network error on fail 1`] = `
+<div>
+  <div
+    class="row mt-5"
+  >
+    <div
+      class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+    >
+      <div
+        class="card-body text-center pt-5 pb-5"
+      >
+        <h1
+          class="card-title h2 fw-bold mb-5"
+        >
+          Create Account
+        </h1>
+        <p
+          class="card-text"
+        />
+        <div
+          class="fade alert alert-danger show"
+          role="alert"
+        >
+          <div
+            class="d-flex align-items-center gap-3"
+          >
+            <div
+              class=""
+            >
+              <img
+                height="24"
+                src="/assets/curriculum/icons/exclamation.svg"
+                width="24"
+              />
+            </div>
+            Server side error found 
           </div>
         </div>
         <form

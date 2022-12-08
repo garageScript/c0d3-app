@@ -7,6 +7,9 @@ import GET_APP from '../../graphql/queries/getApp'
 import GET_SESSION from '../../graphql/queries/getSession'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
+import { useSession } from 'next-auth/react'
+
+useSession.mockReturnValue({})
 
 //mock for server side generation
 jest.mock('@apollo/client', () => ({

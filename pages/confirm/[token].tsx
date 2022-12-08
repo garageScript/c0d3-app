@@ -1,14 +1,14 @@
-import { useMutation } from '@apollo/client'
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import Link from 'next/link'
-import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
 import NavLink from '../../components/NavLink'
 import Input from '../../components/Input'
 import { confirmPasswordValidation } from '../../helpers/formValidation'
 import Layout from '../../components/Layout'
 import Card from '../../components/Card'
+import { signIn, SignInResponse } from 'next-auth/react'
+import Error from '../../components/Error'
 
 const initialValues = {
   password: '',
@@ -31,25 +31,37 @@ const ExpiredToken: React.FC = () => (
   </Card>
 )
 
-export const ResetPassword: React.FC = () => {
+export const ResetPassword = ({
+  onServerError
+}: {
+  onServerError: () => void
+}) => {
   const router = useRouter()
-  const [changePw, { data, error }] = useMutation(UPDATE_PASSWORD)
+  const [confirmToken, setConfirmToken] = useState<SignInResponse>()
   const handleSubmit = async ({ password }: typeof initialValues) => {
     try {
-      await changePw({
-        variables: {
+      const confirmTokenResponse: SignInResponse = (await signIn(
+        'confirm-token',
+        {
           token: router.query.token,
-          password
+          password,
+          redirect: false
         }
-      })
+      ))!
+
+      setConfirmToken(confirmTokenResponse)
     } catch {} // catch error thrown by default from apollo mutations
   }
 
-  if (data && data.changePw.success) {
+  if (confirmToken?.ok) {
     return <ConfirmSuccess />
   }
 
-  if (error) return <ExpiredToken />
+  if (confirmToken?.status === 401 && !confirmToken.error) {
+    onServerError()
+    return <></>
+  }
+  if (confirmToken?.error) return <ExpiredToken />
 
   return (
     <Card title="Enter new password">
@@ -93,10 +105,17 @@ export const ResetPassword: React.FC = () => {
   )
 }
 
-export const ResetPasswordContainer = () => (
-  <Layout title="Confirm">
-    <ResetPassword />
-  </Layout>
-)
+export const ResetPasswordContainer = () => {
+  const [serverError, setServerError] = useState(false)
+
+  if (serverError) {
+    return <Error code={500} />
+  }
+  return (
+    <Layout title="Confirm">
+      <ResetPassword onServerError={() => setServerError(true)} />
+    </Layout>
+  )
+}
 
 export default ResetPasswordContainer

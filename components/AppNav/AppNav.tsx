@@ -15,6 +15,8 @@ import {
   SIGNUP_PATH
 } from '../../constants'
 import _ from 'lodash'
+import { useSession } from 'next-auth/react'
+import { SessionContext } from '../../@types/auth'
 
 type AuthLinkProps = {
   session: any
@@ -78,6 +80,7 @@ const NotLoggedInAuthNav = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
+  const { data: sessionData } = useSession() as SessionContext
   const [session, setSession] = useState<GetSessionQuery['session']>()
   const isAdmin = session?.user?.isAdmin || false
 
@@ -93,7 +96,10 @@ const AppNav: React.FC<{}> = () => {
   const renderButtons = () => {
     if (loading) return <></>
 
-    if (!session || _.get(session, 'user.username', null) === null) {
+    if (
+      !sessionData?.user &&
+      (!session || _.get(session, 'user.username', null) === null)
+    ) {
       return <NotLoggedInAuthNav />
     }
 
