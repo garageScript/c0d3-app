@@ -35,7 +35,7 @@ describe('ExerciseReportCard Component', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <ExerciseReportCard exerciseId={1} answerShown={false} />
+        <ExerciseReportCard exerciseId={1} answerShown={true} />
       </MockedProvider>
     )
 
