@@ -6669,8 +6669,13 @@ exports[`Storyshots Components/ExerciseReportCard Basic 1`] = `
     className=""
   >
     <button
-      className="container__reportBtn"
+      className="btn container__reportBtn borderless"
       onClick={[Function]}
+      style={
+        Object {
+          "color": "#292929",
+        }
+      }
     >
       Report a problem
     </button>

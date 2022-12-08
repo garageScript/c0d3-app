@@ -124,12 +124,13 @@ const ExerciseReportCard = ({ exerciseId, answerShown }: Props) => {
           setReportMode={setReportMode}
         />
       ) : (
-        <button
+        <Button
           className={styles.container__reportBtn}
           onClick={() => setReportMode(true)}
+          outline
         >
           Report a problem
-        </button>
+        </Button>
       )}
     </div>
   )
