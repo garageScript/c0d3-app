@@ -9,6 +9,7 @@ import GET_EXERCISES from '../../../../../graphql/queries/getExercises'
 import DELETE_EXERCISE from '../../../../../graphql/queries/deleteExercise'
 import GET_SESSION from '../../../../../graphql/queries/getSession'
 import dummySessionData from '../../../../../__dummy__/sessionData'
+import userEvent from '@testing-library/user-event'
 
 import '@testing-library/jest-dom'
 
@@ -81,7 +82,15 @@ describe('Mentor page', () => {
   })
 
   test('Should delete exercise', async () => {
+    expect.assertions(1)
+
     const mocks = [
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: getExercisesData
+        }
+      },
       {
         request: { query: GET_EXERCISES },
         result: {
@@ -133,9 +142,77 @@ describe('Mentor page', () => {
     )
 
     // dropdown toggle
-    fireEvent.click(screen.getAllByTestId('dropdown-lesson')[0])
+    await userEvent.click(screen.getAllByTestId('dropdown-lesson')[0])
     // first item in the dropdown options
-    fireEvent.click(screen.getByText('Delete'))
+    await userEvent.click(screen.getByText('Delete'))
+
+    expect(mocks.at(-1).newData).toBeCalled()
+  })
+
+  test('Should delete exercise item and its QUERY INFO', async () => {
+    expect.assertions(1)
+
+    const mocks = [
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: getExercisesData
+        }
+      },
+      {
+        request: { query: GET_EXERCISES },
+        result: {
+          data: getExercisesData
+        }
+      },
+      {
+        request: { query: GET_SESSION },
+        result: {
+          data: {
+            session: {
+              ...dummySessionData
+            }
+          }
+        }
+      },
+      {
+        request: {
+          query: DELETE_EXERCISE,
+          variables: {
+            id: 1
+          }
+        },
+        result: {
+          data: {
+            deleteExercise: {
+              id: 1
+            }
+          }
+        },
+        newData: jest.fn(() => ({
+          data: {
+            deleteExercise: {
+              id: 2
+            }
+          }
+        }))
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <AddExercises />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      screen.getByRole('heading', { name: /Foundations of JavaScript/i })
+    )
+
+    // dropdown toggle
+    await userEvent.click(screen.getAllByTestId('dropdown-lesson')[0])
+    // first item in the dropdown options
+    await userEvent.click(screen.getByText('Delete'))
 
     expect(mocks.at(-1).newData).toBeCalled()
   })

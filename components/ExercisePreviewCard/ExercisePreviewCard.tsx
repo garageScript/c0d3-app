@@ -42,16 +42,20 @@ const ExercisePreviewCard = ({
     >
       {state && <div className={topBorderStyle} />}
       <div className={styles.header__container}>
-        <QueryInfo
-          data={data}
-          loading={loading}
-          error={error?.message || ''}
-          texts={{
-            loading: 'Deleting the exercise...',
-            data: 'Deleted the exercise successfully!',
-            error: 'Oops, failed to delete the exercise. Please try again!'
-          }}
-        />
+        {data && data.deleteExercise.id !== id ? (
+          <></>
+        ) : (
+          <QueryInfo
+            data={data}
+            loading={loading}
+            error={error?.message || ''}
+            texts={{
+              loading: 'Deleting the exercise...',
+              data: 'Deleted the exercise successfully!',
+              error: 'Oops, failed to delete the exercise. Please try again!'
+            }}
+          />
+        )}
         <div className={styles.header__container__module__state}>
           <div className="d-flex align-items-center mb-3">
             <h2 className="fw-bold fs-6 my-2 me-4">
