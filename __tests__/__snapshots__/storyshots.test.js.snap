@@ -6660,6 +6660,29 @@ a = a + 10
 </section>
 `;
 
+exports[`Storyshots Components/ExerciseReportCard Basic 1`] = `
+<div>
+  <p>
+    Leave the description empty and try to submit to display success message
+  </p>
+  <div
+    className=""
+  >
+    <button
+      className="btn newButton container__reportBtn borderless"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "mute",
+        }
+      }
+    >
+      Report a problem
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
 <div
   className="d-flex flex-row"
