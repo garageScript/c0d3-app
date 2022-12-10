@@ -168,6 +168,7 @@ const Exercise = ({
           })
           submitUserAnswer(exercise.id, userAnswer)
         }}
+        exerciseId={exercise.id}
       />
       <div className="d-flex justify-content-between mt-4">
         {hasPrevious ? (
