@@ -6490,6 +6490,21 @@ a = a + 10
       </div>
     </div>
   </div>
+  <div
+    className=""
+  >
+    <button
+      className="btn newButton container__reportBtn borderless"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "mute",
+        }
+      }
+    >
+      Report a problem
+    </button>
+  </div>
 </section>
 `;
 
