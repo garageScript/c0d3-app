@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import ExerciseCard, { Message } from './ExerciseCard'
+import { MockedProvider } from '@apollo/client/testing'
 
 const exampleProblem = `let a = 5
 a = a + 10
@@ -16,16 +17,19 @@ describe('ExerciseCard component', () => {
     const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText } = render(
-      <ExerciseCard
-        problem={exampleProblem}
-        answer={exampleAnswer}
-        explanation={exampleExplanation}
-        answerShown={false}
-        setAnswerShown={setAnswerShown}
-        message={Message.EMPTY}
-        setMessage={setMessage}
-        submitUserAnswer={submitUserAnswer}
-      />
+      <MockedProvider>
+        <ExerciseCard
+          problem={exampleProblem}
+          answer={exampleAnswer}
+          explanation={exampleExplanation}
+          answerShown={false}
+          setAnswerShown={setAnswerShown}
+          message={Message.EMPTY}
+          setMessage={setMessage}
+          submitUserAnswer={submitUserAnswer}
+          exerciseId={1}
+        />
+      </MockedProvider>
     )
 
     // Test that an error message shows if the user is wrong
@@ -48,16 +52,19 @@ describe('ExerciseCard component', () => {
     const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText, getByLabelText } = render(
-      <ExerciseCard
-        problem={exampleProblem}
-        answer={exampleAnswer}
-        explanation={exampleExplanation}
-        answerShown={false}
-        setAnswerShown={setAnswerShown}
-        message={Message.ERROR}
-        setMessage={setMessage}
-        submitUserAnswer={submitUserAnswer}
-      />
+      <MockedProvider>
+        <ExerciseCard
+          problem={exampleProblem}
+          answer={exampleAnswer}
+          explanation={exampleExplanation}
+          answerShown={false}
+          setAnswerShown={setAnswerShown}
+          message={Message.ERROR}
+          setMessage={setMessage}
+          exerciseId={1}
+          submitUserAnswer={submitUserAnswer}
+        />
+      </MockedProvider>
     )
 
     expect(queryByText(Message.ERROR)).toBeInTheDocument()
@@ -87,16 +94,19 @@ describe('ExerciseCard component', () => {
     const submitUserAnswer = jest.fn()
 
     const { getByRole, queryByText } = render(
-      <ExerciseCard
-        problem={exampleProblem}
-        answer={exampleAnswer}
-        explanation={exampleExplanation}
-        answerShown={true}
-        setAnswerShown={setAnswerShown}
-        message={Message.SUCCESS}
-        setMessage={setMessage}
-        submitUserAnswer={submitUserAnswer}
-      />
+      <MockedProvider>
+        <ExerciseCard
+          problem={exampleProblem}
+          exerciseId={1}
+          answer={exampleAnswer}
+          explanation={exampleExplanation}
+          answerShown={true}
+          setAnswerShown={setAnswerShown}
+          message={Message.SUCCESS}
+          setMessage={setMessage}
+          submitUserAnswer={submitUserAnswer}
+        />
+      </MockedProvider>
     )
 
     expect(queryByText(Message.SUCCESS)).toBeInTheDocument()
@@ -119,16 +129,19 @@ describe('ExerciseCard component', () => {
     const submitUserAnswer = jest.fn()
 
     const { queryByText, getByRole } = render(
-      <ExerciseCard
-        problem={exampleProblem}
-        answer={exampleAnswer}
-        explanation={exampleExplanation}
-        answerShown={false}
-        setAnswerShown={setAnswerShown}
-        message={Message.SUCCESS}
-        setMessage={setMessage}
-        submitUserAnswer={submitUserAnswer}
-      />
+      <MockedProvider>
+        <ExerciseCard
+          problem={exampleProblem}
+          answer={exampleAnswer}
+          explanation={exampleExplanation}
+          exerciseId={1}
+          answerShown={false}
+          setAnswerShown={setAnswerShown}
+          message={Message.SUCCESS}
+          setMessage={setMessage}
+          submitUserAnswer={submitUserAnswer}
+        />
+      </MockedProvider>
     )
 
     expect(queryByText(Message.SUCCESS)).toBeInTheDocument()

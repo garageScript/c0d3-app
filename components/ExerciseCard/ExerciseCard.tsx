@@ -1,5 +1,6 @@
 import Markdown from 'markdown-to-jsx'
 import React, { useState } from 'react'
+import ExerciseReportCard from '../ExerciseReportCard'
 import { NewButton } from '../theme/Button'
 import { Text } from '../theme/Text'
 import styles from './exerciseCard.module.scss'
@@ -13,6 +14,7 @@ export type ExerciseCardProps = {
   message: Message
   setMessage: (message: Message) => void
   submitUserAnswer: (userAnswer: string) => void
+  exerciseId: number
 }
 
 export enum Message {
@@ -29,7 +31,8 @@ const ExerciseCard = ({
   setAnswerShown,
   message,
   setMessage,
-  submitUserAnswer
+  submitUserAnswer,
+  exerciseId
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
 
@@ -102,6 +105,7 @@ const ExerciseCard = ({
           </div>
         </>
       )}
+      <ExerciseReportCard exerciseId={exerciseId} />
     </section>
   )
 }

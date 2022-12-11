@@ -1,3 +1,4 @@
+import { MockedProvider } from '@apollo/client/testing'
 import React, { useState } from 'react'
 import ExerciseCard, { Message } from '../../components/ExerciseCard'
 
@@ -19,17 +20,20 @@ export const Basic = () => {
   const [message, setMessage] = useState(Message.EMPTY)
 
   return (
-    <ExerciseCard
-      problem={exampleProblem}
-      answer={exampleAnswer}
-      explanation={exampleExplanation}
-      answerShown={answerShown}
-      setAnswerShown={setAnswerShown}
-      message={message}
-      setMessage={setMessage}
-      submitUserAnswer={userAnswer => {
-        console.log(`User answer submitted: ${userAnswer}`)
-      }}
-    />
+    <MockedProvider>
+      <ExerciseCard
+        problem={exampleProblem}
+        answer={exampleAnswer}
+        explanation={exampleExplanation}
+        answerShown={answerShown}
+        setAnswerShown={setAnswerShown}
+        message={message}
+        setMessage={setMessage}
+        submitUserAnswer={userAnswer => {
+          console.log(`User answer submitted: ${userAnswer}`)
+        }}
+        exerciseId={1}
+      />
+    </MockedProvider>
   )
 }

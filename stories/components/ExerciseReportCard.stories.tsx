@@ -34,7 +34,7 @@ export const Basic = () => {
           }
         ]}
       >
-        <ExerciseReportCard exerciseId={1} answerShown={false} />
+        <ExerciseReportCard exerciseId={1} />
       </MockedProvider>
     </div>
   )
