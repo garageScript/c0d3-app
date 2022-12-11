@@ -99,7 +99,7 @@ const ExerciseReportCard = ({ exerciseId }: Props) => {
 
   if (data && !loading) {
     return (
-      <div className={styles.container}>
+      <div className={`${styles.container} mt-3`}>
         <h6>Reported a mistake in this exercise</h6>
         <p className="mb-0">
           We appreciate your input. We will shortly investigate the problem that
