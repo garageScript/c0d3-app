@@ -6490,9 +6490,7 @@ a = a + 10
       </div>
     </div>
   </div>
-  <div
-    className=""
-  >
+  <div>
     <button
       className="btn newButton container__reportBtn borderless"
       onClick={[Function]}
@@ -6680,9 +6678,7 @@ exports[`Storyshots Components/ExerciseReportCard Basic 1`] = `
   <p>
     Leave the description empty and try to submit to display success message
   </p>
-  <div
-    className=""
-  >
+  <div>
     <button
       className="btn newButton container__reportBtn borderless"
       onClick={[Function]}
