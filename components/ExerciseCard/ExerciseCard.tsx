@@ -105,7 +105,7 @@ const ExerciseCard = ({
           </div>
         </>
       )}
-      <ExerciseReportCard exerciseId={exerciseId} answerShown={answerShown} />
+      <ExerciseReportCard exerciseId={exerciseId} />
     </section>
   )
 }

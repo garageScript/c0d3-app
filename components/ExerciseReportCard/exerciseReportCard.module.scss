@@ -1,7 +1,6 @@
 @use '../../scss/colors.module.scss';
 
 .container {
-  max-width: 400px;
   background-color: hsl(0, 0%, 96%);
   padding: 20px;
   border: 1px solid hsl(0, 0%, 84%);
@@ -21,8 +20,7 @@
 }
 
 .container__btns__container {
-  display: grid;
-  row-gap: 8px;
+  display: flex;
+  column-gap: 10px;
   margin-top: 18px;
-  width: 100%;
 }

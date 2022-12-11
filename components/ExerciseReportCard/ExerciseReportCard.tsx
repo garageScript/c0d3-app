@@ -85,10 +85,9 @@ const Body = ({
 
 type Props = {
   exerciseId: number
-  answerShown: boolean
 }
 
-const ExerciseReportCard = ({ exerciseId, answerShown }: Props) => {
+const ExerciseReportCard = ({ exerciseId }: Props) => {
   const [reportMode, setReportMode] = useState(false)
   const [description, setDescription] = useState('')
   const [flagExercise, { data, loading, error }] = useFlagExerciseMutation({
@@ -98,11 +97,9 @@ const ExerciseReportCard = ({ exerciseId, answerShown }: Props) => {
     }
   })
 
-  const marginOnExpand = answerShown ? 'mt-5' : ''
-
   if (data && !loading) {
     return (
-      <div className={`${styles.container} ${marginOnExpand}`}>
+      <div className={styles.container}>
         <h6>Reported a mistake in this exercise</h6>
         <p className="mb-0">
           We appreciate your input. We will shortly investigate the problem that
@@ -113,17 +110,20 @@ const ExerciseReportCard = ({ exerciseId, answerShown }: Props) => {
   }
 
   return (
-    <div className={marginOnExpand}>
+    <div>
       {reportMode ? (
-        <Body
-          data={data}
-          loading={loading}
-          error={error}
-          description={description}
-          setDescription={setDescription}
-          flagExercise={flagExercise}
-          setReportMode={setReportMode}
-        />
+        <>
+          <hr />
+          <Body
+            data={data}
+            loading={loading}
+            error={error}
+            description={description}
+            setDescription={setDescription}
+            flagExercise={flagExercise}
+            setReportMode={setReportMode}
+          />
+        </>
       ) : (
         <Button
           className={`${btnStyles.newButton} ${styles.container__reportBtn}`}
