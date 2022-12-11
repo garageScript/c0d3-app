@@ -71,8 +71,8 @@ const Body = ({
           </Button>
           <Button
             outline
-            btnType="info"
-            color="info"
+            btnType="mute"
+            color="mute"
             onClick={() => setReportMode(false)}
           >
             Cancel
