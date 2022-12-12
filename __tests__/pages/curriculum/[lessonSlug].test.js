@@ -4,8 +4,7 @@ import {
   render,
   waitFor,
   screen,
-  waitForElementToBeRemoved,
-  act
+  waitForElementToBeRemoved
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
@@ -104,21 +103,17 @@ describe('Lesson Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
       </MockedProvider>
     )
 
-    await waitFor(() =>
-      getByRole('heading', { name: /Variables & Functions/i })
+    await screen.findByText(
+      dummyLessonData.find(e => e.slug === 'js1').challenges[0].title
     )
 
-    // Used to wait for the query response to arrive
-    await act(async () => await new Promise(res => setTimeout(() => res(), 0)))
-
-    // Tracked in #2460
-    // expect(container).toMatchSnapshot()
+    expect(container).toMatchSnapshot()
   })
 
   test('Should render correctly with invalid lesson route', async () => {
