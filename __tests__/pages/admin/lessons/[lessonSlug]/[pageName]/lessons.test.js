@@ -806,9 +806,9 @@ describe('exercises', () => {
       </MockedProvider>
     )
 
-    await act(() => new Promise(res => setTimeout(res, 0)))
-
-    expect(screen.getByText('addExercise page')).toBeInTheDocument()
+    expect(
+      await screen.findByText('No exercises are flagged!')
+    ).toBeInTheDocument()
   })
 
   it('Should refresh the exercises upon removing one', async () => {
