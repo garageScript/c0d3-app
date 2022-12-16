@@ -187,6 +187,7 @@ model Exercise {
   answer           String
   testStr          String?
   explanation      String?
+  removed          Boolean?             @default(false)
   flagReason       String?
   flaggedAt        DateTime?
   flaggedById      Int?
@@ -223,5 +224,4 @@ model ExerciseComment {
   author     User              @relation(fields: [authorId], references: [id], onDelete: SetNull)
   parent     ExerciseComment?  @relation("ExerciseCommentReplies", fields: [parentId], references: [id])
   replies    ExerciseComment[] @relation("ExerciseCommentReplies")
-
 }
