@@ -38,10 +38,7 @@ import {
 import QueryInfo from '../../../../../components/QueryInfo'
 import LoadingSpinner from '../../../../../components/LoadingSpinner'
 import AdminLessonExerciseCard from '../../../../../components/admin/lessons/AdminLessonExerciseCard'
-import Card from '../../../../../components/Card'
-import { Text } from '../../../../../components/theme/Text'
-import Link from 'next/link'
-import { CURRICULUM_PATH } from '../../../../../constants'
+import Alert from '../../../../../components/Alert'
 
 const MAIN_PATH = '/admin/lessons'
 
@@ -212,21 +209,9 @@ const ExercisesPage = ({ lessonSlug }: ExercisesProps) => {
 
   if (!mapExercisesToExerciseCard || !mapExercisesToExerciseCard.length) {
     return (
-      <Card title="No exercises found">
-        <Text component="p">
-          Exercises can be added from{' '}
-          <Link href={`${CURRICULUM_PATH}/${lessonSlug}/mentor/addExercise`}>
-            <a
-              data-testid="addExercise-link"
-              style={{ textDecoration: 'none' }}
-            >
-              <Text color="primary" component="span">
-                addExercise page
-              </Text>
-            </a>
-          </Link>
-        </Text>
-      </Card>
+      <Alert
+        alert={{ text: 'No exercises are flagged!', type: 'info', id: 1 }}
+      />
     )
   }
 
