@@ -276,6 +276,7 @@ export default gql`
     answer: String!
     testStr: String
     explanation: String
+    removed: Boolean
     flaggedAt: String
     flagReason: String
     flaggedBy: User
