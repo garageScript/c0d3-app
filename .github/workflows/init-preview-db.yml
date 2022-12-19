@@ -1,6 +1,6 @@
 name: init-preview-db
 on:
-  pull_request:
+  pull_request_target:
     types:
       - closed
     paths:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   ssh-and-update-preview-db:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: appleboy/ssh-action@master
