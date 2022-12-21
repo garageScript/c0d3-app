@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container__child {
+  min-width: 600px;
+}
