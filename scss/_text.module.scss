@@ -1,26 +1,31 @@
-h1 {
+@mixin rubik-bold {
   font-family: 'Rubik';
-  font-weight: 300;
+  font-weight: 700;
+}
+
+h1 {
+  @include rubik-bold;
   font-size: 32px;
   line-height: 120%;
 }
 
 h2 {
-  font-family: 'PT Mono';
-  font-weight: 400;
+  @include rubik-bold;
   font-size: 24px;
   line-height: 160%;
 }
 
 h3 {
-  font-family: 'PT Mono';
-  font-weight: 400;
+  @include rubik-bold;
   font-size: 18px;
   line-height: 160%;
-  text-transform: uppercase;
 }
 
-// TODO: Add h4 element.
+h4,
+h5,
+h6 {
+  @include rubik-bold;
+}
 
 p {
   font-family: 'Inter';
