@@ -49,6 +49,7 @@ import {
   addExerciseComment,
   getChildComments
 } from './resolvers/exerciseCommentCrud'
+import { updateUserNames } from './resolvers/userDataCrud'
 
 export default {
   Query: {
@@ -99,6 +100,7 @@ export default {
     flagExercise,
     removeExerciseFlag,
     unlinkDiscord,
-    addExerciseComment
+    addExerciseComment,
+    updateUserNames
   }
 }
