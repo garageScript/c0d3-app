@@ -1,5 +1,4 @@
 @use '_variables.module';
-@use '_text.module';
 
 // Override default variables before the import
 $body-bg: rgba(84, 56, 220, 0.03);
@@ -83,3 +82,4 @@ p {
 @import './prism.scss';
 @import './modalImage.module.scss';
 @import './globalMDX.scss';
+@import '_text.module';
