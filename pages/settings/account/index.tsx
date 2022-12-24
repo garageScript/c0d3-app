@@ -2,9 +2,65 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../../../components/Layout'
 import { FormCard, Option } from '../../../components/FormCard'
 import { formChange } from '../../../helpers/formChange'
-import { useGetAppQuery } from '../../../graphql/index'
+import {
+  UpdateUserNamesMutation,
+  useGetAppQuery,
+  useUpdateUserNamesMutation
+} from '../../../graphql/index'
 import LoadingSpinner from '../../../components/LoadingSpinner'
 import styles from '../../../scss/accountSettings.module.scss'
+import { errorCheckAllFields } from '../../../helpers/admin/adminHelpers'
+import { userNamesValidation } from '../../../helpers/formValidation'
+import { ApolloError } from '@apollo/client'
+import QueryInfo from '../../../components/QueryInfo'
+import * as Sentry from '@sentry/browser'
+
+type BasicSettingsProps = {
+  updateUserNamesData?: UpdateUserNamesMutation | null
+  updateUserNamesLoading: boolean
+  error?: ApolloError
+  onChange: (value: string, index: number) => void
+  options: Option[]
+  onClick: () => Promise<void>
+}
+
+const BasicSettings = ({
+  updateUserNamesData,
+  updateUserNamesLoading,
+  error,
+  onChange,
+  options,
+  onClick
+}: BasicSettingsProps) => {
+  return (
+    <>
+      <QueryInfo
+        data={updateUserNamesData}
+        loading={updateUserNamesLoading}
+        error={error?.message || ''}
+        texts={{
+          loading: 'Updating your names...',
+          data: `Updated your names successfully!`
+        }}
+        dismiss={{
+          onDismissData: () => {},
+          onDismissError: () => {}
+        }}
+      />
+      <FormCard
+        title="Basics"
+        onChange={onChange}
+        values={options}
+        onSubmit={{
+          title: 'Save Changes',
+          onClick
+        }}
+        noBg
+        newBtn
+      />
+    </>
+  )
+}
 
 const values: (
   username?: string,
@@ -15,13 +71,16 @@ const values: (
   { title: 'first name', value: firstName },
   { title: 'last name', value: lastName }
 ]
-
 const AccountSettings = () => {
   const { data, loading } = useGetAppQuery()
   const { username, name } = data?.session.user || {}
   const [firstName, lastName] = name?.split(' ') || []
 
   const [options, setOptions] = useState(values(username, firstName, lastName))
+  const [
+    updateUserNames,
+    { data: updateUserNamesData, error, loading: updateUserNamesLoading }
+  ] = useUpdateUserNamesMutation()
 
   useEffect(() => {
     setOptions(values(username, firstName, lastName))
@@ -32,7 +91,32 @@ const AccountSettings = () => {
   }
 
   const onChange = (value: string, index: number) => {
-    formChange(value, index, options, setOptions)
+    formChange(value, index, options, setOptions, userNamesValidation)
+  }
+
+  const onClick = async () => {
+    try {
+      const newProperties = [...options]
+      const valid = await errorCheckAllFields(
+        newProperties,
+        userNamesValidation
+      )
+
+      if (!valid) {
+        // Update the forms so the error messages appear
+        setOptions(newProperties)
+        return
+      }
+
+      await updateUserNames({
+        variables: {
+          username: options[0].value as string,
+          name: `${options[1].value} ${options[2].value}`
+        }
+      })
+    } catch (err) {
+      Sentry.captureException(err)
+    }
   }
 
   return (
@@ -41,16 +125,13 @@ const AccountSettings = () => {
         <div className={styles.container__child}>
           <h1>Settings</h1>
           <hr />
-          <FormCard
-            title="Basics"
+          <BasicSettings
+            updateUserNamesData={updateUserNamesData}
+            updateUserNamesLoading={updateUserNamesLoading}
+            error={error}
             onChange={onChange}
-            values={options}
-            onSubmit={{
-              title: 'Save Changes',
-              onClick: () => {}
-            }}
-            noBg
-            newBtn
+            options={options}
+            onClick={onClick}
           />
         </div>
       </div>
