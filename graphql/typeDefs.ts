@@ -137,6 +137,7 @@ export default gql`
       id: Int!
     ): [Lesson]
     unlinkDiscord: User
+    updateUserNames(name: String!, username: String!): User
   }
 
   type AuthResponse {
