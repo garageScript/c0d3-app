@@ -172,6 +172,7 @@ export type Mutation = {
   updateExercise: Exercise
   updateLesson: Array<Lesson>
   updateModule: Module
+  updateUserNames?: Maybe<User>
 }
 
 export type MutationAcceptSubmissionArgs = {
@@ -349,6 +350,11 @@ export type MutationUpdateModuleArgs = {
   lessonId: Scalars['Int']
   name: Scalars['String']
   order: Scalars['Int']
+}
+
+export type MutationUpdateUserNamesArgs = {
+  name: Scalars['String']
+  username: Scalars['String']
 }
 
 export type Query = {
@@ -1420,6 +1426,21 @@ export type ChangePwMutation = {
   changePw?: { __typename?: 'AuthResponse'; success?: boolean | null } | null
 }
 
+export type UpdateUserNamesMutationVariables = Exact<{
+  username: Scalars['String']
+  name: Scalars['String']
+}>
+
+export type UpdateUserNamesMutation = {
+  __typename?: 'Mutation'
+  updateUserNames?: {
+    __typename?: 'User'
+    id: number
+    username: string
+    name: string
+  } | null
+}
+
 export type UserInfoQueryVariables = Exact<{
   username: Scalars['String']
 }>
@@ -2027,6 +2048,12 @@ export type MutationResolvers<
       MutationUpdateModuleArgs,
       'content' | 'id' | 'lessonId' | 'name' | 'order'
     >
+  >
+  updateUserNames?: Resolver<
+    Maybe<ResolversTypes['User']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationUpdateUserNamesArgs, 'name' | 'username'>
   >
 }>
 
@@ -6214,6 +6241,90 @@ export type ChangePwMutationOptions = Apollo.BaseMutationOptions<
   ChangePwMutation,
   ChangePwMutationVariables
 >
+export const UpdateUserNamesDocument = gql`
+  mutation updateUserNames($username: String!, $name: String!) {
+    updateUserNames(username: $username, name: $name) {
+      id
+      username
+      name
+    }
+  }
+`
+export type UpdateUserNamesMutationFn = Apollo.MutationFunction<
+  UpdateUserNamesMutation,
+  UpdateUserNamesMutationVariables
+>
+export type UpdateUserNamesProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    UpdateUserNamesMutation,
+    UpdateUserNamesMutationVariables
+  >
+} & TChildProps
+export function withUpdateUserNames<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UpdateUserNamesMutation,
+    UpdateUserNamesMutationVariables,
+    UpdateUserNamesProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UpdateUserNamesMutation,
+    UpdateUserNamesMutationVariables,
+    UpdateUserNamesProps<TChildProps, TDataName>
+  >(UpdateUserNamesDocument, {
+    alias: 'updateUserNames',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUpdateUserNamesMutation__
+ *
+ * To run a mutation, you first call `useUpdateUserNamesMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateUserNamesMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateUserNamesMutation, { data, loading, error }] = useUpdateUserNamesMutation({
+ *   variables: {
+ *      username: // value for 'username'
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useUpdateUserNamesMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UpdateUserNamesMutation,
+    UpdateUserNamesMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    UpdateUserNamesMutation,
+    UpdateUserNamesMutationVariables
+  >(UpdateUserNamesDocument, options)
+}
+export type UpdateUserNamesMutationHookResult = ReturnType<
+  typeof useUpdateUserNamesMutation
+>
+export type UpdateUserNamesMutationResult =
+  Apollo.MutationResult<UpdateUserNamesMutation>
+export type UpdateUserNamesMutationOptions = Apollo.BaseMutationOptions<
+  UpdateUserNamesMutation,
+  UpdateUserNamesMutationVariables
+>
 export const UserInfoDocument = gql`
   query userInfo($username: String!) {
     lessons {
@@ -6570,6 +6681,7 @@ export type MutationKeySpecifier = (
   | 'updateExercise'
   | 'updateLesson'
   | 'updateModule'
+  | 'updateUserNames'
   | MutationKeySpecifier
 )[]
 export type MutationFieldPolicy = {
@@ -6603,6 +6715,7 @@ export type MutationFieldPolicy = {
   updateExercise?: FieldPolicy<any> | FieldReadFunction<any>
   updateLesson?: FieldPolicy<any> | FieldReadFunction<any>
   updateModule?: FieldPolicy<any> | FieldReadFunction<any>
+  updateUserNames?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type QueryKeySpecifier = (
   | 'alerts'
