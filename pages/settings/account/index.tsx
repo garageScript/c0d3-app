@@ -40,7 +40,8 @@ const BasicSettings = ({
         error={error?.message || ''}
         texts={{
           loading: 'Updating your names...',
-          data: `Updated your names successfully!`
+          data: `Updated your names successfully!`,
+          error: error?.message
         }}
         dismiss={{
           onDismissData: () => {},
