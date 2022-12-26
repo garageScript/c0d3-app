@@ -129,6 +129,33 @@ const exercisesValidation = Yup.object({
   explanation: Yup.string().required(errorMessages.REQUIRED)
 })
 
+const userNamesValidation = Yup.object({
+  username: Yup.string()
+    .strict(true)
+    .lowercase(errorMessages.MUST_BE_LOWERCASE)
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, errorMessages.ALPHA_NUM_CHARS)
+    .min(requirements.TEXT_MIN, errorMessages.AT_LEAST_TEXT_MIN_CHARS)
+    .max(requirements.TEXT_MAX, errorMessages.AT_LEAST_TEXT_MAX_CHARS)
+    .trim(errorMessages.LEADING_TRAILING)
+    .required(errorMessages.REQUIRED),
+  // It's not firstName because FormCard component does not match 'firstName' with 'first name'
+  'first name': Yup.string()
+    .strict(true)
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, errorMessages.ALPHA_NUM_CHARS)
+    .min(requirements.TEXT_MIN, errorMessages.AT_LEAST_TEXT_MIN_CHARS)
+    .max(requirements.TEXT_MAX, errorMessages.AT_LEAST_TEXT_MAX_CHARS)
+    .trim(errorMessages.LEADING_TRAILING)
+    .required(errorMessages.REQUIRED),
+  // It's not lastName because FormCard component does not match 'lastName' with 'last name'
+  'last name': Yup.string()
+    .strict(true)
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, errorMessages.ALPHA_NUM_CHARS)
+    .min(requirements.TEXT_MIN, errorMessages.AT_LEAST_TEXT_MIN_CHARS)
+    .max(requirements.TEXT_MAX, errorMessages.AT_LEAST_TEXT_MAX_CHARS)
+    .trim(errorMessages.LEADING_TRAILING)
+    .required(errorMessages.REQUIRED)
+})
+
 export {
   alertValidation,
   challengeSchema,
@@ -138,5 +165,6 @@ export {
   passwordValidation,
   confirmPasswordValidation,
   resetPasswordValidation,
-  exercisesValidation
+  exercisesValidation,
+  userNamesValidation
 }
