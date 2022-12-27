@@ -5,10 +5,20 @@ declare global {
   var prismag: PrismaClient
 }
 
+let databaseUrl = `postgresql://${process.env.DB_USER}:${process.env.DB_PW}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?connection_limit=1`
+
+if (
+  process.env.VERCEL &&
+  process.env.VERCEL_ENV === 'production' &&
+  process.env.USE_POOLED_DB
+) {
+  databaseUrl = `postgresql://${process.env.DB_USER}:${process.env.DB_PW}@${process.env.DB_HOST}:${process.env.DB_POOL_PORT}/${process.env.DB_NAME}?connection_limit=1&pgbouncer=true`
+}
+
 const prismaOptions = {
   datasources: {
     db: {
-      url: `postgresql://${process.env.DB_USER}:${process.env.DB_PW}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?connection_limit=1`
+      url: databaseUrl
     }
   }
 }
