@@ -9,6 +9,16 @@ export const updateUserNames = withUserContainer<
 >(async (_, args, { req }) => {
   const { username, name } = args
 
+  const usernameAlreadyUsed = await prisma.user.findFirst({
+    where: {
+      username
+    }
+  })
+
+  if (usernameAlreadyUsed) {
+    throw new Error('Username is already used')
+  }
+
   const user = await prisma.user.update({
     where: {
       id: req.user!.id
