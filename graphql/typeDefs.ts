@@ -138,6 +138,11 @@ export default gql`
     ): [Lesson]
     unlinkDiscord: User
     updateUserNames(name: String!, username: String!): User
+    updateUserPassword(
+      newPassword: String!
+      newPasswordAgain: String!
+      currentPassword: String!
+    ): SuccessResponse
   }
 
   type AuthResponse {
