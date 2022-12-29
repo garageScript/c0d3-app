@@ -38,7 +38,8 @@ import {
   updateExercise,
   deleteExercise,
   flagExercise,
-  removeExerciseFlag
+  removeExerciseFlag,
+  removeExercise
 } from './resolvers/exerciseCrud'
 import {
   exerciseSubmissions,
@@ -99,6 +100,7 @@ export default {
     deleteComment,
     flagExercise,
     removeExerciseFlag,
+    removeExercise,
     unlinkDiscord,
     addExerciseComment,
     updateUserNames
