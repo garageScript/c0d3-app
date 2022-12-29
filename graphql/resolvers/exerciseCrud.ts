@@ -123,6 +123,10 @@ export const removeExercise = withUserContainer<
   if (!isAdmin(req) && exercise?.authorId !== authorId)
     throw new Error('Not authorized to remove')
 
+  if (exercise?.removed) {
+    throw new Error('Exercise is already removed')
+  }
+
   return prisma.exercise.update({
     where: { id },
     data: {

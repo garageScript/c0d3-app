@@ -325,6 +325,16 @@ describe('It should test set removed flag', () => {
       success: true
     })
   })
+  test('it should throw error if the exercise is already removed', () => {
+    prismaMock.exercise.update.mockResolvedValueOnce({ success: true })
+    prismaMock.exercise.findUnique.mockResolvedValueOnce({
+      ...mockExercises[0],
+      removed: true
+    })
+    expect(removeExercise({}, { id: 1 }, AdminCtx)).rejects.toThrow(
+      new Error('Exercise is already removed')
+    )
+  })
   test('should check id when setting exercise removed flag', () => {
     expect(
       removeExercise(
