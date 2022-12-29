@@ -81,6 +81,7 @@ export default gql`
       testStr: String
       explanation: String
     ): Exercise!
+    removeExercise(id: Int!): Exercise!
     updateExercise(
       id: Int!
       moduleId: Int!
