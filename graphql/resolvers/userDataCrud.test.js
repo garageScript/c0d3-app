@@ -65,7 +65,7 @@ describe('User Data CRUD resolvers', () => {
         password: mockPassword
       }
 
-      prismaMock.user.findFirst.mockResolvedValueOnce(userMock)
+      prismaMock.user.findUnique.mockResolvedValueOnce(userMock)
       bcrypt.compare.mockResolvedValueOnce(true)
 
       expect(
@@ -89,7 +89,7 @@ describe('User Data CRUD resolvers', () => {
         password: mockPassword
       }
 
-      prismaMock.user.findFirst.mockResolvedValueOnce(userMock)
+      prismaMock.user.findUnique.mockResolvedValueOnce(userMock)
 
       expect(
         updateUserPassword(
@@ -130,14 +130,10 @@ describe('User Data CRUD resolvers', () => {
         )
       ).rejects.toEqual(Error('Current password is invalid'))
     })
-    it('Should not update the user password if the user password is not found', async () => {
+    it('Should not update the user password if the user is not found', async () => {
       expect.assertions(1)
 
-      const userMock = {
-        username: mockUsername,
-        name: mockName,
-        password: null
-      }
+      const userMock = null
 
       prismaMock.user.findFirst.mockResolvedValueOnce(userMock)
       bcrypt.compare.mockResolvedValueOnce(false)

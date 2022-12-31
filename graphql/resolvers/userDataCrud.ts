@@ -48,10 +48,10 @@ export const updateUserPassword = withUserContainer<
     throw new Error("Passwords don't match")
   }
 
-  const userFromDB = await prisma.user.findFirst({ where: { id: user.id } })
+  const userFromDB = await prisma.user.findUnique({ where: { id: user.id } })
 
-  const validLogin = userFromDB!.password
-    ? await bcrypt.compare(currentPassword, userFromDB?.password!)
+  const validLogin = userFromDB
+    ? await bcrypt.compare(currentPassword, userFromDB.password as string)
     : false
 
   if (!validLogin) {
