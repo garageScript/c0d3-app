@@ -120,8 +120,9 @@ export const removeExercise = withUserContainer<
 
   const authorId = req.user?.id
 
-  if (!isAdmin(req) && exercise?.authorId !== authorId)
+  if (!isAdmin(req) && exercise?.authorId !== authorId) {
     throw new Error('Not authorized to remove')
+  }
 
   if (exercise?.removed) {
     throw new Error('Exercise is already removed')
