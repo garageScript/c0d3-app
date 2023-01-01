@@ -278,6 +278,9 @@ export default gql`
     testStr: String
     explanation: String
     removed: Boolean
+    removedAt: String
+    removedBy: User
+    removedById: Int
     flaggedAt: String
     flagReason: String
     flaggedBy: User
