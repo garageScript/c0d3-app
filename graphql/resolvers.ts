@@ -50,7 +50,7 @@ import {
   addExerciseComment,
   getChildComments
 } from './resolvers/exerciseCommentCrud'
-import { updateUserNames } from './resolvers/userDataCrud'
+import { updateUserNames, updateUserPassword } from './resolvers/userDataCrud'
 
 export default {
   Query: {
@@ -103,6 +103,7 @@ export default {
     removeExercise,
     unlinkDiscord,
     addExerciseComment,
-    updateUserNames
+    updateUserNames,
+    updateUserPassword
   }
 }

@@ -28,7 +28,7 @@ const GET_EXERCISES = gql`
           slug
         }
       }
-      removed
+      removedAt
       description
       answer
       explanation

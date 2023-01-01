@@ -139,6 +139,11 @@ export default gql`
     ): [Lesson]
     unlinkDiscord: User
     updateUserNames(name: String!, username: String!): User
+    updateUserPassword(
+      newPassword: String!
+      newPasswordAgain: String!
+      currentPassword: String!
+    ): SuccessResponse
   }
 
   type AuthResponse {
@@ -278,7 +283,9 @@ export default gql`
     answer: String!
     testStr: String
     explanation: String
-    removed: Boolean
+    removedAt: String
+    removedBy: User
+    removedById: Int
     flaggedAt: String
     flagReason: String
     flaggedBy: User
