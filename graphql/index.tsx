@@ -85,7 +85,9 @@ export type Exercise = {
   flaggedById?: Maybe<Scalars['Int']>
   id: Scalars['Int']
   module: Module
-  removed?: Maybe<Scalars['Boolean']>
+  removedAt?: Maybe<Scalars['String']>
+  removedBy?: Maybe<User>
+  removedById?: Maybe<Scalars['Int']>
   testStr?: Maybe<Scalars['String']>
 }
 
@@ -1014,7 +1016,7 @@ export type GetExercisesQuery = {
   exercises: Array<{
     __typename?: 'Exercise'
     id: number
-    removed?: boolean | null
+    removedAt?: string | null
     description: string
     answer: string
     explanation?: string | null
@@ -1767,7 +1769,9 @@ export type ExerciseResolvers<
   flaggedById?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
-  removed?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
+  removedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  removedBy?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  removedById?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
@@ -4384,7 +4388,7 @@ export const GetExercisesDocument = gql`
           slug
         }
       }
-      removed
+      removedAt
       description
       answer
       explanation
@@ -6663,7 +6667,9 @@ export type ExerciseKeySpecifier = (
   | 'flaggedById'
   | 'id'
   | 'module'
-  | 'removed'
+  | 'removedAt'
+  | 'removedBy'
+  | 'removedById'
   | 'testStr'
   | ExerciseKeySpecifier
 )[]
@@ -6678,7 +6684,9 @@ export type ExerciseFieldPolicy = {
   flaggedById?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   module?: FieldPolicy<any> | FieldReadFunction<any>
-  removed?: FieldPolicy<any> | FieldReadFunction<any>
+  removedAt?: FieldPolicy<any> | FieldReadFunction<any>
+  removedBy?: FieldPolicy<any> | FieldReadFunction<any>
+  removedById?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type ExerciseCommentKeySpecifier = (
