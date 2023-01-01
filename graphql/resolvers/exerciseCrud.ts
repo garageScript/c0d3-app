@@ -133,7 +133,7 @@ export const removeExercise = withUserContainer<
   return prisma.exercise.update({
     where: { id },
     data: {
-      removedAt: new Date().toISOString(),
+      removedAt: new Date(),
       removedById: authorId as number
     },
     include: {
