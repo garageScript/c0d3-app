@@ -321,20 +321,33 @@ describe('It should test remove flag', () => {
 describe('It should test set removed flag', () => {
   test('it should set exercise removed flag', () => {
     prismaMock.exercise.update.mockResolvedValue({ success: true })
+    prismaMock.exercise.findUnique.mockResolvedValueOnce({
+      ...mockExercises[0]
+    })
     expect(removeExercise({}, { id: 1 }, AdminCtx)).resolves.toEqual({
       success: true
     })
   })
+
   test('it should throw error if the exercise is already removed', () => {
     prismaMock.exercise.update.mockResolvedValueOnce({ success: true })
     prismaMock.exercise.findUnique.mockResolvedValueOnce({
       ...mockExercises[0],
-      removed: true
+      removedAt: '26/08/2023 08:22:24'
     })
     expect(removeExercise({}, { id: 1 }, AdminCtx)).rejects.toThrow(
       new Error('Exercise is already removed')
     )
   })
+
+  test('it should throw error if the exercise is not found', () => {
+    prismaMock.exercise.update.mockResolvedValueOnce({ success: true })
+    prismaMock.exercise.findUnique.mockResolvedValueOnce(null)
+    expect(removeExercise({}, { id: 1 }, AdminCtx)).rejects.toThrow(
+      new Error('Exercise is not found')
+    )
+  })
+
   test('should check id when setting exercise removed flag', () => {
     expect(
       removeExercise(
@@ -348,7 +361,12 @@ describe('It should test set removed flag', () => {
       )
     ).rejects.toThrowError()
   })
+
   test('It should check if user can set the removed flag of their own exercise', () => {
+    prismaMock.exercise.findUnique.mockResolvedValueOnce({
+      ...mockExercises[0]
+    })
+
     expect(
       removeExercise(
         {},

@@ -77,7 +77,6 @@ export const updateExercise = withUserContainer<
   })
 })
 
-// will be removed in a following PR
 export const deleteExercise = withUserContainer<
   Promise<Exercise>,
   MutationDeleteExerciseArgs
@@ -104,7 +103,6 @@ export const deleteExercise = withUserContainer<
   })
 })
 
-// replaces deleteExercise
 export const removeExercise = withUserContainer<
   Promise<Exercise>,
   MutationRemoveExerciseArgs
@@ -118,20 +116,25 @@ export const removeExercise = withUserContainer<
     }
   })
 
+  if (!exercise) {
+    throw new Error('Exercise is not found')
+  }
+
   const authorId = req.user?.id
 
-  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+  if (!isAdmin(req) && exercise.authorId !== authorId) {
     throw new Error('Not authorized to remove')
   }
 
-  if (exercise?.removed) {
+  if (exercise.removedAt) {
     throw new Error('Exercise is already removed')
   }
 
   return prisma.exercise.update({
     where: { id },
     data: {
-      removed: true
+      removedAt: new Date().toISOString(),
+      removedById: authorId as number
     },
     include: {
       author: true,
