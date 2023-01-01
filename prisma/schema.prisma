@@ -149,8 +149,7 @@ model User {
   comments                  Comment[]
   exercises                 Exercise[]
   exerciseSubmissions       ExerciseSubmission[]
-  FlaggedExercise           Exercise[]           @relation("flaggedExercises")
-  RemovedExercise           Exercise[]           @relation("removedExercises")
+  Exercise                  Exercise[]           @relation("flaggedExercises")
   modules                   Module[]
   starsMentor               Star[]               @relation("starMentor")
   starsGiven                Star[]               @relation("starStudent")
@@ -189,9 +188,6 @@ model Exercise {
   testStr          String?
   explanation      String?
   removed          Boolean?             @default(false)
-  removedAt        DateTime?
-  removedById      Int?
-  removedBy        User?                @relation("removedExercises", fields: [removedById], references: [id])
   flagReason       String?
   flaggedAt        DateTime?
   flaggedById      Int?
