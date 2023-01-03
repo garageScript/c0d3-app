@@ -1059,7 +1059,7 @@ understand how it works before moving on.
        const result = fn.largest([9, 8, 16, 2, 3])
        expect(result).toEqual(16)
      })
-     it('should return 0 since given array is empty', () => {
+     it('should return undefined since given array is empty', () => {
        const result = fn.largest([])
        expect(result).toEqual(undefined)
      })
@@ -1556,7 +1556,7 @@ approach is called **prototype inheritance**. But why?
          "<p><img src='https://placebear.com/800/710'></p>"
        )
      })
-     it('should return 0 for an empty array', () => {
+     it('should return undefined for an empty array', () => {
        const result = [].sum()
        expect(result).toEqual(undefined)
      })
