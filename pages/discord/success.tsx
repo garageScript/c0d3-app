@@ -23,6 +23,7 @@ type DiscordErrorPageProps = {
   username: string
   navPath: string
   navText: string
+  alreadyConnected?: boolean
 }
 
 type Error = {
@@ -42,10 +43,12 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
   username,
   error,
   navPath,
-  navText
+  navText,
+  alreadyConnected
 }) => {
   let errorMessage = <></>,
     errorLog = <></>
+
   if (!username) {
     errorMessage = (
       <>
@@ -66,6 +69,7 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
       </>
     )
   }
+
   if (error?.message) {
     errorLog = (
       <>
@@ -75,10 +79,31 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
       </>
     )
   }
+
+  if (alreadyConnected) {
+    errorMessage = (
+      <>
+        <p>
+          Sorry, but it looks like the Discord account you are trying to link to
+          your C0D3 account is already in use by another account.
+        </p>
+        <p>
+          To fix this, you can either use a different Discord account or, if the
+          account you are trying to link is already connected to a different
+          C0D3 account, you can go to that account and unlink the Discord
+          account. Then, come back to this account and try linking the Discord
+          account again.
+        </p>
+      </>
+    )
+  }
+
   return (
     <>
       <Title title="Error" />
-      <Card title="Error">
+      <Card
+        title={alreadyConnected ? 'Discord account is already used' : 'Error'}
+      >
         <div className="mt-3">{errorMessage}</div>
         <p>
           If this problem persists, please ask for help in our{' '}
@@ -109,6 +134,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
         error={error}
         navPath="/curriculum"
         navText="Curriculum"
+        alreadyConnected
       />
     )
   }
@@ -189,6 +215,7 @@ export const getServerSideProps = async ({
       id: sessionUser.id
     }
   })
+
   if (!user) return { props: { errorCode: ErrorCode.USER_NOT_LOGGED_IN } }
 
   const userInfo = await getDiscordUserInfo(user)
