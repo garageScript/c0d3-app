@@ -133,26 +133,32 @@ describe('connect to Discord success page', () => {
     )
   })
 
-  it('should render discord account already used page', async () => {
-    render(
-      <ConnectToDiscordSuccess
-        errorCode={ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED}
-      />
-    )
-    await waitFor(() =>
-      expect(
-        screen.getByText('Discord account is already used', {
-          exact: true
-        })
-      ).toBeTruthy()
-    )
-  })
-
   it('should render discord error page when no userInfo is returned', async () => {
     render(
       <ConnectToDiscordSuccess
         username="fakeUser"
         errorCode={ErrorCode.DISCORD_ERROR}
+        error={{ message: 'errorMessage' }}
+      />
+    )
+    await waitFor(() => {
+      expect(
+        screen.getByText(
+          'Dear fakeUser, we had trouble connecting to Discord, please try again.',
+          {
+            exact: true
+          }
+        )
+      ).toBeTruthy()
+      expect(screen.getByText('{ "message": "errorMessage" }')).toBeTruthy()
+    })
+  })
+
+  it('should render discord error page if another user is already connected to the Discord account', async () => {
+    render(
+      <ConnectToDiscordSuccess
+        username="fakeUser"
+        errorCode={ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED}
         error={{ message: 'errorMessage' }}
       />
     )
