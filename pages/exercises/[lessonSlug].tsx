@@ -59,7 +59,9 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
 
   const currentExercises = exercises
-    .filter(exercise => exercise?.module.lesson.slug === slug)
+    .filter(
+      exercise => exercise?.module.lesson.slug === slug && !exercise.removedAt
+    )
     .map(exercise => {
       const userAnswer = userAnswers[exercise.id] ?? null
       return {
@@ -73,7 +75,8 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           if (userAnswer === exercise.answer) return 'ANSWERED'
           if (userAnswer) return 'INCORRECT'
           return 'NOT ANSWERED'
-        })()
+        })(),
+        removedAt: exercise.removedAt
       }
     })
     .filter(
@@ -227,6 +230,7 @@ type ExerciseListItem = {
   userAnswer: string | null
   state: ExercisePreviewCardProps['state']
   id: number
+  removedAt?: string | null
 }
 
 type ExerciseListProps = {
