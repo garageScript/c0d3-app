@@ -3,7 +3,7 @@ import Component from './AdminLessonExerciseCard'
 import userEvent from '@testing-library/user-event'
 import { render, screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import DELETE_EXERCISE from '../../../graphql/queries/deleteExercise'
+import REMOVE_EXERCISE from '../../../graphql/queries/removeExercise'
 import REMOVE_EXERCISE_FLAG from '../../../graphql/queries/removeExerciseFlag'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
@@ -31,12 +31,12 @@ const exercise = {
 const mocks = [
   {
     request: {
-      query: DELETE_EXERCISE,
+      query: REMOVE_EXERCISE,
       variables: { id: 1 }
     },
     result: {
       data: {
-        deleteExercise: {
+        removeExercise: {
           id: 1
         }
       }
@@ -62,12 +62,12 @@ const mocks = [
 const loadingMocks = [
   {
     request: {
-      query: DELETE_EXERCISE,
+      query: REMOVE_EXERCISE,
       variables: { id: 1 }
     },
     result: {
       data: {
-        deleteExercise: {
+        removeExercise: {
           id: 1
         }
       }
@@ -120,12 +120,12 @@ describe('AdminLessonExerciseCard component', () => {
         mocks={[
           {
             request: {
-              query: DELETE_EXERCISE,
+              query: REMOVE_EXERCISE,
               variables: { id: 1 }
             },
             result: {
               data: {
-                deleteExercise: {
+                removeExercise: {
                   id: null
                 }
               }
