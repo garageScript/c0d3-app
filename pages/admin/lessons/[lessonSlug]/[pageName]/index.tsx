@@ -193,7 +193,9 @@ const ExercisesPage = ({ lessonSlug }: ExercisesProps) => {
   const mapExercisesToExerciseCard = data?.exercises
     .filter(
       exercise =>
-        exercise.flaggedAt && exercise.module.lesson.slug === lessonSlug
+        exercise.flaggedAt &&
+        !exercise.removedAt &&
+        exercise.module.lesson.slug === lessonSlug
     )
     .map(exercise => {
       return (
