@@ -10,6 +10,7 @@ import Image from 'next/image'
 import { DiscordUserInfo, getDiscordUserInfo } from '../../helpers/discordAuth'
 import { getSession } from 'next-auth/react'
 import { Session } from '../../@types/auth'
+import { CURRICULUM_PATH, LOGIN_PATH } from '../../constants'
 
 type ConnectToDiscordSuccessProps = {
   errorCode: number
@@ -21,9 +22,7 @@ type ConnectToDiscordSuccessProps = {
 type DiscordErrorPageProps = {
   error: Error
   username: string
-  navPath: string
-  navText: string
-  alreadyConnected?: boolean
+  errorCode?: ErrorCode
 }
 
 type Error = {
@@ -42,14 +41,22 @@ const DISCORD_BUGS_FEEDBACK_URL =
 const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
   username,
   error,
-  navPath,
-  navText,
-  alreadyConnected
+  errorCode
 }) => {
-  let errorMessage = <></>,
-    errorLog = <></>
+  const isDiscordError = errorCode === ErrorCode.DISCORD_ERROR
+  const isUserNotLoggedIn = errorCode === ErrorCode.USER_NOT_LOGGED_IN
+  const isDiscordAccountUsed =
+    errorCode === ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED
 
-  if (!username) {
+  let errorMessage = <></>
+  let errorLog = <></>
+  let navText = isDiscordError ? 'Try Again' : 'Curriculum'
+  let navPath = CURRICULUM_PATH
+
+  if (isUserNotLoggedIn) {
+    navText = 'Log In Here'
+    navPath = LOGIN_PATH
+
     errorMessage = (
       <>
         <p>You need to be logged in to connect to Discord.</p>
@@ -80,7 +87,7 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
     )
   }
 
-  if (alreadyConnected) {
+  if (isDiscordAccountUsed) {
     errorMessage = (
       <>
         <p>
@@ -102,7 +109,9 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
     <>
       <Title title="Error" />
       <Card
-        title={alreadyConnected ? 'Discord account is already used' : 'Error'}
+        title={
+          isDiscordAccountUsed ? 'Discord account is already used' : 'Error'
+        }
       >
         <div className="mt-3">{errorMessage}</div>
         <p>
@@ -127,36 +136,15 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
 
 export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   WithLayout = ({ errorCode, username, userInfo, error }) => {
-  if (errorCode === ErrorCode.DIFFERENT_ACCOUNT_IS_CONNECTED) {
+  if (errorCode) {
     return (
       <DiscordErrorPage
         username={username}
         error={error}
-        navPath="/curriculum"
-        navText="Curriculum"
-        alreadyConnected
+        errorCode={errorCode}
       />
     )
   }
-
-  if (errorCode === ErrorCode.DISCORD_ERROR)
-    return (
-      <DiscordErrorPage
-        username={username}
-        error={error}
-        navPath="/curriculum"
-        navText="Try Again"
-      />
-    )
-  if (errorCode === ErrorCode.USER_NOT_LOGGED_IN)
-    return (
-      <DiscordErrorPage
-        username=""
-        error={error}
-        navPath="/login"
-        navText="Log In Here"
-      />
-    )
 
   return (
     <>
