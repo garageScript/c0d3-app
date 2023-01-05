@@ -7,6 +7,7 @@ import {
 } from '../../components/FormCard'
 import { Item } from '../../components/DropdownMenu'
 import { formChange } from '../../helpers/formChange'
+import { title } from 'process'
 
 export default {
   component: FormCard,
@@ -23,6 +24,10 @@ const mockValues: Option[] = [
   { title: 'description', value: 'Amazing farm of chicken' },
   { title: 'title', value: 'oheuhehe', type: MD_INPUT },
   { title: 'level', value: 'noob' }
+]
+
+const mockValuesWithPassword: Option[] = [
+  { title: 'password', value: 'somePassword', valueType: 'password' }
 ]
 
 const MockBasic: React.FC = () => {
@@ -54,6 +59,22 @@ const MockBasic: React.FC = () => {
   }
 
   return <FormCard onChange={onChange} values={options} onSubmit={mockBtn} />
+}
+
+const MockWithPassword: React.FC = () => {
+  const mockedDropdown = mockValuesWithPassword
+  const [options, setOptions] = useState(mockedDropdown)
+  const onChange = (value: string, index: number) => {
+    formChange(value, index, options, setOptions)
+  }
+
+  return (
+    <FormCard
+      onChange={onChange}
+      values={options}
+      onSubmit={{ ...mockBtn, title: 'Save Changes' }}
+    />
+  )
 }
 
 const MockWithTitle: React.FC = () => {
@@ -170,6 +191,12 @@ const MockWithNewButton: React.FC = () => {
 export const Basic: React.FC = () => (
   <div className="col-5 m-auto">
     <MockBasic />
+  </div>
+)
+
+export const _WithPassword: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockWithPassword />
   </div>
 )
 
