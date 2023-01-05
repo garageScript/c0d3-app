@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Collapse, Spinner } from 'react-bootstrap'
 import { PROFILE_PATH } from '../../../constants'
 import {
-  useDeleteExerciseMutation,
+  useRemoveExerciseMutation,
   useRemoveExerciseFlagMutation,
   Exercise,
   User
@@ -95,23 +95,23 @@ type FooterProps = {
   onUnflag?: (id: number) => void
 }
 const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
-  const [deleteExercise, { loading: deleteLoading }] =
-    useDeleteExerciseMutation()
+  const [removeExercise, { loading: removeLoading }] =
+    useRemoveExerciseMutation()
   const [unflagExercise, { loading: unflagLoading }] =
     useRemoveExerciseFlagMutation()
 
   const handleRemove = async () => {
-    const deletedExercise = await deleteExercise({
+    const removedExercise = await removeExercise({
       variables: {
         id: exercise.id
       }
     })
 
     if (onRemove) {
-      const deletedExerciseId = deletedExercise.data?.deleteExercise.id
+      const removedExerciseId = removedExercise.data?.removeExercise.id
 
-      if (deletedExerciseId) {
-        onRemove(deletedExerciseId)
+      if (removedExerciseId) {
+        onRemove(removedExerciseId)
       }
     }
   }
@@ -146,10 +146,10 @@ const Footer = ({ exercise, onRemove, onUnflag }: FooterProps) => {
       </button>
       <button
         className={`${styles.card__footer__btn} ${styles.card__footer__btn__remove}`}
-        disabled={deleteLoading}
+        disabled={removeLoading}
         onClick={handleRemove}
       >
-        {deleteLoading ? (
+        {removeLoading ? (
           <Spinner size="sm" animation="border" />
         ) : (
           <span>REMOVE EXERCISE</span>

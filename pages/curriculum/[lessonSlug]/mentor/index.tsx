@@ -67,7 +67,8 @@ const MentorPage = () => {
     .filter(
       exercise =>
         exercise.module.lesson.slug === slug &&
-        exercise.author.id === sessionUser?.id
+        exercise.author.id === sessionUser?.id &&
+        !exercise.removedAt
     )
     .map(exercise => ({
       id: exercise.id,
