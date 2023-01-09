@@ -17,6 +17,7 @@ export type TextField = Omit<Option, 'value'> & { value: string }
 export type Option = {
   title: string
   type?: string
+  valueType?: 'password'
   error?: string
   placeHolder?: string
   value?: string | number | Item[]
@@ -48,7 +49,7 @@ type OptionInfoProps = {
   mdInputBg?: 'white' | 'none'
 }
 
-const displayInputType = (
+const displayvalueType = (
   index: number,
   onChange: Function,
   option: Option,
@@ -57,7 +58,7 @@ const displayInputType = (
   const [cursorInput, setCursorInput] = useState<number | null>(0)
   const [cursorMdInput, setCursorMdInput] = useState<number | null>(0)
 
-  const { placeHolder, type } = option
+  const { placeHolder, type, valueType } = option
   const value: any = option.value
   switch (type) {
     case MD_INPUT:
@@ -79,7 +80,7 @@ const displayInputType = (
     default:
       return (
         <input
-          type="text"
+          type={valueType || 'text'}
           className={`form-control ${styles.optionInfo__input}`}
           data-testid={`input${index}`}
           value={`${value || ''}`}
@@ -120,7 +121,7 @@ const OptionInfo: React.FC<OptionInfoProps> = ({
       >
         {`${(capitalizeTitle && _.capitalize(title)) || title}`}
       </span>
-      {displayInputType(index, onChange, option, mdInputBg)}
+      {displayvalueType(index, onChange, option, mdInputBg)}
       {error && <ErrorMessage error={error} />}
     </div>
   )

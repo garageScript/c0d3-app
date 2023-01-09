@@ -25,6 +25,10 @@ const mockValues: Option[] = [
   { title: 'level', value: 'noob' }
 ]
 
+const mockValuesWithPassword: Option[] = [
+  { title: 'password', value: 'somePassword', valueType: 'password' }
+]
+
 const MockBasic: React.FC = () => {
   const onClick = (title: any) => onChange(title, 4)
   const mockedDropdown = [
@@ -54,6 +58,22 @@ const MockBasic: React.FC = () => {
   }
 
   return <FormCard onChange={onChange} values={options} onSubmit={mockBtn} />
+}
+
+const MockWithPassword: React.FC = () => {
+  const mockedDropdown = mockValuesWithPassword
+  const [options, setOptions] = useState(mockedDropdown)
+  const onChange = (value: string, index: number) => {
+    formChange(value, index, options, setOptions)
+  }
+
+  return (
+    <FormCard
+      onChange={onChange}
+      values={options}
+      onSubmit={{ ...mockBtn, title: 'Save Changes' }}
+    />
+  )
 }
 
 const MockWithTitle: React.FC = () => {
@@ -170,6 +190,12 @@ const MockWithNewButton: React.FC = () => {
 export const Basic: React.FC = () => (
   <div className="col-5 m-auto">
     <MockBasic />
+  </div>
+)
+
+export const _WithPassword: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockWithPassword />
   </div>
 )
 
