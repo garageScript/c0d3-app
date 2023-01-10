@@ -7,3 +7,15 @@
 .container__child {
   min-width: 600px;
 }
+
+.container__sections {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 700px) {
+  .container__child {
+    width: 100%;
+    min-width: unset;
+  }
+}
