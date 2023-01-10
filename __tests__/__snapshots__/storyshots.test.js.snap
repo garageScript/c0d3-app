@@ -9852,6 +9852,62 @@ exports[`Storyshots Components/FormCard With No Background 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/FormCard With Password 1`] = `
+<div
+  className="col-5 m-auto"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="py-4 px-3 card shadow-sm col-12 align-items-stretch"
+    >
+      <div
+        className="p-0 card-body text-center align-self-start"
+      />
+      <div
+        className="text-start"
+      >
+        <div
+          className="d-flex flex-column mb-4"
+        >
+          <span
+            className="optionInfo__span"
+            data-testid="spanpassword0"
+          >
+            Password
+          </span>
+          <input
+            className="form-control optionInfo__input"
+            data-testid="input0"
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="somePassword"
+            type="password"
+            value="somePassword"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center align-self-start"
+      >
+        <button
+          className="btn borderless btn-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/FormCard With Title 1`] = `
 <div
   className="col-5 m-auto"
