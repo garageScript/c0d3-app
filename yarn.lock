@@ -1867,10 +1867,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@graphql-codegen/cli@^2.16.3":
-  version "2.16.3"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.16.3.tgz#2b870696e526e95823f2d6b86072ee00ec3fbabe"
-  integrity sha512-dyRt4nvbpLmWSq+fNsYhQo5tDJyFdlEIX+detR6biOur+kjI9e8djMVa5XSojoDkRIQCifu++6nUHxeROXN8iw==
+"@graphql-codegen/cli@^2.16.4":
+  version "2.16.4"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.16.4.tgz#c8e6df2dc8cccfd61a088de0ada9a05842ad8ad6"
+  integrity sha512-MBbdzIIaNZ8BTlFXG00toxU5rIV7Ltf2myaze88HpI5YPVfVJKlfccE6l0/Gv+nLv88CIM/PZrnFLdVtlBmrZw==
   dependencies:
     "@babel/generator" "^7.18.13"
     "@babel/template" "^7.18.10"
@@ -1887,14 +1887,14 @@
     "@graphql-tools/prisma-loader" "^7.2.49"
     "@graphql-tools/url-loader" "^7.13.2"
     "@graphql-tools/utils" "^9.0.0"
-    "@whatwg-node/fetch" "^0.5.0"
+    "@whatwg-node/fetch" "^0.6.0"
     chalk "^4.1.0"
     chokidar "^3.5.2"
     cosmiconfig "^7.0.0"
     cosmiconfig-typescript-loader "4.3.0"
     debounce "^1.2.0"
     detect-indent "^6.0.0"
-    graphql-config "4.3.6"
+    graphql-config "4.4.0"
     inquirer "^8.0.0"
     is-glob "^4.0.1"
     json-to-pretty-yaml "^1.2.2"
@@ -2335,7 +2335,7 @@
   dependencies:
     tslib "^2.4.0"
 
-"@graphql-tools/utils@8.12.0", "@graphql-tools/utils@^8.6.5", "@graphql-tools/utils@^8.8.0":
+"@graphql-tools/utils@8.12.0", "@graphql-tools/utils@^8.8.0":
   version "8.12.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.12.0.tgz#243bc4f5fc2edbc9e8fd1038189e57d837cbe31f"
   integrity sha512-TeO+MJWGXjUTS52qfK4R8HiPoF/R7X+qmgtOYd8DTH0l6b+5Y/tlg5aGeUJefqImRq7nvi93Ms40k/Uz4D5CWw==
@@ -2399,11 +2399,6 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
-
-"@iarna/toml@^2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
-  integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -5568,6 +5563,21 @@
     undici "^5.8.0"
     web-streams-polyfill "^3.2.0"
 
+"@whatwg-node/fetch@^0.6.0":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@whatwg-node/fetch/-/fetch-0.6.1.tgz#802a3e71ade25c04211efc2f1520a25a8829924f"
+  integrity sha512-sG39WLvcJxGZ+gDstnLSXR2IcnuvIOB51KxCFo0mEhFW0q2u8fZgolr0HPkL+zXwOJsnmT+9V3IRcqLnTXdqVQ==
+  dependencies:
+    "@peculiar/webcrypto" "^1.4.0"
+    abort-controller "^3.0.0"
+    busboy "^1.6.0"
+    form-data-encoder "^1.7.1"
+    formdata-node "^4.3.1"
+    node-fetch "^2.6.7"
+    undici "^5.12.0"
+    urlpattern-polyfill "^6.0.2"
+    web-streams-polyfill "^3.2.0"
+
 "@wry/context@^0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@wry/context/-/context-0.6.0.tgz#f903eceb89d238ef7e8168ed30f4511f92d83e06"
@@ -7742,28 +7752,20 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-cosmiconfig-toml-loader@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/cosmiconfig-toml-loader/-/cosmiconfig-toml-loader-1.0.0.tgz#0681383651cceff918177debe9084c0d3769509b"
-  integrity sha512-H/2gurFWVi7xXvCyvsWRLCMekl4tITJcX0QEsDMpzxtuxDyM59xLatYNg4s/k9AA/HdtCYfj2su8mgA0GSDLDA==
-  dependencies:
-    "@iarna/toml" "^2.2.5"
-
-cosmiconfig-typescript-loader@4.3.0, cosmiconfig-typescript-loader@^4.0.0:
+cosmiconfig-typescript-loader@4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-4.3.0.tgz#c4259ce474c9df0f32274ed162c0447c951ef073"
   integrity sha512-NTxV1MFfZDLPiBMjxbHRwSh5LaLcPMwNdCutmnHJCKoVnlvldPWlllonKwrsRJ5pYZBIBGRWWU2tfvzxgeSW5Q==
 
-cosmiconfig@7.0.1, cosmiconfig@^7.0.0, cosmiconfig@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-7.0.1.tgz#714d756522cace867867ccb4474c5d01bbae5d6d"
-  integrity sha512-a1YWNUV2HwGimB7dU2s1wUMurNKjpx60HxBB6xUM8Re+2s1g1IIfJvFR0/iCF+XHdE0GMTKTuLR32UQff4TEyQ==
+cosmiconfig@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-8.0.0.tgz#e9feae014eab580f858f8a0288f38997a7bebe97"
+  integrity sha512-da1EafcpH6b/TD8vDRaWV7xFINlHlF6zKsGwS1TsuVJTZRkquaS5HTMq7uq6h31619QjbsYl21gVDOm32KM1vQ==
   dependencies:
-    "@types/parse-json" "^4.0.0"
     import-fresh "^3.2.1"
+    js-yaml "^4.1.0"
     parse-json "^5.0.0"
     path-type "^4.0.0"
-    yaml "^1.10.0"
 
 cosmiconfig@^6.0.0:
   version "6.0.0"
@@ -7775,6 +7777,17 @@ cosmiconfig@^6.0.0:
     parse-json "^5.0.0"
     path-type "^4.0.0"
     yaml "^1.7.2"
+
+cosmiconfig@^7.0.0, cosmiconfig@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-7.0.1.tgz#714d756522cace867867ccb4474c5d01bbae5d6d"
+  integrity sha512-a1YWNUV2HwGimB7dU2s1wUMurNKjpx60HxBB6xUM8Re+2s1g1IIfJvFR0/iCF+XHdE0GMTKTuLR32UQff4TEyQ==
+  dependencies:
+    "@types/parse-json" "^4.0.0"
+    import-fresh "^3.2.1"
+    parse-json "^5.0.0"
+    path-type "^4.0.0"
+    yaml "^1.10.0"
 
 cp-file@^7.0.0:
   version "7.0.0"
@@ -10207,23 +10220,20 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
   integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
 
-graphql-config@4.3.6:
-  version "4.3.6"
-  resolved "https://registry.yarnpkg.com/graphql-config/-/graphql-config-4.3.6.tgz#908ef03d6670c3068e51fe2e84e10e3e0af220b6"
-  integrity sha512-i7mAPwc0LAZPnYu2bI8B6yXU5820Wy/ArvmOseDLZIu0OU1UTULEuexHo6ZcHXeT9NvGGaUPQZm8NV3z79YydA==
+graphql-config@4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/graphql-config/-/graphql-config-4.4.0.tgz#4b2d34d846bd4b9a40afbadfc5a4426668963c43"
+  integrity sha512-QUrX7R4htnTBTi83a0IlIilWVfiLEG8ANFlHRcxoZiTvOXTbgan67SUdGe1OlopbDuyNgtcy4ladl3Gvk4C36A==
   dependencies:
     "@graphql-tools/graphql-file-loader" "^7.3.7"
     "@graphql-tools/json-file-loader" "^7.3.7"
     "@graphql-tools/load" "^7.5.5"
     "@graphql-tools/merge" "^8.2.6"
     "@graphql-tools/url-loader" "^7.9.7"
-    "@graphql-tools/utils" "^8.6.5"
-    cosmiconfig "7.0.1"
-    cosmiconfig-toml-loader "1.0.0"
-    cosmiconfig-typescript-loader "^4.0.0"
+    "@graphql-tools/utils" "^9.0.0"
+    cosmiconfig "8.0.0"
     minimatch "4.2.1"
     string-env-interpolation "1.0.1"
-    ts-node "^10.8.1"
     tslib "^2.4.0"
 
 graphql-extensions@^0.16.0:
@@ -12127,7 +12137,7 @@ js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@^4.0.0:
+js-yaml@^4.0.0, js-yaml@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
   integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
@@ -17312,7 +17322,7 @@ ts-log@^2.2.3:
   resolved "https://registry.yarnpkg.com/ts-log/-/ts-log-2.2.3.tgz#4da5640fe25a9fb52642cd32391c886721318efb"
   integrity sha512-XvB+OdKSJ708Dmf9ore4Uf/q62AYDTzFcAdxc8KNML1mmAWywRFVt/dn1KYJH8Agt5UJNujfM3znU5PxgAzA2w==
 
-ts-node@^10.8.1, ts-node@^10.9.1:
+ts-node@^10.9.1:
   version "10.9.1"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.9.1.tgz#e73de9102958af9e1f0b168a6ff320e25adcff4b"
   integrity sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==
@@ -17791,6 +17801,13 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+urlpattern-polyfill@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/urlpattern-polyfill/-/urlpattern-polyfill-6.0.2.tgz#a193fe773459865a2a5c93b246bb794b13d07256"
+  integrity sha512-5vZjFlH9ofROmuWmXM9yj2wljYKgWstGwe8YTyiqM7hVum/g9LyCizPZtb3UqsuppVwety9QJmfc42VggLpTgg==
+  dependencies:
+    braces "^3.0.2"
 
 use-composed-ref@^1.0.0:
   version "1.1.0"
