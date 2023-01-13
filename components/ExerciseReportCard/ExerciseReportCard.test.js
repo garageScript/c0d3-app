@@ -35,7 +35,7 @@ describe('ExerciseReportCard Component', () => {
 
     render(
       <MockedProvider mocks={mocks}>
-        <ExerciseReportCard exerciseId={1} />
+        <ExerciseReportCard exerciseId={1} flaggedAt={!!''} />
       </MockedProvider>
     )
 
@@ -49,12 +49,31 @@ describe('ExerciseReportCard Component', () => {
     ).toBeInTheDocument()
   })
 
+  it('Should display default message for an already flagged exercise', async () => {
+    expect.assertions(1)
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <ExerciseReportCard
+          exerciseId={1}
+          flaggedAt={!!'11/04/2022 19:00:15'}
+        />
+      </MockedProvider>
+    )
+
+    await userEvent.click(screen.getByText(reportBtn))
+
+    expect(
+      await screen.findByText('The exercise has already been reported')
+    ).toBeInTheDocument()
+  })
+
   it('Should cancel the report', async () => {
     expect.assertions(1)
 
     render(
       <MockedProvider mocks={mocks}>
-        <ExerciseReportCard exerciseId={1} />
+        <ExerciseReportCard exerciseId={1} flaggedAt={!!''} />
       </MockedProvider>
     )
 
