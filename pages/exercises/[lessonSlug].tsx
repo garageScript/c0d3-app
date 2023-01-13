@@ -76,7 +76,8 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           if (userAnswer) return 'INCORRECT'
           return 'NOT ANSWERED'
         })(),
-        removedAt: exercise.removedAt
+        removedAt: exercise.removedAt,
+        flaggedAt: exercise.flaggedAt || ''
       }
     })
     .filter(
@@ -119,6 +120,7 @@ type ExerciseData = {
   problem: string
   answer: string
   explanation: string
+  flaggedAt: string
 }
 
 type ExerciseProps = {
@@ -172,6 +174,7 @@ const Exercise = ({
           submitUserAnswer(exercise.id, userAnswer)
         }}
         exerciseId={exercise.id}
+        flaggedAt={!!exercise.flaggedAt}
       />
       <div className="d-flex justify-content-between mt-4">
         {hasPrevious ? (
