@@ -6622,6 +6622,24 @@ exports[`Storyshots Components/ExerciseReportCard Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ExerciseReportCard Flagged Exercise 1`] = `
+<div>
+  <div>
+    <button
+      className="btn newButton container__reportBtn borderless"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "mute",
+        }
+      }
+    >
+      Report a problem
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
 <div
   className="d-flex flex-row"
