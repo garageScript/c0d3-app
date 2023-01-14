@@ -96,9 +96,9 @@ const WelcomeMessage: React.FC<{
 
   return (
     <>
-      <h4 className={`${styles['progress-card__title']} text-center`}>
+      <h3 className={`${styles['progress-card__title']} text-center`}>
         {title}
-      </h4>
+      </h3>
       {loggedIn && (
         <>
           <div className="d-block d-xl-none">
@@ -130,7 +130,7 @@ const ProgressCard: React.FC<{
       />
       {progressCount < 100 ? (
         <>
-          <div className="mt-3 text-center">
+          <p className="mt-3 text-center">
             Join us on
             <NavLink
               className={`${styles['progress-newuser__chatlink']} text-white`}
@@ -141,7 +141,7 @@ const ProgressCard: React.FC<{
             </NavLink>
             to ask your questions. Start by setting up your development
             environment and then follow the lessons in the course.
-          </div>
+          </p>
           <div className="mt-4 d-flex flex-column">
             <NavLink
               path="/docs/setup"
@@ -153,12 +153,13 @@ const ProgressCard: React.FC<{
         </>
       ) : (
         <>
-          <div className="mt-3 text-center">
+          <p className="mt-3 text-center">
             Congratulations on completing the curriculum! We are excited to
             offer you the opportunity to gain real-world work experience by
             contributing to our repository. We look forward to seeing your
             contributions and the valuable skills you will develop.
-          </div>
+          </p>
+
           <div className="mt-4 d-flex flex-column">
             <NavLink
               path="/docs/setup"
