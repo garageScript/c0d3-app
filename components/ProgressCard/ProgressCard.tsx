@@ -1,6 +1,7 @@
 import React from 'react'
 import NavLink from '../NavLink'
 import styles from './progressCard.module.scss'
+import { REPO_PATH } from '../../constants'
 
 const ProgressBar: React.FC<{ progressCount: number }> = ({
   progressCount
@@ -161,12 +162,12 @@ const ProgressCard: React.FC<{
           </p>
 
           <div className="mt-4 d-flex flex-column">
-            <NavLink
-              path="/docs/setup"
+            <a
+              href={REPO_PATH}
               className={`btn btn-light ${styles['progress-card__button']} mt-2 text-primary`}
             >
               Kick-start your professional development
-            </NavLink>
+            </a>
           </div>
         </>
       )}
