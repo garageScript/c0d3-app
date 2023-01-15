@@ -85,9 +85,10 @@ const Body = ({
 
 type Props = {
   exerciseId: number
+  flaggedAt: boolean
 }
 
-const ExerciseReportCard = ({ exerciseId }: Props) => {
+const ExerciseReportCard = ({ exerciseId, flaggedAt }: Props) => {
   const [reportMode, setReportMode] = useState(false)
   const [description, setDescription] = useState('')
   const [flagExercise, { data, loading, error }] = useFlagExerciseMutation({
@@ -104,6 +105,20 @@ const ExerciseReportCard = ({ exerciseId }: Props) => {
         <p className="mb-0">
           We appreciate your input. We will shortly investigate the problem that
           has been reported.
+        </p>
+      </div>
+    )
+  }
+
+  console.log(reportMode, flaggedAt)
+
+  if (reportMode && flaggedAt) {
+    return (
+      <div className={`${styles.container} mt-3`}>
+        <h6>The exercise has already been reported</h6>
+        <p className="mb-0">
+          We appreciate your concern. The exercise has already been reported and
+          we are investigating the problem that has been reported.
         </p>
       </div>
     )
