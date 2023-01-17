@@ -36,7 +36,6 @@ const ExerciseCard = ({
   exerciseId,
   flaggedAt
 }: ExerciseCardProps) => {
-  console.log(exerciseId, flaggedAt)
   const [studentAnswer, setStudentAnswer] = useState('')
 
   return (

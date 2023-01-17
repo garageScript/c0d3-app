@@ -110,8 +110,6 @@ const ExerciseReportCard = ({ exerciseId, flaggedAt }: Props) => {
     )
   }
 
-  console.log(reportMode, flaggedAt)
-
   if (reportMode && flaggedAt) {
     return (
       <div className={`${styles.container} mt-3`}>
