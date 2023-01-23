@@ -4,9 +4,10 @@ import { FormCard, Option } from '../../../components/FormCard'
 import { formChange } from '../../../helpers/formChange'
 import {
   GetAppQuery,
-  useGetAppQuery,
+  useUnlinkDiscordMutation,
   useUpdateUserNamesMutation,
-  useUpdateUserPasswordMutation
+  useUpdateUserPasswordMutation,
+  useUserInfoQuery
 } from '../../../graphql/index'
 import LoadingSpinner from '../../../components/LoadingSpinner'
 import styles from '../../../scss/accountSettings.module.scss'
@@ -17,6 +18,11 @@ import {
 } from '../../../helpers/formValidation'
 import QueryInfo from '../../../components/QueryInfo'
 import * as Sentry from '@sentry/browser'
+import { Button } from '../../../components/theme/Button'
+import Image from 'next/image'
+import { signIn, useSession } from 'next-auth/react'
+import { SessionContext } from '../../../@types/auth'
+import { useRouter } from 'next/router'
 
 const basicValues: (
   username?: string,
@@ -180,9 +186,90 @@ const PasswordSettings = () => {
   )
 }
 
+const LinkedAccountsSetting = ({
+  discordUsername
+}: {
+  discordUsername: string | undefined
+}) => {
+  const router = useRouter()
+  const [unlinkDiscordMutation, { data, loading, error }] =
+    useUnlinkDiscordMutation()
+
+  const unlinkDiscord = async () => {
+    try {
+      await unlinkDiscordMutation()
+      router.reload()
+    } catch (error) {
+      Sentry.captureException(error)
+    }
+  }
+
+  return (
+    <div>
+      <h3 className="mb-4">Linked accounts</h3>
+      <QueryInfo
+        loading={loading}
+        data={data}
+        error={error?.message || ''}
+        texts={{
+          data: 'Unlinked Discord successfully',
+          loading: 'Unlinking Discord...',
+          error: 'Oops, we could not Unlink Discord. Please try again'
+        }}
+      />
+      <div className={styles.linkedAccounts__container}>
+        <div className={styles.linkedAccounts__container__item}>
+          <div className={styles.linkedAccounts__container__item__icon}>
+            <div>
+              <Image
+                src="/assets/discordClydeLogo.svg"
+                height={17}
+                width={22}
+              />
+            </div>
+            <span className="fs-5">Discord</span>
+          </div>
+          {discordUsername ? (
+            <div className={styles.linkedAccounts__container__item__icon}>
+              <span>{discordUsername}</span>
+              <Button
+                data-testid="unlink-discord"
+                btnType="danger"
+                color="danger"
+                outline
+                onClick={unlinkDiscord}
+              >
+                Unlink Discord
+              </Button>
+            </div>
+          ) : (
+            <Button
+              data-testid="connect-to-discord"
+              btnType="primary"
+              color="white"
+              onClick={() =>
+                signIn('discord', { callbackUrl: '/discord/success' })
+              }
+            >
+              Connect to discord
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const AccountSettings = () => {
-  const { data, loading } = useGetAppQuery()
-  const { username, name } = data?.session.user || {}
+  const { data: session, status } = useSession() as SessionContext
+  const { data, loading: userInfoLoading } = useUserInfoQuery({
+    variables: {
+      username: session?.user.username || ''
+    }
+  })
+
+  const loading = userInfoLoading || status === 'loading'
+  const { username, name, discordUsername } = data?.userInfo?.user || {}
 
   if (loading || !data) {
     return <LoadingSpinner />
@@ -198,6 +285,8 @@ const AccountSettings = () => {
             <BasicSettings username={username} name={name} />
             <hr className="mt-4 mb-4" />
             <PasswordSettings />
+            <hr className="mt-4 mb-4" />
+            <LinkedAccountsSetting discordUsername={discordUsername} />
           </div>
         </div>
       </div>

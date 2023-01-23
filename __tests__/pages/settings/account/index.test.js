@@ -1,20 +1,26 @@
 jest.mock('@sentry/browser')
 
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved
+} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import AccountSettings from '../../../../pages/settings/account/index'
 import { MockedProvider } from '@apollo/client/testing'
-import GetApp from '../../../../graphql/queries/getApp.ts'
+import USER_INFO from '../../../../graphql/queries/userInfo'
 import UPDATE_USER_NAMES from '../../../../graphql/queries/updateUserNames'
 import UPDATE_USER_PASSWORD from '../../../../graphql/queries/updateUserPassword'
 import dummyLessonData from '../../../../__dummy__/lessonData'
 import dummySessionData from '../../../../__dummy__/sessionData'
-import dummyAlertData from '../../../../__dummy__/alertData'
+import dummyStarsData from '../../../../__dummy__/starsData'
+import { signIn, useSession } from 'next-auth/react'
 import * as Sentry from '@sentry/browser'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
+import { UNLINK_DISCORD } from '../../../../graphql/queries/unlinkDiscord'
 
 const UpdateUserNamesMock = {
   request: {
@@ -112,14 +118,92 @@ const UpdateUserPasswordMockWithError = {
   })
 }
 
+const unlinkDiscordMock = {
+  request: {
+    query: UNLINK_DISCORD
+  },
+  result: jest.fn(() => ({
+    data: {
+      unlinkDiscord: {
+        id: 1
+      }
+    }
+  }))
+}
+
+const unlinkDiscordMockWithError = {
+  request: {
+    query: UNLINK_DISCORD
+  },
+  newData: jest.fn(() => {
+    throw new Error('Error')
+  })
+}
+
+const session = {
+  ...dummySessionData,
+  lessonStatus: [
+    {
+      id: 1,
+      userId: '1',
+      lessonId: 5,
+      passedAt: `'true'`,
+      starGiven: null,
+      starsReceived: [dummyStarsData[0]]
+    },
+    {
+      id: 2,
+      userId: '1',
+      lessonId: 2,
+      passedAt: Date.now().toString(),
+      starGiven: null,
+      starsReceived: [dummyStarsData[1]]
+    },
+    {
+      id: 3,
+      userId: '1',
+      lessonId: 1,
+      passedAt: Date.now().toString(),
+      starGiven: null,
+      starsReceived: [dummyStarsData[2], dummyStarsData[9]]
+    }
+  ]
+}
+
+const UserInfoMock = {
+  request: {
+    query: USER_INFO,
+    variables: {
+      username: 'fakeusername'
+    }
+  },
+  result: {
+    data: {
+      lessons: dummyLessonData,
+      userInfo: session
+    }
+  }
+}
+
 const mocks = [
+  unlinkDiscordMock,
+  UserInfoMock,
+  UpdateUserNamesMock,
+  UpdateUserPasswordMock
+]
+
+const mocksWithDiscordData = [
+  unlinkDiscordMock,
   {
-    request: { query: GetApp },
+    ...UserInfoMock,
     result: {
+      ...UserInfoMock.result,
       data: {
-        session: dummySessionData,
-        lessons: dummyLessonData,
-        alerts: dummyAlertData
+        ...UserInfoMock.result.data,
+        userInfo: {
+          ...session,
+          user: { ...session.user, discordUsername: 'floppityflob' }
+        }
       }
     }
   },
@@ -128,16 +212,17 @@ const mocks = [
 ]
 
 const mocksWithError = [
+  unlinkDiscordMockWithError,
   {
-    request: { query: GetApp },
+    ...UserInfoMock,
     result: {
+      ...UserInfoMock.result,
       data: {
-        session: {
-          ...dummySessionData,
-          user: { ...dummySessionData.user, name: null }
-        },
-        lessons: dummyLessonData,
-        alerts: dummyAlertData
+        ...UserInfoMock.result.data,
+        userInfo: {
+          ...session,
+          user: { ...session.user, name: null, discordUsername: 'floppityflob' }
+        }
       }
     }
   },
@@ -145,16 +230,8 @@ const mocksWithError = [
 ]
 
 const updateUserPasswordMocksWithError = [
-  {
-    request: { query: GetApp },
-    result: {
-      data: {
-        session: dummySessionData,
-        lessons: dummyLessonData,
-        alerts: dummyAlertData
-      }
-    }
-  },
+  unlinkDiscordMock,
+  UserInfoMock,
   UpdateUserPasswordMockWithError
 ]
 
@@ -327,7 +404,7 @@ describe('Account settings page', () => {
     })
   })
 
-  describe('Password settings', () => {
+  describe('Password setting', () => {
     it('Should update inputs and submit', async () => {
       expect.assertions(3)
 
@@ -455,6 +532,78 @@ describe('Account settings page', () => {
       expect(screen.getByRole('alert')).toBeInTheDocument()
       await userEvent.click(screen.getByLabelText('Close alert'))
       expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+    })
+  })
+
+  describe('Linked account setting', () => {
+    it('Should start linking Discord flow', async () => {
+      expect.assertions(1)
+
+      render(
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <AccountSettings />
+        </MockedProvider>
+      )
+
+      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+
+      const connectBtn = await screen.findByTestId('connect-to-discord')
+
+      await userEvent.click(connectBtn)
+
+      expect(signIn).toBeCalled()
+    })
+
+    it('Should start unlinking Discord flow', async () => {
+      expect.assertions(1)
+
+      render(
+        <MockedProvider mocks={mocksWithDiscordData} addTypename={false}>
+          <AccountSettings />
+        </MockedProvider>
+      )
+
+      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+
+      const unlinkButton = await screen.findByTestId('unlink-discord')
+
+      await userEvent.click(unlinkButton)
+
+      expect(unlinkDiscordMock.result).toBeCalled()
+    })
+
+    it('Should capture exception when unlinking Discord', async () => {
+      expect.assertions(1)
+
+      render(
+        <MockedProvider mocks={mocksWithError} addTypename={false}>
+          <AccountSettings />
+        </MockedProvider>
+      )
+
+      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+
+      const unlinkButton = await screen.findByTestId('unlink-discord')
+
+      await userEvent.click(unlinkButton)
+
+      expect(Sentry.captureException).toBeCalled()
+    })
+
+    it('Should not call userInfo query if session username is missing', async () => {
+      expect.assertions(1)
+
+      useSession.mockReturnValue({
+        status: 'unauthenticated'
+      })
+
+      render(
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <AccountSettings />
+        </MockedProvider>
+      )
+
+      expect(await screen.findByText('Loading...')).toBeInTheDocument()
     })
   })
 })
