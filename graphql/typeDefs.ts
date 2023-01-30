@@ -103,6 +103,7 @@ export default gql`
       parentId: Int
       userPic: String
     ): ExerciseComment!
+    editExerciseComment(id: Int!, content: String!): ExerciseComment!
     createLesson(
       description: String!
       docUrl: String

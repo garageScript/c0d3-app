@@ -1,5 +1,6 @@
 import {
   MutationAddExerciseCommentArgs,
+  MutationEditExerciseCommentArgs,
   QueryGetExerciseCommentsArgs,
   QueryGetChildCommentsArgs
 } from '..'
@@ -42,5 +43,30 @@ export const addExerciseComment = async (
 
   return prisma.exerciseComment.create({
     data: { authorId, content, exerciseId, parentId, userPic }
+  })
+}
+
+export const editExerciseComment = async (
+  _parent: void,
+  { id, content }: MutationEditExerciseCommentArgs,
+  context: Context
+) => {
+  const authorId = context.req.user?.id
+  if (!authorId) throw new Error('User should be logged in')
+
+  const exerciseComment = await prisma.exerciseComment.findUnique({
+    where: {
+      id
+    }
+  })
+
+  if (exerciseComment?.authorId !== authorId)
+    throw new Error('Comment is not by user')
+
+  return prisma.exerciseComment.update({
+    where: {
+      id
+    },
+    data: { content }
   })
 }
