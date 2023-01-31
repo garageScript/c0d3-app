@@ -138,7 +138,7 @@ describe('editExerciseComment resolver tests', () => {
 
     await expect(
       editExerciseComment(undefined, mockArgs, mockContext)
-    ).rejects.toEqual(new Error('User should be logged in'))
+    ).rejects.toEqual(new Error('No user'))
   })
 
   test('Should throw error if authorID does not match original post', async () => {

@@ -5,6 +5,8 @@ import {
   QueryGetChildCommentsArgs
 } from '..'
 import { Context } from '../../@types/helpers'
+import type { ExerciseComment } from '@prisma/client'
+import { withUserContainer } from '../../containers/withUserContainer'
 import prisma from '../../prisma'
 
 export const getExerciseComments = async (
@@ -46,27 +48,31 @@ export const addExerciseComment = async (
   })
 }
 
-export const editExerciseComment = async (
-  _parent: void,
-  { id, content }: MutationEditExerciseCommentArgs,
-  context: Context
-) => {
-  const authorId = context.req.user?.id
-  if (!authorId) throw new Error('User should be logged in')
+export const editExerciseComment = withUserContainer<
+  Promise<ExerciseComment>,
+  MutationEditExerciseCommentArgs
+>(
+  async (
+    _parent: void,
+    { id, content }: MutationEditExerciseCommentArgs,
+    context: Context
+  ) => {
+    const authorId = context.req.user?.id
 
-  const exerciseComment = await prisma.exerciseComment.findUnique({
-    where: {
-      id
-    }
-  })
+    const exerciseComment = await prisma.exerciseComment.findUnique({
+      where: {
+        id
+      }
+    })
 
-  if (exerciseComment?.authorId !== authorId)
-    throw new Error('Comment is not by user')
+    if (exerciseComment?.authorId !== authorId)
+      throw new Error('Comment is not by user')
 
-  return prisma.exerciseComment.update({
-    where: {
-      id
-    },
-    data: { content }
-  })
-}
+    return prisma.exerciseComment.update({
+      where: {
+        id
+      },
+      data: { content }
+    })
+  }
+)
