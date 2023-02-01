@@ -15,9 +15,10 @@ export const EXERCISES_PATH = '/exercises'
 export const PRIMARY_COLOR_HEX = '#5440d8'
 
 // URL Constants
-export const DEPLOYMENT_URL = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : `http://localhost:${process.env.PORT || 3000}`
+const DEPLOYMENT_URL =
+  process.env.CLIENT_URL ??
+  process.env.VERCEL_URL ??
+  `http://localhost:${process.env.PORT ?? 3000}`
 
 export const CURRICULUM_URL = `${DEPLOYMENT_URL}${CURRICULUM_PATH}`
 export const REVIEW_URL = `${DEPLOYMENT_URL}${REVIEW_PATH}`
