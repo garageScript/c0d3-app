@@ -48,7 +48,8 @@ import {
 import {
   getExerciseComments,
   addExerciseComment,
-  getChildComments
+  getChildComments,
+  editExerciseComment
 } from './resolvers/exerciseCommentCrud'
 import { updateUserNames, updateUserPassword } from './resolvers/userDataCrud'
 
@@ -103,6 +104,7 @@ export default {
     removeExercise,
     unlinkDiscord,
     addExerciseComment,
+    editExerciseComment,
     updateUserNames,
     updateUserPassword
   }

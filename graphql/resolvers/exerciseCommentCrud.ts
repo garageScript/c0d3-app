@@ -1,9 +1,12 @@
 import {
   MutationAddExerciseCommentArgs,
+  MutationEditExerciseCommentArgs,
   QueryGetExerciseCommentsArgs,
   QueryGetChildCommentsArgs
 } from '..'
 import { Context } from '../../@types/helpers'
+import type { ExerciseComment } from '@prisma/client'
+import { withUserContainer } from '../../containers/withUserContainer'
 import prisma from '../../prisma'
 
 export const getExerciseComments = async (
@@ -44,3 +47,32 @@ export const addExerciseComment = async (
     data: { authorId, content, exerciseId, parentId, userPic }
   })
 }
+
+export const editExerciseComment = withUserContainer<
+  Promise<ExerciseComment>,
+  MutationEditExerciseCommentArgs
+>(
+  async (
+    _parent: void,
+    { id, content }: MutationEditExerciseCommentArgs,
+    context: Context
+  ) => {
+    const authorId = context.req.user?.id
+
+    const exerciseComment = await prisma.exerciseComment.findUnique({
+      where: {
+        id
+      }
+    })
+
+    if (exerciseComment?.authorId !== authorId)
+      throw new Error('Comment is not by user')
+
+    return prisma.exerciseComment.update({
+      where: {
+        id
+      },
+      data: { content }
+    })
+  }
+)
