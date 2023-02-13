@@ -15,5 +15,7 @@ export default (
       jwt,
       session
     },
-    secret: process.env.SESSION_SECRET
+    pages: {
+      signIn: '/login'
+    }
   })

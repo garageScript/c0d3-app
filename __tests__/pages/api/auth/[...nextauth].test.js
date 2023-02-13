@@ -26,7 +26,9 @@ describe('next-auth middleware', () => {
         jwt,
         session
       },
-      secret: process.env.SESSION_SECRET
+      pages: {
+        signIn: '/login'
+      }
     }
 
     res.status.mockReturnValue(res)
