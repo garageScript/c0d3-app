@@ -38,7 +38,7 @@
     "@primer/octicons-react": "17.12.0",
     "@prisma/client": "4",
     "@quixo3/prisma-session-store": "^3.1.10",
-    "@sentry/nextjs": "7.37.2",
+    "@sentry/nextjs": "7.38.0",
     "apollo-server-micro": "^2.26.1",
     "apollo3-cache-persist": "^0.14.1",
     "bcrypt": "5.0.0",
