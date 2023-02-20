@@ -3,6 +3,7 @@ import { NextApiResponse } from 'next'
 import { LoggedRequest } from '../../../@types/helpers'
 import { Request, Response } from 'express'
 import { signIn, providers, jwt, session } from '../../../helpers/nextAuth'
+import { LOGIN_PATH } from '../../../constants'
 
 export default (
   req: LoggedRequest & Request,
@@ -15,5 +16,7 @@ export default (
       jwt,
       session
     },
-    secret: process.env.SESSION_SECRET
+    pages: {
+      signIn: LOGIN_PATH
+    }
   })

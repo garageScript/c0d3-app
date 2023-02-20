@@ -16,6 +16,7 @@ import { signIn, SignInResponse } from 'next-auth/react'
 import Image from 'next/image'
 import { withGetApp, GetAppProps } from '../graphql'
 import AlreadyLoggedIn from '../components/AlreadyLoggedIn'
+import { CURRICULUM_PATH } from '../constants'
 
 type Values = {
   username: string
@@ -38,7 +39,7 @@ const initialValues = {
 }
 
 const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
-  if (!loginErrors || !loginErrors.length) return <></>
+  if (!loginErrors?.length) return <></>
   const errorMessages = loginErrors.map((message, idx) => {
     return <Alert key={idx} alert={{ id: -1, text: message, type: 'urgent' }} />
   })
@@ -99,7 +100,7 @@ export const Login: React.FC<LoginFormProps> = ({
         </div>
       </Form>
     </Formik>
-    <div className={`d-grid mb-3`}>
+    <div className="d-grid mb-3">
       <div className={styles.orContainer}>
         <hr className={styles.lineLeft} />
         <span>OR</span>
@@ -153,8 +154,11 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
 
     if (ok && !error) {
       window.localStorage.setItem('loggedIn', 'true')
-      const { next } = router.query
-      router.push(next ? (next as string) : '/curriculum')
+      const { next, callbackUrl } = router.query
+      const path = next || callbackUrl
+      const redirectTo = path || CURRICULUM_PATH
+
+      router.push(redirectTo as string)
     }
 
     setIsLoading(false)

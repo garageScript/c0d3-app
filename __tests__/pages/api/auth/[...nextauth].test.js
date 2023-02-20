@@ -4,6 +4,7 @@
 
 jest.mock('next-auth')
 jest.mock('../../../../helpers/nextAuth.ts')
+import { LOGIN_PATH } from '../../../../constants'
 import { providers, signIn, jwt, session } from '../../../../helpers/nextAuth'
 import nextAuthMiddleware from '../../../../pages/api/auth/[...nextauth]'
 import NextAuth from 'next-auth'
@@ -26,7 +27,9 @@ describe('next-auth middleware', () => {
         jwt,
         session
       },
-      secret: process.env.SESSION_SECRET
+      pages: {
+        signIn: LOGIN_PATH
+      }
     }
 
     res.status.mockReturnValue(res)
