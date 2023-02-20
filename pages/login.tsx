@@ -16,6 +16,7 @@ import { signIn, SignInResponse } from 'next-auth/react'
 import Image from 'next/image'
 import { withGetApp, GetAppProps } from '../graphql'
 import AlreadyLoggedIn from '../components/AlreadyLoggedIn'
+import { CURRICULUM_PATH } from '../constants'
 
 type Values = {
   username: string
@@ -155,7 +156,7 @@ const LoginPage: React.FC<GetAppProps> & WithLayout = ({
       window.localStorage.setItem('loggedIn', 'true')
       const { next, callbackUrl } = router.query
       const path = next || callbackUrl
-      const redirectTo = path || '/curriculum'
+      const redirectTo = path || CURRICULUM_PATH
 
       router.push(redirectTo as string)
     }
