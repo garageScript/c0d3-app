@@ -1930,7 +1930,7 @@
     lodash "~4.17.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/plugin-helpers@^4.0.0", "@graphql-codegen/plugin-helpers@^4.1.0":
+"@graphql-codegen/plugin-helpers@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-4.1.0.tgz#4b193c12d6bb458f1f2af48c200bc86617884f60"
   integrity sha512-xvSHJb9OGb5CODIls0AI1rCenLz+FuiaNPCsfHMCNsLDjOZK2u0jAQ9zUBdc/Wb+21YXZujBCc0Vm1QX+Zz0nw==
@@ -2018,22 +2018,6 @@
     "@graphql-tools/utils" "^8.8.0"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
-    dependency-graph "^0.11.0"
-    graphql-tag "^2.11.0"
-    parse-filepath "^1.0.2"
-    tslib "~2.4.0"
-
-"@graphql-codegen/visitor-plugin-common@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-3.0.0.tgz#527185eb3b1b06739702084bc6263713e167a166"
-  integrity sha512-ZoNlCmmkGClB137SpJT9og/nkihLN7Z4Ynl9Ir3OlbDuI20dbpyXsclpr9QGLcxEcfQeVfhGw9CooW7wZJJ8LA==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^4.0.0"
-    "@graphql-tools/optimize" "^1.3.0"
-    "@graphql-tools/relay-operation-optimizer" "^6.5.0"
-    "@graphql-tools/utils" "^9.0.0"
-    auto-bind "~4.0.0"
-    change-case-all "1.0.15"
     dependency-graph "^0.11.0"
     graphql-tag "^2.11.0"
     parse-filepath "^1.0.2"
@@ -10130,10 +10114,10 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
-gitdiff-parser@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/gitdiff-parser/-/gitdiff-parser-0.2.2.tgz#c393ce9caf385860d005ce758a5e03221a7fc6be"
-  integrity sha512-iUE5gWohbUm+hogg9c1Gg/pDoDyGlC15hTdsnW7AqZw9+F9mYAxfnMNDstFxuF+qjiZot2s+3L+K9CLdw1ttvA==
+gitdiff-parser@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/gitdiff-parser/-/gitdiff-parser-0.3.0.tgz#e6dbb07444405aee20835814a6787f072fd49425"
+  integrity sha512-vCQibCxIea4dxfuQEAzuStvGSLKeI+c48eBSEPgHy52TERXOQ/jKpp3ZTNcsuHpdarSZAcShdyXCpGNR/0GnLQ==
 
 github-slugger@^1.0.0:
   version "1.3.0"
