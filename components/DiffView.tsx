@@ -89,7 +89,8 @@ const DiffView: React.FC<{
     if (!prismLanguages.includes(language)) language = 'javascript'
     hunks.forEach(hunk => {
       hunk.changes.forEach(change => {
-        if (!change.isDelete) newValue.push(change.content)
+        // If it's not a line that's supposed to look delete
+        if (!(change.type === 'delete')) newValue.push(change.content)
       })
     })
     const syntaxHighlight = (str: string, n: number) => {
