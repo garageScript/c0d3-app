@@ -75,7 +75,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^3.2.0",
+    "@graphql-codegen/cli": "^3.2.1",
     "@graphql-codegen/typescript": "^3.0.0",
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.2.6",
     "@graphql-codegen/typescript-operations": "^3.0.1",
