@@ -118,7 +118,7 @@
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
-    "jest-mock-extended": "^3.0.2",
+    "jest-mock-extended": "^3.0.3",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
     "prisma": "4",
