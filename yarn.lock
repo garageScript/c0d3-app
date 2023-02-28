@@ -14813,10 +14813,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.47.0:
-  version "1.47.0"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.47.0.tgz#98b2f6d01f1cd80b14d19c70e468cfd1eb7da744"
-  integrity sha512-3b2HQUeDds/ZKwyHqHaSpecChmtz3s/tqfIB8qBKW4cbB5/4L/Qd3MArgFyRHMx/E+0Hmrdvx30L6fGvjMK7RQ==
+posthog-js@^1.50.0:
+  version "1.50.0"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.50.0.tgz#2aeb659803e0519a5399a46465480b45f23f07d1"
+  integrity sha512-zxC+qe37dthOqcGDqP7k2LjJHh88kExuPDLQ9sKV0Y/wBmjXURISQ0YM2NV8ic5gq2pnfxK6GdedT3/RNX+21A==
   dependencies:
     fflate "^0.4.1"
     rrweb-snapshot "^1.1.14"
