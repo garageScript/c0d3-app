@@ -2981,10 +2981,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.2.tgz#adea7b6953cbb34651766b0548468e743c6a2353"
   integrity sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==
 
-"@primer/octicons-react@18.1.0":
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-18.1.0.tgz#9125a1aae78f64ff2629a492e2a1b97bb3072129"
-  integrity sha512-tB/mkoA5PG7aqvc8agRwFlO63rlI/D4l+QsdRYjkkKfjc2lhtmIzGS/WzAcmIAbToa+qGRSokj2KC1tCG9gQBw==
+"@primer/octicons-react@18.2.0":
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-18.2.0.tgz#eeac37b3d42980a7edebd790b9373d22bdb89f72"
+  integrity sha512-taT0l99qztqU9NnNo0HCutm3mEjBmXcaqWlmCLvU2MrKVrMZF3HuwaguPhNl/rNk8+mpgtDSTTDPBlpI0MtPPA==
 
 "@prisma/client@4":
   version "4.0.0"
