@@ -15,7 +15,8 @@ import UPDATE_USER_PASSWORD from '../../../../graphql/queries/updateUserPassword
 import dummyLessonData from '../../../../__dummy__/lessonData'
 import dummySessionData from '../../../../__dummy__/sessionData'
 import dummyStarsData from '../../../../__dummy__/starsData'
-import { signIn, useSession } from 'next-auth/react'
+import { SessionContext, signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 import * as Sentry from '@sentry/browser'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
@@ -244,6 +245,8 @@ const passwordQueryInfoMessages = {
 }
 
 describe('Account settings page', () => {
+  const { push } = useRouter()
+
   const getInputs = index => [
     screen.getAllByTestId('input0')[index],
     screen.getAllByTestId('input1')[index],
@@ -269,6 +272,25 @@ describe('Account settings page', () => {
     )
 
     expect(await screen.findByText('Settings')).toBeInTheDocument()
+  })
+
+  it('Should redirect to /login if session status is unauthenticated', async () => {
+    expect.assertions(1)
+
+    useSession.mockReturnValueOnce({ status: 'unauthenticated', data: null })
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <AccountSettings />
+      </MockedProvider>
+    )
+
+    await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+
+    expect(push).toBeCalledWith({
+      pathname: '/login',
+      query: { next: expect.any(String) }
+    })
   })
 
   describe('Basic settings', () => {
