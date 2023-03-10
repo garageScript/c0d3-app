@@ -261,6 +261,7 @@ const LinkedAccountsSetting = ({
 }
 
 const AccountSettings = () => {
+  const router = useRouter()
   const { data: session, status } = useSession() as SessionContext
   const { data, loading: userInfoLoading } = useUserInfoQuery({
     variables: {
@@ -271,7 +272,15 @@ const AccountSettings = () => {
   const loading = userInfoLoading || status === 'loading'
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
-  if (loading || !data) {
+  // prevents the page UI from showing if unauthenticated
+  if (loading || status === 'unauthenticated') {
+    if (status === 'unauthenticated') {
+      router.push({
+        pathname: '/login',
+        query: { next: router.asPath }
+      })
+    }
+
     return <LoadingSpinner />
   }
 
