@@ -22,7 +22,9 @@ import { Button } from '../../../components/theme/Button'
 import Image from 'next/image'
 import { signIn, useSession } from 'next-auth/react'
 import { SessionContext } from '../../../@types/auth'
+import { SessionStatus } from '../../../constants/auth-constants'
 import { useRouter } from 'next/router'
+import useRedirectUnauthenticated from '../../../helpers/useRedirectUnauthenticated'
 
 const basicValues: (
   username?: string,
@@ -261,7 +263,6 @@ const LinkedAccountsSetting = ({
 }
 
 const AccountSettings = () => {
-  const router = useRouter()
   const { data: session, status } = useSession() as SessionContext
   const { data, loading: userInfoLoading } = useUserInfoQuery({
     variables: {
@@ -269,18 +270,14 @@ const AccountSettings = () => {
     }
   })
 
-  const loading = userInfoLoading || status === 'loading'
+  const loading = userInfoLoading || status === SessionStatus.Loading
+  const unauthenticated = status === SessionStatus.unauthenticated
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
-  // prevents the page UI from showing if unauthenticated
-  if (loading || status === 'unauthenticated') {
-    if (status === 'unauthenticated') {
-      router.push({
-        pathname: '/login',
-        query: { next: router.asPath }
-      })
-    }
+  useRedirectUnauthenticated(unauthenticated)
 
+  // prevents the page UI from showing if unauthenticated
+  if (loading || unauthenticated) {
     return <LoadingSpinner />
   }
 
