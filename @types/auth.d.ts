@@ -1,6 +1,6 @@
 import { Submission } from '@prisma/client'
 import { DefaultSession } from 'next-auth'
-import { SessionContextValue } from 'next-auth/react'
+import { SessionStatus } from './auth'
 
 export interface Session extends DefaultSession {
   lessonStatus: {
@@ -22,18 +22,18 @@ export declare type SessionContext<R extends boolean = false> = R extends true
   ?
       | {
           data: Session
-          status: 'authenticated'
+          status: SessionStatus.Authenticated
         }
       | {
           data: null
-          status: 'loading'
+          status: SessionStatus.Loading
         }
   :
       | {
           data: Session
-          status: 'authenticated'
+          status: SessionStatus.Authenticated
         }
       | {
           data: null
-          status: 'unauthenticated' | 'loading'
+          status: SessionStatus.unauthenticated | SessionStatus.Loading
         }
