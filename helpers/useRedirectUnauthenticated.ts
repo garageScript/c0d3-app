@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { LOGIN_PATH } from '../constants'
 
@@ -10,14 +9,12 @@ import { LOGIN_PATH } from '../constants'
 const useRedirectUnauthenticated = (shouldRedirect: boolean) => {
   const router = useRouter()
 
-  useEffect(() => {
-    if (shouldRedirect) {
-      router.push({
-        pathname: LOGIN_PATH,
-        query: { next: router.asPath }
-      })
-    }
-  }, [shouldRedirect, router])
+  if (shouldRedirect) {
+    router.push({
+      pathname: LOGIN_PATH,
+      query: { next: router.asPath }
+    })
+  }
 }
 
 export default useRedirectUnauthenticated
