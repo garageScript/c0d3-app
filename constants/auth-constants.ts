@@ -1,5 +1,5 @@
 export enum SessionStatus {
-  Authenticated = 'unauthenticated',
+  Authenticated = 'authenticated',
   Loading = 'loading',
   unauthenticated = 'unauthenticated'
 }
