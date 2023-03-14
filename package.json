@@ -48,7 +48,7 @@
     "discord.js": "^12.5.3",
     "express-session": "^1.17.3",
     "formik": "^2.2.8",
-    "gitdiff-parser": "0.3.0",
+    "gitdiff-parser": "0.3.1",
     "graphql": "^15.8.0",
     "graphql-request": "^5.2.0",
     "gray-matter": "^4.0.3",
