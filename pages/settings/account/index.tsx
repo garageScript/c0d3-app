@@ -7,7 +7,7 @@ import {
   useUnlinkDiscordMutation,
   useUpdateUserNamesMutation,
   useUpdateUserPasswordMutation,
-  useUserInfoQuery
+  useUserInfoLazyQuery
 } from '../../../graphql/index'
 import LoadingSpinner from '../../../components/LoadingSpinner'
 import styles from '../../../scss/accountSettings.module.scss'
@@ -264,17 +264,25 @@ const LinkedAccountsSetting = ({
 
 const AccountSettings = () => {
   const { data: session, status } = useSession() as SessionContext
-  const { data, loading: userInfoLoading } = useUserInfoQuery({
-    variables: {
-      username: session?.user.username || ''
-    }
-  })
+  const [userInfoQuery, { data, loading: userInfoLoading }] =
+    useUserInfoLazyQuery()
 
   const loading = userInfoLoading || status === SessionStatus.Loading
+  const authenticated = status === SessionStatus.Authenticated
   const unauthenticated = status === SessionStatus.unauthenticated
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
   useRedirectUnauthenticated(unauthenticated)
+
+  useEffect(() => {
+    if (authenticated) {
+      userInfoQuery({
+        variables: {
+          username: session?.user.username || ''
+        }
+      })
+    }
+  }, [status])
 
   // prevents the page UI from showing if unauthenticated
   if (loading || unauthenticated) {
