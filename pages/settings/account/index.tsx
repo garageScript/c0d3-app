@@ -273,7 +273,7 @@ const AccountSettings = () => {
 
   const loading = userInfoLoading || status === SessionStatus.Loading
   const authenticated = status === SessionStatus.Authenticated
-  const unauthenticated = status === SessionStatus.unauthenticated
+  const unauthenticated = status === SessionStatus.Unauthenticated
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
   useEffect(() => {

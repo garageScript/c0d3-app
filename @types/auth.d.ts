@@ -35,5 +35,5 @@ export declare type SessionContext<R extends boolean = false> = R extends true
         }
       | {
           data: null
-          status: SessionStatus.unauthenticated | SessionStatus.Loading
+          status: SessionStatus.Unauthenticated | SessionStatus.Loading
         }
