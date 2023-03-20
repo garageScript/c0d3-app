@@ -6,10 +6,10 @@ import { LOGIN_PATH } from '../constants'
  * With next query param to redirect back to this page after login.
  * @param {boolean} shouldRedirect Condition for redirection
  */
-const useRedirectUnauthenticated = (shouldRedirect: boolean) => {
-  const router = useRouter()
-
+const redirectUnauthenticated = (shouldRedirect: boolean) => {
   if (shouldRedirect) {
+    const router = useRouter()
+
     router.push({
       pathname: LOGIN_PATH,
       query: { next: router.asPath }
@@ -17,4 +17,4 @@ const useRedirectUnauthenticated = (shouldRedirect: boolean) => {
   }
 }
 
-export default useRedirectUnauthenticated
+export default redirectUnauthenticated

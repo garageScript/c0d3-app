@@ -1,15 +1,15 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import useRedirectUnauthenticated from './useRedirectUnauthenticated'
+import redirectUnauthenticated from './redirectUnauthenticated'
 import { LOGIN_PATH } from '../constants'
 import { render } from '@testing-library/react'
 
 const DummyComponent = () => {
-  useRedirectUnauthenticated(true)
+  redirectUnauthenticated(true)
   return <></>
 }
 
-describe('useRedirectUnauthenticated helper', () => {
+describe('redirectUnauthenticated helper', () => {
   const { push, asPath } = useRouter()
 
   it('Should redirect to /login if shouldRedirect is true', () => {
