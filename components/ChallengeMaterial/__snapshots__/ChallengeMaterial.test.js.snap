@@ -57,7 +57,7 @@ exports[`Curriculum challenge page Should render first challenge by default when
             Greater than 5
           </h1>
           <div
-            class="bg-light p-3 mt-3"
+            class="pt-3 pb-3 mt-3"
             data-testid="challenge-question-description"
           >
             <span>
@@ -130,7 +130,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
             Greater than 5
           </h1>
           <div
-            class="bg-light p-3 mt-3"
+            class="pt-3 pb-3 mt-3"
             data-testid="challenge-question-description"
           >
             <span>

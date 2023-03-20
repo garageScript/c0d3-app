@@ -2419,7 +2419,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
           Greater than 5
         </h1>
         <div
-          className="bg-light p-3 mt-3"
+          className="pt-3 pb-3 mt-3"
           data-testid="challenge-question-description"
         >
           <span>
@@ -2628,7 +2628,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
           Sum of 2 Numbers
         </h1>
         <div
-          className="bg-light p-3 mt-3"
+          className="pt-3 pb-3 mt-3"
           data-testid="challenge-question-description"
         >
           <span>
@@ -3500,7 +3500,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
           Greater than 5
         </h1>
         <div
-          className="bg-light p-3 mt-3"
+          className="pt-3 pb-3 mt-3"
           data-testid="challenge-question-description"
         >
           <span>
@@ -4325,7 +4325,7 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
       Greater than 5
     </h1>
     <div
-      className="bg-light p-3 mt-3"
+      className="pt-3 pb-3 mt-3"
       data-testid="challenge-question-description"
     >
       <span>
@@ -30484,7 +30484,9 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
   style={
     Object {
       "backgroundColor": "#f7f6f3",
+      "borderRadius": 4,
       "color": "rgb(36, 41, 46)",
+      "fontSize": 14,
       "marginBottom": 0,
       "padding": "20px 20px 0 20px",
     }

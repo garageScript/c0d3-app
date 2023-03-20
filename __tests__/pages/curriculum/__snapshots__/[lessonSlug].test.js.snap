@@ -444,7 +444,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                     Given a binary tree, find the largest value
                   </h1>
                   <div
-                    class="bg-light p-3 mt-3"
+                    class="pt-3 pb-3 mt-3"
                     data-testid="challenge-question-description"
                   >
                     <div>
@@ -457,11 +457,262 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                           src="https://c0d3.com/apis/draw?tree={%22v%22:30,%22children%22:[{%22v%22:50},{%22v%22:40}]}"
                         />
                       </p>
-                      <pre>
-                        <code>
-                          const a = {val: 30, right: {val: 40}, left: {val: 50}};
-solution(a); // should return 50
-                        </code>
+                      <pre
+                        class="prism-code language-jsx"
+                        style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px;"
+                      >
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token keyword"
+                            style="color: rgb(0, 119, 170);"
+                          >
+                            const
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             a 
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            =
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            {
+                          </span>
+                          <span
+                            class="token literal-property property"
+                          >
+                            val
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            :
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token number"
+                          >
+                            30
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            ,
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token literal-property property"
+                          >
+                            right
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            :
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            {
+                          </span>
+                          <span
+                            class="token literal-property property"
+                          >
+                            val
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            :
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token number"
+                          >
+                            40
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            }
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            ,
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token literal-property property"
+                          >
+                            left
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            :
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            {
+                          </span>
+                          <span
+                            class="token literal-property property"
+                          >
+                            val
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            :
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token number"
+                          >
+                            50
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            }
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            }
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            ;
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                          />
+                          <span
+                            class="token function"
+                            style="color: rgb(221, 74, 104);"
+                          >
+                            solution
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                            a
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            )
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            ;
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token comment"
+                            style="color: rgb(112, 128, 144);"
+                          >
+                            // should return 50
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                            style="display: inline-block;"
+                          >
+                            
+
+                          </span>
+                        </div>
                       </pre>
                     </div>
                   </div>
@@ -1142,7 +1393,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                     Incremental Closure
                   </h1>
                   <div
-                    class="bg-light p-3 mt-3"
+                    class="pt-3 pb-3 mt-3"
                     data-testid="challenge-question-description"
                   >
                     <div>
@@ -1155,16 +1406,352 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                       <p>
                         Example:
                       </p>
-                      <pre>
-                        <code>
-                          let resf = solution(5)
-result = resf() // 6
-result = resf() // 7
+                      <pre
+                        class="prism-code language-jsx"
+                        style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px;"
+                      >
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token keyword"
+                            style="color: rgb(0, 119, 170);"
+                          >
+                            let
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             resf 
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            =
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token function"
+                            style="color: rgb(221, 74, 104);"
+                          >
+                            solution
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token number"
+                          >
+                            5
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            )
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                          >
+                            result 
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            =
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token function"
+                            style="color: rgb(221, 74, 104);"
+                          >
+                            resf
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            )
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token comment"
+                            style="color: rgb(112, 128, 144);"
+                          >
+                            // 6
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                          >
+                            result 
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            =
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token function"
+                            style="color: rgb(221, 74, 104);"
+                          >
+                            resf
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            )
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token comment"
+                            style="color: rgb(112, 128, 144);"
+                          >
+                            // 7
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                            style="display: inline-block;"
+                          >
+                            
 
-resf = solution(-5)
-result = resf() // -4
-result = resf() // -3
-                        </code>
+                          </span>
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                          >
+                            resf 
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            =
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token function"
+                            style="color: rgb(221, 74, 104);"
+                          >
+                            solution
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            -
+                          </span>
+                          <span
+                            class="token number"
+                          >
+                            5
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            )
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                          >
+                            result 
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            =
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token function"
+                            style="color: rgb(221, 74, 104);"
+                          >
+                            resf
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            )
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token comment"
+                            style="color: rgb(112, 128, 144);"
+                          >
+                            // -4
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                          >
+                            result 
+                          </span>
+                          <span
+                            class="token operator"
+                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
+                          >
+                            =
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token function"
+                            style="color: rgb(221, 74, 104);"
+                          >
+                            resf
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            (
+                          </span>
+                          <span
+                            class="token punctuation"
+                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
+                          >
+                            )
+                          </span>
+                          <span
+                            class="token plain"
+                          >
+                             
+                          </span>
+                          <span
+                            class="token comment"
+                            style="color: rgb(112, 128, 144);"
+                          >
+                            // -3
+                          </span>
+                          <span
+                            class="token plain"
+                          />
+                        </div>
+                        <div
+                          class="token-line"
+                          style="color: rgb(36, 41, 46);"
+                        >
+                          <span
+                            class="token plain"
+                            style="display: inline-block;"
+                          >
+                            
+
+                          </span>
+                        </div>
                       </pre>
                     </div>
                   </div>
