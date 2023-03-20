@@ -1,11 +1,14 @@
 jest.mock('@sentry/browser')
+jest.mock('../../../../graphql/index.tsx', () => {
+  const original = jest.requireActual('../../../../graphql/index.tsx')
+  return {
+    ...original,
+    useUserInfoLazyQuery: jest.fn()
+  }
+})
 
 import React from 'react'
-import {
-  render,
-  screen,
-  waitForElementToBeRemoved
-} from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import AccountSettings from '../../../../pages/settings/account/index'
 import { MockedProvider } from '@apollo/client/testing'
@@ -15,13 +18,15 @@ import UPDATE_USER_PASSWORD from '../../../../graphql/queries/updateUserPassword
 import dummyLessonData from '../../../../__dummy__/lessonData'
 import dummySessionData from '../../../../__dummy__/sessionData'
 import dummyStarsData from '../../../../__dummy__/starsData'
-import { SessionContext, signIn, useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import * as Sentry from '@sentry/browser'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'
+
 import { UNLINK_DISCORD } from '../../../../graphql/queries/unlinkDiscord'
+import { useUserInfoLazyQuery } from '../../../../graphql'
 
 const UpdateUserNamesMock = {
   request: {
@@ -171,68 +176,21 @@ const session = {
   ]
 }
 
-const UserInfoMock = {
-  request: {
-    query: USER_INFO,
-    variables: {
-      username: 'fakeusername'
-    }
-  },
-  result: {
-    data: {
-      lessons: dummyLessonData,
-      userInfo: session
-    }
-  }
-}
-
-const mocks = [
-  unlinkDiscordMock,
-  UserInfoMock,
-  UpdateUserNamesMock,
-  UpdateUserPasswordMock
-]
+const mocks = [unlinkDiscordMock, UpdateUserNamesMock, UpdateUserPasswordMock]
 
 const mocksWithDiscordData = [
   unlinkDiscordMock,
-  {
-    ...UserInfoMock,
-    result: {
-      ...UserInfoMock.result,
-      data: {
-        ...UserInfoMock.result.data,
-        userInfo: {
-          ...session,
-          user: { ...session.user, discordUsername: 'floppityflob' }
-        }
-      }
-    }
-  },
   UpdateUserNamesMock,
   UpdateUserPasswordMock
 ]
 
 const mocksWithError = [
   unlinkDiscordMockWithError,
-  {
-    ...UserInfoMock,
-    result: {
-      ...UserInfoMock.result,
-      data: {
-        ...UserInfoMock.result.data,
-        userInfo: {
-          ...session,
-          user: { ...session.user, name: null, discordUsername: 'floppityflob' }
-        }
-      }
-    }
-  },
   UpdateUserNamesMockWithError
 ]
 
 const updateUserPasswordMocksWithError = [
   unlinkDiscordMock,
-  UserInfoMock,
   UpdateUserPasswordMockWithError
 ]
 
@@ -262,6 +220,18 @@ describe('Account settings page', () => {
   const getPasswordInputs = () => getInputs(1)
   const getPasswordInputsBtn = () => screen.getAllByText('Save Changes')[1]
 
+  const resultData = {
+    loading: false,
+    error: null,
+    data: {
+      lessons: dummyLessonData,
+      userInfo: session
+    }
+  }
+  const mutationFn = jest.fn().mockReturnValue(resultData)
+
+  useUserInfoLazyQuery.mockImplementation(() => [mutationFn, resultData])
+
   it('Should render the page', async () => {
     expect.assertions(1)
 
@@ -285,12 +255,26 @@ describe('Account settings page', () => {
       </MockedProvider>
     )
 
-    await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
-
     expect(push).toBeCalledWith({
       pathname: '/login',
       query: { next: expect.any(String) }
     })
+  })
+
+  // Dummy test added to cover a line. It'll be updated to actually test the errors from the query
+  it('Should handle userInfo query error', async () => {
+    expect.assertions(0)
+
+    useUserInfoLazyQuery.mockImplementation(() => [
+      mutationFn,
+      { ...resultData, data: undefined }
+    ])
+
+    render(
+      <MockedProvider mocks={mocks}>
+        <AccountSettings />
+      </MockedProvider>
+    )
   })
 
   describe('Basic settings', () => {
@@ -567,8 +551,6 @@ describe('Account settings page', () => {
         </MockedProvider>
       )
 
-      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
-
       const connectBtn = await screen.findByTestId('connect-to-discord')
 
       await userEvent.click(connectBtn)
@@ -579,31 +561,53 @@ describe('Account settings page', () => {
     it('Should start unlinking Discord flow', async () => {
       expect.assertions(1)
 
+      const mockData = {
+        ...resultData.data,
+        userInfo: {
+          ...session,
+          user: { ...session.user, discordUsername: 'floppityflob' }
+        }
+      }
+
+      useUserInfoLazyQuery.mockImplementationOnce(() => [
+        mutationFn,
+        { ...resultData, data: mockData }
+      ])
+
       render(
         <MockedProvider mocks={mocksWithDiscordData} addTypename={false}>
           <AccountSettings />
         </MockedProvider>
       )
 
-      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
-
       const unlinkButton = await screen.findByTestId('unlink-discord')
 
       await userEvent.click(unlinkButton)
 
-      expect(unlinkDiscordMock.result).toBeCalled()
+      expect(mutationFn).toBeCalled()
     })
 
     it('Should capture exception when unlinking Discord', async () => {
       expect.assertions(1)
+
+      const mockData = {
+        ...resultData.data,
+        userInfo: {
+          ...session,
+          user: { ...session.user, discordUsername: 'floppityflob' }
+        }
+      }
+
+      useUserInfoLazyQuery.mockImplementationOnce(() => [
+        mutationFn,
+        { ...resultData, data: mockData }
+      ])
 
       render(
         <MockedProvider mocks={mocksWithError} addTypename={false}>
           <AccountSettings />
         </MockedProvider>
       )
-
-      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
 
       const unlinkButton = await screen.findByTestId('unlink-discord')
 

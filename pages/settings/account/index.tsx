@@ -24,7 +24,7 @@ import { signIn, useSession } from 'next-auth/react'
 import { SessionContext } from '../../../@types/auth'
 import { SessionStatus } from '../../../constants/auth-constants'
 import { useRouter } from 'next/router'
-import useRedirectUnauthenticated from '../../../helpers/useRedirectUnauthenticated'
+import redirectUnauthenticated from '../../../helpers/redirectUnauthenticated'
 
 const basicValues: (
   username?: string,
@@ -41,8 +41,12 @@ type BasicSettingsProps = {
   name?: string
   getAppData?: GetAppQuery
 }
-const BasicSettings = ({ username, name, getAppData }: BasicSettingsProps) => {
-  const [firstName, lastName] = name?.split(' ') || []
+const BasicSettings = ({
+  username,
+  name = '',
+  getAppData
+}: BasicSettingsProps) => {
+  const [firstName, lastName] = name.split(' ')
 
   const [options, setOptions] = useState(
     basicValues(username, firstName, lastName)
@@ -272,13 +276,13 @@ const AccountSettings = () => {
   const unauthenticated = status === SessionStatus.unauthenticated
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
-  useRedirectUnauthenticated(unauthenticated)
-
   useEffect(() => {
-    if (authenticated) {
+    redirectUnauthenticated(unauthenticated)
+
+    if (authenticated && session) {
       userInfoQuery({
         variables: {
-          username: session?.user.username || ''
+          username: session.user.username
         }
       })
     }

@@ -16,7 +16,7 @@ import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 import { GlobalContext } from '../../helpers/globalContext'
 import Alert from '../../components/Alert'
-import useRedirectUnauthenticated from '../../helpers/useRedirectUnauthenticated'
+import redirectUnauthenticated from '../../helpers/redirectUnauthenticated'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
@@ -39,9 +39,8 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const slug = router.query.lesson as string
   const currentLesson = lessons.find(lesson => lesson.slug === slug)
 
-  useRedirectUnauthenticated(!session?.user)
-
   useEffect(() => {
+    redirectUnauthenticated(!session?.user)
     session && context.setContext(session)
   }, [session])
 
