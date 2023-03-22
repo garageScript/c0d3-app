@@ -30487,6 +30487,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       "borderRadius": 4,
       "color": "rgb(36, 41, 46)",
       "fontSize": 14,
+      "marginBlock": 20,
       "marginBottom": 0,
       "padding": "20px 20px 0 20px",
     }
