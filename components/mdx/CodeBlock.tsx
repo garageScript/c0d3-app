@@ -22,7 +22,14 @@ const CodeBlock: React.FC<Props> = ({ children, className }) => {
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={className}
-          style={{ ...style, padding: '20px 20px 0 20px', marginBottom: 0 }}
+          style={{
+            ...style,
+            padding: '20px 20px 0 20px',
+            marginBottom: 0,
+            fontSize: 14,
+            borderRadius: 4,
+            marginBlock: 20
+          }}
         >
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
