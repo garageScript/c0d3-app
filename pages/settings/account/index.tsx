@@ -7,7 +7,7 @@ import {
   useUnlinkDiscordMutation,
   useUpdateUserNamesMutation,
   useUpdateUserPasswordMutation,
-  useUserInfoQuery
+  useUserInfoLazyQuery
 } from '../../../graphql/index'
 import LoadingSpinner from '../../../components/LoadingSpinner'
 import styles from '../../../scss/accountSettings.module.scss'
@@ -22,7 +22,9 @@ import { Button } from '../../../components/theme/Button'
 import Image from 'next/image'
 import { signIn, useSession } from 'next-auth/react'
 import { SessionContext } from '../../../@types/auth'
+import { SessionStatus } from '../../../constants/auth-constants'
 import { useRouter } from 'next/router'
+import redirectUnauthenticated from '../../../helpers/redirectUnauthenticated'
 
 const basicValues: (
   username?: string,
@@ -39,8 +41,12 @@ type BasicSettingsProps = {
   name?: string
   getAppData?: GetAppQuery
 }
-const BasicSettings = ({ username, name, getAppData }: BasicSettingsProps) => {
-  const [firstName, lastName] = name?.split(' ') || []
+const BasicSettings = ({
+  username,
+  name = '',
+  getAppData
+}: BasicSettingsProps) => {
+  const [firstName, lastName] = name.split(' ')
 
   const [options, setOptions] = useState(
     basicValues(username, firstName, lastName)
@@ -262,16 +268,28 @@ const LinkedAccountsSetting = ({
 
 const AccountSettings = () => {
   const { data: session, status } = useSession() as SessionContext
-  const { data, loading: userInfoLoading } = useUserInfoQuery({
-    variables: {
-      username: session?.user.username || ''
-    }
-  })
+  const [userInfoQuery, { data, loading: userInfoLoading }] =
+    useUserInfoLazyQuery()
 
-  const loading = userInfoLoading || status === 'loading'
+  const loading = userInfoLoading || status === SessionStatus.Loading
+  const authenticated = status === SessionStatus.Authenticated
+  const unauthenticated = status === SessionStatus.Unauthenticated
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
-  if (loading || !data) {
+  useEffect(() => {
+    redirectUnauthenticated(unauthenticated)
+
+    if (authenticated && session) {
+      userInfoQuery({
+        variables: {
+          username: session.user.username
+        }
+      })
+    }
+  }, [status])
+
+  // prevents the page UI from showing if unauthenticated
+  if (loading || unauthenticated) {
     return <LoadingSpinner />
   }
 

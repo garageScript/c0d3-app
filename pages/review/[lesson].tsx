@@ -16,6 +16,7 @@ import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 import { GlobalContext } from '../../helpers/globalContext'
 import Alert from '../../components/Alert'
+import redirectUnauthenticated from '../../helpers/redirectUnauthenticated'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
@@ -37,26 +38,23 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const context = useContext(GlobalContext)
   const slug = router.query.lesson as string
   const currentLesson = lessons.find(lesson => lesson.slug === slug)
+
   useEffect(() => {
+    redirectUnauthenticated(!session?.user)
     session && context.setContext(session)
   }, [session])
+
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: currentLesson?.id },
     skip: !currentLesson
   })
-  if (loading) {
+
+  if (loading || !session?.user) {
     return <LoadingSpinner />
-  }
-  if (!currentLesson) {
-    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
   }
 
-  if (!session?.user) {
-    router.push({
-      pathname: '/login',
-      query: { next: router.asPath }
-    })
-    return <LoadingSpinner />
+  if (!currentLesson) {
+    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
   }
 
   if (
@@ -67,6 +65,7 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     router.push('/curriculum')
     return <LoadingSpinner />
   }
+
   const lessonSubmissions: Submission[] = data
     ? data.submissions.filter(
         (submission: Submission) =>
@@ -74,6 +73,7 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
           submission.status !== SubmissionStatus.NeedMoreWork
       )
     : []
+
   return (
     <div>
       <Layout title={`Review - ${currentLesson.title}`}>
