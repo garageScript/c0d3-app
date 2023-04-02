@@ -219,14 +219,23 @@
       "contributions": [
         "code"
       ]
-     },
-     {
+    },
+    {
       "login": "bryanjenningz",
       "name": "Bryan Jennings",
       "avatar_url": "https://avatars.githubusercontent.com/u/7637655?v=4",
       "profile": "https://github.com/bryanjenningz",
       "contributions": [
         "review"
+      ]
+    },
+    {
+      "login": "scotthallock",
+      "name": "Scott Hallock",
+      "avatar_url": "https://avatars.githubusercontent.com/u/121207468?v=4",
+      "profile": "https://github.com/scotthallock",
+      "contributions": [
+        "code"
       ]
     }
   ],
