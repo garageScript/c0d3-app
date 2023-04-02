@@ -1,7 +1,7 @@
 # c0d3.com
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -74,8 +74,9 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/HS-90"><img src="https://avatars.githubusercontent.com/u/77421872?v=4?s=100" width="100px;" alt="HS-90"/><br /><sub><b>HS-90</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=HS-90" title="Code">💻</a></td>
     </tr>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SlyBouhafs"><img src="https://avatars.githubusercontent.com/u/1410462?v=4?s=100" width="100px;" alt="Sly"/><br /><sub><b>Sly</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=SlyBouhafs" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/pulls?q=is%3Apr+reviewed-by%3ASlyBouhafs" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SlyBouhafs"><img src="https://avatars.githubusercontent.com/u/1410462?v=4?s=100" width="100px;" alt="Sly"/><br /><sub><b>Sly</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=SlyBouhafs" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/bryanjenningz"><img src="https://avatars.githubusercontent.com/u/7637655?v=4?s=100" width="100px;" alt="Bryan Jennings"/><br /><sub><b>Bryan Jennings</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/pulls?q=is%3Apr+reviewed-by%3Abryanjenningz" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/scotthallock"><img src="https://avatars.githubusercontent.com/u/121207468?v=4?s=100" width="100px;" alt="Scott Hallock"/><br /><sub><b>Scott Hallock</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=scotthallock" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
