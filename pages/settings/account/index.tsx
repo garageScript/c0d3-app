@@ -276,9 +276,9 @@ const AccountSettings = () => {
   const unauthenticated = status === SessionStatus.Unauthenticated
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
-  useEffect(() => {
-    redirectUnauthenticated(unauthenticated)
+  redirectUnauthenticated(unauthenticated)
 
+  useEffect(() => {
     if (authenticated && session) {
       userInfoQuery({
         variables: {
