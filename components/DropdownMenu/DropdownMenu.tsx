@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
-import styles from './dropDown.module.scss'
+import styles from './dropdownMenu.module.scss'
 import { DropDirection } from 'react-bootstrap/esm/DropdownContext'
 import { ChevronRightIcon } from '@primer/octicons-react'
 
