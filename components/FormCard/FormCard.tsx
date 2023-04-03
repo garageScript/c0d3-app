@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Button, NewButton } from './theme/Button'
-import { MdInput } from './MdInput'
-import { DropdownMenu, Item } from './DropdownMenu'
+import { Button, NewButton } from '../theme/Button'
+import { MdInput } from '../MdInput'
+import { DropdownMenu, Item } from '../DropdownMenu'
 import _ from 'lodash'
-import styles from '../scss/formCard.module.scss'
+import styles from './formCard.module.scss'
 import { AlertFillIcon } from '@primer/octicons-react'
 
 export const DROP_DOWN = 'DROP_DOWN'
