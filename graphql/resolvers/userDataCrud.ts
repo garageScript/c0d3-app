@@ -20,7 +20,7 @@ export const updateUserNames = withUserContainer<
     }
   })
 
-  if (usernameAlreadyUsed) {
+  if (usernameAlreadyUsed && usernameAlreadyUsed.id !== req?.user?.id) {
     throw new Error('Username is already used')
   }
 
