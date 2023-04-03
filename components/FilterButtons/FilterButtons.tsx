@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './theme/Button'
+import { Button } from '../theme/Button'
 
 type FilterProps = {
   options: string[]
@@ -8,7 +8,7 @@ type FilterProps = {
   theme?: 'success' | 'danger' | 'primary' | undefined
 }
 
-export const FilterButtons: React.FC<FilterProps> = ({
+const FilterButtons: React.FC<FilterProps> = ({
   options,
   onClick,
   currentOption,
@@ -38,3 +38,5 @@ export const FilterButtons: React.FC<FilterProps> = ({
     </div>
   )
 }
+
+export default FilterButtons

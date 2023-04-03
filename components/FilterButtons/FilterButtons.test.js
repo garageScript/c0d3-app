@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import { FilterButtons } from './FilterButtons'
+import FilterButtons from './FilterButtons'
 
 let testBtnOnClick = ''
 
