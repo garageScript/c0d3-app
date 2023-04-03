@@ -1,6 +1,6 @@
 @use 'sass:color';
-@use '_variables.module.scss';
-@import 'colors.module.scss';
+@use '../../scss/variables.module.scss';
+@import '../../scss/colors.module.scss';
 
 .dropdown {
   display: flex;

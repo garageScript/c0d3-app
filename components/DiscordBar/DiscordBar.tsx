@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from '../scss/discordBar.module.scss'
+import styles from './discordBar.module.scss'
 type Member = {
   id: string
   username: string
