@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Button } from './theme/Button'
+import { Button } from '../theme/Button'
 import { AlertIcon, CheckIcon, CopyIcon } from '@primer/octicons-react'
 import * as Sentry from '@sentry/react'
-import { ColorTypes } from './theme/colors'
+import { ColorTypes } from '../theme/colors'
 
 enum State {
   NotCopied,
