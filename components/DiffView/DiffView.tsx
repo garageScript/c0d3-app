@@ -3,10 +3,10 @@ import gitDiffParser, { File } from 'gitdiff-parser'
 import Prism from 'prismjs'
 import ReactDiffViewer, { ReactDiffViewerStylesOverride } from 'c0d3-diff'
 import _ from 'lodash'
-import CommentBox from './CommentBox'
-import { Comment, Submission, SubmissionStatus } from '../graphql'
-import CopyButton from './CopyButton'
-import scssStyles from '../scss/diffView.module.scss'
+import CommentBox from '../CommentBox'
+import { Comment, Submission, SubmissionStatus } from '../../graphql'
+import CopyButton from '../CopyButton'
+import scssStyles from './diffView.module.scss'
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 

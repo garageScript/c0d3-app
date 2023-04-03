@@ -1,13 +1,13 @@
-import '../__mocks__/useIsMac.mock'
-import '../__mocks__/useBreakpoint.mock'
+import '../../__mocks__/useIsMac.mock'
+import '../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import DiffView from './DiffView'
-import { SubmissionStatus } from '../graphql'
+import { SubmissionStatus } from '../../graphql'
 import { MockedProvider } from '@apollo/client/testing'
-import getPreviousSubmissions from '../__dummy__/getPreviousSubmissionsData'
+import getPreviousSubmissions from '../../__dummy__/getPreviousSubmissionsData'
 
 describe('DiffView component', () => {
   const dummySumissions = getPreviousSubmissions.getPreviousSubmissions
