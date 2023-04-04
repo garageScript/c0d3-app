@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { User, useSetStarMutation } from '../graphql/index'
-import withQueryLoader, { QueryDataProps } from '../containers/withQueryLoader'
-import { Button } from '../components/theme/Button'
-import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
-import { ModalCard, ModalCardProps } from './ModalCard'
-import { Thanks } from './Thanks'
-import styles from '../scss/giveStarCard.module.scss'
+import { User, useSetStarMutation } from '../../graphql/index'
+import withQueryLoader, {
+  QueryDataProps
+} from '../../containers/withQueryLoader'
+import { Button } from '../../components/theme/Button'
+import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
+import { ModalCard, ModalCardProps } from '../ModalCard'
+import { Thanks } from '../Thanks'
+import styles from './giveStarCard.module.scss'
 
 interface Mentor {
   username: string
@@ -197,7 +199,7 @@ type GiveStarCardProps = {
   setStarGiven: Function
 } & ModalCardProps
 
-export const GiveStarCard: React.FC<GiveStarCardProps> = ({
+const GiveStarCard: React.FC<GiveStarCardProps> = ({
   lessonId,
   show,
   close,
@@ -229,3 +231,5 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
     props => <StarCard {...(props as StarCardProps)} />
   )({ lessonId: lessonId, close, setStarGiven, show })
 }
+
+export default GiveStarCard

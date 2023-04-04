@@ -1,10 +1,10 @@
 import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
-import { GiveStarCard } from './GiveStarCard'
+import GiveStarCard from './GiveStarCard'
 import { MockedProvider } from '@apollo/client/testing'
-import SET_STAR from '../graphql/queries/setStar'
-import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
-import lessonMentorsData from '../__dummy__/getLessonMentorsData'
+import SET_STAR from '../../graphql/queries/setStar'
+import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
+import lessonMentorsData from '../../__dummy__/getLessonMentorsData'
 const mockSetStarMutatation = {
   request: {
     query: SET_STAR,

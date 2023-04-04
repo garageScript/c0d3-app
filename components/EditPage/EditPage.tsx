@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../scss/mdx.module.scss'
+import styles from '../../scss/mdx.module.scss'
 
 interface Props {
   filePath: String
