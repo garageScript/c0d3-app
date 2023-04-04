@@ -35,6 +35,27 @@ describe('User Data CRUD resolvers', () => {
       ).resolves.toStrictEqual(userMock)
     })
 
+    it('Should update the user and names only', async () => {
+      expect.assertions(1)
+
+      const userMock = {
+        username: mockUsername,
+        name: mockName,
+        id: 1
+      }
+
+      prismaMock.user.update.mockResolvedValueOnce(userMock)
+      prismaMock.user.findFirst.mockResolvedValueOnce(userMock)
+
+      expect(
+        updateUserNames(
+          null,
+          { username: mockUsername, mockName },
+          { req: { user: { id: 1 } } }
+        )
+      ).resolves.toStrictEqual(userMock)
+    })
+
     it('Should not update the user username and name if username already used', async () => {
       expect.assertions(1)
 
