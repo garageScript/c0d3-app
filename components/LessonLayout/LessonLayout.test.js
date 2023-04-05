@@ -1,12 +1,12 @@
-import '../__mocks__/useBreakpoint.mock'
+import '../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import GET_SESSION from '../graphql/queries/getSession'
-import dummySessionData from '../__dummy__/sessionData'
+import GET_SESSION from '../../graphql/queries/getSession'
+import dummySessionData from '../../__dummy__/sessionData'
 import '@testing-library/jest-dom'
 import LessonLayout, { getLayout } from './LessonLayout'
-import dummyLessonsData from '../__dummy__/lessonData'
+import dummyLessonsData from '../../__dummy__/lessonData'
 
 describe('LessonLayout component', () => {
   const mocks = [
