@@ -1,8 +1,8 @@
 import React from 'react'
-import NavLink from './NavLink'
-import styles from '../scss/lessonTitleCard.module.scss'
+import NavLink from '../NavLink'
+import styles from './lessonTitleCard.module.scss'
 import { useRouter } from 'next/router'
-import useBreakpoint from '../helpers/useBreakpoint'
+import useBreakpoint from '../../helpers/useBreakpoint'
 
 export type LessonTitleProps = {
   lessonCoverUrl: string
