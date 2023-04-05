@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Story } from '@storybook/react'
-import { MdInput } from '../../components/MdInput'
+import MdInput from '../../components/MdInput'
 
 export default {
   component: MdInput,

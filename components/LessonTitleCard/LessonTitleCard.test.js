@@ -1,4 +1,4 @@
-import { mockUseBreakpoint } from '../__mocks__/useBreakpoint.mock'
+import { mockUseBreakpoint } from '../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import LessonTitleCard from './LessonTitleCard'
 import { render, screen } from '@testing-library/react'

@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client'
 import * as React from 'react'
 import LessonCard from './LessonCard'
 import { render, screen } from '@testing-library/react'
-import { SubmissionStatus } from '../graphql'
+import { SubmissionStatus } from '../../graphql'
 
 // Imported to be able to use expect(...).toBeInTheDocument()
 import '@testing-library/jest-dom'

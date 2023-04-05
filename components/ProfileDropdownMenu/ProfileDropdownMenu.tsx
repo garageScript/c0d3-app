@@ -1,15 +1,15 @@
 import React from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
-import UserInfoImage from './UserInfoImage'
+import UserInfoImage from '../UserInfoImage'
 import { ChevronDownIcon } from '@primer/octicons-react'
-import LogoutContainer from './LogoutContainer'
-import { Button } from './theme/Button'
-import { UserInfo } from '../@types/user'
-import { useUserInfoQuery } from '../graphql/index'
+import LogoutContainer from '../LogoutContainer'
+import { Button } from '../theme/Button'
+import { UserInfo } from '../../@types/user'
+import { useUserInfoQuery } from '../../graphql/index'
 import { useRouter } from 'next/router'
 import _ from 'lodash'
-import styles from '../scss/profileDropDown.module.scss'
-import { ADMIN_PATH, PROFILE_PATH } from '../constants'
+import styles from './profileDropDown.module.scss'
+import { ADMIN_PATH, PROFILE_PATH } from '../../constants'
 
 type ProfileDropDownMenuProps = {
   username: string
