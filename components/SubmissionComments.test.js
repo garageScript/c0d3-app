@@ -177,6 +177,7 @@ describe('Test SubmissionComments Component', () => {
     fireEvent.click(discardButton)
     expect(editButton).toBeInTheDocument()
   })
+
   it('should update comment when save changes button is clicked', async () => {
     const cache = new InMemoryCache({ addTypename: false })
 
