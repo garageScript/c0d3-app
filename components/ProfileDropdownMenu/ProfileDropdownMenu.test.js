@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, fireEvent, act, waitFor } from '@testing-library/react'
 import ProfileDropdownMenu from './ProfileDropdownMenu'
-import GET_APP from '../graphql/queries/getApp'
-import LOGIN_USER from '../graphql/queries/loginUser'
-import dummySessionData from '../__dummy__/sessionData'
+import GET_APP from '../../graphql/queries/getApp'
+import LOGIN_USER from '../../graphql/queries/loginUser'
+import dummySessionData from '../../__dummy__/sessionData'
 import { MockedProvider } from '@apollo/client/testing'
 import { useRouter } from 'next/router'
 
