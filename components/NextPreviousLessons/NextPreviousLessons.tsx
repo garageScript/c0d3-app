@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../scss/NextPreviousLessons.module.scss'
-import { SubLesson } from '../helpers/static/lessons'
+import styles from './nextPreviousLessons.module.scss'
+import { SubLesson } from '../../helpers/static/lessons'
 
 type Props = {
   subLessons: SubLesson[]
