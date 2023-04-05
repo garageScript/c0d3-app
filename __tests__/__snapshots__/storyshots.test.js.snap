@@ -4618,7 +4618,457 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
 </div>
 `;
 
-exports[`Storyshots Components/CommentBox Empty 1`] = `
+exports[`Storyshots Components/CommentBox Closed Submission 1`] = `
+Array [
+  <div
+    className="showHide"
+    onClick={[Function]}
+  >
+    Hide conversation
+  </div>,
+  <div
+    className="commentBox bg-white d-auto"
+  >
+    <div
+      className="border border-lightgray rounded my-1"
+    >
+      <div
+        className="ms-3"
+      >
+        <span
+          wrapper="code_wrapper"
+        >
+          This is comment number one.
+        </span>
+      </div>
+      <div
+        className="wrapper d-flex justify-content-between align-items-center p-1"
+      >
+        <div
+          className="wrapper"
+        >
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/mock_username"
+          >
+            <div
+              className="d-inline"
+            >
+              mock_name 
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @mock_username
+            </div>
+          </a>
+        </div>
+        <div>
+          <button
+            className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+            data-testid="edit-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "info",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-pencil"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"
+              />
+            </svg>
+          </button>
+          <button
+            className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+            data-testid="delete-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "danger",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-trash"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/CommentBox Many Comments 1`] = `
+Array [
+  <div
+    className="showHide"
+    onClick={[Function]}
+  >
+    Hide conversation
+  </div>,
+  <div
+    className="commentBox bg-white d-auto"
+  >
+    <div
+      className="border border-lightgray rounded my-1"
+    >
+      <div
+        className="ms-3"
+      >
+        <span
+          wrapper="code_wrapper"
+        >
+          This is comment number one.
+        </span>
+      </div>
+      <div
+        className="wrapper d-flex justify-content-between align-items-center p-1"
+      >
+        <div
+          className="wrapper"
+        >
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/mock_username"
+          >
+            <div
+              className="d-inline"
+            >
+              mock_name 
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @mock_username
+            </div>
+          </a>
+        </div>
+        <div>
+          <button
+            className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+            data-testid="edit-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "info",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-pencil"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"
+              />
+            </svg>
+          </button>
+          <button
+            className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+            data-testid="delete-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "danger",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-trash"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="border border-lightgray rounded my-1"
+    >
+      <div
+        className="ms-3"
+      >
+        <span
+          wrapper="code_wrapper"
+        >
+          This is the second comment!
+        </span>
+      </div>
+      <div
+        className="wrapper d-flex justify-content-between align-items-center p-1"
+      >
+        <div
+          className="wrapper"
+        >
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/mock_username"
+          >
+            <div
+              className="d-inline"
+            >
+              mock_name 
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @mock_username
+            </div>
+          </a>
+        </div>
+        <div>
+          <button
+            className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+            data-testid="edit-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "info",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-pencil"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"
+              />
+            </svg>
+          </button>
+          <button
+            className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+            data-testid="delete-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "danger",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-trash"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="border border-lightgray rounded my-1"
+    >
+      <div
+        className="ms-3"
+      >
+        <span
+          wrapper="code_wrapper"
+        >
+          This is the third comment with 
+          <code>
+            inline code
+          </code>
+          !
+        </span>
+      </div>
+      <div
+        className="wrapper d-flex justify-content-between align-items-center p-1"
+      >
+        <div
+          className="wrapper"
+        >
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/mock_username"
+          >
+            <div
+              className="d-inline"
+            >
+              mock_name 
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @mock_username
+            </div>
+          </a>
+        </div>
+        <div>
+          <button
+            className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+            data-testid="edit-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "info",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-pencil"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"
+              />
+            </svg>
+          </button>
+          <button
+            className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+            data-testid="delete-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "danger",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-trash"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/CommentBox No Comments 1`] = `
 Array [
   <div
     className="showHide"
@@ -4632,7 +5082,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots Components/CommentBox With Comments 1`] = `
+exports[`Storyshots Components/CommentBox Open Sumbission 1`] = `
 Array [
   <div
     className="showHide"
@@ -4652,7 +5102,7 @@ Array [
         <span
           wrapper="code_wrapper"
         >
-          First Comment
+          This is comment number one.
         </span>
       </div>
       <div
@@ -4663,58 +5113,425 @@ Array [
         >
           <a
             className="comment_author__inline mt-2 "
-            href="/profile/newbie"
+            href="/profile/mock_username"
           >
             <div
               className="d-inline"
             >
-              Noob Newbie
+              mock_name 
             </div>
             <div
               className="d-inline text-muted"
             >
-               @newbie
+               @mock_username
             </div>
           </a>
+        </div>
+        <div>
+          <button
+            className="btn borderless btn-outline-info onFocusBgFix btnOutlineInfoBgFix-info btn-outline-bg-info btn-sm"
+            data-testid="edit-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "info",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-pencil"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"
+              />
+            </svg>
+          </button>
+          <button
+            className="btn borderless btn-outline-danger onFocusBgFix btnOutlineInfoBgFix-danger btn-outline-bg-danger btn-sm"
+            data-testid="delete-button"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "danger",
+              }
+            }
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-trash"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
     <div
-      className="border border-lightgray rounded my-1"
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
     >
       <div
-        className="ms-3"
-      >
-        <span
-          wrapper="code_wrapper"
-        >
-          Second Comment
-        </span>
-      </div>
-      <div
-        className="wrapper d-flex justify-content-between align-items-center p-1"
+        className="nav nav-tabs"
+        onKeyDown={[Function]}
       >
         <div
-          className="wrapper"
+          className="nav-item"
         >
           <a
-            className="comment_author__inline mt-2 "
-            href="/profile/newbie"
+            className="nav-link active"
+            data-rr-ui-event-key="Write"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#292929",
+              }
+            }
+            tabIndex={0}
           >
-            <div
-              className="d-inline"
-            >
-              Noob Newbie
-            </div>
-            <div
-              className="d-inline text-muted"
-            >
-               @newbie
-            </div>
+            Write
           </a>
         </div>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            data-rr-ui-event-key="Preview"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#8e8e8e",
+              }
+            }
+            tabIndex={0}
+          >
+            Preview
+          </a>
+        </div>
+        <div
+          className="ms-auto btn-toolbar"
+          role="toolbar"
+        >
+          <button
+            aria-label="Add header text"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-heading"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M3.75 2a.75.75 0 0 1 .75.75V7h7V2.75a.75.75 0 0 1 1.5 0v10.5a.75.75 0 0 1-1.5 0V8.5h-7v4.75a.75.75 0 0 1-1.5 0V2.75A.75.75 0 0 1 3.75 2Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Add bold text <ctrl+b>"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-bold"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M4 2h4.5a3.501 3.501 0 0 1 2.852 5.53A3.499 3.499 0 0 1 9.5 14H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm1 7v3h4.5a1.5 1.5 0 0 0 0-3Zm3.5-2a1.5 1.5 0 0 0 0-3H5v3Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Add italic text <ctrl+i>"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-italic"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M6 2.75A.75.75 0 0 1 6.75 2h6.5a.75.75 0 0 1 0 1.5h-2.505l-3.858 9H9.25a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5h2.505l3.858-9H6.75A.75.75 0 0 1 6 2.75Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Insert a quote <ctrl+shift+.>"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-quote"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Zm4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Insert code <ctrl+e>"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-code"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Add a link <ctrl+k>"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-link"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Add a bulleted list <ctrl+shift+8>"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-list-unordered"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M5.75 2.5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-6a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM2 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Add a numbered list <ctrl+shift+7>"
+            className="btn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="octicon octicon-list-ordered"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              role="img"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "overflow": "visible",
+                  "userSelect": "none",
+                  "verticalAlign": "text-bottom",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M5 3.25a.75.75 0 0 1 .75-.75h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 5 3.25Zm0 5a.75.75 0 0 1 .75-.75h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 5 8.25Zm0 5a.75.75 0 0 1 .75-.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1-.75-.75ZM.924 10.32a.5.5 0 0 1-.851-.525l.001-.001.001-.002.002-.004.007-.011c.097-.144.215-.273.348-.384.228-.19.588-.392 1.068-.392.468 0 .858.181 1.126.484.259.294.377.673.377 1.038 0 .987-.686 1.495-1.156 1.845l-.047.035c-.303.225-.522.4-.654.597h1.357a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5c0-1.005.692-1.52 1.167-1.875l.035-.025c.531-.396.8-.625.8-1.078a.57.57 0 0 0-.128-.376C1.806 10.068 1.695 10 1.5 10a.658.658 0 0 0-.429.163.835.835 0 0 0-.144.153ZM2.003 2.5V6h.503a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1h.503V3.308l-.28.14a.5.5 0 0 1-.446-.895l1.003-.5a.5.5 0 0 1 .723.447Z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
+      <textarea
+        className="textarea"
+        data-testid="textbox"
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        placeholder="Type something..."
+        value=""
+      />
     </div>
+    <button
+      className="btn borderless btn-success"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Add comment
+    </button>
   </div>,
 ]
 `;
