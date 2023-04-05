@@ -11,7 +11,7 @@ import {
   Icon
 } from '@primer/octicons-react'
 import { ButtonToolbar, OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { markdown, TextAreaState } from '../helpers/textStylers'
+import { markdown, TextAreaState } from '../../helpers/textStylers'
 
 type ButtonProps = {
   tooltipTitle: string

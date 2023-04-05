@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import MarkdownToolbar from './MarkdownToolbar'
-import { markdown } from '../helpers/textStylers'
-jest.mock('../helpers/textStylers')
+import { markdown } from '../../helpers/textStylers'
+jest.mock('../../helpers/textStylers')
 describe('MarkdownToolbar Component', () => {
   const mockTextArea = {}
   const mockRef = { current: mockTextArea }
