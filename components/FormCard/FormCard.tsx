@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, NewButton } from '../theme/Button'
-import { MdInput } from '../MdInput'
+import MdInput from '../MdInput'
 import { DropdownMenu, Item } from '../DropdownMenu'
 import _ from 'lodash'
 import styles from './formCard.module.scss'

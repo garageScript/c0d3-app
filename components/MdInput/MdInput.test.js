@@ -1,14 +1,14 @@
-import { mockUseIsMac } from '../__mocks__/useIsMac.mock'
-import '../__mocks__/useBreakpoint.mock'
+import { mockUseIsMac } from '../../__mocks__/useIsMac.mock'
+import '../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
-jest.mock('../helpers/useBreakpoint.tsx')
+jest.mock('../../helpers/useBreakpoint.tsx')
 
-import useBreakpoint from '../helpers/useBreakpoint.tsx'
-import { MdInput } from './MdInput'
+import useBreakpoint from '../../helpers/useBreakpoint.tsx'
+import MdInput from './MdInput'
 
 const TestComponent = () => {
   const [testState, setTestState] = React.useState('')
