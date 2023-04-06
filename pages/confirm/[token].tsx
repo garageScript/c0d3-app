@@ -57,7 +57,7 @@ export const ResetPassword = ({
     if (confirmToken?.status === 401 && !confirmToken.error) {
       onServerError()
     }
-  })
+  }, [confirmToken])
 
   if (confirmToken?.ok) return <ConfirmSuccess />
 
