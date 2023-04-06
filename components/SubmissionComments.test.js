@@ -149,7 +149,7 @@ describe('Test SubmissionComments Component', () => {
       variables: { userId: 3, challengeId: 6 },
       data: { getPreviousSubmissions: submissionsData }
     })
-    expect.assertions(4)
+
     const { container, findByText } = render(
       <MockedProvider cache={cache} addTypename={false} mocks={mocks}>
         <Wrapper>
@@ -160,28 +160,26 @@ describe('Test SubmissionComments Component', () => {
 
     const editButton = container.querySelector('.btn-outline-info.btn-sm')
     fireEvent.click(editButton)
+    const discardButton = container.querySelector('.btn-light')
 
-    await waitFor(() => {
-      const discardButton = container.querySelector('.btn-light')
-      expect(discardButton).toBeInTheDocument()
-      expect(container.querySelector('.btn-info')).toBeInTheDocument()
+    expect(discardButton).toBeInTheDocument()
+    expect(container.querySelector('.btn-info')).toBeInTheDocument()
 
-      const editButtonTwo = container.querySelector('.btn-outline-info.btn-sm')
-      fireEvent.click(editButtonTwo)
+    const editButtonTwo = container.querySelector('.btn-outline-info.btn-sm')
+    fireEvent.click(editButtonTwo)
 
-      const warningText =
+    expect(
+      await findByText(
         'You can only edit one comment in a single comment chain at a time.'
+      )
+    ).toBeTruthy()
 
-      waitFor(() => {
-        expect(findByText(warningText)).toBeTruthy()
-      })
+    fireEvent.click(discardButton)
+    expect(editButton).toBeInTheDocument()
 
-      fireEvent.click(discardButton)
-      waitFor(() => {
-        expect(editButton).toBeInTheDocument()
-      })
-    })
+    expect.assertions(4)
   })
+
   it('should update comment when save changes button is clicked', async () => {
     const cache = new InMemoryCache({ addTypename: false })
 
