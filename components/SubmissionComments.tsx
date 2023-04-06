@@ -8,7 +8,7 @@ import styles from '../scss/submissionComments.module.scss'
 import { updateCache } from '../helpers/updateCache'
 import { useDeleteCommentMutation, useEditCommentMutation } from '../graphql'
 import { GlobalContext } from '../helpers/globalContext'
-import { MdInput } from './MdInput'
+import MdInput from './MdInput'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
 import {

@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import NavLink from './NavLink'
 import '@testing-library/jest-dom'
-import Link from 'next/link'
+
 describe('NavLink Component', () => {
   test('Should render with active class when active', () => {
     const { container } = render(

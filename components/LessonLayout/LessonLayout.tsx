@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Layout from './Layout'
-import LessonTitleCard from './LessonTitleCard'
+import Layout from '../Layout'
+import LessonTitleCard from '../LessonTitleCard'
 
-import { LayoutGetter } from '../@types/page'
-import { Lesson, useGetSessionQuery } from '../graphql'
+import { LayoutGetter } from '../../@types/page'
+import { Lesson, useGetSessionQuery } from '../../graphql'
 
 type Props = {
   lesson: Lesson

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { MdInput } from '.././MdInput'
+import MdInput from '.././MdInput'
 import { Button } from '.././theme/Button'
 import styles from './commentBox.module.scss'
 import {

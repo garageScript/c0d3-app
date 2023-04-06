@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../scss/navLink.module.scss'
-import appNavStyles from '../scss/appNav.module.scss'
+import styles from './navLink.module.scss'
 
 export type NavLinkProps = {
   path: string
@@ -22,7 +21,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   hoverUnderline = false
 }) => {
   if (!path) return null
-  if (activePath) className += ` ${appNavStyles['active']}`
+  if (activePath) className += ` ${styles['active']}`
   if (external || path[0] !== '/') {
     return (
       <a

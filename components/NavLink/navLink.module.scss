@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '_variables.module.scss';
+@use '../../scss/variables.module';
 
 .link {
   text-decoration: none;

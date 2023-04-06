@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Markdown from 'markdown-to-jsx'
-import { colors } from './theme/colors'
+import { colors } from '../theme/colors'
 import { Nav } from 'react-bootstrap'
-import noop from '../helpers/noop'
-import styles from '../scss/mdInput.module.scss'
-import { getHotkeyListener } from '../helpers/hotkeyListener'
+import noop from '../../helpers/noop'
+import styles from './mdInput.module.scss'
+import { getHotkeyListener } from '../../helpers/hotkeyListener'
 import useUndo from 'use-undo'
-import useBreakpoint from '../helpers/useBreakpoint'
-import useIsMac from '../helpers/useIsMac'
-import MarkdownToolbar from './MarkdownToolbar'
-import { markdown, TextAreaState } from '../helpers/textStylers'
+import useBreakpoint from '../../helpers/useBreakpoint'
+import useIsMac from '../../helpers/useIsMac'
+import MarkdownToolbar from '../MarkdownToolbar'
+import { markdown, TextAreaState } from '../../helpers/textStylers'
 
 type MdInputProps = {
   onChange?: Function
@@ -26,7 +26,7 @@ const autoSize = (el: HTMLTextAreaElement) => {
   el.style.height = el.scrollHeight + 2 + 'px'
 }
 
-export const MdInput: React.FC<MdInputProps> = ({
+const MdInput: React.FC<MdInputProps> = ({
   bgColor = 'none',
   onChange = noop,
   onFocus = noop,
@@ -237,3 +237,5 @@ export const MdInput: React.FC<MdInputProps> = ({
     </div>
   )
 }
+
+export default MdInput
