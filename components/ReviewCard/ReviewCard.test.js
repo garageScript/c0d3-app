@@ -1,23 +1,23 @@
-import '../__mocks__/useIsMac.mock'
-import '../__mocks__/useBreakpoint.mock'
+import '../../__mocks__/useIsMac.mock'
+import '../../__mocks__/useBreakpoint.mock'
 import React, { useContext, useEffect } from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
-import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
-import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
-import ADD_COMMENT from '../graphql/queries/addComment'
+import ACCEPT_SUBMISSION from '../../graphql/queries/acceptSubmission'
+import GET_PREVIOUS_SUBMISSIONS from '../../graphql/queries/getPreviousSubmissions'
+import ADD_COMMENT from '../../graphql/queries/addComment'
 import ReviewCard from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
-import { SubmissionStatus } from '../graphql'
-import { ContextProvider, GlobalContext } from '../helpers/globalContext'
-import dummySessionData from '../__dummy__/sessionData'
-import previousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
+import { SubmissionStatus } from '../../graphql'
+import { ContextProvider, GlobalContext } from '../../helpers/globalContext'
+import dummySessionData from '../../__dummy__/sessionData'
+import previousSubmissionsData from '../../__dummy__/getPreviousSubmissionsData'
 import _ from 'lodash'
-import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
+import REJECT_SUBMISSION from '../../graphql/queries/rejectSubmission'
 
-jest.mock('../helpers/updateCache')
-import { updateCache } from '../helpers/updateCache'
+jest.mock('../../helpers/updateCache')
+import { updateCache } from '../../helpers/updateCache'
 
 jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 
