@@ -1,6 +1,6 @@
 import React from 'react'
-import NavLink from './NavLink'
-import styles from '../scss/progressCard.module.scss'
+import NavLink from '../NavLink'
+import styles from './progressCard.module.scss'
 
 const ProgressBar: React.FC<{ progressCount: number }> = ({
   progressCount
