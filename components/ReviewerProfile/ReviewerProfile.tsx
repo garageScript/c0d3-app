@@ -1,12 +1,12 @@
 import React from 'react'
-import styles from '../scss/reviewerProfile.module.scss'
+import styles from './reviewerProfile.module.scss'
 
 type ReviewerProfileProps = {
   username: string | undefined | null
   name: string | undefined | null
   inline?: boolean
 }
-export const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
+const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
   username,
   name,
   inline

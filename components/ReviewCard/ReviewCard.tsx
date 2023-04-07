@@ -1,10 +1,10 @@
 import { useMutation, ApolloCache } from '@apollo/client'
 import React, { useState, useContext, useEffect } from 'react'
 import dayjs from 'dayjs'
-import { GlobalContext } from '../helpers/globalContext'
+import { GlobalContext } from '../../helpers/globalContext'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
-import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
+import ACCEPT_SUBMISSION from '../../graphql/queries/acceptSubmission'
+import REJECT_SUBMISSION from '../../graphql/queries/rejectSubmission'
 import {
   Submission,
   useAddCommentMutation,
@@ -12,20 +12,20 @@ import {
   AddCommentMutation,
   SubmissionStatus,
   Comment
-} from '../graphql/index'
-import { SubmissionComments } from './SubmissionComments'
+} from '../../graphql/index'
+import { SubmissionComments } from '../SubmissionComments'
 import _ from 'lodash'
-import { Button } from './theme/Button'
-import { Text } from './theme/Text'
+import { Button } from '../theme/Button'
+import { Text } from '../theme/Text'
 import { Accordion } from 'react-bootstrap'
 import Markdown from 'markdown-to-jsx'
-import MdInput from './MdInput'
-import DiffView from './DiffView'
-import { updateCache } from '../helpers/updateCache'
-import { SelectIteration } from './SelectIteration'
-import Error, { StatusCode } from './Error'
-import { ReviewStatus } from './ReviewStatus'
-import styles from '../scss/reviewCard.module.scss'
+import MdInput from '../MdInput'
+import DiffView from '../DiffView'
+import { updateCache } from '../../helpers/updateCache'
+import { SelectIteration } from '../SelectIteration'
+import Error, { StatusCode } from '../Error'
+import { ReviewStatus } from '../ReviewStatus'
+import styles from './reviewCard.module.scss'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
