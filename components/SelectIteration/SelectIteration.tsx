@@ -1,11 +1,11 @@
 import React from 'react'
-import styles from '../scss/selectIteration.module.scss'
+import styles from './selectIteration.module.scss'
 import { ApolloError } from '@apollo/client'
 import {
   Submission,
   GetPreviousSubmissionsQuery,
   SubmissionStatus
-} from '../graphql'
+} from '../../graphql'
 import { Badge, Button } from 'react-bootstrap'
 
 type IterationLink = {
@@ -101,7 +101,7 @@ const SelectDisplay: React.FC<Omit<SelectIteration, 'error'>> = ({
   return <></>
 }
 
-export const SelectIteration: React.FC<SelectIteration> = ({
+const SelectIteration: React.FC<SelectIteration> = ({
   loading,
   error,
   data,
@@ -132,3 +132,5 @@ export const SelectIteration: React.FC<SelectIteration> = ({
     </div>
   )
 }
+
+export default SelectIteration
