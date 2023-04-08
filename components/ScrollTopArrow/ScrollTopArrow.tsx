@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styles from '../scss/scrollTopArrow.module.scss'
+import styles from './scrollTopArrow.module.scss'
 import throttle from 'lodash/throttle'
 import Image from 'next/image'
 
