@@ -28,7 +28,7 @@ import { GlobalContext } from '../../helpers/globalContext'
 import { SubmissionComments } from '../SubmissionComments'
 import { SelectIteration } from '../SelectIteration'
 import Error, { StatusCode } from '../Error'
-import { ReviewStatus } from '../ReviewStatus'
+import ReviewStatus from '../ReviewStatus'
 import useBreakpoint from '../../helpers/useBreakpoint'
 import MDXcomponents from '../../helpers/mdxComponents'
 dayjs.extend(relativeTime)

@@ -24,7 +24,7 @@ import DiffView from '../DiffView'
 import { updateCache } from '../../helpers/updateCache'
 import { SelectIteration } from '../SelectIteration'
 import Error, { StatusCode } from '../Error'
-import { ReviewStatus } from '../ReviewStatus'
+import ReviewStatus from '../ReviewStatus'
 import styles from './reviewCard.module.scss'
 dayjs.extend(relativeTime)
 
