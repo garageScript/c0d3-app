@@ -1,13 +1,13 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
-import { SubmissionStatus } from '../graphql/index'
-import styles from '../scss/reviewerComment.module.scss'
-import ReviewerProfile from './ReviewerProfile'
+import { SubmissionStatus } from '../../graphql/index'
+import styles from './reviewStatus.module.scss'
+import ReviewerProfile from '../ReviewerProfile'
 import Markdown from 'markdown-to-jsx'
 dayjs.extend(LocalizedFormat)
 
-export const ReviewStatus: React.FC<{
+const ReviewStatus: React.FC<{
   username?: string
   name?: string
   comment?: string | null
@@ -60,3 +60,5 @@ export const ReviewStatus: React.FC<{
     </div>
   )
 }
+
+export default ReviewStatus

@@ -22,9 +22,9 @@ import Markdown from 'markdown-to-jsx'
 import MdInput from '../MdInput'
 import DiffView from '../DiffView'
 import { updateCache } from '../../helpers/updateCache'
-import { SelectIteration } from '../SelectIteration'
+import SelectIteration from '../SelectIteration'
 import Error, { StatusCode } from '../Error'
-import { ReviewStatus } from '../ReviewStatus'
+import ReviewStatus from '../ReviewStatus'
 import styles from './reviewCard.module.scss'
 dayjs.extend(relativeTime)
 

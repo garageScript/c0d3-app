@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { ReviewStatus } from './ReviewStatus'
-import { SubmissionStatus } from '../graphql'
+import ReviewStatus from './ReviewStatus'
+import { SubmissionStatus } from '../../graphql'
 
 describe('ReviewComment component', () => {
   const data = {
