@@ -11,7 +11,7 @@ import {
 import _ from 'lodash'
 import { GlobalContext } from '../../helpers/globalContext'
 import { updateCache } from '../../helpers/updateCache'
-import { SubmissionComments } from '.././SubmissionComments'
+import SubmissionComments from '.././SubmissionComments'
 
 const CommentBox: React.FC<{
   line: number

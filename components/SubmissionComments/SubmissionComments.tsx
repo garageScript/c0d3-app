@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react'
-import { Comment, Submission } from '../graphql'
+import { Comment, Submission } from '../../graphql'
 import Markdown from 'markdown-to-jsx'
-import ReviewerProfile from './ReviewerProfile'
-import { Button } from './theme/Button'
+import ReviewerProfile from '../ReviewerProfile'
+import { Button } from '../theme/Button'
 import { TrashIcon, PencilIcon } from '@primer/octicons-react'
-import styles from '../scss/submissionComments.module.scss'
-import { updateCache } from '../helpers/updateCache'
-import { useDeleteCommentMutation, useEditCommentMutation } from '../graphql'
-import { GlobalContext } from '../helpers/globalContext'
-import MdInput from './MdInput'
+import styles from './submissionComments.module.scss'
+import { updateCache } from '../../helpers/updateCache'
+import { useDeleteCommentMutation, useEditCommentMutation } from '../../graphql'
+import { GlobalContext } from '../../helpers/globalContext'
+import MdInput from '../MdInput'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
 import {
@@ -18,7 +18,7 @@ import {
   ModalTitle
 } from 'react-bootstrap'
 
-export const SubmissionComments: React.FC<{
+const SubmissionComments: React.FC<{
   comments: Comment[]
   submission: Submission
 }> = ({ comments, submission }) => {
@@ -193,3 +193,5 @@ export const SubmissionComments: React.FC<{
     </>
   )
 }
+
+export default SubmissionComments
