@@ -1,7 +1,7 @@
-import styles from '../scss/SubLessonLinks.module.scss'
+import styles from './subLessonLinks.module.scss'
 import React from 'react'
 import Link from 'next/link'
-import { SubLesson } from '../helpers/static/lessons'
+import { SubLesson } from '../../helpers/static/lessons'
 
 type Slugs = {
   lessonSlug: string
