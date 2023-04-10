@@ -28775,9 +28775,10 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="fw-light h4"
+          className="fw-light"
           style={
             Object {
+              "fontSize": "1.5rem",
               "lineHeight": 1.5,
             }
           }
@@ -28824,9 +28825,10 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="fw-light h4"
+          className="fw-light"
           style={
             Object {
+              "fontSize": "1.5rem",
               "lineHeight": 1.5,
             }
           }
@@ -28925,9 +28927,10 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         Your Learning Journey
       </h1>
       <p
-        className="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center h4"
+        className="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center"
         style={
           Object {
+            "fontSize": "1.5rem",
             "lineHeight": 1.5,
           }
         }

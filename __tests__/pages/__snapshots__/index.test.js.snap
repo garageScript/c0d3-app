@@ -109,8 +109,8 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-10 offset-md-1"
         >
           <p
-            class="fw-light h4"
-            style="line-height: 1.5;"
+            class="fw-light"
+            style="line-height: 1.5; font-size: 1.5rem;"
           >
             Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
           </p>
@@ -151,8 +151,8 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-10 offset-md-1"
         >
           <p
-            class="fw-light h4"
-            style="line-height: 1.5;"
+            class="fw-light"
+            style="line-height: 1.5; font-size: 1.5rem;"
           >
             Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
           </p>
@@ -240,8 +240,8 @@ exports[`Index Page Should render index page 1`] = `
           Your Learning Journey
         </h1>
         <p
-          class="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center h4"
-          style="line-height: 1.5;"
+          class="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center"
+          style="line-height: 1.5; font-size: 1.5rem;"
         >
           Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
         </p>
