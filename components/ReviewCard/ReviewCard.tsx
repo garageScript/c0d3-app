@@ -13,7 +13,7 @@ import {
   SubmissionStatus,
   Comment
 } from '../../graphql/index'
-import { SubmissionComments } from '../SubmissionComments'
+import SubmissionComments from '../SubmissionComments'
 import _ from 'lodash'
 import { Button } from '../theme/Button'
 import { Text } from '../theme/Text'
