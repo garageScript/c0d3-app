@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import { Thanks } from './Thanks'
+import Thanks from './Thanks'
 
 describe('Thanks Component', () => {
   test('should call callback function when done button is clicked', () => {

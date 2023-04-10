@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ModalCard } from '../../components/ModalCard'
-import { Thanks } from '../../components/Thanks'
+import Thanks from '../../components/Thanks'
 import { Button } from '../../components/theme/Button'
 import noop from '../../helpers/noop'
 

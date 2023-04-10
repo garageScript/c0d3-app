@@ -6,7 +6,7 @@ import withQueryLoader, {
 import { Button } from '../../components/theme/Button'
 import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
 import { ModalCard, ModalCardProps } from '../ModalCard'
-import { Thanks } from '../Thanks'
+import Thanks from '../Thanks'
 import styles from './giveStarCard.module.scss'
 
 interface Mentor {
