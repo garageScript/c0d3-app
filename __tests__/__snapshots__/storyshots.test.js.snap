@@ -28757,12 +28757,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-8 offset-md-2"
       >
         <h1
-          style={
-            Object {
-              "fontSize": "3.8rem",
-              "fontWeight": 900,
-            }
-          }
+          className="main__header"
         >
           Become a Software Engineer the Hard Way
         </h1>
@@ -28775,12 +28770,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="fw-light h4"
-          style={
-            Object {
-              "lineHeight": 1.5,
-            }
-          }
+          className="p__large fw-light"
         >
           Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
         </p>
@@ -28824,12 +28814,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="fw-light h4"
-          style={
-            Object {
-              "lineHeight": 1.5,
-            }
-          }
+          className="p__large fw-light"
         >
           Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
         </p>
@@ -28925,12 +28910,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         Your Learning Journey
       </h1>
       <p
-        className="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center h4"
-        style={
-          Object {
-            "lineHeight": 1.5,
-          }
-        }
+        className="p__large mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center"
       >
         Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
       </p>
@@ -28958,12 +28938,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Creating an account
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
           </p>
@@ -28993,12 +28968,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Curriculum
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Students who have passed the lessons are available in the chatrooms to help you with your questions.
              
@@ -29034,12 +29004,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Pay It Forward
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
           </p>
@@ -29069,12 +29034,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Work Experience
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
           </p>
@@ -29091,13 +29051,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       Start Your Journey
     </h1>
     <p
-      className="mt-3 fw-light"
-      style={
-        Object {
-          "fontSize": "1.5rem",
-          "lineHeight": 1.5,
-        }
-      }
+      className="p__large mt-3 fw-light"
     >
       Become a full stack software engineer - 100% Free!
     </p>
