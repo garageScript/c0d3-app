@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../scss/exercisePreview.module.scss'
+import styles from './exercisePreview.module.scss'
 import Markdown from 'markdown-to-jsx'
 
 type Exercise = {

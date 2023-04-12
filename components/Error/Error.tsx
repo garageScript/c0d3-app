@@ -1,10 +1,10 @@
 import React from 'react'
-import Layout from './Layout'
-import NavLink from './NavLink'
-import { Text } from './theme/Text'
+import Layout from '../Layout'
+import NavLink from '../NavLink'
+import { Text } from '../theme/Text'
 import Image from 'next/image'
-import styles from '../scss/error.module.scss'
-import { CURRICULUM_PATH, DOCS_PATH } from '../constants'
+import styles from './error.module.scss'
+import { CURRICULUM_PATH, DOCS_PATH } from '../../constants'
 
 export enum StatusCode {
   NOT_FOUND = 404,
