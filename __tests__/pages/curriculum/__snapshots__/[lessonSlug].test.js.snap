@@ -458,7 +458,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                         />
                       </p>
                       <pre
-                        class="prism-code language-jsx"
+                        class="prism-code language-"
                         style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px; margin-block: 20px;"
                       >
                         <div
@@ -466,189 +466,10 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                           style="color: rgb(36, 41, 46);"
                         >
                           <span
-                            class="token keyword"
-                            style="color: rgb(0, 119, 170);"
-                          >
-                            const
-                          </span>
-                          <span
                             class="token plain"
                           >
-                             a 
+                            const a = {val: 30, right: {val: 40}, left: {val: 50}};
                           </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            =
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            {
-                          </span>
-                          <span
-                            class="token literal-property property"
-                          >
-                            val
-                          </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            :
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token number"
-                          >
-                            30
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            ,
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token literal-property property"
-                          >
-                            right
-                          </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            :
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            {
-                          </span>
-                          <span
-                            class="token literal-property property"
-                          >
-                            val
-                          </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            :
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token number"
-                          >
-                            40
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            }
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            ,
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token literal-property property"
-                          >
-                            left
-                          </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            :
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            {
-                          </span>
-                          <span
-                            class="token literal-property property"
-                          >
-                            val
-                          </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            :
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token number"
-                          >
-                            50
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            }
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            }
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            ;
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"
@@ -656,50 +477,9 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                         >
                           <span
                             class="token plain"
-                          />
-                          <span
-                            class="token function"
-                            style="color: rgb(221, 74, 104);"
                           >
-                            solution
+                            solution(a); // should return 50
                           </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            (
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                            a
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            )
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            ;
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token comment"
-                            style="color: rgb(112, 128, 144);"
-                          >
-                            // should return 50
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"
@@ -1407,7 +1187,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                         Example:
                       </p>
                       <pre
-                        class="prism-code language-jsx"
+                        class="prism-code language-"
                         style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px; margin-block: 20px;"
                       >
                         <div
@@ -1415,53 +1195,10 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                           style="color: rgb(36, 41, 46);"
                         >
                           <span
-                            class="token keyword"
-                            style="color: rgb(0, 119, 170);"
-                          >
-                            let
-                          </span>
-                          <span
                             class="token plain"
                           >
-                             resf 
+                            let resf = solution(5)
                           </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            =
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token function"
-                            style="color: rgb(221, 74, 104);"
-                          >
-                            solution
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            (
-                          </span>
-                          <span
-                            class="token number"
-                          >
-                            5
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            )
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"
@@ -1470,51 +1207,8 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                           <span
                             class="token plain"
                           >
-                            result 
+                            result = resf() // 6
                           </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            =
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token function"
-                            style="color: rgb(221, 74, 104);"
-                          >
-                            resf
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            (
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            )
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token comment"
-                            style="color: rgb(112, 128, 144);"
-                          >
-                            // 6
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"
@@ -1523,51 +1217,8 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                           <span
                             class="token plain"
                           >
-                            result 
+                            result = resf() // 7
                           </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            =
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token function"
-                            style="color: rgb(221, 74, 104);"
-                          >
-                            resf
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            (
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            )
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token comment"
-                            style="color: rgb(112, 128, 144);"
-                          >
-                            // 7
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"
@@ -1588,51 +1239,8 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                           <span
                             class="token plain"
                           >
-                            resf 
+                            resf = solution(-5)
                           </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            =
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token function"
-                            style="color: rgb(221, 74, 104);"
-                          >
-                            solution
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            (
-                          </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            -
-                          </span>
-                          <span
-                            class="token number"
-                          >
-                            5
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            )
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"
@@ -1641,51 +1249,8 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                           <span
                             class="token plain"
                           >
-                            result 
+                            result = resf() // -4
                           </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            =
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token function"
-                            style="color: rgb(221, 74, 104);"
-                          >
-                            resf
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            (
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            )
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token comment"
-                            style="color: rgb(112, 128, 144);"
-                          >
-                            // -4
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"
@@ -1694,51 +1259,8 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                           <span
                             class="token plain"
                           >
-                            result 
+                            result = resf() // -3
                           </span>
-                          <span
-                            class="token operator"
-                            style="color: rgb(0, 92, 197); background-color: rgb(247, 246, 243);"
-                          >
-                            =
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token function"
-                            style="color: rgb(221, 74, 104);"
-                          >
-                            resf
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            (
-                          </span>
-                          <span
-                            class="token punctuation"
-                            style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243);"
-                          >
-                            )
-                          </span>
-                          <span
-                            class="token plain"
-                          >
-                             
-                          </span>
-                          <span
-                            class="token comment"
-                            style="color: rgb(112, 128, 144);"
-                          >
-                            // -3
-                          </span>
-                          <span
-                            class="token plain"
-                          />
                         </div>
                         <div
                           class="token-line"

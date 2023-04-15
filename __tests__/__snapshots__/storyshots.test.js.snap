@@ -4647,16 +4647,18 @@ Array [
       className="border border-lightgray rounded my-1"
     >
       <div
-        className="ms-3"
+        className="mx-3"
       >
-        <span
-          wrapper="code_wrapper"
+        <div
+          className="my-3"
         >
-          First Comment
-        </span>
+          <span>
+            First Comment
+          </span>
+        </div>
       </div>
       <div
-        className="wrapper d-flex justify-content-between align-items-center p-1"
+        className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
       >
         <div
           className="wrapper"
@@ -4683,16 +4685,18 @@ Array [
       className="border border-lightgray rounded my-1"
     >
       <div
-        className="ms-3"
+        className="mx-3"
       >
-        <span
-          wrapper="code_wrapper"
+        <div
+          className="my-3"
         >
-          Second Comment
-        </span>
+          <span>
+            Second Comment
+          </span>
+        </div>
       </div>
       <div
-        className="wrapper d-flex justify-content-between align-items-center p-1"
+        className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
       >
         <div
           className="wrapper"
@@ -10810,6 +10814,294 @@ Array [
     </div>
   </div>,
 ]
+`;
+
+exports[`Storyshots Components/HighlightMarkdown Basic 1`] = `
+<div>
+  <h1
+    id="hello-world"
+  >
+    Hello World
+  </h1>
+  <h2
+    id="this-is-a-subheading"
+  >
+    This is a subheading
+  </h2>
+  <h3
+    id="this-is-a-sub-subheading"
+  >
+    This is a sub-subheading
+  </h3>
+  <p>
+    This is a paragraph
+  </p>
+  <pre
+    className="prism-code language-"
+    style={
+      Object {
+        "backgroundColor": "#f7f6f3",
+        "borderRadius": 4,
+        "color": "rgb(36, 41, 46)",
+        "fontSize": 14,
+        "marginBlock": 20,
+        "marginBottom": 0,
+        "padding": "20px 20px 0 20px",
+      }
+    }
+  >
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        const a = 5;
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        console.log(a)
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+
+      </span>
+    </div>
+  </pre>
+</div>
+`;
+
+exports[`Storyshots Components/HighlightMarkdown With Language 1`] = `
+<div>
+  <h1
+    id="hello-world"
+  >
+    Hello World
+  </h1>
+  <h2
+    id="this-is-a-subheading"
+  >
+    This is a subheading
+  </h2>
+  <h3
+    id="this-is-a-sub-subheading"
+  >
+    This is a sub-subheading
+  </h3>
+  <p>
+    This is a paragraph
+  </p>
+  <pre
+    className="prism-code language-js"
+    style={
+      Object {
+        "backgroundColor": "#f7f6f3",
+        "borderRadius": 4,
+        "color": "rgb(36, 41, 46)",
+        "fontSize": 14,
+        "marginBlock": 20,
+        "marginBottom": 0,
+        "padding": "20px 20px 0 20px",
+      }
+    }
+  >
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "rgb(0, 119, 170)",
+          }
+        }
+      >
+        const
+      </span>
+      <span
+        className="token plain"
+      >
+         a 
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(0, 92, 197)",
+          }
+        }
+      >
+        =
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token number"
+      >
+        5
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        ;
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token console class-name"
+        style={
+          Object {
+            "color": "rgb(227, 98, 9)",
+          }
+        }
+      >
+        console
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        .
+      </span>
+      <span
+        className="token method function property-access"
+        style={
+          Object {
+            "color": "rgb(221, 74, 104)",
+          }
+        }
+      >
+        log
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        (
+      </span>
+      <span
+        className="token plain"
+      >
+        a
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        )
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": null,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+
+      </span>
+    </div>
+  </pre>
+</div>
 `;
 
 exports[`Storyshots Components/Input Email Input 1`] = `
@@ -23386,16 +23678,18 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ms-3"
+      className="mx-3"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="my-3"
       >
-        First Comment
-      </span>
+        <span>
+          First Comment
+        </span>
+      </div>
     </div>
     <div
-      className="wrapper d-flex justify-content-between align-items-center p-1"
+      className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
     >
       <div
         className="wrapper"
@@ -23490,16 +23784,18 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ms-3"
+      className="mx-3"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="my-3"
       >
-        Second Comment
-      </span>
+        <span>
+          Second Comment
+        </span>
+      </div>
     </div>
     <div
-      className="wrapper d-flex justify-content-between align-items-center p-1"
+      className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
     >
       <div
         className="wrapper"
@@ -23594,16 +23890,18 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ms-3"
+      className="mx-3"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="my-3"
       >
-        Second Comment
-      </span>
+        <span>
+          Second Comment
+        </span>
+      </div>
     </div>
     <div
-      className="wrapper d-flex justify-content-between align-items-center p-1"
+      className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
     >
       <div
         className="wrapper"
