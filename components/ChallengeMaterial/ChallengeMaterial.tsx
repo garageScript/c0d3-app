@@ -12,7 +12,6 @@ import {
   useGetPreviousSubmissionsQuery
 } from '../../graphql/index'
 import NavLink from '../NavLink'
-import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
@@ -30,7 +29,8 @@ import SelectIteration from '../SelectIteration'
 import Error, { StatusCode } from '../Error'
 import ReviewStatus from '../ReviewStatus'
 import useBreakpoint from '../../helpers/useBreakpoint'
-import MDXcomponents from '../../helpers/mdxComponents'
+import HighlightMarkdown from '../mdx/HighlightMarkdown/HighlightMarkdown'
+
 dayjs.extend(relativeTime)
 dayjs.extend(LocalizedFormat)
 
@@ -254,31 +254,9 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
             data-testid="challenge-question-description"
             className="pt-3 pb-3 mt-3"
           >
-            <Markdown
-              options={{
-                overrides: {
-                  pre: props => {
-                    const children = props.children.props.children
-
-                    return (
-                      <MDXcomponents.code className="jsx">
-                        {/* Workaround for adding a line-break after the last token in a codeblock */}
-                        {`${children}\n`}
-                      </MDXcomponents.code>
-                    )
-                  },
-                  code: props => {
-                    return (
-                      <MDXcomponents.inlineCode>
-                        {props.children}
-                      </MDXcomponents.inlineCode>
-                    )
-                  }
-                }
-              }}
-            >
+            <HighlightMarkdown>
               {currentChallenge.description}
-            </Markdown>
+            </HighlightMarkdown>
           </div>
         </div>
       </div>

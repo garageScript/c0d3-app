@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { Comment, Submission } from '../../graphql'
-import Markdown from 'markdown-to-jsx'
 import ReviewerProfile from '../ReviewerProfile'
 import { Button } from '../theme/Button'
 import { TrashIcon, PencilIcon } from '@primer/octicons-react'
@@ -17,6 +16,7 @@ import {
   ModalHeader,
   ModalTitle
 } from 'react-bootstrap'
+import HighlightMarkdown from '../mdx/HighlightMarkdown/HighlightMarkdown'
 
 const SubmissionComments: React.FC<{
   comments: Comment[]
@@ -114,7 +114,7 @@ const SubmissionComments: React.FC<{
           key={`${c.content}${i}`}
           className="border border-lightgray rounded my-1"
         >
-          <div className={'ms-3'}>
+          <div className="mx-3">
             {editing === i ? (
               <div className={styles['text']}>
                 <MdInput
@@ -124,11 +124,13 @@ const SubmissionComments: React.FC<{
                 />
               </div>
             ) : (
-              <Markdown wrapper="code_wrapper">{c.content}</Markdown>
+              <div className="my-3">
+                <HighlightMarkdown>{c.content}</HighlightMarkdown>
+              </div>
             )}
           </div>
           <div
-            className={`${styles['wrapper']} d-flex justify-content-between align-items-center p-1`}
+            className={`${styles.wrapper} d-flex justify-content-between align-items-center p-2 rounded`}
           >
             <ReviewerProfile
               name={c.author!.name}
