@@ -3229,16 +3229,18 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                     class="border border-lightgray rounded my-1"
                                   >
                                     <div
-                                      class="ms-3"
+                                      class="mx-3"
                                     >
-                                      <span
-                                        wrapper="code_wrapper"
+                                      <div
+                                        class="my-3"
                                       >
-                                        first line comment
-                                      </span>
+                                        <span>
+                                          first line comment
+                                        </span>
+                                      </div>
                                     </div>
                                     <div
-                                      class="wrapper d-flex justify-content-between align-items-center p-1"
+                                      class="wrapper d-flex justify-content-between align-items-center p-2 rounded"
                                     >
                                       <div
                                         class="wrapper"
@@ -3307,16 +3309,18 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                     class="border border-lightgray rounded my-1"
                                   >
                                     <div
-                                      class="ms-3"
+                                      class="mx-3"
                                     >
-                                      <span
-                                        wrapper="code_wrapper"
+                                      <div
+                                        class="my-3"
                                       >
-                                        first line comment
-                                      </span>
+                                        <span>
+                                          first line comment
+                                        </span>
+                                      </div>
                                     </div>
                                     <div
-                                      class="wrapper d-flex justify-content-between align-items-center p-1"
+                                      class="wrapper d-flex justify-content-between align-items-center p-2 rounded"
                                     >
                                       <div
                                         class="wrapper"

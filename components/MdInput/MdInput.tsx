@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import Markdown from 'markdown-to-jsx'
 import { colors } from '../theme/colors'
 import { Nav } from 'react-bootstrap'
 import noop from '../../helpers/noop'
@@ -10,6 +9,7 @@ import useBreakpoint from '../../helpers/useBreakpoint'
 import useIsMac from '../../helpers/useIsMac'
 import MarkdownToolbar from '../MarkdownToolbar'
 import { markdown, TextAreaState } from '../../helpers/textStylers'
+import HighlightMarkdown from '../mdx/HighlightMarkdown/HighlightMarkdown'
 
 type MdInputProps = {
   onChange?: Function
@@ -210,9 +210,12 @@ const MdInput: React.FC<MdInputProps> = ({
       {preview && (
         <>
           {value ? (
-            <Markdown data-testid="markdown" className={`${styles['preview']}`}>
+            <HighlightMarkdown
+              data-testid="markdown"
+              className={styles.preview}
+            >
               {value}
-            </Markdown>
+            </HighlightMarkdown>
           ) : (
             // Using textArea class so minHeight stays in sync
             <div className={styles['textarea']}>Nothing to preview</div>
