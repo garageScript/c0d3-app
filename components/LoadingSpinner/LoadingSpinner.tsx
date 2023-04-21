@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LoadingSpinner = () => {
+const LoadingSpinner: React.FC<{}> = () => {
   return (
     <div
       style={{
