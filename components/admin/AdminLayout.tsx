@@ -1,6 +1,6 @@
 import React from 'react'
 import LoadingSpinner from '../../components/LoadingSpinner'
-import Layout from '../../components/Layout'
+import Layout from '../Layout'
 import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
 import Error, { StatusCode } from '../../components/Error'
