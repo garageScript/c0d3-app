@@ -1,10 +1,11 @@
 import React from 'react'
-import LoadingSpinner from '../../components/LoadingSpinner'
+import LoadingSpinner from '../LoadingSpinner'
 import Layout from '../Layout'
 import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
 import Error, { StatusCode } from '../../components/Error'
 import { useRouter } from 'next/router'
+
 export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   data,
   children
