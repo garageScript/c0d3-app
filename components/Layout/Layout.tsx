@@ -1,9 +1,9 @@
 import React from 'react'
-import AppNav from './AppNav'
-import Footer from './Footer'
+import AppNav from '../AppNav'
+import Footer from '../Footer'
 import Head from 'next/head'
-import type { LayoutGetter } from '../@types/page'
-import styles from '../scss/layout.module.scss'
+import type { LayoutGetter } from '../../@types/page'
+import styles from './layout.module.scss'
 
 const Layout: React.FC<{ title?: string }> = ({ children, title }) => (
   <>
