@@ -72,7 +72,7 @@
     "sass": "^1.62.0",
     "use-undo": "^1.1.1",
     "winston": "^3.8.2",
-    "yup": "^0.32.11"
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^3.3.0",
