@@ -1,6 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-import styles from '../scss/profileLessons.module.scss'
+import styles from './profileLessons.module.scss'
 
 type LessonImageProps = {
   order: number

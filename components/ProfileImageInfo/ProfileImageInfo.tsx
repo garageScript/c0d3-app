@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import UserInfoImage from './UserInfoImage'
+import UserInfoImage from '../UserInfoImage'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../scss/profileImageInfo.module.scss'
-import { UserInfo } from '../@types/user'
+import styles from './profileImageInfo.module.scss'
+import { UserInfo } from '../../@types/user'
 import {
   Modal,
   ModalBody,
@@ -11,13 +11,13 @@ import {
   ModalHeader,
   ModalTitle
 } from 'react-bootstrap'
-import { Button } from './theme/Button'
+import { Button } from '../theme/Button'
 import { signIn } from 'next-auth/react'
 import { Button as BsButton } from 'react-bootstrap'
 import { useMutation } from '@apollo/client'
-import { UNLINK_DISCORD } from '../graphql/queries/unlinkDiscord'
+import { UNLINK_DISCORD } from '../../graphql/queries/unlinkDiscord'
 import { useRouter } from 'next/router'
-import { useGetAppQuery } from '../graphql'
+import { useGetAppQuery } from '../../graphql'
 
 type DiscordModalProps = {
   show: boolean
