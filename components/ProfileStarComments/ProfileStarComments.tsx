@@ -1,8 +1,8 @@
 import React from 'react'
-import { Star as StarType } from '../graphql/index'
+import { Star as StarType } from '../../graphql/index'
 import { Star as StarIcon } from 'react-feather'
 import _ from 'lodash'
-import styles from '../scss/profileStarComments.module.scss'
+import styles from './profileStarComments.module.scss'
 
 type StarCommentsProps = {
   stars: StarType[]
