@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from './theme/Button'
-import UserInfoImage from './UserInfoImage'
-import { UserInfo } from '../@types/user'
-import styles from '../scss/submissionCard.module.scss'
+import { Button } from '../theme/Button'
+import UserInfoImage from '../UserInfoImage'
+import { UserInfo } from '../../@types/user'
+import styles from './submissionCard.module.scss'
 
 type Props = {
   userId: string

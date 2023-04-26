@@ -1,7 +1,7 @@
 import React from 'react'
-import { UserInfo } from '../@types/user'
+import { UserInfo } from '../../@types/user'
 import Image from 'next/image'
-import styles from '../scss/userInfoImage.module.scss'
+import styles from './userInfoImage.module.scss'
 type UserProps = {
   user: UserInfo
   className?: string

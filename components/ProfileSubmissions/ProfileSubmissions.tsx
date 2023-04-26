@@ -1,8 +1,8 @@
 import React from 'react'
-import { Star as StarType } from '../graphql/index'
+import { Star as StarType } from '../../graphql/index'
 import { Star } from 'react-feather'
-import styles from '../scss/profileSubmissions.module.scss'
-import { SubmissionStatus as SubmissionStatusEnum } from '../graphql'
+import styles from './profileSubmissions.module.scss'
+import { SubmissionStatus as SubmissionStatusEnum } from '../../graphql'
 
 type ChallengeStatusProps = {
   challengesData: Challenge[]
