@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import styles from '../scss/navCard.module.scss'
+import styles from './navCard.module.scss'
 
 type Tab = {
   text: string
