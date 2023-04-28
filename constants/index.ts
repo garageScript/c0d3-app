@@ -12,7 +12,7 @@ export const SIGNUP_PATH = '/signup'
 export const EXERCISES_PATH = '/exercises'
 
 // Color
-export const PRIMARY_COLOR_HEX = '#5440d8'
+export const PRIMARY_COLOR_HEX = 0x5440d8
 
 // URL Constants
 const DEPLOYMENT_URL =
