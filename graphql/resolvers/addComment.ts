@@ -3,7 +3,7 @@ import { MutationAddCommentArgs } from '../index'
 import { Context } from '../../@types/helpers'
 import { getDiscordMessageUserIdString } from '../../helpers/getDiscordMessageUserIdString'
 import { sendDirectMessage } from '../../helpers/discordBot'
-import { MessageEmbedOptions } from 'discord.js'
+import { APIEmbed } from 'discord.js'
 import {
   C0D3_ICON_URL,
   CURRICULUM_URL,
@@ -57,7 +57,7 @@ export const addComment = async (
   const { author, submission } = comment
 
   if (author.id !== submission.user.id && submission.user.discordId) {
-    const notificationEmbed: MessageEmbedOptions = {
+    const notificationEmbed: APIEmbed = {
       color: PRIMARY_COLOR_HEX,
       title: 'New comment on submission',
       url: `${CURRICULUM_URL}/${submission.lesson.slug}`,
