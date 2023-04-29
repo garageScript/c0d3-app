@@ -7,7 +7,7 @@ import {
 import prisma from '../prisma'
 import { sendDirectMessage, sendLessonChannelMessage } from './discordBot'
 import { getDiscordMessageUserIdString } from './getDiscordMessageUserIdString'
-import { EmbedBuilder } from 'discord.js'
+import { APIEmbed } from 'discord.js'
 import {
   C0D3_ICON_URL,
   CURRICULUM_URL,
@@ -120,7 +120,7 @@ export const updateSubmission = async (
 
   if (user.discordId && reviewer) {
     const reviewerString = getDiscordMessageUserIdString(reviewer)
-    const reviewNotificationEmbed: EmbedBuilder['data'] = {
+    const reviewNotificationEmbed: APIEmbed = {
       color: PRIMARY_COLOR_HEX,
       title: 'Submission Reviewed',
       url: `${CURRICULUM_URL}/${lesson.slug}`,

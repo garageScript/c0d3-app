@@ -3,9 +3,9 @@ import { BotErrorType, IdType } from '../helpers/discordBot'
 // snowflake: type alias for string, to make clear the string of this type
 // should be in the snowflake format and not an arbitrary string
 // https://en.wikipedia.org/wiki/Snowflake_ID
-// MessageEmbedOptions: interface for the object that can be sent as a discord
+// APIEmbed: interface for the object that can be sent as a discord
 // message embed
-import { snowflake, MessageEmbedOptions } from 'discord.js'
+import { snowflake, APIEmbed } from 'discord.js'
 
 interface BotErrorBase {
   type: BotErrorType
@@ -37,21 +37,21 @@ export type PostBot = (endpoint: string, body: object) => Promise
 export type SendChannelMessage = (
   channelId: snowflake,
   message: string,
-  embed?: MessageEmbedOptions,
+  embed?: APIEmbed,
   includeDetails?: boolean
 ) => Promise<MessageResponse>
 
 export type SendLessonChannelMessage = (
   lessonId: number | string,
   message: string,
-  embed?: MessageEmbedOptions,
+  embed?: APIEmbed,
   includeDetails?: boolean
 ) => Promise<MessageResponse>
 
 export type SendDirectMessage = (
   userId: snowflake,
   message: string,
-  embed?: MessageEmbedOptions,
+  embed?: APIEmbed,
   includeDetails?: boolean
 ) => Promise<MessageResponse>
 
