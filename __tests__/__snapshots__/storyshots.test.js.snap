@@ -10854,7 +10854,7 @@ exports[`Storyshots Components/HighlightMarkdown Basic 1`] = `
       className="token-line"
       style={
         Object {
-          "backgroundColor": null,
+          "backgroundColor": undefined,
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -10869,7 +10869,7 @@ exports[`Storyshots Components/HighlightMarkdown Basic 1`] = `
       className="token-line"
       style={
         Object {
-          "backgroundColor": null,
+          "backgroundColor": undefined,
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -10884,7 +10884,7 @@ exports[`Storyshots Components/HighlightMarkdown Basic 1`] = `
       className="token-line"
       style={
         Object {
-          "backgroundColor": null,
+          "backgroundColor": undefined,
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -10943,7 +10943,7 @@ exports[`Storyshots Components/HighlightMarkdown With Language 1`] = `
       className="token-line"
       style={
         Object {
-          "backgroundColor": null,
+          "backgroundColor": undefined,
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -10981,6 +10981,7 @@ exports[`Storyshots Components/HighlightMarkdown With Language 1`] = `
       </span>
       <span
         className="token number"
+        style={Object {}}
       >
         5
       </span>
@@ -11005,7 +11006,7 @@ exports[`Storyshots Components/HighlightMarkdown With Language 1`] = `
       className="token-line"
       style={
         Object {
-          "backgroundColor": null,
+          "backgroundColor": undefined,
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -11083,7 +11084,7 @@ exports[`Storyshots Components/HighlightMarkdown With Language 1`] = `
       className="token-line"
       style={
         Object {
-          "backgroundColor": null,
+          "backgroundColor": undefined,
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -31079,7 +31080,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31123,6 +31124,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token maybe-class-name"
+      style={Object {}}
     >
       React
     </span>
@@ -31181,6 +31183,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
        = ({ children, className }) =&gt; 
     </span>
@@ -31205,7 +31208,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31314,6 +31317,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token string"
+      style={Object {}}
     >
       ''
     </span>
@@ -31350,6 +31354,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token maybe-class-name"
+      style={Object {}}
     >
       Language
     </span>
@@ -31363,7 +31368,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31409,7 +31414,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31455,7 +31460,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31528,7 +31533,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31611,7 +31616,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31694,7 +31699,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31777,7 +31782,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31805,6 +31810,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -31813,13 +31819,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
             
     </span>
@@ -31858,6 +31865,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        className
     </span>
@@ -31874,6 +31882,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        style
     </span>
@@ -31890,6 +31899,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        tokens
     </span>
@@ -31906,6 +31916,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        getLineProps
     </span>
@@ -31922,6 +31933,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        getTokenProps 
     </span>
@@ -31989,7 +32001,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -32274,6 +32286,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -32282,13 +32295,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
                 
     </span>
@@ -32353,6 +32367,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
       line
     </span>
@@ -32369,6 +32384,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        i
     </span>
@@ -32425,7 +32441,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -32691,6 +32707,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -32699,13 +32716,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
                     
     </span>
@@ -32770,6 +32788,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
       token
     </span>
@@ -32786,6 +32805,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        key
     </span>
@@ -32842,7 +32862,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -33095,7 +33115,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -33140,6 +33160,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -33148,13 +33169,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
                   
     </span>
@@ -33200,7 +33222,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -33245,6 +33267,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -33253,13 +33276,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
               
     </span>
@@ -33305,7 +33329,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -33339,6 +33363,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -33347,13 +33372,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
           
     </span>
@@ -33399,7 +33425,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -33430,7 +33456,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }

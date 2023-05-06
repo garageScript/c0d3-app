@@ -6,6 +6,13 @@ module.exports = ({ config }) => {
     use: ['style-loader', 'css-loader?modules=true', 'sass-loader'],
     include: path.resolve(__dirname, '../')
   })
+  config.module.rules.push({
+    test: /\.mjs$/,
+    include: /node_modules/,
+    // tells webpack to detect the module type from the extension
+    // instead of package.json?
+    type: 'javascript/auto'
+  })
 
   config.resolve.extensions.push('.ts', '.tsx')
   //exclude backend dependancies
