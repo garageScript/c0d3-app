@@ -8,7 +8,8 @@ jest.mock('apollo-server-micro')
 jest.mock('next-connect')
 jest.mock('@quixo3/prisma-session-store')
 jest.mock('express-session')
-import nextConnect from 'next-connect'
+jest.mock('@sentry/nextjs')
+import { createRouter } from 'next-connect'
 import session from 'express-session'
 const asm = require('apollo-server-micro')
 
@@ -31,11 +32,12 @@ describe('Graphql Api', () => {
   beforeEach(() => {
     process.env = { ...OLD_ENV }
 
-    nextConnect.mockImplementation(() => {
+    createRouter.mockImplementation(() => {
       return {
         use: returnHandler,
         get: returnHandler,
-        post: returnHandler
+        post: returnHandler,
+        handler: () => {}
       }
     })
     asm.ApolloServer = function (data) {
