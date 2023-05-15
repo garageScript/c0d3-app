@@ -25,6 +25,7 @@ import { SessionContext } from '../../../@types/auth'
 import { SessionStatus } from '../../../constants/auth-constants'
 import { useRouter } from 'next/router'
 import redirectUnauthenticated from '../../../helpers/redirectUnauthenticated'
+import { ErrorMsg } from '../../../constants/error-messages'
 
 const basicValues: (
   username?: string,
@@ -305,8 +306,7 @@ const AccountSettings = () => {
             texts={{
               loading: '',
               data: '',
-              error:
-                'Oops, something went wrong when getting your info. Please try again'
+              error: ErrorMsg.RetrieveInfo
             }}
           />
           <hr className="mb-4" />
