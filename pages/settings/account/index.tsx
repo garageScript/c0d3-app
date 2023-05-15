@@ -268,7 +268,7 @@ const LinkedAccountsSetting = ({
 
 const AccountSettings = () => {
   const { data: session, status } = useSession() as SessionContext
-  const [userInfoQuery, { data, loading: userInfoLoading }] =
+  const [userInfoQuery, { data, loading: userInfoLoading, error }] =
     useUserInfoLazyQuery()
 
   const loading = userInfoLoading || status === SessionStatus.Loading
@@ -298,6 +298,17 @@ const AccountSettings = () => {
       <div className={styles.container}>
         <div className={styles.container__child}>
           <h1>Settings</h1>
+          <QueryInfo
+            data={null}
+            loading={false}
+            error={error?.message || ''}
+            texts={{
+              loading: '',
+              data: '',
+              error:
+                'Oops, something went wrong when getting your info. Please try again'
+            }}
+          />
           <hr className="mb-4" />
           <div className={styles.container__sections}>
             <BasicSettings username={username} name={name} />
