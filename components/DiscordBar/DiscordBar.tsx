@@ -24,26 +24,26 @@ const DiscordBar: React.FC = () => {
   const [data, setData] = useState<State>({
     members: []
   })
-  const getData = async () => {
-    try {
-      const data = await fetch(
-        'https://discord.com/api/guilds/828783458469675019/widget.json'
-      )
-      const json = await data.json()
-      if ('members' in json) setData(json as discordJSON)
-      else setData({ members: [], error: 'Something went wrong ;(' })
-    } catch (e) {
-      setData({
-        members: [],
-        error: `Error fetching data...`
-      })
-    } finally {
-      setTimeout(getData, TWO_MINUTES)
-    }
-  }
-  useEffect(() => {
-    getData()
-  }, [])
+  // const getData = async () => {
+  //   try {
+  //     const data = await fetch(
+  //       'https://discord.com/api/guilds/828783458469675019/widget.json'
+  //     )
+  //     const json = await data.json()
+  //     if ('members' in json) setData(json as discordJSON)
+  //     else setData({ members: [], error: 'Something went wrong ;(' })
+  //   } catch (e) {
+  //     setData({
+  //       members: [],
+  //       error: `Error fetching data...`
+  //     })
+  //   } finally {
+  //     setTimeout(getData, TWO_MINUTES)
+  //   }
+  // }
+  // useEffect(() => {
+  //   getData()
+  // }, [])
   const reshuffle = (data: discordJSON) => {
     //randomize user order and select first five avatars to render
     const shuffled = data.members.sort(() => 0.5 - Math.random())

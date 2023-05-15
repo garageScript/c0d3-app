@@ -94,94 +94,94 @@ const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
   )
 }
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
-  const hasMounted = useHasMounted()
+  // const hasMounted = useHasMounted()
   //fallback in case if localStorage (which is used by persistent cache) is disabled
-  const { data, loading } = useGetSessionQuery({
-    fetchPolicy: 'network-only',
-    nextFetchPolicy: 'cache-and-network',
-    ssr: false
-  })
-  const [state, setState] = useState<State>({
-    session: { lessonStatus: [] },
-    progress: -1,
-    current: -1
-  })
-  const [showConnectToDiscordModal, setShowConnectToDiscordModal] =
-    useState(false)
+  // const { data, loading } = useGetSessionQuery({
+  //   fetchPolicy: 'network-only',
+  //   nextFetchPolicy: 'cache-and-network',
+  //   ssr: false
+  // })
+  // const [state, setState] = useState<State>({
+  //   session: { lessonStatus: [] },
+  //   progress: -1,
+  //   current: -1
+  // })
+  // const [showConnectToDiscordModal, setShowConnectToDiscordModal] =
+  //   useState(false)
 
-  if (!lessons || !alerts) {
-    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
-  }
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [scrolledRight, setScrolledRight] = useState(false)
+  // if (!lessons || !alerts) {
+  //   return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
+  // }
+  // const scrollContainerRef = useRef<HTMLDivElement>(null)
+  // const [scrolledRight, setScrolledRight] = useState(false)
 
-  useEffect(() => {
-    const onScroll = () => {
-      /*istanbul ignore else*/
-      if (scrollContainerRef.current) {
-        const status = scrollContainerRef.current.scrollLeft / window.innerWidth
-        if (status > 0.9) {
-          setScrolledRight(true)
-          window.localStorage.setItem('horizontalScrollUsed', 'true')
-        }
-        if (status < 0.1) setScrolledRight(false)
-      }
-    }
-    scrollContainerRef.current &&
-      scrollContainerRef.current.addEventListener(
-        'scroll',
-        _.throttle(onScroll)
-      )
-  }, [])
-  useEffect(() => {
-    if (data && data.session) {
-      if (data.session.user && !data.session.user.isConnectedToDiscord) {
-        setShowConnectToDiscordModal(true)
-      }
-      setState({
-        session: data.session,
-        progress: calculateProgress(data.session, lessons),
-        current: calculateCurrent(data.session, lessons)
-      })
-    }
-  }, [data])
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     /*istanbul ignore else*/
+  //     if (scrollContainerRef.current) {
+  //       const status = scrollContainerRef.current.scrollLeft / window.innerWidth
+  //       if (status > 0.9) {
+  //         setScrolledRight(true)
+  //         window.localStorage.setItem('horizontalScrollUsed', 'true')
+  //       }
+  //       if (status < 0.1) setScrolledRight(false)
+  //     }
+  //   }
+  //   scrollContainerRef.current &&
+  //     scrollContainerRef.current.addEventListener(
+  //       'scroll',
+  //       _.throttle(onScroll)
+  //     )
+  // }, [])
+  // useEffect(() => {
+  //   if (data && data.session) {
+  //     if (data.session.user && !data.session.user.isConnectedToDiscord) {
+  //       setShowConnectToDiscordModal(true)
+  //     }
+  //     setState({
+  //       session: data.session,
+  //       progress: calculateProgress(data.session, lessons),
+  //       current: calculateCurrent(data.session, lessons)
+  //     })
+  //   }
+  // }, [data])
 
-  const lessonStatusMap = generateMap(state.session)
-  const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
-    const { id, title, description, challenges, docUrl, slug } = lesson
-    const status = lessonStatusMap[id]
-    const passed = Boolean(status?.passedAt)
-    let lessonState = ''
-    if (idx === state.current) lessonState = 'inProgress'
-    if (passed) lessonState = 'completed'
+  // const lessonStatusMap = generateMap(state.session)
+  // const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
+  //   const { id, title, description, challenges, docUrl, slug } = lesson
+  //   const status = lessonStatusMap[id]
+  //   const passed = Boolean(status?.passedAt)
+  //   let lessonState = ''
+  //   if (idx === state.current) lessonState = 'inProgress'
+  //   if (passed) lessonState = 'completed'
 
-    return (
-      <LessonCard
-        key={id}
-        lessonId={id}
-        coverImg={`js-${idx}-cover.svg`}
-        title={title}
-        challengeCount={challenges.length}
-        description={description}
-        currentState={lessonState}
-        reviewUrl={`/review/${slug}`}
-        challengesUrl={`/curriculum/${slug}`}
-        docUrl={docUrl ?? ''}
-      />
-    )
-  })
+  //   return (
+  //     <LessonCard
+  //       key={id}
+  //       lessonId={id}
+  //       coverImg={`js-${idx}-cover.svg`}
+  //       title={title}
+  //       challengeCount={challenges.length}
+  //       description={description}
+  //       currentState={lessonState}
+  //       reviewUrl={`/review/${slug}`}
+  //       challengesUrl={`/curriculum/${slug}`}
+  //       docUrl={docUrl ?? ''}
+  //     />
+  //   )
+  // })
   return (
     <>
-      <ConnectToDiscordModal
+      {/* <ConnectToDiscordModal
         show={showConnectToDiscordModal}
         close={() => setShowConnectToDiscordModal(false)}
-      />
+      /> */}
       <Layout title="Curriculum">
-        {hasMounted &&
+        {/* {hasMounted &&
           typeof window !== 'undefined' &&
           !window.localStorage.getItem('horizontalScrollUsed') && (
             <ScrollArrow scrolledRight={scrolledRight} />
-          )}
+          )} */}
         <div
           className={`row overflow-auto flex-nowrap ${styles['parent-scroll']}`}
           ref={scrollContainerRef}
@@ -199,34 +199,35 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
             {lessonsToRender}
           </div>
           <div className={`col-12 col-xl-4 ${styles['child-scroll']}`}>
-            <DiscordBar />
+            {/* <DiscordBar /> */}
             <div className="d-none d-xl-block">
-              <ProgressCard
+              {/* <ProgressCard
                 progressCount={state.progress}
                 loggedIn={!!state.session?.user}
                 loading={loading}
-              />
+              /> */}
             </div>
             <AnnouncementCard announcements={announcements} />
-            <AdditionalResources />
+            {/* <AdditionalResources /> */}
           </div>
         </div>
       </Layout>
     </>
   )
+  // return <div>Hi</div>
 }
 const FIVE_MINUTES = 5 * 60
 
 export const getStaticProps: GetStaticProps = async () => {
-  const apolloClient = initializeApollo()
-  const query = await apolloClient.query<GetAppQuery>({
-    query: GetAppDocument
-  })
+  // const apolloClient = initializeApollo()
+  // const query = await apolloClient.query<GetAppQuery>({
+  //   query: GetAppDocument
+  // })
 
   return {
     props: {
-      lessons: query.data.lessons,
-      alerts: query.data.alerts
+      lessons: [],
+      alerts: []
     },
     revalidate: FIVE_MINUTES
   }
