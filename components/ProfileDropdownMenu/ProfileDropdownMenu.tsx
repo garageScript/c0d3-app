@@ -9,7 +9,11 @@ import { useUserInfoQuery } from '../../graphql/index'
 import { useRouter } from 'next/router'
 import _ from 'lodash'
 import styles from './profileDropDown.module.scss'
-import { ADMIN_PATH, PROFILE_PATH } from '../../constants'
+import {
+  ADMIN_PATH,
+  PROFILE_PATH,
+  SETTINGS_ACCOUNT_PATH
+} from '../../constants'
 
 type ProfileDropDownMenuProps = {
   username: string
@@ -93,6 +97,13 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
             href={userProfilePath}
           >
             Profile
+          </Dropdown.Item>
+          <Dropdown.Item
+            className={`${styles['dropdown-item']} `}
+            bsPrefix={isActive(userProfilePath)}
+            href={SETTINGS_ACCOUNT_PATH}
+          >
+            Settings
           </Dropdown.Item>
           <LogoutContainer>
             <Dropdown.Item className={`${styles['dropdown-item']}`}>
