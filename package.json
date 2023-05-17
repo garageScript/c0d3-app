@@ -60,7 +60,7 @@
     "next-auth": "^4.22.1",
     "next-connect": "1.0.0",
     "next-mdx-remote": "^3.0.8",
-    "nodemailer": "^6.9.1",
+    "nodemailer": "^6.9.2",
     "posthog-js": "^1.57.0",
     "prism-react-renderer": "2.0.4",
     "prismjs": "^1.29.0",
