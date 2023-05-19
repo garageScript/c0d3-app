@@ -46,6 +46,16 @@ const submissionMock = {
   lesson: lessonMock
 }
 
+const commentMock = {
+  id: 1,
+  fileName: '3.js',
+  line: 4,
+  content: 'nice work',
+  author: authorMock,
+  authorId: authorMock.id,
+  submissionId: 1
+}
+
 const mockAddCommentArgs = {
   line: 1,
   submissionId: 1,
@@ -61,6 +71,7 @@ describe('Add comment resolver', () => {
       submission: submissionMock,
       ...mockAddCommentArgs
     }
+    prismaMock.comment.findMany.mockResolvedValue([commentMock])
     prismaMock.comment.create.mockResolvedValue(mockCommentCreate)
     expect(addComment({}, mockAddCommentArgs, mockCtx)).resolves.toEqual(
       mockCommentCreate
@@ -79,6 +90,10 @@ describe('Should send required discord notifications', () => {
       author: authorMock,
       submission: { ...submissionMock, user: authorMock }
     })
+
+    // tests sending notifications to unique participants only
+    prismaMock.comment.findMany.mockResolvedValue([commentMock, commentMock])
+
     await addComment({}, mockAddCommentArgs, mockCtx)
     expect(sendDirectMessage).not.toBeCalled()
   })
@@ -87,6 +102,12 @@ describe('Should send required discord notifications', () => {
       author: authorMock,
       submission: { ...submissionMock, user: { ...userMock, discordId: null } }
     })
+
+    // tests not sending notification to participants with no discord ID
+    prismaMock.comment.findMany.mockResolvedValue([
+      { ...commentMock, author: { ...commentMock.author, discordId: '' } }
+    ])
+
     await addComment({}, mockAddCommentArgs, mockCtx)
     expect(sendDirectMessage).not.toBeCalled()
   })
@@ -96,10 +117,11 @@ describe('Should send required discord notifications', () => {
       submission: submissionMock,
       ...mockAddCommentArgs
     })
+    prismaMock.comment.findMany.mockResolvedValue([commentMock])
     await addComment({}, mockAddCommentArgs, mockCtx)
     const mockEmbed = {
       color: PRIMARY_COLOR_HEX,
-      title: 'New comment on submission',
+      title: 'New comment by a reviewer on submission',
       url: `${CURRICULUM_URL}/${submissionMock.lesson.slug}`,
       thumbnail: {
         url: getLessonCoverPNG(submissionMock.lesson.order)
@@ -137,6 +159,7 @@ describe('Should send required discord notifications', () => {
         line: null
       }
     })
+    prismaMock.comment.findMany.mockResolvedValue([commentMock])
     await addComment(
       {},
       {
@@ -147,7 +170,7 @@ describe('Should send required discord notifications', () => {
     )
     const mockEmbed = {
       color: PRIMARY_COLOR_HEX,
-      title: 'New comment on submission',
+      title: 'New comment by a reviewer on submission',
       url: `${CURRICULUM_URL}/${submissionMock.lesson.slug}`,
       thumbnail: {
         url: getLessonCoverPNG(submissionMock.lesson.order)
