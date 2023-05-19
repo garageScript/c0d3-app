@@ -15,7 +15,7 @@
     "lint:fix": "yarn lint --fix && prettier --write scss",
     "autofix": "yarn lint:fix && svgo --folder=public --recursive && svgo --folder=assets --recursive",
     "storybook": "storybook dev -p $STORY_PORT -c .storybook",
-    "build-storybook": "storybook build -c .storybook -s ./public",
+    "build-storybook": "storybook build -c .storybook",
     "test": "cross-env TZ=UTC jest --coverage --runInBand",
     "ts-node": "ts-node --compiler-options {\\\"module\\\":\\\"CommonJS\\\"}",
     "type-check": "tsc",
