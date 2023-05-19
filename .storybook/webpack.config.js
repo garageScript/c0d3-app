@@ -27,12 +27,10 @@ module.exports = ({ config }) => {
   //   include: path.resolve(__dirname, '../')
   // })
 
-  config.module.rules.push(
-    {
-      test: /\.html$/i,
-      loader: "html-loader"
-    }
-  )
+  config.module.rules.push({
+    test: /\.html$/i,
+    loader: 'html-loader'
+  })
 
   // config.resolve.alias['fonts'] = path.join(__dirname, '../public/fonts')
 

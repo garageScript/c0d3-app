@@ -623,16 +623,18 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               class="border border-lightgray rounded my-1"
             >
               <div
-                class="ms-3"
+                class="mx-3"
               >
-                <span
-                  wrapper="code_wrapper"
+                <div
+                  class="my-3"
                 >
-                  A comment under submission
-                </span>
+                  <span>
+                    A comment under submission
+                  </span>
+                </div>
               </div>
               <div
-                class="wrapper d-flex justify-content-between align-items-center p-1"
+                class="wrapper d-flex justify-content-between align-items-center p-2 rounded"
               >
                 <div
                   class="wrapper"

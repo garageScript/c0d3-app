@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReviewStatus } from '../../components/ReviewStatus'
+import ReviewStatus from '../../components/ReviewStatus'
 import { SubmissionStatus } from '../../graphql'
 
 export default {

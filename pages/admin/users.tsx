@@ -9,7 +9,7 @@ import { AdminLayout } from '../../components/admin/AdminLayout'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
-import { FilterButtons } from '../../components/FilterButtons'
+import FilterButtons from '../../components/FilterButtons'
 import _ from 'lodash'
 
 type AllUsersData = {

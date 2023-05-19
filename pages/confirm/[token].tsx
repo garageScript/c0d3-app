@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import Link from 'next/link'
@@ -53,14 +53,14 @@ export const ResetPassword = ({
     } catch {} // catch error thrown by default from apollo mutations
   }
 
-  if (confirmToken?.ok) {
-    return <ConfirmSuccess />
-  }
+  useEffect(() => {
+    if (confirmToken?.status === 401 && !confirmToken.error) {
+      onServerError()
+    }
+  }, [confirmToken])
 
-  if (confirmToken?.status === 401 && !confirmToken.error) {
-    onServerError()
-    return <></>
-  }
+  if (confirmToken?.ok) return <ConfirmSuccess />
+
   if (confirmToken?.error) return <ExpiredToken />
 
   return (

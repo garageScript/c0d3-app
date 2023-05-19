@@ -25,6 +25,7 @@ import { SessionContext } from '../../../@types/auth'
 import { SessionStatus } from '../../../constants/auth-constants'
 import { useRouter } from 'next/router'
 import redirectUnauthenticated from '../../../helpers/redirectUnauthenticated'
+import { ErrorMsg } from '../../../constants/error-messages'
 
 const basicValues: (
   username?: string,
@@ -268,7 +269,7 @@ const LinkedAccountsSetting = ({
 
 const AccountSettings = () => {
   const { data: session, status } = useSession() as SessionContext
-  const [userInfoQuery, { data, loading: userInfoLoading }] =
+  const [userInfoQuery, { data, loading: userInfoLoading, error }] =
     useUserInfoLazyQuery()
 
   const loading = userInfoLoading || status === SessionStatus.Loading
@@ -276,9 +277,9 @@ const AccountSettings = () => {
   const unauthenticated = status === SessionStatus.Unauthenticated
   const { username, name, discordUsername } = data?.userInfo?.user || {}
 
-  useEffect(() => {
-    redirectUnauthenticated(unauthenticated)
+  redirectUnauthenticated(unauthenticated)
 
+  useEffect(() => {
     if (authenticated && session) {
       userInfoQuery({
         variables: {
@@ -298,6 +299,16 @@ const AccountSettings = () => {
       <div className={styles.container}>
         <div className={styles.container__child}>
           <h1>Settings</h1>
+          <QueryInfo
+            data={null}
+            loading={false}
+            error={error?.message || ''}
+            texts={{
+              loading: '',
+              data: '',
+              error: ErrorMsg.RetrieveInfo
+            }}
+          />
           <hr className="mb-4" />
           <div className={styles.container__sections}>
             <BasicSettings username={username} name={name} />

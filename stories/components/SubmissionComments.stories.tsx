@@ -1,5 +1,5 @@
 import React from 'react'
-import { SubmissionComments } from '../../components/SubmissionComments'
+import SubmissionComments from '../../components/SubmissionComments'
 import { Submission } from '../../graphql'
 import submissionData from '../../__dummy__/submission'
 import { MockedProvider } from '@apollo/client/testing'

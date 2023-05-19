@@ -39,8 +39,9 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const slug = router.query.lesson as string
   const currentLesson = lessons.find(lesson => lesson.slug === slug)
 
+  redirectUnauthenticated(!session?.user)
+
   useEffect(() => {
-    redirectUnauthenticated(!session?.user)
     session && context.setContext(session)
   }, [session])
 

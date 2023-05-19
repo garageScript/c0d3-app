@@ -4647,16 +4647,18 @@ Array [
       className="border border-lightgray rounded my-1"
     >
       <div
-        className="ms-3"
+        className="mx-3"
       >
-        <span
-          wrapper="code_wrapper"
+        <div
+          className="my-3"
         >
-          First Comment
-        </span>
+          <span>
+            First Comment
+          </span>
+        </div>
       </div>
       <div
-        className="wrapper d-flex justify-content-between align-items-center p-1"
+        className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
       >
         <div
           className="wrapper"
@@ -4683,16 +4685,18 @@ Array [
       className="border border-lightgray rounded my-1"
     >
       <div
-        className="ms-3"
+        className="mx-3"
       >
-        <span
-          wrapper="code_wrapper"
+        <div
+          className="my-3"
         >
-          Second Comment
-        </span>
+          <span>
+            Second Comment
+          </span>
+        </div>
       </div>
       <div
-        className="wrapper d-flex justify-content-between align-items-center p-1"
+        className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
       >
         <div
           className="wrapper"
@@ -10810,6 +10814,295 @@ Array [
     </div>
   </div>,
 ]
+`;
+
+exports[`Storyshots Components/HighlightMarkdown Basic 1`] = `
+<div>
+  <h1
+    id="hello-world"
+  >
+    Hello World
+  </h1>
+  <h2
+    id="this-is-a-subheading"
+  >
+    This is a subheading
+  </h2>
+  <h3
+    id="this-is-a-sub-subheading"
+  >
+    This is a sub-subheading
+  </h3>
+  <p>
+    This is a paragraph
+  </p>
+  <pre
+    className="prism-code language-"
+    style={
+      Object {
+        "backgroundColor": "#f7f6f3",
+        "borderRadius": 4,
+        "color": "rgb(36, 41, 46)",
+        "fontSize": 14,
+        "marginBlock": 20,
+        "marginBottom": 0,
+        "padding": "20px 20px 0 20px",
+      }
+    }
+  >
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": undefined,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        const a = 5;
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": undefined,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        console.log(a)
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": undefined,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+
+      </span>
+    </div>
+  </pre>
+</div>
+`;
+
+exports[`Storyshots Components/HighlightMarkdown With Language 1`] = `
+<div>
+  <h1
+    id="hello-world"
+  >
+    Hello World
+  </h1>
+  <h2
+    id="this-is-a-subheading"
+  >
+    This is a subheading
+  </h2>
+  <h3
+    id="this-is-a-sub-subheading"
+  >
+    This is a sub-subheading
+  </h3>
+  <p>
+    This is a paragraph
+  </p>
+  <pre
+    className="prism-code language-js"
+    style={
+      Object {
+        "backgroundColor": "#f7f6f3",
+        "borderRadius": 4,
+        "color": "rgb(36, 41, 46)",
+        "fontSize": 14,
+        "marginBlock": 20,
+        "marginBottom": 0,
+        "padding": "20px 20px 0 20px",
+      }
+    }
+  >
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": undefined,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token keyword"
+        style={
+          Object {
+            "color": "rgb(0, 119, 170)",
+          }
+        }
+      >
+        const
+      </span>
+      <span
+        className="token plain"
+      >
+         a 
+      </span>
+      <span
+        className="token operator"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(0, 92, 197)",
+          }
+        }
+      >
+        =
+      </span>
+      <span
+        className="token plain"
+      >
+         
+      </span>
+      <span
+        className="token number"
+        style={Object {}}
+      >
+        5
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        ;
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": undefined,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+      >
+        
+      </span>
+      <span
+        className="token console class-name"
+        style={
+          Object {
+            "color": "rgb(227, 98, 9)",
+          }
+        }
+      >
+        console
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        .
+      </span>
+      <span
+        className="token method function property-access"
+        style={
+          Object {
+            "color": "rgb(221, 74, 104)",
+          }
+        }
+      >
+        log
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        (
+      </span>
+      <span
+        className="token plain"
+      >
+        a
+      </span>
+      <span
+        className="token punctuation"
+        style={
+          Object {
+            "backgroundColor": "#f7f6f3",
+            "color": "rgb(36, 41, 46)",
+          }
+        }
+      >
+        )
+      </span>
+      <span
+        className="token plain"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="token-line"
+      style={
+        Object {
+          "backgroundColor": undefined,
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      <span
+        className="token plain"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        
+
+      </span>
+    </div>
+  </pre>
+</div>
 `;
 
 exports[`Storyshots Components/Input Email Input 1`] = `
@@ -23386,16 +23679,18 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ms-3"
+      className="mx-3"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="my-3"
       >
-        First Comment
-      </span>
+        <span>
+          First Comment
+        </span>
+      </div>
     </div>
     <div
-      className="wrapper d-flex justify-content-between align-items-center p-1"
+      className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
     >
       <div
         className="wrapper"
@@ -23490,16 +23785,18 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ms-3"
+      className="mx-3"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="my-3"
       >
-        Second Comment
-      </span>
+        <span>
+          Second Comment
+        </span>
+      </div>
     </div>
     <div
-      className="wrapper d-flex justify-content-between align-items-center p-1"
+      className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
     >
       <div
         className="wrapper"
@@ -23594,16 +23891,18 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ms-3"
+      className="mx-3"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="my-3"
       >
-        Second Comment
-      </span>
+        <span>
+          Second Comment
+        </span>
+      </div>
     </div>
     <div
-      className="wrapper d-flex justify-content-between align-items-center p-1"
+      className="wrapper d-flex justify-content-between align-items-center p-2 rounded"
     >
       <div
         className="wrapper"
@@ -28757,12 +29056,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-8 offset-md-2"
       >
         <h1
-          style={
-            Object {
-              "fontSize": "3.8rem",
-              "fontWeight": 900,
-            }
-          }
+          className="main__header"
         >
           Become a Software Engineer the Hard Way
         </h1>
@@ -28775,12 +29069,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="fw-light h4"
-          style={
-            Object {
-              "lineHeight": 1.5,
-            }
-          }
+          className="p__large fw-light"
         >
           Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
         </p>
@@ -28824,12 +29113,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="fw-light h4"
-          style={
-            Object {
-              "lineHeight": 1.5,
-            }
-          }
+          className="p__large fw-light"
         >
           Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
         </p>
@@ -28925,12 +29209,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         Your Learning Journey
       </h1>
       <p
-        className="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center h4"
-        style={
-          Object {
-            "lineHeight": 1.5,
-          }
-        }
+        className="p__large mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center"
       >
         Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
       </p>
@@ -28958,12 +29237,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Creating an account
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
           </p>
@@ -28993,12 +29267,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Curriculum
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Students who have passed the lessons are available in the chatrooms to help you with your questions.
              
@@ -29034,12 +29303,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Pay It Forward
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
           </p>
@@ -29069,12 +29333,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Work Experience
           </h2>
           <p
-            className="mt-3 fw-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
+            className="p__regular mt-3 fw-light"
           >
             After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
           </p>
@@ -29091,13 +29350,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       Start Your Journey
     </h1>
     <p
-      className="mt-3 fw-light"
-      style={
-        Object {
-          "fontSize": "1.5rem",
-          "lineHeight": 1.5,
-        }
-      }
+      className="p__large mt-3 fw-light"
     >
       Become a full stack software engineer - 100% Free!
     </p>
@@ -30827,7 +31080,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -30871,6 +31124,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token maybe-class-name"
+      style={Object {}}
     >
       React
     </span>
@@ -30929,6 +31183,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
        = ({ children, className }) =&gt; 
     </span>
@@ -30953,7 +31208,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31062,6 +31317,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token string"
+      style={Object {}}
     >
       ''
     </span>
@@ -31098,6 +31354,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token maybe-class-name"
+      style={Object {}}
     >
       Language
     </span>
@@ -31111,7 +31368,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31157,7 +31414,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31203,7 +31460,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31276,7 +31533,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31359,7 +31616,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31442,7 +31699,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31525,7 +31782,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -31553,6 +31810,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -31561,13 +31819,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
             
     </span>
@@ -31606,6 +31865,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        className
     </span>
@@ -31622,6 +31882,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        style
     </span>
@@ -31638,6 +31899,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        tokens
     </span>
@@ -31654,6 +31916,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        getLineProps
     </span>
@@ -31670,6 +31933,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        getTokenProps 
     </span>
@@ -31737,7 +32001,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -32022,6 +32286,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -32030,13 +32295,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
                 
     </span>
@@ -32101,6 +32367,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
       line
     </span>
@@ -32117,6 +32384,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        i
     </span>
@@ -32173,7 +32441,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -32439,6 +32707,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -32447,13 +32716,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
                     
     </span>
@@ -32518,6 +32788,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
       token
     </span>
@@ -32534,6 +32805,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token parameter"
+      style={Object {}}
     >
        key
     </span>
@@ -32590,7 +32862,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -32843,7 +33115,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -32888,6 +33160,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -32896,13 +33169,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
                   
     </span>
@@ -32948,7 +33222,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -32993,6 +33267,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -33001,13 +33276,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
               
     </span>
@@ -33053,7 +33329,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -33087,6 +33363,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
     <span
       className="token plain-text"
+      style={Object {}}
     >
       
     </span>
@@ -33095,13 +33372,14 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
   >
     <span
       className="token plain-text"
+      style={Object {}}
     >
           
     </span>
@@ -33147,7 +33425,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
@@ -33178,7 +33456,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     className="token-line"
     style={
       Object {
-        "backgroundColor": null,
+        "backgroundColor": undefined,
         "color": "rgb(36, 41, 46)",
       }
     }
