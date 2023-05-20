@@ -116,7 +116,7 @@ const sendNotifications = async ({
         const isSubmissionAuthor = participant.author.id === submission.user.id
         const hasDiscordId = participant.author.discordId
 
-        if ((!isCommentAuthor || !isSubmissionAuthor) && hasDiscordId) {
+        if (!isCommentAuthor && !isSubmissionAuthor && hasDiscordId) {
           acc.push(
             sendDirectMessage(
               participant.author.discordId,
