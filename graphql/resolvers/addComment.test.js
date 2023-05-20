@@ -111,13 +111,19 @@ describe('Should send required discord notifications', () => {
     await addComment({}, mockAddCommentArgs, mockCtx)
     expect(sendDirectMessage).not.toBeCalled()
   })
-  test('Should send a message embed to user with comment notification', async () => {
+  test('Should send a message embed to user with comment notification and send to all participants', async () => {
     prismaMock.comment.create.mockResolvedValue({
       author: authorMock,
       submission: submissionMock,
       ...mockAddCommentArgs
     })
-    prismaMock.comment.findMany.mockResolvedValue([commentMock])
+
+    // tests sending notification if the author ID is different from the comment author ID
+    prismaMock.comment.findMany.mockResolvedValue([
+      commentMock,
+      { ...commentMock, author: { ...commentMock.author, id: 2 } }
+    ])
+
     await addComment({}, mockAddCommentArgs, mockCtx)
     const mockEmbed = {
       color: PRIMARY_COLOR_HEX,
