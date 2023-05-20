@@ -107,7 +107,7 @@ const sendNotifications = async ({
   }
 
   // sends a notification to all of those who commented on
-  // the same submission line except the comment author
+  // the same submission line except the comment author and the student who made the submission
   const sendNotificationsToParticipants = async () => {
     const notifications = restOfComments.reduce(
       (acc: Promise<MessageResponse>[], participant) => {
