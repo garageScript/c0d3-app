@@ -11,7 +11,8 @@ import {
   PRIMARY_COLOR_HEX,
   PROFILE_URL
 } from '../../constants'
-import { Challenge, Comment, Lesson, Submission, User } from '@prisma/client'
+import { Challenge, Comment, Lesson, Submission } from '@prisma/client'
+import { MessageResponse } from '../../@types/discordBot'
 
 type CommentWithAuthorAndSubmission = Comment & {
   author: {
@@ -56,23 +57,6 @@ const sendNotifications = async ({
     }
   })
 
-  const [uniqueParticipants] = restOfComments?.reduce(
-    (
-      acc: [(Comment & { author: User })[], { [key: string]: boolean }],
-      e: Comment & { author: User }
-    ) => {
-      const [arr, map] = acc
-
-      if (!map[e.authorId]) {
-        arr.push(e)
-        map[e.authorId] = true
-      }
-
-      return acc
-    },
-    [[], {}]
-  )
-
   const { submission, author } = comment
 
   const notificationEmbed = (isSubmissionOwner: boolean): APIEmbed => {
@@ -112,32 +96,51 @@ const sendNotifications = async ({
   }
 
   // sends a notification to the submission author
-  if (author.id !== submission.user.id && submission.user.discordId) {
-    await sendDirectMessage(
-      submission.user.discordId,
-      '',
-      notificationEmbed(true)
-    )
+  const sendNotificationToAuthor = async () => {
+    if (author.id !== submission.user.id && submission.user.discordId) {
+      await sendDirectMessage(
+        submission.user.discordId,
+        '',
+        notificationEmbed(true)
+      )
+    }
   }
 
   // sends a notification to all of those who commented on
   // the same submission line except the comment author
-  uniqueParticipants.forEach(participant => {
-    if (
-      participant.author.id !== author.id ||
-      participant.author.id === submission.user.id
-    ) {
-      return
-    }
+  const sendNotificationsToParticipants = async () => {
+    const notifications = restOfComments.reduce(
+      (acc: Promise<MessageResponse>[], participant) => {
+        if (
+          participant.author.id !== author.id ||
+          participant.author.id === submission.user.id
+        ) {
+          return acc
+        }
 
-    if (participant.author.discordId) {
-      sendDirectMessage(
-        participant.author.discordId,
-        '',
-        notificationEmbed(false)
-      )
-    }
-  })
+        if (participant.author.discordId) {
+          acc.push(
+            sendDirectMessage(
+              participant.author.discordId,
+              '',
+              notificationEmbed(false)
+            )
+          )
+        }
+
+        return acc
+      },
+      []
+    )
+
+    await Promise.all(notifications)
+  }
+
+  // schedule and await all notifications together
+  await Promise.all([
+    sendNotificationToAuthor(),
+    sendNotificationsToParticipants()
+  ])
 }
 
 export const addComment = async (
@@ -186,7 +189,7 @@ export const addComment = async (
     line,
     fileName,
     submissionId,
-    comment: comment
+    comment
   })
 
   return comment
