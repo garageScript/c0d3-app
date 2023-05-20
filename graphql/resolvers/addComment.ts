@@ -111,22 +111,21 @@ const sendNotifications = async ({
   const sendNotificationsToParticipants = async () => {
     const notifications = restOfComments.reduce(
       (acc: Promise<MessageResponse>[], participant) => {
-        if (
-          participant.author.id !== author.id ||
-          participant.author.id === submission.user.id
-        ) {
+        const isCommentAuthor = participant.author.id === author.id
+        const isSubmissionAuthor = participant.author.id === submission.user.id
+        const hasDiscordId = participant.author.discordId
+
+        if (isCommentAuthor || isSubmissionAuthor || !hasDiscordId) {
           return acc
         }
 
-        if (participant.author.discordId) {
-          acc.push(
-            sendDirectMessage(
-              participant.author.discordId,
-              '',
-              notificationEmbed(false)
-            )
+        acc.push(
+          sendDirectMessage(
+            participant.author.discordId,
+            '',
+            notificationEmbed(false)
           )
-        }
+        )
 
         return acc
       },
