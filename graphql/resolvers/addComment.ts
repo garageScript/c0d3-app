@@ -59,12 +59,12 @@ const sendNotifications = async ({
 
   const { submission, author } = comment
 
-  const notificationEmbed = (isSubmissionOwner: boolean): APIEmbed => {
+  const notificationEmbed = (forSubmissionOwner: boolean): APIEmbed => {
     const params = {
-      title: isSubmissionOwner
+      title: forSubmissionOwner
         ? `New comment by a reviewer on submission`
         : `New comment on submission`,
-      description: isSubmissionOwner
+      description: forSubmissionOwner
         ? 'commented on your submission to the'
         : 'added a comment on'
     }
