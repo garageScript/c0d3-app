@@ -54,7 +54,8 @@ const sendNotifications = async ({
           discordId: true
         }
       }
-    }
+    },
+    distinct: ['authorId']
   })
 
   const { submission, author } = comment
