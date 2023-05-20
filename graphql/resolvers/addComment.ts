@@ -46,8 +46,13 @@ const sendNotifications = async ({
       submissionId,
       fileName
     },
-    include: {
-      author: true
+    select: {
+      author: {
+        select: {
+          id: true,
+          discordId: true
+        }
+      }
     }
   })
 
