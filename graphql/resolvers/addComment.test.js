@@ -118,10 +118,10 @@ describe('Should send required discord notifications', () => {
       ...mockAddCommentArgs
     })
 
-    // tests sending notification if the author ID is different from the comment author ID
+    // tests sending notification if the author ID is different from the comment author ID & submission author ID
     prismaMock.comment.findMany.mockResolvedValue([
       commentMock,
-      { ...commentMock, author: { ...commentMock.author, id: 2 } }
+      { ...commentMock, author: { ...commentMock.author, id: 3 } }
     ])
 
     await addComment({}, mockAddCommentArgs, mockCtx)
