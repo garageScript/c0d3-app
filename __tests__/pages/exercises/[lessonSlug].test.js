@@ -1,5 +1,10 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import {
+  render,
+  screen,
+  fireEvent,
+  waitForElementToBeRemoved
+} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Exercises from '../../../pages/exercises/[lessonSlug]'
 import { useRouter } from 'next/router'
@@ -342,6 +347,11 @@ describe('Exercises page', () => {
       </MockedProvider>
     )
 
-    await screen.findByText('Loading...')
+    // there are two spinners, one from withQueryLoader, another from useRouter, so we need to wait to test the second one
+    expect(
+      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'), {
+        onTimeout: () => {}
+      })
+    ).toBeNull()
   })
 })
