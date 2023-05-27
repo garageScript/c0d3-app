@@ -47,7 +47,7 @@
     "dayjs": "^1.11.7",
     "discord.js": "^14.9.0",
     "express-session": "^1.17.3",
-    "formik": "^2.2.8",
+    "formik": "^2.3.2",
     "gitdiff-parser": "0.3.0",
     "graphql": "^15.8.0",
     "graphql-request": "^6.1.0",
