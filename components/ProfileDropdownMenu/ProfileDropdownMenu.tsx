@@ -100,7 +100,7 @@ const ProfileDropdownMenu: React.FC<ProfileDropDownMenuProps> = ({
           </Dropdown.Item>
           <Dropdown.Item
             className={`${styles['dropdown-item']} `}
-            bsPrefix={isActive(userProfilePath)}
+            bsPrefix={isActive(SETTINGS_ACCOUNT_PATH)}
             href={SETTINGS_ACCOUNT_PATH}
           >
             Settings
