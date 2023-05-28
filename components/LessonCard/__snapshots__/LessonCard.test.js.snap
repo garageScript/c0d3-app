@@ -94,7 +94,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
       class="d-none d-sm-flex p-2"
     >
       <img
-        class="align-self-center"
+        class="align-self-center rounded"
         height="165"
         src="/assets/curriculum/undefined"
         width="116"
@@ -262,7 +262,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       class="d-none d-sm-flex p-2"
     >
       <img
-        class="align-self-center"
+        class="align-self-center rounded"
         height="165"
         src="/assets/curriculum/undefined"
         width="116"
@@ -391,7 +391,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
       class="d-none d-sm-flex p-2"
     >
       <img
-        class="align-self-center"
+        class="align-self-center rounded"
         height="165"
         src="/assets/curriculum/undefined"
         width="116"
@@ -493,7 +493,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       class="d-none d-sm-flex p-2"
     >
       <img
-        class="align-self-center"
+        class="align-self-center rounded"
         height="165"
         src="/assets/curriculum/undefined"
         width="116"
@@ -605,7 +605,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
       class="d-none d-sm-flex p-2"
     >
       <img
-        class="align-self-center"
+        class="align-self-center rounded"
         height="165"
         src="/assets/curriculum/undefined"
         width="116"
@@ -707,7 +707,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
       class="d-none d-sm-flex p-2"
     >
       <img
-        class="align-self-center"
+        class="align-self-center rounded"
         height="165"
         src="/assets/curriculum/undefined"
         width="116"
@@ -809,7 +809,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
       class="d-none d-sm-flex p-2"
     >
       <img
-        class="align-self-center"
+        class="align-self-center rounded"
         height="165"
         src="/assets/curriculum/undefined"
         width="116"

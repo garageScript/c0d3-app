@@ -349,7 +349,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
@@ -476,7 +476,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
@@ -585,7 +585,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
@@ -694,7 +694,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
@@ -803,7 +803,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
@@ -912,7 +912,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
@@ -1021,7 +1021,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
@@ -1130,7 +1130,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
@@ -1239,7 +1239,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
@@ -1348,7 +1348,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
@@ -2070,7 +2070,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
@@ -2233,7 +2233,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
@@ -2396,7 +2396,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
@@ -2532,7 +2532,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
@@ -2659,7 +2659,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
@@ -2768,7 +2768,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
@@ -2877,7 +2877,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
@@ -2986,7 +2986,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
@@ -3095,7 +3095,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
@@ -3204,7 +3204,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
