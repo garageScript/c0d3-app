@@ -15,6 +15,7 @@ import styles from '../../../../scss/exercises.module.scss'
 import LessonTabs from '../../../../components/LessonTabs'
 import { LessonTab } from '../../../../components/LessonTabs/LessonTabs'
 import { ApolloQueryResult } from '@apollo/client'
+import Alert from '../../../../components/Alert'
 
 type ExerciseLesson = {
   title: string
@@ -134,6 +135,15 @@ const ExerciseList = ({
           </NewButton>
         </div>
       </div>
+      {!exercises.length && (
+        <Alert
+          alert={{
+            id: 0,
+            text: 'Sorry, but it seems like you have not created any exercises.',
+            type: 'info'
+          }}
+        />
+      )}
       <div className={styles.exerciseList__container}>
         {exercises.map((exercise, i) => (
           <ExercisePreviewCard
