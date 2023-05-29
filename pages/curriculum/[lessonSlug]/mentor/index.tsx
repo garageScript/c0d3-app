@@ -139,7 +139,7 @@ const ExerciseList = ({
         <Alert
           alert={{
             id: 0,
-            text: 'You have not created any exercises.',
+            text: 'Sorry, but it seems like you have not created any exercises.',
             type: 'info'
           }}
         />
