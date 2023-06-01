@@ -510,57 +510,6 @@ export type UserLesson = {
   userId?: Maybe<Scalars['String']>
 }
 
-export type LessonAndChallengeInfoFragment = {
-  __typename?: 'Lesson'
-  id: number
-  docUrl?: string | null
-  githubUrl?: string | null
-  videoUrl?: string | null
-  chatUrl?: string | null
-  order: number
-  description: string
-  title: string
-  challenges: Array<{
-    __typename?: 'Challenge'
-    id: number
-    description: string
-    lessonId: number
-    title: string
-    order: number
-  }>
-}
-
-export type SubmissionsInfoFragment = {
-  __typename?: 'Submission'
-  id: number
-  status: SubmissionStatus
-  diff?: string | null
-  comment?: string | null
-  challengeId: number
-  lessonId: number
-  createdAt?: string | null
-  updatedAt: string
-  challenge: { __typename?: 'Challenge'; title: string; description: string }
-  user: { __typename?: 'User'; id: number; username: string }
-  reviewer?: {
-    __typename?: 'User'
-    id: number
-    username: string
-    name: string
-  } | null
-  comments?: Array<{
-    __typename?: 'Comment'
-    id: number
-    content: string
-    submissionId: number
-    createdAt: string
-    authorId: number
-    line?: number | null
-    fileName?: string | null
-    author?: { __typename?: 'User'; username: string; name: string } | null
-  }> | null
-}
-
 export type AcceptSubmissionMutationVariables = Exact<{
   submissionId: Scalars['Int']
   comment: Scalars['String']
@@ -852,6 +801,20 @@ export type EditCommentMutation = {
   editComment?: { __typename?: 'Comment'; id: number; content: string } | null
 }
 
+export type EditExerciseCommentMutationVariables = Exact<{
+  id: Scalars['Int']
+  content: Scalars['String']
+}>
+
+export type EditExerciseCommentMutation = {
+  __typename?: 'Mutation'
+  editExerciseComment: {
+    __typename?: 'ExerciseComment'
+    id: number
+    content: string
+  }
+}
+
 export type FlagExerciseMutationVariables = Exact<{
   id: Scalars['Int']
   flagReason: Scalars['String']
@@ -860,6 +823,62 @@ export type FlagExerciseMutationVariables = Exact<{
 export type FlagExerciseMutation = {
   __typename?: 'Mutation'
   flagExercise?: { __typename?: 'Exercise'; id: number } | null
+}
+
+export type LessonAndChallengeInfoFragment = {
+  __typename?: 'Lesson'
+  id: number
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
+  chatUrl?: string | null
+  order: number
+  description: string
+  title: string
+  challenges: Array<{
+    __typename?: 'Challenge'
+    id: number
+    description: string
+    lessonId: number
+    title: string
+    order: number
+  }>
+}
+
+export type SubmissionsInfoFragment = {
+  __typename?: 'Submission'
+  id: number
+  status: SubmissionStatus
+  diff?: string | null
+  comment?: string | null
+  challengeId: number
+  lessonId: number
+  createdAt?: string | null
+  updatedAt: string
+  challenge: {
+    __typename?: 'Challenge'
+    title: string
+    description: string
+    id: number
+  }
+  user: { __typename?: 'User'; id: number; username: string }
+  reviewer?: {
+    __typename?: 'User'
+    id: number
+    username: string
+    name: string
+  } | null
+  comments?: Array<{
+    __typename?: 'Comment'
+    id: number
+    content: string
+    submissionId: number
+    createdAt: string
+    authorId: number
+    line?: number | null
+    fileName?: string | null
+    author?: { __typename?: 'User'; username: string; name: string } | null
+  }> | null
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
@@ -1124,7 +1143,12 @@ export type GetPreviousSubmissionsQuery = {
     lessonId: number
     createdAt?: string | null
     updatedAt: string
-    challenge: { __typename?: 'Challenge'; title: string; description: string }
+    challenge: {
+      __typename?: 'Challenge'
+      title: string
+      description: string
+      id: number
+    }
     user: { __typename?: 'User'; id: number; username: string }
     reviewer?: {
       __typename?: 'User'
@@ -1203,7 +1227,12 @@ export type SubmissionsQuery = {
     lessonId: number
     createdAt?: string | null
     updatedAt: string
-    challenge: { __typename?: 'Challenge'; title: string; description: string }
+    challenge: {
+      __typename?: 'Challenge'
+      title: string
+      description: string
+      id: number
+    }
     user: { __typename?: 'User'; id: number; username: string }
     reviewer?: {
       __typename?: 'User'
@@ -1547,20 +1576,6 @@ export type UserInfoQuery = {
       } | null> | null
     }>
   } | null
-}
-
-export type EditExerciseCommentMutationVariables = Exact<{
-  id: Scalars['Int']
-  content: Scalars['String']
-}>
-
-export type EditExerciseCommentMutation = {
-  __typename?: 'Mutation'
-  editExerciseComment: {
-    __typename?: 'ExerciseComment'
-    id: number
-    content: string
-  }
 }
 
 export type WithIndex<TObject> = TObject & Record<string, any>
@@ -2386,6 +2401,7 @@ export const SubmissionsInfoFragmentDoc = gql`
     challenge {
       title
       description
+      id
     }
     challengeId
     lessonId
@@ -3954,6 +3970,89 @@ export type EditCommentMutationResult =
 export type EditCommentMutationOptions = Apollo.BaseMutationOptions<
   EditCommentMutation,
   EditCommentMutationVariables
+>
+export const EditExerciseCommentDocument = gql`
+  mutation editExerciseComment($id: Int!, $content: String!) {
+    editExerciseComment(id: $id, content: $content) {
+      id
+      content
+    }
+  }
+`
+export type EditExerciseCommentMutationFn = Apollo.MutationFunction<
+  EditExerciseCommentMutation,
+  EditExerciseCommentMutationVariables
+>
+export type EditExerciseCommentProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables
+  >
+} & TChildProps
+export function withEditExerciseComment<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables,
+    EditExerciseCommentProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables,
+    EditExerciseCommentProps<TChildProps, TDataName>
+  >(EditExerciseCommentDocument, {
+    alias: 'editExerciseComment',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useEditExerciseCommentMutation__
+ *
+ * To run a mutation, you first call `useEditExerciseCommentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useEditExerciseCommentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [editExerciseCommentMutation, { data, loading, error }] = useEditExerciseCommentMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      content: // value for 'content'
+ *   },
+ * });
+ */
+export function useEditExerciseCommentMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables
+  >(EditExerciseCommentDocument, options)
+}
+export type EditExerciseCommentMutationHookResult = ReturnType<
+  typeof useEditExerciseCommentMutation
+>
+export type EditExerciseCommentMutationResult =
+  Apollo.MutationResult<EditExerciseCommentMutation>
+export type EditExerciseCommentMutationOptions = Apollo.BaseMutationOptions<
+  EditExerciseCommentMutation,
+  EditExerciseCommentMutationVariables
 >
 export const FlagExerciseDocument = gql`
   mutation flagExercise($id: Int!, $flagReason: String!) {
@@ -6716,89 +6815,6 @@ export type UserInfoLazyQueryHookResult = ReturnType<
 export type UserInfoQueryResult = Apollo.QueryResult<
   UserInfoQuery,
   UserInfoQueryVariables
->
-export const EditExerciseCommentDocument = gql`
-  mutation editExerciseComment($id: Int!, $content: String!) {
-    editExerciseComment(id: $id, content: $content) {
-      id
-      content
-    }
-  }
-`
-export type EditExerciseCommentMutationFn = Apollo.MutationFunction<
-  EditExerciseCommentMutation,
-  EditExerciseCommentMutationVariables
->
-export type EditExerciseCommentProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: Apollo.MutationFunction<
-    EditExerciseCommentMutation,
-    EditExerciseCommentMutationVariables
-  >
-} & TChildProps
-export function withEditExerciseComment<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    EditExerciseCommentMutation,
-    EditExerciseCommentMutationVariables,
-    EditExerciseCommentProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    EditExerciseCommentMutation,
-    EditExerciseCommentMutationVariables,
-    EditExerciseCommentProps<TChildProps, TDataName>
-  >(EditExerciseCommentDocument, {
-    alias: 'editExerciseComment',
-    ...operationOptions
-  })
-}
-
-/**
- * __useEditExerciseCommentMutation__
- *
- * To run a mutation, you first call `useEditExerciseCommentMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useEditExerciseCommentMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [editExerciseCommentMutation, { data, loading, error }] = useEditExerciseCommentMutation({
- *   variables: {
- *      id: // value for 'id'
- *      content: // value for 'content'
- *   },
- * });
- */
-export function useEditExerciseCommentMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    EditExerciseCommentMutation,
-    EditExerciseCommentMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    EditExerciseCommentMutation,
-    EditExerciseCommentMutationVariables
-  >(EditExerciseCommentDocument, options)
-}
-export type EditExerciseCommentMutationHookResult = ReturnType<
-  typeof useEditExerciseCommentMutation
->
-export type EditExerciseCommentMutationResult =
-  Apollo.MutationResult<EditExerciseCommentMutation>
-export type EditExerciseCommentMutationOptions = Apollo.BaseMutationOptions<
-  EditExerciseCommentMutation,
-  EditExerciseCommentMutationVariables
 >
 export type AlertKeySpecifier = (
   | 'id'
