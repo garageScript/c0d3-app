@@ -9,6 +9,7 @@ const SUBMISSIONS_INFO = gql`
     challenge {
       title
       description
+      id
     }
     challengeId
     lessonId

@@ -9,7 +9,8 @@ const submissionData = {
     title: 'Is First Num Bigger',
     description:
       "Write a function that takes in 2 numbers and returns true if the first number is greater than the second, false otherwise.\n\nHere's how another developer might use your function:\n\n```\nsolution(5,9) // Should return false\nsolution(4,1) // Should return true\n```",
-    __typename: 'Challenge'
+    __typename: 'Challenge',
+    id: 1
   },
   challengeId: 6,
   lessonId: 1,
