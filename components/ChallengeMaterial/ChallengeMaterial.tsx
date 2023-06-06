@@ -16,7 +16,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import GiveStarCard from '../GiveStarCard'
-import _, { toNumber } from 'lodash'
+import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
 import { SubmissionStatus, useAddCommentMutation } from '../../graphql'
 import DiffView from '../DiffView'
@@ -387,7 +387,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       }
     })
   const [currentChallengeID, setCurrentChallenge] =
-    useState<CurrentChallengeID>(toNumber(challenge))
+    useState<CurrentChallengeID>(_.toNumber(challenge))
 
   const finalChallenge = {
     title: 'Challenges Completed!',
