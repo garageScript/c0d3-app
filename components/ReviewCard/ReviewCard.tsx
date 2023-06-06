@@ -26,6 +26,10 @@ import SelectIteration from '../SelectIteration'
 import Error, { StatusCode } from '../Error'
 import ReviewStatus from '../ReviewStatus'
 import styles from './reviewCard.module.scss'
+import Link from 'next/link'
+import { CURRICULUM_PATH } from '../../constants'
+import { useRouter } from 'next/router'
+import { LinkExternalIcon } from '@primer/octicons-react'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -152,6 +156,8 @@ const ReviewButtons: React.FC<{
 }
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
+  const { lesson } = useRouter().query
+
   const { id, diff, user, challenge, lessonId, challengeId, status } =
     submissionData
   const context = useContext(GlobalContext)
@@ -221,7 +227,19 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               <div>
                 <h4>
                   {user?.username} -{' '}
-                  <span className="text-primary">{challenge?.title}</span>
+                  <Link
+                    href={`${CURRICULUM_PATH}/${lesson}?challenge=${challenge.id}`}
+                  >
+                    <a
+                      className="text-primary text-decoration-none"
+                      target="_blank"
+                    >
+                      <div className="d-inline-flex gap-1">
+                        {challenge?.title}
+                        <LinkExternalIcon size="small" />
+                      </div>
+                    </a>
+                  </Link>
                 </h4>
                 {submissionState.createdAt && (
                   <Text color="lightgrey" size="sm">

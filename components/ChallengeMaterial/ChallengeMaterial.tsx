@@ -30,6 +30,8 @@ import Error, { StatusCode } from '../Error'
 import ReviewStatus from '../ReviewStatus'
 import useBreakpoint from '../../helpers/useBreakpoint'
 import HighlightMarkdown from '../mdx/HighlightMarkdown/HighlightMarkdown'
+import { useRouter } from 'next/router'
+import { CURRICULUM_PATH } from '../../constants'
 
 dayjs.extend(relativeTime)
 dayjs.extend(LocalizedFormat)
@@ -84,6 +86,9 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
   challengeNum,
   setCurrentChallenge
 }) => {
+  const router = useRouter()
+  const { lessonSlug } = router.query
+
   const cardStyles: string[] = ['challenge-title-card']
   if (active) {
     cardStyles.push('challenge-title-card--active')
@@ -94,11 +99,19 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
     cardStyles.push('shadow-sm', 'border-0')
   }
 
+  const handleChallengeClick = () => {
+    router.push(`${CURRICULUM_PATH}/${lessonSlug}?challenge=${id}`, undefined, {
+      shallow: true
+    })
+
+    setCurrentChallenge(id)
+  }
+
   return (
     <div
       data-testid="challenge-title"
       className={`card mb-2 ${cardStyles.join(' ')}`}
-      onClick={() => setCurrentChallenge(id)}
+      onClick={handleChallengeClick}
     >
       <div className="card-body d-flex justify-content-between">
         <div>{`${challengeNum}. ${title}`}</div>
@@ -348,6 +361,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
   }
+
+  const router = useRouter()
+  const { challenge } = router.query
+
   //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
     (acc: UserSubmissionsObject, submission: Submission) => {
@@ -370,7 +387,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       }
     })
   const [currentChallengeID, setCurrentChallenge] =
-    useState<CurrentChallengeID>(null)
+    useState<CurrentChallengeID>(_.toNumber(challenge))
 
   const finalChallenge = {
     title: 'Challenges Completed!',
