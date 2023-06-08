@@ -10847,6 +10847,7 @@ exports[`Storyshots Components/HighlightMarkdown Basic 1`] = `
         "marginBlock": 20,
         "marginBottom": 0,
         "padding": "20px 20px 0 20px",
+        "wordBreak": "break-all",
       }
     }
   >
@@ -10936,6 +10937,7 @@ exports[`Storyshots Components/HighlightMarkdown With Language 1`] = `
         "marginBlock": 20,
         "marginBottom": 0,
         "padding": "20px 20px 0 20px",
+        "wordBreak": "break-all",
       }
     }
   >
@@ -31228,6 +31230,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       "marginBlock": 20,
       "marginBottom": 0,
       "padding": "20px 20px 0 20px",
+      "wordBreak": "break-all",
     }
   }
 >
