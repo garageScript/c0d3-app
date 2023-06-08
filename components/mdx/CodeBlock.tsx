@@ -19,7 +19,8 @@ const CodeBlock: React.FC<Props> = ({ children, className }) => {
             marginBottom: 0,
             fontSize: 14,
             borderRadius: 4,
-            marginBlock: 20
+            marginBlock: 20,
+            wordBreak: 'break-all'
           }}
         >
           {tokens.map((line, i) => (

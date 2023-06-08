@@ -459,7 +459,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                       </p>
                       <pre
                         class="prism-code language-"
-                        style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px; margin-block: 20px;"
+                        style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px; margin-block: 20px; word-break: break-all;"
                       >
                         <div
                           class="token-line"
@@ -1188,7 +1188,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                       </p>
                       <pre
                         class="prism-code language-"
-                        style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px; margin-block: 20px;"
+                        style="color: rgb(36, 41, 46); background-color: rgb(247, 246, 243); padding: 20px 20px 0px 20px; margin-bottom: 0px; font-size: 14px; border-radius: 4px; margin-block: 20px; word-break: break-all;"
                       >
                         <div
                           class="token-line"
