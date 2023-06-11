@@ -15,9 +15,9 @@ changedFiles="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
 # changedFiles="$changedFiles"$'\n'"yarn.lock"
 # changedFiles="$changedFiles"$'\n'"package-lock.json"
 
-depsChanged=$(echo "$changedFiles" | grep -e "package-lock.json" -e "yarn.lock")
+depsChanged=$(echo "$changedFiles" | git grep -e "package-lock.json" -e "yarn.lock")
 
-prismaChanged=$(echo "$changedFiles" | grep -e "schema.prisma")
+prismaChanged=$(echo "$changedFiles" | git grep -e "schema.prisma")
 
 # Define update msg variable
 upgradeMsg=$(cat <<-DOC
