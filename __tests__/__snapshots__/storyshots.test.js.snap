@@ -15517,11 +15517,11 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
   className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
 >
-  <h4
+  <h3
     className="progress-card__title text-center"
   >
     You're off to a great start!
-  </h4>
+  </h3>
   <div
     className="d-block d-xl-none"
   >
@@ -15598,7 +15598,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
       </svg>
     </div>
   </div>
-  <div
+  <p
     className="mt-3 text-center"
   >
     Join us on
@@ -15615,7 +15615,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
       </p>
     </a>
     to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-  </div>
+  </p>
   <div
     className="mt-4 d-flex flex-column"
   >
@@ -15636,11 +15636,11 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
 <div
   className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
 >
-  <h4
+  <h3
     className="progress-card__title text-center"
   >
     Congratulations! You've finished the course!
-  </h4>
+  </h3>
   <div
     className="d-block d-xl-none"
   >
@@ -15717,35 +15717,22 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
       </svg>
     </div>
   </div>
-  <div
+  <p
     className="mt-3 text-center"
   >
-    Join us on
-    <a
-      className="progress-newuser__chatlink text-white noUnderline"
-      href="https://discord.gg/c0d3"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <p
-        className="fw-bold d-inline"
-      >
-        Discord
-      </p>
-    </a>
-    to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-  </div>
+    Congratulations on completing the curriculum! We are excited to
+            offer you the opportunity to gain real-world work experience by
+            contributing to our repository. We look forward to seeing your
+            contributions and the valuable skills you will develop.
+  </p>
   <div
     className="mt-4 d-flex flex-column"
   >
     <a
-      className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
-      href="/docs/setup"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onTouchStart={[Function]}
+      className="btn btn-light progress-card__button mt-2 text-primary"
+      href="https://github.com/garageScript/c0d3-app"
     >
-      Setup Development Environment
+      Kick-start your professional development
     </a>
   </div>
 </div>
@@ -15760,7 +15747,7 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
   >
     Join C0D3 now and start your software engineering journey!
   </h4>
-  <div
+  <p
     className="mt-3 text-center"
   >
     Join us on
@@ -15777,7 +15764,7 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
       </p>
     </a>
     to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-  </div>
+  </p>
   <div
     className="mt-4 d-flex flex-column"
   >
@@ -15798,11 +15785,11 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
 <div
   className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
 >
-  <h4
+  <h3
     className="progress-card__title text-center"
   >
     Keep up the great work!
-  </h4>
+  </h3>
   <div
     className="d-block d-xl-none"
   >
@@ -15879,7 +15866,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
       </svg>
     </div>
   </div>
-  <div
+  <p
     className="mt-3 text-center"
   >
     Join us on
@@ -15896,7 +15883,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
       </p>
     </a>
     to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-  </div>
+  </p>
   <div
     className="mt-4 d-flex flex-column"
   >
@@ -24556,7 +24543,7 @@ Array [
           <div
             className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <div
+            <p
               className="mt-3 text-center"
             >
               Join us on
@@ -24573,7 +24560,7 @@ Array [
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               className="mt-4 d-flex flex-column"
             >
@@ -25813,7 +25800,7 @@ Array [
           <div
             className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <div
+            <p
               className="mt-3 text-center"
             >
               Join us on
@@ -25830,7 +25817,7 @@ Array [
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               className="mt-4 d-flex flex-column"
             >
@@ -26082,7 +26069,7 @@ Array [
           <div
             className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <div
+            <p
               className="mt-3 text-center"
             >
               Join us on
@@ -26099,7 +26086,7 @@ Array [
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               className="mt-4 d-flex flex-column"
             >
@@ -27339,7 +27326,7 @@ Array [
           <div
             className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <div
+            <p
               className="mt-3 text-center"
             >
               Join us on
@@ -27356,7 +27343,7 @@ Array [
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               className="mt-4 d-flex flex-column"
             >
@@ -27608,7 +27595,7 @@ Array [
           <div
             className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <div
+            <p
               className="mt-3 text-center"
             >
               Join us on
@@ -27625,7 +27612,7 @@ Array [
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               className="mt-4 d-flex flex-column"
             >
@@ -28865,7 +28852,7 @@ Array [
           <div
             className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <div
+            <p
               className="mt-3 text-center"
             >
               Join us on
@@ -28882,7 +28869,7 @@ Array [
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               className="mt-4 d-flex flex-column"
             >
