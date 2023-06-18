@@ -187,11 +187,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               You're off to a great start!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -259,7 +259,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -276,7 +276,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >
@@ -1451,11 +1451,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               You're off to a great start!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -1523,7 +1523,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -1540,7 +1540,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >
@@ -1880,11 +1880,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               Keep up the great work!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -1953,7 +1953,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -1970,7 +1970,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >
@@ -3307,11 +3307,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               Keep up the great work!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -3380,7 +3380,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -3397,7 +3397,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >

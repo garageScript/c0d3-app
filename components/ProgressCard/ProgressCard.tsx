@@ -1,6 +1,7 @@
 import React from 'react'
 import NavLink from '../NavLink'
 import styles from './progressCard.module.scss'
+import { REPO_PATH } from '../../constants'
 
 const ProgressBar: React.FC<{ progressCount: number }> = ({
   progressCount
@@ -96,9 +97,9 @@ const WelcomeMessage: React.FC<{
 
   return (
     <>
-      <h4 className={`${styles['progress-card__title']} text-center`}>
+      <h3 className={`${styles['progress-card__title']} text-center`}>
         {title}
-      </h4>
+      </h3>
       {loggedIn && (
         <>
           <div className="d-block d-xl-none">
@@ -118,6 +119,7 @@ const ProgressCard: React.FC<{
   loggedIn: boolean
   loading: boolean
 }> = ({ progressCount, loggedIn, loading }) => {
+  const completedAndLoggedIn = progressCount === 100 && loggedIn
   return (
     <div
       className={`${styles['progress-card__container']} card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0`}
@@ -127,25 +129,43 @@ const ProgressCard: React.FC<{
         loading={loading}
         loggedIn={loggedIn}
       />
-      <div className="mt-3 text-center">
-        Join us on
-        <NavLink
-          className={`${styles['progress-newuser__chatlink']} text-white`}
-          path="https://discord.gg/c0d3"
-          external
-        >
-          <p className="fw-bold d-inline">Discord</p>
-        </NavLink>
-        to ask your questions. Start by setting up your development environment
-        and then follow the lessons in the course.
-      </div>
+      <p className="mt-3 text-center">
+        {completedAndLoggedIn ? (
+          `Congratulations on completing the curriculum! We are excited to
+            offer you the opportunity to gain real-world work experience by
+            contributing to our repository. We look forward to seeing your
+            contributions and the valuable skills you will develop.`
+        ) : (
+          <>
+            Join us on
+            <NavLink
+              className={`${styles['progress-newuser__chatlink']} text-white`}
+              path="https://discord.gg/c0d3"
+              external
+            >
+              <p className="fw-bold d-inline">Discord</p>
+            </NavLink>
+            to ask your questions. Start by setting up your development
+            environment and then follow the lessons in the course.
+          </>
+        )}
+      </p>
       <div className="mt-4 d-flex flex-column">
-        <NavLink
-          path="/docs/setup"
-          className={`btn btn-light ${styles['progress-card__button']} mt-2 text-primary`}
-        >
-          Setup Development Environment
-        </NavLink>
+        {completedAndLoggedIn ? (
+          <a
+            href={REPO_PATH}
+            className={`btn btn-light ${styles['progress-card__button']} mt-2 text-primary`}
+          >
+            Kick-start your professional development
+          </a>
+        ) : (
+          <NavLink
+            path="/docs/setup"
+            className={`btn btn-light ${styles['progress-card__button']} mt-2 text-primary`}
+          >
+            Setup Development Environment
+          </NavLink>
+        )}
       </div>
     </div>
   )
