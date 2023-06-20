@@ -2053,22 +2053,6 @@
     parse-filepath "^1.0.2"
     tslib "~2.4.0"
 
-"@graphql-codegen/visitor-plugin-common@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-4.0.0.tgz#b1db0138ea78b96a1f78b78ebce0443faee27fba"
-  integrity sha512-OFWr5tkrG4nCcE7AI9BSAwuA0VLP16uNCLssbmXpBa1rKR6b4mX+rJTQCoz47TFV5hii8yp8xaWfXVUcsNY39w==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^5.0.0"
-    "@graphql-tools/optimize" "^2.0.0"
-    "@graphql-tools/relay-operation-optimizer" "^7.0.0"
-    "@graphql-tools/utils" "^10.0.0"
-    auto-bind "~4.0.0"
-    change-case-all "1.0.15"
-    dependency-graph "^0.11.0"
-    graphql-tag "^2.11.0"
-    parse-filepath "^1.0.2"
-    tslib "~2.5.0"
-
 "@graphql-codegen/visitor-plugin-common@4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-4.0.1.tgz#64e293728b3c186f6767141e41fcdb310e50d367"
@@ -14777,10 +14761,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.68.1:
-  version "1.68.1"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.68.1.tgz#eadca3db9e45287771fe3a8b4100bffe50891750"
-  integrity sha512-edwURtegKXIUEdjgLErJF8cfCuwj7kw8JDmomnVXp9cjwaJT8Y3BRLh5Lh81GnjwGuifp1vjOL0hD3AamtsmGg==
+posthog-js@^1.68.2:
+  version "1.68.2"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.68.2.tgz#0ffb3c939b4f53e5b771b114ac37da9451348ad0"
+  integrity sha512-oh3MQonhbgVbBYNJ/cAx1L6fginAF5Msz3shexnXPhDNKj1DQGosepQC6TQpdeeUWp0H7R2cQG9eHJwmrEM1Lw==
   dependencies:
     fflate "^0.4.1"
 
