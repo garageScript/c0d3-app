@@ -1,4 +1,6 @@
-import '../../../../__mocks__/useBreakpoint.mock'
+jest.mock('gray-matter')
+import matter from 'gray-matter'
+import { mockUseBreakpoint } from '../../../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
@@ -34,6 +36,11 @@ describe('[subLessonSlug]', () => {
     { lessonSlug: 'js0', subLessonSlug: 'second_sub_lesson' },
     { lessonSlug: 'js0', subLessonSlug: 'third_sub_lesson' }
   ]
+  const mockHeadings = [
+    { text: 'heading1', depth: 1 },
+    { text: 'heading2', depth: 2 },
+    { text: 'heading3', depth: 3 }
+  ]
   const fakeGithubPath = 'some/fake/path'
 
   const dummyOneFrontMatterOnly = {
@@ -43,7 +50,7 @@ describe('[subLessonSlug]', () => {
     frontMatter: dummyParsedSubLessonMdx[2].frontMatter
   }
   const { challenges, ...dummyLessonNoChallenges } = dummyLessonsData[0] // Lesson with slug 'js0'
-  const props = {
+  const props = includeHeadings => ({
     lesson: dummyLessonNoChallenges,
     lessonSlug: mockSlugs[0].lessonSlug,
 
@@ -52,23 +59,33 @@ describe('[subLessonSlug]', () => {
     subLessons: [
       {
         ...dummyParsedSubLessonMdx[0],
-        subLessonSlug: mockSlugs[0].subLessonSlug
+        subLessonSlug: mockSlugs[0].subLessonSlug,
+        headings: includeHeadings ? [] : mockHeadings
       },
       {
         ...dummyOneFrontMatterOnly,
-        subLessonSlug: mockSlugs[1].subLessonSlug
+        subLessonSlug: mockSlugs[1].subLessonSlug,
+        headings: includeHeadings ? [] : mockHeadings
       },
       {
         ...dummyTwoFrontMatterOnly,
-        subLessonSlug: mockSlugs[2].subLessonSlug
+        subLessonSlug: mockSlugs[2].subLessonSlug,
+        headings: includeHeadings ? [] : mockHeadings
       }
     ],
 
     githubFilePath: fakeGithubPath
-  }
+  })
 
   beforeEach(() => {
     jest.clearAllMocks()
+    matter.mockReturnValue({
+      content: `
+# heading1
+## heading2
+### heading3
+        `
+    })
   })
 
   describe('getStaticPaths', () => {
@@ -128,10 +145,42 @@ describe('[subLessonSlug]', () => {
         .mockResolvedValueOnce(dummyTwoFrontMatterOnly)
 
       expect(getStaticProps({ params: mockSlugs[0] })).resolves.toEqual({
-        props,
+        props: props(false),
         revalidate: 300 // Five Minutes
       })
     })
+
+    test('should return correct props when there are no headings', () => {
+      matter.mockReturnValue({
+        content: ''
+      })
+
+      const mockQuery = jest
+        .fn()
+        .mockResolvedValue({ data: { lessons: dummyLessonsData } })
+      initializeApollo.mockReturnValue({ query: mockQuery })
+      getSubLessonGithubFilePath.mockReturnValue(fakeGithubPath)
+      getSubLessonSlugs.mockResolvedValueOnce(mockSlugs)
+      getSubLessonContent
+        .mockResolvedValueOnce(dummySubLessonFileContent[0])
+        .mockResolvedValueOnce(dummySubLessonFileContent[1])
+        .mockResolvedValueOnce(dummySubLessonFileContent[2])
+
+      parseMDX
+        .mockResolvedValueOnce(dummyParsedSubLessonMdx[0])
+        .mockResolvedValueOnce(dummyOneFrontMatterOnly)
+        .mockResolvedValueOnce(dummyTwoFrontMatterOnly)
+
+      // getStaticProps({ params: mockSlugs[0] }).then(e =>
+      //   console.log(e.props.subLessons)
+      // )
+      expect(getStaticProps({ params: mockSlugs[0] })).resolves.toEqual({
+        props: props(true),
+        revalidate: 300 // Five Minutes
+      })
+    })
+
+    matter.mockClear()
   })
 
   describe('Page', () => {
@@ -140,7 +189,7 @@ describe('[subLessonSlug]', () => {
     })
 
     test('should have correct title', () => {
-      render(<SubLessonPage {...props} />)
+      render(<SubLessonPage {...props(false)} />)
 
       expect(Title).toHaveBeenCalledWith(
         {
@@ -151,7 +200,7 @@ describe('[subLessonSlug]', () => {
     })
 
     test('should render SubLessonLinks component with correct subLesson titles', () => {
-      render(<SubLessonPage {...props} />)
+      render(<SubLessonPage {...props(false)} />)
 
       expect(
         screen.getByRole('link', { name: 'Part 1: first sub lesson' })
@@ -164,7 +213,7 @@ describe('[subLessonSlug]', () => {
       ).toBeVisible()
     })
     test('should render next lesson link', () => {
-      render(<SubLessonPage {...props} />)
+      render(<SubLessonPage {...props(false)} />)
 
       expect(
         screen.getByRole('link', { name: 'Next part: second sub lesson' })
@@ -172,16 +221,27 @@ describe('[subLessonSlug]', () => {
     })
 
     test('should render EditPage component with link to docFilePath', () => {
-      render(<SubLessonPage {...props} />)
+      render(<SubLessonPage {...props(false)} />)
       expect(
         screen.getByRole('link', { name: /edit this page/i })
       ).toHaveAttribute('href', expect.stringContaining(fakeGithubPath))
     })
 
     test('should match screenshot', async () => {
-      const { container } = render(<SubLessonPage {...props} />)
+      const { container } = render(<SubLessonPage {...props(false)} />)
 
       expect(container).toMatchSnapshot()
+    })
+
+    test('should render correct lg breakpoint', () => {
+      mockUseBreakpoint.mockReturnValueOnce(true)
+
+      render(<SubLessonPage {...props(false)} />)
+
+      expect(screen.getByTestId('sublesson__container')).toHaveStyle(
+        'gridTemplateColumns: auto auto'
+      )
+      expect(screen.getByTestId('toc')).toHaveStyle('position: sticky')
     })
   })
 })
