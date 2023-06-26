@@ -20,9 +20,12 @@ import SubLessonLinks from '../../../components/SubLessonLinks'
 import EditPage from '../../../components/EditPage'
 import MDXcomponents from '../../../helpers/mdxComponents'
 
-import styles from '../../../scss/mdx.module.scss'
+import mdxStyles from '../../../scss/mdx.module.scss'
+import styles from '../../../scss/subLessonSlug.module.scss'
 import ScrollTopArrow from '../../../components/ScrollTopArrow'
 import Title from '../../../components/Title'
+import matter from 'gray-matter'
+import useBreakpoint from '../../../helpers/useBreakpoint'
 
 interface Props {
   selectedSubLessonIndex: number
@@ -39,36 +42,75 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
   subLessons,
   githubFilePath
 }) => {
+  const breakpoint = useBreakpoint('lg', 'up')
+
   const selectedSubLesson = subLessons[selectedSubLessonIndex] as SubLesson
+  const mapHeadingsToLi = selectedSubLesson.headings.map((heading, i) => {
+    const headingBookmark = heading.text.toLowerCase().replace(/\s/g, '-')
+
+    return (
+      <li
+        key={heading.text + i}
+        style={{ paddingLeft: `${heading.depth - 1}rem` }}
+      >
+        <a
+          style={{
+            textDecoration: 'none'
+          }}
+          href={`#${headingBookmark}`}
+          className={mdxStyles.MDX_a}
+        >
+          {heading.text}
+        </a>
+      </li>
+    )
+  })
 
   const hasMultipleSubLessons = subLessons.length > 1
   return (
     <div
-      className={`${styles['lesson-wrapper']} card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white`}
+      data-testid="sublesson__container"
+      className={`mt-3 ${styles.sublesson__container}`}
+      style={{
+        gridTemplateColumns: breakpoint ? 'auto auto' : 'none'
+      }}
     >
-      <Title
-        title={`${selectedSubLesson.frontMatter.title} | ${lessonSlug} | C0D3`}
-      />
-      <ScrollTopArrow />
-      {hasMultipleSubLessons && (
-        <SubLessonLinks
-          subLessons={subLessons}
-          lessonSlug={lessonSlug}
-          subLessonSlug={subLessonSlug}
+      <div
+        data-testid="toc"
+        className={`card shadow-sm border-0 ${styles.sublesson__sidebar}`}
+        style={{
+          position: breakpoint ? 'sticky' : 'initial'
+        }}
+      >
+        <ul className={`p-md-4 ${styles.toc__container}`}>{mapHeadingsToLi}</ul>
+      </div>
+      <div
+        className={`card shadow-sm  d-block border-0 p-3 p-md-4 bg-white ${mdxStyles['lesson-wrapper']} `}
+      >
+        <Title
+          title={`${selectedSubLesson.frontMatter.title} | ${lessonSlug} | C0D3`}
         />
-      )}
+        <ScrollTopArrow />
+        {hasMultipleSubLessons && (
+          <SubLessonLinks
+            subLessons={subLessons}
+            lessonSlug={lessonSlug}
+            subLessonSlug={subLessonSlug}
+          />
+        )}
 
-      <MDXRemote {...selectedSubLesson.source!} components={MDXcomponents} />
+        <MDXRemote {...selectedSubLesson.source!} components={MDXcomponents} />
 
-      {hasMultipleSubLessons && (
-        <NextPreviousLessons
-          subLessons={subLessons}
-          subLessonSlug={subLessonSlug}
-          lessonSlug={lessonSlug}
-        />
-      )}
+        {hasMultipleSubLessons && (
+          <NextPreviousLessons
+            subLessons={subLessons}
+            subLessonSlug={subLessonSlug}
+            lessonSlug={lessonSlug}
+          />
+        )}
 
-      <EditPage filePath={githubFilePath} />
+        <EditPage filePath={githubFilePath} />
+      </div>
     </div>
   )
 }
@@ -130,15 +172,25 @@ export const getStaticProps: GetStaticProps<any, Slugs> = async context => {
   const subLessons = (
     await Promise.all(
       slugs.map(async slug => {
+        const source = await getSubLessonContent(slug)
+
         // Only include source data on selected subLesson
         const sourceAndFrontMatter = await parseMDX(
-          await getSubLessonContent(slug),
+          source,
           slug.subLessonSlug !== subLessonSlug
         )
 
+        const { content } = matter(source)
+        const headings = content?.match(/^(#+)\s+(.*)$/gm)?.map(heading => {
+          // istanbul ignore next
+          const [, hashes, text] = heading.match(/^(#+)\s+(.*)$/) || []
+          return { text, depth: hashes.length }
+        })
+
         return {
           ...sourceAndFrontMatter,
-          subLessonSlug: slug.subLessonSlug
+          subLessonSlug: slug.subLessonSlug,
+          headings: headings || []
         }
       })
     )
