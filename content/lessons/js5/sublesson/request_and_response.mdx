@@ -578,19 +578,19 @@ will be no verification needed.
 
   <Spoiler>
 
-```jsx
-const startApp = () => {
-  fetch('https://js5.c0d3.com/auth/api/sessions')
-    .then(r => {
-      return r.json()
-    })
-    .then(body => {
-      if (body.error) {
-        return setupLogin()
-      }
-    })
-}
-```
+  ```jsx
+  const startApp = () => {
+    fetch('https://js5.c0d3.com/auth/api/sessions')
+      .then(r => {
+        return r.json()
+      })
+      .then(body => {
+        if (body.error) {
+          return setupLogin()
+        }
+      })
+  }
+  ```
 
   </Spoiler>
 
