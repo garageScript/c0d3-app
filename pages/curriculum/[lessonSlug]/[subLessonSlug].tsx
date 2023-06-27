@@ -181,16 +181,17 @@ export const getStaticProps: GetStaticProps<any, Slugs> = async context => {
         )
 
         const { content } = matter(source)
-        const headings = content?.match(/^(#+)\s+(.*)$/gm)?.map(heading => {
-          // istanbul ignore next
-          const [, hashes, text] = heading.match(/^(#+)\s+(.*)$/) || []
-          return { text, depth: hashes.length }
-        })
+        const headings = [...content.matchAll(/^(#+)\s+(.*)$/gm)].map(
+          ([, hashes, text]) => ({
+            text,
+            depth: hashes.length
+          })
+        )
 
         return {
           ...sourceAndFrontMatter,
           subLessonSlug: slug.subLessonSlug,
-          headings: headings || []
+          headings
         }
       })
     )
