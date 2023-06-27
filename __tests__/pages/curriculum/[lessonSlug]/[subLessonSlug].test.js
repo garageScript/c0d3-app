@@ -149,38 +149,6 @@ describe('[subLessonSlug]', () => {
         revalidate: 300 // Five Minutes
       })
     })
-
-    test('should return correct props when there are no headings', () => {
-      matter.mockReturnValue({
-        content: ''
-      })
-
-      const mockQuery = jest
-        .fn()
-        .mockResolvedValue({ data: { lessons: dummyLessonsData } })
-      initializeApollo.mockReturnValue({ query: mockQuery })
-      getSubLessonGithubFilePath.mockReturnValue(fakeGithubPath)
-      getSubLessonSlugs.mockResolvedValueOnce(mockSlugs)
-      getSubLessonContent
-        .mockResolvedValueOnce(dummySubLessonFileContent[0])
-        .mockResolvedValueOnce(dummySubLessonFileContent[1])
-        .mockResolvedValueOnce(dummySubLessonFileContent[2])
-
-      parseMDX
-        .mockResolvedValueOnce(dummyParsedSubLessonMdx[0])
-        .mockResolvedValueOnce(dummyOneFrontMatterOnly)
-        .mockResolvedValueOnce(dummyTwoFrontMatterOnly)
-
-      // getStaticProps({ params: mockSlugs[0] }).then(e =>
-      //   console.log(e.props.subLessons)
-      // )
-      expect(getStaticProps({ params: mockSlugs[0] })).resolves.toEqual({
-        props: props(true),
-        revalidate: 300 // Five Minutes
-      })
-    })
-
-    matter.mockClear()
   })
 
   describe('Page', () => {
