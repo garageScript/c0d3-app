@@ -3,60 +3,106 @@
 exports[`[subLessonSlug] Page should match screenshot 1`] = `
 <div>
   <div
-    class="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
+    class="mt-3 sublesson__container"
+    data-testid="sublesson__container"
+    style="grid-template-columns: none;"
   >
-    <nav
-      aria-label="Sub-lesson Links"
-    >
-      <a
-        aria-current="page"
-        class="subtitle link-dark dark d-block"
-        href="/curriculum/js0/first_sub_lesson"
-      >
-        Part 1: first sub lesson
-      </a>
-      <a
-        class="subtitle text-muted d-block"
-        href="/curriculum/js0/second_sub_lesson"
-      >
-        Part 2: second sub lesson
-      </a>
-      <a
-        class="subtitle text-muted d-block"
-        href="/curriculum/js0/third_sub_lesson"
-      >
-        Part 3: third sub lesson
-      </a>
-    </nav>
-    <h1
-      class="MDX_h1"
-      id="first"
-    >
-      first
-    </h1>
-    <p>
-      simple
-    </p>
     <div
-      class="d-flex"
+      class="card shadow-sm border-0 sublesson__sidebar"
+      data-testid="toc"
+      style="position: initial;"
     >
-      <a
-        class="lessonLink next"
-        href="/curriculum/js0/second_sub_lesson"
+      <ul
+        class="p-md-4 toc__container m-0 rounded"
       >
-        Next part: 
-        <span>
-          second sub lesson
-        </span>
+        <li
+          style="padding-left: 0rem;"
+        >
+          <a
+            class="MDX_a text-decoration-none"
+            href="#heading1"
+          >
+            heading1
+          </a>
+        </li>
+        <li
+          style="padding-left: 1rem;"
+        >
+          <a
+            class="MDX_a text-decoration-none"
+            href="#heading2"
+          >
+            heading2
+          </a>
+        </li>
+        <li
+          style="padding-left: 2rem;"
+        >
+          <a
+            class="MDX_a text-decoration-none"
+            href="#heading3"
+          >
+            heading3
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="card shadow-sm  d-block border-0 p-3 p-md-4 bg-white lesson-wrapper "
+    >
+      <nav
+        aria-label="Sub-lesson Links"
+      >
+        <a
+          aria-current="page"
+          class="subtitle link-dark dark d-block"
+          href="/curriculum/js0/first_sub_lesson"
+        >
+          Part 1: first sub lesson
+        </a>
+        <a
+          class="subtitle text-muted d-block"
+          href="/curriculum/js0/second_sub_lesson"
+        >
+          Part 2: second sub lesson
+        </a>
+        <a
+          class="subtitle text-muted d-block"
+          href="/curriculum/js0/third_sub_lesson"
+        >
+          Part 3: third sub lesson
+        </a>
+      </nav>
+      <h1
+        class="MDX_h1"
+        id="first"
+      >
+        first
+      </h1>
+      <p>
+        simple
+      </p>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="lessonLink next"
+          href="/curriculum/js0/second_sub_lesson"
+        >
+          Next part: 
+          <span>
+            second sub lesson
+          </span>
+        </a>
+      </div>
+      <a
+        class="MDX_a edit"
+        href="https://github.com/garageScript/c0d3-app/edit/master/some/fake/path"
+        title="Edit this page on Github"
+      >
+        Edit this page
       </a>
     </div>
-    <a
-      class="MDX_a edit"
-      href="https://github.com/garageScript/c0d3-app/edit/master/some/fake/path"
-      title="Edit this page on Github"
-    >
-      Edit this page
-    </a>
   </div>
 </div>
 `;

@@ -1,0 +1,19 @@
+.sublesson__container {
+  display: grid;
+  gap: 40px;
+  position: relative;
+  padding: 0;
+}
+
+.sublesson__sidebar {
+  top: 20px;
+  height: fit-content;
+  width: fit-content;
+}
+
+.toc__container {
+  list-style: none;
+  background: white;
+  width: fit-content;
+  height: fit-content;
+}

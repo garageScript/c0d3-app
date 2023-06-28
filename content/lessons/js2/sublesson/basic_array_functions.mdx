@@ -3,8 +3,6 @@ title: Basic array functions
 order: 2
 ---
 
-# Table of Contents
-
 # Introduction
 
 So far, you have used variables to store singular values: a number, a boolean, a
@@ -1192,19 +1190,19 @@ removed = fruits2.splice(1)
      > to the end of an array. `Push()` returns the new length of the array.
 
    - Continue.
-  
+
 4. **Code**
 
-  ```jsx
-  const copyArray = (a, result=[]) => {
-    if (result.length === a.length) {
-      return result
-    }
-    result.push( a[result.length] )
-    return copyArray(a, result)
+```jsx
+const copyArray = (a, result = []) => {
+  if (result.length === a.length) {
+    return result
   }
-  ```
-  
+  result.push(a[result.length])
+  return copyArray(a, result)
+}
+```
+
 <Spoiler name = "Debrief">
     
 `push` was the most obvious choice for this task, because we could start out with an empty array and add all the elements to it. We could have also used `unshift` if we'd started from the end. In the next section, we'll learn a much easier way to copy arrays.
