@@ -54,11 +54,8 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
         style={{ paddingLeft: `${heading.depth - 1}rem` }}
       >
         <a
-          style={{
-            textDecoration: 'none'
-          }}
           href={`#${headingBookmark}`}
-          className={mdxStyles.MDX_a}
+          className={`${mdxStyles.MDX_a} text-decoration-none`}
         >
           {heading.text}
         </a>

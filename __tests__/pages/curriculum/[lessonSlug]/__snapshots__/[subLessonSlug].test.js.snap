@@ -19,9 +19,8 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
           style="padding-left: 0rem;"
         >
           <a
-            class="MDX_a"
+            class="MDX_a text-decoration-none"
             href="#heading1"
-            style="text-decoration: none;"
           >
             heading1
           </a>
@@ -30,9 +29,8 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
           style="padding-left: 1rem;"
         >
           <a
-            class="MDX_a"
+            class="MDX_a text-decoration-none"
             href="#heading2"
-            style="text-decoration: none;"
           >
             heading2
           </a>
@@ -41,9 +39,8 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
           style="padding-left: 2rem;"
         >
           <a
-            class="MDX_a"
+            class="MDX_a text-decoration-none"
             href="#heading3"
-            style="text-decoration: none;"
           >
             heading3
           </a>
