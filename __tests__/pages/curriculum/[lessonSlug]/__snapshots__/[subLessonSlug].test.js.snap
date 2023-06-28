@@ -13,7 +13,7 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
       style="position: initial;"
     >
       <ul
-        class="p-md-4 toc__container"
+        class="p-md-4 toc__container m-0 rounded"
       >
         <li
           style="padding-left: 0rem;"
