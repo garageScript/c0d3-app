@@ -79,7 +79,9 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
           position: breakpoint ? 'sticky' : 'initial'
         }}
       >
-        <ul className={`p-md-4 ${styles.toc__container}`}>{mapHeadingsToLi}</ul>
+        <ul className={`p-md-4 ${styles.toc__container} m-0 rounded`}>
+          {mapHeadingsToLi}
+        </ul>
       </div>
       <div
         className={`card shadow-sm  d-block border-0 p-3 p-md-4 bg-white ${mdxStyles['lesson-wrapper']} `}
