@@ -5,6 +5,11 @@
  * key into the jest.config.ts file
  */
 
+import { TextEncoder, TextDecoder } from 'util'
+
+global.TextEncoder = TextEncoder
+global.TextDecoder = TextDecoder
+
 import './__mocks__/next-auth/nextAuthAPI.mock'
 
 global.setImmediate = jest.useRealTimers
