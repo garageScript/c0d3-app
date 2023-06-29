@@ -122,6 +122,7 @@
     "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
     "prisma": "4",
+    "react-docgen-typescript-plugin": "^1.0.5",
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^3.0.1",
     "remark-slug": "^7.0.1",
@@ -130,6 +131,6 @@
     "storybook-addon-next-router": "^4.0.2",
     "svgo": "^3.0.2",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.5"
+    "typescript": "5.1.5"
   }
 }
