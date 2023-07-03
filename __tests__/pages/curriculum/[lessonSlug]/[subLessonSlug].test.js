@@ -29,6 +29,7 @@ import { parseMDX } from '../../../../helpers/static/parseMDX'
 jest.mock('../../../../helpers/static/parseMDX')
 import dummyLessonsData from '../../../../__dummy__/lessonData'
 jest.mock('../../../../helpers/static/lessons')
+import userEvent from '@testing-library/user-event'
 
 describe('[subLessonSlug]', () => {
   const mockSlugs = [
@@ -210,6 +211,18 @@ describe('[subLessonSlug]', () => {
         'gridTemplateColumns: auto auto'
       )
       expect(screen.getByTestId('toc')).toHaveStyle('position: sticky')
+    })
+
+    test('should open accordion on mobile', async () => {
+      mockUseBreakpoint.mockReturnValueOnce(false)
+
+      render(<SubLessonPage {...props(false)} />)
+
+      const toggle = screen.getByTestId('accordion-toggle')
+      await userEvent.click(toggle)
+
+      const accordionCollapse = screen.getByTestId('accordion-collapse')
+      expect(accordionCollapse).toHaveClass('show')
     })
   })
 })
