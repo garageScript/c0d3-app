@@ -1,6 +1,8 @@
+@use './colors.module.scss';
+
 .sublesson__container {
   display: grid;
-  gap: 40px;
+  gap: 1rem;
   position: relative;
   padding: 0;
 }
@@ -8,12 +10,23 @@
 .sublesson__sidebar {
   top: 20px;
   height: fit-content;
-  width: fit-content;
 }
 
 .toc__container {
   list-style: none;
-  background: white;
-  width: fit-content;
+  background: colors.$fg-light;
   height: fit-content;
+}
+
+.toc__header {
+  background-color: colors.$bg-white;
+}
+
+.toc__toggle {
+  background: transparent;
+  border: 0;
+  font-family: Inter;
+  width: 100%;
+  text-align: left;
+  cursor: default;
 }
