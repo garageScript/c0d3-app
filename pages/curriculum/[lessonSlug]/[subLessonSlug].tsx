@@ -96,7 +96,9 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
     >
       <Accordion alwaysOpen={breakpoint} activeKey={activeKey}>
         <Card className="border-0">
-          <Card.Header className={styles.toc__header}>
+          <Card.Header
+            className={`${breakpoint ? '' : 'py-3'} ${styles.toc__header}`}
+          >
             <CustomToggle
               setToggle={setToggle}
               breakpoint={breakpoint}
@@ -106,7 +108,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
             </CustomToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0" data-testid="accordion-collapse">
-            <Card.Body className={styles.toc__container}>
+            <Card.Body className={`rounded ${styles.toc__container}`}>
               {mapHeadingsToLi}
             </Card.Body>
           </Accordion.Collapse>
