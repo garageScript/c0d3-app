@@ -147,7 +147,7 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
       }}
     >
       <TableOfContents
-        selectedSubLesson={selectedSubLesson as SubLesson}
+        selectedSubLesson={selectedSubLesson}
         breakpoint={breakpoint}
       />
       <div
