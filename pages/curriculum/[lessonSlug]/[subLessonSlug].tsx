@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren, useState } from 'react'
 import { MDXRemote } from 'next-mdx-remote'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'querystring'
@@ -26,6 +26,95 @@ import ScrollTopArrow from '../../../components/ScrollTopArrow'
 import Title from '../../../components/Title'
 import matter from 'gray-matter'
 import useBreakpoint from '../../../helpers/useBreakpoint'
+import { Accordion, Card, useAccordionButton } from 'react-bootstrap'
+
+interface CustomToggleProps {
+  eventKey: string
+  breakpoint: boolean
+  setToggle: React.Dispatch<React.SetStateAction<boolean>>
+}
+const CustomToggle: React.FC<PropsWithChildren<CustomToggleProps>> = ({
+  children,
+  eventKey,
+  breakpoint,
+  setToggle
+}) => {
+  const decoratedOnClick = useAccordionButton(eventKey, () => {
+    setToggle(prev => !prev)
+  })
+
+  return (
+    <button
+      type="button"
+      onClick={ev => !breakpoint && decoratedOnClick(ev)}
+      className={styles.toc__toggle}
+      data-testid="accordion-toggle"
+    >
+      {children}
+    </button>
+  )
+}
+
+interface TableOfContentsProps {
+  selectedSubLesson: SubLesson
+  breakpoint: boolean
+}
+const TableOfContents: React.FC<TableOfContentsProps> = ({
+  selectedSubLesson,
+  breakpoint
+}) => {
+  const [toggle, setToggle] = useState(false)
+
+  const mapHeadingsToLi = selectedSubLesson.headings.map((heading, i) => {
+    const headingBookmark = heading.text.toLowerCase().replace(/\s/g, '-')
+
+    return (
+      <li
+        key={heading.text + i}
+        style={{ paddingLeft: `${heading.depth - 1}rem` }}
+      >
+        <a
+          href={`#${headingBookmark}`}
+          className={`${mdxStyles.MDX_a} text-decoration-none`}
+        >
+          {heading.text}
+        </a>
+      </li>
+    )
+  })
+
+  // A workaround to prevent accordion from closing on mobile
+  const activeKey = [breakpoint || toggle ? '0' : '-1']
+
+  return (
+    <div
+      data-testid="toc"
+      className={`card shadow-sm border-0 ${styles.sublesson__sidebar}`}
+      style={{
+        position: breakpoint ? 'sticky' : 'initial'
+      }}
+    >
+      <Accordion alwaysOpen={breakpoint} activeKey={activeKey}>
+        <Card className="border-0">
+          <Card.Header className={styles.toc__header}>
+            <CustomToggle
+              setToggle={setToggle}
+              breakpoint={breakpoint}
+              eventKey="0"
+            >
+              Table of Contents
+            </CustomToggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="0" data-testid="accordion-collapse">
+            <Card.Body className={styles.toc__container}>
+              {mapHeadingsToLi}
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+      </Accordion>
+    </div>
+  )
+}
 
 interface Props {
   selectedSubLessonIndex: number
@@ -45,25 +134,8 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
   const breakpoint = useBreakpoint('lg', 'up')
 
   const selectedSubLesson = subLessons[selectedSubLessonIndex] as SubLesson
-  const mapHeadingsToLi = selectedSubLesson.headings.map((heading, i) => {
-    const headingBookmark = heading.text.toLowerCase().replace(/\s/g, '-')
-
-    return (
-      <li
-        key={heading.text + i}
-        style={{ paddingLeft: `${heading.depth - 1}rem` }}
-      >
-        <a
-          href={`#${headingBookmark}`}
-          className={`${mdxStyles.MDX_a} text-decoration-none`}
-        >
-          {heading.text}
-        </a>
-      </li>
-    )
-  })
-
   const hasMultipleSubLessons = subLessons.length > 1
+
   return (
     <div
       data-testid="sublesson__container"
@@ -72,17 +144,10 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
         gridTemplateColumns: breakpoint ? 'auto auto' : 'none'
       }}
     >
-      <div
-        data-testid="toc"
-        className={`card shadow-sm border-0 ${styles.sublesson__sidebar}`}
-        style={{
-          position: breakpoint ? 'sticky' : 'initial'
-        }}
-      >
-        <ul className={`p-md-4 ${styles.toc__container} m-0 rounded`}>
-          {mapHeadingsToLi}
-        </ul>
-      </div>
+      <TableOfContents
+        selectedSubLesson={selectedSubLesson as SubLesson}
+        breakpoint={breakpoint}
+      />
       <div
         className={`card shadow-sm  d-block border-0 p-3 p-md-4 bg-white ${mdxStyles['lesson-wrapper']} `}
       >
