@@ -19,7 +19,7 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
           class="border-0 card"
         >
           <div
-            class="toc__header card-header"
+            class="py-3 toc__header card-header"
           >
             <button
               class="toc__toggle"
@@ -34,7 +34,7 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
             data-testid="accordion-collapse"
           >
             <div
-              class="toc__container card-body"
+              class="rounded toc__container card-body"
             >
               <li
                 style="padding-left: 0rem;"
