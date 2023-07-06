@@ -81,7 +81,7 @@
     "@graphql-codegen/typescript-operations": "^4.0.1",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@graphql-codegen/typescript-resolvers": "^4.0.1",
-    "@jest/types": "^29.5.0",
+    "@jest/types": "^29.6.1",
     "@next/eslint-plugin-next": "^13.4.8",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
