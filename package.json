@@ -109,7 +109,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
-    "eslint-config-next": "^13.4.8",
+    "eslint-config-next": "^13.4.9",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-mdx": "^1.17.1",
     "eslint-plugin-prettier": "^4.2.1",
