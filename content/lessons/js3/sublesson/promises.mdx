@@ -1036,12 +1036,8 @@ const fs = require('fs')
 
 request('https://pokeapi.co/api/v2/pokemon/', (err, res, body) => {
   const parsedJson = JSON.parse(body)
-  const nameArray = []
-  parsedJson.results.forEach(thisPokemon => {
-    nameArray.push(thisPokemon.name)
-  })
-  const names = nameArray.reduce((acc, thisName) => {
-    return `${acc}<h1>${thisName}</h1>`
+  const names = parsedJson.results.reduce((acc, pokemon) => {
+    return `${acc}<h1>${pokemon.name}</h1>`
   }, '')
   fs.writeFile('names.html', names, () => {})
 })
@@ -1871,7 +1867,7 @@ The responses are raw, in chat format.
        const titles = data.reduce((acc, f) => {
          return `${acc}<h1>${f.title}</h1>`
        }, '')
-       fs.writeFile('title.html', titles, () => {})
+       fs.writeFile('lessons.html', titles, () => {})
      })
    ```
 
