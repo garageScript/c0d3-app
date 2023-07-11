@@ -3,8 +3,6 @@ title: Map, reduce, and filter functions
 order: 3
 ---
 
-# Table of Contents
-
 # Map
 
 Now that you know how to add and remove elements from arrays, we can now explore
@@ -1162,8 +1160,8 @@ understand how it works before moving on.
 
 </Spoiler>
 
-4. Write a function called matches that counts how many times a given
-   element occurs in an array.
+4. Write a function called matches that counts how many times a given element
+   occurs in an array.
 
    ```jsx
    matches(['Thor', 'Loki', 'Ant-Man', 'Loki'], 'Loki') // returns 2
@@ -1277,7 +1275,7 @@ understand how it works before moving on.
 4. **Code**
 
    ```jsx
-   const combineLess5 = (a) => {
+   const combineLess5 = a => {
      return a.reduce((acc, e) => {
        if (e.length >= 5) {
          return acc
@@ -1406,8 +1404,8 @@ When the function is running, `this` refers to the object that comes before `.`.
 ```jsx
 Array.prototype.last = function () {
   return this[this.length - 1]
-};
-[1, 2, 3].last() // When the last function is run, 'this' refers to [1,2,3]
+}
+;[1, 2, 3].last() // When the last function is run, 'this' refers to [1,2,3]
 const jackfruit = [1, 2, 3].last() // What is jackfruit?
 ```
 
@@ -1416,8 +1414,8 @@ const jackfruit = [1, 2, 3].last() // What is jackfruit?
 ```jsx
 Array.prototype.last = function () {
   return this[this.length - 1]
-};
-[1, 2, 3].last() // When the last function is run, this refers to [1,2,3]
+}
+;[1, 2, 3].last() // When the last function is run, this refers to [1,2,3]
 jackfruit = [1, 2, 3].last() // 3
 ```
 

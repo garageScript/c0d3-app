@@ -21,6 +21,7 @@ export type SubLesson = {
   }
   source?: MDXRemoteSerializeResult
   subLessonSlug: string
+  headings: { text: string; depth: number }[]
 }
 
 const isURIEncodedOrThrow = (errorPrefix: string, slug: string) => {

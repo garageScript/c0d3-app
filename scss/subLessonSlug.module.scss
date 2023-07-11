@@ -1,0 +1,32 @@
+@use './colors.module.scss';
+
+.sublesson__container {
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  padding: 0;
+}
+
+.sublesson__sidebar {
+  top: 20px;
+  height: fit-content;
+}
+
+.toc__container {
+  list-style: none;
+  background: colors.$fg-light;
+  height: fit-content;
+}
+
+.toc__header {
+  background-color: colors.$bg-white;
+}
+
+.toc__toggle {
+  background: transparent;
+  border: 0;
+  font-family: Inter;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
