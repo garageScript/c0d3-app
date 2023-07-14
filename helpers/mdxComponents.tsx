@@ -28,6 +28,7 @@ const MDXcomponents = {
   ul: (props: any) => <ul className={`${styles['MDX_ul']}`} {...props} />,
   ol: (props: any) => <ol className={`${styles['MDX_ol']}`} {...props} />,
   a: (props: any) => <a className={`${styles['MDX_a']}`} {...props} />,
+  p: (props: any) => <p className={`${styles['MDX_p']}`} {...props} />,
   td: (props: any) => <td className={`${styles['MDX_td']}`} {...props} />,
   th: (props: any) => <th className={`${styles['MDX_th']}`} {...props} />
 }
