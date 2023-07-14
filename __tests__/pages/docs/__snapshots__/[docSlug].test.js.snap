@@ -38,7 +38,7 @@ exports[`[docSlug] Page should match screenshot 1`] = `
       href="https://github.com/garageScript/c0d3-app/edit/master/some/fake/path"
       title="Edit this page on Github"
     >
-      Edit this page
+      Edit this page on Github
     </a>
   </div>
 </div>
