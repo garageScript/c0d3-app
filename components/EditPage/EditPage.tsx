@@ -10,9 +10,9 @@ const EditPage: React.FC<Props> = ({ filePath }) => {
     <a
       href={`https://github.com/garageScript/c0d3-app/edit/master/${filePath}`}
       title="Edit this page on Github"
-      className={`${styles['MDX_a']} ${styles['edit']}`}
+      className={`${styles.MDX_a} ${styles.edit}`}
     >
-      Edit this page
+      Edit this page on Github
     </a>
   )
 }
