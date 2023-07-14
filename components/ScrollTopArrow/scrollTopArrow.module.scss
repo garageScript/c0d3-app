@@ -1,4 +1,7 @@
+@use '../../scss/colors.module.scss';
+
 .arrow {
+  background-color: colors.$bg-light-purple;
   position: fixed;
   height: 3em;
   width: 3em;
@@ -9,4 +12,5 @@
   z-index: 1;
   top: 90%;
   left: 90%;
+  box-shadow: 0 8px 20px 0 rgba(colors.$darkGray, 0.3);
 }

@@ -19,10 +19,17 @@ const ScrollTopArrow: React.FC = () => {
     <button
       aria-label="Scroll to top"
       title="Scroll to top"
-      className={`${styles['arrow']} border-0 p-0 bg-transparent`}
+      className={`${styles.arrow} d-grid justify-content-center align-content-center rounded-pill border-0 p-4`}
       onClick={() => window.scrollTo(0, 0)}
     >
-      <Image src="/assets/mdx/topArrow.svg" layout="fill" aria-hidden="true" />
+      <Image
+        src="/assets/mdx/topArrow.svg"
+        layout="fixed"
+        height={28}
+        width={28}
+        aria-hidden="true"
+        className="opacity-75"
+      />
     </button>
   )
 }
