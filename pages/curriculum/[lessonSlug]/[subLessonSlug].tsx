@@ -151,30 +151,36 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
         breakpoint={breakpoint}
       />
       <div
-        className={`card shadow-sm  d-block border-0 p-3 p-md-4 bg-white ${mdxStyles['lesson-wrapper']} `}
+        className={`card shadow-sm d-flex flex-column gap-5 border-0 p-3 p-md-4 bg-white ${mdxStyles['lesson-wrapper']}`}
       >
-        <Title
-          title={`${selectedSubLesson.frontMatter.title} | ${lessonSlug} | C0D3`}
-        />
-        <ScrollTopArrow />
-        {hasMultipleSubLessons && (
-          <SubLessonLinks
-            subLessons={subLessons}
-            lessonSlug={lessonSlug}
-            subLessonSlug={subLessonSlug}
+        <div>
+          <Title
+            title={`${selectedSubLesson.frontMatter.title} | ${lessonSlug} | C0D3`}
           />
-        )}
+          <ScrollTopArrow />
+          {hasMultipleSubLessons && (
+            <SubLessonLinks
+              subLessons={subLessons}
+              lessonSlug={lessonSlug}
+              subLessonSlug={subLessonSlug}
+            />
+          )}
 
-        <MDXRemote {...selectedSubLesson.source!} components={MDXcomponents} />
-
-        {hasMultipleSubLessons && (
-          <NextPreviousLessons
-            subLessons={subLessons}
-            subLessonSlug={subLessonSlug}
-            lessonSlug={lessonSlug}
+          <MDXRemote
+            {...selectedSubLesson.source!}
+            components={MDXcomponents}
           />
-        )}
 
+          {hasMultipleSubLessons && (
+            <div className="mt-5">
+              <NextPreviousLessons
+                subLessons={subLessons}
+                subLessonSlug={subLessonSlug}
+                lessonSlug={lessonSlug}
+              />
+            </div>
+          )}
+        </div>
         <EditPage filePath={githubFilePath} />
       </div>
     </div>
