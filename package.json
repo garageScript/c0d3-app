@@ -36,7 +36,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.19",
     "@primer/octicons-react": "19.4.0",
-    "@prisma/client": "4",
+    "@prisma/client": "5",
     "@quixo3/prisma-session-store": "3.1.13",
     "@sentry/nextjs": "7.46.0",
     "apollo-server-micro": "^2.26.1",
@@ -121,7 +121,7 @@
     "jest-mock-extended": "^3.0.4",
     "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
-    "prisma": "4",
+    "prisma": "5",
     "react-docgen-typescript-plugin": "^1.0.5",
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^3.0.1",
