@@ -6,7 +6,7 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
     class="my-3 mt-5"
   >
     <div
-      class="d-flex flex-col flex-md-row gap-3 justify-content-between align-items-none align-items-md-center card shadow-sm bg-primary text-white px-4 py-4 border-0"
+      class="d-flex flex-col flex-md-row gap-3 justify-content-between align-items-none align-items-md-center card shadow-sm bg-primary text-white p-4 border-0"
     >
       <div>
         <span
