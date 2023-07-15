@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { mockDeep, mockReset, MockProxy } from 'jest-mock-extended'
+import { mockDeep, mockReset, DeepMockProxy } from 'jest-mock-extended'
 import prisma from '../../prisma'
 
 jest.mock('../../prisma', () => ({
@@ -9,9 +9,9 @@ jest.mock('../../prisma', () => ({
 
 beforeEach(() => {
   mockReset(prismaMock)
-  prismaMock.$transaction.mockImplementation(ops => Promise.all(ops))
+  prismaMock.$transaction.mockImplementation((ops: any) => Promise.all(ops))
 })
 
-const prismaMock = prisma as unknown as MockProxy<PrismaClient>
+export const prismaMock = prisma as unknown as DeepMockProxy<PrismaClient>
 
 export default prismaMock
