@@ -72,59 +72,67 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
       </div>
     </div>
     <div
-      class="card shadow-sm  d-block border-0 p-3 p-md-4 bg-white lesson-wrapper "
+      class="card shadow-sm d-flex flex-column gap-5 border-0 p-3 p-md-4 bg-white lesson-wrapper"
     >
-      <nav
-        aria-label="Sub-lesson Links"
-      >
-        <a
-          aria-current="page"
-          class="subtitle link-dark dark d-block"
-          href="/curriculum/js0/first_sub_lesson"
+      <div>
+        <nav
+          aria-label="Sub-lesson Links"
         >
-          Part 1: first sub lesson
-        </a>
-        <a
-          class="subtitle text-muted d-block"
-          href="/curriculum/js0/second_sub_lesson"
+          <a
+            aria-current="page"
+            class="subtitle link-dark dark d-block"
+            href="/curriculum/js0/first_sub_lesson"
+          >
+            Part 1: first sub lesson
+          </a>
+          <a
+            class="subtitle text-muted d-block"
+            href="/curriculum/js0/second_sub_lesson"
+          >
+            Part 2: second sub lesson
+          </a>
+          <a
+            class="subtitle text-muted d-block"
+            href="/curriculum/js0/third_sub_lesson"
+          >
+            Part 3: third sub lesson
+          </a>
+        </nav>
+        <h1
+          class="MDX_h1"
+          id="first"
         >
-          Part 2: second sub lesson
-        </a>
-        <a
-          class="subtitle text-muted d-block"
-          href="/curriculum/js0/third_sub_lesson"
+          first
+        </h1>
+        <p
+          class="MDX_p"
         >
-          Part 3: third sub lesson
-        </a>
-      </nav>
-      <h1
-        class="MDX_h1"
-        id="first"
-      >
-        first
-      </h1>
-      <p>
-        simple
-      </p>
-      <div
-        class="d-flex"
-      >
-        <a
-          class="lessonLink next"
-          href="/curriculum/js0/second_sub_lesson"
+          simple
+        </p>
+        <div
+          class="mt-5"
         >
-          Next part: 
-          <span>
-            second sub lesson
-          </span>
-        </a>
+          <div
+            class="d-flex"
+          >
+            <a
+              class="lessonLink next"
+              href="/curriculum/js0/second_sub_lesson"
+            >
+              Next part: 
+              <span>
+                second sub lesson
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
       <a
         class="MDX_a edit"
         href="https://github.com/garageScript/c0d3-app/edit/master/some/fake/path"
         title="Edit this page on Github"
       >
-        Edit this page
+        Edit this page on Github
       </a>
     </div>
   </div>

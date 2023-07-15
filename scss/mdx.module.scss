@@ -10,6 +10,12 @@
 .MDX_h3 {
   font-weight: 600;
   display: inline-block;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.MDX_p {
+  margin-bottom: 1.2em;
 }
 
 .MDX_ol > li::marker {
@@ -51,10 +57,6 @@
   display: flex;
   justify-content: center;
   text-decoration: none;
-  &::before {
-    content: '\270E';
-    transform: rotate(90deg);
-  }
   &:hover {
     text-decoration: none;
   }
