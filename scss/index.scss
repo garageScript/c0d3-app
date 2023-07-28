@@ -76,6 +76,10 @@ p {
   color: #721c24 !important;
 }
 
+.card {
+  background: #fff;
+}
+
 // Local SCSS Imports
 @import './challengeMaterial.scss';
 @import './modalCard.scss';
