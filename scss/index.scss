@@ -1,7 +1,7 @@
 @use '_variables.module';
 
 // Override default variables before the import
-$body-bg: rgba(84, 56, 220, 0.03);
+$body-bg: #fff;
 
 // If the theme-color colors are missing, make sure to add it here first
 // e.g., 'success': #faj2;
@@ -22,6 +22,7 @@ $theme-colors: (
 .btn-light {
   background-color: #fff !important;
 }
+
 .btn-light:hover {
   background-color: hsl(0deg, 0%, 95%) !important;
 }
@@ -48,11 +49,14 @@ body {
    * https://github.com/garageScript/c0d3-app/pull/134
    */
   font-optical-sizing: none;
+  background: rgba(84, 56, 220, 0.03);
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 100%; /* 16px */
+  font-size: 100%;
+
+  /* 16px */
   // Global accessibility feature allowing users to turn off smooth scroll
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
@@ -61,6 +65,7 @@ html {
 
 .outline-danger {
   border: 1px solid rgba(220, 53, 69, 1);
+
   &:focus {
     border: 1px solid rgba(220, 53, 69, 1);
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
