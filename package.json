@@ -120,7 +120,7 @@
     "jest": "^27.5.1",
     "jest-mock-extended": "^3.0.5",
     "lint-staged": "^13.2.3",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.1",
     "prisma": "5",
     "react-docgen-typescript-plugin": "^1.0.5",
     "react-test-renderer": "^17.0.1",
