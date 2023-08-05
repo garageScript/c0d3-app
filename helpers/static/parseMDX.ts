@@ -6,7 +6,10 @@ import slug from 'remark-slug'
 import autolink from 'rehype-autolink-headings'
 
 type ParsedMDX = {
-  (fileContents: Buffer, onlyFront?: boolean): Promise<{
+  (
+    fileContents: Buffer,
+    onlyFront?: boolean
+  ): Promise<{
     source?: MDXRemoteSerializeResult<Record<string, unknown>>
     frontMatter: { [key: string]: any }
   }>

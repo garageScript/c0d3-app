@@ -31,9 +31,14 @@
       {
         "ignore": ["jsx", "global"]
       }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
     ]
   },
-
   "overrides": [
     {
       "files": "*.mdx",
