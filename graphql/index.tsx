@@ -1739,7 +1739,8 @@ export type ResolversParentTypes = ResolversObject<{
 
 export type AlertResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
+  ParentType extends
+    ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
 > = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1755,7 +1756,8 @@ export type AlertResolvers<
 
 export type AuthResponseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['AuthResponse'] = ResolversParentTypes['AuthResponse']
+  ParentType extends
+    ResolversParentTypes['AuthResponse'] = ResolversParentTypes['AuthResponse']
 > = ResolversObject<{
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   error?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1766,7 +1768,8 @@ export type AuthResponseResolvers<
 
 export type ChallengeResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
+  ParentType extends
+    ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
 > = ResolversObject<{
   description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1778,7 +1781,8 @@ export type ChallengeResolvers<
 
 export type CommentResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
+  ParentType extends
+    ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
 > = ResolversObject<{
   author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1798,7 +1802,8 @@ export type CommentResolvers<
 
 export type ExerciseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Exercise'] = ResolversParentTypes['Exercise']
+  ParentType extends
+    ResolversParentTypes['Exercise'] = ResolversParentTypes['Exercise']
 > = ResolversObject<{
   answer?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
@@ -1827,7 +1832,8 @@ export type ExerciseResolvers<
 
 export type ExerciseCommentResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['ExerciseComment'] = ResolversParentTypes['ExerciseComment']
+  ParentType extends
+    ResolversParentTypes['ExerciseComment'] = ResolversParentTypes['ExerciseComment']
 > = ResolversObject<{
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1854,7 +1860,8 @@ export type ExerciseCommentResolvers<
 
 export type ExerciseSubmissionResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['ExerciseSubmission'] = ResolversParentTypes['ExerciseSubmission']
+  ParentType extends
+    ResolversParentTypes['ExerciseSubmission'] = ResolversParentTypes['ExerciseSubmission']
 > = ResolversObject<{
   exerciseId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1865,7 +1872,8 @@ export type ExerciseSubmissionResolvers<
 
 export type LessonResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
+  ParentType extends
+    ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
 > = ResolversObject<{
   challenges?: Resolver<
     Array<ResolversTypes['Challenge']>,
@@ -1897,7 +1905,8 @@ export type LessonResolvers<
 
 export type ModuleResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Module'] = ResolversParentTypes['Module']
+  ParentType extends
+    ResolversParentTypes['Module'] = ResolversParentTypes['Module']
 > = ResolversObject<{
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
@@ -1910,7 +1919,8 @@ export type ModuleResolvers<
 
 export type MutationResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
+  ParentType extends
+    ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = ResolversObject<{
   acceptSubmission?: Resolver<
     Maybe<ResolversTypes['Submission']>,
@@ -2154,7 +2164,8 @@ export type MutationResolvers<
 
 export type QueryResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
+  ParentType extends
+    ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
   allUsers?: Resolver<
@@ -2231,7 +2242,8 @@ export type QueryResolvers<
 
 export type SessionResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Session'] = ResolversParentTypes['Session']
+  ParentType extends
+    ResolversParentTypes['Session'] = ResolversParentTypes['Session']
 > = ResolversObject<{
   lessonStatus?: Resolver<
     Array<ResolversTypes['UserLesson']>,
@@ -2261,7 +2273,8 @@ export type StarResolvers<
 
 export type SubmissionResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
+  ParentType extends
+    ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
 > = ResolversObject<{
   challenge?: Resolver<ResolversTypes['Challenge'], ParentType, ContextType>
   challengeId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -2293,7 +2306,8 @@ export type SubmissionResolvers<
 
 export type SuccessResponseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
+  ParentType extends
+    ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
 > = ResolversObject<{
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
@@ -2301,7 +2315,8 @@ export type SuccessResponseResolvers<
 
 export type TokenResponseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']
+  ParentType extends
+    ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']
 > = ResolversObject<{
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -2337,7 +2352,8 @@ export type UserResolvers<
 
 export type UserLessonResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
+  ParentType extends
+    ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
 > = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
