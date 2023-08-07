@@ -108,7 +108,7 @@
     "babel-plugin-prismjs": "^2.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
+    "eslint": "^8.46.0",
     "eslint-config-next": "^13.4.12",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-mdx": "^1.17.1",
