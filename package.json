@@ -57,7 +57,7 @@
     "markdown-to-jsx": "^7.3.1",
     "nanoid": "^3.3.4",
     "next": "12",
-    "next-auth": "^4.22.3",
+    "next-auth": "^4.22.4",
     "next-connect": "1.0.0",
     "next-mdx-remote": "^3.0.8",
     "nodemailer": "^6.9.4",
