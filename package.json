@@ -119,7 +119,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-mock-extended": "^3.0.5",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^14.0.0",
     "prettier": "^3.0.2",
     "prisma": "5",
     "react-docgen-typescript-plugin": "^1.0.5",
