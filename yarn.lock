@@ -15479,10 +15479,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.77.1:
-  version "1.77.1"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.77.1.tgz#f8601a148d2b951687c40a47e628a4e55c7d3b00"
-  integrity sha512-QBwyeCvXf2JvnLBDSrp0DIwn8DnUEj6giyFtFD3xNQR7s89DUATWi9qnfu4DxUCOzLvN8eXmD94vAnXWVjw7cA==
+posthog-js@^1.77.2:
+  version "1.77.2"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.77.2.tgz#c5ecb2dc0b0e732fe05f50920ec22a30e3db4916"
+  integrity sha512-I3l5GipPUFe6qd5/0Bgm8Ot4pF8ysWhNgeLWvk69myh58HREfXACgLSYMZBho6L9xC6OcFvQilpcH+Dj3Y2uIQ==
   dependencies:
     fflate "^0.4.1"
 
