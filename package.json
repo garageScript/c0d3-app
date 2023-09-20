@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
-    "@primer/octicons-react": "19.7.0",
+    "@primer/octicons-react": "19.8.0",
     "@prisma/client": "5",
     "@quixo3/prisma-session-store": "3.1.13",
     "@sentry/nextjs": "7.46.0",
