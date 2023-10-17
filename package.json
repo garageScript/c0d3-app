@@ -103,7 +103,7 @@
     "@types/react": "^17.0.43",
     "@types/react-dom": "^18.0.3",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.7.5",
+    "@typescript-eslint/parser": "^6.8.0",
     "babel-jest": "^29.7.0",
     "babel-plugin-prismjs": "^2.1.0",
     "copy-webpack-plugin": "^11.0.0",
