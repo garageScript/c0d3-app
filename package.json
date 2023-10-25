@@ -56,7 +56,7 @@
     "lodash": "^4.17.20",
     "markdown-to-jsx": "^7.3.2",
     "nanoid": "^3.3.4",
-    "next": "12",
+    "next": "13",
     "next-auth": "^4.24.3",
     "next-connect": "1.0.0",
     "next-mdx-remote": "^3.0.8",
