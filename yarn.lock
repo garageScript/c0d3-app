@@ -5167,10 +5167,10 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/mdx-js__react@^1.5.7":
-  version "1.5.7"
-  resolved "https://registry.yarnpkg.com/@types/mdx-js__react/-/mdx-js__react-1.5.7.tgz#6f16323489b1e8251288fd90a0ed13bc525d28da"
-  integrity sha512-QsG4MviR05zsfj+nhaVqGv1C1uZFgJ0tn4SPOf6vz4/pIuUDpohJgINsHU6ObxQ/6urrHtu1bUKOs0npFyiFhg==
+"@types/mdx-js__react@^1.5.8":
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/@types/mdx-js__react/-/mdx-js__react-1.5.8.tgz#a709076d48d17bb2e3168a0686d79b16e55ff9a4"
+  integrity sha512-iLQL8JZ4AZ+rpZvGUsQwENffpsSCMLYB8kE6OhGasLmdYn7aSLq53uOvZrKx5FM+hymE2nm08HDfq7tFx02ElA==
   dependencies:
     "@types/react" "*"
 
