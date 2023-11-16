@@ -34,7 +34,9 @@
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   font-size: 14px;
 
   &:hover {

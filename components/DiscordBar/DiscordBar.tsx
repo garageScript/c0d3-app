@@ -67,8 +67,8 @@ const DiscordBar: React.FC = () => {
           {data.error
             ? ''
             : data.members.length === 1
-            ? ' member online'
-            : ' members online'}
+              ? ' member online'
+              : ' members online'}
         </div>
       </div>
       <div className="p-2">
