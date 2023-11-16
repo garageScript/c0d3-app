@@ -16,10 +16,20 @@ $mint-green-dark: adjust-color(
 );
 
 // Used in @each to emit styles or evaluate code for each element of a list
-$colors: 'body-bg' $body-bg, 'primary' $primary, 'secondary' $secondary,
-  'warning' $warning, 'gray' $gray, 'light' $light, 'danger' $danger,
-  'success' $success, 'info' $info, 'dark' $dark, 'mute' $mute,
-  'mint-green' $mint-green, 'mint-green-dark' $mint-green-dark;
+$colors:
+  'body-bg' $body-bg,
+  'primary' $primary,
+  'secondary' $secondary,
+  'warning' $warning,
+  'gray' $gray,
+  'light' $light,
+  'danger' $danger,
+  'success' $success,
+  'info' $info,
+  'dark' $dark,
+  'mute' $mute,
+  'mint-green' $mint-green,
+  'mint-green-dark' $mint-green-dark;
 
 // Allow importing colors in JS/TS
 :export {

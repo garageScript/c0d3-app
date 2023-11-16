@@ -86,14 +86,18 @@ $light-border: hsla(0, 0%, 85%);
   border-radius: 4px;
   font-family: PT MONO;
   color: colors.$primary;
-  transition: background-color 0.1s ease-in, box-shadow 0.1s ease-in,
+  transition:
+    background-color 0.1s ease-in,
+    box-shadow 0.1s ease-in,
     color 0.1s ease-in;
 
   &:hover {
     background-color: colors.$bg-purple;
     color: colors.$fg-light;
     box-shadow: 0 6px 15px rgba(colors.$bg-purple, 0.4);
-    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out,
+    transition:
+      background-color 0.3s ease-out,
+      box-shadow 0.3s ease-out,
       color 0.3s ease-out;
   }
 
