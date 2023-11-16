@@ -82,7 +82,7 @@
     "@graphql-codegen/typescript-react-apollo": "^4.1.0",
     "@graphql-codegen/typescript-resolvers": "^4.0.1",
     "@jest/types": "^29.5.0",
-    "@next/eslint-plugin-next": "^14.0.2",
+    "@next/eslint-plugin-next": "^14.0.3",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-storyshots": "^6.5.16",
