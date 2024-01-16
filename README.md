@@ -1,7 +1,9 @@
 # c0d3.com
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -72,6 +74,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/flacial"><img src="https://avatars.githubusercontent.com/u/35906419?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Flacial</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=flacial" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/HS-90"><img src="https://avatars.githubusercontent.com/u/77421872?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HS-90</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=HS-90" title="Code">💻</a></td>
   </tr>
+    <td align="center"><a href="https://github.com/greencarlos"><img src="https://avatars.githubusercontent.com/u/30880055?v=4" width="100px;" alt=""/><br /><sub><b>Carlos Green</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=greencarlos" title="Code">💻</a></td>
+  </tr>
+
 </table>
 
 <!-- markdownlint-restore -->
