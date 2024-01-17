@@ -10,7 +10,7 @@ const Footer: React.FC<Props> = ({ footerType }) => {
     : `mt-5 fw-light text-center pb-5 text-muted`
   return (
     <footer className={footerClass}>
-      &copy; Copyright {String(new Date()).split(' ')[3]} GarageScript
+      &copy; Copyright {String(new Date().getFullYear())} GarageScript
     </footer>
   )
 }
