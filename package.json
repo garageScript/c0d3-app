@@ -46,7 +46,7 @@
     "c0d3-diff": "^0.0.9",
     "dayjs": "^1.11.10",
     "discord.js": "^14.9.0",
-    "express-session": "^1.17.3",
+    "express-session": "^1.18.0",
     "formik": "^2.4.5",
     "gitdiff-parser": "0.3.0",
     "graphql": "^15.8.0",
