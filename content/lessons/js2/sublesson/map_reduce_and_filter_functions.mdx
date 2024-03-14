@@ -1972,17 +1972,6 @@ Because map runs the functions really fast and returns immediately. In a race,
 if all runners started immediately one after another, they would arrive at the
 destination at around the same time.
 
-```jsx
-const friends = ['Tony Stark', 'Vision', 'Ultron'].reduce((a, b) => {
-  setTimeout(() => {
-    console.log('Greetings,', b)
-  }, 2000)
-  return a + b
-}, '') // What is friends?
-
-// What gets printed out into the console?
-```
-
 </Spoiler>
 
 ```jsx
