@@ -1,29 +1,29 @@
 name: CI
 
 on:
-  pull_request:
-  push:
-    branches:
-      - master
+    pull_request:
+    push:
+        branches:
+            - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
+        
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+            - name: Install Dependencies
+              run: yarn
 
-      - name: Install Dependencies
-        run: yarn
+            - name: Check Lint and Tests
+              run: |
+                  yarn lint 
+                  yarn test
+                  yarn type-check
 
-      - name: Check Lint and Tests
-        run: |
-          yarn lint 
-          yarn test
-          yarn type-check
-
-      - name: Code Quality ( Codecov )
-        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+            - name: Code Quality ( Codecov )
+              run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
