@@ -3709,10 +3709,10 @@
   dependencies:
     memoizerific "^1.11.3"
 
-"@storybook/addon-viewport@^8.0.2":
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-8.0.2.tgz#d9392c2544907be0a93d4a7004b0757aba696da6"
-  integrity sha512-VOVXkgRLWpJrgfTw4v2L2xAXjqz++vbD8k65dG1p38mx1KcSduFmPHQx5PMWOcJW/c1aGnClqq+Pi7VTnE/tIQ==
+"@storybook/addon-viewport@^8.0.5":
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-8.0.5.tgz#bfa508a181927222a73e317b2fcad16d31caae53"
+  integrity sha512-Y2sTsNeQctfLBPQYuOjMGSQY4lUycZRZblToU0q6siJ030QjgpuEMcu1yDt654T6jnp/s4VwRS6yaZHnqZ97Mw==
   dependencies:
     memoizerific "^1.11.3"
 
