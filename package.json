@@ -122,7 +122,7 @@
     "lint-staged": "^14.0.1",
     "prettier": "^3.2.5",
     "prisma": "5",
-    "react-docgen-typescript-plugin": "^1.0.5",
+    "react-docgen-typescript-plugin": "^1.0.6",
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^4.0.0",
     "remark-slug": "^7.0.1",
