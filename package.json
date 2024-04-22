@@ -83,7 +83,7 @@
     "@graphql-codegen/typescript-resolvers": "^4.0.6",
     "@jest/types": "^29.5.0",
     "@next/eslint-plugin-next": "^14.2.2",
-    "@storybook/addon-actions": "^8.0.6",
+    "@storybook/addon-actions": "^8.0.9",
     "@storybook/addon-essentials": "^8.0.8",
     "@storybook/addon-storyshots": "^6.5.16",
     "@storybook/addon-storysource": "^8.0.8",
