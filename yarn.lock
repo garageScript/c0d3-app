@@ -3543,12 +3543,24 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@8.0.8", "@storybook/addon-actions@^8.0.6":
+"@storybook/addon-actions@8.0.8":
   version "8.0.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.0.8.tgz#0b625b36e738a3b02c25d7b0b0b9f28c4e68c918"
   integrity sha512-F3qpN0n53d058EroW1A2IlzrsFNR5p2srLY4FmXB80nxAKV8oqoDI4jp15zYlf8ThcJoQl36plT8gx3r1BpANA==
   dependencies:
     "@storybook/core-events" "8.0.8"
+    "@storybook/global" "^5.0.0"
+    "@types/uuid" "^9.0.1"
+    dequal "^2.0.2"
+    polished "^4.2.2"
+    uuid "^9.0.0"
+
+"@storybook/addon-actions@^8.0.9":
+  version "8.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.0.9.tgz#b7a19abb0ee8fd73df1498def7f1ff307d16cb25"
+  integrity sha512-+I3VTvlKdj8puHeS2tyaOVv9syDiNLneVZbTfqN+UDOK2i42NwvZr8PVwjTzMlEj9eePJdCZgiipz55xwts5bw==
+  dependencies:
+    "@storybook/core-events" "8.0.9"
     "@storybook/global" "^5.0.0"
     "@types/uuid" "^9.0.1"
     dequal "^2.0.2"
@@ -4366,6 +4378,13 @@
   version "8.0.8"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-8.0.8.tgz#70b606bdcfd153b0e94ded4414069aac89e38419"
   integrity sha512-PtuvR7vS4glDEdCfKB4f1k3Vs1C3rTWP2DNbF+IjjPhNLMBznCdzTAPcz+NUIBvpjjGnhKwWikJ0yj931YjSVg==
+  dependencies:
+    ts-dedent "^2.0.0"
+
+"@storybook/core-events@8.0.9":
+  version "8.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-8.0.9.tgz#d14db371f1f959e8c3baaa6098d2c506bcb3f3ad"
+  integrity sha512-DxSUx7wG9Qe3OFUBnv3OrYq48J8UWNo2DUR5/JecJCtp3n++L4fAEW3J0IF5FfxpQDMQSp1yTNjZ2PaWCMd2ag==
   dependencies:
     ts-dedent "^2.0.0"
 
