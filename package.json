@@ -128,7 +128,7 @@
     "remark-slug": "^7.0.1",
     "sass-loader": "^14.2.1",
     "storybook-addon-next-router": "^4.0.2",
-    "svgo": "^3.3.0",
+    "svgo": "^3.3.2",
     "ts-node": "^10.9.2",
     "typescript": "5.4.5"
   }
