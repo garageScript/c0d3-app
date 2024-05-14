@@ -11572,10 +11572,10 @@ graphql-request@^6.0.0:
     "@graphql-typed-document-node/core" "^3.2.0"
     cross-fetch "^3.1.5"
 
-graphql-request@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-7.0.0.tgz#a402daca246fbb41f869fee77161482d68ecc488"
-  integrity sha512-KJ7+YFvxSqSUFHsnBGZtT6lCuyieiaBaKKDor+G2dghKA68//WsmHKKiugoc9CW0oH8l3NYuCdXAAiUSaDkTcw==
+graphql-request@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-7.0.1.tgz#5ba487d7565423fe753375625681cdda9fd2509b"
+  integrity sha512-hfGBZF6o6lC3C0th+aTMOFP6p8Ev+ydXn4PUlT8rvqPDUFCbaynXszjBCyu0saZIP3VGbJ67GpxW8UGK+tphSw==
   dependencies:
     "@dprint/formatter" "^0.3.0"
     "@dprint/typescript" "^0.90.4"
