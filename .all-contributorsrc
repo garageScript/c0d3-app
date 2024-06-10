@@ -237,7 +237,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "greencarlos",
+      "name": "Money Making Mitch",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30880055?v=4",
+      "profile": "https://carlosgreenpersonalsite.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "commitType": "docs"
 }
