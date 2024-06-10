@@ -6207,7 +6207,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -6346,7 +6348,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -6920,7 +6924,9 @@ exports[`Storyshots Components/Footer Footer 1`] = `
 <footer
   className="mt-5 fw-light text-center pb-5 text-muted"
 >
-  © Copyright 2022 GarageScript
+  © Copyright 
+  2021
+   GarageScript
 </footer>
 `;
 
@@ -6928,7 +6934,9 @@ exports[`Storyshots Components/Footer Footer With Class 1`] = `
 <footer
   className="fw-light text-center py-5 bg-white text-muted"
 >
-  © Copyright 2022 GarageScript
+  © Copyright 
+  2021
+   GarageScript
 </footer>
 `;
 
@@ -11440,7 +11448,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -11563,7 +11573,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -12215,7 +12227,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -15961,7 +15975,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           }
         >
           <div
-            title="April 22, 2018 12:55 PM"
+            title="April 22, 2018 4:55 PM"
           >
             3 years ago
           </div>
@@ -17421,7 +17435,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           }
         >
           <div
-            title="April 22, 2018 12:55 PM"
+            title="April 22, 2018 4:55 PM"
           >
             3 years ago
           </div>
@@ -18879,7 +18893,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           }
         >
           <div
-            title="April 22, 2018 12:55 PM"
+            title="April 22, 2018 4:55 PM"
           >
             3 years ago
           </div>
@@ -20337,7 +20351,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           }
         >
           <div
-            title="April 22, 2018 12:55 PM"
+            title="April 22, 2018 4:55 PM"
           >
             3 years ago
           </div>
@@ -21795,7 +21809,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           }
         >
           <div
-            title="April 22, 2018 12:55 PM"
+            title="April 22, 2018 4:55 PM"
           >
             3 years ago
           </div>
@@ -23225,7 +23239,7 @@ exports[`Storyshots Components/ReviewStatus Accepted 1`] = `
     <div
       className="ms-1"
     >
-       accepted submission on January 1, 1970 12:00 AM.
+       accepted submission on January 1, 1970 4:00 AM.
     </div>
   </div>
   <hr />
@@ -23268,7 +23282,7 @@ exports[`Storyshots Components/ReviewStatus Accepted Without Comment 1`] = `
     <div
       className="ms-1"
     >
-       accepted submission on January 1, 1970 12:00 AM.
+       accepted submission on January 1, 1970 4:00 AM.
     </div>
   </div>
 </div>
@@ -23344,7 +23358,7 @@ exports[`Storyshots Components/ReviewStatus Overwritten Reviewer 1`] = `
     <div
       className="ms-1"
     >
-      Student has overwritten this submission on January 1, 1970 12:00 AM.
+      Student has overwritten this submission on January 1, 1970 4:00 AM.
     </div>
   </div>
 </div>
@@ -23382,7 +23396,7 @@ exports[`Storyshots Components/ReviewStatus Overwritten Student 1`] = `
     <div
       className="ms-1"
     >
-      You have overwritten this submission on January 1, 1970 12:00 AM.
+      You have overwritten this submission on January 1, 1970 4:00 AM.
     </div>
   </div>
 </div>
@@ -23421,7 +23435,7 @@ exports[`Storyshots Components/ReviewStatus Rejected 1`] = `
     <div
       className="ms-1"
     >
-       requested changes on January 1, 1970 12:00 AM.
+       requested changes on January 1, 1970 4:00 AM.
     </div>
   </div>
   <hr />
@@ -24444,7 +24458,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -25970,7 +25986,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -27496,7 +27514,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -29022,7 +29042,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -29166,7 +29188,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
@@ -30121,7 +30145,9 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2021
+     GarageScript
   </footer>,
 ]
 `;
