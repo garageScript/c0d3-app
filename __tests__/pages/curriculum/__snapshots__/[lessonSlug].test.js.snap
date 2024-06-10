@@ -506,7 +506,9 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
     <footer
       class="mt-5 fw-light text-center pb-5 text-muted"
     >
-      © Copyright 2022 GarageScript
+      © Copyright 
+      2024
+       GarageScript
     </footer>
   </div>
 </div>
@@ -717,7 +719,9 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2024
+     GarageScript
   </footer>
 </div>
 `;
@@ -1287,7 +1291,9 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
     <footer
       class="mt-5 fw-light text-center pb-5 text-muted"
     >
-      © Copyright 2022 GarageScript
+      © Copyright 
+      2024
+       GarageScript
     </footer>
   </div>
 </div>
@@ -1498,7 +1504,9 @@ exports[`Lesson Page Should return Bad data if alerts or lessons are missing 1`]
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2024
+     GarageScript
   </footer>
 </div>
 `;

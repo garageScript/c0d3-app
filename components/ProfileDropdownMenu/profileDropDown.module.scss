@@ -32,7 +32,9 @@
   padding: 0.5rem 1rem;
   text-transform: uppercase;
   font-size: 14px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
   &:hover,
   &:focus {
