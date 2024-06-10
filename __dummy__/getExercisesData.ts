@@ -70,7 +70,7 @@ const getExercisesData: GetExercisesQuery = {
         email: 'noob@c0d3.com',
         discordId: '8321'
       },
-      removed: false,
+      removedAt: null,
       description: '```\nlet a = 5\na = a + 10\n// what is a?\n```',
       answer: '15',
       explanation: 'You can reassign variables that were created with "let".',
@@ -91,7 +91,7 @@ const getExercisesData: GetExercisesQuery = {
         email: 'noob@c0d3.com',
         discordId: '8321'
       },
-      removed: false,
+      removedAt: null,
       description: '```\nlet a = 1\na += 2\n// what is a?\n```',
       answer: '3',
       explanation: '`a += 2` is a shorter way to write `a = a + 2`',
@@ -112,7 +112,7 @@ const getExercisesData: GetExercisesQuery = {
         email: 'noob@c0d3.com',
         discordId: '8321'
       },
-      removed: false,
+      removedAt: null,
       description: '```\nlet a = 1\na -= 2\n// what is a?\n```',
       answer: '-1',
       explanation: null,

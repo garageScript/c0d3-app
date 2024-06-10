@@ -8,7 +8,8 @@ import {
   addExercise,
   updateExercise,
   flagExercise,
-  removeExerciseFlag
+  removeExerciseFlag,
+  removeExercise
 } from './exerciseCrud'
 
 const AdminCtx = {
@@ -128,7 +129,7 @@ describe('It should update an exercise', () => {
   })
 })
 describe('It should test delete', () => {
-  test('it should delete module', () => {
+  test('it should delete exercise', () => {
     prismaMock.exercise.delete.mockResolvedValue({ success: true })
     expect(deleteExercise({}, { id: 1 }, AdminCtx)).resolves.toEqual({
       success: true
@@ -147,7 +148,7 @@ describe('It should test delete', () => {
       )
     ).rejects.toThrowError()
   })
-  test('It should check if user can delte their own exercise', () => {
+  test('It should check if user can delete their own exercise', () => {
     expect(
       deleteExercise(
         {},
@@ -314,5 +315,72 @@ describe('It should test remove flag', () => {
         { req: { user: { id: 1 } } }
       )
     ).rejects.toThrow(new Error('Not authorized to unflag'))
+  })
+})
+
+describe('It should test set removed flag', () => {
+  test('it should set exercise removed flag', () => {
+    prismaMock.exercise.update.mockResolvedValue({ success: true })
+    prismaMock.exercise.findUnique.mockResolvedValueOnce({
+      ...mockExercises[0]
+    })
+    expect(removeExercise({}, { id: 1 }, AdminCtx)).resolves.toEqual({
+      success: true
+    })
+  })
+
+  test('it should throw error if the exercise is already removed', () => {
+    prismaMock.exercise.update.mockResolvedValueOnce({ success: true })
+    prismaMock.exercise.findUnique.mockResolvedValueOnce({
+      ...mockExercises[0],
+      removedAt: '26/08/2023 08:22:24'
+    })
+    expect(removeExercise({}, { id: 1 }, AdminCtx)).rejects.toThrow(
+      new Error('Exercise is already removed')
+    )
+  })
+
+  test('it should throw error if the exercise is not found', () => {
+    prismaMock.exercise.update.mockResolvedValueOnce({ success: true })
+    prismaMock.exercise.findUnique.mockResolvedValueOnce(null)
+    expect(removeExercise({}, { id: 1 }, AdminCtx)).rejects.toThrow(
+      new Error('Exercise is not found')
+    )
+  })
+
+  test('should check id when setting exercise removed flag', () => {
+    expect(
+      removeExercise(
+        {},
+        {
+          id: 1
+        },
+        {
+          req: { user: {} }
+        }
+      )
+    ).rejects.toThrowError()
+  })
+
+  test('It should check if user can set the removed flag of their own exercise', () => {
+    prismaMock.exercise.findUnique.mockResolvedValueOnce({
+      ...mockExercises[0]
+    })
+
+    expect(
+      removeExercise(
+        {},
+        {
+          content: 'testing',
+          name: 'Using functions to make pie',
+          lessonId: 1,
+          testable: false,
+          authorId: 2
+        },
+        {
+          req: { user: { id: 333 } }
+        }
+      )
+    ).rejects.toThrow(new Error('Not authorized to remove'))
   })
 })

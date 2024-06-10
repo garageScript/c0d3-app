@@ -1,6 +1,6 @@
 import { ApolloError } from '@apollo/client'
 import React from 'react'
-import { SelectIteration } from '../../components/SelectIteration'
+import SelectIteration from '../../components/SelectIteration'
 import { GetPreviousSubmissionsQuery } from '../../graphql'
 
 export default {

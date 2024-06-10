@@ -1,7 +1,7 @@
 import { KebabHorizontalIcon } from '@primer/octicons-react'
 import Markdown from 'markdown-to-jsx'
 import React from 'react'
-import { useDeleteExerciseMutation } from '../../graphql'
+import { useRemoveExerciseMutation } from '../../graphql'
 import { DropdownMenu } from '../DropdownMenu'
 import QueryInfo from '../QueryInfo'
 import styles from './exercisePreviewCard.module.scss'
@@ -23,7 +23,8 @@ const ExercisePreviewCard = ({
   onDelete,
   className = ''
 }: ExercisePreviewCardProps) => {
-  const [deleteExercise, { data, loading, error }] = useDeleteExerciseMutation()
+  const [removedExercise, { data, loading, error }] =
+    useRemoveExerciseMutation()
 
   const [topBorderStyle, topMessageStyle] =
     state === 'ANSWERED'
@@ -42,7 +43,7 @@ const ExercisePreviewCard = ({
     >
       {state && <div className={topBorderStyle} />}
       <div className={styles.header__container}>
-        {data && data.deleteExercise.id !== id ? (
+        {data && data.removeExercise.id !== id ? (
           <></>
         ) : (
           <QueryInfo
@@ -69,7 +70,7 @@ const ExercisePreviewCard = ({
                 {
                   title: 'Delete',
                   onClick: async () => {
-                    await deleteExercise({
+                    await removedExercise({
                       variables: {
                         id
                       }

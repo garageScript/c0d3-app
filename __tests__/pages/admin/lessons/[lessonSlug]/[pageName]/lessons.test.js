@@ -15,7 +15,7 @@ import { CHALLENGES } from '../../../../../../graphql/queries/challenges'
 import ADD_CHALLENGE from '../../../../../../graphql/queries/createChallenge'
 import GET_EXERCISES from '../../../../../../graphql/queries/getExercises'
 import REMOVE_EXERCISE_FLAG from '../../../../../../graphql/queries/removeExerciseFlag'
-import DELETE_EXERCISE from '../../../../../../graphql/queries/deleteExercise'
+import REMOVE_EXERCISE from '../../../../../../graphql/queries/removeExercise'
 import { MockedProvider } from '@apollo/client/testing'
 import userEvent from '@testing-library/user-event'
 import UPDATE_LESSON from '../../../../../../graphql/queries/updateLesson'
@@ -194,14 +194,14 @@ const getExerciseWithRefetchMock = {
   }
 }
 
-const deleteExerciseMock = {
+const removeExerciseMock = {
   request: {
-    query: DELETE_EXERCISE,
+    query: REMOVE_EXERCISE,
     variables: { id: 1 }
   },
   result: {
     data: {
-      deleteExercise: {
+      removeExercise: {
         id: 1
       }
     }
@@ -280,7 +280,7 @@ const mocksWithRefetchExercises = [
   getAppQueryMock,
   getAppQueryMock,
   getExerciseWithRefetchMock,
-  deleteExerciseMock,
+  removeExerciseMock,
   unflagExerciseMock,
   challengesQueryMock,
   addChallengeQueryMock

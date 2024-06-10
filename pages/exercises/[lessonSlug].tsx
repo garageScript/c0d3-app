@@ -59,7 +59,9 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
 
   const currentExercises = exercises
-    .filter(exercise => exercise?.module.lesson.slug === slug)
+    .filter(
+      exercise => exercise?.module.lesson.slug === slug && !exercise.removedAt
+    )
     .map(exercise => {
       const userAnswer = userAnswers[exercise.id] ?? null
       return {
@@ -73,7 +75,9 @@ const Exercises: React.FC<QueryDataProps<GetExercisesQuery>> = ({
           if (userAnswer === exercise.answer) return 'ANSWERED'
           if (userAnswer) return 'INCORRECT'
           return 'NOT ANSWERED'
-        })()
+        })(),
+        removedAt: exercise.removedAt,
+        flaggedAt: exercise.flaggedAt || ''
       }
     })
     .filter(
@@ -116,6 +120,7 @@ type ExerciseData = {
   problem: string
   answer: string
   explanation: string
+  flaggedAt: string
 }
 
 type ExerciseProps = {
@@ -169,6 +174,7 @@ const Exercise = ({
           submitUserAnswer(exercise.id, userAnswer)
         }}
         exerciseId={exercise.id}
+        flaggedAt={!!exercise.flaggedAt}
       />
       <div className="d-flex justify-content-between mt-4">
         {hasPrevious ? (
@@ -227,6 +233,7 @@ type ExerciseListItem = {
   userAnswer: string | null
   state: ExercisePreviewCardProps['state']
   id: number
+  removedAt?: string | null
 }
 
 type ExerciseListProps = {

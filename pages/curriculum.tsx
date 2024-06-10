@@ -43,10 +43,13 @@ interface State {
 const generateMap = (
   session: GetSessionQuery['session']
 ): { [id: string]: ArrayElement<typeof session.lessonStatus> } => {
-  return session.lessonStatus.reduce((map, userLesson) => {
-    map[userLesson.lessonId] = userLesson
-    return map
-  }, {} as ReturnType<typeof generateMap>)
+  return session.lessonStatus.reduce(
+    (map, userLesson) => {
+      map[userLesson.lessonId] = userLesson
+      return map
+    },
+    {} as ReturnType<typeof generateMap>
+  )
 }
 
 // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.

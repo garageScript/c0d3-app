@@ -33,6 +33,7 @@ export const Basic = () => {
           console.log(`User answer submitted: ${userAnswer}`)
         }}
         exerciseId={1}
+        flaggedAt={!!''}
       />
     </MockedProvider>
   )

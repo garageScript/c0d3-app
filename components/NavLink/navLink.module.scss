@@ -1,0 +1,19 @@
+@use 'sass:color';
+@use '../../scss/variables.module';
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.noUnderline {
+  text-decoration: none;
+}
+
+.active {
+  color: variables.$secondary;
+  background: variables.$primary;
+}

@@ -102,8 +102,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 width="16"
               >
                 <path
-                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                  fill-rule="evenodd"
+                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"
                 />
               </svg>
             </button>
@@ -188,11 +187,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               You're off to a great start!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -260,7 +259,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -277,7 +276,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >
@@ -350,7 +349,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
@@ -477,7 +476,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
@@ -586,7 +585,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
@@ -695,7 +694,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
@@ -804,7 +803,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
@@ -913,7 +912,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
@@ -1022,7 +1021,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
@@ -1131,7 +1130,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
@@ -1240,7 +1239,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
@@ -1349,7 +1348,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
@@ -1452,11 +1451,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               You're off to a great start!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -1524,7 +1523,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -1541,7 +1540,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >
@@ -1796,8 +1795,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 width="16"
               >
                 <path
-                  d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                  fill-rule="evenodd"
+                  d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"
                 />
               </svg>
             </button>
@@ -1882,11 +1880,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               Keep up the great work!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -1955,7 +1953,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -1972,7 +1970,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >
@@ -2072,7 +2070,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
@@ -2235,7 +2233,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
@@ -2398,7 +2396,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
@@ -2534,7 +2532,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
@@ -2661,7 +2659,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
@@ -2770,7 +2768,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
@@ -2879,7 +2877,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
@@ -2988,7 +2986,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
@@ -3097,7 +3095,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
@@ -3206,7 +3204,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              class="align-self-center"
+              class="align-self-center rounded"
               height="165"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
@@ -3309,11 +3307,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-4 border-0"
           >
-            <h4
+            <h3
               class="progress-card__title text-center"
             >
               Keep up the great work!
-            </h4>
+            </h3>
             <div
               class="d-block d-xl-none"
             >
@@ -3382,7 +3380,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </svg>
               </div>
             </div>
-            <div
+            <p
               class="mt-3 text-center"
             >
               Join us on
@@ -3399,7 +3397,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </p>
               </a>
               to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
-            </div>
+            </p>
             <div
               class="mt-4 d-flex flex-column"
             >

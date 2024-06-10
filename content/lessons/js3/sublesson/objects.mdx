@@ -3,8 +3,6 @@ title: Objects
 order: 2
 ---
 
-# Table of Contents
-
 # Objects
 
 Objects are the most important concept in JavaScript. But wait, didn't we
@@ -264,14 +262,6 @@ allStars is:
 	]
 */
 ```
-
-<h1>Should be fixed before this lesson goes live</h1>
-
-<Image
-  src="/assets/curriculum/lessons/js3/placeholder1.jpeg"
-  width="1000"
-  height="750"
-/>
 
 </Spoiler>
 
@@ -1206,9 +1196,7 @@ environment.
 2. **Shape**
 
    ```jsx
-   const headers = () => {
-
-   }
+   const headers = () => {}
    ```
 
 3. **Explanation**
@@ -1937,8 +1925,7 @@ object `{}`, to store the results.
 
 ```jsx
 ;[9, 8, 7, 8, 7, 7, 7].getMostCommon()
-  // returns 7 because it is the most common element
-
+// returns 7 because it is the most common element
 ;['Batman', 8, 7, 'Batman', 'Robin'].getMostCommon()
 // returns "Batman" because it is the most common element
 ```
@@ -2493,8 +2480,8 @@ So your defined Array.prototype.push function will call `this.oldPush` which is
 also your defined `Array.prototype.push` function, so it just keeps calling
 itself forever.
 
-**This is an example of why it is considered bad practice to overwrite _built-in_
-Javascript prototypes and methods.**
+**This is an example of why it is considered bad practice to overwrite
+_built-in_ Javascript prototypes and methods.**
 
 </Spoiler>
 

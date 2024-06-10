@@ -81,6 +81,7 @@ export default gql`
       testStr: String
       explanation: String
     ): Exercise!
+    removeExercise(id: Int!): Exercise!
     updateExercise(
       id: Int!
       moduleId: Int!
@@ -102,6 +103,7 @@ export default gql`
       parentId: Int
       userPic: String
     ): ExerciseComment!
+    editExerciseComment(id: Int!, content: String!): ExerciseComment!
     createLesson(
       description: String!
       docUrl: String
@@ -138,6 +140,11 @@ export default gql`
     ): [Lesson]
     unlinkDiscord: User
     updateUserNames(name: String!, username: String!): User
+    updateUserPassword(
+      newPassword: String!
+      newPasswordAgain: String!
+      currentPassword: String!
+    ): SuccessResponse
   }
 
   type AuthResponse {
@@ -277,7 +284,9 @@ export default gql`
     answer: String!
     testStr: String
     explanation: String
-    removed: Boolean
+    removedAt: String
+    removedBy: User
+    removedById: Int
     flaggedAt: String
     flagReason: String
     flaggedBy: User

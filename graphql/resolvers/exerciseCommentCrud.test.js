@@ -2,7 +2,8 @@ import prismaMock from '../../__tests__/utils/prismaMock'
 import {
   addExerciseComment,
   getExerciseComments,
-  getChildComments
+  getChildComments,
+  editExerciseComment
 } from './exerciseCommentCrud'
 
 describe('addExerciseComment resolver tests', () => {
@@ -123,6 +124,68 @@ describe('getChildComments resolver tests', () => {
         replies: true,
         author: true
       }
+    })
+  })
+})
+
+describe('editExerciseComment resolver tests', () => {
+  test('Should throw error if user is invalid or not loggedin', async () => {
+    const mockContext = { req: { user: null } }
+    const mockArgs = {
+      id: 1,
+      content: 'no user'
+    }
+
+    await expect(
+      editExerciseComment(undefined, mockArgs, mockContext)
+    ).rejects.toEqual(new Error('No user'))
+  })
+
+  test('Should throw error if authorID does not match original post', async () => {
+    const mockContext = { req: { user: { id: 1 } } }
+    const mockArgs = { id: 2, content: 'no user match' }
+    const mockExerciseComment = {
+      id: 2,
+      exerciseId: 1,
+      authorId: 2,
+      parentId: 1,
+      content: 'there is user',
+      userPic: null
+    }
+
+    prismaMock.exerciseComment.findUnique.mockResolvedValue(mockExerciseComment)
+    await expect(
+      editExerciseComment(undefined, mockArgs, mockContext)
+    ).rejects.toEqual(new Error('Comment is not by user'))
+
+    expect(prismaMock.exerciseComment.findUnique).toBeCalledWith({
+      where: {
+        id: 2
+      }
+    })
+  })
+
+  test('Should edit existing comment with matching id in prisma', async () => {
+    const mockContext = { req: { user: { id: 1 } } }
+    const mockArgs = { id: 2, content: 'new content' }
+    const mockExerciseComment = {
+      id: 2,
+      exerciseId: 1,
+      authorId: 1,
+      content: 'old content',
+      userPic: null
+    }
+
+    prismaMock.exerciseComment.findUnique.mockResolvedValue(mockExerciseComment)
+    prismaMock.exerciseComment.update.mockResolvedValue(mockExerciseComment)
+
+    await expect(
+      editExerciseComment(undefined, mockArgs, mockContext)
+    ).resolves.toEqual(mockExerciseComment)
+
+    expect(prismaMock.exerciseComment.update).toBeCalledWith({
+      where: { id: mockArgs.id },
+      data: { content: mockArgs.content }
     })
   })
 })

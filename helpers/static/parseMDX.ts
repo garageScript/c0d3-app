@@ -1,13 +1,15 @@
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import matter from 'gray-matter'
-import toc from 'remark-toc'
 import gfm from 'remark-gfm'
 import slug from 'remark-slug'
 import autolink from 'rehype-autolink-headings'
 
 type ParsedMDX = {
-  (fileContents: Buffer, onlyFront?: boolean): Promise<{
+  (
+    fileContents: Buffer,
+    onlyFront?: boolean
+  ): Promise<{
     source?: MDXRemoteSerializeResult<Record<string, unknown>>
     frontMatter: { [key: string]: any }
   }>
@@ -16,7 +18,7 @@ type ParsedMDX = {
 const getSource = (content: string) =>
   serialize(content, {
     mdxOptions: {
-      remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm],
+      remarkPlugins: [slug, gfm],
       rehypePlugins: [autolink]
     }
   })

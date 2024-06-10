@@ -85,7 +85,9 @@ export type Exercise = {
   flaggedById?: Maybe<Scalars['Int']>
   id: Scalars['Int']
   module: Module
-  removed?: Maybe<Scalars['Boolean']>
+  removedAt?: Maybe<Scalars['String']>
+  removedBy?: Maybe<User>
+  removedById?: Maybe<Scalars['Int']>
   testStr?: Maybe<Scalars['String']>
 }
 
@@ -158,11 +160,13 @@ export type Mutation = {
   deleteExercise: Exercise
   deleteModule: Module
   editComment?: Maybe<Comment>
+  editExerciseComment: ExerciseComment
   flagExercise?: Maybe<Exercise>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   rejectSubmission?: Maybe<Submission>
   removeAlert?: Maybe<SuccessResponse>
+  removeExercise: Exercise
   removeExerciseFlag: Exercise
   reqPwReset: SuccessResponse
   setStar: SuccessResponse
@@ -173,6 +177,7 @@ export type Mutation = {
   updateLesson: Array<Lesson>
   updateModule: Module
   updateUserNames?: Maybe<User>
+  updateUserPassword?: Maybe<SuccessResponse>
 }
 
 export type MutationAcceptSubmissionArgs = {
@@ -274,6 +279,11 @@ export type MutationEditCommentArgs = {
   id: Scalars['Int']
 }
 
+export type MutationEditExerciseCommentArgs = {
+  content: Scalars['String']
+  id: Scalars['Int']
+}
+
 export type MutationFlagExerciseArgs = {
   flagReason: Scalars['String']
   id: Scalars['Int']
@@ -291,6 +301,10 @@ export type MutationRejectSubmissionArgs = {
 }
 
 export type MutationRemoveAlertArgs = {
+  id: Scalars['Int']
+}
+
+export type MutationRemoveExerciseArgs = {
   id: Scalars['Int']
 }
 
@@ -355,6 +369,12 @@ export type MutationUpdateModuleArgs = {
 export type MutationUpdateUserNamesArgs = {
   name: Scalars['String']
   username: Scalars['String']
+}
+
+export type MutationUpdateUserPasswordArgs = {
+  currentPassword: Scalars['String']
+  newPassword: Scalars['String']
+  newPasswordAgain: Scalars['String']
 }
 
 export type Query = {
@@ -781,6 +801,20 @@ export type EditCommentMutation = {
   editComment?: { __typename?: 'Comment'; id: number; content: string } | null
 }
 
+export type EditExerciseCommentMutationVariables = Exact<{
+  id: Scalars['Int']
+  content: Scalars['String']
+}>
+
+export type EditExerciseCommentMutation = {
+  __typename?: 'Mutation'
+  editExerciseComment: {
+    __typename?: 'ExerciseComment'
+    id: number
+    content: string
+  }
+}
+
 export type FlagExerciseMutationVariables = Exact<{
   id: Scalars['Int']
   flagReason: Scalars['String']
@@ -821,7 +855,12 @@ export type SubmissionsInfoFragment = {
   lessonId: number
   createdAt?: string | null
   updatedAt: string
-  challenge: { __typename?: 'Challenge'; title: string; description: string }
+  challenge: {
+    __typename?: 'Challenge'
+    title: string
+    description: string
+    id: number
+  }
   user: { __typename?: 'User'; id: number; username: string }
   reviewer?: {
     __typename?: 'User'
@@ -1007,7 +1046,7 @@ export type GetExercisesQuery = {
   exercises: Array<{
     __typename?: 'Exercise'
     id: number
-    removed?: boolean | null
+    removedAt?: string | null
     description: string
     answer: string
     explanation?: string | null
@@ -1104,7 +1143,12 @@ export type GetPreviousSubmissionsQuery = {
     lessonId: number
     createdAt?: string | null
     updatedAt: string
-    challenge: { __typename?: 'Challenge'; title: string; description: string }
+    challenge: {
+      __typename?: 'Challenge'
+      title: string
+      description: string
+      id: number
+    }
     user: { __typename?: 'User'; id: number; username: string }
     reviewer?: {
       __typename?: 'User'
@@ -1183,7 +1227,12 @@ export type SubmissionsQuery = {
     lessonId: number
     createdAt?: string | null
     updatedAt: string
-    challenge: { __typename?: 'Challenge'; title: string; description: string }
+    challenge: {
+      __typename?: 'Challenge'
+      title: string
+      description: string
+      id: number
+    }
     user: { __typename?: 'User'; id: number; username: string }
     reviewer?: {
       __typename?: 'User'
@@ -1273,6 +1322,15 @@ export type RemoveAlertMutation = {
     __typename?: 'SuccessResponse'
     success?: boolean | null
   } | null
+}
+
+export type RemoveExerciseMutationVariables = Exact<{
+  id: Scalars['Int']
+}>
+
+export type RemoveExerciseMutation = {
+  __typename?: 'Mutation'
+  removeExercise: { __typename?: 'Exercise'; id: number }
 }
 
 export type RemoveExerciseFlagMutationVariables = Exact<{
@@ -1438,6 +1496,20 @@ export type UpdateUserNamesMutation = {
     id: number
     username: string
     name: string
+  } | null
+}
+
+export type UpdateUserPasswordMutationVariables = Exact<{
+  newPassword: Scalars['String']
+  newPasswordAgain: Scalars['String']
+  currentPassword: Scalars['String']
+}>
+
+export type UpdateUserPasswordMutation = {
+  __typename?: 'Mutation'
+  updateUserPassword?: {
+    __typename?: 'SuccessResponse'
+    success?: boolean | null
   } | null
 }
 
@@ -1667,7 +1739,8 @@ export type ResolversParentTypes = ResolversObject<{
 
 export type AlertResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
+  ParentType extends
+    ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
 > = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1683,7 +1756,8 @@ export type AlertResolvers<
 
 export type AuthResponseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['AuthResponse'] = ResolversParentTypes['AuthResponse']
+  ParentType extends
+    ResolversParentTypes['AuthResponse'] = ResolversParentTypes['AuthResponse']
 > = ResolversObject<{
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   error?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1694,7 +1768,8 @@ export type AuthResponseResolvers<
 
 export type ChallengeResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
+  ParentType extends
+    ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
 > = ResolversObject<{
   description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1706,7 +1781,8 @@ export type ChallengeResolvers<
 
 export type CommentResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
+  ParentType extends
+    ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
 > = ResolversObject<{
   author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1726,7 +1802,8 @@ export type CommentResolvers<
 
 export type ExerciseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Exercise'] = ResolversParentTypes['Exercise']
+  ParentType extends
+    ResolversParentTypes['Exercise'] = ResolversParentTypes['Exercise']
 > = ResolversObject<{
   answer?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
@@ -1746,14 +1823,17 @@ export type ExerciseResolvers<
   flaggedById?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
-  removed?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
+  removedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  removedBy?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  removedById?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
 export type ExerciseCommentResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['ExerciseComment'] = ResolversParentTypes['ExerciseComment']
+  ParentType extends
+    ResolversParentTypes['ExerciseComment'] = ResolversParentTypes['ExerciseComment']
 > = ResolversObject<{
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1780,7 +1860,8 @@ export type ExerciseCommentResolvers<
 
 export type ExerciseSubmissionResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['ExerciseSubmission'] = ResolversParentTypes['ExerciseSubmission']
+  ParentType extends
+    ResolversParentTypes['ExerciseSubmission'] = ResolversParentTypes['ExerciseSubmission']
 > = ResolversObject<{
   exerciseId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1791,7 +1872,8 @@ export type ExerciseSubmissionResolvers<
 
 export type LessonResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
+  ParentType extends
+    ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
 > = ResolversObject<{
   challenges?: Resolver<
     Array<ResolversTypes['Challenge']>,
@@ -1823,7 +1905,8 @@ export type LessonResolvers<
 
 export type ModuleResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Module'] = ResolversParentTypes['Module']
+  ParentType extends
+    ResolversParentTypes['Module'] = ResolversParentTypes['Module']
 > = ResolversObject<{
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
@@ -1836,7 +1919,8 @@ export type ModuleResolvers<
 
 export type MutationResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
+  ParentType extends
+    ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = ResolversObject<{
   acceptSubmission?: Resolver<
     Maybe<ResolversTypes['Submission']>,
@@ -1952,6 +2036,12 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationEditCommentArgs, 'content' | 'id'>
   >
+  editExerciseComment?: Resolver<
+    ResolversTypes['ExerciseComment'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationEditExerciseCommentArgs, 'content' | 'id'>
+  >
   flagExercise?: Resolver<
     Maybe<ResolversTypes['Exercise']>,
     ParentType,
@@ -1980,6 +2070,12 @@ export type MutationResolvers<
     ParentType,
     ContextType,
     RequireFields<MutationRemoveAlertArgs, 'id'>
+  >
+  removeExercise?: Resolver<
+    ResolversTypes['Exercise'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationRemoveExerciseArgs, 'id'>
   >
   removeExerciseFlag?: Resolver<
     ResolversTypes['Exercise'],
@@ -2055,11 +2151,21 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationUpdateUserNamesArgs, 'name' | 'username'>
   >
+  updateUserPassword?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      MutationUpdateUserPasswordArgs,
+      'currentPassword' | 'newPassword' | 'newPasswordAgain'
+    >
+  >
 }>
 
 export type QueryResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
+  ParentType extends
+    ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
   allUsers?: Resolver<
@@ -2136,7 +2242,8 @@ export type QueryResolvers<
 
 export type SessionResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Session'] = ResolversParentTypes['Session']
+  ParentType extends
+    ResolversParentTypes['Session'] = ResolversParentTypes['Session']
 > = ResolversObject<{
   lessonStatus?: Resolver<
     Array<ResolversTypes['UserLesson']>,
@@ -2166,7 +2273,8 @@ export type StarResolvers<
 
 export type SubmissionResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
+  ParentType extends
+    ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
 > = ResolversObject<{
   challenge?: Resolver<ResolversTypes['Challenge'], ParentType, ContextType>
   challengeId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -2198,7 +2306,8 @@ export type SubmissionResolvers<
 
 export type SuccessResponseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
+  ParentType extends
+    ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
 > = ResolversObject<{
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
@@ -2206,7 +2315,8 @@ export type SuccessResponseResolvers<
 
 export type TokenResponseResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']
+  ParentType extends
+    ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']
 > = ResolversObject<{
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -2242,7 +2352,8 @@ export type UserResolvers<
 
 export type UserLessonResolvers<
   ContextType = Context,
-  ParentType extends ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
+  ParentType extends
+    ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
 > = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -2306,6 +2417,7 @@ export const SubmissionsInfoFragmentDoc = gql`
     challenge {
       title
       description
+      id
     }
     challengeId
     lessonId
@@ -3875,6 +3987,89 @@ export type EditCommentMutationOptions = Apollo.BaseMutationOptions<
   EditCommentMutation,
   EditCommentMutationVariables
 >
+export const EditExerciseCommentDocument = gql`
+  mutation editExerciseComment($id: Int!, $content: String!) {
+    editExerciseComment(id: $id, content: $content) {
+      id
+      content
+    }
+  }
+`
+export type EditExerciseCommentMutationFn = Apollo.MutationFunction<
+  EditExerciseCommentMutation,
+  EditExerciseCommentMutationVariables
+>
+export type EditExerciseCommentProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables
+  >
+} & TChildProps
+export function withEditExerciseComment<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables,
+    EditExerciseCommentProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables,
+    EditExerciseCommentProps<TChildProps, TDataName>
+  >(EditExerciseCommentDocument, {
+    alias: 'editExerciseComment',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useEditExerciseCommentMutation__
+ *
+ * To run a mutation, you first call `useEditExerciseCommentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useEditExerciseCommentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [editExerciseCommentMutation, { data, loading, error }] = useEditExerciseCommentMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      content: // value for 'content'
+ *   },
+ * });
+ */
+export function useEditExerciseCommentMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    EditExerciseCommentMutation,
+    EditExerciseCommentMutationVariables
+  >(EditExerciseCommentDocument, options)
+}
+export type EditExerciseCommentMutationHookResult = ReturnType<
+  typeof useEditExerciseCommentMutation
+>
+export type EditExerciseCommentMutationResult =
+  Apollo.MutationResult<EditExerciseCommentMutation>
+export type EditExerciseCommentMutationOptions = Apollo.BaseMutationOptions<
+  EditExerciseCommentMutation,
+  EditExerciseCommentMutationVariables
+>
 export const FlagExerciseDocument = gql`
   mutation flagExercise($id: Int!, $flagReason: String!) {
     flagExercise(id: $id, flagReason: $flagReason) {
@@ -4354,7 +4549,7 @@ export const GetExercisesDocument = gql`
           slug
         }
       }
-      removed
+      removedAt
       description
       answer
       explanation
@@ -5435,6 +5630,87 @@ export type RemoveAlertMutationOptions = Apollo.BaseMutationOptions<
   RemoveAlertMutation,
   RemoveAlertMutationVariables
 >
+export const RemoveExerciseDocument = gql`
+  mutation removeExercise($id: Int!) {
+    removeExercise(id: $id) {
+      id
+    }
+  }
+`
+export type RemoveExerciseMutationFn = Apollo.MutationFunction<
+  RemoveExerciseMutation,
+  RemoveExerciseMutationVariables
+>
+export type RemoveExerciseProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    RemoveExerciseMutation,
+    RemoveExerciseMutationVariables
+  >
+} & TChildProps
+export function withRemoveExercise<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    RemoveExerciseMutation,
+    RemoveExerciseMutationVariables,
+    RemoveExerciseProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    RemoveExerciseMutation,
+    RemoveExerciseMutationVariables,
+    RemoveExerciseProps<TChildProps, TDataName>
+  >(RemoveExerciseDocument, {
+    alias: 'removeExercise',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useRemoveExerciseMutation__
+ *
+ * To run a mutation, you first call `useRemoveExerciseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemoveExerciseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeExerciseMutation, { data, loading, error }] = useRemoveExerciseMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRemoveExerciseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    RemoveExerciseMutation,
+    RemoveExerciseMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    RemoveExerciseMutation,
+    RemoveExerciseMutationVariables
+  >(RemoveExerciseDocument, options)
+}
+export type RemoveExerciseMutationHookResult = ReturnType<
+  typeof useRemoveExerciseMutation
+>
+export type RemoveExerciseMutationResult =
+  Apollo.MutationResult<RemoveExerciseMutation>
+export type RemoveExerciseMutationOptions = Apollo.BaseMutationOptions<
+  RemoveExerciseMutation,
+  RemoveExerciseMutationVariables
+>
 export const RemoveExerciseFlagDocument = gql`
   mutation removeExerciseFlag($id: Int!) {
     removeExerciseFlag(id: $id) {
@@ -6325,6 +6601,97 @@ export type UpdateUserNamesMutationOptions = Apollo.BaseMutationOptions<
   UpdateUserNamesMutation,
   UpdateUserNamesMutationVariables
 >
+export const UpdateUserPasswordDocument = gql`
+  mutation updateUserPassword(
+    $newPassword: String!
+    $newPasswordAgain: String!
+    $currentPassword: String!
+  ) {
+    updateUserPassword(
+      newPassword: $newPassword
+      newPasswordAgain: $newPasswordAgain
+      currentPassword: $currentPassword
+    ) {
+      success
+    }
+  }
+`
+export type UpdateUserPasswordMutationFn = Apollo.MutationFunction<
+  UpdateUserPasswordMutation,
+  UpdateUserPasswordMutationVariables
+>
+export type UpdateUserPasswordProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    UpdateUserPasswordMutation,
+    UpdateUserPasswordMutationVariables
+  >
+} & TChildProps
+export function withUpdateUserPassword<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UpdateUserPasswordMutation,
+    UpdateUserPasswordMutationVariables,
+    UpdateUserPasswordProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UpdateUserPasswordMutation,
+    UpdateUserPasswordMutationVariables,
+    UpdateUserPasswordProps<TChildProps, TDataName>
+  >(UpdateUserPasswordDocument, {
+    alias: 'updateUserPassword',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUpdateUserPasswordMutation__
+ *
+ * To run a mutation, you first call `useUpdateUserPasswordMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateUserPasswordMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateUserPasswordMutation, { data, loading, error }] = useUpdateUserPasswordMutation({
+ *   variables: {
+ *      newPassword: // value for 'newPassword'
+ *      newPasswordAgain: // value for 'newPasswordAgain'
+ *      currentPassword: // value for 'currentPassword'
+ *   },
+ * });
+ */
+export function useUpdateUserPasswordMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UpdateUserPasswordMutation,
+    UpdateUserPasswordMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    UpdateUserPasswordMutation,
+    UpdateUserPasswordMutationVariables
+  >(UpdateUserPasswordDocument, options)
+}
+export type UpdateUserPasswordMutationHookResult = ReturnType<
+  typeof useUpdateUserPasswordMutation
+>
+export type UpdateUserPasswordMutationResult =
+  Apollo.MutationResult<UpdateUserPasswordMutation>
+export type UpdateUserPasswordMutationOptions = Apollo.BaseMutationOptions<
+  UpdateUserPasswordMutation,
+  UpdateUserPasswordMutationVariables
+>
 export const UserInfoDocument = gql`
   query userInfo($username: String!) {
     lessons {
@@ -6542,7 +6909,9 @@ export type ExerciseKeySpecifier = (
   | 'flaggedById'
   | 'id'
   | 'module'
-  | 'removed'
+  | 'removedAt'
+  | 'removedBy'
+  | 'removedById'
   | 'testStr'
   | ExerciseKeySpecifier
 )[]
@@ -6557,7 +6926,9 @@ export type ExerciseFieldPolicy = {
   flaggedById?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   module?: FieldPolicy<any> | FieldReadFunction<any>
-  removed?: FieldPolicy<any> | FieldReadFunction<any>
+  removedAt?: FieldPolicy<any> | FieldReadFunction<any>
+  removedBy?: FieldPolicy<any> | FieldReadFunction<any>
+  removedById?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type ExerciseCommentKeySpecifier = (
@@ -6667,11 +7038,13 @@ export type MutationKeySpecifier = (
   | 'deleteExercise'
   | 'deleteModule'
   | 'editComment'
+  | 'editExerciseComment'
   | 'flagExercise'
   | 'login'
   | 'logout'
   | 'rejectSubmission'
   | 'removeAlert'
+  | 'removeExercise'
   | 'removeExerciseFlag'
   | 'reqPwReset'
   | 'setStar'
@@ -6682,6 +7055,7 @@ export type MutationKeySpecifier = (
   | 'updateLesson'
   | 'updateModule'
   | 'updateUserNames'
+  | 'updateUserPassword'
   | MutationKeySpecifier
 )[]
 export type MutationFieldPolicy = {
@@ -6701,11 +7075,13 @@ export type MutationFieldPolicy = {
   deleteExercise?: FieldPolicy<any> | FieldReadFunction<any>
   deleteModule?: FieldPolicy<any> | FieldReadFunction<any>
   editComment?: FieldPolicy<any> | FieldReadFunction<any>
+  editExerciseComment?: FieldPolicy<any> | FieldReadFunction<any>
   flagExercise?: FieldPolicy<any> | FieldReadFunction<any>
   login?: FieldPolicy<any> | FieldReadFunction<any>
   logout?: FieldPolicy<any> | FieldReadFunction<any>
   rejectSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   removeAlert?: FieldPolicy<any> | FieldReadFunction<any>
+  removeExercise?: FieldPolicy<any> | FieldReadFunction<any>
   removeExerciseFlag?: FieldPolicy<any> | FieldReadFunction<any>
   reqPwReset?: FieldPolicy<any> | FieldReadFunction<any>
   setStar?: FieldPolicy<any> | FieldReadFunction<any>
@@ -6716,6 +7092,7 @@ export type MutationFieldPolicy = {
   updateLesson?: FieldPolicy<any> | FieldReadFunction<any>
   updateModule?: FieldPolicy<any> | FieldReadFunction<any>
   updateUserNames?: FieldPolicy<any> | FieldReadFunction<any>
+  updateUserPassword?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type QueryKeySpecifier = (
   | 'alerts'

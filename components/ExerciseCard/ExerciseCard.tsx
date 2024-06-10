@@ -15,6 +15,7 @@ export type ExerciseCardProps = {
   setMessage: (message: Message) => void
   submitUserAnswer: (userAnswer: string) => void
   exerciseId: number
+  flaggedAt: boolean
 }
 
 export enum Message {
@@ -32,7 +33,8 @@ const ExerciseCard = ({
   message,
   setMessage,
   submitUserAnswer,
-  exerciseId
+  exerciseId,
+  flaggedAt
 }: ExerciseCardProps) => {
   const [studentAnswer, setStudentAnswer] = useState('')
 
@@ -105,7 +107,7 @@ const ExerciseCard = ({
           </div>
         </>
       )}
-      <ExerciseReportCard exerciseId={exerciseId} />
+      <ExerciseReportCard exerciseId={exerciseId} flaggedAt={flaggedAt} />
     </section>
   )
 }

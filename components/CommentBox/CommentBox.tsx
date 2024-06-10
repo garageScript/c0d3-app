@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { MdInput } from '.././MdInput'
+import MdInput from '.././MdInput'
 import { Button } from '.././theme/Button'
 import styles from './commentBox.module.scss'
 import {
@@ -11,7 +11,7 @@ import {
 import _ from 'lodash'
 import { GlobalContext } from '../../helpers/globalContext'
 import { updateCache } from '../../helpers/updateCache'
-import { SubmissionComments } from '.././SubmissionComments'
+import SubmissionComments from '.././SubmissionComments'
 
 const CommentBox: React.FC<{
   line: number

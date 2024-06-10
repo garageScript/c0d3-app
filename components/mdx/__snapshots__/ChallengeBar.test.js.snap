@@ -3,28 +3,35 @@
 exports[`ChallengeBar component Should created redirect based on input 1`] = `
 <div>
   <div
-    class="d-flex justify-content-center my-3"
+    class="my-3 mt-5"
   >
     <div
-      class="card shadow-sm bg-primary text-white px-4 py-2 border-0"
+      class="d-flex flex-col flex-md-row gap-3 justify-content-between align-items-none align-items-md-center card shadow-sm bg-primary text-white p-4 border-0"
     >
-      <h1
-        class="text-center fw-bold align-self-center"
-      />
-      <a
-        class="text-white text-center  noUnderline"
-        href="/docs/setup#submitting-challenges"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Submitting challenges
-      </a>
-      <p
-        class="px-2 m-0 text-center fw-bold"
-      />
+      <div>
+        <span
+          class="align-self-center fs-4"
+        />
+        <p
+          class="m-0"
+        />
+      </div>
       <div
-        class="text-center"
-      />
+        class="d-flex flex-column gap-2"
+      >
+        <a
+          class="MDX_a"
+        >
+          <a
+            class="text-white d-block noUnderline"
+            href="/docs/setup#submitting-challenges"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            How to submit challenges?
+          </a>
+        </a>
+      </div>
     </div>
   </div>
 </div>

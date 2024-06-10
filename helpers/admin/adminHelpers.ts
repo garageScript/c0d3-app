@@ -1,4 +1,4 @@
-import { reach, ValidationError } from 'yup'
+import { ISchema, reach, ValidationError } from 'yup'
 import _ from 'lodash'
 import { DROP_DOWN, TEXT_AREA, MD_INPUT } from '../../components/FormCard'
 
@@ -81,7 +81,9 @@ export const errorCheckSingleField = async (
   // title is the name of field being checked
   const { title } = properties[propertyIndex]
   try {
-    await reach(schema, title, null, null).validate(data[title])
+    await (reach(schema, title, null, null) as ISchema<{}>).validate(
+      data[title]
+    )
   } catch (err) {
     valid = false
     properties[propertyIndex].error = (err as Error).message

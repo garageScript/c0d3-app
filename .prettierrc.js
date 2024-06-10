@@ -5,6 +5,7 @@ module.exports = {
   trailingComma: 'none',
   arrowParens: 'avoid',
   proseWrap: 'always',
+  endOfLine: "auto",
   overrides: [
     {
       files: '*.scss',

@@ -1,0 +1,43 @@
+@use '../../scss/variables.module';
+
+.lesson-card__container_inprogress {
+  border-width: 2px;
+}
+.lesson-card__title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.lesson-card__badge {
+  align-self: flex-start;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  background-color: variables.$success;
+  @media (max-width: 768px) {
+    background-color: transparent;
+    color: #00cf92;
+    margin-left: auto;
+    & > svg {
+      width: 30px;
+      height: 30px;
+      stroke-width: 3px;
+    }
+  }
+}
+
+.lesson-card__icon-text {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.lesson-card__button {
+  font-size: 13px;
+  min-width: 134px;
+}
+.lesson-card__image {
+  object-fit: contain;
+}
+.lesson-card__description {
+  flex: 1;
+}

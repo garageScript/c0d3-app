@@ -38,7 +38,8 @@ import {
   updateExercise,
   deleteExercise,
   flagExercise,
-  removeExerciseFlag
+  removeExerciseFlag,
+  removeExercise
 } from './resolvers/exerciseCrud'
 import {
   exerciseSubmissions,
@@ -47,9 +48,10 @@ import {
 import {
   getExerciseComments,
   addExerciseComment,
-  getChildComments
+  getChildComments,
+  editExerciseComment
 } from './resolvers/exerciseCommentCrud'
-import { updateUserNames } from './resolvers/userDataCrud'
+import { updateUserNames, updateUserPassword } from './resolvers/userDataCrud'
 
 export default {
   Query: {
@@ -99,8 +101,11 @@ export default {
     deleteComment,
     flagExercise,
     removeExerciseFlag,
+    removeExercise,
     unlinkDiscord,
     addExerciseComment,
-    updateUserNames
+    editExerciseComment,
+    updateUserNames,
+    updateUserPassword
   }
 }

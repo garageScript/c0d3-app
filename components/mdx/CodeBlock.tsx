@@ -1,28 +1,27 @@
 //From https://mdxjs.com/guides/syntax-highlighting
 import React from 'react'
-import Highlight, {
-  defaultProps,
-  Language,
-  PrismTheme
-} from 'prism-react-renderer'
+import { Highlight } from 'prism-react-renderer'
 import custom from './customTheme'
 type Props = {
-  className: Language
+  className: string
   children: string
 }
 const CodeBlock: React.FC<Props> = ({ children, className }) => {
-  const language = className.replace(/language-/, '') as Language
+  const language = className.replace(/language-/, '')
   return (
-    <Highlight
-      {...defaultProps}
-      code={children}
-      language={language}
-      theme={custom as PrismTheme}
-    >
+    <Highlight code={children} language={language} theme={custom}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={className}
-          style={{ ...style, padding: '20px 20px 0 20px', marginBottom: 0 }}
+          style={{
+            ...style,
+            padding: '20px 20px 0 20px',
+            marginBottom: 0,
+            fontSize: 14,
+            borderRadius: 4,
+            marginBlock: 20,
+            wordBreak: 'break-all'
+          }}
         >
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>

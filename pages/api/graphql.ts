@@ -1,6 +1,6 @@
 import { withSentry } from '@sentry/nextjs'
 import { ApolloServer } from 'apollo-server-micro'
-import nextConnect from 'next-connect'
+import { createRouter, expressWrapper } from 'next-connect'
 import resolvers from '../../graphql/resolvers'
 import typeDefs from '../../graphql/typeDefs'
 import { apolloLogPlugin } from '../../helpers/apolloLogPlugin'
@@ -12,12 +12,12 @@ import sessionMiddleware from '../../helpers/middleware/session'
 const isDevEnv =
   process.env.VERCEL_ENV === 'preview' || process.env.NODE_ENV === 'development'
 
-const handler = nextConnect()
+const router = createRouter()
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
   context: ({ req, res }) => ({ req, res }), // This lets GraphQL have access to sessions
-  /* Syncs server schema (used for server static generation) and api route server settings. 
+  /* Syncs server schema (used for server static generation) and api route server settings.
   By default apolloServer accepts uploads, while schema-generated server does not.*/
   uploads: false,
   plugins: [apolloLogPlugin],
@@ -33,10 +33,10 @@ const apolloServer = new ApolloServer({
 
 const graphQLHandler = apolloServer.createHandler({ path: '/api/graphql' })
 
-handler
-  .use(loggingMiddleware)
-  .use(sessionMiddleware())
-  .use(userMiddleware)
+router
+  .use(expressWrapper(loggingMiddleware))
+  .use(expressWrapper(sessionMiddleware()))
+  .use(expressWrapper(userMiddleware))
   .get('/api/graphql', graphQLHandler)
   .post('/api/graphql', graphQLHandler)
 
@@ -48,4 +48,4 @@ export const config = {
   }
 }
 
-export default withSentry(handler)
+export default withSentry(router.handler())

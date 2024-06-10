@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FilterButtons } from '../../components/FilterButtons'
+import FilterButtons from '../../components/FilterButtons'
 import _ from 'lodash'
 
 export default {

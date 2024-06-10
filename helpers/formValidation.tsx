@@ -100,11 +100,13 @@ const loginValidation = Yup.object({
     .required(errorMessages.REQUIRED)
 })
 
+const passwordSchema = Yup.string()
+  .min(requirements.PASSWORD_MIN, errorMessages.AT_LEAST_PASSWORD_MIN_CHARS)
+  .max(requirements.TEXT_MAX, errorMessages.AT_LEAST_TEXT_MAX_CHARS)
+  .required(errorMessages.REQUIRED)
+
 const passwordValidation = Yup.object({
-  password: Yup.string()
-    .min(requirements.PASSWORD_MIN, errorMessages.AT_LEAST_PASSWORD_MIN_CHARS)
-    .max(requirements.TEXT_MAX, errorMessages.AT_LEAST_TEXT_MAX_CHARS)
-    .required(errorMessages.REQUIRED)
+  password: passwordSchema
 })
 
 const confirmPasswordValidation = Yup.object({
@@ -156,6 +158,12 @@ const userNamesValidation = Yup.object({
     .required(errorMessages.REQUIRED)
 })
 
+const passwordsValidation = Yup.object().shape({
+  'current password': passwordSchema,
+  'new password': passwordSchema,
+  'new password again': passwordSchema
+})
+
 export {
   alertValidation,
   challengeSchema,
@@ -166,5 +174,6 @@ export {
   confirmPasswordValidation,
   resetPasswordValidation,
   exercisesValidation,
-  userNamesValidation
+  userNamesValidation,
+  passwordsValidation
 }

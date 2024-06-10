@@ -28,6 +28,7 @@ describe('ExerciseCard component', () => {
           setMessage={setMessage}
           submitUserAnswer={submitUserAnswer}
           exerciseId={1}
+          flaggedAt={!!''}
         />
       </MockedProvider>
     )
@@ -63,6 +64,7 @@ describe('ExerciseCard component', () => {
           setMessage={setMessage}
           exerciseId={1}
           submitUserAnswer={submitUserAnswer}
+          flaggedAt={!!''}
         />
       </MockedProvider>
     )
@@ -105,6 +107,7 @@ describe('ExerciseCard component', () => {
           message={Message.SUCCESS}
           setMessage={setMessage}
           submitUserAnswer={submitUserAnswer}
+          flaggedAt={!!''}
         />
       </MockedProvider>
     )
@@ -140,6 +143,7 @@ describe('ExerciseCard component', () => {
           message={Message.SUCCESS}
           setMessage={setMessage}
           submitUserAnswer={submitUserAnswer}
+          flaggedAt={!!''}
         />
       </MockedProvider>
     )

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenu Component Should change value of testBtnOnClick upon click 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <button
+      aria-expanded="false"
+      class="dropdown btn btn-primary"
+      data-testid="dropdown-lesson"
+      id="dropdown-lesson"
+      type="button"
+    >
+      Lessons
+      <svg
+        aria-hidden="true"
+        class="octicon octicon-chevron-right"
+        fill="currentColor"
+        focusable="false"
+        height="17"
+        role="img"
+        style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+        viewBox="0 0 16 16"
+        width="17"
+      >
+        <path
+          d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"
+        />
+      </svg>
+    </button>
+    <div
+      aria-labelledby="dropdown-lesson"
+      class="dropdown__menu dropdown-menu"
+      x-placement="bottom-start"
+    >
+      <a
+        class="dropdown-item"
+        data-rr-ui-dropdown-item=""
+        href="#"
+        role="button"
+        tabindex="0"
+      >
+        Lessons
+      </a>
+      <hr
+        class="dropdown-divider"
+        role="separator"
+      />
+      <a
+        class="dropdown-item"
+        data-rr-ui-dropdown-item=""
+        href="#"
+        role="button"
+        tabindex="0"
+      >
+        Users
+      </a>
+      <a
+        class="dropdown-item"
+        data-rr-ui-dropdown-item=""
+        href="#"
+        role="button"
+        tabindex="0"
+      >
+        Alerts
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropdownMenu Component Should render divider when an item is null 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <button
+      aria-expanded="false"
+      class="dropdown btn btn-primary"
+      data-testid="dropdown-lesson"
+      id="dropdown-lesson"
+      type="button"
+    >
+      Admin
+      <svg
+        aria-hidden="true"
+        class="octicon octicon-chevron-right"
+        fill="currentColor"
+        focusable="false"
+        height="17"
+        role="img"
+        style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+        viewBox="0 0 16 16"
+        width="17"
+      >
+        <path
+          d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

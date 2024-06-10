@@ -3,8 +3,6 @@ title: Recursion, closure and async
 order: 2
 ---
 
-# Table of Contents
-
 # Interviewing
 
 During interviews for software engineering positions, your ability to write
@@ -901,9 +899,9 @@ problem.
 3. **Recursive case:** If the counter is still below 99, print 'The things I do
    for love', bring the counter one step closer to 99, and go again.
 
-   It might look strange to see `return love(counter + 1)` in the recursive case, but
-   only `return` in the base case. Shouldn't a function always either have a
-   return value or not?
+   It might look strange to see `return love(counter + 1)` in the recursive
+   case, but only `return` in the base case. Shouldn't a function always either
+   have a return value or not?
 
    Each of the 99 calls to `love` will pass its return value to the `love` that
    called it, and saying `return` is like saying `return undefined`. So the very

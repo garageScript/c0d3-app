@@ -1,6 +1,6 @@
 import { MockedProvider } from '@apollo/client/testing'
 import React, { useState } from 'react'
-import { GiveStarCard } from '../../components/GiveStarCard'
+import GiveStarCard from '../../components/GiveStarCard'
 import { Button } from '../../components/theme/Button'
 import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
 import SET_STAR from '../../graphql/queries/setStar'

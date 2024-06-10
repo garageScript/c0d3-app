@@ -1,5 +1,5 @@
 import React from 'react'
-import { LogoutContainer } from '../LogoutContainer'
+import LogoutContainer from '../LogoutContainer'
 import Card from '../Card'
 
 export const AlreadyLoggedIn: React.FC = () => {

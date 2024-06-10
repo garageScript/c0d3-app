@@ -4,7 +4,8 @@ import {
   MutationUpdateExerciseArgs,
   MutationDeleteExerciseArgs,
   MutationFlagExerciseArgs,
-  MutationRemoveExerciseFlagArgs
+  MutationRemoveExerciseFlagArgs,
+  MutationRemoveExerciseArgs
 } from '..'
 import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
@@ -95,6 +96,46 @@ export const deleteExercise = withUserContainer<
 
   return prisma.exercise.delete({
     where: { id },
+    include: {
+      author: true,
+      module: true
+    }
+  })
+})
+
+export const removeExercise = withUserContainer<
+  Promise<Exercise>,
+  MutationRemoveExerciseArgs
+>(async (_parent: void, args: MutationRemoveExerciseArgs, ctx: Context) => {
+  const { req } = ctx
+  const { id } = args
+
+  const exercise = await prisma.exercise.findUnique({
+    where: {
+      id
+    }
+  })
+
+  if (!exercise) {
+    throw new Error('Exercise is not found')
+  }
+
+  const authorId = req.user?.id
+
+  if (!isAdmin(req) && exercise.authorId !== authorId) {
+    throw new Error('Not authorized to remove')
+  }
+
+  if (exercise.removedAt) {
+    throw new Error('Exercise is already removed')
+  }
+
+  return prisma.exercise.update({
+    where: { id },
+    data: {
+      removedAt: new Date(),
+      removedById: authorId as number
+    },
     include: {
       author: true,
       module: true

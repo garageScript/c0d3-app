@@ -12,24 +12,27 @@ import {
   useGetPreviousSubmissionsQuery
 } from '../../graphql/index'
 import NavLink from '../NavLink'
-import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
-import { GiveStarCard } from '../GiveStarCard'
+import GiveStarCard from '../GiveStarCard'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
 import { SubmissionStatus, useAddCommentMutation } from '../../graphql'
 import DiffView from '../DiffView'
 import { Button } from '../theme/Button'
-import { MdInput } from '../MdInput'
+import MdInput from '../MdInput'
 import { updateCache } from '../../helpers/updateCache'
 import { GlobalContext } from '../../helpers/globalContext'
-import { SubmissionComments } from '../SubmissionComments'
-import { SelectIteration } from '../SelectIteration'
+import SubmissionComments from '../SubmissionComments'
+import SelectIteration from '../SelectIteration'
 import Error, { StatusCode } from '../Error'
-import { ReviewStatus } from '../ReviewStatus'
+import ReviewStatus from '../ReviewStatus'
 import useBreakpoint from '../../helpers/useBreakpoint'
+import HighlightMarkdown from '../mdx/HighlightMarkdown/HighlightMarkdown'
+import { useRouter } from 'next/router'
+import { CURRICULUM_PATH } from '../../constants'
+
 dayjs.extend(relativeTime)
 dayjs.extend(LocalizedFormat)
 
@@ -83,6 +86,9 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
   challengeNum,
   setCurrentChallenge
 }) => {
+  const router = useRouter()
+  const { lessonSlug } = router.query
+
   const cardStyles: string[] = ['challenge-title-card']
   if (active) {
     cardStyles.push('challenge-title-card--active')
@@ -93,11 +99,19 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
     cardStyles.push('shadow-sm', 'border-0')
   }
 
+  const handleChallengeClick = () => {
+    router.push(`${CURRICULUM_PATH}/${lessonSlug}?challenge=${id}`, undefined, {
+      shallow: true
+    })
+
+    setCurrentChallenge(id)
+  }
+
   return (
     <div
       data-testid="challenge-title"
       className={`card mb-2 ${cardStyles.join(' ')}`}
-      onClick={() => setCurrentChallenge(id)}
+      onClick={handleChallengeClick}
     >
       <div className="card-body d-flex justify-content-between">
         <div>{`${challengeNum}. ${title}`}</div>
@@ -251,9 +265,11 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
           </h1>
           <div
             data-testid="challenge-question-description"
-            className="bg-light p-3 mt-3"
+            className="pt-3 pb-3 mt-3"
           >
-            <Markdown>{currentChallenge.description}</Markdown>
+            <HighlightMarkdown>
+              {currentChallenge.description}
+            </HighlightMarkdown>
           </div>
         </div>
       </div>
@@ -345,6 +361,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
   }
+
+  const router = useRouter()
+  const { challenge } = router.query
+
   //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
     (acc: UserSubmissionsObject, submission: Submission) => {
@@ -367,7 +387,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       }
     })
   const [currentChallengeID, setCurrentChallenge] =
-    useState<CurrentChallengeID>(null)
+    useState<CurrentChallengeID>(_.toNumber(challenge))
 
   const finalChallenge = {
     title: 'Challenges Completed!',

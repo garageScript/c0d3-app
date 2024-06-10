@@ -1,0 +1,21 @@
+@use '../../scss/variables.module';
+$light-gray: hsl(0, 0%, 85%);
+
+.optionInfo__span {
+  margin-bottom: 14px;
+}
+
+.optionInfo__input {
+  padding: 12.5px;
+  background-color: white;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+}
+
+.optionInfo__error {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+  margin-left: 5px;
+}
