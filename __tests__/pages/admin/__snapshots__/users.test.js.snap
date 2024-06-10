@@ -377,7 +377,9 @@ exports[`Users test Should be able to switch search options 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2024
+     GarageScript
   </footer>
 </div>
 `;
@@ -759,7 +761,9 @@ exports[`Users test Should be able to switch search options 2`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2024
+     GarageScript
   </footer>
 </div>
 `;
@@ -1141,7 +1145,9 @@ exports[`Users test Should be able to switch search options 3`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2024
+     GarageScript
   </footer>
 </div>
 `;
@@ -1489,7 +1495,9 @@ exports[`Users test Should be able to switch search options 4`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 
+    2024
+     GarageScript
   </footer>
 </div>
 `;
