@@ -88,7 +88,7 @@
     "@storybook/addon-storyshots": "^6.5.16",
     "@storybook/addon-storysource": "^8.1.4",
     "@storybook/addon-viewport": "^8.1.6",
-    "@storybook/react": "^6.4.22",
+    "@storybook/react": "^8.1.10",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
